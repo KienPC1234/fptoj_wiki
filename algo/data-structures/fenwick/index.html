@@ -1,0 +1,4886 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/KienPC1234/fptoj_wiki/algo/data-structures/fenwick/">
+      
+      
+        <link rel="prev" href="../fenwick-2d/">
+      
+      
+        <link rel="next" href="../hash-table/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Cây chỉ số nhị phân (Binary Indexed Tree) - FPTOJ WIKI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cay-chi-so-nhi-phan-binary-indexed-tree" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="FPTOJ WIKI" class="md-header__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
+      
+  <img src="../../../uploads/icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FPTOJ WIKI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cây chỉ số nhị phân (Binary Indexed Tree)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Chuyển sang chế độ tối"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang chế độ tối" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Chuyển sang chế độ sáng"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang chế độ sáng" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="FPTOJ WIKI" class="md-nav__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
+      
+  <img src="../../../uploads/icon.svg" alt="logo">
+
+    </a>
+    FPTOJ WIKI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trang chủ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giới thiệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Thuật Toán
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Thuật Toán
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cơ Bản
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cơ Bản
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/backtracking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Đệ quy và Thuật toán quay lui
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/binary-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán tìm kiếm nhị phân
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/bitwise-operators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phép toán bit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/computational-complexity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Độ phức tạp thời gian
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/hoc-tin-the-nao-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tôi đã học tin học như thế nào? Phần 1: vòng lặp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/hoc-tin-the-nao-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tôi đã học tin học như thế nào? Phần 2: bắt đầu từ đâu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/meet-in-the-middle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Meet In The Middle (MITM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/sorting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán sắp xếp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/Tai-Lieu-Thuat-Toan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số Tài liệu hay về Thuật Toán
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/two-pointers.md78" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kĩ thuật hai con trỏ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Đại Số
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Đại Số
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/binary_exponentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lũy thừa nhị phân
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/euclid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Euclid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/fft-test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biến đổi Fourier nhanh - Fast Fourier transform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/nCk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cách tính số tổ hợp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/primality_check/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kiểm tra số nguyên tố
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/prime_sieve/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sàng nguyên tố
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cấu trúc dữ liệu
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cấu trúc dữ liệu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../array-vs-linked-lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mảng và danh sách liên kết
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C%C3%A2y-Palindrome/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cấu trúc của cây Palindrome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-structures-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan về Cấu Trúc Dữ Liệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deque-min-max/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàng đợi hai đầu (deque) và Bài toán tìm max-min trong đoạn tịnh tiến
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Deque/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deque - hàng đợi hai đầu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disjoint-set-union/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disjoint Set Union
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disjoint-set/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disjoints Sets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fenwick-2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây chỉ số nhị phân 2 chiều (BIT 2 chiều)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Cây chỉ số nhị phân (Binary Indexed Tree)
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hash-table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bảng băm (Hash Table)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heavy-light-decomposition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heavy-Light Decomposition (HLD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interval-tree-tap-doan-thang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interval Tree trên tập đoạn thẳng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lca-binlift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lowest Common Ancestor (LCA) - Binary Lifting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các phương pháp giải bài toán LCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mo-algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chia căn (sqrt decomposition) và ứng dụng: Phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cấu trúc dữ liệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../persistent-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Persistent Data Structures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prefix-sum-and-difference-array/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mảng cộng dồn và mảng hiệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rmq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Range Minimum Query (RMQ) - Sparse Table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segment-tree-basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây Phân Đoạn (cơ bản)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segment-tree-extend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tất tần tật về Cây Phân Đoạn (Segment Tree)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Skip-Lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Skip Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sqrt-decomposition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chia căn (sqrt decomposition) và ứng dụng: Phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stack (ngăn xếp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../suffix-array/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mảng hậu tố (Suffix Array)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../suffix-automaton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Suffix Automaton
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trie
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quy hoạch động
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Quy hoạch động
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/basic-dynamic-programming-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy hoạch động cơ bản (Phần 1)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/basic-dynamic-programming-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy hoạch động cơ bản (Phần 2)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/basic-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số bài toán quy hoạch động điển hình
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/Mot-so-ky-thuat-toi-uu-hoa-thuat-toan-Quy-Hoach-Dong/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số kĩ thuật tối ưu hoá thuật toán Quy Hoạch Động
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/palindrome-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một vài bài tập về Palindrome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/thac-mac-ve-qhd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phân tích về QHĐ - Thầy Lê Minh Hoàng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Games
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Games
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../games/Giai-Thuat-Cat-Tia-Alpha-beta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giải thuật cắt tỉa Alpha-beta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hình học
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Hình học
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/basic-geometry-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hình học tính toán phần 1: Những khái niệm cơ bản
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/basic-geometry-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hình học tính toán phần 2: Sự giao nhau của đường thẳng và các ứng dụng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/Sweep-Line/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán đường quét
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lý thuyết Đồ Thị
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Lý thuyết Đồ Thị
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/breadth-first-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFS (Breadth-first search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/centroid-decomposition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán phân tách trọng tâm - Centroid decomposition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/Depth-First-Search-Tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây DFS (Depth-First Search Tree) và ứng dụng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/euler-cycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Đường đi - Chu trình Euler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/euler-tour-on-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Đường đi Euler trên cây
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/everything/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các chủ đề cơ bản về đồ thị
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/flow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán Luồng cực đại trên mạng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/lubenica-vnoj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán LUBENICA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/minimum-spanning-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán tìm cây khung nhỏ nhất trong đồ thị
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/shortest-path/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các thuật toán về tìm đường đi ngắn nhất
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/topological-sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sắp xếp Tô-pô (Topological Sort)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Toán
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Toán
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/game-theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lý thuyết trò chơi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/Ham-Mobius/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàm Mobius
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/modular-inverse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 4.5 - Nghịch đảo modulo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/multiplicative-function/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàm nhân tính
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tìm Kiếm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tìm Kiếm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/Local-Search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kỹ Năng Thi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            Kỹ Năng Thi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill/Ki-nang-thi-cu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng hợp các lời khuyên cho các kỳ thi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill/Kinh-nghiem-thi-VOI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kinh nghiệm thi VOI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill/viet-trinh-cham/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tự code, tự chấm, tự sướng - Bí kíp thi offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Xâu kí tự
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            Xâu kí tự
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xử lý xâu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/hash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hash: A String Matching Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/kmp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán KMP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/manacher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Manacher
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/z-algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Z-function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mẹo
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            Mẹo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ph%E1%BB%8Fng-v%E1%BA%A5n-team-IOI-VN-2017/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phỏng Vấn Team IOI VN 2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/vojsol/ALAKE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ALAKE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/convex_greedy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sum-constrained convex optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/counting-without-matrix-multiplication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Khử nhân ma trận
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/FFT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FFT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/matrix-multiplication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nhân ma trận (Matrix multiplication)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/mitm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Meet In The Middle (MITM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/Roi-rac-hoa-va-ung-dung/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rời rạc hoá và ứng dụng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer Science (Khoa học máy tính)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science (Khoa học máy tính)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Crypto
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Crypto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/crypto/Cipher-Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mật mã và Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/crypto/Public-Key-Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Public Key Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cipher
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cipher
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/crypto/cipher/ROT13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROT13
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Xử lý ảnh
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Xử lý ảnh
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/imageprocessing/Seam-Carving/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seam Carving Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/imageprocessing/setup-opencv-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt OpenCV trên Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ngôn Ngữ Lập Trình
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ngôn Ngữ Lập Trình
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/pointers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Con trỏ trong C/C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xâu trong C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/Pascal-Vi-sao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hoài niệm về Pascal - Lê Minh Hoàng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dịch Thuật
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Dịch Thuật
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/functional-programming-part-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functional Programming - Phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Codeforces
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Codeforces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/Efficient-and-easy-segment-trees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt cây phân đoạn hiệu quả (Efficient and easy segment trees)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/hash-table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bảng băm (Hash Tables)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/palindrome-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Palindrome tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/stack-queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Queue & Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/z-algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Z Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    E-Maxx
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            E-Maxx
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/emaxx/Aho-Corasick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aho Corasick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/emaxx/Tim-kiem-tam-phan-Ternary-Search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tìm kiếm tam phân - Ternary Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Nâng Cao
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            Nâng Cao
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Lucas-theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Định lý Lucas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 2 - Số nguyên tố, Sàng Eratosthenes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 3 - Tính (a^b) % c
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 4 - Phi hàm Euler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 5 - Các kiến thức cơ bản về Tổ hợp (Combinatorics)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 6 - Xác suất (Probabilities)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 7 - Bao hàm - Loại trừ (Inclusion-Exclusion)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/So-hoc-Phan-1-Modulo-gcd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 1 - Modulo & gcd
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Wilsons-theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Định lý Wilson
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Máy học (Machine Learning - ML)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Máy học (Machine Learning - ML)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/ml/machine-learning-101/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning 101 (1): Làm quen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/PyTorch-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PyTorch Là Gì?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/ml/Machine-Learning-Classification-phan-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning - Classification - phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/ml/Machine-Learning-Classification-phan-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning - Classification - phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/ml/Machine-Learning-Classification-phan-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning - Classification - phần 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quora
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Quora
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/quora/mobius-function/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàm Mobius
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Topcoder
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Topcoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Computational-Complexity-Section-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Độ phức tạp tính toán
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Computational-Complexity-Section-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Độ phức tạp tính toán - phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/dynamic-programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nhập môn Quy hoạch động
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/fun-with-bits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fun with Bits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Greedy-is-Good/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Tham lam
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Hieu-ve-xac-suat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xác suất
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/How-to-Dissect-a-Topcoder-Problem-Statement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kĩ năng đọc đề Topcoder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/How-to-Find-a-Solution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nghệ thuật giải bài
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Mathematics-for-Topcoders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Toán học trong Tin học
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/max-flow-1-luong-cuc-dai-tren-mang-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Luồng cực đại trên mạng - Maxflow network
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Planning-an-Approach-to-a-Topcoder-Problem-Part-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Những cách tiếp cận bài toán: Phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Planning-an-Approach-to-a-Topcoder-Problem-Part-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Những cách tiếp cận bài toán: Phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Range-Minimum-Query-and-Lowest-Common-Ancestor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán RMQ và bài toán LCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/The-Importance-of-Algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tầm Quan Trọng Của Thuật Toán
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Using-Regular-Expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sử dụng Regex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    USACO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            USACO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/USACO/Crafting-Winning-Solutions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Viết lời giải chiến thắng trong kì thi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wcipeg
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            Wcipeg
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Bao-l%E1%BB%93i/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giải thích trực quan về bao lồi trên mặt phẳng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Binary-Heap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binary Heap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Convex-Hull-Trick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kĩ thuật bao lồi (Convex Hull Trick)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Convex-Hull/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bao lồi (Convex Hull)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Flows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán luồng cực đại
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/kmp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Knuth-Morris-Pratt (KMP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây (Tree)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cay-chi-so-nhi-phan-binary-indexed-tree"><strong>Cây chỉ số nhị phân (Binary Indexed Tree)</strong></h1>
+<p><strong>Tác giả:</strong> 
+- Bùi Nguyễn Đức Tân - Phổ thông Năng khiếu, Đại học Quốc gia Thành phố Hồ Chí Minh
+- Lê Minh Hoàng - Phổ thông Năng khiếu, Đại học Quốc gia Thành phố Hồ Chí Minh</p>
+<p><strong>Reviewer:</strong>
+- Nguyễn Xuân Tùng - Đại học Quốc Tế, Đại học Quốc gia Thành phố Hồ Chí Minh</p>
+<hr />
+<h1 id="gioi-thieu">Giới thiệu</h1>
+<p>Cây chỉ số nhị phân (tên tiếng Anh là Binary Indexed Tree) hay cây Fenwick là một cấu trúc dữ liệu được sử dụng khá phổ biến trong lập trình thi đấu vì có thể cài đặt nhanh, dễ dàng so với các CTDL khác.</p>
+<h1 id="bai-toan">Bài toán</h1>
+<p>Cho mảng <span class="arithmatex">\(A\)</span> gồm <span class="arithmatex">\(N\)</span> phần tử (đánh số từ <span class="arithmatex">\(1\)</span>). Có <span class="arithmatex">\(Q\)</span> truy vấn thuộc 2 loại:
+- <span class="arithmatex">\(1\)</span> <span class="arithmatex">\(u\)</span> <span class="arithmatex">\(v\)</span>: cộng <span class="arithmatex">\(v\)</span> vào <span class="arithmatex">\(A[u]\)</span>.
+- <span class="arithmatex">\(2\)</span> <span class="arithmatex">\(p\)</span>: tính tổng các phần tử từ <span class="arithmatex">\(A[1]\)</span>, <span class="arithmatex">\(A[2]\)</span>, <span class="arithmatex">\(A[3]\)</span>, ..., <span class="arithmatex">\(A[p]\)</span>.</p>
+<p>Giới hạn: <span class="arithmatex">\(N, Q \le 2 \cdot 10^5\)</span></p>
+<h2 id="ngay-tho-1">Ngây thơ 1</h2>
+<p>Với truy vấn loại 1, ta đơn thuần tăng phần tử <span class="arithmatex">\(a[u]\)</span> thêm <span class="arithmatex">\(v\)</span>.
+Với truy vấn loại 2, ta duyệt qua tất cả phần tử trong đoạn <span class="arithmatex">\([1 \dots p]\)</span> và cộng giá trị vào biến kết quả.</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200003</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">getSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">        </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="phan-tich">Phân tích</h3>
+<ul>
+<li>Độ phức tạp khi update: <span class="arithmatex">\(\mathcal{O}(1)\)</span>.</li>
+<li>Độ phức tạp khi truy vấn: <span class="arithmatex">\(\mathcal{O}(p) = \mathcal{O}(N)\)</span>. <!--đpt tương đương với số ptu của mảng--></li>
+<li>Có <span class="arithmatex">\(Q\)</span> truy vấn, vì thế độ phức tạp là <span class="arithmatex">\(\mathcal{O}(Q + Q \cdot N) = \mathcal{O}(Q \cdot N)\)</span></li>
+<li>Nếu chưa biết về độ phức tạp tính toán, các bạn có thể đọc ở <a href="https://vnoi.info/wiki/translate/topcoder/Computational-Complexity-Section-1.md">đây</a>.</li>
+</ul>
+<p>Đối chiếu giới hạn, cách "ngây thơ" trên tỏ ra chậm chạp, không đủ để xử lí yêu cầu bài toán.</p>
+<h2 id="ngay-tho-2">Ngây thơ 2</h2>
+<p>Nhận thấy đây là một dạng của bài toán Range Sum Query, ta có thể áp dụng mảng cộng dồn (prefix sum) để tính nhanh tổng một đoạn.</p>
+<p>Khi cập nhật giá trị một phần tử, ta đồng thời cập nhật tất cả các prefix chứa phần tử đó.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="p">[</span><span class="n">N</span><span class="p">];</span><span class="w"> </span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">preprocess</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sum</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">sum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">getSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">[</span><span class="n">p</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="phan-tich_1">Phân tích</h3>
+<ul>
+<li>Độ phức tạp tiền xử lý: <span class="arithmatex">\(\mathcal{O}(N)\)</span></li>
+<li>Độ phức tạp khi update: <span class="arithmatex">\(\mathcal{O}(p)\)</span> = <span class="arithmatex">\(\mathcal{O}(N)\)</span></li>
+<li>Độ phức tạp khi truy vấn: <span class="arithmatex">\(\mathcal{O}(1)\)</span></li>
+</ul>
+<p>Nếu bài toán không có truy vấn cập nhật, độ phức tạp là <span class="arithmatex">\(\mathcal{O}(Q + N)\)</span>, đủ nhanh để giải quyết. Tuy nhiên, khi có thao tác cập nhật, độ phức tạp bị đẩy lên <span class="arithmatex">\(\mathcal{O}(Q * N)\)</span> - tương đương với độ phức tạp của cách ngây thơ 1.</p>
+<p>Để có thể giải quyết bài toán một cách hiệu quả, ta cần một CTDL có thể sử dụng tính chất prefix sum để trả về kết quả nhanh, đồng thời có thể nhanh chóng cập nhật giá trị cho prefix.</p>
+<h1 id="cay-chi-so-nhi-phan">Cây chỉ số nhị phân</h1>
+<p>Cấu trúc prefix sum được biểu diễn qua sơ đồ sau:</p>
+<p><img alt="" src="https://i.imgur.com/hllVMYY.png" /></p>
+<p><strong>Nhận xét:</strong> Mỗi phần tử <span class="arithmatex">\(sum[i]\)</span> chứa tổng của tất cả phần tử từ <span class="arithmatex">\([1\dots i]\)</span>; vì thế, phần tử <span class="arithmatex">\(sum[i]\)</span> sẽ chứa phần tử <span class="arithmatex">\(a[j]\)</span> nếu thỏa <span class="arithmatex">\(i \ge j\)</span>, số phần tử <span class="arithmatex">\(sum\)</span> cần cập nhật là <span class="arithmatex">\(j - i + 1\)</span>, gần tương đương độ dài của mảng.</p>
+<p>Để tăng tốc độ cập nhật phần tử, cần bố trí lại phạm vi của từng đoạn gắn với <span class="arithmatex">\(sum[i]\)</span> để cực tiểu số phần tử <span class="arithmatex">\(sum\)</span> cần cập nhật nhưng vẫn phải đảm bảo tính liên tục để áp dụng tính chất của prefix sum.</p>
+<h2 id="gioi-thieu-tong-quat">Giới thiệu tổng quát</h2>
+<p>Mỗi chỉ số <span class="arithmatex">\(n\)</span> đều có thể biểu diễn bằng tổng của các lũy thừa cơ số <span class="arithmatex">\(2\)</span>, vì thế, để tính tổng của các phần tử thuộc <span class="arithmatex">\([1 \ldots n]\)</span>, ta có thể tách đoạn này thành các đoạn nhỏ hơn có độ dài <span class="arithmatex">\(2^k\)</span> và cộng lại tổng tính được trên từng đoạn.</p>
+<p>Cụ thể, đặt <span class="arithmatex">\(n = 2^{i_1} + 2^{i_2} + \ldots + 2^{i_k}\)</span> <span class="arithmatex">\((i_1 &gt; i_2 &gt; \ldots &gt; i_k \ge 0)\)</span>. Để tính tổng từ <span class="arithmatex">\([1 \ldots n]\)</span>, ta tính tổng các phần tử thuộc đoạn <span class="arithmatex">\([1;2^{i_1}]\)</span>, sau đó tính tiếp tổng của đoạn <span class="arithmatex">\([2^{i_1} + 1;2^{i_1} + 2^{i_2}]\)</span>, lặp lại quá trình này cho đến khi ta đến đoạn cuối cùng là <span class="arithmatex">\([2^{i_1} + 2^{i_2} + \ldots + 2^{i_{k - 1}} + 1;n]\)</span>. <span class="arithmatex">\(n\)</span> có thể có tối đa <span class="arithmatex">\(\log_2 n\)</span> bits, vì thế độ phức tạp khi tính tổng theo cách này là <span class="arithmatex">\(\mathcal{O}(C \log n)\)</span>, trong đó <span class="arithmatex">\(\mathcal{O}(C)\)</span> là độ phức tạp khi lấy tổng một đoạn.</p>
+<p><img alt="" src="https://i.imgur.com/brL1XCD.png" /></p>
+<p>Từ cách chia block trên, ta quan sát được rằng block cuối cùng đối với mỗi <span class="arithmatex">\(n\)</span> (là block tổng chứa phần tử ở chỉ số <span class="arithmatex">\(n\)</span>) có độ dài bằng với bit nhỏ nhất trong biểu diễn nhị phân của <span class="arithmatex">\(n\)</span>. Đây chính là ý tưởng của cây BIT, ta sẽ lưu thông tin về block cuối của từng phần tử và thực hiện thao tác truy vấn trên đấy.</p>
+<p>Dưới đây là hình ảnh minh họa cây BIT:
+<img alt="" src="https://i.imgur.com/SH4tJPN.png" /></p>
+<p>Trong hình trên, những đoạn được tô đậm là đoạn của phần tử chỉ số <span class="arithmatex">\(n\)</span> được BIT lưu trữ; những đoạn được tô nét mảnh không được lưu trữ trực tiếp mà sẽ được truy cập gián tiếp.</p>
+<h2 id="cai-at-bit">Cài đặt BIT</h2>
+<p>Mặc dù có bản chất là cây, tính chất ở trên cho phép chúng ta lưu trữ BIT dưới dạng một mảng đơn giản có độ dài bằng với độ dài mảng ta đang làm việc.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">bit</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</code></pre></div>
+<h3 id="thao-tac-tim-tong">Thao tác tìm tổng</h3>
+<p>Để tìm tổng các phần tử trong đoạn <span class="arithmatex">\([1 \ldots n]\)</span>, ta sẽ lần lượt đi qua tất cả bit của <span class="arithmatex">\(n\)</span> theo giá trị tăng dần. Mỗi lần đi qua <span class="arithmatex">\(n\)</span>, ta sẽ cộng <span class="arithmatex">\(bit[n]\)</span> vào kết quả hiện tại, rồi trừ đi bit nhỏ nhất của <span class="arithmatex">\(n\)</span> khỏi chính nó; quá trình lặp lại cho đến khi <span class="arithmatex">\(n = 0\)</span>.</p>
+<p>Để lấy bit nhỏ nhất của một số <span class="arithmatex">\(n\)</span>, ta có thể sử dụng công thức <code>n &amp; ~(n - 1)</code> được đề cập tại bài tại <a href="https://vnoi.info/wiki/translate/topcoder/fun-with-bits.md#t%C3%A1ch-t%E1%BB%ABng-bit/">đây</a>. Khi thao tác bit với số âm, C++ sử dụng phép bù 2: <code>~n = - n - 1</code>; vì vậy ta có phép biến đổi: <code>n &amp; ~(n - 1) = n &amp; (-(n - 1) - 1) = n &amp; (-n)</code> dễ sử dụng hơn.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">getSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">bit</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+<span class="w">        </span><span class="n">idx</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">idx</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Độ phức tạp khi truy vấn tổng: <span class="arithmatex">\(\mathcal{O}(\log n)\)</span>.</p>
+<h3 id="thao-tac-cap-nhat">Thao tác cập nhật</h3>
+<p>Để cập nhật phần tử tại vị trí <span class="arithmatex">\(u\)</span>, ta sẽ thực hiện quá trình ngược lại so với khi truy vấn tìm tổng: cộng bit nhỏ nhất vào <span class="arithmatex">\(u\)</span> cho đến khi <span class="arithmatex">\(u\)</span> vượt ngoài biên của mảng.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">bit</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<span class="w">        </span><span class="n">idx</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">idx</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Chứng minh tính đúng đắn của thuật trên như sau: mỗi khi ta cộng thêm 1 lượng bằng với <span class="arithmatex">\(2^k\)</span> (<span class="arithmatex">\(k\)</span> là bit nhỏ nhất của <span class="arithmatex">\(u\)</span>) thì đoạn dịch qua phải một lượng <span class="arithmatex">\(2^k\)</span> thành <span class="arithmatex">\([l + 2^k, r + 2^k]\)</span> (do bit nhỏ nhất lúc này vẫn có thể tính là <span class="arithmatex">\(2^k\)</span>). Đồng thời lúc đó, bit nhỏ nhất tăng ít nhất 2 lần do <span class="arithmatex">\(2^k\)</span> (mới cộng thêm) + <span class="arithmatex">\(2^k\)</span> (có sẵn trong u) tạo thành <span class="arithmatex">\(2^{k+1}\)</span> làm cho biên trái dịch trái ít nhất <span class="arithmatex">\(2^k\)</span> lần thành <span class="arithmatex">\([l, r + 2^k]\)</span> (nếu có sẵn <span class="arithmatex">\(2^{k+1}\)</span> trong <span class="arithmatex">\(u\)</span> thì tiếp tục gộp lại làm bit nhỏ nhất tăng lên là <span class="arithmatex">\(2^{k+2}\)</span>, ...), do đó biên trái luôn được giữ &lt;= biên <span class="arithmatex">\(l\)</span> ban đầu.</p>
+<p>Mỗi lần cộng thêm, bit cuối luôn bị dịch lên ít nhất 1 lần, dẫn đến có tối đa <span class="arithmatex">\(\log n\)</span> lần dịch bit. Vì thế độ phức tạp khi cập nhật là <span class="arithmatex">\(\mathcal{O}(\log n)\)</span>.</p>
+<h2 id="luu-y">Lưu ý</h2>
+<p>Bằng cây chỉ số nhị phân (BIT), ta dễ dàng tính được prefix sum và cập nhật giá trị chỉ trong <span class="arithmatex">\(\mathcal{O}(\log n)\)</span>, mặt khác so với các CTDL khác, BIT dễ dàng cài đặt hơn rất nhiều và không tốn quá nhiều thời gian để code.</p>
+<p>Quay lại bài toán đầu, nếu chúng ta thay đổi yêu cầu thành tìm tổng trên đoạn <span class="arithmatex">\([l \ldots r]\)</span>, tính chất của prefix sum dễ dàng cho ta tìm được kết quả thông qua phép <span class="arithmatex">\(sum(r) - sum(l - 1)\)</span>. Tuy nhiên, không phải tất cả phép toán nào đều cho phép chúng ta dễ dàng lấy kết quả thông qua phép hiệu như vậy. Đối với các phép <span class="arithmatex">\(min, gcd\)</span>, không tồn tại phép hiệu cho ta phép lấy kết quả của một đoạn dễ dàng, vì thế ta không thể áp dụng BIT đối với những bài toán loại này. </p>
+<p>Đây là một khuyết điểm mấu chốt của BIT, vì thế cần nắm rõ tính chất và những bài toán để quyết định có nên sử dụng BIT không.</p>
+<h1 id="cap-nhat-oan">Cập nhật đoạn</h1>
+<p>Ta thay đổi nội dung bài toán ban đầu như sau:
+- <span class="arithmatex">\(1\)</span> <span class="arithmatex">\(v\)</span> <span class="arithmatex">\(l\)</span> <span class="arithmatex">\(r\)</span>: cộng <span class="arithmatex">\(v\)</span> vào tất cả phần tử <span class="arithmatex">\(A[l]\)</span>, <span class="arithmatex">\(A[l + 1]\)</span>, <span class="arithmatex">\(A[l + 2]\)</span>, ..., <span class="arithmatex">\(A[r]\)</span>.
+- <span class="arithmatex">\(2\)</span> <span class="arithmatex">\(u\)</span>: tìm giá trị hiện tại của <span class="arithmatex">\(A[u]\)</span>.
+- <span class="arithmatex">\(3\)</span> <span class="arithmatex">\(l\)</span> <span class="arithmatex">\(r\)</span>: tính tổng các phần tử từ <span class="arithmatex">\(A[l]\)</span>, <span class="arithmatex">\(A[l + 1]\)</span>, <span class="arithmatex">\(A[l + 2]\)</span>, ..., <span class="arithmatex">\(A[r]\)</span>.</p>
+<p>Ta có thể cài đặt "ngây thơ" bằng cách áp dụng hàm <code>update()</code> trên tất cả phần tử cần được cập nhật, độ phức tạp khi này là <span class="arithmatex">\(\mathcal{O}(Q \cdot N \log N)\)</span>. Dĩ nhiên cách này quá chậm, đòi hỏi ta cần tìm một cách cập nhật đoạn một cách nhanh hơn để giữ nguyên độ phức tạp <span class="arithmatex">\(\mathcal{O}(N \log N)\)</span>.</p>
+<h2 id="truy-van-tung-phan-tu">Truy vấn từng phần tử</h2>
+<p>Mảng hiệu (difference array) là một loại mảng lưu hiệu giữa các phần tử liền kề với nhau.</p>
+<p>Mảng hiệu được xây dựng bằng cách sau: 
+- Với <span class="arithmatex">\(i = 1\)</span> thì <span class="arithmatex">\(diff[i] = A[i]\)</span>.
+- Với <span class="arithmatex">\(2 \le i \le N\)</span> thì <span class="arithmatex">\(diff[i] = A[i] - A[i - 1]\)</span>.</p>
+<p>Bạn có thể theo dõi hình dưới và code minh họa để hiểu rõ hơn:
+<img alt="" src="https://i.imgur.com/UaDoTx9.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">diff</span><span class="p">[</span><span class="n">N</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+
+<span class="n">diff</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">diff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"> </span>
+<span class="w">    </span><span class="c1">// lấy phần tử thứ i trừ cho phần tử trước nó</span>
+<span class="p">}</span>
+</code></pre></div>
+<!-- t có thêm comment -->
+
+<p>Khi cộng tất cả phần tử <span class="arithmatex">\(diff\)</span> từ <span class="arithmatex">\(1\)</span> đến <span class="arithmatex">\(i\)</span>, ta có:
+$$
+\begin{align}
+\displaystyle \sum_{j = 1}^{i} diff[j] &amp;= diff[1] + diff[2] + \ldots + diff[i] \
+&amp;= a[1] + a[2] - a[1] + a[3] - a[2] + \ldots + a[i] - a[i - 1] \
+&amp;= a[1] - a[1] + a[2] - a[2] + \ldots + a[i - 1] - a[i - 1] + a[i] \
+&amp;= a[i]
+\end{align}
+$$</p>
+<p>Từ tính chất này, khi tính được mảng hiệu, để tính được giá trị của <span class="arithmatex">\(a[i]\)</span> ta chỉ cần lấy tổng của <span class="arithmatex">\(i\)</span> phần tử <span class="arithmatex">\(diff\)</span> đầu tiên. Khi này, bài toán của chúng ta thực chất được đưa về tính tổng trên mảng <span class="arithmatex">\(diff\)</span>, vấn đề hiện tại là thao tác <code>update()</code> cần được xử lí như thế nào.</p>
+<p>Hình dưới đây minh họa thao tác cập nhật trên một đoạn <span class="arithmatex">\([l \ldots r]\)</span> - từ mảng trên, ta cộng <span class="arithmatex">\(\Delta = 4\)</span> vào đoạn <span class="arithmatex">\([4\dots 7]\)</span>:
+<img alt="" src="https://i.imgur.com/8CQUuuv.png" /></p>
+<p>Khi cập nhật, do các phần tử liền kề trong đoạn <span class="arithmatex">\([l\dots r]\)</span> đều được cộng cùng một giá trị <span class="arithmatex">\(\Delta\)</span> nên hiệu giữa chúng thực chất vẫn không đổi. Khác biệt duy nhất khi cập nhật nằm ở 2 biên của đoạn: giữa <span class="arithmatex">\((a_{l - 1}, a_l)\)</span> và <span class="arithmatex">\((a_r, a_{r+1})\)</span>; vì thế ta chỉ cần cập nhật điểm tại 2 biên trên mảng hiệu và dùng truy vấn lấy tổng để tính giá trị hiện tại của <span class="arithmatex">\(a_i\)</span>.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">updatePoint</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">bit</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<span class="w">        </span><span class="n">idx</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">idx</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">updateRange</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">updatePoint</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+<span class="w">    </span><span class="n">updatePoint</span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">bit</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+<span class="w">        </span><span class="n">idx</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">idx</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="truy-van-tren-oan">Truy vấn trên đoạn</h2>
+<p><img alt="" src="https://i.imgur.com/K4d4qmh.png" /></p>
+<p>Hình trên sẽ giúp ta minh họa trực quan hơn mối quan hệ về tổng các phần tử với mảng <span class="arithmatex">\(A\)</span> và mảng hiệu <span class="arithmatex">\(diff\)</span>.</p>
+<p>Nhắc lại: <span class="arithmatex">\(A[i] = \sum_{j=1}^{i} diff[i]\)</span>. Dựa vào hình, ta có thể tính lần lượt tổng các phần tử từ <span class="arithmatex">\(A_1\)</span> đến <span class="arithmatex">\(A_i\)</span> như sau:
+- <span class="arithmatex">\(sum[1] = diff[1]\)</span>
+- <span class="arithmatex">\(sum[2] = 2 \cdot diff[1] + diff[2]\)</span>
+- <span class="arithmatex">\(sum[3] = 3 \cdot diff[1] + 2 \cdot diff[2] + diff[3]\)</span>
+- <span class="arithmatex">\(\ldots\)</span>
+- <span class="arithmatex">\(sum[i] = i \cdot diff[1] + (i - 1) \cdot diff[2] + \ldots + (i - j + 1) \cdot diff[j] + \ldots + 2 \cdot diff[i - 1] + diff[i]\)</span></p>
+<p>Tuy nhiên, do sự biến động của hệ số khi nhân nên cách này không thuận tiện khi ta phải truy vấn liên tục. Để dễ dàng hơn, ta sẽ cố định mỗi <span class="arithmatex">\(diff[i]\)</span> nhân với hệ số <span class="arithmatex">\(n - i + 1\)</span>, khi này:
+- <span class="arithmatex">\(sum[1] = n \cdot diff[1] - (n - 1) \cdot diff[1]\)</span>
+- <span class="arithmatex">\(sum[2] = n \cdot diff[1] + (n - 1) \cdot diff[2] - (n - 2) \cdot (diff[1] + diff[2])\)</span>
+- <span class="arithmatex">\(sum[3] = n \cdot diff[1] + (n - 1) \cdot diff[2] + (n - 2) \cdot diff[3] - (n - 3) \cdot (diff[1] + diff[2] + diff[3])\)</span>
+- <span class="arithmatex">\(\ldots\)</span>
+- <span class="arithmatex">\(sum[i] = n \cdot diff[1] + (n - 1) \cdot diff[2] + \ldots + (n - j + 1) \cdot diff[j] + \ldots + (n - i + 1) \cdot diff[i] - (n - i) \cdot (diff[1] + diff[2] + \ldots + diff[i])\)</span></p>
+<p>Tóm lại, ta thu được:
+$$
+sum[i] = \displaystyle \sum_{j = 1}^{i} (n - j + 1) \cdot diff[j] - (n - i) \cdot \sum_{j = 1}^{i} diff[j]
+$$
+Cả hai giá trị <span class="arithmatex">\(diff[j]\)</span> và <span class="arithmatex">\((n - j + 1) \cdot diff[j]\)</span> đã được đơn giản hóa, lúc này ta chỉ cần lưu toàn bộ giá trị <span class="arithmatex">\((n - j + 1) \cdot diff[j]\)</span> vào mảng <span class="arithmatex">\(S_1\)</span> và <span class="arithmatex">\(diff[j]\)</span> vào mảng <span class="arithmatex">\(S_2\)</span> và dựng mảng cộng dồn trên hai mảng đó.</p>
+<p>Thao tác cập nhật trên mảng <span class="arithmatex">\(S_2\)</span> giống với thao tác cập nhật đã đề cập ở trên, còn ở mảng <span class="arithmatex">\(S_1\)</span> thì khác biệt duy nhất là việc xử lý nhân hệ số <span class="arithmatex">\((n - j + 1)\)</span>. Tuy vậy, hệ số trên không đổi trong quá trình tính toán với từng phần tử nên ta chỉ cần nhân hệ số này với giá trị cần cập nhật và áp dụng phương thức tương tự như ở cập nhật trên <span class="arithmatex">\(S_2\)</span>.</p>
+<p>Code tham khảo:
+<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bit1</span><span class="p">,</span><span class="w"> </span><span class="n">bit2</span><span class="p">;</span>
+<span class="cm">/* </span>
+<span class="cm">    Các hàm update và sum cần làm việc trên một trong hai BIT riêng biệt.</span>
+<span class="cm">    Sử dụng vector cho phép truyền BIT vào làm việc trực tiếp dễ dàng hơn.</span>
+<span class="cm">*/</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">updatePoint</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">b</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<span class="w">        </span><span class="n">idx</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">idx</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">updateRange</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">updatePoint</span><span class="p">(</span><span class="n">bit1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+<span class="w">    </span><span class="n">updatePoint</span><span class="p">(</span><span class="n">bit1</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+<span class="w">    </span><span class="n">updatePoint</span><span class="p">(</span><span class="n">bit2</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+<span class="w">    </span><span class="n">updatePoint</span><span class="p">(</span><span class="n">bit2</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">getSumOnBIT</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+<span class="w">        </span><span class="n">idx</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">idx</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">prefixSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">getSumOnBIT</span><span class="p">(</span><span class="n">bit1</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">getSumOnBIT</span><span class="p">(</span><span class="n">bit2</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">u</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">rangeSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">prefixSum</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">prefixSum</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h1 id="bai-tap-ap-dung">Bài tập áp dụng</h1>
+<ul>
+<li><a href="https://lqdoj.edu.vn/problem/querysum">LQDOJ - Query-Sum</a></li>
+<li><a href="https://lqdoj.edu.vn/problem/querysum2">LQDOJ - Query-Sum 2</a></li>
+<li><a href="https://lqdoj.edu.vn/problem/candies">LQDOJ - Candies</a></li>
+<li><a href="https://cses.fi/problemset/task/1651">CSES - Range Update Queries</a></li>
+<li><a href="https://cses.fi/problemset/task/2169">CSES - Nested Range Count</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1311/F">Codeforces - Moving Points</a></li>
+<li><a href="https://oj.vnoi.info/problem/nkinv">VNOJ - NKINV</a></li>
+<li><a href="https://oj.vnoi.info/problem/incvn">VNOJ - INCVN</a></li>
+</ul>
+<p>VNOI Online Judge có phân loại riêng các bài tập về BIT, các bạn có thể tham khảo tại <a href="https://oj.vnoi.info/problems/?type=14&amp;point_start=&amp;point_end=">đây</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/jquery-3.7.1.min.js"></script>
+      
+        <script src="../../../js/webjs.js"></script>
+      
+    
+  </body>
+</html>

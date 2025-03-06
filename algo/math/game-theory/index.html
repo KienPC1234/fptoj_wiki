@@ -1,0 +1,5502 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/KienPC1234/fptoj_wiki/algo/math/game-theory/">
+      
+      
+        <link rel="prev" href="../../graph-theory/topological-sort/">
+      
+      
+        <link rel="next" href="../Ham-Mobius/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Lý thuyết trò chơi - FPTOJ WIKI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ly-thuyet-tro-choi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="FPTOJ WIKI" class="md-header__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
+      
+  <img src="../../../uploads/icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FPTOJ WIKI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lý thuyết trò chơi
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Chuyển sang chế độ tối"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang chế độ tối" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Chuyển sang chế độ sáng"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang chế độ sáng" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="FPTOJ WIKI" class="md-nav__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
+      
+  <img src="../../../uploads/icon.svg" alt="logo">
+
+    </a>
+    FPTOJ WIKI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trang chủ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giới thiệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Thuật Toán
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Thuật Toán
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cơ Bản
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cơ Bản
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/backtracking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Đệ quy và Thuật toán quay lui
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/binary-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán tìm kiếm nhị phân
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/bitwise-operators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phép toán bit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/computational-complexity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Độ phức tạp thời gian
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/hoc-tin-the-nao-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tôi đã học tin học như thế nào? Phần 1: vòng lặp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/hoc-tin-the-nao-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tôi đã học tin học như thế nào? Phần 2: bắt đầu từ đâu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/meet-in-the-middle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Meet In The Middle (MITM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/sorting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán sắp xếp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/Tai-Lieu-Thuat-Toan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số Tài liệu hay về Thuật Toán
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/two-pointers.md78" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kĩ thuật hai con trỏ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Đại Số
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Đại Số
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/binary_exponentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lũy thừa nhị phân
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/euclid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Euclid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/fft-test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biến đổi Fourier nhanh - Fast Fourier transform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/nCk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cách tính số tổ hợp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/primality_check/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kiểm tra số nguyên tố
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/prime_sieve/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sàng nguyên tố
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cấu trúc dữ liệu
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cấu trúc dữ liệu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/array-vs-linked-lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mảng và danh sách liên kết
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/C%C3%A2y-Palindrome/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cấu trúc của cây Palindrome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/data-structures-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan về Cấu Trúc Dữ Liệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/deque-min-max/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàng đợi hai đầu (deque) và Bài toán tìm max-min trong đoạn tịnh tiến
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/Deque/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deque - hàng đợi hai đầu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/disjoint-set-union/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disjoint Set Union
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/disjoint-set/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disjoints Sets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/fenwick-2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây chỉ số nhị phân 2 chiều (BIT 2 chiều)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/fenwick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây chỉ số nhị phân (Binary Indexed Tree)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/hash-table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bảng băm (Hash Table)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/heavy-light-decomposition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heavy-Light Decomposition (HLD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/interval-tree-tap-doan-thang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interval Tree trên tập đoạn thẳng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/lca-binlift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lowest Common Ancestor (LCA) - Binary Lifting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/lca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các phương pháp giải bài toán LCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/mo-algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chia căn (sqrt decomposition) và ứng dụng: Phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/overview-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cấu trúc dữ liệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/persistent-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Persistent Data Structures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/prefix-sum-and-difference-array/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mảng cộng dồn và mảng hiệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/rmq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Range Minimum Query (RMQ) - Sparse Table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/segment-tree-basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây Phân Đoạn (cơ bản)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/segment-tree-extend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tất tần tật về Cây Phân Đoạn (Segment Tree)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/Skip-Lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Skip Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/sqrt-decomposition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chia căn (sqrt decomposition) và ứng dụng: Phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/Stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stack (ngăn xếp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/suffix-array/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mảng hậu tố (Suffix Array)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/suffix-automaton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Suffix Automaton
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/trie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trie
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quy hoạch động
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Quy hoạch động
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/basic-dynamic-programming-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy hoạch động cơ bản (Phần 1)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/basic-dynamic-programming-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy hoạch động cơ bản (Phần 2)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/basic-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số bài toán quy hoạch động điển hình
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/Mot-so-ky-thuat-toi-uu-hoa-thuat-toan-Quy-Hoach-Dong/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số kĩ thuật tối ưu hoá thuật toán Quy Hoạch Động
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/palindrome-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một vài bài tập về Palindrome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/thac-mac-ve-qhd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phân tích về QHĐ - Thầy Lê Minh Hoàng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Games
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Games
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../games/Giai-Thuat-Cat-Tia-Alpha-beta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giải thuật cắt tỉa Alpha-beta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hình học
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Hình học
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/basic-geometry-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hình học tính toán phần 1: Những khái niệm cơ bản
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/basic-geometry-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hình học tính toán phần 2: Sự giao nhau của đường thẳng và các ứng dụng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/Sweep-Line/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán đường quét
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lý thuyết Đồ Thị
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Lý thuyết Đồ Thị
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/breadth-first-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFS (Breadth-first search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/centroid-decomposition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán phân tách trọng tâm - Centroid decomposition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/Depth-First-Search-Tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây DFS (Depth-First Search Tree) và ứng dụng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/euler-cycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Đường đi - Chu trình Euler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/euler-tour-on-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Đường đi Euler trên cây
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/everything/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các chủ đề cơ bản về đồ thị
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/flow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán Luồng cực đại trên mạng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/lubenica-vnoj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán LUBENICA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/minimum-spanning-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán tìm cây khung nhỏ nhất trong đồ thị
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/shortest-path/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các thuật toán về tìm đường đi ngắn nhất
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/topological-sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sắp xếp Tô-pô (Topological Sort)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Toán
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Toán
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lý thuyết trò chơi
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lý thuyết trò chơi
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gioi-thieu-tro-choi-boc-soi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giới thiệu: trò chơi bốc sỏi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Giới thiệu: trò chơi bốc sỏi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phat-bieu-tro-choi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phát biểu trò chơi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-giai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cách giải
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tro-choi-to-hop-can-bang" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trò chơi tổ hợp cân bằng
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trò chơi tổ hợp cân bằng">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inh-nghia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định nghĩa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chien-thuat-thang" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chiến thuật thắng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thuat-toan-xac-inh-tap-p-va-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thuật toán xác định tập P và N
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vi-du-cai-at-thuat-toan-cho-tro-choi-boc-soi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ cài đặt thuật toán cho trò chơi bốc sỏi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tro-choi-nim-chuan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trò chơi Nim chuẩn
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trò chơi Nim chuẩn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phat-bieu-tro-choi_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phát biểu trò chơi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gia-tri-nim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giá trị Nim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inh-ly-bouton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định lý Bouton
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cai-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cài đặt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#misere-nim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misère Nim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inh-ly-sprague-grundy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định lý Sprague-Grundy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Định lý Sprague-Grundy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-thi-cua-tro-choi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đồ thị của trò chơi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tro-choi-tong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trò chơi tổng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mo-rong-tro-choi-nim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mở rộng trò chơi Nim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inh-ly-sprague-grundy_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định lý Sprague-Grundy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vi-du" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-tap-luyen-tap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài tập luyện tập
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phu-luc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phụ lục
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ham-Mobius/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàm Mobius
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modular-inverse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 4.5 - Nghịch đảo modulo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplicative-function/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàm nhân tính
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tìm Kiếm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tìm Kiếm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/Local-Search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kỹ Năng Thi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            Kỹ Năng Thi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill/Ki-nang-thi-cu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng hợp các lời khuyên cho các kỳ thi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill/Kinh-nghiem-thi-VOI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kinh nghiệm thi VOI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill/viet-trinh-cham/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tự code, tự chấm, tự sướng - Bí kíp thi offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Xâu kí tự
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            Xâu kí tự
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xử lý xâu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/hash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hash: A String Matching Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/kmp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán KMP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/manacher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Manacher
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../string/z-algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Z-function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mẹo
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            Mẹo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ph%E1%BB%8Fng-v%E1%BA%A5n-team-IOI-VN-2017/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phỏng Vấn Team IOI VN 2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/vojsol/ALAKE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ALAKE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/convex_greedy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sum-constrained convex optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/counting-without-matrix-multiplication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Khử nhân ma trận
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/FFT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FFT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/matrix-multiplication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nhân ma trận (Matrix multiplication)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/mitm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Meet In The Middle (MITM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/Roi-rac-hoa-va-ung-dung/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rời rạc hoá và ứng dụng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer Science (Khoa học máy tính)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science (Khoa học máy tính)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Crypto
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Crypto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/crypto/Cipher-Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mật mã và Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/crypto/Public-Key-Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Public Key Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cipher
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cipher
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/crypto/cipher/ROT13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROT13
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Xử lý ảnh
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Xử lý ảnh
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/imageprocessing/Seam-Carving/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seam Carving Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/imageprocessing/setup-opencv-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt OpenCV trên Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ngôn Ngữ Lập Trình
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ngôn Ngữ Lập Trình
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/pointers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Con trỏ trong C/C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xâu trong C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/Pascal-Vi-sao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hoài niệm về Pascal - Lê Minh Hoàng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dịch Thuật
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Dịch Thuật
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/functional-programming-part-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functional Programming - Phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Codeforces
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Codeforces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/Efficient-and-easy-segment-trees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt cây phân đoạn hiệu quả (Efficient and easy segment trees)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/hash-table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bảng băm (Hash Tables)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/palindrome-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Palindrome tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/stack-queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Queue & Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/z-algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Z Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    E-Maxx
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            E-Maxx
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/emaxx/Aho-Corasick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aho Corasick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/emaxx/Tim-kiem-tam-phan-Ternary-Search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tìm kiếm tam phân - Ternary Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Nâng Cao
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            Nâng Cao
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Lucas-theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Định lý Lucas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 2 - Số nguyên tố, Sàng Eratosthenes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 3 - Tính (a^b) % c
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 4 - Phi hàm Euler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 5 - Các kiến thức cơ bản về Tổ hợp (Combinatorics)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 6 - Xác suất (Probabilities)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 7 - Bao hàm - Loại trừ (Inclusion-Exclusion)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/So-hoc-Phan-1-Modulo-gcd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 1 - Modulo & gcd
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Wilsons-theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Định lý Wilson
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Máy học (Machine Learning - ML)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Máy học (Machine Learning - ML)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/ml/machine-learning-101/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning 101 (1): Làm quen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/PyTorch-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PyTorch Là Gì?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/ml/Machine-Learning-Classification-phan-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning - Classification - phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/ml/Machine-Learning-Classification-phan-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning - Classification - phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/ml/Machine-Learning-Classification-phan-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning - Classification - phần 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quora
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Quora
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/quora/mobius-function/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàm Mobius
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Topcoder
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Topcoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Computational-Complexity-Section-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Độ phức tạp tính toán
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Computational-Complexity-Section-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Độ phức tạp tính toán - phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/dynamic-programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nhập môn Quy hoạch động
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/fun-with-bits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fun with Bits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Greedy-is-Good/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Tham lam
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Hieu-ve-xac-suat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xác suất
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/How-to-Dissect-a-Topcoder-Problem-Statement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kĩ năng đọc đề Topcoder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/How-to-Find-a-Solution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nghệ thuật giải bài
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Mathematics-for-Topcoders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Toán học trong Tin học
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/max-flow-1-luong-cuc-dai-tren-mang-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Luồng cực đại trên mạng - Maxflow network
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Planning-an-Approach-to-a-Topcoder-Problem-Part-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Những cách tiếp cận bài toán: Phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Planning-an-Approach-to-a-Topcoder-Problem-Part-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Những cách tiếp cận bài toán: Phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Range-Minimum-Query-and-Lowest-Common-Ancestor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán RMQ và bài toán LCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/The-Importance-of-Algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tầm Quan Trọng Của Thuật Toán
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Using-Regular-Expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sử dụng Regex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    USACO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            USACO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/USACO/Crafting-Winning-Solutions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Viết lời giải chiến thắng trong kì thi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wcipeg
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            Wcipeg
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Bao-l%E1%BB%93i/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giải thích trực quan về bao lồi trên mặt phẳng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Binary-Heap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binary Heap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Convex-Hull-Trick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kĩ thuật bao lồi (Convex Hull Trick)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Convex-Hull/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bao lồi (Convex Hull)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Flows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán luồng cực đại
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/kmp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Knuth-Morris-Pratt (KMP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây (Tree)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gioi-thieu-tro-choi-boc-soi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giới thiệu: trò chơi bốc sỏi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Giới thiệu: trò chơi bốc sỏi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phat-bieu-tro-choi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phát biểu trò chơi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-giai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cách giải
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tro-choi-to-hop-can-bang" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trò chơi tổ hợp cân bằng
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trò chơi tổ hợp cân bằng">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inh-nghia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định nghĩa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chien-thuat-thang" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chiến thuật thắng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thuat-toan-xac-inh-tap-p-va-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thuật toán xác định tập P và N
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vi-du-cai-at-thuat-toan-cho-tro-choi-boc-soi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ cài đặt thuật toán cho trò chơi bốc sỏi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tro-choi-nim-chuan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trò chơi Nim chuẩn
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trò chơi Nim chuẩn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phat-bieu-tro-choi_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phát biểu trò chơi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gia-tri-nim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giá trị Nim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inh-ly-bouton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định lý Bouton
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cai-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cài đặt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#misere-nim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misère Nim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inh-ly-sprague-grundy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định lý Sprague-Grundy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Định lý Sprague-Grundy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-thi-cua-tro-choi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đồ thị của trò chơi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tro-choi-tong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trò chơi tổng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mo-rong-tro-choi-nim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mở rộng trò chơi Nim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inh-ly-sprague-grundy_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định lý Sprague-Grundy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vi-du" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-tap-luyen-tap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài tập luyện tập
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phu-luc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phụ lục
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ly-thuyet-tro-choi">Lý thuyết trò chơi</h1>
+<p>Người viết: Nguyễn Nhật Minh Khôi</p>
+<p>Reviewer chính: Trần Quang Lộc, Hồ Ngọc Vĩnh Phát</p>
+<p>Trong thực tế, có rất nhiều loại trò chơi khác nhau, tuy nhiên trong bài viết này, chúng ta sẽ chỉ giới hạn trong các <strong>trò chơi tổ hợp cân bằng</strong> vì độ phổ biến của nó trong lập trình thi đấu.</p>
+<h2 id="gioi-thieu-tro-choi-boc-soi">Giới thiệu: trò chơi bốc sỏi</h2>
+<p>Trước khi đi vào các định nghĩa, chúng ta sẽ đi qua một ví dụ để hiểu được vấn đề mà lý thuyết trò chơi với trò chơi tổ hợp cân bằng giải quyết.</p>
+<h3 id="phat-bieu-tro-choi">Phát biểu trò chơi</h3>
+<p>Hai bạn An và Bình đang chơi bốc sỏi, trò chơi được phát biểu như sau: cho một đống sỏi có <span class="arithmatex">\(n\)</span> viên sỏi, hai bạn sẽ luân phiên bốc sỏi từ đống sỏi, mỗi lượt chỉ được bốc <span class="arithmatex">\(1\)</span>, <span class="arithmatex">\(2\)</span> hoặc <span class="arithmatex">\(3\)</span> viên sỏi, người lấy được viên sỏi cuối cùng sẽ là người chiến thắng. Biết rằng An đi trước, Bình đi sau. Hãy tìm một chiến thuật để An có thể chiến thắng trò chơi.</p>
+<h3 id="cach-giai">Cách giải</h3>
+<p>Ta sẽ tiếp cận bài toán bằng cách giải những trường hợp đơn giản trước, sau đó rút ra quy luật chung cho trường hợp tổng quát.</p>
+<p>Với <span class="arithmatex">\(n = 1, 2\)</span> hoặc <span class="arithmatex">\(3\)</span>, An luôn chiến thắng bằng cách lấy hết sỏi trong lượt bốc đầu tiên.</p>
+<p>Với <span class="arithmatex">\(n = 4\)</span>, An không thể lấy hết sỏi trong lần bốc đầu tiên vì số sỏi được lấy tối đa mỗi lần chỉ là <span class="arithmatex">\(3\)</span>. Nếu Bình là một người thông minh và luôn biết được những nước đi tối ưu, An sẽ <em>luôn thua</em> do:
+- Nếu An chọn lấy <span class="arithmatex">\(1\)</span> viên, số sỏi còn lại là <span class="arithmatex">\(n' = 3\)</span>, lúc đó Bình có thể dùng chiến thuật của An ở trên, đó là lấy hết sỏi để chiến thắng.
+- Tương tự, nếu An chọn lấy <span class="arithmatex">\(2\)</span> hoặc <span class="arithmatex">\(3\)</span> viên thì bạn cũng sẽ thua.</p>
+<p>Do đó, trong trường hợp này An nên cố gắng kéo dài trò chơi bằng cách chỉ bốc <span class="arithmatex">\(1\)</span> viên sỏi và hi vọng Bình sẽ phạm sai lầm. Tuy nhiên như đã nói, nếu Bình là một người chơi có chiến thuật tối ưu thì An sẽ luôn thua. Từ trường hợp này, ta thấy trường hợp <span class="arithmatex">\(n = 4\)</span> là một trường hợp "xấu" do nó đặt người ở lượt đi hiện tại vào thế bất lợi.</p>
+<p>Từ nhận xét trên, ta thấy nếu <span class="arithmatex">\(n = 5,6,7\)</span>, An luôn có thể thắng bằng cách lấy sỏi sao cho số sỏi còn lại là <span class="arithmatex">\(n'=4\)</span>, mục đích là để ép Bình vào trường hợp bất lợi (cũng là có lợi cho An).</p>
+<p>Ta rút ra được một quy luật của trò chơi: nếu ở lượt của ai mà số sỏi là <span class="arithmatex">\(4, 8, 12,\ldots\)</span> hay nói cách khác <span class="arithmatex">\(n\)</span> chia hết cho <span class="arithmatex">\(4\)</span> thì người đó sẽ ở vị trí bất lợi.</p>
+<p>Vậy chiến thuật tối ưu của An dựa trên số sỏi hiện tại <span class="arithmatex">\(m\)</span> sẽ là:<span class="arithmatex">\((x, x - c)\)</span>
+- Nếu <span class="arithmatex">\(m \bmod 4 \neq 0\)</span> thì An sẽ bốc <span class="arithmatex">\(m \bmod 4\)</span> viên sỏi để ép Bình vào trường hợp bất lợi <span class="arithmatex">\(m' \bmod 4 = 0\)</span>.
+-  Nếu <span class="arithmatex">\(m \bmod 4 = 0\)</span> thì An sẽ bốc <span class="arithmatex">\(1\)</span> viên sỏi để kéo dài trò chơi và chờ sai lầm của Bình.</p>
+<p>với <span class="arithmatex">\(\bmod\)</span> là phép lấy phần dư.</p>
+<h2 id="tro-choi-to-hop-can-bang">Trò chơi tổ hợp cân bằng</h2>
+<p>Trò chơi ở trên chính là một ví dụ điển hình cho trò chơi tổ hợp cân bằng. Trong phần này, chúng ta sẽ tổng quát hóa bài toán này thành định nghĩa trò chơi tổ hợp cân bằng để thể giải được một lớp bài toán lớn hơn.</p>
+<h3 id="inh-nghia">Định nghĩa</h3>
+<p><strong>Trò chơi tổ hợp</strong> là trò chơi gồm: <em>hai người chơi (ở đây gọi người chơi trước là <span class="arithmatex">\(A\)</span> và người chơi sau là <span class="arithmatex">\(B\)</span>)</em>, một <em>tập <strong>hữu hạn</strong> các trạng thái</em> <span class="arithmatex">\(S\)</span> (viết tắt của State) có thể đạt được của trò chơi. Mỗi người chơi có một <em>tập các bước di chuyển hợp lệ</em> <span class="arithmatex">\(Q\)</span> để di chuyển từ trạng thái này sang trạng thái khác (gọi là luật chơi) và một tập các trạng thái kết thúc gọi là <span class="arithmatex">\(T \subset S\)</span> (viết tắt của Terminal). Hai người chơi sẽ luân phiên di chuyển từ trạng thái này sang trạng thái khác. Người đến được trạng thái kết thúc trước sẽ là người chiến thắng.</p>
+<blockquote>
+<p>Trong trò chơi ví dụ, giả sử <span class="arithmatex">\(n = 8\)</span> thì mỗi trạng thái sẽ là số sỏi còn lại hiện tại của trò chơi. Do đó tập trạng thái của trò chơi là <span class="arithmatex">\(S = \{0,1,\ldots, 8\}\)</span> (hình dưới).</p>
+<p><img alt="/uploads/game_theory_decrease_state.png" src="/uploads/game_theory_decrease_state.png" /></p>
+<p>Giả sử đang ở trạng thái <span class="arithmatex">\(x = 7\)</span>, ta có thể di chuyển hợp lệ đến trạng thái <span class="arithmatex">\(x' = 6\)</span> (lấy ra <span class="arithmatex">\(1\)</span> viên sỏi), <span class="arithmatex">\(x' = 5\)</span> (lấy ra <span class="arithmatex">\(2\)</span> viên sỏi) hoặc <span class="arithmatex">\(x' = 4\)</span> (lấy ra <span class="arithmatex">\(3\)</span> viên sỏi). Do đó ta có các phần tử <span class="arithmatex">\((7, 6), (7,5), (7,4)\)</span> thuộc tập di chuyển hợp lệ <span class="arithmatex">\(Q\)</span> (hình dưới).</p>
+<p><img alt="/uploads/game_theory_decrease_transition.png" src="/uploads/game_theory_decrease_transition.png" /></p>
+<p>Từ đó, ta nhận xét được tập các bước di chuyển hợp lệ <span class="arithmatex">\(Q\)</span> của cả hai người chơi sẽ là tất cả những cặp số nguyên <span class="arithmatex">\((x,x - c)\)</span> (<span class="arithmatex">\(0 \leq x \leq n\)</span>) sao cho <span class="arithmatex">\(c \in \{1, 2, 3\}\)</span> (từ trạng thái có số sỏi <span class="arithmatex">\(x\)</span> chỉ có thể lấy ra <span class="arithmatex">\(1\)</span>, <span class="arithmatex">\(2\)</span>, hoặc <span class="arithmatex">\(3\)</span> viên sỏi) và <span class="arithmatex">\(x - c \geq 0\)</span> (số sỏi lấy ra không được phép lớn hơn số sỏi đang có).</p>
+<p>Trò chơi kết thúc khi không còn viên sỏi nào để bốc, do đó tập trạng thái kết thúc của cả hai người chơi là <span class="arithmatex">\(T = \{0\}\)</span>. Khi đó người bốc viên sỏi cuối cùng sẽ là người thắng.</p>
+</blockquote>
+<p>Khi hai người chơi có tập các bước di chuyển hợp lệ <span class="arithmatex">\(Q\)</span> và tập trạng thái kết thúc <span class="arithmatex">\(T\)</span> giống nhau thì trò chơi được gọi là <strong>trò chơi tổ hợp cân bằng</strong>. Nói cách khác, hai người chơi chỉ khác nhau ở đúng một điểm là người này được đi trước, người kia đi sau.</p>
+<blockquote>
+<p>Trò chơi bốc sỏi ở ví dụ chính là một trò chơi tổ hợp cân bằng, do cả An và Bình đều chỉ được cho phép bốc <span class="arithmatex">\(1\)</span>, <span class="arithmatex">\(2\)</span>, hoặc <span class="arithmatex">\(3\)</span> viên sỏi một lần và đều thắng khi bốc được viên sỏi cuối cùng.</p>
+</blockquote>
+<h3 id="chien-thuat-thang">Chiến thuật thắng</h3>
+<p>Mục tiêu của chúng ta khi giải các bài toán với trò chơi tổ hợp cân bằng là tìm ra chiến thuật mà ở đó một trong hai người chơi luôn có thể ép người còn lại thua. Chiến thuật như vậy gọi là một <strong>chiến thuật thắng</strong>.</p>
+<p>Rõ ràng khi phân tích trò chơi bốc sỏi, ta thấy rằng nếu cả An và Bình đều chơi tối ưu thì chỉ cần biết được trạng thái ban đầu của trò chơi, ta có thể xác định được người đi trước (An) sẽ thắng hay thua. Nếu số sỏi ban đầu là <span class="arithmatex">\(n\)</span> chia hết cho <span class="arithmatex">\(4\)</span>, Bình chắc chắn sẽ thắng do bạn sẽ luôn ép An đi tới trạng thái có <span class="arithmatex">\(n\)</span> chia hết cho <span class="arithmatex">\(4\)</span> và cuối cùng là <span class="arithmatex">\(n = 0\)</span> (cũng chia hết cho <span class="arithmatex">\(4\)</span>). Lập luận tương tự, nếu <span class="arithmatex">\(n\)</span> không chia hết cho <span class="arithmatex">\(4\)</span> thì chắc chắn An sẽ thắng.</p>
+<p>Vậy từ đây, ta thấy với một trò chơi tổ hợp cân bằng, chỉ cần biết trạng thái ban đầu, ta có thể suy ra được ai sẽ là người chiến thắng. Để phục vụ cho việc đưa ra chiến thuật thắng, người ta phân loại các trạng thái cùa trò chơi thành 2 tập <span class="arithmatex">\(N\)</span> và <span class="arithmatex">\(P\)</span>:
+- <span class="arithmatex">\(N\)</span>: tập các trạng thái <span class="arithmatex">\(x \in S\)</span> sao cho nếu trạng thái ban đầu của trò chơi là <span class="arithmatex">\(x\)</span> thì <strong>người chơi trước</strong> luôn chiến thắng.
+- <span class="arithmatex">\(P\)</span>: tập các trạng thái <span class="arithmatex">\(x \in S\)</span> sao cho nếu trạng thái ban đầu của trò chơi là <span class="arithmatex">\(x\)</span> thì <strong>người chơi sau</strong> luôn chiến thắng.</p>
+<blockquote>
+<p>Trong trò chơi ví dụ, nếu số sỏi ban đầu là <span class="arithmatex">\(n = 8\)</span> thì 
+- <span class="arithmatex">\(N = \{1, 2, 3, 5, 6, 7\}\)</span>
+- <span class="arithmatex">\(P = \{0, 4, 8\}\)</span></p>
+</blockquote>
+<p>Từ định nghĩa trên, <span class="arithmatex">\(N\)</span> và <span class="arithmatex">\(P\)</span> sẽ thỏa ba tính chất sau:
+1. Tập <span class="arithmatex">\(P\)</span> phải chứa toàn bộ trạng thái kết thúc.
+2. Với mỗi trạng thái <span class="arithmatex">\(s\)</span> thuộc tập <span class="arithmatex">\(N\)</span>, <strong>tồn tại</strong> ít nhất một trạng thái <span class="arithmatex">\(s'\)</span> đến được từ <span class="arithmatex">\(s\)</span> mà thuộc tập <span class="arithmatex">\(P\)</span>.
+3. Với mỗi trạng thái <span class="arithmatex">\(s\)</span> thuộc tập <span class="arithmatex">\(P\)</span>, <strong>tất cả</strong> các trạng thái <span class="arithmatex">\(s'\)</span> đến được từ <span class="arithmatex">\(s\)</span> phải thuộc tập <span class="arithmatex">\(N\)</span>. </p>
+<p>Tới đây, có thể bạn sẽ đặt ra câu hỏi: Liệu mọi trạng thái của trò chơi đều thuộc một trong hai tập <span class="arithmatex">\(N\)</span> hay <span class="arithmatex">\(P\)</span>? Ta có thể chứng minh dễ dàng bằng quy nạp mạnh theo số bước tối đa để đạt tới trạng thái kết thúc. Nếu muốn, bạn đọc có thể tham khảo thêm ở phần <a href="https://homes.cs.washington.edu/~karlin/GameTheoryBook.pdf">1.1. Impartial game - Game Theory, Alive</a>.</p>
+<p>Ràng buộc đầu tiên xác định trường hợp cơ bản nhất. Hai ràng buộc sau sẽ giúp chúng ta liên tục đệ quy từ trường hợp cơ bản để xây dựng được tập <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(N\)</span> hoàn chỉnh. Ta sẽ thấy rõ điều này ở phần <strong>Thuật toán xác định tập <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(N\)</span></strong>.</p>
+<p>Khi xây dựng được tập <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(N\)</span> theo các ràng buộc trên, ta có thể dễ dàng xây dựng chiến thuật thắng cho người chơi <span class="arithmatex">\(A\)</span> như sau (do đây là trò chơi tổ hợp cân bằng nên chiến thuật thắng của <span class="arithmatex">\(B\)</span> cũng sẽ tương tự):
+1. Nếu <span class="arithmatex">\(A\)</span> <strong>bắt đầu ở trạng thái thuộc <span class="arithmatex">\(N\)</span></strong>, <strong>luôn đi tới trạng thái thuộc <span class="arithmatex">\(P\)</span></strong> để ép <span class="arithmatex">\(B\)</span> đi vào trạng thái thuộc <span class="arithmatex">\(N\)</span>. Do người thắng là người đi vào trạng thái kết thúc, mà trạng thái kết thúc lại thuộc <span class="arithmatex">\(P\)</span> nên chắc chắn <span class="arithmatex">\(A\)</span> sẽ thắng.
+2. Nếu <span class="arithmatex">\(A\)</span> bắt đầu ở trạng thái thuộc <span class="arithmatex">\(P\)</span>, <span class="arithmatex">\(A\)</span> chỉ có thể kéo dài ván đấu và đợi sơ hở của <span class="arithmatex">\(B\)</span> (<span class="arithmatex">\(B\)</span> đi vào vị trí thuộc <span class="arithmatex">\(N\)</span>) và dùng chiến thuật thắng ở trường hợp đầu. Tuy nhiên nếu <span class="arithmatex">\(B\)</span> cũng chơi tối ưu thì chắc chắn <span class="arithmatex">\(A\)</span> sẽ thua.</p>
+<p>Qua đó, ta thấy được ý nghĩa của việc đặt tên tập <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(N\)</span>. <span class="arithmatex">\(P\)</span> là viết tắt của <em>positive</em>, đặt tên như vậy vì người nào đi đến trạng thái này sẽ có lợi, đó là lý do tại sao các trạng thái kết thúc lại thuộc <span class="arithmatex">\(P\)</span>, vì người chơi nào đi tới được trạng thái kết thúc sẽ có lợi (thắng trò chơi). Tương tự, <span class="arithmatex">\(N\)</span> là viết tắt của <em>negative</em>, đặt tên như vậy vì người nào đi đến trạng thái thuộc tập <span class="arithmatex">\(N\)</span> sẽ bị bất lợi (vì người kia sẽ luôn tìm cách đi được vào trạng thái thuộc <span class="arithmatex">\(P\)</span>).</p>
+<h3 id="thuat-toan-xac-inh-tap-p-va-n">Thuật toán xác định tập P và N</h3>
+<p>Ta có ý tưởng thuật toán để tìm tập <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(N\)</span> như sau:
+<div class="highlight"><pre><span></span><code>// Hàm kiểm tra một trạng thái thuộc P (true) hay N (false)
+bool isInP(State u) {
+    if (u in T) // nếu u là trạng thái kết thúc thì u thuộc P
+        return true;
+
+    // duyệt qua tất cả các trạng thái v trong tập hợp S
+    for (State v in S) 
+        if (u, v) in Q and isInP(v)
+            return false; // nếu có v thuộc P thì u thuộc N
+
+    return true; // nếu không thì u thuộc P
+}
+</code></pre></div>
+Ý tưởng ở đây chính là đệ quy:
+1. Nếu trạng thái <span class="arithmatex">\(u\)</span> đang xét là trạng thái kết thúc thì thêm <span class="arithmatex">\(u\)</span> vào tập <span class="arithmatex">\(P\)</span>. Đây chính là trường hợp cơ bản của quá trình đệ quy.
+2. Nếu <span class="arithmatex">\(u\)</span> không là trạng thái kết thúc thì đệ quy đến những trạng thái <span class="arithmatex">\(v\)</span> mà từ <span class="arithmatex">\(u\)</span> có thể di chuyển trực tiếp đến. Nếu có bất kỳ <span class="arithmatex">\(v\)</span> nào thuộc tập <span class="arithmatex">\(P\)</span> thì <span class="arithmatex">\(u\)</span> thuộc tập <span class="arithmatex">\(N\)</span>, ngược lại (tất cả <span class="arithmatex">\(v\)</span> đều thuộc <span class="arithmatex">\(N\)</span>) thì <span class="arithmatex">\(u\)</span> thuộc <span class="arithmatex">\(P\)</span>.</p>
+<p>Ở đây có một chú ý về cách cài đặt trên, đó là kiểu dữ liệu <code>State</code> là một kiểu dữ liệu tượng trưng để lưu một trạng thái của trò chơi. Trong thực tế, trạng thái hay được biểu diễn bằng một số nguyên int, tuy nhiên nhiều trường hợp trạng thái của chúng ta không ở dạng số nguyên, khi đó có một số cách các bạn có thể xem xét để lưu trạng thái như: bitmask, hashmap (unordered_map trong c++).</p>
+<p>Tuy nhiên, thuật toán này có một nhược điểm, đó là <strong>gọi lại cùng một giá trị quá nhiều lần</strong> do không lưu lại kết quả trong quá trình đệ quy. Cách giải quyết chính là quy hoạch động top-down (hay còn gọi là đệ quy có nhớ), trong đó ta có một mảng <span class="arithmatex">\(dp\)</span> lưu lại kết quả của những trạng thái đã từng xét. Để hiểu thêm, bạn hãy xem cài đặt tìm trò chơi bốc sỏi ở phần ví dụ sau.</p>
+<h3 id="vi-du-cai-at-thuat-toan-cho-tro-choi-boc-soi">Ví dụ cài đặt thuật toán cho trò chơi bốc sỏi</h3>
+<p>Đầu tiên, ta cần thêm các thư viện cần thiết, cũng như khai báo mảng <span class="arithmatex">\(dp\)</span> để nhớ kết quả của những trạng thái đã đệ quy.
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAX_N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span><span class="w"> </span><span class="c1">// số trạng thái tối đa</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">MAX_N</span><span class="p">];</span>
+</code></pre></div></p>
+<p>Sau đó, ta viết hàm xác định xem trạng thái <span class="arithmatex">\(u\)</span> có thuộc <span class="arithmatex">\(P\)</span> không như sau
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">isInP</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="c1">// nếu u đã được tính trước đó thì</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// u = 0 là trạng thái kết thúc nên thuộc P</span>
+<span class="w">        </span><span class="n">dp</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">    </span><span class="c1">// Từ u chỉ có thể đi tới các v hợp lệ</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="n">v</span><span class="o">--</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isInP</span><span class="p">(</span><span class="n">v</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">dp</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// u không đi được trạng thái nào thuộc P</span>
+<span class="w">    </span><span class="n">dp</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Ở đây quy ước giá trị của mảng <span class="arithmatex">\(dp\)</span> như sau:
+- <span class="arithmatex">\(dp[u] = 0\)</span> nghĩa là trạng thái <span class="arithmatex">\(u\)</span> đã xét và <span class="arithmatex">\(u\)</span> không thuộc <span class="arithmatex">\(P\)</span>, hay nói cách khác <span class="arithmatex">\(u\)</span> thuộc <span class="arithmatex">\(N\)</span>.
+- <span class="arithmatex">\(dp[u] = 1\)</span> nghĩa là trạng thái <span class="arithmatex">\(u\)</span> đã xét và <span class="arithmatex">\(u\)</span> thuộc <span class="arithmatex">\(P\)</span>.
+- <span class="arithmatex">\(dp[u] = -1\)</span> nghĩa là trạng thái <span class="arithmatex">\(u\)</span> chưa xét.</p>
+<p>Sở dĩ ta quy ước như vậy vì c++ có cơ chế <a href="https://www.cplusplus.com/doc/oldtutorial/typecasting/">implicit casting</a>. Nói đơn giản, khi trả về <span class="arithmatex">\(dp[u]\)</span> trong hàm <code>isInP(u)</code>, <span class="arithmatex">\(dp[u]\)</span> sẽ được tự động ép kiểu về <code>bool</code> với quy tắc: <span class="arithmatex">\(0\)</span> là <span class="arithmatex">\(\texttt{false}\)</span>, các giá trị khác là <span class="arithmatex">\(\texttt{true}\)</span>.</p>
+<p>Cài đặt này tối ưu thời gian đệ quy bằng hai ý sau: 
+1. Khi tính xong, trước khi trả về giá trị thì ta lưu giá trị lại vào một mảng <span class="arithmatex">\(dp\)</span> và ở đầu hàm <span class="arithmatex">\(isInP(u)\)</span>
+2. Ta trả về <span class="arithmatex">\(dp[u]\)</span> nếu <span class="arithmatex">\(dp[u] \neq -1\)</span> (tức <span class="arithmatex">\(u\)</span> đã được tính trước đó).</p>
+<p>Cuối cùng, ta viết hàm main để nhập xuất và kết luận nghiệm. Lưu ý trước khi thực hiện quá trình tìm tập <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(N\)</span> ta phải khởi tạo mảng <span class="arithmatex">\(dp\)</span> thành toàn <span class="arithmatex">\(-1\)</span> bằng hàm <code>fill</code> do thư viện chuẩn của c++ cung cấp.
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">fill</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span><span class="w"> </span><span class="n">dp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isInP</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;A win&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;B win&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="tro-choi-nim-chuan">Trò chơi Nim chuẩn</h2>
+<p>Sau khi đã tìm hiểu lý thuyết trò chơi tổ hợp cân bằng tổng quát, phần tiếp theo ta sẽ áp dụng lý thuyết đó vào một bài toán kinh điển trong lý thuyết trò chơi - trò chơi Nim - đại diện tiêu biểu cho trò chơi tổ hợp cân bằng.</p>
+<h3 id="phat-bieu-tro-choi_1">Phát biểu trò chơi</h3>
+<p>Có <span class="arithmatex">\(n\)</span> đống sỏi, và mỗi đống lần lượt có <span class="arithmatex">\(p_1, p_2, \ldots, p_n\)</span> sỏi, trong đó mỗi số <span class="arithmatex">\(p_i\)</span> là một số nguyên không âm. Mỗi trạng thái trò chơi tương ứng với mỗi bộ <span class="arithmatex">\(n\)</span> cho biết số sỏi của từng đống này.</p>
+<p>Có hai người chơi thay phiên nhau bỏ sỏi. Người chơi trong lượt hiện tại có thể loại bỏ bao nhiêu sỏi tùy thích, miễn là tất cả các sỏi đều cùng một đống. Hình thức hơn, người chơi sẽ chọn một đống sỏi <span class="arithmatex">\(i\)</span> và số lượng sỏi <span class="arithmatex">\(s\)</span> để loại bỏ khỏi đống (<span class="arithmatex">\(0 &lt; s \leq p_i\)</span>), sau đó thay <span class="arithmatex">\(p_i\)</span> bằng <span class="arithmatex">\(p_i-s\)</span>. Chú ý rằng người chơi không thể bỏ qua lượt của mình mà không bỏ viên sỏi nào cả. Sau đó, đến lượt người chơi kia loại bỏ sỏi, lần lượt như vậy tới khi trò chơi kết thúc.</p>
+<p>Trò chơi kết thúc khi không còn sỏi trên bàn chơi. Người chiến thắng là người lấy được viên sỏi cuối cùng. Nói cách khác, người thua cuộc là người đầu tiên không thể lấy sỏi trong lượt của mình.</p>
+<p>Trò bốc sỏi ở ví dụ trên chính là biến thể của trò chơi Nim chuẩn, khác hai chỗ là ở đây chỉ có một đống sỏi (<span class="arithmatex">\(n = 1\)</span>) và số sỏi lấy ra tối đa ở mỗi đống là <span class="arithmatex">\(3\)</span>.</p>
+<h3 id="gia-tri-nim">Giá trị Nim</h3>
+<p>Mục tiêu lớn nhất của chúng ta vẫn là xác định xem ai là người thắng nếu cả hai người chơi tối ưu, hay nói cách khác là xác định được chiến thuật thắng.</p>
+<p>Tuy nhiên, khi bắt tay vào làm, bạn sẽ gặp ngay một rào cản, đó là trạng thái của trò chơi đang được biểu diễn dưới dạng <strong>một bộ các số nguyên</strong> chứ không phải một số nguyên, điều đó gây khó khăn cho chúng ta khi tổng quát hóa lời giải và lập trình, một khó khăn rất dễ thấy đó là nếu chúng ta xài mảng <span class="arithmatex">\(dp\)</span> nhiều chiều để lưu trạng thái đã tính thì có khả năng khi <span class="arithmatex">\(n\)</span> thay đổi đoạn code cũ sẽ không dùng được nữa do số chiều của mảng đã thay đổi. Theo suy nghĩ tự nhiên, chúng ta sẽ cố gắng tìm cách kết hợp thông tin của bộ trạng thái <span class="arithmatex">\(n\)</span> số lại thành một số nguyên duy nhất. Một cách khả thi để làm điều này chính là <em>giá trị Nim</em>, ký hiệu là <span class="arithmatex">\(g\)</span>.</p>
+<p>Đầu tiên, hãy giải quyết trường hợp đơn giản nhất - chỉ có một đống sỏi duy nhất với <span class="arithmatex">\(p\)</span> viên sỏi.
+- Theo trực giác, vì thông tin duy nhất ta có là số lượng sỏi trong đống, ta có thể giả sử rằng giá trị Nim của trường hợp này là một số nguyên <span class="arithmatex">\(p\)</span> cho biết số sỏi còn lại.
+- Chúng ta thấy rằng nếu <span class="arithmatex">\(p &gt; 0\)</span> thì trạng thái trò chơi hiện tại thuộc <span class="arithmatex">\(N\)</span>, ngược lại nếu <span class="arithmatex">\(p = 0\)</span> thì trạng thái trò chơi hiện tại thuộc <span class="arithmatex">\(P\)</span>. Điều này có thể giải thích bằng việc nếu số sỏi là số dương, người đi trước luôn có thể lấy hết sỏi nên người đi sau luôn thua. Từ trường hợp đơn giản này, ta mường tượng được điều mà giá trị Nim <span class="arithmatex">\(g\)</span> phản ánh: <em>trạng thái trò chơi hiện tại thuộc <span class="arithmatex">\(N\)</span> khi giá trị Nim dương và thuộc <span class="arithmatex">\(P\)</span> khi giá trị Nim bằng <span class="arithmatex">\(0\)</span></em>.</p>
+<p>Tiếp theo, chúng ta sẽ tìm cách ghép các đống sỏi đơn lại thành một trò chơi hoàn chỉnh gồm <span class="arithmatex">\(n\)</span> đống sỏi. Cụ thể hơn, ta sẽ tìm ra một phép toán <span class="arithmatex">\(A \oplus B\)</span> để biết được giá trị Nim của trò chơi mới khi kết hợp hai trò chơi có giá trị Nim lần lượt là <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span> lại. Ta sẽ liệt kê một số tính chất cần có của phép toán này để có thể gộp các giá trị của cột lại:
+- <span class="arithmatex">\((A \oplus B) \oplus C = A \oplus (B \oplus C)\)</span>, và <span class="arithmatex">\(A \oplus B = B \oplus A\)</span>, nghĩa là <span class="arithmatex">\(\oplus\)</span> có tính chất kết hợp và giao hoán. Tính chất này có thể giải thích bằng lập luận rằng thứ tự các cọc không thực sự quan trọng nên khi đổi thứ tự kết hợp thì giá trị Nim không thay đổi.
+- <span class="arithmatex">\(A \oplus 0 = A\)</span>, nghĩa là, phần tử trung hòa của toán tử này là <span class="arithmatex">\(0\)</span>. Điều này rất hiển nhiên vì nếu bạn <strong>thêm một đống sỏi trống</strong> vào trò chơi, thì trò chơi vẫn không thay đổi, do đó giá trị Nim vẫn như cũ.
+- <span class="arithmatex">\(A \oplus A = 0\)</span>, nghĩa là phần tử đối của mỗi trạng thái trò chơi là chính nó. Tại sao điều này lại đúng?  Giả sử chúng ta có hai đống sỏi giống nhau, mỗi đống có <span class="arithmatex">\(p\)</span> viên sỏi. Lúc đó, người đi sau luôn có một chiến lược chiến thắng, đó là chỉ sao chép bước đi của người đi trước! Điều tương tự xảy ra với trường hợp tổng quát. Do đó, người đi trước sẽ luôn là người thua, tức trạng thái trò chơi thuộc <span class="arithmatex">\(P\)</span>, như ta đã lập luận ở ví dụ trước, trạng thái thuộc <span class="arithmatex">\(P\)</span> tương ứng với <span class="arithmatex">\(g = 0\)</span>, do đó <span class="arithmatex">\(A \oplus A = 0\)</span>.</p>
+<p>Ba thuộc tính này, đặc biệt nhất là tính chất <span class="arithmatex">\(A \oplus A = 0\)</span> giúp chúng ta tìm ra một ứng cử viên tìm năng, đó là <strong>phép <a href="https://vi.wikipedia.org/wiki/Ph%C3%A9p_to%C3%A1n_thao_t%C3%A1c_bit#XOR">bitwise XOR</a></strong>. Và quả thật phép toán này cũng chính là đáp án chúng ta cần tìm, định lý Bouton được trình bày ở phía dưới sẽ chứng minh tính đúng đắn của việc này.</p>
+<p>Thực chất, phép bitwise XOR chỉ là phép cộng modulo <span class="arithmatex">\(2\)</span> trên từng bit, do đó chúng ta hay gọi giá trị Nim là <em>tổng Nim</em>. Tổng Nim của một trò chơi có trạng thái <span class="arithmatex">\((p_1, p_2, \ldots, p_n)\)</span> thu được bằng cách thực hiện phép XOR các <span class="arithmatex">\(p_i\)</span> lại với nhau.
+<span class="arithmatex">\(<span class="arithmatex">\(g = p_1 \oplus p_2 \oplus \ldots \oplus p_n\)</span>\)</span></p>
+<p>Ví dụ: với trò chơi Nim có ba đống sỏi với số sỏi lần lượt là <span class="arithmatex">\(5\)</span>, <span class="arithmatex">\(7\)</span>, <span class="arithmatex">\(3\)</span> thì tổng Nim là <span class="arithmatex">\(0101 \oplus 0111 \oplus 0011 = 0001\)</span>.</p>
+<h3 id="inh-ly-bouton">Định lý Bouton</h3>
+<p>Tuy nhiên, trong phần trình bày ở phía trên có một giả thuyết rất quan trọng mà ta chỉ mới thừa nhận chứ chưa chứng minh, đó là <em>trạng thái trò chơi hiện tại thuộc <span class="arithmatex">\(N\)</span> khi giá trị Nim dương và thuộc <span class="arithmatex">\(P\)</span> khi giá trị Nim bằng <span class="arithmatex">\(0\)</span></em>. Thực ra, nhận xét đó là một định lý đã được chứng minh, gọi là định lý Bouton. Phần này khuyến khích bạn đọc hiểu về các tính chất của phép toán <a href="https://vi.wikipedia.org/wiki/Ph%C3%A9p_to%C3%A1n_thao_t%C3%A1c_bit#XOR">bitwise XOR</a>.</p>
+<p><strong>Định lý Bouton</strong>: trạng thái của trò chơi Nim <span class="arithmatex">\((p_1, p_2, \ldots, p_n)\)</span> thuộc <span class="arithmatex">\(P\)</span> khi và chỉ khi tổng Nim <span class="arithmatex">\(g\)</span> của nó bằng <span class="arithmatex">\(0\)</span>.</p>
+<p><strong>Chứng minh</strong></p>
+<p>Gọi <span class="arithmatex">\(\hat{P}\)</span> là tập gồm các trạng thái có tổng Nim bằng <span class="arithmatex">\(0\)</span> và <span class="arithmatex">\(\hat{N}\)</span> là tập gồm các trạng thái có tổng Nim lớn hơn <span class="arithmatex">\(0\)</span>. Ta nhận xét hai tập này có các tính chất sau:</p>
+<p>Đầu tiên, trạng thái kết thúc là <span class="arithmatex">\((0,\ldots,0)\)</span> thuộc <span class="arithmatex">\(\hat{P}\)</span> do có tổng Nim là <span class="arithmatex">\(0\)</span></p>
+<p>Thứ hai, với một trạng thái thuộc <span class="arithmatex">\(\hat{N}\)</span> (<span class="arithmatex">\(g &gt; 0\)</span>), ta luôn có thể đi tới một trạng thái thuộc <span class="arithmatex">\(\hat{P}\)</span> (<span class="arithmatex">\(g = 0\)</span>). Để chứng minh, chọn một đống sỏi thứ <span class="arithmatex">\(i\)</span> có <span class="arithmatex">\(p_i\)</span> sỏi và biến nó thành <span class="arithmatex">\(p'_i\)</span> sao cho <span class="arithmatex">\(p'_i = g \oplus p_i &lt; p_i\)</span>, ta có được tổng Nim mới <span class="arithmatex">\(g'\)</span> như sau:</p>
+<div class="arithmatex">\[\begin{align*}
+    g' &amp;= p_1 \oplus p_2 \oplus \ldots \oplus p'_i \oplus \ldots \oplus p_n \\
+        &amp;=  p_1 \oplus p_2 \oplus \ldots \oplus [p_i \oplus g] \oplus \ldots \oplus p_n \\
+        &amp;=  (p_1 \oplus p_2 \oplus \ldots \oplus p_i \oplus \ldots \oplus p_n) \oplus g \\
+        &amp;= g \oplus g = 0
+\end{align*}\]</div>
+<p>Lưu ý rằng phép XOR không giống phép cộng thông thường. Ở phép cộng hai số nguyên dương, kết quả luôn lớn hơn các toán hạng ban đầu. Tuy nhiên, trong phép XOR điều này không xảy ra, kết quả có thể lớn hơn hoặc nhỏ hơn các toán hạng ban đầu. Do đó việc ta có thể đảm bảo luôn tồn tại đống sỏi <span class="arithmatex">\(i\)</span> thỏa mãn yêu cầu <span class="arithmatex">\(p'_i = g \oplus p_i &lt; p_i\)</span> không phải là điều hiển nhiên và <strong>cần được chứng minh</strong>.</p>
+<p>Vì <span class="arithmatex">\(g &gt; 0\)</span> nên  biểu diễn nhị phân của <span class="arithmatex">\(g\)</span> luôn tồn tại bit trái nhất bằng <span class="arithmatex">\(1\)</span> (tạm gọi là <span class="arithmatex">\(d\)</span>).Khi đó, xét bit thứ <span class="arithmatex">\(d\)</span> của tất cả các cột <span class="arithmatex">\(p_i\)</span>, ta có số lượng <span class="arithmatex">\(p_i\)</span> có bit thứ <span class="arithmatex">\(d\)</span> bằng <span class="arithmatex">\(1\)</span> phải lẻ (theo tính chất của phép XOR), do đó luôn tồn tại một đống sỏi có bit thứ <span class="arithmatex">\(d\)</span> bằng <span class="arithmatex">\(1\)</span>. Chọn đống sỏi có bit thứ <span class="arithmatex">\(d\)</span> bằng <span class="arithmatex">\(1\)</span> đó để thực hiện bốc sỏi, ta thấy <span class="arithmatex">\(p'_i = p_i \oplus g &lt; p_i\)</span> bởi vì khi XOR bit tại vị trí <span class="arithmatex">\(d\)</span> bằng <span class="arithmatex">\(1 \oplus 1 = 0\)</span>, do đó <span class="arithmatex">\(p'_i\)</span> luôn mất một bit <span class="arithmatex">\(1\)</span> tại vị trí <span class="arithmatex">\(d\)</span> so với <span class="arithmatex">\(p_i\)</span>.</p>
+<blockquote>
+<p>Ví dụ, nếu trò chơi Nim hiện tại có <span class="arithmatex">\(4\)</span> cột có số sỏi lần lượt là <span class="arithmatex">\(7\)</span>, <span class="arithmatex">\(10\)</span>, <span class="arithmatex">\(12\)</span>, <span class="arithmatex">\(5\)</span>, thì thao tác tính tổng Nim và chọn cột để lấy sỏi ra sẽ diễn ra như hình dưới</p>
+<p><img alt="/uploads/game_theory_bouton_proof_2.png" src="/uploads/game_theory_bouton_proof_2.png" /></p>
+</blockquote>
+<p>Cuối cùng, với một trạng thái thuộc <span class="arithmatex">\(\hat{P}\)</span> (tức <span class="arithmatex">\(g = 0\)</span>), mọi cách đi đều dẫn tới trạng thái thuộc <span class="arithmatex">\(\hat{N}\)</span> (tức <span class="arithmatex">\(g &gt; 0\)</span>). Ta có thể chứng minh dễ dàng bằng phương pháp phản chứng. Giả sử trạng thái trò chơi hiện tại là <span class="arithmatex">\((p_1, \ldots, p_n)\)</span> có tổng Nim <span class="arithmatex">\(g = 0\)</span> và tồn tại một đống sỏi <span class="arithmatex">\(i\)</span> sao cho khi lấy bớt sỏi từ <span class="arithmatex">\(i\)</span> ra trạng thái trò chơi mới có tổng Nim <span class="arithmatex">\(g' = 0\)</span>. Khi đó</p>
+<div class="arithmatex">\[\begin{align*}
+    g' &amp;= 0 = g
+    \\ \Leftrightarrow
+    p_1 \oplus p_2 \oplus \ldots \oplus p'_i \oplus \ldots \oplus p_n &amp;=  p_1 \oplus p_2 \oplus \ldots \oplus p_i \oplus \ldots \oplus p_n
+    \\ \Leftrightarrow
+    p'_i &amp;= p_i
+\end{align*}\]</div>
+<p>Điều này có nghĩa là ta không bốc viên sỏi nào từ đống <span class="arithmatex">\(p_i\)</span> ra cả, mà theo giả thuyết ta phải bốc ít nhất một viên (<span class="arithmatex">\(p'_i &lt; p_i\)</span>), vì vậy không thể tồn tại đống sỏi <span class="arithmatex">\(i\)</span> nào thỏa mãn yêu cầu.</p>
+<blockquote>
+<p>Ví dụ, nếu trò chơi Nim hiện tại có <span class="arithmatex">\(3\)</span> đống có số sỏi lần lượt là <span class="arithmatex">\(5\)</span>, <span class="arithmatex">\(6\)</span>, <span class="arithmatex">\(3\)</span>, thì tổng Nim <span class="arithmatex">\(g = 0\)</span>. Xét bit đầu tiên từ phải qua, ta thấy được số lượng bit được bật tại vị trí này là số chẵn (<span class="arithmatex">\(2\)</span>, tương ứng với bit đầu tiên của <span class="arithmatex">\(5\)</span> và <span class="arithmatex">\(3\)</span>). Tương tự, số lượng các bit được bật tại các vị trị khác đều có tính chất này. Điều này không phải là trùng hợp mà do tính chất của phép XOR, nếu muốn bit thứ <span class="arithmatex">\(i\)</span> trong kết quả bằng <span class="arithmatex">\(0\)</span> thì số lượng bit thứ <span class="arithmatex">\(i\)</span> được bật trong các toán hạng phải là số chẵn. Từ đây ta nhận thấy, việc bỏ sỏi ở một đống sỏi chỉ có thể làm thay đổi số lượng bit được bật tại mỗi vị trí <span class="arithmatex">\(i\)</span> lên hoặc xuống 1 đơn vị, do đó dù cho lấy sỏi ở cột nào đi nữa thì vẫn sẽ xuất hiện một vị trí có số bit được bật là lẻ.</p>
+<p><img alt="/uploads/game_theory_bouton_proof_3.png" src="/uploads/game_theory_bouton_proof_3.png" /></p>
+</blockquote>
+<p>Rõ ràng <span class="arithmatex">\(\hat{P}\)</span> và <span class="arithmatex">\(\hat{N}\)</span> thỏa mãn ba điều kiện theo định nghĩa của tập <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(N\)</span> trong trò chơi tổng quát, vì vậy <span class="arithmatex">\(P = \hat{P}\)</span> và <span class="arithmatex">\(N = \hat{N}\)</span>. <span class="arithmatex">\(\square\)</span></p>
+<p>Qua định lý Bouton, chúng ta có một cách xác định tập <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(N\)</span> dựa trên tổng Nim, hơn thế nữa với việc chứng minh định lý Bouton, ta không chỉ biết được trạng thái thắng/thua của trò chơi mà còn có thể xây dựng được một chiến thuật thắng cụ thể.</p>
+<h2 id="cai-at">Cài đặt</h2>
+<p>Hàm <code>isInP</code> trong trường hợp này rất đơn giản, nếu lưu số lượng sỏi mỗi đống vào vector số nguyên thì thuật toán chỉ đơn giản là XOR của các phần tử với nhau, độ phức tạp thuật toán là <span class="arithmatex">\(O(n)\)</span>.
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">isInP</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">p</span><span class="o">:</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
+<span class="w">        </span><span class="n">g</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">g</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="misere-nim">Misère Nim</h3>
+<p>Ngoài trò chơi Nim chuẩn, có rất nhiều biến thể của trò chơi Nim. Một trong số đó là misère Nim, cách chơi giống như trò chơi Nim bình thường, tuy nhiên thay vì người lấy viên sỏi cuối cùng sẽ thắng, trong Misère Nim thì người lấy viên sỏi cuối cùng sẽ thua. </p>
+<p>Khi đó, dựa vào trạng thái bắt đầu, ta có thể xác định việc thắng thua như sau: 
+- Nếu tất cả đống sỏi đều có số sỏi nhỏ hơn hơn <span class="arithmatex">\(2\)</span> (tức chỉ gồm các đống sỏi có <span class="arithmatex">\(0\)</span> và <span class="arithmatex">\(1\)</span> viên): nếu số lượng đống sỏi còn sỏi là lẻ (tức giá trị Nim <span class="arithmatex">\(g=1\)</span>) thì người chơi đầu tiên sẽ thua, ngược lại (tức <span class="arithmatex">\(g=0\)</span>) thì người chơi đầu tiên sẽ thắng.
+- Các trường hợp còn lại: Người chơi đầu tiên sẽ thắng nếu giá trị Nim hiện tại <span class="arithmatex">\(g &gt; 0\)</span> , ngược lại sẽ thua. Chiến thuật để giành chiến thắng là chơi theo chiến lược Nim thông thường, trừ khi bước di chuyển tiếp theo làm các đống sỏi đều có nhỏ hơn <span class="arithmatex">\(2\)</span> viên, lúc đó người chơi thực hiện nước đi hiện tại sẽ đặt số lượng đống có <span class="arithmatex">\(1\)</span> viên sỏi là số lẻ để ép người kia phải bốc viên cuối cùng. Ta có thể chứng minh được nếu một người đang ở trạng thái có giá trị Nim <span class="arithmatex">\(g &gt; 0\)</span>, anh ta luôn có thể quyết định số lượng đống sỏi là chẵn hay lẻ và do đó luôn là người chiến thắng.</p>
+<h2 id="inh-ly-sprague-grundy">Định lý Sprague-Grundy</h2>
+<h3 id="o-thi-cua-tro-choi">Đồ thị của trò chơi</h3>
+<p>Nếu xem mỗi trạng thái trong tập trạng thái <span class="arithmatex">\(S\)</span> là một đỉnh, mỗi cạnh có hướng <span class="arithmatex">\((u,v)\)</span> thể hiện cho việc từ trạng <span class="arithmatex">\(u\)</span> có thể di chuyển đến trạng thái <span class="arithmatex">\(v\)</span> (tức <span class="arithmatex">\((u,v)\)</span> là một phần tử thuộc tập các bước di chuyển di chuyển hợp lệ <span class="arithmatex">\(Q\)</span>) thì ta có thể xây dựng một đồ thị có hướng <span class="arithmatex">\((V,E)\)</span> với tập đỉnh <span class="arithmatex">\(V\)</span> và tập cạnh <span class="arithmatex">\(E\)</span> tương ứng với tập trạng thái <span class="arithmatex">\(S\)</span> và tập các bước di chuyển <span class="arithmatex">\(Q\)</span> như đã nói. Ở đây có một quan sát quan trọng rằng ta tất cả các trạng thái kết thúc sẽ ứng với những đỉnh những đỉnh có bậc ra bằng <span class="arithmatex">\(0\)</span> (tức từ đỉnh này không đi tới được bất kỳ đỉnh nào khác)</p>
+<blockquote>
+<p>Ví dụ: trong trò chơi bốc sỏi ở phần đầu, giả sử ta chỉ có một đống sỏi <span class="arithmatex">\(4\)</span> viên, thì đồ thị của trò chơi sẽ như hình dưới, trạng thái kết thúc <span class="arithmatex">\(0\)</span> có bậc ra bằng <span class="arithmatex">\(0\)</span>.</p>
+<p><img alt="/uploads/game_theory_graph_state.png" src="/uploads/game_theory_graph_state.png" /></p>
+</blockquote>
+<p>Cũng cần chú ý rằng các trò chơi được xem xét trong phần định lý Sprague-Grundy có một tính chất quan trọng, đó là chúng sẽ <strong>kết thúc trong hữu hạn bước</strong>. Khi đó, hiển nhiên đồ thị trò chơi phải không tồn tại chu trình, vì nếu tồn tại chu trình, sẽ tồn tại trường hợp người chơi cố tình đi theo chu trình đó và sẽ không bao giờ đến được đỉnh kết thúc, nghĩa là khi đó trò chơi sẽ lặp vĩnh viễn. Loại đồ thị có hướng không có chu trình như trên còn có thể gọi tắt là DAG (<a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed Acyclic Graph</a>).</p>
+<h3 id="tro-choi-tong">Trò chơi tổng</h3>
+<p>Để có thể kết hợp nhiều trò chơi đơn lẻ với nhau, ta đặt ra khái niệm trò chơi tổng.</p>
+<p><strong>Trò chơi tổng</strong>: Cho trò chơi <span class="arithmatex">\(G_1(S_1,Q_1, T_1)\)</span> và <span class="arithmatex">\(G_2(S_2,Q_2,T_2)\)</span> với <span class="arithmatex">\(S_i,Q_i, T_i\)</span> là tập trạng thái, tập các bước di chuyển hợp lệ và tập trạng thái kết thúc ứng với trò chơi <span class="arithmatex">\(1\)</span> và <span class="arithmatex">\(2\)</span>, trò chơi tổng <span class="arithmatex">\(G = G_1 + G_2\)</span> là trò chơi có:
+- Tập trạng thái <span class="arithmatex">\(S = S_1 \times S_2\)</span>, tức trạng thái của trò chơi tổng là các cặp trạng thái <span class="arithmatex">\((x_1, x_2)\)</span> với <span class="arithmatex">\(x_1\)</span> là trạng thái thuộc <span class="arithmatex">\(S_1\)</span> và <span class="arithmatex">\(x_2\)</span> là trạng thái thuộc <span class="arithmatex">\(S_2\)</span>.
+- Tập các bước di chuyển hợp lệ <span class="arithmatex">\(Q = (Q_1\times \{x_2\}) \cup (\{x_1\} \times Q_2)\)</span>, nghĩa là một bước di chuyển hợp lệ trong trò chơi tổng sẽ tương ứng với việc thực hiện một bước di chuyển hợp lệ trong trò chơi con <span class="arithmatex">\(G_1\)</span> hoặc <span class="arithmatex">\(G_2\)</span> và giữ nguyên trạng thái trò chơi còn lại.
+- Tập các trạng thái kết thúc <span class="arithmatex">\(<span class="arithmatex">\(T = \{ (x_1, x_2) : x_1 \in T_1 \wedge x_2 \in T_2 \}\)</span>\)</span>, nghĩa là trạng thái kết thúc của trò chơi tổng là trạng thái mà cả hai trò chơi <span class="arithmatex">\(G_1\)</span> và <span class="arithmatex">\(G_2\)</span> đều kết thúc.</p>
+<blockquote>
+<p>Ví dụ: trò chơi Nim có <span class="arithmatex">\(3\)</span> đống sỏi có thể xem như trò chơi tổng của ba trò chơi <span class="arithmatex">\(G_1\)</span>, <span class="arithmatex">\(G_2\)</span> và <span class="arithmatex">\(G_3\)</span>, với <span class="arithmatex">\(G_1\)</span> là trò chơi chỉ bốc ở đống sỏi thứ <span class="arithmatex">\(1\)</span>, <span class="arithmatex">\(G_2\)</span> là trò chơi chỉ bốc ở đống sỏi thứ <span class="arithmatex">\(2\)</span>, <span class="arithmatex">\(G_3\)</span> là trò chơi chỉ bốc ở đống sỏi thứ <span class="arithmatex">\(3\)</span>.</p>
+</blockquote>
+<h3 id="mo-rong-tro-choi-nim">Mở rộng trò chơi Nim</h3>
+<p>Định lý Bouton đã cho chúng ta một cách giải rất đẹp cho trò chơi Nim chuẩn, nhưng trong thực tế, hầu hết các bài lý thuyết trò chơi trong lập trình thi đấu sẽ không là trò chơi Nim chuẩn mà sẽ được thay đổi luật chơi ở một số điểm. Lúc ấy, định lý Bouton sẽ không thể giải quyết các dạng bài này. Trong phần này, ta sẽ trình bày hai định lý quan trọng để giải quyết các trò chơi cân bằng kết thúc trong hữu hạn bước. Tuy nhiên ta sẽ chỉ trình bày về động lực hình thành và định nghĩa của hai định lý. Để hiểu rõ hơn, bạn đọc hãy đọc phần Phụ lục để hiểu được chứng minh.</p>
+<p>Để giải quyết, ta quay lại chiến lược ban đầu của mình - phân tách trạng thái trò chơi thành nhiều trò chơi con có cùng cấu trúc, tìm một số tính chất đặc biệt của mỗi trò chơi con, sau đó kết hợp chúng lại với nhau để có câu trả lời cho trò chơi gốc.</p>
+<p>Hãy lấy ví dụ với một biến thể của trò chơi Nim chuẩn, trong đó chúng ta có <span class="arithmatex">\(n\)</span> đống sỏi, luật chơi vẫn như cũ, chỉ khác là số sỏi phải bốc ở mỗi lượt phải là <em>số chính phương</em> (<span class="arithmatex">\(1, 4, \ldots\)</span>).</p>
+<p>Đầu tiên, ta cũng xét trò chơi ở dạng đơn giản nhất: chỉ có một đống sỏi duy nhất với <span class="arithmatex">\(p\)</span> viên. Vậy làm thế nào để bạn biết đó là trạng thái thuộc <span class="arithmatex">\(P\)</span> hay trạng thái thuộc <span class="arithmatex">\(N\)</span>?</p>
+<p>Hãy nhìn trò chơi dưới góc độ đồ thị. Đồ thị này có <span class="arithmatex">\(p + 1\)</span> đỉnh có nhãn lần lượt là các số nguyên từ <span class="arithmatex">\(0\)</span> đến <span class="arithmatex">\(p\)</span>. Mỗi đỉnh đồ thị tương ứng với một trạng thái trò chơi, trong đó nhãn của nó cho biết có bao nhiêu sỏi còn lại trong đống hiện tại. Hình dưới là ví dụ trò chơi với một đống sỏi có số sỏi <span class="arithmatex">\(p = 5\)</span>.
+<img alt="/uploads/game_theory_custom-nim.png" src="/uploads/game_theory_custom-nim.png" /></p>
+<p>Rõ ràng đỉnh <span class="arithmatex">\(0\)</span> là đỉnh kết thúc, do đó nó là đỉnh thuộc <span class="arithmatex">\(P\)</span>. Các đỉnh tiếp theo có thể xác định là thuộc <span class="arithmatex">\(P\)</span> hay <span class="arithmatex">\(N\)</span> như hình dưới
+<a href="/uploads/game_theory_custom_nim_PN.gif">/uploads/game_theory_custom_nim_PN.gif</a></p>
+<p>Tuy nhiên, cách làm ở trên chỉ cho ta trạng thái định tính của từng trạng thái, để phục vụ cho việc ghép các trò chơi lại, ta cần một hàm định lượng. Hàm mà chúng ta sẽ dùng có tên là hàm Sprague-Grundy, với một trạng thái <span class="arithmatex">\(x \in S\)</span> thì giá trị Sprague-Grundy được định nghĩa như sau:
+$$
+g(x) = \text{mex}({g(y): (x,y) \in Q})
+$$</p>
+<p>Trong định nghĩa trên có dùng hàm mex (minimum excludant), hàm này sẽ nhận vào một tập hợp và trả về <strong>số nguyên không âm <span class="arithmatex">\(u\)</span> nhỏ nhất sao cho <span class="arithmatex">\(u\)</span> không nằm trong tập hợp</strong>, ví dụ <span class="arithmatex">\(\text{mex}(\{0,1,2,5,7\}) = 3\)</span>. Ngoài ra, quy ước <span class="arithmatex">\(\text{mex}(\varnothing)=0\)</span>. Từ đó, ta có thể phát biểu bằng lời rằng giá trị Sprague-Grundy của một đỉnh <span class="arithmatex">\(x\)</span> sẽ là mex của tập hợp các giá trị Sprague-Grundy của <span class="arithmatex">\(y\)</span> sao cho từ <span class="arithmatex">\(x\)</span> có thể di chuyển trực tiếp đến <span class="arithmatex">\(y\)</span>.</p>
+<p>Câu hỏi đặt ra là: tại sao lại là hàm Sprague-Grundy? Hàm này có ý nghĩa gì trong việc giải các trò chơi tổ hợp cân bằng?</p>
+<p>Để thấy rõ hơn ý nghĩa của hàm Sprague-Grundy, ta có thể ví dụ biến thể của trò chơi Nim ở trên.
+<img alt="/uploads/game_theory_custom_nim_spfunc.png" src="/uploads/game_theory_custom_nim_spfunc.png" /></p>
+<p>Quan sát ví dụ ở trên, ta có nhận xét rằng các trạng thái <span class="arithmatex">\(u\)</span> thuộc <span class="arithmatex">\(P\)</span> đều có <span class="arithmatex">\(g(u) = 0\)</span> và các trạng thái <span class="arithmatex">\(u\)</span> thuộc <span class="arithmatex">\(N\)</span> đều có <span class="arithmatex">\(g(u) &gt; 0\)</span>. Điều này làm ta nhận ra sự tương đồng của giá trị Sprague-Grundy với một đại lượng ở phần trước - giá trị Nim. Đó là cảm nhận ban đầu để có định lý sau.</p>
+<p><strong>Định lý 1</strong>: Trong một trò chơi tổ hợp cân bằng, trạng thái <span class="arithmatex">\(u\)</span> thuộc <span class="arithmatex">\(P\)</span> khi và chỉ khi giá trị Sprague-Grundy <span class="arithmatex">\(g(u) = 0\)</span>.</p>
+<p>Vậy với hàm Sprague-Grundy, ta đã giải quyết được trò chơi đơn giản nhất, vấn đề tiếp theo là giải trò chơi tổng. Ta cũng sẽ tìm một phép toán <span class="arithmatex">\(\oplus\)</span> để tìm ra giá trị Sprague-Grundy của trò chơi tổng từ hai trò chơi thành phần. Cũng như trò chơi Nim, ta sẽ thấy phép toán này có các tính chất kết hợp, giao hoán, phần tử trung hòa là <span class="arithmatex">\(0\)</span> và phần tử đối của một trò chơi là chính nó. Do đó, ta sẽ lại thấy phép bitwise XOR là phép toán mà chúng ta cần tìm. Tính đúng đắn của phép toán bitwise XOR được khẳng định bằng định lý sau</p>
+<p><strong>Định lý 2</strong>: với trò chơi tổng <span class="arithmatex">\(G = G_1 + \ldots + G_n\)</span> và <span class="arithmatex">\(x_1, \ldots, x_n\)</span> lần lượt là các trạng thái của trò chơi thành phần <span class="arithmatex">\(G_1, \ldots, G_n\)</span>, khi đó:
+$$
+g(x_1, \ldots, x_n) = g_1(x_1) \oplus \ldots \oplus g_n(x_n)
+$$
+Với <span class="arithmatex">\(g, g_1, \ldots, g_n\)</span> lần lượt là hàm Sprague-Grundy của trò chơi <span class="arithmatex">\(G, G_1, \ldots, G_n\)</span>.</p>
+<blockquote>
+<p>Ví dụ: với trò chơi Nim biến thể với luật bốc các số chính phương như trên, nhưng bây giờ ta có <span class="arithmatex">\(3\)</span> đống sỏi lần lượt có <span class="arithmatex">\(5, 4, 1\)</span> viên sỏi. Khi đó ta có thể coi mỗi đống sỏi là một trò chơi thành phần, vì vậy giá trị Sprague-Grundy của trò chơi tổng là <span class="arithmatex">\(g(5) \oplus g(4) \oplus g(1) = 0 \oplus 2 \oplus 1 = 3\)</span>, vậy đây là trạng thái mà người chơi đi đầu tiên sẽ giành chiến thắng.</p>
+</blockquote>
+<p>Hai định lý 1 và 2 trong phần này có ý nghĩa rất quan trọng, nó cho ta cách giải bất cứ trò chơi tổ hợp cân bằng nào, miễn là trò chơi đó luôn kết thúc trong hữu hạn bước, hay nói cách khác đồ thị của trò chơi là một DAG. Định lý 2 giúp chúng ta phân rã trò chơi phức tạp ra thành những trò chơi thành phần đơn giản hơn và định lý 1 giúp chúng ta giải quyết những trò chơi thành phần đơn giản đó.</p>
+<p>Như vậy, ta thấy rằng thực ra cách giải trò chơi Nim cũng chỉ là một trường hợp riêng của cách giải với giá trị Sprague-Grundy này, trong đó giá trị Nim của trò chơi Nim chỉ có một đống <span class="arithmatex">\(n\)</span> viên sỏi tương đương với giá trị Sprague-Grundy <span class="arithmatex">\(\text{mex}(\{0,1,\ldots,n-1\}) = n\)</span></p>
+<blockquote>
+<p>Ví dụ với trò chơi Nim chỉ có một đống <span class="arithmatex">\(3\)</span> viên sỏi
+<a href="/uploads/game_theory_nim_SP.gif">/uploads/game_theory_nim_SP.gif</a></p>
+</blockquote>
+<p>và định lý Bouton tương đương định lý 2.</p>
+<h3 id="inh-ly-sprague-grundy_1">Định lý Sprague-Grundy</h3>
+<p>Định lý Sprague-Grundy phát biểu rằng: mọi trò chơi tổ hợp cân bằng kết thúc trong hữu hạn bước đều tương đương với trò chơi Nim một cột, trong đó trạng thái <span class="arithmatex">\(x\)</span> của trò chơi hiện tại tương ứng với trạng thái trò chơi Nim một cột có <span class="arithmatex">\(g(x)\)</span> viên sỏi, trong đó <span class="arithmatex">\(g(x)\)</span> là giá trị Sprague-Grundy của <span class="arithmatex">\(x\)</span>.</p>
+<p>Sở dĩ có nhận xét này là vì ở trạng thái <span class="arithmatex">\(x\)</span> có giá trị Sprague-Grundy <span class="arithmatex">\(g(x)\)</span>, hàm mex cho chúng ta một "lời hứa", lời hứa đó là: từ <span class="arithmatex">\(x\)</span> với giá trị Sprague-Grundy <span class="arithmatex">\(g(x)\)</span>, ta có thể đi đến tất cả các trạng thái <span class="arithmatex">\(y\)</span> có giá trị Sprague-Grundy từ <span class="arithmatex">\(0\)</span> đến <span class="arithmatex">\(g(x)-1\)</span>. Điều này có sự tương đồng với việc trong trò chơi Nim một cột, từ trạng thái <span class="arithmatex">\(n\)</span> có thể đi đến tất cả trạng thái từ <span class="arithmatex">\(0\)</span> đến <span class="arithmatex">\(n-1\)</span>.</p>
+<p>Tuy nhiên, luật chơi trò chơi Nim một cột này không giống với bình thường, vì trong trò chơi bình thường từ trạng thái <span class="arithmatex">\(u\)</span> ta chỉ có thể đi tới các trạng thái <span class="arithmatex">\(v\)</span> có giá trị nhỏ hơn <span class="arithmatex">\(u\)</span>. Tuy nhiên, từ một trạng thái <span class="arithmatex">\(x\)</span> có giá trị Sprague-Grundy là <span class="arithmatex">\(g(x)\)</span> ta lại có thể đi đến một trạng thái <span class="arithmatex">\(y\)</span> có giá trị Sprague-Grundy <span class="arithmatex">\(g(y) &gt; g(x)\)</span>, tương ứng với việc thêm <span class="arithmatex">\(g(y) - g(x)\)</span> viên sỏi vào trò chơi Nim một cột. Mặc dù vậy, người kia có thể trung hòa thao tác thêm sỏi, làm cho trạng thái của trò chơi quay về trạng thái <span class="arithmatex">\(g(x)\)</span> bằng cách lấy đi <span class="arithmatex">\(g(y)-g(x)\)</span> viên sỏi trong lượt tiếp theo. Hơn nữa, vì điều kiện trò chơi sẽ kết thúc trong hữu hạn bước, chắc chắn sẽ có một lúc người chơi không thể thêm sỏi vào nữa và sẽ phải chơi như trò chơi Nim thông thường. Do vậy, ta kết luận trò chơi Nim với phép thêm sỏi không làm kết quả của trò chơi Nim thay đổi so với luật chơi thông thường.</p>
+<p>Định lý Sprague-Grundy cho ta sự liên tưởng giữa một trò chơi tổ hợp cân bằng với trò chơi Nim một cột - một trò chơi tổ hợp cân bằng đơn giản, cung cấp cho ta một cách nhìn trực quan hơn về trò chơi tổ hợp cân bằng. Tuy bản thân định lý không có nhiều ứng dụng, nhưng các định lý phụ trợ cho việc chứng minh định lý này lại là nền móng quan trọng cho việc giải các trò chơi tổ hợp cân bằng, chính là các định lý 1 và 2 ở phần trước. Để tránh bài viết quá dài dòng, ở đây sẽ không trình bày lại chứng minh của định lý này, bạn đọc có thể tham khảo thêm về cách chứng minh định lý Sprague-Grundy bằng khái niệm trò chơi tương đương được đề cập đến trong <a href="https://en.wikipedia.org/wiki/Sprague%E2%80%93Grundy_theorem">wiki</a>.</p>
+<h3 id="vi-du">Ví dụ</h3>
+<p>Ta sẽ ví dụ với trò chơi sau</p>
+<p>Cho bàn cờ <span class="arithmatex">\(N \times N\)</span> với <span class="arithmatex">\(K\)</span> quân mã trên đó. Không giống như quân mã trong cờ vua truyền thống, những quân mã này chỉ có thể di chuyển như thể hiện trong hình bên dưới (vì vậy tọa độ của các con sẽ chỉ bị giảm chứ không tăng, đảm bảo trò chơi kết thúc trong hữu hạn bước). Cùng một lúc có thể có nhiều quân ở cùng một ô của bàn cờ. Hai người chơi thay phiên nhau di chuyển. Khi tới lượt, người chơi chọn một trong các quân mã và di chuyển nó. Người chơi không thể thực hiện nước đi ở lượt của mình là người thua.</p>
+<p><img alt="/uploads/game_theory_sp_exercise.png" src="/uploads/game_theory_sp_exercise.png" /></p>
+<p>Đầu tiên, vì luật chơi cho phép có nhiều quân mã trên cùng ô nên các quân mã có thể di chuyển độc lập với nhau, như vậy ta có thể coi trò chơi có <span class="arithmatex">\(K\)</span> quân mã là trò chơi tổng của <span class="arithmatex">\(K\)</span> trò chơi thành phần, trong đó trò chơi thành phần thứ <span class="arithmatex">\(i\)</span> chỉ có quân mã thứ <span class="arithmatex">\(i\)</span> trên bàn cờ.</p>
+<p>Ta sẽ giải trò chơi với một quân mã trước. Rõ ràng kết quả của trò chơi khi này chỉ phụ thuộc vào vị trí của quân mã, do đó một trạng thái của trò chơi tương ứng với một cặp số nguyên <span class="arithmatex">\((i,j)\)</span> cho biệt vị trí của quân mã. Khi đó ta sẽ tính giá trị Sprague-Grundy của từng vị trí bằng hàm sau</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// khai báo các thông tin của trò chơi</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAXN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">g</span><span class="p">[</span><span class="n">MAXN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="n">MAXN</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">di</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">-2</span><span class="p">,</span><span class="w"> </span><span class="mi">-2</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">dj</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-2</span><span class="p">,</span><span class="w"> </span><span class="mi">-2</span><span class="p">};</span>
+
+<span class="c1">// hàm tính mex của một vector U</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">mex</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">U</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sort</span><span class="p">(</span><span class="n">U</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">U</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="o">:</span><span class="w"> </span><span class="n">U</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="w">            </span><span class="o">++</span><span class="n">res</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">calculateGValue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">U</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// lấy giá trị SP của các trạng thái mà (i,j) có thể đi tới</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">di</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dj</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N</span><span class="p">)</span>
+<span class="w">            </span><span class="n">U</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">calculateGValue</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// tính mex và trả về giá trị</span>
+<span class="w">    </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mex</span><span class="p">(</span><span class="n">U</span><span class="p">);</span>
+<span class="w">    </span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Ý tưởng của hàm trên chỉ đơn giản là tại mỗi vị trí <span class="arithmatex">\((i,j)\)</span> ta tính mex bằng công thức đệ quy như định nghĩa. Để di chuyển đến các vị trí hợp lệ, ta có hai mảng hằng số <code>di</code> và <code>dj</code> kích thước <span class="arithmatex">\(4\)</span> tương ứng với bốn bước di chuyển <span class="arithmatex">\((i-2,j+1), (i-2,j-1), (i-1,j-2), (i+1,j-2)\)</span> như đề bài miêu tả, với mỗi vị trí ta xét xem vị trí có nằm trên bàn cờ không, nếu có thì mới thêm thêm giá trị Grundy tại vị trí đó vào vector <code>U</code>. Lưu ý là ở đây để tối ưu thời gian chạy thì ta sẽ dùng kỹ thuật đệ quy có nhớ đã trình bày ở phần <strong>Trò chơi tổ hợp cân bằng</strong>, do đó trước khi gọi tính giá trị Sprague-Grundy của từng ô trong bảng thì phải khởi tạo tất cả giá trị của mảng <span class="arithmatex">\(g\)</span> bằng <span class="arithmatex">\(-1\)</span>.</p>
+<p>Trước tiên, ta định nghĩa cấu trúc dữ liệu để lưu trữ thông tin của một quân mã, đó một <code>struct</code> gồm hai thông tin <span class="arithmatex">\(row, col\)</span> tương ứng là tọa độ dòng và cột của quân mã.
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Cell</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+Khi đã có giá trị Grundy của tất cả các ô từ <span class="arithmatex">\((1,1)\)</span> đến <span class="arithmatex">\((N,N)\)</span>, để tính giá trị Sprague-Grundy của trò chơi có <span class="arithmatex">\(K\)</span> quân mã ta chỉ cần áp dụng định lý 2, đó là XOR <span class="arithmatex">\(K\)</span> giá trị Sprague-Grundy của <span class="arithmatex">\(K\)</span> quân mã lại. Thuật toán sẽ như sau:
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">isFirstWin</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Cell</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Cell</span><span class="w"> </span><span class="n">x</span><span class="o">:</span><span class="w"> </span><span class="n">Q</span><span class="p">)</span>
+<span class="w">        </span><span class="n">res</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">row</span><span class="p">][</span><span class="n">x</span><span class="p">.</span><span class="n">col</span><span class="p">];</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+Độ phức tạp thời gian của thao tác tính giá trị Sprague-Grundy của trò chơi thành phần là <span class="arithmatex">\(O(N^2)\)</span> do ta phải duyệt tất cả các ô trong bàn cờ, nhưng do dùng đệ quy có nhớ nên ta không phải tính một ô nào quá <span class="arithmatex">\(1\)</span> lần. Độ phức tạp thời gian của thao tác XOR <span class="arithmatex">\(K\)</span> giá trị Sprague-Grundy là <span class="arithmatex">\(O(K)\)</span>, mà <span class="arithmatex">\(K \leq N^2\)</span>, do đó độ phức tạp thời gian của toàn bộ thuật toán là <span class="arithmatex">\(O(N^2)\)</span>.</p>
+<h2 id="bai-tap-luyen-tap">Bài tập luyện tập</h2>
+<ul>
+<li><a href="https://oj.vnoi.info/problem/parigame">VNOI Parigame</a></li>
+<li><a href="https://codeforces.com/contest/1451/problem/F">Codeforce 1451F</a></li>
+<li><a href="https://codeforces.com/contest/305/problem/E">Codeforce 305E</a></li>
+<li><a href="https://codeforces.com/contest/1312/problem/F">Codeforce 1312F</a></li>
+</ul>
+<h2 id="phu-luc">Phụ lục</h2>
+<p>Phần này sẽ chứng minh cơ sở toán học cho hai định lý <span class="arithmatex">\(1\)</span> và <span class="arithmatex">\(2\)</span> ở phần <strong>Định lý Sprague-Grundy</strong>, để hiểu rõ hơn tại sao lại có hai định lý trên, bạn đọc hãy đọc phần này.</p>
+<p><strong>Định lý 1</strong>: Trong một trò chơi tổ hợp cân bằng, trạng thái <span class="arithmatex">\(u\)</span> thuộc <span class="arithmatex">\(P\)</span> khi và chỉ khi giá trị Sprague-Grundy <span class="arithmatex">\(g(u) = 0\)</span>.</p>
+<p><strong>Chứng minh</strong>:</p>
+<p>Tương tự phần trước, ta sẽ gọi <span class="arithmatex">\(\hat{P}\)</span> là tập các trạng thái có <span class="arithmatex">\(g(u)=0\)</span> và <span class="arithmatex">\(\hat{N}\)</span> là tập các trạng thái có <span class="arithmatex">\(g(u)&gt;0\)</span> và cố gắng chứng minh điều sau:
+$$
+\hat{P}=P, \: \hat{N}=N
+$$</p>
+<p>Thứ nhất, các trạng thái kết thúc <span class="arithmatex">\(t\)</span> chắc chắn sẽ thuộc <span class="arithmatex">\(\hat{P}\)</span> do <span class="arithmatex">\(g(t) = \text{mex}(\varnothing) = 0\)</span>.</p>
+<p>Thứ hai, với một trạng thái <span class="arithmatex">\(u\)</span> thuộc <span class="arithmatex">\(\hat{N}\)</span>, khi đó <span class="arithmatex">\(g(u) &gt; 0\)</span>, điều đó có nghĩa là trong các trạng thái <span class="arithmatex">\(v_1,\ldots,v_k\)</span> đến được từ <span class="arithmatex">\(u\)</span> luôn tồn tại một trạng thái <span class="arithmatex">\(v_i\)</span> có <span class="arithmatex">\(g(v_i) = 0\)</span>, tức <span class="arithmatex">\(v\)</span> thuộc <span class="arithmatex">\(\hat{P}\)</span>. Ta có thể chứng minh dễ dàng bằng phản chứng rằng nếu tất cả các trạng thái <span class="arithmatex">\(v_1,\ldots,v_k\)</span> đến được từ <span class="arithmatex">\(u\)</span> có <span class="arithmatex">\(g(v_i) &gt; 0\)</span> thì rõ ràng phần tử nhỏ nhất không nằm trong tập <span class="arithmatex">\(\{g(v_1),\ldots,g(v_k)\}\)</span> là <span class="arithmatex">\(0\)</span>, tức khi đó <span class="arithmatex">\(g(u) = \text{mex}(\{g(v_),\ldots,g(v_k)\}) = 0\)</span> trái với giả thuyết ban đầu là <span class="arithmatex">\(g(u) &gt; 0\)</span>.</p>
+<p>Thứ ba, với mọi trạng thái <span class="arithmatex">\(u\)</span> thuộc <span class="arithmatex">\(\hat{P}\)</span> mà <span class="arithmatex">\(u\)</span> không phải trạng thái kết thúc, khi đó với mọi trạng thái <span class="arithmatex">\(v_1,\ldots,v_k\)</span> đến được từ <span class="arithmatex">\(u\)</span> thì <span class="arithmatex">\(g(v_i) &gt; 0\)</span>, tức mọi cách đi từ <span class="arithmatex">\(u \in \hat{P}\)</span> luôn dẫn đến trạng thái <span class="arithmatex">\(v \in \hat{N}\)</span>. Ta cũng sẽ chứng minh phát biểu này bằng phản chứng, giả sử tồn tại một <span class="arithmatex">\(v_i\)</span> trong các trạng thái đến được từ <span class="arithmatex">\(u\)</span> có <span class="arithmatex">\(g(v_i) = 0\)</span>, lúc đó rõ ràng <span class="arithmatex">\(g(v)=\text{mex}(\{0,g(v_1),\ldots\}) &gt; 0\)</span>, trái với giả thuyết ban đầu là <span class="arithmatex">\(g(u) = 0\)</span>.</p>
+<p>Từ ba tính chất vừa chứng minh, ta thấy rõ ràng tập <span class="arithmatex">\(\hat{P}\)</span> và <span class="arithmatex">\(\hat{N}\)</span> tương đương với tập <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(N\)</span> theo định nghĩa của hai tập này. <span class="arithmatex">\(\square\)</span></p>
+<p><strong>Định lý 2</strong>: với trò chơi tổng <span class="arithmatex">\(G = G_1 + \ldots + G_n\)</span> và <span class="arithmatex">\(x_1, \ldots, x_n\)</span> lần lượt là các trạng thái của trò chơi thành phần <span class="arithmatex">\(G_1, \ldots, G_n\)</span>, khi đó:
+$$
+g(x_1, \ldots, x_n) = g_1(x_1) \oplus \ldots \oplus g_n(x_n)
+$$
+Với <span class="arithmatex">\(g, g_1, \ldots, g_n\)</span> lần lượt là hàm Sprague-Grundy của trò chơi <span class="arithmatex">\(G, G_1, \ldots, G_n\)</span>.</p>
+<p><strong>Chứng minh</strong>:</p>
+<p>Do <span class="arithmatex">\(G\)</span> là một trò chơi tổ hợp cân bằng, do đó theo định lý 1 thì 
+<span class="arithmatex">\(<span class="arithmatex">\(g(x_1, \ldots, x_n) = mex(\{g(y_1, \ldots, y_n) | (x_1, \ldots, x_n) \rightarrow (y_1, \ldots, y_n) \in Q\})\)</span>\)</span></p>
+<p>Từ đó, nếu gọi <span class="arithmatex">\(U = \{g(y_1, \ldots, y_n) | (x_1, \ldots, x_n) \rightarrow (y_1, \ldots, y_n) \in Q\}\)</span>, ta thấy nếu muốn chứng minh <span class="arithmatex">\(g(x_1, \ldots, x_n) = g_1(x_1) \oplus \ldots \oplus g_n(x_n) = s\)</span> thì ta cần chứng minh
+$$
+\text{mex(U)} = s
+$$</p>
+<p>Chi tiết hơn, ta cần chứng minh hai điều sau:
+1. Với mọi <span class="arithmatex">\(0 \leq t &lt; s\)</span> thì <span class="arithmatex">\(t \in U\)</span>.
+2. <span class="arithmatex">\(s \notin U\)</span></p>
+<p>Để chứng minh ý 1, với một <span class="arithmatex">\(0 \leq t &lt; s\)</span> bất kỳ, ta xét <span class="arithmatex">\(s \oplus t\)</span>, vì <span class="arithmatex">\(s &gt; 0\)</span> nên biểu diễn nhị phân của <span class="arithmatex">\(s \oplus t\)</span> luôn tồn tại bit trái nhất bằng <span class="arithmatex">\(1\)</span> (tạm gọi là <span class="arithmatex">\(d\)</span>).Khi đó, bit thứ <span class="arithmatex">\(d\)</span> của một trong hai số <span class="arithmatex">\(s\)</span> và <span class="arithmatex">\(t\)</span> phải bằng <span class="arithmatex">\(1\)</span> và bit thứ <span class="arithmatex">\(d\)</span> của số còn lại bằng bằng <span class="arithmatex">\(0\)</span>. Tuy nhiên, do <span class="arithmatex">\(s &gt; t\)</span> nên bit thứ <span class="arithmatex">\(d\)</span> của <span class="arithmatex">\(s\)</span> bằng <span class="arithmatex">\(1\)</span> và bit thứ <span class="arithmatex">\(d\)</span> của <span class="arithmatex">\(t\)</span> bằng <span class="arithmatex">\(0\)</span>, trường hợp kia không thể xảy ra. Lập luận tiếp rằng <span class="arithmatex">\(s = g_1(x_1) \oplus \ldots \oplus g_n(x_n)\)</span>, tương tự như khi chứng minh định lý Bouton, nếu bit thứ <span class="arithmatex">\(d\)</span> của <span class="arithmatex">\(s\)</span> là <span class="arithmatex">\(1\)</span> thì ta có số lượng <span class="arithmatex">\(g_i(x_i)\)</span> có giá trị Sprague-Grundy có bit thứ <span class="arithmatex">\(d\)</span> bằng <span class="arithmatex">\(1\)</span> phải lẻ (theo tính chất của phép XOR), do đó luôn tồn tại một trò chơi có bit thứ <span class="arithmatex">\(d\)</span> bằng <span class="arithmatex">\(1\)</span>. Chọn trò chơi mà giá trị Sprague-Grundy có bit thứ <span class="arithmatex">\(d\)</span> bằng <span class="arithmatex">\(1\)</span> để thực hiện bốc sỏi, ta thấy <span class="arithmatex">\((s \oplus t) \oplus g_i(x_i) &lt; g_i(x_i)\)</span> nên theo định nghĩa hàm Sprague-Grundy chắc chắn tồn tại <span class="arithmatex">\(x'_i\)</span> có <span class="arithmatex">\(g_i(x'_i) = (s \oplus t) \oplus g_i(x_i)\)</span> và từ <span class="arithmatex">\(x_i\)</span> có thể di chuyển đến <span class="arithmatex">\(x'_i\)</span>. Theo định nghĩa trò chơi tổng, khi đó bước di chuyển từ <span class="arithmatex">\((x_1,\ldots, x_i, \ldots, x_n)\)</span> tới <span class="arithmatex">\((x_1,\ldots, x'_i, \ldots, x_n)\)</span> là hợp lệ và:</p>
+<div class="arithmatex">\[\begin{align*}
+g_1(x_1) &amp;\oplus \ldots \oplus g_i(x'_i) \oplus \ldots \oplus g_n(x_n) 
+\\
+&amp;= g_1(x_1) \oplus \ldots \oplus [(s \oplus t) \oplus g_i(x_i)] \oplus \ldots \oplus g_n(x_n)
+\\
+&amp;= (s \oplus t) \oplus [g_1(x_1) \oplus \ldots \oplus \oplus g_i(x_i) \oplus \ldots \oplus g_n(x_n)]
+\\
+&amp;= s \oplus t \oplus s = t
+\end{align*}\]</div>
+<p>Vậy <span class="arithmatex">\(t \in U\)</span>.</p>
+<p>Để chứng minh ý 2 ta dùng phản chứng, giả sử trạng thái hiện tại là <span class="arithmatex">\((x_1, \ldots, x_n)\)</span>, khi đó giả sử tồn tại một trạng thái <span class="arithmatex">\((y_1, \ldots, y_n)\)</span> có <span class="arithmatex">\(g(y_1, \ldots, y_n) = s\)</span>. Theo định nghĩa mỗi bước di chuyển trong trò chơi tổng sẽ tương ứng với việc chọn một trò chơi thành phần ra và di chuyển, các trò chơi còn lại giữ nguyên, do đó ta có thể viết <span class="arithmatex">\((y_1, \ldots, y_n) = (x_1, \ldots, x'_i, \ldots, x_n)\)</span> với <span class="arithmatex">\(i\)</span> là trò chơi ta chọn để di chuyển trạng thái. Khi đó</p>
+<div class="arithmatex">\[\begin{align*}
+s = g_1(x_1) \oplus \ldots \oplus g_i(x_i) \oplus \ldots \oplus g_n(x_n) &amp;= g_1(x_1) \oplus \ldots \oplus g_i(x'_i) \oplus \ldots \oplus g_n(x_n)
+\\ \Leftrightarrow
+g(x'_i) &amp;= g(x_i)
+\end{align*}\]</div>
+<p>Điều này là mâu thuẫn với giả thuyết ban đầu là ta chọn trò chơi thành phần <span class="arithmatex">\(i\)</span> để di chuyển trạng thái (khi đó <span class="arithmatex">\(x'_i \neq x_i\)</span>).</p>
+<p>Với hai ý được chứng minh này, ta đã chứng minh được định lý 2. <span class="arithmatex">\(\square\)</span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/jquery-3.7.1.min.js"></script>
+      
+        <script src="../../../js/webjs.js"></script>
+      
+    
+  </body>
+</html>

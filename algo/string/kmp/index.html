@@ -1,0 +1,4930 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/KienPC1234/fptoj_wiki/algo/string/kmp/">
+      
+      
+        <link rel="prev" href="../hash/">
+      
+      
+        <link rel="next" href="../manacher/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Thuật toán KMP - FPTOJ WIKI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#thuat-toan-kmp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="FPTOJ WIKI" class="md-header__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
+      
+  <img src="../../../uploads/icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FPTOJ WIKI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Thuật toán KMP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Chuyển sang chế độ tối"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang chế độ tối" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Chuyển sang chế độ sáng"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang chế độ sáng" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="FPTOJ WIKI" class="md-nav__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
+      
+  <img src="../../../uploads/icon.svg" alt="logo">
+
+    </a>
+    FPTOJ WIKI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trang chủ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giới thiệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Thuật Toán
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Thuật Toán
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cơ Bản
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cơ Bản
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/backtracking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Đệ quy và Thuật toán quay lui
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/binary-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán tìm kiếm nhị phân
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/bitwise-operators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phép toán bit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/computational-complexity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Độ phức tạp thời gian
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/hoc-tin-the-nao-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tôi đã học tin học như thế nào? Phần 1: vòng lặp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/hoc-tin-the-nao-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tôi đã học tin học như thế nào? Phần 2: bắt đầu từ đâu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/meet-in-the-middle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Meet In The Middle (MITM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/sorting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán sắp xếp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/Tai-Lieu-Thuat-Toan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số Tài liệu hay về Thuật Toán
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/two-pointers.md78" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kĩ thuật hai con trỏ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Đại Số
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Đại Số
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/binary_exponentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lũy thừa nhị phân
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/euclid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Euclid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/fft-test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biến đổi Fourier nhanh - Fast Fourier transform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/nCk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cách tính số tổ hợp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/primality_check/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kiểm tra số nguyên tố
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algebra/prime_sieve/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sàng nguyên tố
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cấu trúc dữ liệu
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cấu trúc dữ liệu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/array-vs-linked-lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mảng và danh sách liên kết
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/C%C3%A2y-Palindrome/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cấu trúc của cây Palindrome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/data-structures-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan về Cấu Trúc Dữ Liệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/deque-min-max/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàng đợi hai đầu (deque) và Bài toán tìm max-min trong đoạn tịnh tiến
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/Deque/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deque - hàng đợi hai đầu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/disjoint-set-union/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disjoint Set Union
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/disjoint-set/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disjoints Sets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/fenwick-2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây chỉ số nhị phân 2 chiều (BIT 2 chiều)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/fenwick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây chỉ số nhị phân (Binary Indexed Tree)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/hash-table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bảng băm (Hash Table)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/heavy-light-decomposition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heavy-Light Decomposition (HLD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/interval-tree-tap-doan-thang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interval Tree trên tập đoạn thẳng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/lca-binlift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lowest Common Ancestor (LCA) - Binary Lifting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/lca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các phương pháp giải bài toán LCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/mo-algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chia căn (sqrt decomposition) và ứng dụng: Phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/overview-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cấu trúc dữ liệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/persistent-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Persistent Data Structures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/prefix-sum-and-difference-array/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mảng cộng dồn và mảng hiệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/rmq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Range Minimum Query (RMQ) - Sparse Table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/segment-tree-basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây Phân Đoạn (cơ bản)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/segment-tree-extend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tất tần tật về Cây Phân Đoạn (Segment Tree)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/Skip-Lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Skip Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/sqrt-decomposition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chia căn (sqrt decomposition) và ứng dụng: Phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/Stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stack (ngăn xếp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/suffix-array/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mảng hậu tố (Suffix Array)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/suffix-automaton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Suffix Automaton
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-structures/trie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trie
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quy hoạch động
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Quy hoạch động
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/basic-dynamic-programming-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy hoạch động cơ bản (Phần 1)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/basic-dynamic-programming-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy hoạch động cơ bản (Phần 2)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/basic-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số bài toán quy hoạch động điển hình
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/Mot-so-ky-thuat-toi-uu-hoa-thuat-toan-Quy-Hoach-Dong/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số kĩ thuật tối ưu hoá thuật toán Quy Hoạch Động
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/palindrome-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một vài bài tập về Palindrome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/thac-mac-ve-qhd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phân tích về QHĐ - Thầy Lê Minh Hoàng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Games
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Games
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../games/Giai-Thuat-Cat-Tia-Alpha-beta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giải thuật cắt tỉa Alpha-beta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hình học
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Hình học
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/basic-geometry-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hình học tính toán phần 1: Những khái niệm cơ bản
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/basic-geometry-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hình học tính toán phần 2: Sự giao nhau của đường thẳng và các ứng dụng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geometry/Sweep-Line/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán đường quét
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lý thuyết Đồ Thị
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Lý thuyết Đồ Thị
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/breadth-first-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFS (Breadth-first search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/centroid-decomposition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán phân tách trọng tâm - Centroid decomposition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/Depth-First-Search-Tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây DFS (Depth-First Search Tree) và ứng dụng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/euler-cycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Đường đi - Chu trình Euler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/euler-tour-on-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Đường đi Euler trên cây
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/everything/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các chủ đề cơ bản về đồ thị
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/flow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán Luồng cực đại trên mạng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/lubenica-vnoj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán LUBENICA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/minimum-spanning-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán tìm cây khung nhỏ nhất trong đồ thị
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/shortest-path/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các thuật toán về tìm đường đi ngắn nhất
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-theory/topological-sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sắp xếp Tô-pô (Topological Sort)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Toán
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Toán
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/game-theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lý thuyết trò chơi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/Ham-Mobius/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàm Mobius
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/modular-inverse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 4.5 - Nghịch đảo modulo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/multiplicative-function/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàm nhân tính
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tìm Kiếm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tìm Kiếm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/Local-Search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kỹ Năng Thi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            Kỹ Năng Thi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill/Ki-nang-thi-cu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng hợp các lời khuyên cho các kỳ thi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill/Kinh-nghiem-thi-VOI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kinh nghiệm thi VOI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill/viet-trinh-cham/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tự code, tự chấm, tự sướng - Bí kíp thi offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Xâu kí tự
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            Xâu kí tự
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xử lý xâu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hash: A String Matching Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán KMP
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manacher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Manacher
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../z-algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Z-function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mẹo
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            Mẹo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ph%E1%BB%8Fng-v%E1%BA%A5n-team-IOI-VN-2017/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phỏng Vấn Team IOI VN 2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/vojsol/ALAKE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ALAKE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/convex_greedy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sum-constrained convex optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/counting-without-matrix-multiplication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Khử nhân ma trận
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/FFT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FFT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/matrix-multiplication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nhân ma trận (Matrix multiplication)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/mitm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Meet In The Middle (MITM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../trick/Roi-rac-hoa-va-ung-dung/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rời rạc hoá và ứng dụng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer Science (Khoa học máy tính)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science (Khoa học máy tính)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Crypto
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Crypto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/crypto/Cipher-Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mật mã và Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/crypto/Public-Key-Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Public Key Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cipher
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cipher
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/crypto/cipher/ROT13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROT13
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Xử lý ảnh
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Xử lý ảnh
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/imageprocessing/Seam-Carving/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seam Carving Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/imageprocessing/setup-opencv-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt OpenCV trên Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ngôn Ngữ Lập Trình
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ngôn Ngữ Lập Trình
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/pointers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Con trỏ trong C/C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xâu trong C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/Pascal-Vi-sao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hoài niệm về Pascal - Lê Minh Hoàng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dịch Thuật
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Dịch Thuật
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/functional-programming-part-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functional Programming - Phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Codeforces
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Codeforces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/Efficient-and-easy-segment-trees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt cây phân đoạn hiệu quả (Efficient and easy segment trees)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/hash-table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bảng băm (Hash Tables)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/palindrome-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Palindrome tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/stack-queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Queue & Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/codeforces/z-algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Z Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    E-Maxx
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            E-Maxx
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/emaxx/Aho-Corasick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aho Corasick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/emaxx/Tim-kiem-tam-phan-Ternary-Search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tìm kiếm tam phân - Ternary Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Nâng Cao
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            Nâng Cao
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Lucas-theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Định lý Lucas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 2 - Số nguyên tố, Sàng Eratosthenes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 3 - Tính (a^b) % c
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 4 - Phi hàm Euler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 5 - Các kiến thức cơ bản về Tổ hợp (Combinatorics)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 6 - Xác suất (Probabilities)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Number-Theory-7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 7 - Bao hàm - Loại trừ (Inclusion-Exclusion)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/So-hoc-Phan-1-Modulo-gcd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 1 - Modulo & gcd
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/he/Wilsons-theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Định lý Wilson
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Máy học (Machine Learning - ML)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Máy học (Machine Learning - ML)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/ml/machine-learning-101/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning 101 (1): Làm quen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/PyTorch-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PyTorch Là Gì?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/ml/Machine-Learning-Classification-phan-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning - Classification - phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/ml/Machine-Learning-Classification-phan-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning - Classification - phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/ml/Machine-Learning-Classification-phan-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning - Classification - phần 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quora
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Quora
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/quora/mobius-function/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàm Mobius
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Topcoder
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Topcoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Computational-Complexity-Section-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Độ phức tạp tính toán
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Computational-Complexity-Section-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Độ phức tạp tính toán - phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/dynamic-programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nhập môn Quy hoạch động
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/fun-with-bits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fun with Bits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Greedy-is-Good/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Tham lam
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Hieu-ve-xac-suat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xác suất
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/How-to-Dissect-a-Topcoder-Problem-Statement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kĩ năng đọc đề Topcoder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/How-to-Find-a-Solution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nghệ thuật giải bài
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Mathematics-for-Topcoders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Toán học trong Tin học
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/max-flow-1-luong-cuc-dai-tren-mang-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Luồng cực đại trên mạng - Maxflow network
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Planning-an-Approach-to-a-Topcoder-Problem-Part-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Những cách tiếp cận bài toán: Phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Planning-an-Approach-to-a-Topcoder-Problem-Part-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Những cách tiếp cận bài toán: Phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Range-Minimum-Query-and-Lowest-Common-Ancestor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán RMQ và bài toán LCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/The-Importance-of-Algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tầm Quan Trọng Của Thuật Toán
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/topcoder/Using-Regular-Expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sử dụng Regex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    USACO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            USACO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/USACO/Crafting-Winning-Solutions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Viết lời giải chiến thắng trong kì thi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wcipeg
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            Wcipeg
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Bao-l%E1%BB%93i/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giải thích trực quan về bao lồi trên mặt phẳng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Binary-Heap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binary Heap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Convex-Hull-Trick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kĩ thuật bao lồi (Convex Hull Trick)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Convex-Hull/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bao lồi (Convex Hull)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/Flows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán luồng cực đại
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/kmp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Knuth-Morris-Pratt (KMP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translate/wcipeg/tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây (Tree)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="thuat-toan-kmp">Thuật toán KMP</h1>
+<p><strong>Người viết:</strong> Trịnh Quang Anh - University of Melbourne</p>
+<p><strong>Review bởi:</strong>
+- Cao Thanh Hậu - Đại học Khoa học Tự nhiên - ĐHQG-HCM
+- Lê Minh Hoàng - Đại học Khoa học Tự nhiên - ĐHQG-HCM
+- Hồ Ngọc Vĩnh Phát - Đại học Khoa học Tự nhiên - ĐHQG-HCM
+- Hoàng Xuân Nhật - Đại học Khoa học Tự nhiên - ĐHQG-HCM</p>
+<p>Bài viết được dịch từ <a href="https://cp-algorithms.com/string/prefix-function.html">đây</a> và đã được chỉnh sửa bổ sung thêm một số phần.</p>
+<p><strong>Kiến thức cần biết</strong>: Xử lý xâu cơ bản. Bạn đọc có thể xem lại các thuật ngữ và bài tập về xâu <a href="https://vnoi.info/wiki/algo/string/basic">tại đây</a>.</p>
+<h1 id="gioi-thieu">Giới thiệu</h1>
+<p>Một trong những bài toán kinh điển nhất về xử lý xâu là bài toán so khớp chuỗi: Cho xâu <span class="arithmatex">\(s\)</span> độ dài <span class="arithmatex">\(n\)</span> và xâu <span class="arithmatex">\(t\)</span> độ dài <span class="arithmatex">\(m\)</span>, đếm số lần <span class="arithmatex">\(s\)</span> xuất hiện trong <span class="arithmatex">\(t\)</span>. Chẳng hạn, nếu <span class="arithmatex">\(s = \text{"ab"}\)</span> và <span class="arithmatex">\(t = \text{"aabcabaab"}\)</span>, thì <span class="arithmatex">\(s\)</span> xuất hiện <span class="arithmatex">\(3\)</span> lần tại ở các vị trí <span class="arithmatex">\(1\)</span>, <span class="arithmatex">\(4\)</span>, <span class="arithmatex">\(7\)</span> của <span class="arithmatex">\(t\)</span>. Mục tiêu của chúng ta là tìm một thuật toán tối ưu hơn để giải quyết bài toán này, thay vì duyệt từng vị trí để kiểm tra trong <span class="arithmatex">\(O(mn)\)</span>.</p>
+<p>Knuth-Morris-Pratt (KMP) là một thuật toán có độ phức tạp <strong><span class="arithmatex">\(O(n+m)\)</span></strong> để giải quyết bài toán so khớp chuỗi. Ý tưởng của KMP là mở rộng một hậu tố kết thúc tại <span class="arithmatex">\(i\)</span> sang hậu tố kết thúc tại <span class="arithmatex">\(i+1\)</span> mà vẫn đảm bảo khớp với tiền tố tương ứng, từ đó cải thiện độ phức tạp nhờ loại bỏ được thao tác so sánh xâu tốn kém. Các phần tiếp theo sẽ nói rõ các bước để đạt được điều này. Nhưng trước tiên, ta sẽ làm quen với khái niệm <strong>hàm tiền tố</strong>, một hàm giúp chúng ta phân tích kỹ hơn về các cấu trúc "tự khớp" trong xâu <span class="arithmatex">\(s\)</span>, và là cốt lõi của thuật toán KMP.</p>
+<h1 id="inh-nghia">Định nghĩa</h1>
+<p><em>Lưu ý: Xuyên suốt bài viết này các vị trí trong mỗi xâu sẽ được đếm từ 0.</em></p>
+<p><strong>Tiền tố chuẩn.</strong> Cho một xâu <span class="arithmatex">\(s\)</span>. Một tiền tố của <span class="arithmatex">\(s\)</span> được gọi là một <em>tiền tố chuẩn</em> nếu nó không là cả xâu <span class="arithmatex">\(s\)</span>. </p>
+<p><strong>Hàm tiền tố.</strong> Cho một xâu <span class="arithmatex">\(s\)</span> có độ dài <span class="arithmatex">\(n\)</span>. <em>Hàm tiền tố</em> của <span class="arithmatex">\(s\)</span> được định nghĩa là một mảng <span class="arithmatex">\(\pi\)</span> có độ dài <span class="arithmatex">\(n\)</span>, trong đó <span class="arithmatex">\(\pi[i]\)</span> là độ dài của tiền tố chuẩn dài nhất của xâu con <span class="arithmatex">\(s[0 \dots i]\)</span> mà cũng là hậu tố của xâu con này. Từ định nghĩa này ta có <span class="arithmatex">\(\pi[0] = 0\)</span>.</p>
+<p>Biểu diễn toán học của hàm tiền tố: 
+<span class="arithmatex">\(<span class="arithmatex">\(\pi[i] = \max_ {k = 0 \dots i} \{k : s[0 \dots k-1] = s[i-(k-1) \dots i] \}\)</span>\)</span></p>
+<p>Ví dụ, hàm tiền tố của xâu "<span class="arithmatex">\(abcabcd\)</span>" là <span class="arithmatex">\([0, 0, 0, 1, 2, 3, 0]\)</span> và hàm tiền tố của xâu "<span class="arithmatex">\(aabaaab\)</span>" là <span class="arithmatex">\([0, 1, 0, 1, 2, 2, 3]\)</span>.</p>
+<p>Tính nhanh hàm tiền tố là hết sức quan trọng vì nó là một bước thiết yếu trong thuật toán KMP. Ở phần sau, bài viết giới thiệu một thuật toán "ngây thơ" để tính hàm tiền tố với độ phức tạp <span class="arithmatex">\(O(n^3)\)</span>. Từ đó, ta sẽ dùng các nhận xét để tối ưu thuật toán thành độ phức tạp <span class="arithmatex">\(O(n)\)</span>. </p>
+<h1 id="thuat-toan-ngay-tho">Thuật toán ngây thơ</h1>
+<p>Từ biểu diễn toán học của hàm tiền tố, ta có thể xây dựng một thuật vét cạn như sau: Với mỗi <span class="arithmatex">\(i\)</span> từ <span class="arithmatex">\(0\)</span> đến <span class="arithmatex">\(n - 1\)</span>, duyệt qua mọi <span class="arithmatex">\(k\)</span> để kiểm tra điều kiện <span class="arithmatex">\(s[0 \dots k-1] = s[i - (k-1) \dots i]\)</span>, khi đó <span class="arithmatex">\(\pi[i]\)</span> là giá trị lớn nhất của <span class="arithmatex">\(k\)</span> có điều kiện được thỏa mãn. </p>
+<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prefix_function</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">))</span>
+<span class="w">                </span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Do có <span class="arithmatex">\(O(n^2)\)</span> cặp <span class="arithmatex">\((i, k)\)</span> và so sánh hai xâu bằng <code>s.substr()</code> mất <span class="arithmatex">\(O(n)\)</span>, độ phức tạp của thuật toán này là <span class="arithmatex">\(O(n^3)\)</span>.</p>
+<h1 id="thuat-toan-toi-uu-e-tim-ham-tien-to">Thuật toán tối ưu để tìm hàm tiền tố</h1>
+<p>Một chút bối cảnh lịch sử: Thuật toán này được tìm ra bởi Morris, chỉ vài tuần trước khi được Knuth tìm ra một cách độc lập. Morris &amp; Pratt đăng báo cáo vào năm 1970, rồi cả ba đồng xuất bản thuật toán này vào năm 1977 (Nguồn: <a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Wikipedia</a>) </p>
+<h2 id="phep-toi-uu-au-tien">Phép tối ưu đầu tiên</h2>
+<p>Nhận xét quan trọng đầu tiên là giá trị của hàm tiền tố chỉ có thể tăng thêm tối đa <span class="arithmatex">\(1\)</span> đơn vị khi duyệt từ <span class="arithmatex">\(i\)</span> lên <span class="arithmatex">\(i + 1\)</span>. </p>
+<p>Thật vậy, giả sử <span class="arithmatex">\(\pi[i + 1] \gt \pi[i] + 1\)</span>, ta lấy hậu tố kết thúc ở <span class="arithmatex">\(i + 1\)</span> có độ dài <span class="arithmatex">\(\pi[i + 1]\)</span> và bỏ chữ cái cuối của nó đi. Xâu thu được là một hậu tố kết thúc ở <span class="arithmatex">\(i\)</span> khớp với tiền tố có cùng độ dài là <span class="arithmatex">\(\pi[i + 1] - 1\)</span>, lớn hơn <span class="arithmatex">\(\pi[i]\)</span>, mâu thuẫn với việc <span class="arithmatex">\(\pi[i]\)</span> là hậu tố dài nhất thỏa mãn của <span class="arithmatex">\(i\)</span>. </p>
+<p>Để hình dung sự mâu thuẫn này, ta xét ví dụ dưới đây. Ở vị trí <span class="arithmatex">\(i\)</span>, hậu tố dài nhất mà cũng là tiền tố có độ dài <span class="arithmatex">\(2\)</span> (<span class="arithmatex">\(\pi[i] = 2\)</span>), và ở vị trí <span class="arithmatex">\(i + 1\)</span> thì ta có <span class="arithmatex">\(\pi[i + 1] = 4 \gt 2 + 1\)</span>. Khi đó, xâu <span class="arithmatex">\(s_0 ~ s_1 ~ s_2 ~ s_3\)</span> bằng xâu <span class="arithmatex">\(s_{i-2} ~ s_{i-1} ~ s_i ~ s_{i+1}\)</span>, dẫn tới hai xâu <span class="arithmatex">\(s_0 ~ s_1 ~ s_2\)</span> và <span class="arithmatex">\(s_{i-2} ~ s_{i-1} ~ s_i\)</span> bằng nhau. Do đó, <span class="arithmatex">\(\pi[i]\)</span> phải bằng <span class="arithmatex">\(3\)</span> chứ không phải <span class="arithmatex">\(2\)</span>. </p>
+<div class="arithmatex">\[\underbrace{\overbrace{s_0 ~ s_1}^{\pi[i] = 2} ~ s_2 ~ s_3}_{\pi[i+1] = 4} ~ \dots ~ \underbrace{s_{i-2} ~ \overbrace{s_{i-1} ~ s_{i}}^{\pi[i] = 2} ~ s_{i+1}}_{\pi[i+1] = 4}\]</div>
+<!-- Maybe phan nay co the lam animation duoc -->
+
+<p>Do đó, khi duyệt sang vị trí tiếp theo, giá trị của hàm tiền tố chỉ có thể tăng thêm <span class="arithmatex">\(1\)</span>, giữ nguyên, hoặc giảm đi. </p>
+<p>Chỉ riêng nhận xét này là đủ để chúng ta giảm độ phức tạp xuống còn <span class="arithmatex">\(O(n^2)\)</span>: Thay vì mỗi lần duyệt <span class="arithmatex">\(i\)</span> xét mọi giá trị có thể của <span class="arithmatex">\(k\)</span>, thuật toán bắt đầu với <span class="arithmatex">\(k = \pi[i-1] + 1\)</span> (hàm tiền tố tăng tối đa <span class="arithmatex">\(1\)</span> nên đây là giá trị lớn nhất có thể của <span class="arithmatex">\(k\)</span>) và giảm dần <span class="arithmatex">\(k\)</span> đến khi so khớp thành công. Vì hàm tiền tố suốt cả quá trình duyệt <span class="arithmatex">\(i\)</span> chỉ có thể tăng <span class="arithmatex">\(k\)</span> tối đa <span class="arithmatex">\(1 * n = n\)</span> bước, dẫn tới chỉ có tối đa <span class="arithmatex">\(n\)</span> bước giảm <span class="arithmatex">\(k\)</span>, nên số bước thực hiện so sánh hai xâu chỉ còn là <span class="arithmatex">\(O(n)\)</span>. Vì vậy, độ phức tạp tổng của thuật chỉ còn là <span class="arithmatex">\(O(n^2)\)</span> (so sánh xâu vẫn là <span class="arithmatex">\(O(n)\)</span>). </p>
+<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prefix_function</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">))</span>
+<span class="w">            </span><span class="n">k</span><span class="o">--</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Tuy nhiên, chúng ta có thể làm tốt hơn. </p>
+<h2 id="phep-toi-uu-thu-hai">Phép tối ưu thứ hai</h2>
+<p>Trước tiên, ta nhận thấy nhược điểm làm cho thuật toán có độ phức tạp <span class="arithmatex">\(O(n^2)\)</span> là thao tác so sánh xâu mất <span class="arithmatex">\(O(n)\)</span>. </p>
+<p>Như đã đề cập từ đầu bài viết, ý tưởng chính để triệt tiêu thao tác này là mở rộng một hậu tố kết thúc ở <span class="arithmatex">\(i\)</span> đã khớp tiền tố để có được một hậu tố kết thúc ở <span class="arithmatex">\(i + 1\)</span> cũng khớp với tiền tố.</p>
+<p>Cụ thể, nếu ta có một hậu tố kết thúc tại <span class="arithmatex">\(i\)</span> khớp với tiền tố cùng độ dài <span class="arithmatex">\(j\)</span>, và ta có <span class="arithmatex">\(s[j] = s[i+1]\)</span>, thì hậu tố kết thúc tại <span class="arithmatex">\(i + 1\)</span> có độ dài <span class="arithmatex">\(j + 1\)</span> khớp với tiền tố có độ dài <span class="arithmatex">\(j + 1\)</span>. </p>
+<p>Vậy nếu ta nhanh chóng duyệt qua được các giá trị <span class="arithmatex">\(j\)</span> là độ dài cho cặp tiền tố - hậu tố ứng với <span class="arithmatex">\(i\)</span> đã khớp sẵn, theo thứ tự <span class="arithmatex">\(j\)</span> giảm dần, thì giá trị <span class="arithmatex">\(j\)</span> đầu tiên (và lớn nhất) cũng thỏa mãn <span class="arithmatex">\(s[j] = s[i+1]\)</span> cho ta biết <span class="arithmatex">\(\pi[i+1] = j+1\)</span>. Nói cách khác, nhờ có cặp xâu khớp sẵn mà ta chỉ cần so sánh một cặp ký tự (thao tác có thể thực hiện trong <span class="arithmatex">\(O(1)\)</span>), và từ đó loại bỏ được thao tác so sánh xâu. </p>
+<p>Ta bắt đầu duyệt bằng cách xét hậu tố kết thúc tại <span class="arithmatex">\(i\)</span> có độ dài <span class="arithmatex">\(j = \pi[i]\)</span>. Từ định nghĩa hàm tiền tố, hậu tố này khớp với tiền tố có độ dài <span class="arithmatex">\(\pi[i] ~ (s[0 \dots \pi[i] - 1])\)</span>. Nếu <span class="arithmatex">\(s[i + 1] = s[j] = s[\pi[i]]\)</span>, ta có thể khẳng định được rằng <span class="arithmatex">\(\pi[i+1] = \pi[i] + 1\)</span> vì <span class="arithmatex">\(\pi\)</span> chỉ tăng tối đa <span class="arithmatex">\(1\)</span> khi từ <span class="arithmatex">\(i\)</span> sang <span class="arithmatex">\(i+1\)</span>. </p>
+<div class="arithmatex">\[\underbrace{\overbrace{s_0 ~ s_1 ~ s_2}^{\pi[i]} ~ \overbrace{s_3}^{s_3 = s_{i+1}}}_{\pi[i+1] = \pi[i] + 1} ~ \dots ~ \underbrace{\overbrace{s_{i-2} ~ s_{i-1} ~ s_{i}}^{\pi[i]} ~ \overbrace{s_{i+1}}^{s_3 = s_{i + 1}}}_{\pi[i+1] = \pi[i] + 1}\]</div>
+<p>Nếu <span class="arithmatex">\(s[i + 1] \neq s[\pi[i]]\)</span>, ta duyệt đến hậu tố kết thúc tại <span class="arithmatex">\(i\)</span> có độ dài lớn nhì, và khớp với tiền tố cùng độ dài. </p>
+<p>Nếu đặt độ dài này là <span class="arithmatex">\(k\)</span> thì ta có <span class="arithmatex">\(s[0 \dots k-1] = s[i-k+1 \dots i]\)</span> (từ định nghĩa) và <span class="arithmatex">\(k &lt; j = \pi[i]\)</span>: </p>
+<div class="arithmatex">\[\overbrace{\underbrace{s_0 ~ s_1}_{k} ~ s_2 ~ s_3 ~ s_4}^{j = \pi[i]} ~ \dots ~ \overbrace{s_{i-4} ~ s_{i-3} ~ s_{i-2} ~ \underbrace{s_{i-1} ~ s_{i}}_{k}}^{j = \pi[i]} ~ s_{i+1}\]</div>
+<p>Tuy nhiên, do hậu tố kết thúc ở <span class="arithmatex">\(i\)</span> độ dài <span class="arithmatex">\(\pi[i]\)</span> cũng khớp với tiền tố độ dài <span class="arithmatex">\(\pi[i]\)</span> là <span class="arithmatex">\(s[0 \dots \pi[i] - 1]\)</span>, hậu tố độ dài <span class="arithmatex">\(k\)</span> kết thúc ở <span class="arithmatex">\(\pi[i]-1\)</span> khớp với tiền tố độ dài <span class="arithmatex">\(k\)</span>. </p>
+<div class="arithmatex">\[\overbrace{\underbrace{s_0 ~ s_1}_{k} ~ s_2 ~ \underbrace{s_3 ~ s_4}_{k}}^{j = \pi[i]} ~ \dots ~ \overbrace{s_{i-4} ~ s_{i-3} ~ s_{i-2} ~ \underbrace{s_{i-1} ~ s_{i}}_{k}}^{j = \pi[i]} ~ s_{i+1}\]</div>
+<p>Do <span class="arithmatex">\(k\)</span> lớn nhất, ta phải có <span class="arithmatex">\(k = \pi[\pi[i]-1]\)</span>. Nói cách khác, độ dài hậu tố lớn thứ nhì kết thúc ở <span class="arithmatex">\(i\)</span> mà khớp với tiền tố tương ứng là <span class="arithmatex">\(\pi[\pi[i]-1]\)</span>. So sánh <span class="arithmatex">\(s[k]\)</span> và <span class="arithmatex">\(s[i+1]\)</span>, nếu chúng bằng nhau thì ta có <span class="arithmatex">\(\pi[i+1] = k+1\)</span>. </p>
+<p>Minh họa cho hai trường hợp trên:
+<center>
+<img src="https://i.imgur.com/zPJRhGA.gif"  style="width: 60%">
+</center></p>
+<p>Nếu <span class="arithmatex">\(s[k] \neq s[i+1]\)</span>, lập luận tương tự, độ dài lớn thứ ba cho hậu tố kết thúc tại <span class="arithmatex">\(i\)</span> khớp với tiền tố là <span class="arithmatex">\(\pi[\pi[\pi[i]-1]-1]\)</span>, độ dài lớn thứ tư là <span class="arithmatex">\(\pi[\pi[\pi[\pi[i]-1]-1]-1]\)</span>,...</p>
+<p>Từ đó, ta có thể duyệt qua mọi hậu tố kết thúc tại <span class="arithmatex">\(i\)</span> khớp với tiền tố độ dài <span class="arithmatex">\(j\)</span> như sau: Ban đầu đặt <span class="arithmatex">\(j = \pi[i]\)</span>, để đến độ dài tiếp theo thỏa mãn, ta gán <span class="arithmatex">\(j = \pi[j-1]\)</span>. Tương tự lập luận ở phần <a href="#Phép-tối-ưu-đầu-tiên">phép tối ưu đầu tiên</a>, khi chuyển từ <span class="arithmatex">\(i\)</span> sang <span class="arithmatex">\(i+1\)</span> ta gán <span class="arithmatex">\(j = \pi[i] = j+1\)</span> nên <span class="arithmatex">\(j\)</span> tăng tối đa <span class="arithmatex">\(1\)</span>, và khi cập nhật <span class="arithmatex">\(j = \pi[j-1]\)</span> thì <span class="arithmatex">\(j\)</span> giảm ít nhất <span class="arithmatex">\(1\)</span>. Do đó, ta chỉ duyệt qua <span class="arithmatex">\(O(n)\)</span> giá trị của <span class="arithmatex">\(j\)</span> và mỗi lần thao tác so sánh hai ký tự mất <span class="arithmatex">\(O(1)\)</span>, đẫn đến độ phức tạp tổng là <span class="arithmatex">\(O(n)\)</span>. </p>
+<h2 id="thuat-toan-cuoi-cung">Thuật toán cuối cùng</h2>
+<p>Tổng kết lại, thuật toán của chúng ta hoạt động như sau: </p>
+<ol>
+<li>Tính hàm tiền tố <span class="arithmatex">\(\pi[i]\)</span> bằng cách duyệt từ <span class="arithmatex">\(i = 1\)</span> đến <span class="arithmatex">\(i = n - 1\)</span> (gán mặc định <span class="arithmatex">\(\pi[0] = 0\)</span>).</li>
+<li>Giả sử đã tính xong <span class="arithmatex">\(\pi[0], \pi[1], \dots, \pi[i-1]\)</span>. Để tính <span class="arithmatex">\(\pi[i]\)</span>, ta khởi tạo biến <span class="arithmatex">\(j = \pi[i-1]\)</span> mang ý nghĩa là độ dài của hậu tố dài nhất của <span class="arithmatex">\(i - 1\)</span> mà chưa được kiểm tra.</li>
+<li>Kiểm tra liệu hậu tố của <span class="arithmatex">\(i\)</span> có độ dài <span class="arithmatex">\(j + 1\)</span> cũng khớp với tiền tố tương ứng hay không bằng cách so sánh hai chữ cái cuối (<span class="arithmatex">\(s[j]\)</span> và <span class="arithmatex">\(s[i]\)</span>).</li>
+<li>Nếu chúng bằng nhau, ta tìm được <span class="arithmatex">\(\pi[i] = j + 1\)</span>. Nếu không, gán <span class="arithmatex">\(j = \pi[j-1]\)</span> rồi lặp lại bước 3. </li>
+<li>Nếu <span class="arithmatex">\(j = 0\)</span> mà vẫn chưa ghép cặp được với <span class="arithmatex">\(s[i]\)</span>, ta đặt <span class="arithmatex">\(\pi[i] = 0\)</span> rồi tiếp tục tính <span class="arithmatex">\(\pi[i + 1]\)</span>. </li>
+</ol>
+<p><center>
+<img src="https://i.imgur.com/6LnQDXZ.gif"  style="width: 60%">
+</center></p>
+<h2 id="cai-at">Cài đặt</h2>
+<p>Cài đặt các bước trên rất ngắn và trực quan: </p>
+<p><div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prefix_function</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pi</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="w">            </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pi</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="w">            </span><span class="n">j</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span>
+</code></pre></div>
+Code có độ phức tạp <span class="arithmatex">\(O(n)\)</span> và sử dụng <span class="arithmatex">\(O(n)\)</span> bộ nhớ.</p>
+<p>Một điểm đáng lưu ý nữa là đây là một thuật toán <strong>online</strong>: Ta có thể đọc lần lượt từng chữ cái của xâu <span class="arithmatex">\(s\)</span>, mỗi chữ cái mới vào có thể được xử lý ngay lập tức để tính được <span class="arithmatex">\(\pi[i]\)</span>. Nói cách khác, nếu đề bài yêu cầu tính hàm tiền tố nhưng có thêm truy vấn "thêm một chữ cái vào cuối xâu" thì ta vẫn có thể làm như bình thường. </p>
+<p>Về mặt bộ nhớ, ta vẫn cần phải lưu lại xâu và giá trị các hàm tiền tố trước đó nên vẫn cần đến <span class="arithmatex">\(O(n)\)</span> bộ nhớ. Trường hợp đặc biệt là khi hàm tiền tố luôn nhỏ hơn một hằng số <span class="arithmatex">\(M\)</span> nào đó, khi đó ta chỉ cần lưu <span class="arithmatex">\(M + 1\)</span> chữ cái đầu và <span class="arithmatex">\(M + 1\)</span> hàm tiền tố tương ứng của xâu. Nhận xét này sẽ tỏ ra rất hữu ích ở các phần sau. </p>
+<h1 id="ung-dung">Ứng dụng</h1>
+<h2 id="thuat-toan-knuth-morris-pratt-kmp">Thuật toán Knuth-Morris-Pratt (KMP)</h2>
+<p>Quay trở lại với bài toán ban đầu: Đếm số lần xâu <span class="arithmatex">\(s\)</span> độ dài <span class="arithmatex">\(n\)</span> xuất hiện trong xâu <span class="arithmatex">\(t\)</span> độ dài <span class="arithmatex">\(m\)</span>. Lời giải cho bài toán này - thuật toán KMP - là một áp dụng kinh điển của hàm tiền tố. Vậy làm thế nào để dùng hàm tiền tố khi có hai xâu cần khớp chứ không phải trong một xâu? Bằng cách gộp chúng vào nhau.</p>
+<p>Nhận xét rằng nếu ta nối xâu <span class="arithmatex">\(t\)</span> vào sau xâu <span class="arithmatex">\(s\)</span> và hai xâu được ngăn cách bởi một ký tự <span class="arithmatex">\(\text{#}\)</span> không nằm trong cả 2 xâu (ví dụ nếu <span class="arithmatex">\(s\)</span>, <span class="arithmatex">\(t\)</span> gồm toàn chữ cái thì có thể lấy <span class="arithmatex">\(\text{#}\)</span> là <span class="arithmatex">\(0\)</span>, xâu mới là <span class="arithmatex">\(s + 0 + t\)</span>), thì mỗi một lần <span class="arithmatex">\(s\)</span> xuất hiện trong <span class="arithmatex">\(t\)</span> tương đương với một vị trí <span class="arithmatex">\(i\)</span> ở xâu mới có hàm tiền tố = <span class="arithmatex">\(\pi[i] = n\)</span>. </p>
+<p>Thuật toán KMP đảm bảo tính đúng đắn, vì nếu <span class="arithmatex">\(i\)</span> thỏa mãn <span class="arithmatex">\(\pi[i] = n\)</span> thì phải có <span class="arithmatex">\(i \gt n\)</span> (nghĩa là các giá trị <span class="arithmatex">\(i\)</span> thỏa mãn phải nằm ở nửa sau tạo bởi <span class="arithmatex">\(t\)</span>) và hậu tố của <span class="arithmatex">\(i\)</span> có độ dài <span class="arithmatex">\(\pi[i]\)</span> không thể "tràn" sang phần của <span class="arithmatex">\(s\)</span>. </p>
+<p>Ta có thể cài đặt KMP bằng cách sử dụng code trên: <code>prefix_function(s + # + t)</code> trả về hàm tiền tố cho <span class="arithmatex">\(s + \text{#} + t\)</span> và ta chỉ cần đếm xem có bao nhiêu phần tử trong đó có giá trị là <span class="arithmatex">\(n\)</span>. Cách cài đặt này tốn <span class="arithmatex">\(O(n + m)\)</span> bộ nhớ.</p>
+<p>Tuy nhiên, việc chọn ký tự ngăn cách là một chữ cái không nằm trong cả hai xâu còn dẫn đến <span class="arithmatex">\(\pi[i] \leq n\)</span>. Như đã nói ở trên, chặn trên này cho phép ta chỉ lưu xâu <span class="arithmatex">\(s + \text{#}\)</span> và hàm tiền tố của xâu này. Với các vị trí thuộc xâu <span class="arithmatex">\(t\)</span> thì ta có thể tính <span class="arithmatex">\(\pi\)</span> lần lượt (bằng cách lưu một biến <span class="arithmatex">\(j\)</span> chứa giá trị <span class="arithmatex">\(\pi\)</span> ở vị trí hiện tại) và thêm <span class="arithmatex">\(1\)</span> vào đáp án nếu <span class="arithmatex">\(\pi\)</span> tại vị trí đang xét là <span class="arithmatex">\(n\)</span>: </p>
+<p><div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prefix_function</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"> </span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Số lần s xuất hiện trong t</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Hàm tiền tố ở vị trí đang xét của xâu t</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="w">        </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pi</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="w">        </span><span class="n">j</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="w">        </span><span class="n">ans</span><span class="o">++</span><span class="p">;</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+Code trên lưu cả hai xâu <span class="arithmatex">\(s\)</span>, <span class="arithmatex">\(t\)</span> nên vẫn dùng <span class="arithmatex">\(O(n + m)\)</span> bộ nhớ, nhưng có thể giảm xuống còn <span class="arithmatex">\(O(n)\)</span> bộ nhớ nếu ta đọc lần lượt từng ký tự của <span class="arithmatex">\(t\)</span> rồi tính luôn <span class="arithmatex">\(\pi\)</span> thay vì lưu cả xâu rồi mới tính.</p>
+<p>Tổng kết lại, thuật toán KMP giải quyết được bài toán so khớp chuỗi trong thời gian <span class="arithmatex">\(O(n + m)\)</span> và sử dụng <span class="arithmatex">\(O(n)\)</span> bộ nhớ.</p>
+<h2 id="em-so-lan-xuat-hien-cua-tung-tien-to">Đếm số lần xuất hiện của từng tiền tố</h2>
+<p><strong>Bài toán</strong>
+Ở đây ta xét hai bài toán tương đối giống nhau: 
+Cho một xâu <span class="arithmatex">\(s\)</span> độ dài <span class="arithmatex">\(n\)</span>.
+1. Với mỗi <span class="arithmatex">\(0 \leq i \lt n\)</span>, đếm số lần tiền tố <span class="arithmatex">\(s[0 \dots i]\)</span> xuất hiện trong xâu <span class="arithmatex">\(s\)</span>. 
+2. Thay vì đếm trong xâu <span class="arithmatex">\(s\)</span>, đếm số lần <span class="arithmatex">\(s[0 \dots i]\)</span> xuất hiện trong một xâu <span class="arithmatex">\(t\)</span> khác có độ dài <span class="arithmatex">\(m\)</span>. </p>
+<p><strong>Lời giải</strong>
+Trước tiên, ta giải phiên bản 1. 
+Xét giá trị của <span class="arithmatex">\(\pi[i]\)</span> tại vị trí <span class="arithmatex">\(i\)</span>. Dựa vào định nghĩa của <span class="arithmatex">\(\pi\)</span>, một trong các hậu tố của <span class="arithmatex">\(s[0 \dots i]\)</span> là tiền tố <span class="arithmatex">\(s[0 \dots \pi[i]-1]\)</span>. <span class="arithmatex">\(\pi[i]\)</span> lớn nhất nên không thể có tiền tố nào dài hơn mà cũng khớp với một hậu tố của <span class="arithmatex">\(s[0 \dots i]\)</span>, <strong>nhưng có thể có một số tiền tố ngắn hơn thỏa mãn.</strong></p>
+<p>Ý tưởng là duyệt qua mỗi <span class="arithmatex">\(i\)</span> và kiểm soát xem số lần các tiền tố <span class="arithmatex">\(s[0 \dots 0], s[0 \dots 1], \dots, s[0 \dots i]\)</span> xuất hiện thay đổi như thế nào. Xét các hậu tố kết thúc ở <span class="arithmatex">\(i\)</span> mà khớp với tiền tố có cùng độ dài, khi đó ta đơn giản cộng một vào số lần xuất hiện của các tiền tố này. </p>
+<p>Như đã đề cập ở phần <a href="#Thuật-toán-cuối-cùng">thuật toán cuối cùng</a>, độ dài các tiền tố mà cũng là hậu tố kết thúc ở <span class="arithmatex">\(i\)</span> từ lớn đến bé là <span class="arithmatex">\(\pi[i]\)</span>, <span class="arithmatex">\(\pi[\pi[i] - 1]\)</span>, <span class="arithmatex">\(\pi[\pi[\pi[i] - 1] - 1], \dots\)</span> Ta duyệt qua lần lượt từng tiền tố này rồi cộng <span class="arithmatex">\(1\)</span> vào đáp án cho tiền tố đó (đáp án cho tiền tố độ dài <span class="arithmatex">\(i\)</span> là <span class="arithmatex">\(ans[i-1]\)</span>), thì độ phức tạp sẽ là <span class="arithmatex">\(O(n^2)\)</span>: </p>
+<p><div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ans</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">pi</span><span class="p">[</span><span class="n">j</span><span class="p">];</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pi</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ans</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">pi</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+Thuật toán trên có độ phức tạp lớn do mỗi tiền tố ta phải duyệt qua nhiều lần. Để khắc phục điều này, ta sẽ dùng ý tưởng tương tự như mảng cộng dồn. </p>
+<p>Để ý rằng nếu ta xét đồ thị cho <span class="arithmatex">\(n + 1\)</span> đỉnh <span class="arithmatex">\(0, 1, 2, \dots, n\)</span>, trong đó đỉnh <span class="arithmatex">\(i ~ (i \leq 1)\)</span> ứng với tiền tố thứ <span class="arithmatex">\(i\)</span>, và có các cạnh nối từ <span class="arithmatex">\(i + 1\)</span> đến <span class="arithmatex">\(\pi[i]\)</span> với mọi <span class="arithmatex">\(i\)</span> từ <span class="arithmatex">\(0\)</span> đến <span class="arithmatex">\(n - 1\)</span>, thì đồ thị này là một cây có hướng. </p>
+<p>Ví dụ: với xâu "<span class="arithmatex">\(abcabcd\)</span>", ta có hàm tiền tố <span class="arithmatex">\([0, 1, 0, 1, 2, 2, 3]\)</span>, tương ứng với các cạnh <span class="arithmatex">\((1, 0), (2, 1), (3, 0), (4, 1), (5, 2), (6, 2), (7, 3)\)</span> của cây: 
+<center></p>
+<p><img alt="/uploads/kmp_img1.png" src="/uploads/kmp_img1.png" />
+</center></p>
+<p>Ý tưởng này phần nào giúp chúng ta dễ hình dung hơn cách giải: việc tính <span class="arithmatex">\(ans\)</span> đưa về bài toán cập nhật truy vấn cộng <strong><span class="arithmatex">\(1\)</span> vào các nút trên đường đi từ một nút đến gốc</strong> và tìm giá trị tại tất cả các nút sau mọi truy vấn - một bài toán có cách giải dùng mảng cộng dồn.</p>
+<p>Giả sử cần cộng <span class="arithmatex">\(1\)</span> vào các giá trị <span class="arithmatex">\(ans[i], ans[\pi[i]-1]\)</span>, <span class="arithmatex">\(ans[\pi[\pi[i] - 1]-1]\)</span>,... Thay vì duyệt qua từng giá trị một ta chỉ gán <span class="arithmatex">\(ans[i] = 1\)</span>. Sau đó, duyệt giảm dần từ <span class="arithmatex">\(n-1\)</span> về <span class="arithmatex">\(0\)</span>, khi duyệt đến <span class="arithmatex">\(i\)</span> thì cộng <span class="arithmatex">\(ans[i]\)</span> vào <span class="arithmatex">\(ans[\pi[i]-1]\)</span> khi duyệt đến <span class="arithmatex">\(\pi[i]-1\)</span> thì cộng <span class="arithmatex">\(ans[\pi[i]-1]\)</span> vào <span class="arithmatex">\(ans[\pi[\pi[i]-1]]\)</span>, khi duyệt đến <span class="arithmatex">\(\pi[\pi[i]-1]\)</span> thì cộng <span class="arithmatex">\(ans[\pi[\pi[i]-1]]\)</span> vào <span class="arithmatex">\(ans[\pi[\pi[\pi[i]-1]-1]]\)</span>,... Đến khi duyệt xong thì giá trị của <span class="arithmatex">\(ans[\pi[i]]\)</span>, <span class="arithmatex">\(ans[\pi[\pi[i] - 1]]\)</span>,... đều là đã được cộng thêm 1. </p>
+<p>Do ta duyệt qua mỗi phần tử đúng một lần và độ phức tạp tính hàm tiền tố là <span class="arithmatex">\(O(n)\)</span>, tổng độ phức tạp thuật chỉ còn là <span class="arithmatex">\(O(n)\)</span>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ans</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="w">        </span><span class="n">ans</span><span class="p">[</span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</code></pre></div>
+<p>Để giải quyết phiên bản thứ 2, ta chỉ cần áp dụng kỹ thuật được sử dụng ở thuật toán KMP: <strong>nối hai xâu để tạo xâu mới <span class="arithmatex">\(s + \text{#} + t\)</span> và xây dựng hàm tiền tố cho xâu này</strong>. Sau đó, tìm <span class="arithmatex">\(ans\)</span> tương tự như phiên bản 1, đáp án là <span class="arithmatex">\(ans\)</span> của các vị trí <span class="arithmatex">\(i\)</span> thuộc về xâu <span class="arithmatex">\(t\)</span> (<span class="arithmatex">\(i \ge n + 1\)</span>). </p>
+<h2 id="em-so-xau-con-phan-biet-trong-mot-xau">Đếm số xâu con phân biệt trong một xâu</h2>
+<p><strong>Bài toán</strong>
+Cho một xâu <span class="arithmatex">\(s\)</span> có độ dài <span class="arithmatex">\(n\)</span>. Đếm số xâu con phân biệt của <span class="arithmatex">\(s\)</span>. </p>
+<p><strong>Lời giải</strong>
+Hướng làm của chúng ta là bắt đầu với xâu rỗng, rồi mở rộng xâu bằng cách thêm lần lượt <span class="arithmatex">\(s[0], s[1], \dots, s[n-1]\)</span> vào cuối xâu, đồng thời cập nhật số xâu con phân biệt hiện tại. Sau khi đã thêm đủ <span class="arithmatex">\(n\)</span> ký tự <span class="arithmatex">\(s[i]\)</span>, ta sẽ có được số xâu con phân biệt của xâu ban đầu. </p>
+<p>Mỗi lần thêm ký tự <span class="arithmatex">\(s[i]\)</span> ta sẽ có thêm <span class="arithmatex">\(i\)</span> xâu mới là <span class="arithmatex">\(s[0 \dots i], s[1 \dots i], \dots s[i \dots i]\)</span>, nhưng ta chỉ được thêm vào đáp án các xâu không nằm trong xâu trước khi thêm <span class="arithmatex">\(s[i]\)</span> (hay nói cách khác là không nằm trong <span class="arithmatex">\(s[0 \dots i - 1]\)</span>). Làm thế nào để đếm nhanh số xâu không lặp này? Một lần nữa ta sử dụng hàm tiền tố. </p>
+<p>Gọi xâu có được sau khi thêm <span class="arithmatex">\(s[i]\)</span> vào cuối là <span class="arithmatex">\(t\)</span>. Nhận xét là nếu ta đảo ngược xâu <span class="arithmatex">\(t\)</span> thì số xâu bị lặp chính là số tiền tố của <span class="arithmatex">\(t\)</span> khớp với một xâu con nào đó của <span class="arithmatex">\(t\)</span>. Nếu ta tính hàm tiền tố <span class="arithmatex">\(\pi\)</span> trên xâu <span class="arithmatex">\(t\)</span> bị đảo ngược, thì số xâu bị lặp này chính là giá trị lớn nhất <span class="arithmatex">\(\pi_{max}\)</span> của <span class="arithmatex">\(\pi\)</span> vì:</p>
+<ul>
+<li><span class="arithmatex">\(s[i - \pi_{max} \dots i]\)</span> khớp với một xâu trong <span class="arithmatex">\(t\)</span> không phải chính nó (theo định nghĩa hàm tiền tố) nên nó bị lặp, dẫn các xâu <span class="arithmatex">\(s[i - \pi_{max} + 1], \dots, s[i - 1 \dots i], s[i \dots i]\)</span> cũng bị lặp.  </li>
+<li>Các xâu <span class="arithmatex">\(s[j \dots i] ~ (j \leq i)\)</span> có độ dài lớn hơn <span class="arithmatex">\(\pi_{max}\)</span> chắc chắn không lặp vì nếu có thì <span class="arithmatex">\(\pi_{max}\)</span> sẽ không phải giá trị lớn nhất của <span class="arithmatex">\(\pi\)</span>. </li>
+</ul>
+<p>Vậy số xâu mới bị lặp với một xâu con có trước là <span class="arithmatex">\(\pi_{max}\)</span>, dẫn đến số xâu cần thêm vào đáp án là <span class="arithmatex">\(i - \pi_{max}\)</span> (Do có <span class="arithmatex">\(i\)</span> xâu mới). Tính <span class="arithmatex">\(\pi_{max}\)</span> với mỗi <span class="arithmatex">\(i\)</span> hết <span class="arithmatex">\(O(i)\)</span> nên tổng độ phức tạp thuật toán là <span class="arithmatex">\(O(n^2)\)</span>. </p>
+<p>Ngoài ra, thay vì mỗi bước cập nhật kết quả sau khi thêm một chữ cái vào cuối xâu hiện tại, ta cũng có thể thêm một chữ vào đầu xâu hiện tại, hoặc bắt đầu với xâu hoàn chỉnh và mỗi bước bỏ đi chữ cái đầu (hoặc cuối). Độ phức tạp <span class="arithmatex">\(O(n^2)\)</span> cũng chưa phải là độ phức tạp tốt nhất - ta có thể đếm số xâu con của một xâu trong <span class="arithmatex">\(O(n)\)</span> hoặc <span class="arithmatex">\(O(n \log n)\)</span> nhờ mảng hậu tố (Suffix Array). </p>
+<h2 id="nen-xau">Nén xâu</h2>
+<p><strong>Bài toán</strong>
+Cho một xâu <span class="arithmatex">\(s\)</span> độ dài <span class="arithmatex">\(n\)</span>. Tìm xâu <span class="arithmatex">\(t\)</span> có độ dài nhỏ nhất sao cho có thể tạo được xâu <span class="arithmatex">\(s\)</span> bằng cách lặp lại xâu <span class="arithmatex">\(t\)</span> hữu hạn lần. </p>
+<p><strong>Lời giải</strong>
+Trước tiên, nhận xét là chúng ta chỉ cần tìm độ dài của <span class="arithmatex">\(t\)</span>, vì khi đó đáp án của bài toán sẽ là tiền tố của <span class="arithmatex">\(s\)</span> có độ dài này. </p>
+<p>Giả sử ta cố định độ dài của <span class="arithmatex">\(t\)</span> là <span class="arithmatex">\(l\)</span> (chỉ xét <span class="arithmatex">\(l\)</span> là ước của <span class="arithmatex">\(n\)</span>) thì khi đó bài toán đưa về kiểm tra <span class="arithmatex">\(s[0 \dots l - 1] = s[l \dots 2l-1] = \dots = s[n - l, n - 1]\)</span> <span class="arithmatex">\((*)\)</span> có được thỏa mãn hay không. </p>
+<p>Nếu ta dùng thẳng điều kiện <span class="arithmatex">\((*)\)</span>), với mỗi giá trị của <span class="arithmatex">\(l\)</span> kiểm tra sẽ cần duyệt qua <span class="arithmatex">\(O(
+\frac{n}{l})\)</span> cặp xâu liền kề, mỗi cặp kiểm tra xem chúng bằng nhau không mất độ phức tạp <span class="arithmatex">\(O(l)\)</span>, nên độ phức tạp để kiểm tra khi cố định <span class="arithmatex">\(l\)</span> là <span class="arithmatex">\(O(
+\frac{n}{l}) * O(l) = O(n)\)</span>. <span class="arithmatex">\(l\)</span> chỉ có thể nhận <span class="arithmatex">\(O(n^{\frac{1}{3}})\)</span> giá trị khác nhau do là ước của <span class="arithmatex">\(n\)</span>, dẫn tới tổng độ phức tạp là <span class="arithmatex">\(O(n^{\frac{4}{3}})\)</span>. Độ phức tạp này là đủ tốt để AC với <span class="arithmatex">\(n \leq 10^5\)</span>, nhưng ta có thể dùng hàm tiền tố để làm tốt hơn. </p>
+<p>Chìa khóa ở đây là thay đổi cách viết <span class="arithmatex">\((*)\)</span> thành: </p>
+<div class="arithmatex">\[s[0 \dots l - 1] = s[l \dots 2l-1] \\ s[l \dots 2l-1] = s[2l \dots 3l-1] \\ \dots \\ s[n - 2l \dots n-l-1]= s[n - l, n - 1]\]</div>
+<p>Rồi gộp các xâu ở các vế trái thành một, gộp các xâu ở các vế phải thành một, ta thu được: </p>
+<div class="arithmatex">\[s[0 \dots n-l-1] = s[l \dots n-1]\]</div>
+<p>Hay nói cách khác, <span class="arithmatex">\(l\)</span> phải thỏa mãn tiền tố độ dài <span class="arithmatex">\(n-l\)</span> khớp với hậu tố có cùng độ dài của xâu. Kiểm tra điều kiện rút gọn này là đủ vì từ nó ta có thể suy ngược lại ra điều kiện <span class="arithmatex">\((*)\)</span>. Áp dụng hàm tiền tố: Các tiền tố mà cũng là hậu tố kết thúc tại <span class="arithmatex">\(n-1\)</span> có độ dài <span class="arithmatex">\(\pi[n-1], \pi[\pi[n-1]-1], \pi[\pi[\pi[n-1]-1] - 1], \dots\)</span>, duyệt qua từng độ dài này và dừng lại khi có một độ dài <span class="arithmatex">\(l\)</span> thỏa mãn <span class="arithmatex">\(n\)</span> chia hết cho <span class="arithmatex">\(n - l\)</span>, khi đó đáp án sẽ là <span class="arithmatex">\(n - l\)</span>. Nếu không có độ dài nào thỏa mãn, đáp án khi đó là <span class="arithmatex">\(n\)</span>. Độ phức tạp của thuật chỉ là <span class="arithmatex">\(O(n)\)</span>. </p>
+<p>Thậm chí ta chỉ cần kiểm tra cho tiền tố độ dài <span class="arithmatex">\(\pi[n-1]\)</span> là đủ: nếu <span class="arithmatex">\(k = n - \pi[n-1]\)</span> là ước của <span class="arithmatex">\(n\)</span> thì đó chính là đáp án, nếu không thì đáp án là <span class="arithmatex">\(n\)</span>. Chứng minh: 
+- Nếu <span class="arithmatex">\(n\)</span> chia hết cho <span class="arithmatex">\(k\)</span>, do <span class="arithmatex">\(\pi[n-1]\)</span> là tiền tố dài nhất cũng là hậu tố của xâu, <span class="arithmatex">\(k\)</span> là độ dài ngắn nhất thỏa mãn. 
+- Nếu <span class="arithmatex">\(n\)</span> không chia hết cho <span class="arithmatex">\(k\)</span>, giả sử phản chứng tồn tại <span class="arithmatex">\(p \lt n\)</span> sao cho nén được xâu <span class="arithmatex">\(s\)</span> thành tiền tố độ dài <span class="arithmatex">\(p\)</span> của xâu. Khi đó ta có <span class="arithmatex">\(\pi[n-1]\)</span> &gt; <span class="arithmatex">\(n-p\)</span>, dẫn đến hậu tố độ dài <span class="arithmatex">\(\pi[n-1]\)</span> của xâu sẽ chứa một phần của <span class="arithmatex">\(s[0 \dots p-1]\)</span>. </p>
+<p>Xét xâu <span class="arithmatex">\(s[k \dots (k+p-1)]\)</span>. Do tiền tố và hậu độ dài <span class="arithmatex">\(\pi[n-1]\)</span> bằng nhau, <span class="arithmatex">\(s[k \dots (k+p-1)] = s[0 \dots p-1]\)</span>, so sánh từng cặp chữ cái tương ứng của hai xâu này, ta rút ra <span class="arithmatex">\(s_i = s_{(i+k) \mod p} ~ \forall ~ 0 \leq i \lt p\)</span>. </p>
+<p>Đặt <span class="arithmatex">\(d = \gcd(k,p)\)</span>, điều kiện trên khi đó tương đương với <span class="arithmatex">\(s_i = s_{(i+d) \mod p} ~ \forall ~ 0 \leq i \lt p\)</span>, nghĩa là <span class="arithmatex">\(s[0 \dots d-1]\)</span> là một xâu nén của <span class="arithmatex">\(s[0 \dots p-1]\)</span>. Do <span class="arithmatex">\(d \leq k \lt p\)</span>, <span class="arithmatex">\(s[0 \dots d-1]\)</span> là một xâu nén của <span class="arithmatex">\(s\)</span> có độ dài nhỏ hơn <span class="arithmatex">\(p\)</span>, mâu thuẫn với cách chọn <span class="arithmatex">\(p\)</span> là xâu nén nhỏ nhất. Ta có điều phải chứng minh.</p>
+<p>Ví dụ minh họa:</p>
+<div class="arithmatex">\[\overbrace{s_0 ~ s_1 ~ s_2 ~ s_3 ~ s_4}^p ~ \overbrace{s_0 ~ s_1 ~ s_2 ~ s_3 ~ s_4}^p ~ \overbrace{s_{0} ~ s_{1} ~ s_{2} ~ s_{3} ~ s_{4}}^p\]</div>
+<div class="arithmatex">\[\underbrace{s_0 ~ s_1}_k ~ \rlap{\underbrace{\phantom{s_2 ~ s_3 ~ s_4 ~ s_5 ~ s_6 s_7 ~ s_8 ~ s_9 ~ s_{0} ~ s_{1} ~ s_{2} ~ s_{3} ~ s_{4}}}_{\pi[15]=13}} \overbrace{s_2 ~ s_3 ~ s_4 ~ s_0 ~ s_1}^p ~ s_2 ~ s_3 ~ s_4 ~ s_{0} ~ s_{1} ~ s_{2} ~ s_{3} ~ s_{4}\]</div>
+<div class="arithmatex">\[s_0 = s_2, s_1 = s_3, s_2 = s_4, s_3 = s_0, s_4 = s_1 \\ \Rightarrow s_0 = s_1 = s_2 = s_3 = s_4  \\ \Rightarrow s_0 ~ \text{nén được } s\]</div>
+<h2 id="tao-automaton-tu-ham-tien-to">Tạo automaton từ hàm tiền tố</h2>
+<p>Một kỹ thuật đặc trưng đã được sử dụng ở các bài nêu trên là: ghép hai xâu <span class="arithmatex">\(s, t\)</span> vào nhau bằng một ký tự ngăn cách <span class="arithmatex">\(\text{#}\)</span> không nằm trong <span class="arithmatex">\(s\)</span> hoặc <span class="arithmatex">\(t\)</span>, rồi tính hàm tiền tố cho xâu <span class="arithmatex">\(s + \text{#} + t\)</span> này. 
+Việc <span class="arithmatex">\(\text{#}\)</span> là ký tự không nằm trong cả hai xâu dẫn tới <span class="arithmatex">\(\pi[i]\)</span> không thể vượt quá <span class="arithmatex">\(\lvert s \rvert\)</span> với mọi <span class="arithmatex">\(i\)</span>, qua đó cho phép chúng ta chỉ cần lưu xâu <span class="arithmatex">\(s + \text{#}\)</span> và các giá trị <span class="arithmatex">\(\pi\)</span> tương ứng với xâu này.</p>
+<div class="arithmatex">\[\underbrace{s_0 ~ s_1 ~ \dots ~ s_{n-1} ~ \#}_{\text{cần lưu}} ~ \underbrace{t_0 ~ t_1 ~ \dots ~ t_{m-1}}_{\text{không cần lưu}}\]</div>
+<p>Để tính hàm tiền tố cho các chữ cái sau đó, ta chỉ cần biết chữ cái tiếp theo <span class="arithmatex">\(c\)</span> trong xâu <span class="arithmatex">\(t\)</span> và giá trị của hàm tiền tố ở vị trí trước mà không cần lưu lại cả xâu <span class="arithmatex">\(t\)</span>. </p>
+<p>Nói cách khác, ta có thể dựng một <strong>automaton</strong> (máy hữu hạn trạng thái), trong đó các trạng thái là các giá trị có thể của hàm tiền tố hiện tại (từ <span class="arithmatex">\(0\)</span> đến <span class="arithmatex">\(\lvert s \rvert\)</span>), và các bước chuyển trạng thái là các giá trị có thể của chữ cái tiếp theo. </p>
+<p>Do đó, kể cả khi không có xâu <span class="arithmatex">\(t\)</span> thì ta vẫn có thể tính ma trận chuyển trạng thái <span class="arithmatex">\((\text{old} _\pi, c) \rightarrow \text{new} _\pi\)</span> tương tự như khi ta tìm <span class="arithmatex">\(\pi[i]\)</span> hiện tại, chỉ là ở vị trí <span class="arithmatex">\(i\)</span> có thể là bất kỳ ký tự nào trong bảng chữ cái:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">compute_automaton</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">aut</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sc">&#39;#&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prefix_function</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="n">aut</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">26</span><span class="p">));</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">26</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="w">                </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pi</span><span class="p">[</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="w">                </span><span class="n">j</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="n">aut</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Đối với bảng chữ cái tiếng Anh không hoa (26 chữ cái), độ phức tạp của thuật toán trên là <span class="arithmatex">\(O(n^2 * 26)\)</span>. </p>
+<p>Một lần nữa, lý do độ phức tạp của thuật lớn là vì chưa tận dụng các thông tin đã được tính trước đó. Do đó ta tối ưu bằng quy hoạch động: Khi chúng ta gán <span class="arithmatex">\(j\)</span> bằng <span class="arithmatex">\(\pi[j-1]\)</span>, bước chuyển <span class="arithmatex">\((j, c)\)</span> dẫn đến cũng trạng thái với bước chuyển <span class="arithmatex">\((\pi[j-1], c)\)</span>, và trạng thái ứng với <span class="arithmatex">\((\pi[j-1], c)\)</span> thì đã được tính trước đó, nên với mỗi cặp <span class="arithmatex">\((j, c)\)</span> ta tính được trong <span class="arithmatex">\(O(1)\)</span> và độ phức tạp tổng chỉ là <span class="arithmatex">\(O(n * 26)\)</span>. </p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">compute_automaton</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">aut</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sc">&#39;#&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prefix_function</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="w">    </span><span class="n">aut</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">26</span><span class="p">));</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">26</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="w">                </span><span class="n">aut</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aut</span><span class="p">[</span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]][</span><span class="n">c</span><span class="p">];</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">                </span><span class="n">aut</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Vậy thì tại sao xây một automaton như vậy lại hữu ích? </p>
+<p>Trước tiên, ta cần hiểu mục đích chính của việc tạo xâu <span class="arithmatex">\(s + \text{#} + t\)</span> là để đếm số lần xâu <span class="arithmatex">\(s\)</span> xuất hiện trong xâu <span class="arithmatex">\(t\)</span>. </p>
+<p>Do đó, lợi ích gần nhất của automaton này là <strong>tăng tốc độ tính hàm tiền tố</strong> cho xâu <span class="arithmatex">\(s + \text{#} + t\)</span>. Nhờ có automaton mà ta không cần lưu lại xâu <span class="arithmatex">\(s\)</span> và hàm tiền tố <span class="arithmatex">\(\pi\)</span>, vì mọi bước chuyển trạng thái có thể đều đã được tính trong ma trận. </p>
+<p>Nhưng còn có một ứng dụng khác, ít hiển nhiên hơn của automaton: giải bài toán so khớp chuỗi khi <span class="arithmatex">\(t\)</span> là một xâu cực đại được xây theo một quy tắc nào đó. Ví dụ, xâu <span class="arithmatex">\(t\)</span> có thể là các xâu Gray (định nghĩa ở dưới), hoặc một xâu được định nghĩa theo một công thức đệ quy dựa vào các xâu đầu vào. Để minh họa cụ thể hơn, ta xét bài tập sau: </p>
+<p><strong>Bài toán</strong>
+Cho một số nguyên dương <span class="arithmatex">\(k \leq 10^5\)</span> và một xâu <span class="arithmatex">\(s\)</span> có độ dài <span class="arithmatex">\(\leq 10^5\)</span>. Tính số lần <span class="arithmatex">\(s\)</span> xuất hiện trong xâu Gray thứ <span class="arithmatex">\(k\)</span>, trong đó các xâu Gray <span class="arithmatex">\(g_i\)</span> được định nghĩa như sau:</p>
+<div class="arithmatex">\[\begin{align}
+g_1 &amp;= \text{"a"}\\
+g_2 &amp;= \text{"aba"}\\
+g_3 &amp;= \text{"abacaba"}\\
+g_4 &amp;= \text{"abacabadabacaba"}
+\end{align}\]</div>
+<p><em>Lưu ý: chữ cái ở chính giữa <span class="arithmatex">\(g_i\)</span> không nhất thiết phải là chữ cái thứ <span class="arithmatex">\(i\)</span> trong bảng chữ cái mà có thể là bất kỳ chữ nào, và chữ cái ở chính giữa của <span class="arithmatex">\(g_i\)</span>, <span class="arithmatex">\(g_j\)</span> <span class="arithmatex">\((i \neq j)\)</span> được phép giống nhau.</em> </p>
+<p><strong>Lời giải</strong>
+Hướng làm của chúng ta vẫn không đổi: tính hàm tiền tố cho <span class="arithmatex">\(t = g_i\)</span>. Viết theo "ngôn ngữ" automaton, ta cần duy trì trạng thái hiện tại khi thêm dần các chữ cái của <span class="arithmatex">\(t\)</span> từ trái sang phải. </p>
+<p>Dựng hẳn xâu <span class="arithmatex">\(t\)</span> là không thể trong trường hợp này, vì xâu Gray thứ <span class="arithmatex">\(k\)</span> có độ dài <span class="arithmatex">\(2^k-1\)</span>, quá lớn so với giới hạn bộ nhớ cho phép. </p>
+<p>Tuy vậy, bản chất xâu <span class="arithmatex">\(g\)</span> là lặp lại chính nó, nên cách trạng thái hiện tại thay đổi trong automaton cũng sẽ có thể tính được dựa vào các bước trước. </p>
+<p>Cụ thể hơn, trạng thái của automaton khi duyệt tới cuối <span class="arithmatex">\(g_i\)</span> có thể được tính nếu chúng ta biết trạng thái của automaton ở đầu <span class="arithmatex">\(g_i\)</span>. 
+1. Đặt <span class="arithmatex">\(G[i][j]\)</span> là trạng thái của automaton sau khi duyệt qua tất cả các chữ cái của <span class="arithmatex">\(g_i\)</span> từ trái sang phải, biết rằng trạng thái lúc ở đầu <span class="arithmatex">\(g_i\)</span> là <span class="arithmatex">\(j\)</span>. 
+2. Do cấu trúc <span class="arithmatex">\(g_i = g_{i-1} + \text{char(i)} + g_{i-1}\)</span>, khi duyệt đến hết nửa đầu của <span class="arithmatex">\(g_i\)</span> (duyệt qua các chữ cái của <span class="arithmatex">\(g_{i-1}\)</span>) thì trạng thái đã chuyển từ <span class="arithmatex">\(j\)</span> sang <span class="arithmatex">\(G[i-1][j]\)</span>. 
+3. Khi đọc đến <span class="arithmatex">\(\text{char(i)}\)</span>, trạng thái mới dễ dàng tính được bằng ma trận chuyển trạng thái: <span class="arithmatex">\(G[i-1][j] \rightarrow \text{mid}\)</span>, trong đó <span class="arithmatex">\(\text{mid} = \text{aut}(G[i-1][j], \text{char(i)})\)</span>. 
+4. Cuối cùng, ta duyệt qua nửa bên phải của <span class="arithmatex">\(g_i\)</span>, tương đương với duyệt qua <span class="arithmatex">\(g_{i-1}\)</span> một lần nữa, nên trạng thái cuối cùng là <span class="arithmatex">\(G[i-1][\text{mid}]\)</span>. </p>
+<p>Ta có thể tóm gọn cách trạng thái thay đổi bằng công thức:</p>
+<div class="arithmatex">\[\text{mid} = \text{aut}[G[i-1][j]][i]\]</div>
+<div class="arithmatex">\[G[i][j] = G[i-1][\text{mid}]\]</div>
+<p>Biết được trạng thái thay đổi như thế nào, ta có thể dùng nó để tính lại đáp án khi đi từ <span class="arithmatex">\(g_{i-1}\)</span> đến <span class="arithmatex">\(g_i\)</span>. Để thống nhất với cách ta tính <span class="arithmatex">\(G\)</span>, đặt <span class="arithmatex">\(K[i][j]\)</span> là số lần xâu <span class="arithmatex">\(s\)</span> xuất hiện trong <span class="arithmatex">\(g_i\)</span>, biết trạng thái ở đầu xâu là <span class="arithmatex">\(j\)</span>. Khi duyệt đến giữa xâu, ta đang có <span class="arithmatex">\(K[i][j] = K[i-1][j]\)</span>. Khi trạng thái chuyển thành <span class="arithmatex">\(mid\)</span>, ta cộng <span class="arithmatex">\(1\)</span> vào <span class="arithmatex">\(K[i][j]\)</span> nếu <span class="arithmatex">\(\text{mid} = \lvert s \rvert\)</span>. Phần còn lại chỉ là <span class="arithmatex">\(K[i-1][\text{mid}]\)</span>. Công thức:</p>
+<div class="arithmatex">\[K[i][j] = K[i-1][j] + (\text{mid} == |s|) + K[i-1][\text{mid}]\]</div>
+<p>Chốt lại, nhờ việc sử dụng automaton mà ta giải được bài toán so khớp trên xâu Gray, và ta có thể dùng lại ý tưởng này cho nhiều xâu khác được tạo bởi các quy tắc phức tạp hơn. 
+Cụ thể là bài toán: Tìm số lần <span class="arithmatex">\(s\)</span> xuất hiện trong <span class="arithmatex">\(t_i\)</span>, biết <span class="arithmatex">\(t_i\)</span> được tạo bằng cách nối các xâu <span class="arithmatex">\(t_k^{\text{cnt}}\)</span> (lặp lại <span class="arithmatex">\(t_k\)</span> <span class="arithmatex">\(\text{cnt}\)</span> lần, <span class="arithmatex">\(k \lt n\)</span>) vào nhau. 
+Ví dụ một quy tắc như thế: </p>
+<div class="arithmatex">\[\begin{align}
+t_1 &amp;= \text{"abdeca"}\\
+t_2 &amp;= \text{"abc"} + t_1^{30} + \text{"abd"}\\
+t_3 &amp;= t_2^{50} + t_1^{100}\\
+t_4 &amp;= t_2^{10} + t_3^{100}
+\end{align}\]</div>
+<p>Ta không thể dựng cả xâu vì độ lớn bùng nổ lên tới <span class="arithmatex">\(100^{100}\)</span> chữ cái (!). Tuy nhiên, cách giải cho bài nay không khác gì bài trước, đó là xây dựng automaton và tìm quy hoạch động để miêu tả cách trạng thái thay đổi. </p>
+<h1 id="bai-tap">Bài tập</h1>
+<p>Test code KMP: <a href="https://oj.vnoi.info/problem/substr">VNOJ - SUBSTR</a>
+* <a href="http://codeforces.com/contest/808/problem/G">Codeforces - Anthem of Berland</a>
+* <a href="https://codeforces.com/problemset/problem/471/D">Codeforces - MUH and Cube Walls</a>
+* <a href="https://codeforces.com/contest/432/problem/D">Codeforces - Prefixes and Suffixes</a>
+* <a href="https://codeforces.com/problemset/problem/126/B">Codeforces - Password</a> <br />
+* <a href="https://codeforces.com/contest/346/problem/B">Codeforces - Lucky Common Subsequence</a>
+* <a href="https://www.spoj.com/problems/PSTRING/">SPOJ - PSTRING</a>
+* <a href="https://atcoder.jp/contests/abc257/editorial/4203">AtCoder Beginner Contest 257 - Prefix Concatenation</a>
+* <a href="https://dmoj.ca/problem/noi14p4">NOI 2014 Problem 4 - Zoo</a>
+* <a href="https://lightoj.com/problem/unlucky-strings">LightOJ - Unlucky Strings</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/jquery-3.7.1.min.js"></script>
+      
+        <script src="../../../js/webjs.js"></script>
+      
+    
+  </body>
+</html>

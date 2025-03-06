@@ -1,0 +1,5034 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/KienPC1234/fptoj_wiki/translate/topcoder/Greedy-is-Good/">
+      
+      
+        <link rel="prev" href="../fun-with-bits/">
+      
+      
+        <link rel="next" href="../Hieu-ve-xac-suat/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Thuật toán Tham lam - FPTOJ WIKI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#thuat-toan-tham-lam" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="FPTOJ WIKI" class="md-header__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
+      
+  <img src="../../../uploads/icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FPTOJ WIKI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Thuật toán Tham lam
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Chuyển sang chế độ tối"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang chế độ tối" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Chuyển sang chế độ sáng"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Chuyển sang chế độ sáng" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="FPTOJ WIKI" class="md-nav__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
+      
+  <img src="../../../uploads/icon.svg" alt="logo">
+
+    </a>
+    FPTOJ WIKI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trang chủ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giới thiệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Thuật Toán
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Thuật Toán
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cơ Bản
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cơ Bản
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/basic/backtracking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Đệ quy và Thuật toán quay lui
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/basic/binary-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán tìm kiếm nhị phân
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/basic/bitwise-operators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phép toán bit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/basic/computational-complexity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Độ phức tạp thời gian
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/basic/hoc-tin-the-nao-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tôi đã học tin học như thế nào? Phần 1: vòng lặp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/basic/hoc-tin-the-nao-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tôi đã học tin học như thế nào? Phần 2: bắt đầu từ đâu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/basic/meet-in-the-middle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Meet In The Middle (MITM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/basic/sorting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán sắp xếp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/basic/Tai-Lieu-Thuat-Toan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số Tài liệu hay về Thuật Toán
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/basic/two-pointers.md78" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kĩ thuật hai con trỏ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Đại Số
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Đại Số
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/algebra/binary_exponentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lũy thừa nhị phân
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/algebra/euclid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Euclid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/algebra/fft-test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biến đổi Fourier nhanh - Fast Fourier transform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/algebra/nCk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cách tính số tổ hợp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/algebra/primality_check/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kiểm tra số nguyên tố
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/algebra/prime_sieve/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sàng nguyên tố
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cấu trúc dữ liệu
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cấu trúc dữ liệu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/array-vs-linked-lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mảng và danh sách liên kết
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/C%C3%A2y-Palindrome/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cấu trúc của cây Palindrome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/data-structures-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan về Cấu Trúc Dữ Liệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/deque-min-max/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàng đợi hai đầu (deque) và Bài toán tìm max-min trong đoạn tịnh tiến
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/Deque/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deque - hàng đợi hai đầu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/disjoint-set-union/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disjoint Set Union
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/disjoint-set/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disjoints Sets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/fenwick-2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây chỉ số nhị phân 2 chiều (BIT 2 chiều)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/fenwick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây chỉ số nhị phân (Binary Indexed Tree)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/hash-table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bảng băm (Hash Table)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/heavy-light-decomposition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heavy-Light Decomposition (HLD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/interval-tree-tap-doan-thang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interval Tree trên tập đoạn thẳng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/lca-binlift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lowest Common Ancestor (LCA) - Binary Lifting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/lca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các phương pháp giải bài toán LCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/mo-algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chia căn (sqrt decomposition) và ứng dụng: Phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/overview-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cấu trúc dữ liệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/persistent-data-structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Persistent Data Structures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/prefix-sum-and-difference-array/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mảng cộng dồn và mảng hiệu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/rmq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Range Minimum Query (RMQ) - Sparse Table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/segment-tree-basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây Phân Đoạn (cơ bản)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/segment-tree-extend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tất tần tật về Cây Phân Đoạn (Segment Tree)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/Skip-Lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Skip Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/sqrt-decomposition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chia căn (sqrt decomposition) và ứng dụng: Phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/Stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stack (ngăn xếp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/suffix-array/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mảng hậu tố (Suffix Array)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/suffix-automaton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Suffix Automaton
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/data-structures/trie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trie
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quy hoạch động
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Quy hoạch động
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/dp/basic-dynamic-programming-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy hoạch động cơ bản (Phần 1)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/dp/basic-dynamic-programming-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy hoạch động cơ bản (Phần 2)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/dp/basic-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số bài toán quy hoạch động điển hình
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/dp/Mot-so-ky-thuat-toi-uu-hoa-thuat-toan-Quy-Hoach-Dong/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số kĩ thuật tối ưu hoá thuật toán Quy Hoạch Động
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/dp/palindrome-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một vài bài tập về Palindrome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/dp/thac-mac-ve-qhd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phân tích về QHĐ - Thầy Lê Minh Hoàng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Games
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Games
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/games/Giai-Thuat-Cat-Tia-Alpha-beta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giải thuật cắt tỉa Alpha-beta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hình học
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Hình học
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/geometry/basic-geometry-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hình học tính toán phần 1: Những khái niệm cơ bản
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/geometry/basic-geometry-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hình học tính toán phần 2: Sự giao nhau của đường thẳng và các ứng dụng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/geometry/Sweep-Line/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán đường quét
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lý thuyết Đồ Thị
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Lý thuyết Đồ Thị
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/graph-theory/breadth-first-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFS (Breadth-first search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/graph-theory/centroid-decomposition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán phân tách trọng tâm - Centroid decomposition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/graph-theory/Depth-First-Search-Tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây DFS (Depth-First Search Tree) và ứng dụng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/graph-theory/euler-cycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Đường đi - Chu trình Euler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/graph-theory/euler-tour-on-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Đường đi Euler trên cây
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/graph-theory/everything/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các chủ đề cơ bản về đồ thị
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/graph-theory/flow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán Luồng cực đại trên mạng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/graph-theory/lubenica-vnoj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán LUBENICA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/graph-theory/minimum-spanning-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán tìm cây khung nhỏ nhất trong đồ thị
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/graph-theory/shortest-path/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các thuật toán về tìm đường đi ngắn nhất
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/graph-theory/topological-sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sắp xếp Tô-pô (Topological Sort)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Toán
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Toán
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/math/game-theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lý thuyết trò chơi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/math/Ham-Mobius/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàm Mobius
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/math/modular-inverse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 4.5 - Nghịch đảo modulo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/math/multiplicative-function/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàm nhân tính
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tìm Kiếm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tìm Kiếm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/search/Local-Search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kỹ Năng Thi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            Kỹ Năng Thi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/skill/Ki-nang-thi-cu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng hợp các lời khuyên cho các kỳ thi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/skill/Kinh-nghiem-thi-VOI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kinh nghiệm thi VOI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/skill/viet-trinh-cham/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tự code, tự chấm, tự sướng - Bí kíp thi offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Xâu kí tự
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            Xâu kí tự
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/string/basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xử lý xâu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/string/hash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hash: A String Matching Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/string/kmp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán KMP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/string/manacher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Manacher
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/string/z-algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Z-function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mẹo
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            Mẹo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ph%E1%BB%8Fng-v%E1%BA%A5n-team-IOI-VN-2017/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phỏng Vấn Team IOI VN 2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/vojsol/ALAKE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ALAKE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/trick/convex_greedy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sum-constrained convex optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/trick/counting-without-matrix-multiplication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Khử nhân ma trận
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/trick/FFT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FFT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/trick/matrix-multiplication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nhân ma trận (Matrix multiplication)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/trick/mitm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Meet In The Middle (MITM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algo/trick/Roi-rac-hoa-va-ung-dung/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rời rạc hoá và ứng dụng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer Science (Khoa học máy tính)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science (Khoa học máy tính)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Crypto
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Crypto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/crypto/Cipher-Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mật mã và Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/crypto/Public-Key-Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Public Key Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cipher
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cipher
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/crypto/cipher/ROT13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROT13
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Xử lý ảnh
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Xử lý ảnh
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/imageprocessing/Seam-Carving/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seam Carving Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/imageprocessing/setup-opencv-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt OpenCV trên Windows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ngôn Ngữ Lập Trình
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ngôn Ngữ Lập Trình
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/pointers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Con trỏ trong C/C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../languages/cpp/string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xâu trong C++
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../others/Pascal-Vi-sao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hoài niệm về Pascal - Lê Minh Hoàng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dịch Thuật
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Dịch Thuật
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functional-programming-part-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Functional Programming - Phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Codeforces
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Codeforces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codeforces/Efficient-and-easy-segment-trees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt cây phân đoạn hiệu quả (Efficient and easy segment trees)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codeforces/hash-table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bảng băm (Hash Tables)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codeforces/palindrome-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Palindrome tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codeforces/stack-queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Queue & Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codeforces/z-algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Z Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    E-Maxx
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            E-Maxx
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../emaxx/Aho-Corasick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aho Corasick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../emaxx/Tim-kiem-tam-phan-Ternary-Search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tìm kiếm tam phân - Ternary Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Nâng Cao
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            Nâng Cao
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../he/Lucas-theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Định lý Lucas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../he/Number-Theory-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 2 - Số nguyên tố, Sàng Eratosthenes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../he/Number-Theory-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 3 - Tính (a^b) % c
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../he/Number-Theory-4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 4 - Phi hàm Euler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../he/Number-Theory-5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 5 - Các kiến thức cơ bản về Tổ hợp (Combinatorics)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../he/Number-Theory-6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 6 - Xác suất (Probabilities)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../he/Number-Theory-7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 7 - Bao hàm - Loại trừ (Inclusion-Exclusion)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../he/So-hoc-Phan-1-Modulo-gcd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Số học 1 - Modulo & gcd
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../he/Wilsons-theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Định lý Wilson
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Máy học (Machine Learning - ML)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Máy học (Machine Learning - ML)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/ml/machine-learning-101/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning 101 (1): Làm quen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PyTorch-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PyTorch Là Gì?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/Machine-Learning-Classification-phan-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning - Classification - phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/Machine-Learning-Classification-phan-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning - Classification - phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/Machine-Learning-Classification-phan-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning - Classification - phần 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quora
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Quora
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quora/mobius-function/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hàm Mobius
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Topcoder
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Topcoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computational-Complexity-Section-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Độ phức tạp tính toán
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computational-Complexity-Section-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Độ phức tạp tính toán - phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic-programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nhập môn Quy hoạch động
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fun-with-bits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fun with Bits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Tham lam
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hieu-ve-xac-suat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xác suất
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../How-to-Dissect-a-Topcoder-Problem-Statement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kĩ năng đọc đề Topcoder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../How-to-Find-a-Solution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nghệ thuật giải bài
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mathematics-for-Topcoders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Toán học trong Tin học
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../max-flow-1-luong-cuc-dai-tren-mang-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Luồng cực đại trên mạng - Maxflow network
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Planning-an-Approach-to-a-Topcoder-Problem-Part-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Những cách tiếp cận bài toán: Phần 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Planning-an-Approach-to-a-Topcoder-Problem-Part-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Những cách tiếp cận bài toán: Phần 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Range-Minimum-Query-and-Lowest-Common-Ancestor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán RMQ và bài toán LCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The-Importance-of-Algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tầm Quan Trọng Của Thuật Toán
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Using-Regular-Expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sử dụng Regex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    USACO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            USACO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../USACO/Crafting-Winning-Solutions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Viết lời giải chiến thắng trong kì thi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wcipeg
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            Wcipeg
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wcipeg/Bao-l%E1%BB%93i/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giải thích trực quan về bao lồi trên mặt phẳng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wcipeg/Binary-Heap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binary Heap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wcipeg/Convex-Hull-Trick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kĩ thuật bao lồi (Convex Hull Trick)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wcipeg/Convex-Hull/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bao lồi (Convex Hull)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wcipeg/Flows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bài toán luồng cực đại
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wcipeg/kmp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuật toán Knuth-Morris-Pratt (KMP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wcipeg/tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cây (Tree)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="thuat-toan-tham-lam">Thuật toán Tham lam</h1>
+<p><strong>Nguồn bài</strong>: <a href="https://www.topcoder.com/community/data-science/data-science-tutorials/greedy-is-good/">Topcoder</a></p>
+<h1 id="vi-du-minh-hoa">Ví dụ minh họa</h1>
+<p>John Smith đang gặp rắc rối! Anh ấy là một thành viên của <strong>Topcoder</strong> và sau khi học cách để trở thành bậc thầy trong việc đối phối với các bài toán quy hoạch động, anh ấy bắt đầu giải quyết hàng loạt các bài tập. Nhưng chiếc máy tính <em>"dễ bảo"</em> của anh bắt đầu trở chứng vào hôm nay. Vào mỗi buổi sáng như thường lệ, John thức dậy vào lúc 10 giờ sáng, uống một cốc cà phê và bắt đầu giải các bài tập trước khi thưởng thức bữa sáng. Mặc dù có thứ gì đó <em>"sai sai"</em> so với mọi hôm, nhưng dựa vào kho tàng kiến thức mà anh ấy vừa mới gặt hái được, John đã viết chương trình với một tốc độ thần thánh. Mệt mỏi với việc cấp phát ma trận vào mỗi buổi sáng, chiếc máy tính thông báo rằng: <strong>"Segmentation fault!"</strong>. Dù cho dạ dày còn đang rỗng, song với ý tưởng thông minh của mình, John đã vượt qua rắc rối bằng cách chèn thêm một vòng lặp. Nhưng chiếc máy tính lại gào lên: <strong>"Time limit exceeded!"</strong>.</p>
+<p>Thay vì tiếp tục vướng vào mớ rắc rối, John đã có một quyết định thông minh hơn. <em>"Quá đủ cho việc lập trình!"</em> - John nói. Anh ấy quyết định sẽ có một kỳ nghỉ như là phần thưởng cho những nỗ lực của mình.</p>
+<p>Là một con người tràn trề sinh lực, John muốn dành thời gian nhiều cho cuộc đời của mình. Có quá nhiều thứ mà anh ta muốn làm, nhưng không may là anh ta không thể nào làm hết tất cả chúng được. Thế nên trong lúc ăn sáng, John đã vạch ra một <em>"Fun plan"</em> được thể hiện bằng một thời gian biểu cho từng hoạt động như sau:</p>
+<table align="center">
+<tr><th>Id</th> <th>Hoạt động</th> <th>Thời gian</th></tr>
+<tr><td>1</td> <td>Sửa phòng</td> <td>Thứ 2, 22:00 đến thứ 3, 1:00</td></tr>
+<tr><td>2</td> <td>Du lịch Hawaii</td> <td>Thứ 3, 6:00 đến thứ 7, 22:00</td></tr>
+<tr><td>3</td> <td>Vô địch cuộc thi cờ vua</td> <td>Thứ 3, 11:00 đến thứ 3, 21:00</td></tr>
+<tr><td>4</td> <td>Thạm dự nhạc hội Rock</td> <td>Thứ 3, 19:00 đến thứ 3, 23:00</td></tr>
+<tr><td>5</td> <td>Chiến thắng cuộc thi Starcraft</td> <td>Thứ 4, 15:00 đến thứ 5, 15:00</td></tr>
+<tr><td>6</td> <td>Chơi trò bắn súng nước sơn</td> <td>Thứ 5, 10:00 đến thứ 5, 16:00</td></tr>
+<tr><td>7</td> <td>Tham gia kỳ thi SRM trên <strong>Topcoder</strong></td> <td>Thứ 7, 12:00 đến thứ 7, 14:00</td></tr>
+<tr><td>8</td> <td>Tắm rửa</td> <td>Thứ 7, 20:30 đến thứ 7, 20:45</td></tr>
+<tr><td>9</td> <td>Tổ chức tiệc ngủ</td> <td>Thứ 7, 21:00 đến Chủ nhật, 6:00</td></tr>
+<tr><td>10</td> <td>Tham gia thử thách <i>"All you can eat"</i> và <i>"All you can drink"</i></td> <td>Thứ 7, 21:01 đến thứ 7, 23:59</td></tr>
+</table>
+
+<p>Giờ anh ấy muốn thực hiện được tối đa các hoạt động trong thời gian biểu trên. Mặc dù để lên kế hoạch hiệu quả thì cần phải có chút lý trí, nhưng giờ thì hồn anh ấy đã đắm chìm vào kỳ nghỉ rồi.</p>
+<h2 id="phat-bieu-bai-toan">Phát biểu bài toán</h2>
+<p>Liệu ta có thể giúp anh ấy có một kỳ nghỉ tuyệt vời? Ta hoàn toàn có thể! Đầu tiên, ta cần phải trình bày lại bài toán:</p>
+<ul>
+<li>John có <span class="arithmatex">\(N\)</span> hoạt động. Hoạt động <span class="arithmatex">\(i\)</span> bắt đầu vào thời gian <span class="arithmatex">\(L_i\)</span> và kết thúc vào thời gian <span class="arithmatex">\(R_i\)</span>.</li>
+<li>John có thể thực hiện cả hoạt động <span class="arithmatex">\(i\)</span> và hoạt động <span class="arithmatex">\(j\)</span>, nếu 2 khoảng thời gian <span class="arithmatex">\([L_i, R_i]\)</span> và <span class="arithmatex">\([L_j, R_j]\)</span> không giao nhau.</li>
+<li>Là một lập trình viên tỉ mỉ, một khi đã đặt ra kế hoạch, anh ấy buộc phải thực hiện nó.</li>
+</ul>
+<p>Mỗi hoạt động chỉ có hai chọn lựa là có hoặc không. Với mỗi trường hợp chọn lựa cho hoạt động thứ nhất, ta lại có thêm 2 lựa chọn cho hoạt động thứ 2. Phân tích nhanh ta sẽ thấy được rằng có <span class="arithmatex">\(2^n\)</span> trường hợp, và trong tình huống này thì sẽ có <span class="arithmatex">\(2^{10} = 1024\)</span> trường hợp. Với mỗi trường hợp ta sẽ kiểm tra xem có thể thực hiện được các hoạt động đó không: có 2 cặp hoạt động nào bị trùng thời gian hay không. Sau khi xét hết các phương án, ta dễ dàng tìm ra 1 phương án có nhiều hoạt động nhất. Với khá nhiều sự chọn lựa như thế này, John buộc phải nhờ đến sự giúp đỡ của chiếc máy tính đang mệt mỏi. Nhưng điều gì sẽ xảy ra nếu John có tới 50 hoạt động trong danh sách? Thậm chí dùng đến cả siêu máy tính nhanh nhất thế giới thì cũng cần đến vài năm để tìm ra câu trả lời. Thế nên, phương án này khá phi thực tế.</p>
+<h2 id="tiep-can-1">Tiếp cận 1</h2>
+<p>Chúng ta cần tìm một cách tiếp cận mới. Một phương án tốt có lẽ là thực hiện công việc ngay khi thời cơ đến: Nếu ta có hai hoạt động và chúng bị trùng về thời gian, ta sẽ ưu tiên lựa chọn hoạt động bắt đầu trước nhằm tiết kiệm thời gian (nghĩa là hoạt động có <span class="arithmatex">\(L_i\)</span> nhỏ hơn). Nếu áp dụng cách này vào 10 hoạt động trên thì:</p>
+<ul>
+<li>John bắt đầu buổi tối T2 bằng việc <em>Sửa phòng</em>.</li>
+<li>Buổi sáng T3, anh ấy sẽ lên máy bay đi <em>Du lịch Hawaii</em>.</li>
+</ul>
+<p>Và chưa đầy một ngày nhưng anh ấy đã thực hiện được 2 hoạt động. Thật tuyệt vời! Nhưng thật ra, đó chỉ là <strong>lựa chọn tốt nhất</strong> lúc này thôi. Và bây giờ thì ta có gì, 5 ngày ăn chơi ở Hawaii và cho đến tận tối thứ 7 thì anh ấy vẫn chỉ thực hiện được 2 hoạt động. Hãy nghĩ xem trong 5 ngày đó anh ta đã có thể thực hiện được những gì. Mặc dù đơn giản và thực thi rất nhanh, song rất không may là thuật toán này lại không chính xác.</p>
+<h2 id="tiep-can-2">Tiếp cận 2</h2>
+<p>Hãy thử một mánh khóe khác. Giờ ta sẽ bỏ những hoạt động tiêu tốn nhiều thời gian như đi <em>Du lịch Hawaii</em> bằng cách lựa chọn những hoạt động tốn ít thời gian nhất (nghĩa là có <span class="arithmatex">\(R_i - L_i\)</span> nhỏ nhất) và kiểm tra xem nó có hợp lí với những hoạt động đã chọn trước đó chưa rồi tiếp tục quá trình. Theo như thời gian biểu ở trên thì hoạt động đầu tiện được chọn lựa sẽ là tắm. Với thời gian chỉ 15 phút, đây chính là <strong>lựa chọn tối ưu cục bộ</strong> (<strong>local best</strong>). Và giờ điều mà ta cần biết đó là có thể giữ được <strong>tối ưu cục bộ</strong> khi mà những hoạt động thích hợp khác được chọn lựa. Thời gian biểu của John sẽ như sau:</p>
+<ul>
+<li><em>Tắm rửa</em> (15 phút, tối T7, 20:30 - 20:45).</li>
+<li><em>Tham gia kỳ thi SRM trên Topcoder</em> (2 tiếng, T7, 12:00 - 14:00).</li>
+<li><em>Tham gia thử thách "All you can eat" và "All you can drink"</em> (2 tiếng 58 phút, T7, 21:01 - 23:59).</li>
+<li><em>Sửa phòng</em> (3 tiếng, T2, 22:00 - T3, 1:00).</li>
+<li><em>Thạm dự nhạc hội Rock</em> (4 tiếng, T3, 19:00 - 23:00).</li>
+<li><em>Chơi trò bắn súng nước sơn</em> (6 tiếng, T5, 10:00 - 16:00).</li>
+</ul>
+<p>Trong 10 hành động, ta đã lựa ra được 6 hành động, không tệ chút nào! Giờ thì thuật toán của ta vẫn chạy rất nhanh và đáng tin cậy hơn chút. Và quả thực, đáp án chính xác trong trường hợp này là 6. John rất hài lòng về sự hỗ trợ của chúng ta, nhưng sau khi trở về từ kỳ nghỉ với kế hoạch thông minh này, John đã phải đối mặt với những rắc rối nghiêm trọng khác:</p>
+<div align="center">
+    <img src="http://community.topcoder.com/i/education/greedyAlg1.gif" alt="" border="0">
+</div>
+
+<p>Áp dụng thuật toán của ta, John đã tham gia một cuộc hẹn hò chóng vánh (màu đỏ), để rồi anh ấy đã bỏ lỡ cả bài thi trong trường (màu xanh da trời) lẫn trận đấu bóng rổ của đội anh ấy yêu thích (màu xanh lá). Là một <strong>Topcoder</strong>, chúng ta cần phải viết ra một chương trình hoàn toàn chính xác, chứ không phải chỉ đúng trong 1 số trường hợp. Chỉ cần một trường hợp duy nhất chúng ta không giải quyết được sẽ dẫn tới một thất bại toàn diện.</p>
+<h2 id="tiep-can-3">Tiếp cận 3</h2>
+<p>Những gì mà chúng ta thường làm trong tình huống này là phân tích điều gì đã gây ra lỗi ở cách làm trước để tránh lặp lại nó trong tương lai. Hãy xem xét lại trường hợp sai. Cuộc hẹn hò trùng thời gian với cả việc làm bài thi lẫn trận đấu bóng rổ, trong khi cả trận đấu bóng rổ lẫn làm bài thi chỉ trùng lặp với một mình cuộc hẹn hò. Vậy thì ý tưởng cũng tự sinh ra từ vấn đề này. Tại sao ta không chọn hoạt động ít bị trùng lặp nhất so với những hoạt động còn lại? Nghe có vẻ hợp lí!</p>
+<p>Để đảm bảo rằng phương pháp này hoàn toàn đúng đắn, lần này ta hãy thử chứng minh. Giờ giả sử ta đã lựa chọn hoạt động X, ta sẽ thử kiểm tra xem ta có thể lựa chọn hoạt động A và B (những hoạt động bị trùng lặp với X) thay vì X được hay không. Và A, B cũng không được trùng lặp nhau, nếu không ta cũng không thể tối ưu hóa kết quả. Bây giờ, ta sẽ quay về trường hợp trước đó (X trùng với 2 hoạt động, A và B trùng với 1 hoạt động). Trong trường hợp này, ta sẽ chọn A và B ngay từ đầu tiên. Một trong những cách để phản bác lại giả thiết này chính là cho hoạt động A và B trùng lặp với nhiều hoạt động hơn nữa chứ không chỉ hoạt động X. Nghe nó có vẻ không trực quan cho lắm, nhưng (thật không may) ta vẫn có thể xây dựng trường hợp đó như sau:</p>
+<div align="center">
+    <img src="http://community.topcoder.com/i/education/greedyAlg2.gif" alt="" border="0">
+</div>
+
+<p>Nhưng hoạt động được biểu diễn bằng gạch màu xanh chính là những lựa chọn tối ưu trong thời gian biểu trên. Nhưng hoạt động tô màu đỏ trùng lặp với 2 hoạt động nên nó sẽ được chọn trước. Vẫn còn 4 hoạt động thích hợp khác trước hoạt động đỏ, nhưng chúng đều bị trùng lặp lẫn nhau, thế nên ta chỉ có thể lựa chọn thêm 1 hoạt động. Điều tương tự cũng xảy ra đối với 4 hoạt động sau hoạt động màu đỏ, nhưng ta vẫn chỉ có thể chọn 1. Vậy tổng cộng theo phương pháp này, ta vẫn chỉ có thể chọn 3 hoạt động, trong khi kết quả tối ưu là 4.</p>
+<h2 id="tiep-can-4">Tiếp cận 4</h2>
+<p>Tổng quát lại, ta đã thử 3 cách khác nhau, và mỗi cách đều có thiếu sót:</p>
+<ul>
+<li>Cách 1: Chọn hoạt động có <span class="arithmatex">\(L_i\)</span> nhỏ nhất</li>
+<li>Cách 2: Chọn hoạt động có <span class="arithmatex">\(R_i - L_i\)</span> nhỏ nhất</li>
+<li>Cách 3: Chọn hoạt động giao với ít hoạt động khác nhất.</li>
+</ul>
+<p>Có vẻ như chúng ta đang đối mặt với một vấn đề hóc búa. Nhưng thật ra, vấn đề này vẫn có một cách giải quyết đẹp đẽ, và không hề phức tạp. Nếu ta xem xét hình trên một cách kỹ lưỡng hơn nữa, ta sẽ thấy được rằng hoạt động màu xanh nằm ở góc trái dưới là là hoạt động duy nhất hoàn thành trước đường vẽ dọc màu đỏ. Vậy, nếu lựa chọn 1 hoạt động đơn lẻ, ta sẽ chọn hoạt động kết thúc sớm nhất (có <span class="arithmatex">\(R_i\)</span> nhỏ nhất). Gọi thời điểm hoàn thành hoạt động đó là <span class="arithmatex">\(t_1\)</span>, thì khoảng thời gian sau <span class="arithmatex">\(t_1\)</span> sẽ trống để ta có thể chọn các hoạt động khác. Nếu chúng ta chọn bất kỳ hoạt động nào khác, thì khoảng thời gian còn lại sẽ ngắn đi. Điều này là hiển nhiên, bởi vì khi ta kết thúc với bất kỳ một hoạt động nào khác thì luôn luôn <span class="arithmatex">\(t_2\)</span> &gt; <span class="arithmatex">\(t_1\)</span>. Trong trường hợp đầu tiên, ta sẽ có toàn bộ thời gian từ <span class="arithmatex">\(t_1\)</span> đến khi kết thúc và bao gồm luôn khoảng từ <span class="arithmatex">\(t_2\)</span> đến kết thúc. Bởi vậy mà nó cũng không có khuyết điểm trong việc lựa chọn hoạt động kết thúc sớm. Và nó còn có một ưu điểm đó là ta hoàn toàn có thể chèn thêm một hoạt đồng bất kỳ vào giữa <span class="arithmatex">\(t_1\)</span> và <span class="arithmatex">\(t_2\)</span> và kết thúc trước khi hoạt động của <span class="arithmatex">\(t_2\)</span> bắt đầu.</p>
+<p>Trên đây là ý tưởng để chứng minh thuật toán này đúng. Ta có thể từ đó để chứng minh chặt chẽ là cách làm này đúng.</p>
+<p>Được biết tới với tên gọi <strong>"Lựa chọn hoạt động"</strong> (<strong>Activity Selection</strong>), đây là bài toán cơ sở sử dụng <strong>"Phương pháp Tham lam"</strong>. Giống như là một gã tham lam luôn muốn chiếm lấy nhiều nhất, thường xuyên nhất mà hắn ta có thể, trong trường hợp này, ở mỗi bước ta sẽ chọn lựa một hoạt động kết thúc đầu tiên và mỗi lần đều không có hoạt động đang trong tiến trình. Và có một sự thật đó là ta luôn luôn áp dụng phương pháp tham lam cho mỗi bước trong cuộc đời của mình. Khi ta đi mua sắm hoặc đi xe hơi, ta đều luôn lựa chọn phương án tốt nhất tại thời điểm hiện tại. Thật ra, phương pháp tham lam có 2 công thức chung:</p>
+<ul>
+<li>Tính lựa chọn tối ưu: Từ những kết quả tối ưu cục bộ ta có thể đi đến kết quả tối ưu toàn cục mà không cần phải xem xét lại các kết quả.</li>
+<li>Tính tối ưu từ bài toán nhỏ: Kết quả tối ưu có được xác định bằng các kết quả tối ưu từ bài toán nhỏ hơn.</li>
+</ul>
+<p>Đoạn mã giả dưới đây diễn ta cách lựa chọn tối ưu các hoạt động bằng thuật toán tham lam mà ta vừa chứng minh phía trên:</p>
+<div class="highlight"><pre><span></span><code>Đặt N là số hoạt động và
+{I} là hoạt động thứ I  (1 &lt;= I &lt;= N)
+
+Với mỗi {I}, xét S[I] và F[I] lần lượt là thời gian bắt đầu và kết thúc của hoạt động đó.
+Sắp xếp lại các hoạt động theo thứ tự tăng dần của thời gian kết thúc.
+- Có nghĩa là, với I &lt; J ta phải có F [I] &lt;= F [J]
+
+//  A là tập hợp các hoạt động được chọn
+A = {1}
+//  J là hoạt động cuối cùng được chọn
+J = 1
+For I = 2  to N
+  // ta có thể chọn I nếu nó là hoạt động cuối cùng
+  // việc chọn lựa đã hoàn thành
+  If S [I] &gt;= F [J]
+    // lựa chọn hoạt động &#39;I&#39;
+    A = A + {I}
+
+    // hoạt động &#39;I&#39; giờ trở thành hoạt động cuối cùng được lựa chọn
+    J = I
+  Endif
+Endfor
+
+Return A
+</code></pre></div>
+<p>Sau khi áp dụng thuật toán trên, <em>"Fun plan"</em> của Johnny sẽ như thế này:</p>
+<ul>
+<li>Sửa phòng</li>
+<li>Vô địch cuộc thi cờ vua</li>
+<li>Chiến thắng cuộc thi Starcraft</li>
+<li>Tham gia kỳ thi SRM trên Topcoder</li>
+<li>Tắm rửa</li>
+<li>Tham gia thử thách "All you can eat" và "All you can drink"</li>
+</ul>
+<p>Vấn đề của John Smith đã được giải quyết, tuy nhiên đây chỉ là một ví dụ mà Tham lam có thể hoạt động.</p>
+<p>Bài tập tương tự: <a href="http://www.topcoder.com/stat?c=problem_statement&amp;pm=2977&amp;rd=5880">Boxing</a></p>
+<h1 id="bioscore"><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=3038"><strong>BioScore</strong></a></h1>
+<p><strong>Bài toán</strong></p>
+<ul>
+<li>Cho <span class="arithmatex">\(N\)</span> dãy ký tự dài bằng nhau. Mỗi dãy gồm 4 loại ký tự: <code>A</code>, <code>C</code>, <code>T</code>, <code>G</code>.</li>
+<li>Độ tương đồng của 2 dãy là tổng điểm của các cặp ký tự của cùng vị trí. Ví dụ, độ tương đồng của <code>ACTA</code> và <code>GATC</code> là: <code>score(A,G) + score(C,A) + score(T,T) + score(A,C)</code>.</li>
+</ul>
+<p>Tìm cách xây dựng bảng <span class="arithmatex">\(S\)</span> (<code>score</code>) sao cho độ tương đồng của tất cả các cặp 2 xâu trong <span class="arithmatex">\(N\)</span> xâu là lớn nhất, biết rằng bảng <span class="arithmatex">\(S\)</span> phải thỏa mãn các tính chất:</p>
+<ul>
+<li>Các giá trị từ -10 đến 10</li>
+<li>Đối xứng: <span class="arithmatex">\(S(x, y) = S(y, x)\)</span>.</li>
+<li>Đường chéo dương: <span class="arithmatex">\(S(x, x) &gt; 0\)</span>.</li>
+<li>Tổng các số trong <span class="arithmatex">\(S\)</span> phải bằng 0.</li>
+</ul>
+<p><strong>Phân tích</strong></p>
+<p>Việc đầu tiên mà ta cần làm là xây dựng một ma trận cho biết <em>số lần lặp</em> (<strong>ma trận tần số</strong>) của từng cặp 2 ký tự. Đây là một công việc khá nhẹ nhàng khi mà ta chỉ cần ghép từng cặp ký tự ở hai chuỗi tạo rồi đếm số lần xuất hiện của chúng (<code>AA</code>, <code>AC</code>, <code>AG</code>, <code>AT</code>, <code>CA</code>, <code>CC</code>, <code>CG</code>, <code>CT</code>, <code>GA</code>, <code>GC</code>, <code>GG</code>, <code>GT</code>, <code>TA</code>, <code>TC</code>, <code>TG</code>, <code>TT</code>). Từng cặp ký tự sẽ được xem như một phần tử trong ma trận và giá trị của nó chính là số lần xuất hiện của nó.</p>
+<p>Ví dụ, hãy xét bộ <code>{"ACTAGAGAC", "AAAAAAAAA", "TAGTCATAC", "GCAGCATTC"}</code> được sử dụng ở ví dụ thứ 2.</p>
+<p><img alt="Ví dụ" src="http://community.topcoder.com/i/education/greedyAlg3.gif" /></p>
+<p>Ở góc phải - dưới của hình minh họa trên, ta có thể thấy kết quả của ma trận tần số đối với bộ đã cho. Tạm gọi nó là <span class="arithmatex">\(F\)</span>. Giờ việc mà ta cần làm là tìm ra một ma trận <span class="arithmatex">\(S\)</span> sao cho tổng của các tích: <span class="arithmatex">\(F[i, j] \* S[i, j]\)</span> với <span class="arithmatex">\((1 \le i, j \le 4)\)</span> là lớn nhất.</p>
+<p>Giờ ta xét từng điều kiện cho ma trận cần tìm:</p>
+<p><strong>1) Tổng của 16 phần tử bằng <span class="arithmatex">\(0\)</span>:</strong></p>
+<p>Rõ ràng, nếu ta không giới hạn tổng của các phần tử, thì ta có thể đạt được tổng bằng vô cùng, nếu gán tất cả các phần tử của <span class="arithmatex">\(S\)</span> là vô cùng. Nhưng bởi vì tống của chúng phải bằng <span class="arithmatex">\(0\)</span>, thế nên khi ta tăng giá trị 1 phần tử lên thì ta sẽ phải giảm đi giá trị của 1 phần tử khác. Thử thách ở điều kiện này chính là phải tìm ra một sự phân bố tối ưu.</p>
+<p><strong>2) Giá trị mỗi phần tử chỉ nằm trong khoảng từ -10 đến 10 (<span class="arithmatex">\(S[i, j] \in [-10, 10]\)</span>)</strong></p>
+<p>Tương tự, nếu không có điều kiện này, kết quả có thể lên đến vô cùng, nếu ta có 1 cặp không xuất hiện, gán <span class="arithmatex">\(S\)</span> tương ứng là âm vô cùng, còn các phần tử còn lại trong mảng là dương vô cùng.</p>
+<p><strong>3) Mỗi phần tử đối xứng phải có giá trị bằng nhau (<span class="arithmatex">\(S(x, y) = S(y, x)\)</span>)</strong></p>
+<p>Bởi vì tính đối xứng, ta phải quy định cho các điểm cho các cặp như <code>AC</code> và <code>CA</code> bằng nhau. Do tính đối xứng này, ta cập nhật lại mảng tần số xuất hiện để tính cả các cặp đối xứng. Đối với ví dụ trên, ta có bảng tần số mới như sau:</p>
+<table>
+<tr><td>AA: 14</td> <td>AC+CA: 11</td> <td>AG+GA: 10</td> <td>AT+TA: 10</td></tr>
+<tr><td></td> <td>CC: 4</td> <td>CG+GC: 2</td> <td>TC+CT: 0</td> </tr>
+<tr><td></td> <td></td> <td>GG: 0</td> <td>GT+TG: 3</td></tr>
+<tr><td></td> <td></td> <td></td> <td>TT: 1</td></tr>
+</table>
+
+<p>Từ trực giác ta có thể thấy ngay đến phương án như sau: đã sẽ gán điểm số càng cao đối với cặp xuất hiện càng nhiều lần.</p>
+<p><strong>4) Các phần tử trên đường chéo phải dương (<span class="arithmatex">\(S(x, x) &gt; 0\)</span>)</strong></p>
+<p>Do tính chất này, ta phải xét riêng hai loại phần tử:</p>
+<ul>
+<li>4 phần tử trên đường chéo (các phần tử đại diện cho <code>AA</code>, <code>CC</code>, <code>GG</code>, <code>TT</code>)</li>
+<li>6 phần tử không nằm trên đường chéo (các phần tử đại diện cho <code>AC + CA</code>, <code>AG + GA</code>, <code>AT + TA</code>, <code>CG + GC</code>, <code>CT + TC</code>, <code>GT +TG</code>).</li>
+</ul>
+<p>Ta xét tất cả các trường hợp chọn các phần tử của nhóm thứ nhất. Có <span class="arithmatex">\(10^4 = 10,000\)</span> trường hợp khác nhau. Với mỗi trường hợp của nhóm thứ nhất, ta sẽ tìm đáp án tối ưu cho nhóm thứ 2.</p>
+<ul>
+<li>Với mỗi trường hợp, ta có tổng các phần tử của nhóm thứ nhất nằm trong khoảng <span class="arithmatex">\([4, 40]\)</span>, nên tổng các phần tử của nhóm thứ 2 nằm trong khoảng $[-20, -2] <em>(chú ý rằng nhóm thứ 2 đối xứng, mỗi phần tử xuất hiện 2 lần trong ma trận S, nên ta phải nhân đôi)</em></li>
+<li>Vì các phần tử của nhóm 2 có chung tính chất, ta sử dụng Tham lam để tìm kết quả tối ưu cho nhóm thứ 2.</li>
+</ul>
+<p>Nhắc lại tư tưởng của Tham lam: tại mỗi bước, ta chọn một lựa chọn tối ưu cục bộ. Trong trường hợp này nghĩa là ta xét lần lượt từng phần tử, với mỗi phần tử, gán cho nó giá trị tối ưu.</p>
+<p>Nhận xét:</p>
+<blockquote>
+<p>Nếu ta xét lần lượt các phần tử theo thứ tự giảm dần, ở mỗi bước ta gán giá trị lớn nhất có thể cho phần tử đó, thì kết quả thu được sẽ tối ưu.</p>
+</blockquote>
+<p>Do đó, cách làm là:</p>
+<ul>
+<li>Sắp xếp 6 phần tử của nhóm 2 theo thứ tự giảm dần (theo ma trận <span class="arithmatex">\(F\)</span>).</li>
+<li>Hai giá trị đầu tiên sẽ được gán bằng <span class="arithmatex">\(10\)</span> (vì trường hợp xấu nhất ta cần tổng bằng -20, thì ta vẫn có thể gán 4 giá trị còn lại là -10).</li>
+<li>Ta biết rằng số điểm cuối cùng sẽ nhỏ hơn <span class="arithmatex">\(0\)</span>. Bởi vì ta muốn tối đa hóa số điểm của phần tử thứ 3, nên ba phần tử còn lại sẽ luôn là <span class="arithmatex">\(-10\)</span>:</li>
+<li>Trong trường hợp tốt nhất, tổng bằng -2, ta thu được: <span class="arithmatex">\([10, 10, 8, -10, -10, -10]\)</span>.</li>
+<li>Trong trường hợp xấu nhất, tổng bằng -20, ta thu được: <span class="arithmatex">\([10, 10, -10, -10, -10, -10]\)</span>.</li>
+<li>Ta có thể thu được tất cả các tổng từ -20 đến -2 bằng việc thay đổi giá trị của phần tử thứ 3 từ 8 đến -10.</li>
+</ul>
+<p>Giờ ta cần chứng minh rằng phương pháp của mình là đúng.</p>
+<ul>
+<li>Vì ta xét hết tất cả các trường hợp của nhóm 1, nên ta chỉ cần chứng minh cách chọn các phần tử của nhóm 2 là tối ưu.</li>
+<li>Vì tổng các phần tử của nhóm 2 cố định, nên nếu ta tăng 1 phần tử, thì phải giảm 1 phần tử khác.</li>
+<li>Gọi <span class="arithmatex">\(f_1\)</span> và <span class="arithmatex">\(f_2\)</span> là số lần xuất hiện của 2 số bất kỳ của nhóm 2. Ta có:</li>
+<li><span class="arithmatex">\(f_1 \* s_1 + f_2 \* s_2 = X\)</span>.</li>
+<li>Không làm mất tính tổng quát, giả sử <span class="arithmatex">\(f_1 \ge f_2\)</span>. Do cách tham, ta có <span class="arithmatex">\(s_1 \ge s_2\)</span>. Ta cũng có <span class="arithmatex">\(s_1\)</span> là lớn nhất có thể, nên ta không thể tăng <span class="arithmatex">\(s_1\)</span>.</li>
+<li>Giả sử cách làm của ta không tối ưu, nghĩa là ta có một cách chọn 1 số <span class="arithmatex">\(a\)</span> sao cho:</li>
+<li><span class="arithmatex">\(f_1 \* (s_1 - a) + f_2 \* (s_2 + a) = Y\)</span> với <span class="arithmatex">\(a\)</span> là số dương.</li>
+<li>Ta có <span class="arithmatex">\(Y-X = a * (f2-f1)\)</span>. Bởi vì <span class="arithmatex">\(f1 \ge f2\)</span> nên <span class="arithmatex">\(Y-X\)</span> luôn âm.</li>
+</ul>
+<p>Do vậy, cách làm của ta là tối ưu.</p>
+<p><strong>Cài đặt</strong></p>
+<p>Ý tưởng chính của thuật toán trên sẽ được minh họa trong đoạn mã giả dưới đây:</p>
+<div class="highlight"><pre><span></span><code>Best = -Infinity
+For S[1] = 1 to 10
+  For S[2] = 1 to 10
+    For S[3] = 1 to 10
+      For S[4] = 1 to 10
+        If (S[1] + S[2] + S[3] + S[4]) mod 2 = 0)
+          S[5] = S[6] = 10
+          S[7] = 10 - (S[1] + S[2] + S[3] + S[4]) / 2
+          S[8] = S[9] = S[10] = -10)
+
+          // biến Best sẽ lưu lại giá trị trung bình lớn nhất tìm được
+          Best = max (Best, score (F, S))
+        Endif
+      Endfor
+    Endfor
+  Endfor
+Endfor
+Return Best
+</code></pre></div>
+<p>Đối với mảng lưu điểm đã cho (trong trường hợp của chúng ta là mảng <span class="arithmatex">\(S\)</span>), ta sẽ tính kết quả cuối cùng bằng việc chỉ tính tổng của tích <span class="arithmatex">\(F[I] \* S[I] (1 \le I \le 10)\)</span>.</p>
+<h1 id="goldmine"><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=1957&amp;rd=4650"><strong>GoldMine</strong></a></h1>
+<p><strong>Bài toán</strong></p>
+<p>Có <span class="arithmatex">\(N\)</span> mỏ vàng, mỗi mỏ vàng chứa được tối đa <span class="arithmatex">\(6\)</span> công nhân. Bằng cách phân bổ các công nhân, công ty sẽ thu được (hoặc mất đi) số tiền như sau:</p>
+<ul>
+<li>
+<p>Nếu mỏ vàng có ít nhân công hơn trữ lượng của nó, công ty sẽ thu được <span class="arithmatex">\(60\)</span>$ với mỗi công nhân.</p>
+</li>
+<li>
+<p>Nếu mỏ vàng có số công nhân bằng với trữ lượng của nó, công ty sẽ thu được <span class="arithmatex">\(50\)</span>$ cho với mỗi công nhân.</p>
+</li>
+<li>
+<p>Nếu mỏ vàng có số công nhân nhiều hơn trữ lượng của nó, công ty sẽ được số tiền là <span class="arithmatex">\(50\)</span> nhân cho trữ lượng mỏ. Với mỗi công nhân bị thừa ra so với sản lượng mỏ, công ty sẽ bị mất đi <span class="arithmatex">\(20\)</span>$.</p>
+</li>
+</ul>
+<p>Dù cho có bị mất tiền đi chăng nữa thì công ty cũng buộc phải phân công đủ các công nhân vào các mỏ.</p>
+<p><strong>Phân tích</strong></p>
+<p>Bằng việc sử dụng phương pháp tham lam, ta sẽ phân tích xem cách một mỏ vàng bị khai thác triệt. Kinh nghiệm cho thấy, đối với dạng bài như tìm kiếm giá trị tối đa, thường ta có thể giải quyết bằng Tham lam. Trong trường hợp này, mục tiêu của ta là chỉ định những công nhân đến các mỏ vàng sao cho tổng lợi nhuận thu được là tối đa. Phân tích nhanh, ta thấy rằng cần phải biết lợi nhuận thu được từ các mỏ vàng trong tất cả các trường hợp (chỉ có 7 trường hợp - từ 0 đến 6 công nhân). Bảng dưới đây sẽ cho ta thấy lợi nhuận khả thi đối với hai mỏ ở ví dụ 0 trong bài:</p>
+<table align="center">
+<tr> <td></td> <td>0 người</td> <td>1 người</td> <td>2 người</td> <td>3 người</td> <td>4 người</td> <td>5 người</td> <td>6 người</td> </tr>
+<tr> <td>Mỏ 1</td> <td>$0$</td> <td>$57$</td> <td>$87$</td> <td>$87$</td> <td>$67$</td> <td>$47$</td> <td>$27$</td> </tr>
+<tr> <td>Mỏ 2</td> <td>$0$</td> <td>$52$</td> <td>$66$</td> <td>$75$</td> <td>$75$</td> <td>$66$</td> <td>$48$</td> </tr>
+</table>
+
+<p>Nếu ta chỉ có duy nhất một công nhân, <strong>lựa chọn tối ưu</strong> chính là cho anh ta vào mỏ nơi mà anh ta mang lại nhiều lợi nhuận nhất. Nhưng nếu ta có nhiều công nhân, ta cần phải kiểm tra xem nếu phân công anh ở mỏ tương tự có mang lại <strong>lợi nhuận cục bộ tối ưu</strong> không.</p>
+<p>Trong ví dụ, ta có 4 công nhân cần được phân công. Bảng dưới đây sẽ cho biết lợi nhuận thu được của mỗi mỏ với từng công nhân được thêm vào.</p>
+<table>
+<tr> <td></td> <td>Ban đầu</td> <td>Người 1</td> <td>Người 2</td> <td>Người 3</td> <td>Người 4</td> <td>Người 5</td> <td>Người 6</td> </tr>
+<tr> <td>Mỏ 1</td> <td>$-$</td> <td>$57$</td> <td>$30$</td> <td>$0$</td> <td>$-20$</td> <td>$-20$</td> <td>$-20$</td> </tr>
+<tr> <td>Mỏ 1</td> <td>$-$</td> <td>$52$</td> <td>$14$</td> <td>$9$</td> <td>$  0$</td> <td>$-9 $</td> <td>$-20$</td> </tr>
+</table>
+
+<p>Ta để ý rằng, mỏ 1 sẽ tăng thêm 57 nếu ta thêm vào một công nhân, trong khi mỏ 2 chỉ tăng thêm 52. Thế nên, ta sẽ phân bố người đầu tiên vào mỏ 1.</p>
+<table>
+<tr> <td></td> <td>Ban đầu</td> <td>Người 1</td> <td>Người 2</td> <td>Người 3</td> <td>Người 4</td> <td>Người 5</td> <td>Người 6</td> </tr>
+<tr> <td>Mỏ 1</td> <td>$-$</td> <td><strong>$57$</strong></td> <td>$30$</td> <td>$0$</td> <td>$-20$</td> <td>$-20$</td> <td>-20</td> </tr>
+<tr> <td>Mỏ 1</td> <td>$-$</td> <td>$52$</td> <td>$14$</td> <td>$9$</td> <td>$  0$</td> <td>$-9 $</td> <td>$-20$</td> </tr>
+</table>
+
+<p>Giờ, nếu ta thêm công nhân vào mỏ 1, ta chỉ tăng lợi nhuận được thêm 30. Bởi vậy nên ta sẽ thêm công nhân vào mỏ 2, lúc này lợi nhuận ta thu được sẽ tăng thêm 52.</p>
+<table>
+<tr> <td></td> <td>Ban đầu</td> <td>Người 1</td> <td>Người 2</td> <td>Người 3</td> <td>Người 4</td> <td>Người 5</td> <td>Người 6</td> </tr>
+<tr> <td>Mỏ 1</td> <td>$-$</td> <td><strong>$57$</strong></td> <td>$30$</td> <td>$0$</td> <td>$-20$</td> <td>$-20$</td> <td>$-20$</td> </tr>
+<tr> <td>Mỏ 1</td> <td>$-$</td> <td><strong>$52$</strong></td> <td>$14$</td> <td>$9$</td> <td>  $0$</td> <td>$-9 $</td> <td>$-20$</td> </tr>
+</table>
+
+<p>Công nhân thứ 3 sẽ có ích hơn khi làm ở mỏ 1 với lợi nhuận thu được là 30.</p>
+<table>
+<tr> <td></td> <td>Ban đầu</td> <td>Người 1</td> <td>Người 2</td> <td>Người 3</td> <td>Người 4</td> <td>Người 5</td> <td>Người 6</td> </tr>
+<tr> <td>Mỏ 1</td> <td>$-$</td> <td><strong>$57$</strong></td> <td><strong>$30$</strong></td> <td>$0$</td> <td>$-20$</td> <td>$-20$</td> <td>$-20$</td> </tr>
+<tr> <td>Mỏ 1</td> <td>$-$</td> <td><strong>$52$</strong></td> <td>$14$</td> <td>$9$</td> <td>  $0$</td> <td>$-9$ </td> <td>$-20$</td> </tr>
+</table>
+
+<p>Với công nhân thứ 4, ta có thể cho anh ta vào mỏ 1 (với lợi nhuận là 0) hoặc mỏ 2 (với lợi nhuận là 14). Dĩ nhiên, ta sẽ phân công anh ấy vào mỏ hai.</p>
+<table>
+<tr> <td></td> <td>Ban đầu</td> <td>Người 1</td> <td>Người 2</td> <td>Người 3</td> <td>Người 4</td> <td>Người 5</td> <td>Người 6</td> </tr>
+<tr> <td>Mỏ 1</td> <td>$-$</td> <td><strong>$57$</strong></td> <td><strong>$30$</strong></td> <td>$0$</td> <td>$-20$</td> <td>$-20$</td> <td>$-20$</td> </tr>
+<tr> <td>Mỏ 1</td> <td>$-$</td> <td><strong>$52$</strong></td> <td><strong>$14$</strong></td> <td>$9$</td> <td>  $0$</td> <td>$-9$ </td> <td>$-20$</td> </tr>
+</table>
+
+<p>Cuối cùng, hai công nhân còn lại sẽ được phân công bằng cách cho cả hai vào làm ở mỏ 2 hoặc mỗi người làm ở một mỏ riêng. Ví dụ cho ta thấy kết quả mà ta vừa tìm được chính là kết quả tối ưu. Nhưng câu hỏi đặt ra là liệu phương pháp này có luôn đúng hay không?</p>
+<p><strong>Khẳng định: Ta luôn luôn thu được tổng lợi nhuận lớn nhất khi lần lượt cho từng công nhân vào mỏ có lợi nhuận cao nhất ở thời điểm hiện tại</strong>.</p>
+<p><strong>Chứng minh</strong>: Gọi <span class="arithmatex">\(A, B\)</span> lần lượt là mỏ 1 và mỏ 2, <span class="arithmatex">\(a1, b1, a2, b2\)</span> được định nghĩa như sau:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(a1\)</span> - lợi nhuận thu được khi phân công thêm một công nhân vào <span class="arithmatex">\(A\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(a1+a2\)</span> - lợi nhuận thu được khi phân công thêm hai công nhân vào <span class="arithmatex">\(A\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(b1\)</span> - lợi nhuận thu được khi phân công thêm một công nhân vào <span class="arithmatex">\(B\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(b1+b2\)</span> - lợi nhuận thu được khi phân công thêm hai công nhân vào <span class="arithmatex">\(B\)</span>.</p>
+</li>
+</ul>
+<p>Thuật toán Tham lam của ta sẽ gia tăng lợi nhuận bằng <span class="arithmatex">\(a1\)</span> cho công nhân đầu tiên và <span class="arithmatex">\((a2+b1)\)</span> cho công nhân thứ 2. Tổng lợi nhuận lúc này sẽ là <span class="arithmatex">\(a1+max(a2, b1)\)</span>. Nếu ban đầu ta chọn <span class="arithmatex">\(b1\)</span> thì lợi nhuận của công nhân thứ 2 thu được sẽ là <span class="arithmatex">\(a1\)</span> hoặc <span class="arithmatex">\(b2\)</span>.</p>
+<p>Trong trường hợp đầu tiên, ta sẽ có <span class="arithmatex">\(a1+b1 \le a1+max(a2, b1)\)</span>.</p>
+<p>Trong trường hợp thứ hai, tổng lợi nhuận sẽ là <span class="arithmatex">\(b1+b2\)</span>. Ta cần phải chứng minh <span class="arithmatex">\(b1+b2 \le a1+max(a2, b1)\)</span>. Mà ta luôn có <span class="arithmatex">\(b1 \le b2\)</span> vì <strong>lợi nhuận thu được từ việc thêm một công nhân vào một mỏ luôn luôn lớn hơn hoặc bằng lợi nhuận thu được từ việc thêm một công nhân nữa vào mỏ đó</strong>.</p>
+<table>
+<tr> <td>Trạng thái của mỏ vàng</td> <td>Lợi nhuận từ việc thêm 1 người</td> <td>Lợi nhuận từ việc thêm 1 người</td> </tr>
+<tr> <td>Số lượng mỏ $>$số lượng người đào+2</td> <td>$60$</td> <td>$60$</td> </tr>
+<tr> <td>Số lượng mỏ $=$ số lượng người đào+2</td> <td>$60$</td> <td>$50$</td> </tr>
+<tr> <td>Số lượng mỏ $=$ số lượng người đào+1</td> <td>$50$</td> <td>$-20$</td> </tr>
+<tr> <td>Số lượng mỏ $<$ số lượng người đào+2</td> <td>$-20$</td> <td>$-20$</td> </tr>
+</table>
+
+<p>Vì <span class="arithmatex">\(b1+b2 \le a1+a2 \le a1+b1 \le a1+max(a2, b1)\)</span>, <strong>lựa chọn Tham lam</strong> cũng chính là phương án tối ưu.</p>
+<p>Cài đặt thuật toán này hoàn toàn không khó, tuy nhiên ta cần phải xử lý thêm một vài trường hợp nữa (tất cả các công nhân đều phải được phân công, chỉ có tối đa sáu người trong một mỏ và nếu một công nhân có thể được đặt tối ưu ở nhiều mỏ, ưu tiên mỏ có chỉ số nhỏ hơn).</p>
+<h2 id="worldpeace"><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=2420&amp;rd=5850"><strong>WorldPeace</strong></a></h2>
+<p><strong>Bài toán:</strong>
+Cho <strong>n</strong> đất nước, mỗi nước có dân số của họ. Hãy chia thành thành các nhóm có <strong>k</strong> người không có cùng quốc tịch. Hãy cho biết số lượng nhóm tối đa có thể đạt được.</p>
+<p><strong>Phân tích:</strong></p>
+<p>Những thuật toán Tham lam đều hoạt động tốt ở mọi tình huống bởi ta đã chứng minh được tính đúng đắn của nó. Nhưng còn một lớp bài toán tối ưu hóa nữa mà thuật toán Tham lam có thể được áp dụng. Đây là những bài tập thuộc lớp NP - đầy đủ (như bài toán người đưa thư TSP <a href="http://www.math.uwaterloo.ca/tsp/">Traveling Salesman Problem</a>), đối với dạng bài toán này, ta thường sẽ sử dụng phượng pháp nhánh cận để giải quyết vấn đề hơn là chờ đợi chương trình thực thi... Lời giải không phải lúc nào cũng là tối ưu, song trong phần lớn trường hợp, nó đã đủ tốt rồi. Với một bài toán không thuộc lớp NP như thế này, đây chính là ví dụ tuyệt vời cho việc một thuật toán Tham lam không chỉ có thể đánh lừa và vượt qua các test mẫu, mà nó còn có thể vượt qua cả những bộ test hệ thống được thiết kế kỹ càng. Thuật toán này không quá khó để nghĩ ra, mà chỉ cần một vài phân tích nhanh ta có thể nhận ra, để tối đa hóa tổng số lượng nhóm, <strong>luôn luôn tối ưu để tạo thiết lập một nhóm từ k quốc gia có dân số đông nhất</strong>. Chúng ta áp dụng phương pháp này ở từng bước và sau đó sắp xếp lại đoạn để thấy được k quốc gia tiếp theo có dân số đông nhất. Ý tưởng này sẽ được minh họa trong đoạn mã giả dưới đây:</p>
+<div class="highlight"><pre><span></span><code>Groups = 0
+Repeat
+  // sắp xếp lại mảng theo thứ tự giảm dần
+  Sort (A)
+  Min = A[K]
+  If Min &gt; 0
+      Groups = Groups + 1
+  For I = 1 to K
+    A[I] = A[I] - 1
+  Endfor
+Until  Min = 0
+Return Groups
+</code></pre></div>
+<p>Không may thay, mỗi quốc gia lại có tới hàng tỷ người dân, thế nên ta không thể nào thiết lập từng nhóm một được. Về mặt lý thuyết, đối với một tập hợp của k quốc gia, chúng ta sẽ tạo nhóm cho đến khi mà toàn bộ người dân của nước đó đã được phân nhóm. Và điều này sẽ được thực hiện chỉ trong 1 bước:</p>
+<div class="highlight"><pre><span></span><code>Groups = 0
+Repeat
+  // sắp xếp lại mảng theo thứ tự giảm dần
+  Sort (A)
+  Min= A[K]
+  Groups = Groups + Min
+  For I = 1 to K
+    A[I] = A[I] - Min
+  Endfor
+Until Min = 0
+Return Groups
+</code></pre></div>
+<p>Thời gian thực thi giờ không còn là vấn đề nữa, mà vấn đề giờ đây chính là tính đúng đắn của thuật toán! Khi ta thử ví dụ 0 trong bài, thuật toán của chúng ta trả về kết quả là 4 chứ không phải là 5. Nhưng kết quả trả về trong ví dụ 1, 2 và 3 thì đúng. Trong với ví dụ cuối cùng, thay vì tạo ra 3983180234 nhóm, ta chỉ tạo được 3983180207 nhóm mà thôi. Bằng việc chỉ kết quả có sai lệch không đáng kể, ta có thể thấy rằng giải thuật của mình <strong>khá tốt</strong>. Thế nên giờ ta chỉ cần cải tiến nó theo hướng này.</p>
+<p>Cho đến hiện tại, ta đã có trong tay hai thuật toán:
+* Thuật toán tham lam đầu tiên chính xác, nhưng không đủ nhanh.
+* Thuật toán tham lam thứ hai nhanh, nhưng lại không chính xác.</p>
+<p>Giờ, điều mà ta cần làm đó chính là tăng độ chính xác của thuật toán này lên nhiều nhất có thể, mà thời gian thực thi vẫn không bị quá giới hạn. Một cách cơ bản, ta đang tìm kiếm sự cân bằng giữa <strong>thời gian thực thi và độ chính xác</strong>. Điểm khác biệt duy nhất giữa hai thuật toán kể trên chính là số lượng nhóm mà chúng ta lựa chọn được. Chúng ta sẽ có một phương án như sau: ta sẽ lựa ra một số lượng lớn nhóm ngẫu nhiên lúc đầu, sau đó sẽ giải quyết đoạn còn lại theo cách tiếp cận an toàn hơn. Khi mà chúng ta chỉ còn lại một số lượng nhỏ người dân chưa được phân nhóm ở các quốc gia, thì lúc này nó hoàn toàn hợp lí khi ta sử dụng phương pháp vét cạn. Với biến <strong>Allowed</strong> được khỏi tạo trong thuật toán dưới đây, ta điều khiển số lượng nhóm mà ta mong muốn tạo tại thời điểm được cho.</p>
+<div class="highlight"><pre><span></span><code>Groups = 0
+Repeat
+// sắp xếp lại mảng theo thứ tự giảm dần
+  Sort (A)
+  Min = A[K]
+  Allowance = (Min+999) / 1000
+  Groups = Groups + Allowance
+  For I = 1 to K
+    A[I] = A[I] - Allowance
+  Endfor
+Until Min = 0
+Return Groups
+</code></pre></div>
+<p>Nếu cách tiếp cận này thật sự đúng, ta hoàn toàn có thể nhận ra được. Mặc dù nó có thể thoát khỏi ánh mắt sắc nhọn của Tomek cũng như là test hệ thống, nhưng có vẻ là nó sẽ không thể nào đưa ra kết quả quả đúng với mọi bộ test khả thi. Đây chính một ví dụ cho thấy nếu được tinh chỉnh, từ một thuật toán tham lam đơn giản (nhưng vẫn còn khiếm khuyết) cũng cũng có thể trở thành một giải thuật "đúng". Để biết thêm về thuật toán chính xác cho bài này, xem lời giải ở <a href="http://community.topcoder.com/tc?module=Static&amp;d1=match_editorials&amp;d2=srm204">Match Editorial</a>.</p>
+<h2 id="tong-ket">Tổng kết</h2>
+<p>Tham lam thường dễ nghĩ ra, dễ cài đặt và chạy nhanh, nhưng không phải lúc nào cũng đúng. Khi bạn sử dụng duyệt hoặc quy hoạch động, nó giống như bạn đang di chuyển trên mặt đất an toàn. Còn đối với tham lam, thì giống như bạn đang đi trên một bãi mìn. Như bạn đã thấy qua ví dụ 1, có rất nhiều cách tham khác nhau nhưng chỉ có một cách cho kết quả đúng. Vì vậy, khi làm bài, bạn luôn luôn nên tìm cách chứng minh tính đúng đắn của thuật tham.</p>
+<p>Không tồn tại một công thức chung nào cho việc áp dụng Tham lam, tuy nhiên, ta có thể nhìn ra thuật tham bằng việc phân tích các tính chất của bài toán, kinh nghiệm cũng như trực giác.</p>
+<p><strong>Một vài lưu ý nhỏ</strong></p>
+<ul>
+<li>
+<p>Nhưng bài tập mà có vẻ cực kỳ phức tạp (như <a href="http://www.topcoder.com/stat?c=problem_statement&amp;pm=2894&amp;rd=5853">TCSocks</a>) có thể xem như là dấu hiệu để tiếp cận bằng phương pháp Tham lam.</p>
+</li>
+<li>
+<p>Nhưng bài toán mà dữ liệu đầu vào rất lớn (mà kể cả thuật toán có độ phức tạp <span class="arithmatex">\(O(n^2)\)</span> vẫn không kịp) thường được giải bằng tham lam hơn là quay lui hoặc <a href="http://www.topcoder.com/tc?module=Static&amp;d1=tutorials&amp;d2=dynProg">quy hoạch động</a>.</p>
+</li>
+<li>
+<p>Mặc dù nó có vẻ rùng rợn, nhưng bạn nên nhìn thuật toán tham lam dưới đôi mắt của một thám tử chứ không phải là dưới cặp kính của một nhà toán học.</p>
+</li>
+</ul>
+<p><img alt="a" src="http://community.topcoder.com/i/education/greedyAlg4.gif" />
+<strong>Một thám tử giỏi tham lam.</strong></p>
+<p><img alt="b" src="http://community.topcoder.com/i/education/greedyAlg5.gif" />
+<strong>Một người tham lam may mắn.</strong></p>
+<p><img alt="c" src="http://community.topcoder.com/i/education/greedyAlg6.gif" />
+<strong>Một người tham lam không may mắn.</strong></p>
+<ul>
+<li>Ngoài ra, việc học tập một số thuật toán có sử dụng Tham lam sẽ giúp nắm vững phương pháp này hơn (<a href="http://weierstrass.is.tokushima-u.ac.jp/ikeda/suuri/dijkstra/Prim.shtml">thuật toán Prim</a>, <a href="http://weierstrass.is.tokushima-u.ac.jp/ikeda/suuri/kruskal/Kruskal.shtml">thuật toán Kruskal</a>, <a href="http://www-b2.is.tokushima-u.ac.jp/~ikeda/suuri/dijkstra/Dijkstra.shtml">thuật toán Dijkstra</a>)</li>
+</ul>
+<h2 id="bai-tap-mo-rong">Bài tập mở rộng</h2>
+<h3 id="cap-o-1">Cấp độ 1</h3>
+<ul>
+<li><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=3450&amp;rd=5868">GroceryBagger</a> – SRM 222</li>
+<li><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=2235&amp;rd=5070">FanFailure</a> – SRM 195</li>
+<li><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=3002&amp;rd=5863">PlayGame</a> – SRM 217</li>
+<li><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=1119&amp;rd=5879">SchoolAssembly</a> – TCO04 Round 2</li>
+<li><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=2984&amp;rd=5862">RockStar</a> – SRM 216</li>
+<li><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=2312&amp;rd=5850">Apothecary</a> – SRM 204</li>
+<li><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=2977&amp;rd=5880">Boxing</a> – TCO04 Round 3</li>
+<li><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=2945&amp;rd=5884">Unblur</a> – TCO04 Semifinal Room 3</li>
+</ul>
+<h3 id="cap-o-2">Cấp độ 2</h3>
+<ul>
+<li><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=3042&amp;rd=5863">Crossroads</a> – SRM 217</li>
+<li><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=2894&amp;rd=5853">TCSocks </a>– SRM 207</li>
+<li><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=2982&amp;rd=5881">HeatDeath</a> – TCO04 Round 4</li>
+<li><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=3038&amp;rd=5882">BioScore</a> – TCO04 Semifinal Room 1</li>
+<li><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=2347&amp;rd=5870">Rationalization</a> – SRM 224</li>
+</ul>
+<h3 id="cap-o-3">Cấp độ 3</h3>
+<ul>
+<li><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=1957&amp;rd=4650">GoldMine</a> – SRM 169</li>
+<li><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=2236&amp;rd=5879">MLBRecord</a> – TCO04 Round 2</li>
+<li><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=3076&amp;rd=5866">RearrangeFurniture</a> – SRM 220</li>
+<li><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=2420&amp;rd=5850">WorldPeace</a> – SRM 204</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/jquery-3.7.1.min.js"></script>
+      
+        <script src="../../../js/webjs.js"></script>
+      
+    
+  </body>
+</html>
