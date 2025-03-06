@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/translate/wcipeg/Convex-Hull-Trick/">
+        <link rel="canonical" href="https://wiki.fptoj.com/translate/wcipeg/Convex-Hull-Trick/">
       
       
         <link rel="prev" href="../Binary-Heap/">
@@ -4586,7 +4586,7 @@
 <p>Cho một tập lớn các hàm tuyến tính có dạng <span class="arithmatex">\(y = m_i x + b_i\)</span> và một số lượng lớn truy vấn. Mỗi truy vấn là một số <span class="arithmatex">\(x\)</span> và hỏi giá trị cực tiểu <span class="arithmatex">\(y\)</span> có thể đạt được nếu chúng ta thế <span class="arithmatex">\(x\)</span> vào một trong những phương trình đã cho. Ví dụ, cho các phương trình <span class="arithmatex">\(y=4\)</span>, <span class="arithmatex">\(y=\frac{4}{3}+\frac{2}{3}x\)</span>, <span class="arithmatex">\(y=12-3x\)</span> và <span class="arithmatex">\(y=3-\frac{1}{2}x\)</span> và truy vấn <span class="arithmatex">\(x=1\)</span>. Chúng ta phải tìm phương trình mà trả về giá trị cực tiểu hoặc giá trị cực tiểu đó (trong trường hợp này là phương trình <span class="arithmatex">\(y=\frac{4}{3}+\frac{2}{3}x\)</span> và giá trị cực tiểu đó là 2).</p>
 <p>Biến thể của bài toán có thể là tìm giá trị cực đại có thể giải quyết với một thay đổi nhỏ vì vậy trong bài viết này chỉ tập trung vào bài toán tìm giá trị cực tiểu.</p>
 <p>Sau khi ta vẽ các đường thẳng lên hệ trục tọa độ, dễ thấy rằng: chúng ta muốn xác định, tại <span class="arithmatex">\(x=1\)</span>(đường màu đỏ)  đường nào có tọa độ <span class="arithmatex">\(y\)</span> nhỏ nhất. Ở trong trường hợp này là đường nét đứt đậm <span class="arithmatex">\(y=\frac{4}{3}+\frac{2}{3}x\)</span>.</p>
-<p><img alt="/fptoj_wiki/uploads/translate_p3g_Convex_hull_trick1.png" src="/fptoj_wiki/uploads/translate_p3g_Convex_hull_trick1.png" /></p>
+<p><img alt="/uploads/translate_p3g_Convex_hull_trick1.png" src="/uploads/translate_p3g_Convex_hull_trick1.png" /></p>
 <h1 id="thuat-toan-duyet">Thuật toán duyệt</h1>
 <p>Với mỗi truy vấn trong <span class="arithmatex">\(Q\)</span> truy vấn, ta duyệt qua từng hàm số và thử từng từng hàm và xem thử hàm nào trả giá trị cực tiểu cho giá trị <span class="arithmatex">\(x\)</span>. Nếu có <span class="arithmatex">\(M\)</span> đường thẳng và <span class="arithmatex">\(Q\)</span> truy vấn, độ phức tạp của thuật toán sẽ <span class="arithmatex">\(\mathcal{O}(MQ)\)</span>. Kĩ thuật bao lồi sẽ giúp giảm độ phức tạp xuống còn <span class="arithmatex">\(\mathcal{O}((Q+M)\log M\)</span>, một độ phức tạp hiệu quá hơn nhiều. </p>
 <h1 id="ki-thuat">Kĩ thuật</h1>

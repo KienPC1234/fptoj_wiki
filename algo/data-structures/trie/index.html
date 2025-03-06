@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/data-structures/trie/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/data-structures/trie/">
       
       
         <link rel="prev" href="../suffix-automaton/">
@@ -4592,7 +4592,7 @@
 <p>Trie là một cấu trúc dữ liệu dạng cây dùng để lưu trữ một danh sách các xâu với bộ kí tự hữu hạn, cho phép việc lưu trữ các xâu hiệu quả có tiền tố giống nhau.</p>
 <p>Hãy xem xét một ví dụ sau:</p>
 <p><center></p>
-<p><img alt="/fptoj_wiki/uploads/trie_img1.png" src="/fptoj_wiki/uploads/trie_img1.png" />
+<p><img alt="/uploads/trie_img1.png" src="/uploads/trie_img1.png" />
 </center></p>
 <p>Trong một trie, mỗi cạnh được biểu diễn bằng một kí tự, mỗi đỉnh và đường đi từ gốc đến đỉnh đó biểu diễn một xâu gồm các kí tự thuộc các cạnh trên đường đi đó. Ví dụ, đỉnh <span class="arithmatex">\(5\)</span> biểu diễn xâu <code>ab</code>, đỉnh <span class="arithmatex">\(10\)</span> biểu diễn xâu <code>caa</code>.</p>
 <p>Cấu trúc của trie rất dễ hiểu và cài đặt. Gọi <code>child(u, c)</code> là đỉnh con của đỉnh <span class="arithmatex">\(u\)</span> được nối bởi cạnh được biểu diễn bằng kí tự <span class="arithmatex">\(c\)</span>, hoặc bằng <span class="arithmatex">\(-1\)</span> nếu đỉnh con đó không tồn tại. Xâu được thể hiện bởi đỉnh con này sẽ chính là xâu được thể hiện bởi đỉnh <span class="arithmatex">\(u\)</span>, thêm kí tự <span class="arithmatex">\(c\)</span> vào cuối. Do vậy, ta chỉ cần mảng <code>child</code> này với mỗi đỉnh để duy trì cấu trúc của trie. Ví dụ, trong ảnh trên, <code>child(1, 'b') = 5</code>, <code>child(3, 'c') = 9</code>, <code>child(11, 'b') = -1</code>.</p>
@@ -4766,7 +4766,7 @@
 <p>Các số được thêm vào trie sẽ được chuyển thành dạng nhị phân rồi thêm các bit <span class="arithmatex">\(0\)</span> vào đầu sao cho độ dài các số nhị phân đều bằng nhau. Thông thường độ dài này sẽ được đặt là <span class="arithmatex">\({\log_2{(\max a_i)}}\)</span> với <span class="arithmatex">\(a_i\)</span> là các số trong danh sách đã cho. Khi thêm vào trie, ta sẽ thêm các bit vào trie theo chiều từ trái sang phải.</p>
 <p>Lưu ý rằng các ứng dụng của trie xâu (liệt kê bên dưới) đều có thể được áp dụng cho trie nhị phân.</p>
 <p><center></p>
-<p><img alt="/fptoj_wiki/uploads/trie_img2.png" src="/fptoj_wiki/uploads/trie_img2.png" />
+<p><img alt="/uploads/trie_img2.png" src="/uploads/trie_img2.png" />
 </center></p>
 <div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NUMBEROFNODES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span>
@@ -4903,7 +4903,7 @@
 <p>Xét lần lượt các bit từ lớn đến bé của đáp án. Coi bit đang xét là bit thứ <span class="arithmatex">\(i\)</span>. Ta sẽ xây dựng đáp án một cách tham lam bằng cách cố gắng đặt bit thứ <span class="arithmatex">\(i\)</span> của đáp án là <span class="arithmatex">\(1\)</span> do <span class="arithmatex">\(2^i &gt; \sum_{i = 0}^{j - 1}2^j\)</span>. Nói cách khác, dù đặt cả <span class="arithmatex">\(i - 1\)</span> bit còn lại của đáp án là <span class="arithmatex">\(1\)</span> thì cũng không có lợi bằng đặt bit <span class="arithmatex">\(i\)</span> là <span class="arithmatex">\(1\)</span>.</p>
 <p>Ta sẽ lần lượt xây đáp án bằng các đi xuống từ gốc của trie. Coi ta đang xây bit thứ <span class="arithmatex">\(i\)</span> của đáp án. Nếu đỉnh hiện tại đang xét có thể đi xuống cạnh có bit là <span class="arithmatex">\(f(x, i) \oplus 1\)</span> với <span class="arithmatex">\(f(x, i)\)</span> là bit thứ <span class="arithmatex">\(i\)</span> của số <span class="arithmatex">\(x\)</span>, ta sẽ đi qua cạnh đó để có được bit <span class="arithmatex">\(i\)</span> trong đáp án là <span class="arithmatex">\(1\)</span>. Nếu không, ta "đành" đi xuống cạnh còn lại của đỉnh đang xét và có được bit <span class="arithmatex">\(i\)</span> của đáp án là <span class="arithmatex">\(0\)</span>.</p>
 <p><center></p>
-<p><img alt="/fptoj_wiki/uploads/trie_img3.png" src="/fptoj_wiki/uploads/trie_img3.png" />
+<p><img alt="/uploads/trie_img3.png" src="/uploads/trie_img3.png" />
 </center></p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">query</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -5038,7 +5038,7 @@
 <p>Với các truy vấn loại <span class="arithmatex">\(1\)</span>, thay vì thay đổi cả dãy, ta nhận thấy rằng <span class="arithmatex">\((a \oplus b) \oplus c = a \oplus (b \oplus c)\)</span>. Tức là nếu áp dụng hai truy vấn loại <span class="arithmatex">\(1\)</span> với hai số nguyên <span class="arithmatex">\(b, c\)</span> thì cũng tương tự như áp dụng một truy vấn với số nguyên <span class="arithmatex">\(b \oplus c\)</span>. Do vậy, ta chỉ cần duy trì cả dãy đang bị XOR bởi số nguyên nào. Gọi số đó là <span class="arithmatex">\(z\)</span>.</p>
 <p>Giả dụ ta đã có một trie nhị phân của dãy số <span class="arithmatex">\(a_1, a_2, \ldots, a_n\)</span> và ta muốn tìm MEX của các số trong đó. Ta sẽ sử dụng thuật toán tương tự chặt nhị phân. Gọi độ cao của trie là <span class="arithmatex">\(k\)</span>. Khởi đầu tại gốc trie, ta kiểm tra xem cây con bên trái (cạnh thể hiện bit <span class="arithmatex">\(0\)</span>) có phải là cây nhị phân hoàn hảo hay không. Nói cách khác, tất cả các số trong khoảng <span class="arithmatex">\([0, 2^k - 1]\)</span> có tồn tại hay không. Nếu có, ta chắc chắn MEX của dãy số nằm trong khoảng này. Nếu không, ta chắc chắn MEX của dãy số nằm trong khoảng <span class="arithmatex">\([2^k, 2^{k + 1} - 1]\)</span>. Sau đó, ta đi xuống đỉnh con tương ứng và tiếp tục xét hai đỉnh con của nó. Làm như vậy với tất cả các bit là sẽ tìm được đáp án.</p>
 <p><center></p>
-<p><img alt="/fptoj_wiki/uploads/trie_img4.png" src="/fptoj_wiki/uploads/trie_img4.png" />
+<p><img alt="/uploads/trie_img4.png" src="/uploads/trie_img4.png" />
 </center></p>
 <p>Vậy phần còn lại phải xử lí là kết hợp thuật tìm MEX trên với việc cả mảng đang bị XOR bởi số <span class="arithmatex">\(z\)</span>. Dễ nhận thấy là, nếu bit thứ <span class="arithmatex">\(k\)</span> của <span class="arithmatex">\(z\)</span> được bật, thì nó tương tự việc hai cây con trái và phải của đỉnh đang xét được đổi chỗ cho nhau. Vì vậy thuật toán cuối cùng tương tự với thuật toán tìm MEX trên, thêm việc xét bit thứ <span class="arithmatex">\(k\)</span> của <span class="arithmatex">\(z\)</span> mà ta sẽ xét cây con trái trước (nếu bit đó là <span class="arithmatex">\(0\)</span>) hay cây con phải trước (nếu bit đó là <span class="arithmatex">\(1\)</span>).</p>
 <details>

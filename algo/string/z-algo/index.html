@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/string/z-algo/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/string/z-algo/">
       
       
         <link rel="prev" href="../manacher/">
@@ -4857,7 +4857,7 @@
 $$
 z[i] = \texttt{min}(r - i + 1, z[i - l])
 $$
-<img alt="/fptoj_wiki/uploads/z-algo-visualize.png" src="/fptoj_wiki/uploads/z-algo-visualize.png" />
+<img alt="/uploads/z-algo-visualize.png" src="/uploads/z-algo-visualize.png" />
 - <span class="arithmatex">\(i &gt; r\)</span>: khi đó <span class="arithmatex">\(i\)</span> nằm ngoài vùng ta đã kiểm tra, khi đó ta không thể tận dụng gì nên chỉ khởi tạo <span class="arithmatex">\(z[i] = 0\)</span> và làm theo thuật toán ngây thơ.</p>
 <p>Từ nhận xét này, ta thấy rằng nếu <span class="arithmatex">\(k + z[k] - 1\)</span> càng lớn, tức <span class="arithmatex">\(r\)</span> nào càng lớn thì ta càng có cơ hội khởi tạo được <span class="arithmatex">\(z[i]\)</span> lớn hơn (tức ít phải xét lại hơn). Do đó trong quá trình tính <span class="arithmatex">\(z\)</span> ta sẽ duy trì hai biến <span class="arithmatex">\(l\)</span> và <span class="arithmatex">\(r\)</span> với ý nghĩa đoạn <span class="arithmatex">\([l,r]\)</span> là đoạn thoả <span class="arithmatex">\(S[l \ldots r] = S[0 \ldots r - l]\)</span> và <strong><span class="arithmatex">\(r\)</span> là lớn nhất</strong>. khi đó, mỗi lần xét một <span class="arithmatex">\(z[i]\)</span> mới ta sẽ khởi tạo <span class="arithmatex">\(z[i]\)</span> như đã đề cập ở trên. Sau khi tính xong <span class="arithmatex">\(z[i]\)</span>, ta sẽ cập nhật lại <span class="arithmatex">\(l\)</span> và <span class="arithmatex">\(r\)</span> với đoạn <span class="arithmatex">\([i, i + z[i] - 1]\)</span> mới tính. Từ đó ta có thuật toán cải tiến như sau:
 <div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">z_function</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>

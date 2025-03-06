@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/graph-theory/breadth-first-search/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/graph-theory/breadth-first-search/">
       
       
         <link rel="prev" href="../../geometry/Sweep-Line/">
@@ -4586,7 +4586,7 @@
 <h1 id="thuat-toan-duyet-o-thi-uu-tien-chieu-rong">Thuật toán duyệt đồ thị ưu tiên chiều rộng</h1>
 <p>Thuật toán <strong>duyệt đồ thị ưu tiên chiều rộng</strong> <em>(Breadth-first search - BFS)</em> là một trong những thuật toán tìm kiếm cơ bản và thiết yếu trên đồ thị. Mà trong đó, những đỉnh nào gần đỉnh xuất phát hơn sẽ được duyệt trước.</p>
 <p>Ứng dụng của <span class="arithmatex">\(BFS\)</span> có thể giúp ta giải quyết tốt một số bài toán trong thời gian và không gian <strong>tối thiểu</strong>. Đặc biệt là bài toán tìm kiếm đường đi ngắn nhất từ một đỉnh gốc tới tất cả các đỉnh khác. Trong đồ thị không có trọng số hoặc tất cả trọng số bằng nhau, thuật toán sẽ luôn trả ra đường đi ngắn nhất có thể. Ngoài ra, thuật toán này còn được dùng để tìm các thành phần liên thông của đồ thị, hoặc kiểm tra đồ thị hai phía, ...</p>
-<p><img alt="/fptoj_wiki/uploads/breadth-first-search_img1.png" src="/fptoj_wiki/uploads/breadth-first-search_img1.png" /></p>
+<p><img alt="/uploads/breadth-first-search_img1.png" src="/uploads/breadth-first-search_img1.png" /></p>
 <h2 id="y-tuong">Ý tưởng</h2>
 <p>Với đồ thị không trọng số và đỉnh nguồn <span class="arithmatex">\(s\)</span>. Đồ thị này có thể là đồ thị có hướng hoặc vô hướng, điều đó <strong>không quan trọng</strong> đối với thuật toán.</p>
 <p>Có thể hiểu thuật toán như một ngọn lửa lan rộng trên đồ thị:</p>
@@ -4600,7 +4600,7 @@
 <li>Đầu tiên ta thăm đỉnh nguồn <span class="arithmatex">\(s\)</span>. </li>
 <li>Việc thăm đỉnh <span class="arithmatex">\(s\)</span> sẽ phát sinh thứ tự thăm các đỉnh <span class="arithmatex">\((u_1, u_2, … u_p)\)</span> kề với <span class="arithmatex">\(s\)</span> (những đỉnh gần <span class="arithmatex">\(s\)</span> nhất). Tiếp theo, ta thăm đỉnh <span class="arithmatex">\(u_1\)</span>, khi thăm đỉnh <span class="arithmatex">\(u_1\)</span> sẽ lại phát sinh yêu cầu thăm những đỉnh <span class="arithmatex">\((v_1, v_2, …, v_q)\)</span> kề với <span class="arithmatex">\(u_1\)</span>. Nhưng rõ ràng những đỉnh <span class="arithmatex">\(v\)</span> này “xa” <span class="arithmatex">\(s\)</span> hơn những đỉnh <span class="arithmatex">\(u\)</span> nên chúng chỉ được thăm khi tất cả những đỉnh <span class="arithmatex">\(u\)</span> đều đã được thăm. Tức là thứ tự thăm các đỉnh sẽ là: <span class="arithmatex">\(s, u_1, u_2, …, u_p, v_1, v_2, …, v_q, …\)</span></li>
 </ul>
-<p><img alt="/fptoj_wiki/uploads/breadth-first-search_img2.png" src="/fptoj_wiki/uploads/breadth-first-search_img2.png" /></p>
+<p><img alt="/uploads/breadth-first-search_img2.png" src="/uploads/breadth-first-search_img2.png" /></p>
 <p>Thuật toán tìm kiếm theo chiều rộng sử dụng một danh sách để chứa những đỉnh đang “chờ” thăm. Tại mỗi bước, ta thăm một đỉnh đầu danh sách, loại nó ra khỏi danh sách và cho những đỉnh kề với nó chưa được thăm xếp hàng vào cuối danh sách. Thuật toán sẽ kết thúc khi danh sách rỗng.</p>
 <h2 id="thuat-toan">Thuật toán</h2>
 <p>Thuật toán sử dụng một cấu trúc dữ liệu hàng đợi <em>(queue)</em> để chứa các đỉnh sẽ được duyệt theo thứ tự ưu tiên chiều rộng.</p>
@@ -4618,12 +4618,12 @@
 <ul>
 <li>Xét đồ thị sau đây, với đỉnh nguồn <span class="arithmatex">\(s=1\)</span> :</li>
 </ul>
-<p><img alt="/fptoj_wiki/uploads/breadth-first-search_img3.png" src="/fptoj_wiki/uploads/breadth-first-search_img3.png" />
-<img alt="/fptoj_wiki/uploads/breadth-first-search_img4.png" src="/fptoj_wiki/uploads/breadth-first-search_img4.png" /></p>
+<p><img alt="/uploads/breadth-first-search_img3.png" src="/uploads/breadth-first-search_img3.png" />
+<img alt="/uploads/breadth-first-search_img4.png" src="/uploads/breadth-first-search_img4.png" /></p>
 <ul>
 <li><strong>Quá trình:</strong></li>
 </ul>
-<p><a href="/fptoj_wiki/uploads/breadth-first-search_gif1.gif">/fptoj_wiki/uploads/breadth-first-search_gif1.gif</a></p>
+<p><a href="/uploads/breadth-first-search_gif1.gif">/uploads/breadth-first-search_gif1.gif</a></p>
 <h2 id="cai-at">Cài đặt</h2>
 <p><strong>Cấu trúc dữ liệu:</strong></p>
 <ul>
@@ -4692,7 +4692,7 @@ Trong thuật toán <span class="arithmatex">\(BFS\)</span>, nếu đỉnh <span
 <ul>
 <li>
 <p><strong>Ví dụ:</strong> Cho đồ thị sau với <span class="arithmatex">\(\|V\| = 8\)</span> và <span class="arithmatex">\(\|E\| = 7\)</span></p>
-<p><img alt="/fptoj_wiki/uploads/breadth-first-search_img5.png" src="/fptoj_wiki/uploads/breadth-first-search_img5.png" /></p>
+<p><img alt="/uploads/breadth-first-search_img5.png" src="/uploads/breadth-first-search_img5.png" /></p>
 <ul>
 <li><span class="arithmatex">\(\displaystyle\sum_{v \in V}deg(v) = 2 \times \|E\| = 2 \times 7 = 14\)</span> </li>
 </ul>
@@ -4743,7 +4743,7 @@ $\Rightarrow$ $\displaystyle\sum_{v \in L}deg(v)$ chẵn
 - <strong>Bước 3:</strong> Thực hiện bước <span class="arithmatex">\(2\)</span> cho đến khi không còn thực hiện được nữa.
 - <strong>Bước 4:</strong> Nếu số số đỉnh đánh dấu bằng <span class="arithmatex">\(n\)</span> (mọi đỉnh đều được đánh dấu) kết thúc thuật toán và trả về số thành phần liên thông, ngược lại quay về bước <span class="arithmatex">\(1\)</span>.</p>
 <h3 id="mo-ta_1"><strong>Mô tả</strong></h3>
-<p><a href="/fptoj_wiki/uploads/breadth-first-search_gif2.gif">/fptoj_wiki/uploads/breadth-first-search_gif2.gif</a></p>
+<p><a href="/uploads/breadth-first-search_gif2.gif">/uploads/breadth-first-search_gif2.gif</a></p>
 <h3 id="cai-at_1"><strong>Cài đặt</strong></h3>
 <p><strong>Cấu trúc dữ liệu:</strong></p>
 <ul>
@@ -4827,7 +4827,7 @@ $\Rightarrow$ $\displaystyle\sum_{v \in L}deg(v)$ chẵn
         * Sử dụng <span class="arithmatex">\(1\)</span> mảng để lưu lại kích thước của từng vết loang.
 - Nếu tất cả các ô bị nhiễm dầu đều đã được đánh dấu, trả ra kết quả và kết thúc thuật toán.</p>
 <h3 id="mo-ta_2"><strong>Mô tả</strong></h3>
-<p><a href="/fptoj_wiki/uploads/breadth-first-search_gif3.gif">/fptoj_wiki/uploads/breadth-first-search_gif3.gif</a></p>
+<p><a href="/uploads/breadth-first-search_gif3.gif">/uploads/breadth-first-search_gif3.gif</a></p>
 <h3 id="cai-at_2"><strong>Cài đặt</strong></h3>
 <p><strong>Cấu trúc dữ liệu:</strong></p>
 <ul>
@@ -5206,7 +5206,7 @@ $\Rightarrow$ $\displaystyle\sum_{v \in L}deg(v)$ chẵn
 <ul>
 <li>Thực hiện <span class="arithmatex">\(BFS\)</span> bắt đầu tại đỉnh <span class="arithmatex">\(S\)</span> :</li>
 </ul>
-<p><a href="/fptoj_wiki/uploads/breadth-first-search_gif4.gif">/fptoj_wiki/uploads/breadth-first-search_gif4.gif</a></p>
+<p><a href="/uploads/breadth-first-search_gif4.gif">/uploads/breadth-first-search_gif4.gif</a></p>
 <h3 id="thuat-toan_3"><strong>Thuật toán</strong></h3>
 <p>Với mỗi đỉnh của đồ thị, ta thực hiện <span class="arithmatex">\(BFS\)</span> bắt đầu từ đỉnh đó. </p>
 <p>Trong quá trình <span class="arithmatex">\(BFS\)</span>, ghi nhận khoảng cách từ đỉnh nguồn đến đỉnh đang duyệt, nếu gặp lại đỉnh nguồn thì đó là <strong>chu trình ngắn nhất</strong> chứa đỉnh nguồn. Lúc này, ta in ra độ dài chu trình và kết thúc <span class="arithmatex">\(BFS\)</span>, rồi bắt đầu thực hiện một <span class="arithmatex">\(BFS\)</span> mới từ đỉnh tiếp theo.</p>
@@ -5372,7 +5372,7 @@ $\Rightarrow$ $\displaystyle\sum_{v \in L}deg(v)$ chẵn
 <p>Có rất nhiều tình huống thực tế có thể mô phỏng bằng đồ thị hai phía:
 - <strong>Ví dụ:</strong> Muốn biểu diễn mối quan hệ giữa một nhóm học sinh và một nhóm các trường học, ta có thể xây dựng một đồ thị với mỗi một học sinh và mỗi trường học là một đỉnh. Giữa một người <span class="arithmatex">\(A\)</span> và một trường <span class="arithmatex">\(X\)</span> sẽ có một cạnh nếu như <span class="arithmatex">\(A\)</span> đã hoặc đang đi học ở trường <span class="arithmatex">\(X\)</span>. Kiểu đồ thị này sẽ là một <strong>đồ thị hai phần</strong>, với một nhóm đỉnh là người và nhóm kia là trường; sẽ không có cạnh nối giữa hai người hoặc giữa hai trường.</p>
 <p>Một tính chất thú vị của đồ thị hai phía là ta có thể tô màu các đỉnh đồ thị với hai màu sao cho không có hai đỉnh nào cùng màu kề nhau.</p>
-<p><img alt="/fptoj_wiki/uploads/breadth-first-search_img6.png" src="/fptoj_wiki/uploads/breadth-first-search_img6.png" /></p>
+<p><img alt="/uploads/breadth-first-search_img6.png" src="/uploads/breadth-first-search_img6.png" /></p>
 <p>Bạn có thể tìm hiểu thêm về <strong>đồ thị hai phía</strong> tại <a href="https://vi.wikipedia.org/wiki/%C4%90%E1%BB%93_th%E1%BB%8B_hai_ph%C3%ADa"><strong>đây</strong></a>.</p>
 <h2 id="bai-toan-8"><strong>Bài toán 8</strong></h2>
 <p><a href="https://onlinejudge.org/index.php?option=onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=945">Bicoloring - UVA 10004</a></p>
@@ -5387,11 +5387,11 @@ $\Rightarrow$ $\displaystyle\sum_{v \in L}deg(v)$ chẵn
 <ul>
 <li>Ví dụ mô tả đồ thị <strong>không phải</strong> là đồ thị hai phía:</li>
 </ul>
-<p><a href="/fptoj_wiki/uploads/breadth-first-search_gif5.gif">/fptoj_wiki/uploads/breadth-first-search_gif5.gif</a></p>
+<p><a href="/uploads/breadth-first-search_gif5.gif">/uploads/breadth-first-search_gif5.gif</a></p>
 <ul>
 <li>Ví dụ mô tả <strong>đồ thị hai phía</strong>:</li>
 </ul>
-<p><a href="/fptoj_wiki/uploads/breadth-first-search_gif6.gif">/fptoj_wiki/uploads/breadth-first-search_gif6.gif</a></p>
+<p><a href="/uploads/breadth-first-search_gif6.gif">/uploads/breadth-first-search_gif6.gif</a></p>
 <h3 id="thuat-toan_4"><strong>Thuật toán</strong></h3>
 <p>Để tô màu đồ thị, ta sẽ sử dụng <span class="arithmatex">\(1\)</span> mảng để lưu trạng thái của mỗi đỉnh. Có <span class="arithmatex">\(3\)</span> trạng thái:
 - <strong>Trạng thái -1:</strong> Đỉnh vẫn chưa được tô màu <em>(đỉnh chưa được duyệt)</em>.

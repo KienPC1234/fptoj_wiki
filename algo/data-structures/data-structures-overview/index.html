@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/data-structures/data-structures-overview/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/data-structures/data-structures-overview/">
       
       
         <link rel="prev" href="../C%C3%A2y-Palindrome/">
@@ -4666,7 +4666,7 @@
 <p><strong>Fibonacci Heap</strong> là một dạng heap có <strong>độ phức tạp</strong> bé hơn. Trong <strong>C++</strong>, CTDL <strong>priority_queue</strong> được cài đặt bằng Fibonacci Heap.</p>
 <h2 id="14-cay-tim-kiem-nhi-phan">1.4. Cây Tìm Kiếm Nhị Phân</h2>
 <p><strong>Cây Tìm Kiếm Nhị Phân</strong> (<strong>BST Binary Search Tree</strong>) là một <a href="translate/wcipeg/tree">cây nhị phân</a> có tính chất: Với mỗi giá trị trên đỉnh đang xét, giá trị của mọi đỉnh trên cây con trái luôn nhỏ hơn đỉnh đang xét và giá trị của mọi đỉnh trên cây con phải luôn lớn hơn đỉnh đang xét.</p>
-<p><img alt="bst1" src="/fptoj_wiki/uploads/bst1.png" /></p>
+<p><img alt="bst1" src="/uploads/bst1.png" /></p>
 <p>Cây tìm kiếm nhị phân cho phép thực hiện các thao tác:</p>
 <ul>
 <li>Thêm 1 phần tử.</li>
@@ -4678,13 +4678,13 @@
 <p>Để khắc phục điều này, có rất nhiều CTDL cải tiến từ cây tìm kiếm nhị phân, thường được gọi là các cây nhị phân cân bằng. Khi đó, các thao tác trên có thể được thực hiện với độ phức tạp <span class="arithmatex">\(\mathcal{O}(\log{N})\)</span>. Ví dụ:</p>
 <ul>
 <li><strong>Cây Đỏ Đen</strong> (Red-Black Tree) là một dạng <strong>cây tìm kiếm nhị phân</strong> (<strong>BST</strong>) mà sau mỗi truy vấn được thực hiện, cây tự cân bằng theo đúng tính chất của nó với độ phức tạp <span class="arithmatex">\(O(log(N))\)</span>. CTDL <strong>set</strong> trong <strong>C++</strong> được cài đặt bằng cây đỏ đen.
-  <a href="redblack1">/fptoj_wiki/uploads/redblack1.png</a></li>
+  <a href="redblack1">/uploads/redblack1.png</a></li>
 <li><strong>Splay tree</strong>, <a href="algo/data-structures/Skip-Lists">Skip list</a>, <strong>Treap</strong> thường được dùng trong các kỳ thi bởi cài đặt đơn giản.</li>
 </ul>
 <h2 id="15-bang-bam-hash-tables">1.5. Bảng băm (Hash Tables)</h2>
 <p>Bảng băm là một CTDL thường được sử dụng như một từ điển: mỗi phần tử trong bảng băm là một cặp (khóa, giá trị). Nếu so sánh với mảng, khóa được xem như chỉ số của mảng, còn giá trị giống như giá trị mà ta lưu tại chỉ số tương ứng. Bảng băm không như các loại từ điển thông thường - ta có thể tìm được giá trị thông qua khóa của nó.</p>
 <p>Bảng băm hoạt động dựa trên hàm Hash: Hash là quá trình khởi tạo một giá trị khóa (thường là 32 bit hoặc 64 bit) từ một phần dữ liệu. Nó có thể là <span class="arithmatex">\(n\)</span> bit đầu tiên của dữ liệu, <span class="arithmatex">\(n\)</span> bit cuối cùng, giá trị mod cho một số nguyên tố nào đó. Dựa theo giá trị hash, dữ liệu được chia vào các <strong>bucket</strong>:</p>
-<p><img alt="/fptoj_wiki/uploads/data_structures_hash_table_hash_function.png" src="/fptoj_wiki/uploads/data_structures_hash_table_hash_function.png" /></p>
+<p><img alt="/uploads/data_structures_hash_table_hash_function.png" src="/uploads/data_structures_hash_table_hash_function.png" /></p>
 <p>Trong trường hợp hàm Hash hoạt động tốt, mỗi bucket có rất ít phần tử, độ phức tạp của các thao tác trên Hash table như sau:</p>
 <ul>
 <li>Tìm 1 khóa: <span class="arithmatex">\(\mathcal{O}(1)\)</span>.</li>
@@ -4723,7 +4723,7 @@
 <p>Trên bảng 2 chiều <span class="arithmatex">\(A(i, j)\)</span>, ta đặt <span class="arithmatex">\(f(i, j)\)</span> là tổng các ô trong hình chữ nhật có 2 đỉnh đối diện là <span class="arithmatex">\((1, 1)\)</span> và <span class="arithmatex">\((i, j)\)</span>.</p>
 <p>Khi đó, ta có: <span class="arithmatex">\(f(i, j) = f(i-1, j) + f(i, j-1) - f(i-1, j-1) + A(i, j)\)</span>.</p>
 <p>Giải thích công thức trên:</p>
-<p><img alt="/fptoj_wiki/uploads/2DPartialSum_small.png" src="/fptoj_wiki/uploads/2DPartialSum_small.png" /></p>
+<p><img alt="/uploads/2DPartialSum_small.png" src="/uploads/2DPartialSum_small.png" /></p>
 <p>đỏ = xanh da trời + vàng - tím + xanh lá</p>
 <p><span class="arithmatex">\(f(i, j) = f(i-1, j) + f(i, j-1) - f(i-1, j-1) + A(i, j)\)</span></p>
 <h2 id="22-disjoint-sets">2.2. Disjoint Sets</h2>

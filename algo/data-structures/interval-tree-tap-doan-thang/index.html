@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/data-structures/interval-tree-tap-doan-thang/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/data-structures/interval-tree-tap-doan-thang/">
       
       
         <link rel="prev" href="../heavy-light-decomposition/">
@@ -4595,7 +4595,7 @@
 <li>Phụ thuộc vào kích thước hoành độ <span class="arithmatex">\(x\)</span>. Vì IT đoạn thẳng xử lí trên khoảng của hoành độ, với bài toán mà query <span class="arithmatex">\(x\)</span> lớn hoặc <span class="arithmatex">\(x\)</span> không phải số nguyên không thể biểu diễn bằng IT bình thường. Có thể thay thế bằng rời rạc hóa các tọa độ hoặc IT động, nhưng so với bao lồi đây là một nhược điểm đáng kể khi bao lồi hoàn toàn không phụ thuộc vào <span class="arithmatex">\(x\)</span>.</li>
 <li>Bộ nhớ và thời gian lớn. Lưu một cây IT chứa hai số nguyên <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span> tốn bộ nhớ hơn nhiều so với stack bao lồi. Xử lí trên cây IT cũng chậm hơn chặt nhị phân trên bao lồi. Về độ phức tạp, có thể so sánh qua bảng sau</li>
 </ol>
-<p><img alt="/fptoj_wiki/uploads/it_segment.png" src="/fptoj_wiki/uploads/it_segment.png" /></p>
+<p><img alt="/uploads/it_segment.png" src="/uploads/it_segment.png" /></p>
 <p><strong>Lưu ý</strong>: Ở đây ta giả sử các đường thẳng thêm vào có hệ số <span class="arithmatex">\(a\)</span> tăng dần hoặc giảm dần, bao lồi được biểu diễn bằng stack.</p>
 <p>Tóm lại, so với cách ứng dụng bao lồi, sử dụng IT đoạn thẳng là một phương pháp tổng quát hơn nhưng chậm và tốn nhiều bộ nhớ hơn. Sau đây là những phân tích cơ bản về thuật toán.</p>
 <h1 id="y-tuong">Ý tưởng</h1>

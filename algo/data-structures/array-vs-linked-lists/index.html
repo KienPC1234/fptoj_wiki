@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/data-structures/array-vs-linked-lists/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/data-structures/array-vs-linked-lists/">
       
       
         <link rel="prev" href="../../algebra/prime_sieve/">
@@ -4579,7 +4579,7 @@
 <h1 id="bien-con-tro">Biến, con trỏ</h1>
 <p>Cấu trúc dữ liệu đơn giản nhất chính là các biến (variable). Chúng nắm giữ duy nhất một giá trị, hơn nữa, phạm vi sử dụng có giới hạn. Khi nhiều giá trị cần lưu trữ, <a href="#mảng-arrays">mảng</a> (arrays) được sử dụng.</p>
 <p>Một khái niệm hơi khó hơn mặc dù không kém phần căn bản là con trỏ (pointer). Con trỏ thay vì giữ một giá trị, nó lại giữ một địa chỉ vùng nhớ:</p>
-<p><img alt="/fptoj_wiki/uploads/data_structures_basic_pointer.png" src="/fptoj_wiki/uploads/data_structures_basic_pointer.png" /></p>
+<p><img alt="/uploads/data_structures_basic_pointer.png" src="/uploads/data_structures_basic_pointer.png" /></p>
 <p>Trong hình trên:</p>
 <ul>
 <li><code>var</code> là một biến thông thường, có địa chỉ <code>1001</code> và giá trị <code>50</code></li>
@@ -4621,7 +4621,7 @@
 <h1 id="danh-sach-lien-ket-linked-lists">Danh sách liên kết (Linked Lists)</h1>
 <p>Danh sách liên kết là một cấu trúc dữ liệu có thể giữ một số lượng phần tử tùy ý và dễ dàng thay đổi kích thước, cũng như dễ dàng bỏ đi các phần tử bên trong nó.</p>
 <p>Danh sách liên kết, hiểu theo cách đơn giản nhất là một con trỏ trỏ tới một nút dữ liệu. Mỗi nút dữ liệu bao gồm dữ liệu cần chứa và một con trỏ trỏ tới nút tiếp theo. Tại điểm cuối cùng, con trỏ trỏ tới giá trị NULL.</p>
-<p><img alt="/fptoj_wiki/uploads/data_structures_basic_linked_list.png" src="/fptoj_wiki/uploads/data_structures_basic_linked_list.png" /></p>
+<p><img alt="/uploads/data_structures_basic_linked_list.png" src="/uploads/data_structures_basic_linked_list.png" /></p>
 <p>Với thiết kế như ban đầu, một danh sách liên kết thích hợp để lưu trữ dữ liệu khi chưa biết trước được số lượng các phần tử hoặc các phần tử thường xuyên thay đổi. Tuy vậy, chúng ta không thể truy cập một cách ngẫu nhiên các phần tử của danh sách liên kết. Để tìm kiếm một giá trị, ta phải bắt đầu tại phần tử đầu tiên và duyệt tuần tự qua các phần tử cho tới khi bắt gặp được giá trị mà mình cần tìm kiếm. Để chèn một nút vào danh sách liên kết, bạn cũng phải thực hiện tương tự. Độ phức tạp của cả 2 thao tác này là <span class="arithmatex">\(\mathcal{O}(N)\)</span>. Tuy nhiên, nếu ta biết được con trỏ trỏ đến phần tử cần xóa, thì độ phức tạp chỉ là <span class="arithmatex">\(\mathcal{O}(1)\)</span>. Dễ dàng nhận thấy, thao tác tìm kiếm và chèn trong danh sách liên kết không thật sự hiệu quả.</p>
 <p>Sau đây là cài đặt kiểu dữ liệu danh sách liên kết thông thường:</p>
 <div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">ListNode</span><span class="w"> </span><span class="p">{</span>

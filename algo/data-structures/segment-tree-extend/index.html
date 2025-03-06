@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/data-structures/segment-tree-extend/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/data-structures/segment-tree-extend/">
       
       
         <link rel="prev" href="../segment-tree-basic/">
@@ -4587,7 +4587,7 @@
 <p>Segment Tree là một <a href="translate/wcipeg/tree">cây</a>. Cụ thể hơn, nó là một cây nhị phân đầy đủ (mỗi nút là lá hoặc có đúng 2 nút con), với mỗi nút quản lý một đoạn trên dãy số. Với một dãy số gồm <span class="arithmatex">\(N\)</span> phần tử, nút gốc sẽ lưu thông tin về đoạn <span class="arithmatex">\([1, N]\)</span>, nút con trái của nó sẽ lưu thông tin về đoạn <span class="arithmatex">\([1, ⌊N/2⌋]\)</span> và nút con phải sẽ lưu thông tin về đoạn <span class="arithmatex">\([⌊N/2⌋+1, N]\)</span>. Tổng quát hơn: nếu nút <span class="arithmatex">\(A\)</span> lưu thông tin đoạn <span class="arithmatex">\([i, j]\)</span>, thì 2 con của nó: <span class="arithmatex">\(A1\)</span> và <span class="arithmatex">\(A2\)</span> sẽ lưu thông tin của các đoạn <span class="arithmatex">\([i, ⌊(i+j)/2⌋]\)</span> và đoạn <span class="arithmatex">\([⌊(i+j)/2⌋ + 1, j]\)</span>.</p>
 <h2 id="vi-du">Ví dụ</h2>
 <p>Xét một dãy gồm 7 phần tử, Segment Tree sẽ quản lý các đoạn như sau:</p>
-<p><img alt="/fptoj_wiki/uploads/segment_tree_structure_example.png" src="/fptoj_wiki/uploads/segment_tree_structure_example.png" /></p>
+<p><img alt="/uploads/segment_tree_structure_example.png" src="/uploads/segment_tree_structure_example.png" /></p>
 <h2 id="cai-at">Cài đặt</h2>
 <p>Để cài đặt, ta có thể dùng một mảng 1 chiều, phần tử thứ nhất của mảng thể hiện nút gốc. Phần tử thứ <span class="arithmatex">\(id\)</span> sẽ có 2 con là <span class="arithmatex">\(2 \* id\)</span> (con trái) và <span class="arithmatex">\(2 \* id+1\)</span> (con phải). Với cách cài đặt này, người ta đã chứng minh được bộ nhớ cần dùng cho ST không quá <span class="arithmatex">\(4 \* N\)</span> phần tử.</p>
 <h2 id="ap-dung">Áp dụng</h2>
@@ -4667,7 +4667,7 @@
 <h3 id="thao-tac-loai-2">Thao tác loại 2</h3>
 <p>Với thao này, ta cũng chứng minh tương tự, nhưng ở mỗi độ sâu của cây, ta chỉ gọi hàm đệ quy với các con của không quá 2 nút.</p>
 <p>Ta chứng minh bằng phản chứng, giả sử ta gọi đệ quy với 3 nút khác nhau của cây ST (đánh dấu màu đỏ):</p>
-<p><img alt="/fptoj_wiki/uploads/segment_tree_proof_time_complexity.png" src="/fptoj_wiki/uploads/segment_tree_proof_time_complexity.png" /></p>
+<p><img alt="/uploads/segment_tree_proof_time_complexity.png" src="/uploads/segment_tree_proof_time_complexity.png" /></p>
 <p>Trong trường hợp này, rõ ràng toàn bộ đoạn của nút ở giữa quản lý nằm trong đoạn đang truy vấn. Do đó ta không cần phải gọi đệ quy các con của nút ở giữa. Từ đó suy ra vô lý, nghĩa là ở mỗi độ sâu ta chỉ gọi đệ quy với không quá 2 nút.</p>
 <h2 id="phan-tich-bo-nho">Phân tích bộ nhớ</h2>
 <p>Ta xét 2 trường hợp:</p>
@@ -5178,13 +5178,13 @@ Cho <span class="arithmatex">\(n\)</span> vector <span class="arithmatex">\(a_1,
 <span class="p">}</span>
 </code></pre></div>
 <p>Nhưng nếu chỉ dừng ở đây thì đã không cần phải nhắc đến trong bài viết này rồi &lt;(") . Ta nhìn một chút vào cấu trúc cây Segment tree (quản lý <em>min</em>) dưới dây: </p>
-<p><img alt="/fptoj_wiki/uploads/segment-tree-extend_img1.png" src="/fptoj_wiki/uploads/segment-tree-extend_img1.png" /></p>
+<p><img alt="/uploads/segment-tree-extend_img1.png" src="/uploads/segment-tree-extend_img1.png" /></p>
 <p>Giả sử ta cần tìm vị trí đầu tiên có giá trị không vượt quá <span class="arithmatex">\(2\)</span>. Ta đứng từ gốc, xét <span class="arithmatex">\(2\)</span> con trái phải lần lượt có giá trị là <span class="arithmatex">\(3\)</span> và <span class="arithmatex">\(2\)</span>: 
-<img alt="/fptoj_wiki/uploads/segment-tree-extend_img2.png" src="/fptoj_wiki/uploads/segment-tree-extend_img2.png" /></p>
+<img alt="/uploads/segment-tree-extend_img2.png" src="/uploads/segment-tree-extend_img2.png" /></p>
 <p>Do ta đang cần tìm giá trị không vượt quá <span class="arithmatex">\(2\)</span>, nên ta chắc chắn kết quả không nằm trong cây con bên trái (vì <em>min</em> của cây con này là <span class="arithmatex">\(3\)</span>, suy ra mọi phần tử được quản lý bởi cây con này đều lớn hơn <span class="arithmatex">\(2\)</span>). Và do cây con phải có giá trị là <span class="arithmatex">\(2\)</span>, suy ra kết quả chắc chắn nằm cây con này, ta đệ quy xuống cây con bên trái: </p>
-<p><img alt="/fptoj_wiki/uploads/segment-tree-extend_img3.png" src="/fptoj_wiki/uploads/segment-tree-extend_img3.png" /></p>
+<p><img alt="/uploads/segment-tree-extend_img3.png" src="/uploads/segment-tree-extend_img3.png" /></p>
 <p>Tương tự, cây con này có <span class="arithmatex">\(2\)</span> cây con trái và phải, cả <span class="arithmatex">\(2\)</span> đều có giá trị là <span class="arithmatex">\(2\)</span>, nghĩa là luôn tồn tại ít nhất một số có giá trị bằng <span class="arithmatex">\(2\)</span> trong cả <span class="arithmatex">\(2\)</span> cây con này, từ đó suy ra cả <span class="arithmatex">\(2\)</span> cây con đều có thể chứa kết quả ta cần tìm. Nhưng do ta muốn tìm vị trí có <span class="arithmatex">\(i\)</span> bé nhất, nên ta sẽ ưu tiên đi vào cây con bên trái (cây con này quản lý các vị trí nhỏ hơn các vị trí của cây con phải). </p>
-<p><img alt="/fptoj_wiki/uploads/segment-tree-extend_img4.png" src="/fptoj_wiki/uploads/segment-tree-extend_img4.png" /></p>
+<p><img alt="/uploads/segment-tree-extend_img4.png" src="/uploads/segment-tree-extend_img4.png" /></p>
 <p>Lập luận tương tự thì ta sẽ biết được kết quả nằm ở cây con trái, lúc này cây chỉ quản lý duy nhất một phần tử nên ta có thể kết luận luôn vị trí cần tìm. </p>
 <p>Đoạn code mẫu cho việc tìm vị trí đầu tiên không vượt quá số <span class="arithmatex">\(k\)</span> có thể code như sau, lưu ý, trong code này mình xem mảng <span class="arithmatex">\(st\)</span> là mảng lưu giá trị của Segment tree, <span class="arithmatex">\(3\)</span> tham số <span class="arithmatex">\(root, l, r\)</span> thể hiện cho việc nút <span class="arithmatex">\(root\)</span> quản lý một đoạn từ <span class="arithmatex">\([l, r]\)</span>:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">query</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>

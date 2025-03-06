@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/basic/binary-search/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/basic/binary-search/">
       
       
         <link rel="prev" href="../backtracking/">
@@ -4916,7 +4916,7 @@
 <h3 id="vi-du">Ví dụ</h3>
 <p>Đầu tiên, ta sẽ xét một ví dụ để thấy được tư tưởng của thuật toán.
 Cho <span class="arithmatex">\(A = [0, 5, 13, 19, 2, 41, 55, 68, 72, 81, 98]\)</span> và <span class="arithmatex">\(x = 55\)</span>, thuật toán sẽ diễn ra như hình dưới:
-<img alt="/fptoj_wiki/uploads/binary_search_first_example.png" src="/fptoj_wiki/uploads/binary_search_first_example.png" /></p>
+<img alt="/uploads/binary_search_first_example.png" src="/uploads/binary_search_first_example.png" /></p>
 <p>Ở lượt tìm đầu tiên, không gian tìm kiếm là tập hợp <span class="arithmatex">\(S = \{1,\ldots,11\}\)</span> gồm tất cả các chỉ số của mảng. Bắt đầu với việc chọn <a href="https://vi.wikipedia.org/wiki/S%E1%BB%91_trung_v%E1%BB%8B">phần tử trung vị</a> của không gian tìm kiếm hiện tại (chính là <span class="arithmatex">\(6\)</span>), ta nhận xét <span class="arithmatex">\(A[6]=41 &lt; 55 = x\)</span>. Do theo đề bài mảng <span class="arithmatex">\(A\)</span> được sắp xếp tăng dần, ta biết được tất cả các phần tử có chỉ số <span class="arithmatex">\(1,\ldots,6\)</span> đều nhỏ hơn giá trị cần tìm <span class="arithmatex">\(x\)</span>. Do đó, chúng <em>chắc chắn không thể là kết quả</em>, khi đó không gian tìm kiếm có thể thu hẹp lại <span class="arithmatex">\(S = \{7,\ldots,11\}\)</span>, tức <em>giảm đi một nửa.</em></p>
 <p>Tương tự, ở lượt tìm thứ hai, ta xét phần tử trung vị của không gian tìm kiếm hiện tại (chính là <span class="arithmatex">\(9\)</span>), nhận thấy <span class="arithmatex">\(A[9]=72 &gt; 55 = x\)</span>. Cũng do mảng <span class="arithmatex">\(A\)</span> được sắp xếp tăng dần, ta biết được tất cả các phần tử có vị trí từ <span class="arithmatex">\(9,\ldots,11\)</span> đều lớn hơn giá trị cần tìm <span class="arithmatex">\(x\)</span>. Do đó, chúng chắc chắn không thể là kết quả, khi đó không gian tìm kiếm sẽ lại giảm đi một nửa <span class="arithmatex">\(S = \{7,\ldots,8\}\)</span>.</p>
 <p>Ở lượt tìm cuối cùng, ta cũng xét phần tử trung vị của không gian tìm kiếm hiện tại ở vị trí <span class="arithmatex">\(7\)</span> (ở đây số lượng phần tử của không gian tìm kiếm là chẵn, do đó có hai phần tử trung vị, ta có thể chọn một trong hai đều được, ở ví dụ này ta chọn phần tử trung vị đầu tiên), Nhận thấy <span class="arithmatex">\(A[7] = 55 = x\)</span>, ta kết luận <span class="arithmatex">\(5\)</span> chính là vị trí của phần tử cần tìm và dừng thuật toán.</p>
@@ -4979,7 +4979,7 @@ Cho <span class="arithmatex">\(A = [0, 5, 13, 19, 2, 41, 55, 68, 72, 81, 98]\)</
 <blockquote>
 <p>Với ví dụ đầu bài, như đã nói <span class="arithmatex">\(P(x) = boolean(A[x] \geq 55)\)</span>. Dễ thấy <span class="arithmatex">\(P\)</span> thỏa mãn tính chất đầu tiên, do <span class="arithmatex">\(A\)</span> được sắp tăng dần nên nếu <span class="arithmatex">\(A[x] \geq 55\)</span> thì chắc chắn các phần tử <span class="arithmatex">\(y\)</span> sau <span class="arithmatex">\(x\)</span> đều thỏa <span class="arithmatex">\(A[y] \geq A[x] \geq 55\)</span>. Tương tự ta cũng suy ra được, nếu <span class="arithmatex">\(A[x] &lt; 55\)</span> thì chắc chắn các phần tử <span class="arithmatex">\(y\)</span> trước <span class="arithmatex">\(x\)</span> đều thỏa <span class="arithmatex">\(A[y] \leq A[x] &lt; 55\)</span>.
 Áp dụng hàm <span class="arithmatex">\(P(x) = boolean(A[x] \geq 55)\)</span> cho từng phần tử của <span class="arithmatex">\(S=\{1,\ldots,11\}\)</span> ta có hình sau
-<img alt="/fptoj_wiki/uploads/binary_search_apply_P_to_A.png" src="/fptoj_wiki/uploads/binary_search_apply_P_to_A.png" /></p>
+<img alt="/uploads/binary_search_apply_P_to_A.png" src="/uploads/binary_search_apply_P_to_A.png" /></p>
 </blockquote>
 <p>Chú ý rằng ta thấy có thể dễ dàng xây dựng định lý chính dựa trên một hàm kiểm tra <span class="arithmatex">\(P\)</span> ngược lại, tức <span class="arithmatex">\(P(S)\)</span> sẽ là một dãy <span class="arithmatex">\(\texttt{true}\)</span> liên tiếp theo sau bởi <span class="arithmatex">\(\texttt{false}\)</span> liên tiếp. Tuy nhiên, ở đây ta sẽ chỉ xét một trường hợp để bài viết ngắn gọn hơn, trường hợp còn lại có thể làm tương tự.</p>
 <p>Từ định lý trên, ta rút ra được mấu chốt để giải một bài toán dùng tìm kiếm nhị phân là ta cần <strong>thiết kế được hàm <span class="arithmatex">\(P\)</span> hợp lý sao cho thỏa mãn điều kiện trong định lý chính</strong>.</p>

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/dp/Mot-so-ky-thuat-toi-uu-hoa-thuat-toan-Quy-Hoach-Dong/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/dp/Mot-so-ky-thuat-toi-uu-hoa-thuat-toan-Quy-Hoach-Dong/">
       
       
         <link rel="prev" href="../basic-problems/">
@@ -4804,7 +4804,7 @@ Output
 
 26
 </code></pre></div>
-<p><img alt="/fptoj_wiki/uploads/dp_optimization_img1.png" src="/fptoj_wiki/uploads/dp_optimization_img1.png" /></p>
+<p><img alt="/uploads/dp_optimization_img1.png" src="/uploads/dp_optimization_img1.png" /></p>
 <p>Hình vẽ trên minh họa cho test ví dụ. Các hình tròn được tô đen là các vị trí có nhà máy. Kết quả sẽ là:</p>
 <p><span class="arithmatex">\(1 * (2+1) + 2 * 1 + 1 * (1 + 2) + 3 * 2 + 2 * (1 + 2 + 1) + 1 * (2 + 1) + 1 * 1 = 26\)</span>.</p>
 <h4 id="loi-giai_2">Lời giải</h4>
@@ -4978,7 +4978,7 @@ Output
 </code></pre></div>
 <p>Chú ý rằng ta không thể đảm bảo rằng <span class="arithmatex">\(P(g,mid)\)</span> chia đôi đoạn <span class="arithmatex">\([optL, optR]\)</span>, thực tế một vài hàm <span class="arithmatex">\(solve()\)</span> sẽ chạy chậm hơn nhiều hàm <span class="arithmatex">\(solve()\)</span> khác.</p>
 <p>Tuy nhiên ta có thể chứng minh được, xét về tổng thế thuật toán này chạy đủ nhanh. Mỗi lần ta chia đôi đoạn <span class="arithmatex">\([L, R]\)</span>, nên ta sẽ đảm bảo có tối đa <span class="arithmatex">\(O(log(L))\)</span> tầng đệ quy, như vậy với mỗi hàng <span class="arithmatex">\(g\)</span>, ta chỉ mất <span class="arithmatex">\(O(L \* logL)\)</span> để tính. Toàn bộ thuật toán có độ phức tạp là <span class="arithmatex">\(O(G \* L \* logL)\)</span>.</p>
-<p><img alt="/fptoj_wiki/uploads/dp_optimization_img2.png" src="/fptoj_wiki/uploads/dp_optimization_img2.png" /></p>
+<p><img alt="/uploads/dp_optimization_img2.png" src="/uploads/dp_optimization_img2.png" /></p>
 <h3 id="ieu-kien-e-chia-e-tri-ung">Điều kiện để Chia để trị đúng</h3>
 <h4 id="ieu-kien-theo-best">Điều kiện theo best</h4>
 <p>Như ở bài Hai nhà máy CEOI 2004:</p>
@@ -5337,16 +5337,16 @@ Output
 <p><strong>Đồ thị của hàm QHĐ</strong></p>
 <p>Ta có thể coi hàm QHĐ <span class="arithmatex">\(F(i, x)\)</span> ở trên là một hàm <span class="arithmatex">\(f_i(x)\)</span> nhận <span class="arithmatex">\(x\)</span> là biến. Xét đồ thị của hàm số này. Dễ thấy <span class="arithmatex">\(f_k(x) = F(K, x) = 0\)</span>, đồ thị của hàm số này là một đường thẳng.</p>
 <p>Xét hàm số <span class="arithmatex">\(f_{k-1}(x) = N - \|e_k-1 – x\|\)</span>. Đồ thị của nó sẽ có dạng:</p>
-<p><img src="https://vnoi.info/wiki/fptoj_wiki/uploads/dp_optimization_img4.png" width="40%"/></p>
+<p><img src="https://vnoi.info/wiki/uploads/dp_optimization_img4.png" width="40%"/></p>
 <p>Vấn đề trở nên phức tạp hơn với hàm <span class="arithmatex">\(f_{k-2}\)</span>. Đặt <span class="arithmatex">\(g_{k-1}(x) = max(f_{k-1}(x’))\)</span> với <span class="arithmatex">\(\|x’ – x\| \le d_{k-2}\)</span>. Đồ thị của hàm số này có dạng tương tự như đồ thị của hàm số <span class="arithmatex">\(f_{k-1}(x)\)</span>:</p>
-<p><img src="https://vnoi.info/wiki/fptoj_wiki/uploads/dp_optimization_img5.png" width="40%"/></p>
+<p><img src="https://vnoi.info/wiki/uploads/dp_optimization_img5.png" width="40%"/></p>
 <p>Ta cộng thêm <span class="arithmatex">\(N-\|e_{k-2} – x\|\)</span> vào hàm <span class="arithmatex">\(g_{k-1}(x)\)</span>, ta sẽ được đồ thị dạng:</p>
-<p><img src="https://vnoi.info/wiki/fptoj_wiki/uploads/dp_optimization_img6.png" width="40%"/></p>
+<p><img src="https://vnoi.info/wiki/uploads/dp_optimization_img6.png" width="40%"/></p>
 <p>Tương tự như vậy, ý tưởng ở đây là ta sẽ duy trì đồ thị của các hàm số <span class="arithmatex">\(f_i(x)\)</span> với <span class="arithmatex">\(i\)</span> từ <span class="arithmatex">\(k\)</span> về <span class="arithmatex">\(0\)</span>. Để làm được điều này ta cần phải thực hiện một vài thao tác:</p>
 <ul>
 <li>Tịnh tiến về hai phía: Để tìm được hàm <span class="arithmatex">\(f(x)\)</span> thì trước hết cần xây dựng được hàm <span class="arithmatex">\(g(x) = max(f_i(x’) : \|x’ – x\| \le d)\)</span>. Ta chỉ cần tìm được đỉnh của hàm số, rồi tịnh tiến cả hai phía trái phải của hàm thêm một khoảng <span class="arithmatex">\(d\)</span>.</li>
 </ul>
-<p><img alt="/fptoj_wiki/uploads/dp_optimization_img7.png" src="/fptoj_wiki/uploads/dp_optimization_img7.png" /></p>
+<p><img alt="/uploads/dp_optimization_img7.png" src="/uploads/dp_optimization_img7.png" /></p>
 <ul>
 <li>Tịnh tiến theo trục tung: Ta biểu diễn hàm số bằng danh sách các đỉnh của đường gấp khúc thì thao tác này có thể dễ dàng thực hiện.</li>
 </ul>

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/data-structures/C%C3%A2y-Palindrome/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/data-structures/C%C3%A2y-Palindrome/">
       
       
         <link rel="prev" href="../array-vs-linked-lists/">
@@ -4578,25 +4578,25 @@
 <p>Cây Palindrome (hay còn được gọi là Eertree) là một loại cấu trúc dữ liệu được dùng để giải một số bài toán liên quan đến Palindrome.</p>
 <h1 id="cau-truc-cua-cay-palindrome">Cấu trúc của cây Palindrome</h1>
 <p>Như mọi loại cây khác, cây Palindrome cũng có nút.</p>
-<p><img alt="" src="/fptoj_wiki/uploads/palindrome_tree_1.png" /></p>
+<p><img alt="" src="/uploads/palindrome_tree_1.png" /></p>
 <p>Ngoài nút ra cây còn có các cung để nối các nút. Cung nối giữa hai nút <span class="arithmatex">\(u\)</span> và <span class="arithmatex">\(v\)</span> được gán một chữ cái - ví dụ chữ <span class="arithmatex">\(X\)</span> - nghĩa là ta có được palindrome chứa ở nút <span class="arithmatex">\(v\)</span> bằng cách thêm chữ <span class="arithmatex">\(X\)</span> vào hai bên của palindrome chứa ở nút <span class="arithmatex">\(u\)</span>.</p>
-<p><img alt="" src="/fptoj_wiki/uploads/palindrome_tree_2.png" /></p>
+<p><img alt="" src="/uploads/palindrome_tree_2.png" /></p>
 <p>Trong ví dụ trên, ta có được xâu palindrome <span class="arithmatex">\(aba\)</span> bằng cách thêm chữ <span class="arithmatex">\(a\)</span> vào hai bên chữ <span class="arithmatex">\(b\)</span></p>
 <p>Cuối cùng, ta có thêm các liên kết hậu tố. Nút <span class="arithmatex">\(u\)</span> có liên kết hậu tố đến nút <span class="arithmatex">\(w\)</span>, nếu palindrome chứa ở nút <span class="arithmatex">\(w\)</span> là hậu tố không tầm thường lớn nhất của palindrome chứa ở nút <span class="arithmatex">\(u\)</span>. (hậu tố là một xâu con chứa các chữ cái cuối cùng của xâu, hậu tố không tầm thường (proper suffix) là hậu tố của một xâu và ngắn hơn xâu đó). Từ bây giờ ta sẽ gọi palindrome lớn nhất mà là hậu tố không tầm thường của một xâu là palindrome hậu tố lớn nhất của một xâu.</p>
-<p><img alt="" src="/fptoj_wiki/uploads/palindrome_tree_3.png" /></p>
+<p><img alt="" src="/uploads/palindrome_tree_3.png" /></p>
 <p>Trong ví dụ trên, vì <span class="arithmatex">\(a\)</span> là palindrome hậu tố lớn nhất của <span class="arithmatex">\(aba\)</span> nên có một liên kết hậu tố từ nút chứa xâu <span class="arithmatex">\(aba\)</span> đến nút chứa xâu <span class="arithmatex">\(a\)</span>.</p>
 <p>Đặt tên cấu trúc dữ liệu này là cây Palindrome có vẻ không hợp lí lắm, vì nó có tận 2 gốc. Một sẽ chứa xâu palindrome giả độ dài -1. Gốc này giúp ta cài đặt cây dễ dàng hơn, vì khi ta thêm hai chữ cái bất kì vào hai bên xâu độ dài -1 thì ta sẽ được xâu độ dài 1 và nó luôn là palindrome. Gốc thứ hai chứa một xâu rỗng (xâu có độ dài 0), và xâu này cũng là palindrome. Ta cho thêm một liên kết hậu tố từ hai gốc nối đến gốc chứa palindrome độ dài -1.</p>
 <p>Lưu ý rằng ta không chứa xâu palindrome vào nút khi cài đặt thực tế, nếu làm vậy ta sẽ tiêu tốn quá nhiều bộ nhớ. Nút thực tế sẽ chứa độ dài xâu palindrome, chữ cái được gán vào các cung, và các liên kết hậu tố.</p>
 <h1 id="xay-dung-cay-palindrome">Xây dựng cây Palindrome</h1>
 <p>Ở đây mình sẽ hướng dẫn tạo cây Palindrome chứa tất cả các palindrome con của một xâu <span class="arithmatex">\(s\)</span>. Ta thấy: Một xâu độ dài <span class="arithmatex">\(n\)</span> sẽ không có quá <span class="arithmatex">\(n\)</span> xâu palindrome con, vì vậy cây Palindrome sẽ không có quá <span class="arithmatex">\(n + 2\)</span> nút (do phải thêm 2 gốc nữa).</p>
 <p>Ta sẽ xử lí từng chữ cái một trong xâu. Giả sử ta đã xử lí được tiền tố <span class="arithmatex">\(p\)</span> của xâu, và giờ ta phải xét đến chữ cái <span class="arithmatex">\(x\)</span> tiếp theo.</p>
-<p><img alt="" src="/fptoj_wiki/uploads/palindrome_tree_4.png" /></p>
+<p><img alt="" src="/uploads/palindrome_tree_4.png" /></p>
 <p>Ta lưu lại <span class="arithmatex">\(t\)</span> là palindrome hậu tố lớn nhất của tiền tố <span class="arithmatex">\(p\)</span>.</p>
-<p><img alt="" src="/fptoj_wiki/uploads/palindrome_tree_5.png" /></p>
+<p><img alt="" src="/uploads/palindrome_tree_5.png" /></p>
 <p>Vì <span class="arithmatex">\(t\)</span> đã được xử lí, nên nó được chứa trong một nút nào đó của cây Palindrome. Nút này sẽ có liên kết hậu tố đến một nút nào đó, nút nào đó lại có một liên kết hậu tố đến một nút khác và cứ tiếp tục như vậy.</p>
-<p><img alt="" src="/fptoj_wiki/uploads/palindrome_tree_6.png" /></p>
+<p><img alt="" src="/uploads/palindrome_tree_6.png" /></p>
 <p>Bây giờ ta hãy tìm hậu tố palindrome của tiền tố mới <span class="arithmatex">\(p+x\)</span>. Hậu tố đó sẽ có dạng <span class="arithmatex">\(xAx\)</span>, với <span class="arithmatex">\(A\)</span> là một xâu nào đó, có thể rỗng hoặc có độ dài -1. Vì <span class="arithmatex">\(xAx\)</span> là palindrome, nên <span class="arithmatex">\(A\)</span> cũng là palindrome, và nó là một hậu tố của <span class="arithmatex">\(p\)</span>, vì vậy ta có thể tìm <span class="arithmatex">\(A\)</span> từ <span class="arithmatex">\(t\)</span> bằng các liên kết hậu tố.</p>
-<p><img alt="" src="/fptoj_wiki/uploads/palindrome_tree_7.png" /></p>
+<p><img alt="" src="/uploads/palindrome_tree_7.png" /></p>
 <p>Xâu <span class="arithmatex">\(xAx\)</span> sẽ là xâu palindrome con duy nhất của xâu <span class="arithmatex">\(p + x\)</span> mà không xuất hiện ở xâu <span class="arithmatex">\(p\)</span>. Thật vậy, ta thấy tất cả xâu palindrome con mới mà ta chưa thấy trong xâu <span class="arithmatex">\(p\)</span> phải kết thúc bằng chữ <span class="arithmatex">\(x\)</span>, và do đó trở thành hâu tố của xâu <span class="arithmatex">\(p + x\)</span>. Vì <span class="arithmatex">\(xAx\)</span> là hậu tố palindrome lớn nhất của <span class="arithmatex">\(p + x\)</span>, tất cả các hậu tố palindrome nhỏ hơn nó có thể được tìm thấy trong một số tiền tố của <span class="arithmatex">\(xAx\)</span> (vì đối với bất kì hậu tố của palindrome có một tiền tố tương tự tương ứng), và vì thế ta đã thấy chúng trong <span class="arithmatex">\(p\)</span>.</p>
 <p>Vì vậy, để xử lí chữ cái <span class="arithmatex">\(x\)</span> thêm vào, ta phải đi theo các liên kết hậu tố của t cho đến khi ta tìm thấy A thích hợp (xâu <span class="arithmatex">\(A\)</span> thích hợp có thể có độ dài -1 nếu ta phải đi đến gốc). Sau đó ta kiểm tra xem có cung nào được gán chữ <span class="arithmatex">\(x\)</span> mà tương ứng với nút chứa xâu <span class="arithmatex">\(A\)</span>, nếu không, thêm một cung được gán chữ <span class="arithmatex">\(x\)</span> nối từ nút chứa xâu <span class="arithmatex">\(A\)</span> đến nút mới chứa xâu <span class="arithmatex">\(xAx\)</span>.</p>
 <p>Bây giờ ta xét đến các liên kết hậu tố nối từ nút <span class="arithmatex">\(xAx\)</span>. Nếu nút này đã có từ trước, nút này đã có các liên kết hậu tố và ta không phải làm gì cả. Nếu không, ta cần phải tìm palindrome hậu tố lớn nhất của <span class="arithmatex">\(xAx\)</span>, có dạng <span class="arithmatex">\(xBx\)</span>, mà <span class="arithmatex">\(B\)</span> là một xâu có thể rỗng. Bằng lập luận tương tự như trên, <span class="arithmatex">\(B\)</span> là palindrome hậu tố của <span class="arithmatex">\(p\)</span> và có thể đến được từ <span class="arithmatex">\(t\)</span> bằng các liên kết hậu tố.</p>

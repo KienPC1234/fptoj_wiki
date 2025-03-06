@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/geometry/Sweep-Line/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/geometry/Sweep-Line/">
       
       
         <link rel="prev" href="../basic-geometry-2/">
@@ -4597,7 +4597,7 @@
 <li><strong>Khoảng cách Manhattan</strong> giữa hai điểm <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(Q\)</span> là khoảng cách giữa nếu ta chỉ được đi dọc hoặc ngang khi từ điểm này qua điểm kia, được tính bằng công thức: <span class="arithmatex">\(\lvert x_Q - x_P \rvert + \lvert y_Q - y_P \rvert\)</span></li>
 </ul>
 <p><center>
-<a href="width=300px">/fptoj_wiki/uploads/Sweep-Line_img1.png</a>
+<a href="width=300px">/uploads/Sweep-Line_img1.png</a>
 </center></p>
 <p><center>
 Các đường màu đỏ, xanh lam, vàng biểu diễn khoảng cách Manhattan có cùng độ dài <span class="arithmatex">\((12)\)</span>, trong khi đường màu xanh lục biểu diễn khoảng cách Euclid với độ dài <span class="arithmatex">\(6 * \sqrt2 \approx 8.48\)</span>.
@@ -4623,7 +4623,7 @@ Các đường màu đỏ, xanh lam, vàng biểu diễn khoảng cách Manhatta
 <p><strong>Chứng minh</strong></p>
 <p>Từ <span class="arithmatex">\(P\)</span>, vẽ <span class="arithmatex">\(8\)</span> hình vuông xung quanh, mỗi hình vuông có cạnh đúng bằng <span class="arithmatex">\(d/2\)</span>, như hình dưới (điểm màu xanh là <span class="arithmatex">\(P\)</span>).</p>
 <p><center>
-<a href="width=300px">/fptoj_wiki/uploads/Sweep-Line_img2.png</a>
+<a href="width=300px">/uploads/Sweep-Line_img2.png</a>
 </center></p>
 <p>Hiển nhiên tất cả các điểm từ <span class="arithmatex">\(1\)</span> đến <span class="arithmatex">\(N - 1\)</span> đều nằm về phía bên trái của điểm đang xét do ta duyệt danh sách theo thứ tự tăng dần về hoành độ. Nhận xét rằng từ <span class="arithmatex">\(P\)</span>, ta không cần quan tâm đến những điểm <span class="arithmatex">\(T\)</span> không nằm trong <span class="arithmatex">\(8\)</span> hình vuông bên trên do khi đó khoảng cách giữa <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(T\)</span> lớn hơn <span class="arithmatex">\(d\)</span>.</p>
 <p>Xét <span class="arithmatex">\(8\)</span> hình vuông ta vừa vẽ. Do <span class="arithmatex">\(d\)</span> là khoảng cách ngắn nhất giữa hai cặp điểm bất kì trong <span class="arithmatex">\(N - 1\)</span> điểm đầu tiên nên trong mỗi hình vuông, có nhiều nhất một điểm. Do đó, tối đa ta chỉ cần xét <span class="arithmatex">\(8\)</span> điểm trong <span class="arithmatex">\(8\)</span> hình vuông để cập nhật kết quả.
@@ -4742,7 +4742,7 @@ Các đường màu đỏ, xanh lam, vàng biểu diễn khoảng cách Manhatta
 <p>Khi này ta sẽ có thể sắp xếp danh sách của chúng ta theo thứ tự tăng dần về hoành độ của các phần tử.</p>
 <p>Chúng ta sẽ quét từ trái sang phải. Khi đoạn quét di chuyển, ta duy trì một tập hợp <span class="arithmatex">\(S\)</span> các đoạn thẳng nằm ngang bị cắt ngang theo đoạn quét - tức là đoạn quét đang ở giữa hai đầu mút của đoạn ngang đó. Tập này được sắp xếp theo thứ tự <span class="arithmatex">\(y\)</span>, và được tô màu đỏ trong hình dưới.</p>
 <p><center>
-<a href="width=200px">/fptoj_wiki/uploads/Sweep-Line_img3.png</a>
+<a href="width=200px">/uploads/Sweep-Line_img3.png</a>
 </center></p>
 <p>Với mỗi đoạn thẳng nằm dọc <span class="arithmatex">\(v_i\)</span>, để đếm <span class="arithmatex">\(t_i\)</span> là số đoạn thẳng nằm ngang cắt <span class="arithmatex">\(v_i\)</span>, ta chỉ việc tìm trong tập <span class="arithmatex">\(S\)</span> những đoạn thẳng có tung độ nằm giữa hai đầu mút của <span class="arithmatex">\(v\)</span>. Hiển nhiên ta thấy rằng tổng của các <span class="arithmatex">\(t_i\)</span> cũng là số giao điểm ta cần tìm.</p>
 <p>Như vậy ta thấy tập <span class="arithmatex">\(S\)</span> là một yếu tố quan trọng để giải quyết bài toán. Tập <span class="arithmatex">\(S\)</span> cần hỗ trợ các thao tác cụ thể sau:</p>
@@ -4864,7 +4864,7 @@ Các đường màu đỏ, xanh lam, vàng biểu diễn khoảng cách Manhatta
 <h2 id="phan-tich_2">Phân tích</h2>
 <p>Tương tự như bài toán tìm giao điểm của các đoạn thẳng, chúng ta có thể xử lí bằng cách biểu diễn mỗi hình chữ nhật thành hai "sự kiện" - một biểu thị cho cạnh bên trái và một biểu thị cho cạnh bên phải của hình chữ nhật - và duy trì một tập <span class="arithmatex">\(S\)</span> chứa các hình chữ nhật mà đoạn thẳng quét của chúng ta đang cắt qua. Khi chúng ta quét qua cạnh bên trái, ta thêm hình chữ nhật đó vào <span class="arithmatex">\(S\)</span>, khi quét qua cạnh bên phải thì ta xoá hình chữ nhật tương ứng khỏi <span class="arithmatex">\(S\)</span>.</p>
 <p><center>
-<a href="width=300px">/fptoj_wiki/uploads/Sweep-Line_img4.png</a>
+<a href="width=300px">/uploads/Sweep-Line_img4.png</a>
 </center></p>
 <p>Ta biết được những hình chữ nhật nào đang bị cắt bởi đường quét của chúng ta (màu đỏ). Để tìm tổng diện tích được bao phủ, ta sẽ tìm diện tích từng phần bị bao phủ giữa mỗi cặp hai "sự kiện" liền nhau và tính tổng của chúng. Để tìm phần diện tích được bao phủ giữa hai sự kiện liền nhau, ta cần biết tổng độ dài phần đường quét đi qua chúng (nét liền màu xanh trong hình trên). Nhân độ dài này với khoảng cách giữa hai sự kiện liền nhau, ta được diện tích của phần hình chữ nhật giữa hai "sự kiện" đó.</p>
 <p>Vấn đề đặt ra là làm thế nào để tìm tổng độ dài của các phần "nét liền màu xanh" như trên hình. Nhớ rằng tại mỗi bước ta duy trì một tập <span class="arithmatex">\(S\)</span> các hình chữ nhật mà đường thẳng quét cắt qua. Hiển nhiên ta thấy tổng độ dài của phần "nét liền màu xanh" chính là hợp của tất cả các hình chữ nhật trong tập <span class="arithmatex">\(S\)</span> tại mỗi bước.</p>
@@ -4966,7 +4966,7 @@ Nếu sử dụng đúng cấu trúc dữ liệu, bài toán có thể giải qu
 <p><strong>Bổ đề 2</strong></p>
 <p>Xét một điểm <span class="arithmatex">\(P\)</span> cho trước bất kì. Lấy gốc toạ độ tại <span class="arithmatex">\(P\)</span>. Chia mặt phẳng toạ độ thành <span class="arithmatex">\(8\)</span> phần bằng nhau như hình dưới. Với mỗi phần tám, nối <span class="arithmatex">\(P\)</span> với một điểm bất kì trong phần tám đó có khoảng cách Manhattan gần nhất với <span class="arithmatex">\(P\)</span> (nếu có). Chẳng hạn trong ví dụ ở hình dưới, ta sẽ nối <span class="arithmatex">\(P\)</span> với <span class="arithmatex">\(Q\)</span>.</p>
 <p><center>
-<img alt="/fptoj_wiki/uploads/Sweep-Line_img5.png" src="/fptoj_wiki/uploads/Sweep-Line_img5.png" />
+<img alt="/uploads/Sweep-Line_img5.png" src="/uploads/Sweep-Line_img5.png" />
 </center></p>
 <p>Thực hiện thao tác trên với tất cả các điểm được cho, ta thu được một đồ thị <span class="arithmatex">\(G\)</span> có <span class="arithmatex">\(O(n)\)</span> cạnh. Ta sẽ chứng minh rằng cây khung nhỏ nhất trên đồ thị <span class="arithmatex">\(G\)</span> là một đáp án cho bài toán.</p>
 <p><strong>Chứng minh</strong></p>
@@ -4975,7 +4975,7 @@ Nếu sử dụng đúng cấu trúc dữ liệu, bài toán có thể giải qu
 <table>
 <thead>
 <tr>
-<th style="text-align: center;"><a href="width=300px">/fptoj_wiki/uploads/Sweep-Line_img6.png</a></th>
+<th style="text-align: center;"><a href="width=300px">/uploads/Sweep-Line_img6.png</a></th>
 </tr>
 </thead>
 <tbody>

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/search/Local-Search/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/search/Local-Search/">
       
       
         <link rel="prev" href="../../math/multiplicative-function/">
@@ -4618,7 +4618,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Dưới đây là kết quả khi mình chạy với một bộ test được sinh random gồm 50 đỉnh:</p>
-<p><img alt="/fptoj_wiki/uploads/local_search_greedy.png" src="/fptoj_wiki/uploads/local_search_greedy.png" /></p>
+<p><img alt="/uploads/local_search_greedy.png" src="/uploads/local_search_greedy.png" /></p>
 <p>Khi quan sát kết quả của thuật toán trên, dễ thấy có rất nhiều cặp cạnh cắt nhau. Khi tồn tại 2 cạnh AB và CD cắt nhau, ta có thể đảo nó thành AC và BD hoặc AD và BC, và giữ nguyên phần còn lại của chu trình. Như vậy ta có thể thu được một kết quả tốt hơn. Nhận xét này đưa ta đến với ý tưởng thứ 2:</p>
 <h1 id="local-search_1">Local Search</h1>
 <p>Xét một chu trình ban đầu bất kỳ. Xét tất cả <span class="arithmatex">\(N^2\)</span> cặp cạnh, với mỗi cặp cạnh u, v, ta có chu trình <code>1 --&gt; u-1 --&gt; u --&gt; v-1 --&gt; v --&gt; 1</code>, ta thử đổi nó thành <code>1 --&gt; u-1 --&gt; v-1 --&gt; u --&gt; v --&gt; 1</code>. Nếu việc đổi này cho ta một chu trình có trọng số nhỏ hơn, ta giữ lại chu trình mới này.</p>
@@ -4647,7 +4647,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Minh họa cho test trên (chú ý rằng mình cài đặt sai và không xét cạnh nối từ đỉnh cuối đến đỉnh 1, nên còn một cặp cạnh cắt nhau ^_^):</p>
-<p><img alt="/fptoj_wiki/uploads/local_search_reverse.png" src="/fptoj_wiki/uploads/local_search_reverse.png" /></p>
+<p><img alt="/uploads/local_search_reverse.png" src="/uploads/local_search_reverse.png" /></p>
 <p>Ý tưởng này chính là nền tảng của Local Search: Xuất phát từ một cấu hình kết quả, ta tìm cách thay đổi một phần của cấu hình để đạt được một cấu hình tốt hơn. Thông thường, cài đặt local search gồm 3 bước chính:</p>
 <ul>
 <li>Khởi tạo một cấu hình kết quả bất kỳ</li>
@@ -4657,7 +4657,7 @@
 <p>Trong các bước trên có đề cập đến khái niệm "kề" của 2 cấu hình. Khái niệm này chỉ đơn giản là tập những cấu hình mà ta xét đến khi đang ở một cấu hình nhất định. Chẳng hạn trong bài toán mở đầu, với mỗi đường đi, các cấu hình kề nó là các đường đi nhận được khi đổi một cặp cạnh.</p>
 <h1 id="local-search-duoi-cach-hieu-cua-ai-so">Local Search dưới cách hiểu của đại số</h1>
 <p>Xét một bài toán tìm giá trị lớn nhất của một hàm 2 chiều J(theta0, theta1).</p>
-<p><img alt="/fptoj_wiki/uploads/local_search_2d_func.png" src="/fptoj_wiki/uploads/local_search_2d_func.png" /></p>
+<p><img alt="/uploads/local_search_2d_func.png" src="/uploads/local_search_2d_func.png" /></p>
 <p>Hình vẽ trên mô tả cách làm của local search: Xuất phát từ điểm xanh đậm, ta xét các điểm ở gần nó, tìm điểm mà J lớn nhất, rồi di chuyển đến điểm đó.</p>
 <h1 id="bai-tap-ap-dung">Bài tập áp dụng:</h1>
 <ul>

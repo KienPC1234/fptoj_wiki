@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/fptoj_wiki/algo/graph-theory/Depth-First-Search-Tree/">
+        <link rel="canonical" href="https://wiki.fptoj.com/algo/graph-theory/Depth-First-Search-Tree/">
       
       
         <link rel="prev" href="../centroid-decomposition/">
@@ -4592,7 +4592,7 @@
 <li>Các cạnh thuộc cây <span class="arithmatex">\(DFS\)</span> được gọi là các “cạnh nét liền”. </li>
 <li>Các cạnh còn lại không thuộc cây <span class="arithmatex">\(DFS\)</span> được gọi là các “cạnh nét đứt".</li>
 </ul>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img1.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img1.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img1.png" src="/uploads/Depth-First-Search-Tree_img1.png" /></p>
 <ul>
 <li>
 <p>Trong đồ thị có hướng, xét các cung được thăm và không được thăm bởi <span class="arithmatex">\(DFS\)</span>, ta có <span class="arithmatex">\(4\)</span> loại cung sau:</p>
@@ -4602,7 +4602,7 @@
 <li>Cung ngược <strong><em>(Back edge)</em></strong>: là các cung không thuộc cây <span class="arithmatex">\(DFS\)</span> và có dạng <span class="arithmatex">\(v \rightarrow u\)</span> trong đó <span class="arithmatex">\(u\)</span> là tổ tiên của <span class="arithmatex">\(v\)</span> trong cây <span class="arithmatex">\(DFS\)</span>. <em><span class="arithmatex">\(&lt;\)</span> Các cung ngược được đánh dấu là các cạnh màu đỏ trong hình bên dưới <span class="arithmatex">\(&gt;\)</span></em></li>
 <li>Cung chéo <strong><em>(Cross edge)</em></strong>: là các cung không thuộc cây <span class="arithmatex">\(DFS\)</span> có dạng <span class="arithmatex">\(u \rightarrow v\)</span> trong đó <span class="arithmatex">\(u\)</span> và <span class="arithmatex">\(v\)</span> thuộc hai nhánh khác nhau của cùng một cây <span class="arithmatex">\(DFS\)</span>. <em><span class="arithmatex">\(&lt;\)</span> Các cung chéo được đánh dấu là các cạnh màu xanh dương trong hình bên dưới <span class="arithmatex">\(&gt;\)</span></em></li>
 </ul>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img2.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img2.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img2.png" src="/uploads/Depth-First-Search-Tree_img2.png" /></p>
 </li>
 <li>
 <p>Trong đồ thị vô hướng:</p>
@@ -4664,11 +4664,11 @@
 <ul>
 <li>
 <p><strong>Ví dụ minh họa :</strong></p>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img3.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img3.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img3.png" src="/uploads/Depth-First-Search-Tree_img3.png" /></p>
 </li>
 <li>
 <p><strong>Mô tả quá trình :</strong></p>
-<p><a href="/fptoj_wiki/uploads/Depth-First-Search-Tree_gif1.gif">/fptoj_wiki/uploads/Depth-First-Search-Tree_gif1.gif</a></p>
+<p><a href="/uploads/Depth-First-Search-Tree_gif1.gif">/uploads/Depth-First-Search-Tree_gif1.gif</a></p>
 </li>
 </ul>
 <h1 id="ung-dung-cay-dfs-trong-bai-toan-tim-khop-cau">Ứng dụng cây DFS trong bài toán tìm khớp, cầu</h1>
@@ -4677,7 +4677,7 @@
 <li>Trong đồ thị vô hướng, một đỉnh được gọi là đỉnh khớp nếu như loại bỏ đỉnh này và các cạnh liên thuộc với nó ra khỏi đồ thị thì số thành phần liên thông của đồ thị tăng lên.</li>
 <li>
 <p>Trong đồ thị vô hướng, một cạnh được gọi là cạnh cầu nếu như loại bỏ cạnh này ra khỏi đồ thị thì số thành phần liên thông của đồ thị tăng lên.</p>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img4.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img4.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img4.png" src="/uploads/Depth-First-Search-Tree_img4.png" /></p>
 </li>
 </ul>
 <h2 id="bai-toan-1">Bài toán 1</h2>
@@ -4718,7 +4718,7 @@
 <li>Các cạnh màu đỏ là cạnh cầu.</li>
 <li>Các đỉnh màu xanh lá là đỉnh khớp.</li>
 </ul>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img5.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img5.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img5.png" src="/uploads/Depth-First-Search-Tree_img5.png" /></p>
 <h3 id="phan-tich"><strong>Phân tích</strong></h3>
 <h4 id="tim-canh-cau"><strong>Tìm cạnh cầu</strong></h4>
 <ul>
@@ -4731,7 +4731,7 @@
 <ul>
 <li><strong>Ví dụ minh họa:</strong> Xét cạnh nét liền <span class="arithmatex">\((7, 9)\)</span> với đỉnh <span class="arithmatex">\(9\)</span> là con trực tiếp của đỉnh <span class="arithmatex">\(7\)</span> trên cây <span class="arithmatex">\(DFS\)</span>. Tập đỉnh <span class="arithmatex">\(A\)</span> là các đỉnh được đánh dấu màu hồng. Tập đỉnh <span class="arithmatex">\(B\)</span> là các đỉnh được đánh dấu màu vàng. Đỉnh <span class="arithmatex">\(11\)</span> thuộc tập <span class="arithmatex">\(A\)</span> muốn đi đến đỉnh <span class="arithmatex">\(6\)</span> thuộc tập <span class="arithmatex">\(B\)</span> bằng các cạnh nét liền thì đều phải thông qua cạnh <span class="arithmatex">\((7, 9)\)</span>.</li>
 </ul>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img6.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img6.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img6.png" src="/uploads/Depth-First-Search-Tree_img6.png" /></p>
 </li>
 <li>
 <p>Giả sử không có cạnh nét đứt nào nối giữa <span class="arithmatex">\(1\)</span> đỉnh thuộc <span class="arithmatex">\(A\)</span> với <span class="arithmatex">\(1\)</span> đỉnh thuộc <span class="arithmatex">\(B\)</span> thì khi xoá cạnh <span class="arithmatex">\((u, v)\)</span>, <span class="arithmatex">\(G\)</span> sẽ tách ra thành <span class="arithmatex">\(2\)</span> vùng liên thông <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span>. Ngược lại nếu tồn tại cạnh nét đứt nối giữa <span class="arithmatex">\(1\)</span> đỉnh thuộc <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(1\)</span> đỉnh thuộc <span class="arithmatex">\(B\)</span> đồ thị vẫn liên thông . Do đó ta chỉ cần xét xem có tồn tại cạnh nét đứt nối giữa <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span> hay không để kết luận <span class="arithmatex">\((u, v)\)</span> có phải cầu không?</p>
@@ -4752,21 +4752,21 @@
 <ul>
 <li><strong>Ví dụ minh họa:</strong> Xét đỉnh <span class="arithmatex">\(9\)</span> không phải là đỉnh khớp vì cả <span class="arithmatex">\(2\)</span> nhánh con của nó là cây con gốc <span class="arithmatex">\(10\)</span> và cây con gốc <span class="arithmatex">\(13\)</span> trong cây <span class="arithmatex">\(DFS\)</span> đều có cung ngược lên tới đỉnh <span class="arithmatex">\(7\)</span> là tổ tiên của đỉnh <span class="arithmatex">\(9\)</span>.</li>
 </ul>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img7.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img7.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img7.png" src="/uploads/Depth-First-Search-Tree_img7.png" /></p>
 </li>
 <li>
 <p>Nếu <span class="arithmatex">\(u\)</span> không phải là đỉnh gốc của cây <span class="arithmatex">\(DFS\)</span>, và tồn tại ít nhất một nhánh con trong cây con gốc <span class="arithmatex">\(u\)</span> không có cung ngược lên một tổ tiên của <span class="arithmatex">\(u\)</span> (<span class="arithmatex">\(low[v] \ge num[u]\)</span>, với <span class="arithmatex">\(v\)</span> là một con trực tiếp bất kì của <span class="arithmatex">\(u\)</span> trên cây <span class="arithmatex">\(DFS\)</span>) thì đỉnh <span class="arithmatex">\(u\)</span> là đỉnh khớp. Bởi khi đó, tất cả những cung xuất phát từ nhánh con đó chỉ có thể đi tới những đỉnh thuộc cây con gốc <span class="arithmatex">\(u\)</span> mà thôi, trên đồ thị ban đầu, không tồn tại cạnh nối từ những đỉnh thuộc nhánh con đó tới một tổ tiên của <span class="arithmatex">\(u\)</span>. Vậy nên từ một đỉnh bất kì thuộc nhánh con đó muốn đi lên một tổ tiên của <span class="arithmatex">\(u\)</span> thì bắt buộc phải đi qua <span class="arithmatex">\(u\)</span> nên việc loại bỏ đỉnh <span class="arithmatex">\(u\)</span> ra khỏi đồ thị sẽ làm tăng số thành phần liên thông của đồ thị.</p>
 <ul>
 <li><strong>Ví dụ minh họa:</strong> Xét đỉnh <span class="arithmatex">\(2\)</span> là đỉnh khớp vì tồn tại <span class="arithmatex">\(1\)</span> nhánh con của nó là cây con gốc <span class="arithmatex">\(4\)</span> không có cung ngược lên tới tổ tiên của đỉnh <span class="arithmatex">\(2\)</span>.</li>
 </ul>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img8.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img8.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img8.png" src="/uploads/Depth-First-Search-Tree_img8.png" /></p>
 </li>
 <li>
 <p>Nếu <span class="arithmatex">\(u\)</span> là đỉnh gốc của cây <span class="arithmatex">\(DFS\)</span>, thì <span class="arithmatex">\(u\)</span> là đỉnh khớp khi và chỉ khi <span class="arithmatex">\(u\)</span> có ít nhất <span class="arithmatex">\(2\)</span> nhánh con. Vì đồ thị không có cung chéo nên khi <span class="arithmatex">\(u\)</span> có <span class="arithmatex">\(2\)</span> nhánh con thì đường đi giữa hai đỉnh thuộc hai nhánh con đó bắt buộc phải đi qua <span class="arithmatex">\(u\)</span>. Việc loại bỏ đỉnh <span class="arithmatex">\(u\)</span> ra khỏi đồ thị sẽ làm tăng số thành phần liên thông của đồ thị.</p>
 <ul>
 <li><strong>Ví dụ minh họa:</strong> Xét đỉnh <span class="arithmatex">\(1\)</span> là đỉnh khớp vì đỉnh <span class="arithmatex">\(1\)</span> là đỉnh gốc của cây <span class="arithmatex">\(DFS\)</span> và có tới <span class="arithmatex">\(3\)</span> nhánh con.</li>
 </ul>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img9.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img9.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img9.png" src="/uploads/Depth-First-Search-Tree_img9.png" /></p>
 </li>
 </ul>
 </li>
@@ -4893,7 +4893,7 @@ no
 yes
 </code></pre></div></p>
 <p><strong>Note</strong></p>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img10.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img10.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img10.png" src="/uploads/Depth-First-Search-Tree_img10.png" /></p>
 <h3 id="phan-tich_1"><strong>Phân tích</strong></h3>
 <ul>
 <li>Để tồn tại ít nhất một cách di chuyển từ thành phố <span class="arithmatex">\(A\)</span> đến thành phố <span class="arithmatex">\(B\)</span> thì cả <span class="arithmatex">\(2\)</span> thành phố <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span> phải cùng thuộc một thành phần liên thông.</li>
@@ -4909,7 +4909,7 @@ yes
 </li>
 <li>
 <p><strong>Ví dụ minh họa:</strong> Loại bỏ cạnh cầu <span class="arithmatex">\((1,7)\)</span> (với đỉnh <span class="arithmatex">\(7\)</span> là con trực tiếp của đỉnh <span class="arithmatex">\(1\)</span>)</p>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img11.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img11.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img11.png" src="/uploads/Depth-First-Search-Tree_img11.png" /></p>
 </li>
 <li>
 <p>Bây giờ, ta có thể xác định vị trí của <span class="arithmatex">\(2\)</span> đỉnh <span class="arithmatex">\(A,\)</span> <span class="arithmatex">\(B\)</span> có nằm trong cây con gốc <span class="arithmatex">\(G2\)</span> hay không.</p>
@@ -4931,7 +4931,7 @@ yes
 </li>
 <li>
 <p><strong>Ví dụ minh họa:</strong> Loại bỏ đỉnh khớp <span class="arithmatex">\(8\)</span>. Đỉnh <span class="arithmatex">\(11\)</span> và <span class="arithmatex">\(12\)</span> là các con trực tiếp của đỉnh <span class="arithmatex">\(8\)</span> trong cây <span class="arithmatex">\(DFS\)</span>. Nhưng chỉ có cây con gốc <span class="arithmatex">\(11\)</span> là tách riêng ra thành <span class="arithmatex">\(1\)</span> thành phần liên thông riêng biệt. Còn cây con gốc <span class="arithmatex">\(12\)</span> thì có <span class="arithmatex">\(1\)</span> cung ngược nối lên đỉnh <span class="arithmatex">\(7\)</span> (tổ tiên của đỉnh <span class="arithmatex">\(8\)</span>) nên số lượng thành phần liên thông của cả đồ thị chỉ tăng thêm <span class="arithmatex">\(1\)</span>.</p>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img12.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img12.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img12.png" src="/uploads/Depth-First-Search-Tree_img12.png" /></p>
 </li>
 <li>
 <p>Với mỗi đỉnh <span class="arithmatex">\(v\)</span> là con trực tiếp của <span class="arithmatex">\(C\)</span> trong cây <span class="arithmatex">\(DFS\)</span> và <span class="arithmatex">\(low[v] \ge num[C]\)</span>, ta kiểm tra xem nếu chỉ có đúng duy nhất <span class="arithmatex">\(1\)</span> trong <span class="arithmatex">\(2\)</span> đỉnh nằm trong cây con gốc <span class="arithmatex">\(v\)</span> thì <span class="arithmatex">\(2\)</span> thành phố <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span> không thuộc cùng một thành phần liên thông sau khi loại bỏ đỉnh <span class="arithmatex">\(C\)</span> và các cạnh liên thuộc với đỉnh <span class="arithmatex">\(C\)</span> đi. </p>
@@ -5111,7 +5111,7 @@ yes
 <p>Vì đồ thị ban đầu liên thông và có <span class="arithmatex">\(N - 1\)</span> cạnh nên đây là đồ thị dạng <a href="https://vi.wikipedia.org/wiki/C%C3%A2y_(l%C3%BD_thuy%E1%BA%BFt_%C4%91%E1%BB%93_th%E1%BB%8B)">cây</a>.</p>
 <p>Để đánh dấu các cạnh thuộc đường đi từ đỉnh <span class="arithmatex">\(u\)</span> đến đỉnh <span class="arithmatex">\(v\)</span> trên cây, thì ta có thể thêm một cạnh <span class="arithmatex">\((u,v)\)</span> vào đồ thị. Khi đó, các cạnh thuộc đường đi từ <span class="arithmatex">\(u \rightarrow v\)</span> trên cây sẽ nằm trong <span class="arithmatex">\(1\)</span> chu trình. Từ đó, bài toán sẽ quy về thành bài toán đếm số lượng cạnh cầu của đồ thị.
 - <strong>Ví dụ minh họa:</strong> Để dánh dấu đường đi từ đỉnh <span class="arithmatex">\(3 \rightarrow 6\)</span> và đường đi từ đỉnh <span class="arithmatex">\(5 \rightarrow 6\)</span>, ta thêm cạnh <span class="arithmatex">\((3, 6)\)</span>, <span class="arithmatex">\((5, 6)\)</span> vào đồ thị. Khi đó, đồ thị có một cạnh cầu là cạnh <span class="arithmatex">\((1, 2)\)</span>.</p>
-<pre><code>![/fptoj_wiki/uploads/Depth-First-Search-Tree_img13.png](/fptoj_wiki/uploads/Depth-First-Search-Tree_img13.png)
+<pre><code>![/uploads/Depth-First-Search-Tree_img13.png](/uploads/Depth-First-Search-Tree_img13.png)
 </code></pre>
 <h3 id="cai-at_2"><strong>Cài đặt</strong></h3>
 <p><strong>Cấu trúc dữ liệu:</strong>
@@ -5174,7 +5174,7 @@ yes
 <li>Một thành phần liên thông mạnh của một đồ thị có hướng là một đồ thị con tối đại liên thông mạnh. Nếu mỗi thành phần liên thông mạnh được co lại thành một đỉnh, thì đồ thị sẽ trở thành một đồ thị có hướng không có chu trình.</li>
 <li>Thuật toán <span class="arithmatex">\(Kosaraju\)</span>, thuật toán <span class="arithmatex">\(Tarjan\)</span>, và thuật toán <span class="arithmatex">\(Gabow\)</span> đều có thể tìm các thành phần liên thông mạnh của một đồ thị cho trước trong thời gian tuyến tính. Tuy nhiên, các thuật toán của <span class="arithmatex">\(Tarjan\)</span>  thường được sử dụng nhiều hơn do chúng chỉ cần thực hiện tìm kiếm theo chiều sâu một lần trong khi thuật toán của <span class="arithmatex">\(Kosaraju\)</span> cần hai lần.</li>
 </ul>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img14.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img14.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img14.png" src="/uploads/Depth-First-Search-Tree_img14.png" /></p>
 <h2 id="mot-so-inh-ly-quan-trong">Một số định lý quan trọng</h2>
 <ul>
 <li>
@@ -5226,14 +5226,14 @@ yes
 <div class="highlight"><pre><span></span><code>1
 </code></pre></div></p>
 <h3 id="thuat-toan-tarjan"><strong>Thuật toán Tarjan</strong></h3>
-<p><img alt="/fptoj_wiki/uploads/Depth-First-Search-Tree_img15.png" src="/fptoj_wiki/uploads/Depth-First-Search-Tree_img15.png" /></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_img15.png" src="/uploads/Depth-First-Search-Tree_img15.png" /></p>
 <p><strong>Thuật toán Tarjan được xây dựng dựa trên các dữ kiện sau:</strong>
 - Tìm kiếm <span class="arithmatex">\(DFS\)</span> tạo ra cây/ rừng <span class="arithmatex">\(DFS\)</span>
 - Các thành phần liên thông mạnh tạo thành các cây con của cây <span class="arithmatex">\(DFS\)</span>.
 - Nếu ta có thể tìm được đỉnh gốc của các cây con như vậy, ta có thể in/ lưu trữ tất cả các nút trong cây con đó (bao gồm cả đỉnh gốc) và đó sẽ là một thành phần liên thông mạnh <span class="arithmatex">\((Strongly\)</span> <span class="arithmatex">\(Connected\)</span> <span class="arithmatex">\(Components\)</span> - <span class="arithmatex">\(SCC).\)</span>
 - Không có cung ngược từ <span class="arithmatex">\(SCC\)</span> này sang <span class="arithmatex">\(SCC\)</span> khác (Có thể có các cung chéo, nhưng các cung chéo sẽ không được sử dụng trong khi xử lý đồ thị).</p>
 <h4 id="mo-ta-thuat-toan"><strong>Mô tả thuật toán</strong></h4>
-<p><a href="/fptoj_wiki/uploads/Depth-First-Search-Tree_gif2.gif">/fptoj_wiki/uploads/Depth-First-Search-Tree_gif2.gif</a></p>
+<p><a href="/uploads/Depth-First-Search-Tree_gif2.gif">/uploads/Depth-First-Search-Tree_gif2.gif</a></p>
 <h4 id="y-tuong"><strong>Ý tưởng</strong></h4>
 <ul>
 <li><strong>Nhận xét:</strong> Xét cây con gốc <span class="arithmatex">\(u\)</span> trong cây <span class="arithmatex">\(DFS\)</span>. Gọi tập hợp các đỉnh thuộc cây con gốc <span class="arithmatex">\(u\)</span> là <span class="arithmatex">\(A\)</span>, tập hợp các đỉnh không thuộc cây con gốc <span class="arithmatex">\(u\)</span> là <span class="arithmatex">\(B\)</span>. Nếu tồn tại <span class="arithmatex">\(1\)</span> đỉnh <span class="arithmatex">\(x\)</span> thuộc <span class="arithmatex">\(A\)</span> tới được <span class="arithmatex">\(1\)</span> đỉnh <span class="arithmatex">\(y\)</span> thuộc <span class="arithmatex">\(B\)</span> thì <span class="arithmatex">\(y\)</span> phải có thứ tự thăm sớm hơn <span class="arithmatex">\(u\)</span>. Vì nếu <span class="arithmatex">\(y\)</span> được thăm sau <span class="arithmatex">\(u\)</span> ta có thể duyệt từ <span class="arithmatex">\(u\)</span> qua <span class="arithmatex">\(x\)</span> tới <span class="arithmatex">\(y\)</span> khi đó <span class="arithmatex">\(y\)</span> sẽ trở thành con của <span class="arithmatex">\(u\)</span>.</li>
