@@ -28,7 +28,7 @@ Về biểu diễn $z=r\exp(i\varphi)$, các bạn có thể tìm hiểu ở [C�
 
 <figure style="text-align: center;">
 
-<img width="450" src="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_088a9fcbefdaec5b900f87aab49f214f.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1708710223&Signature=zHr%2BU6CD5tcqMOhMhG30ergG7ug%3D">
+<img width="450" src="https://wiki.vnoi.info/algo/math/fft1.png">
 <figcaption>
     Hình 1. Biểu diễn số phức trên mặt phẳng
 </figcaption>
@@ -56,7 +56,7 @@ Xét một số nguyên dương $n$:
 
 <figure style="text-align: center;">
 
-<img width="450" src="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_1d9e8ec99fcfe217807febb08360976e.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1708710341&Signature=JKQ8pkt5Lg5xnkNp9rQs9KGoemE%3D">
+<img width="450" src="https://wiki.vnoi.info/algo/math/fft2.png">
 <figcaption>
     Hình 2. Biểu diễn các căn đơn vị cấp 8 trên mặt phẳng
 </figcaption>
@@ -155,24 +155,24 @@ Trước khi đi vào trường hợp tổng quát, ta sẽ xem xét một ví d
 
 $$
 \left [\begin{array}{@{}cccccccc@{}}
-\textcolor{red}{\omega^0} & \textcolor{blue}{\omega^0} & \textcolor{red}{\omega^0} & \textcolor{blue}{\omega^0} & \textcolor{red}{\omega^0} & \textcolor{blue}{\omega^0} & \textcolor{red}{\omega^0} & \textcolor{blue}{\omega^0} \\
-\textcolor{red}{\omega^0} & \textcolor{blue}{\omega^1} & \textcolor{red}{\omega^2} & \textcolor{blue}{\omega^3} & \textcolor{red}{\omega^4} & \textcolor{blue}{\omega^5} & \textcolor{red}{\omega^6} & \textcolor{blue}{\omega^7} \\
-\textcolor{red}{\omega^0} & \textcolor{blue}{\omega^2} & \textcolor{red}{\omega^4} & \textcolor{blue}{\omega^6} & \textcolor{red}{\omega^0} & \textcolor{blue}{\omega^2} & \textcolor{red}{\omega^4} & \textcolor{blue}{\omega^6} \\
-\textcolor{red}{\omega^0} & \textcolor{blue}{\omega^3} & \textcolor{red}{\omega^6} & \textcolor{blue}{\omega^1} & \textcolor{red}{\omega^4} & \textcolor{blue}{\omega^7} & \textcolor{red}{\omega^2} & \textcolor{blue}{\omega^5} \\
-\textcolor{red}{\omega^0} & \textcolor{blue}{\omega^4} & \textcolor{red}{\omega^0} & \textcolor{blue}{\omega^4} & \textcolor{red}{\omega^0} & \textcolor{blue}{\omega^4} & \textcolor{red}{\omega^0} & \textcolor{blue}{\omega^4} \\
-\textcolor{red}{\omega^0} & \textcolor{blue}{\omega^5} & \textcolor{red}{\omega^2} & \textcolor{blue}{\omega^7} & \textcolor{red}{\omega^4} & \textcolor{blue}{\omega^1} & \textcolor{red}{\omega^6} & \textcolor{blue}{\omega^3} \\
-\textcolor{red}{\omega^0} & \textcolor{blue}{\omega^6} & \textcolor{red}{\omega^4} & \textcolor{blue}{\omega^2} & \textcolor{red}{\omega^0} & \textcolor{blue}{\omega^6} & \textcolor{red}{\omega^4} & \textcolor{blue}{\omega^2} \\
-\textcolor{red}{\omega^0} & \textcolor{blue}{\omega^7} & \textcolor{red}{\omega^6} & \textcolor{blue}{\omega^5} & \textcolor{red}{\omega^4} & \textcolor{blue}{\omega^3} & \textcolor{red}{\omega^2} & \textcolor{blue}{\omega^1} \\
+\color{red}{\omega^0} & \color{blue}{\omega^0} & \color{red}{\omega^0} & \color{blue}{\omega^0} & \color{red}{\omega^0} & \color{blue}{\omega^0} & \color{red}{\omega^0} & \color{blue}{\omega^0} \\
+\color{red}{\omega^0} & \color{blue}{\omega^1} & \color{red}{\omega^2} & \color{blue}{\omega^3} & \color{red}{\omega^4} & \color{blue}{\omega^5} & \color{red}{\omega^6} & \color{blue}{\omega^7} \\
+\color{red}{\omega^0} & \color{blue}{\omega^2} & \color{red}{\omega^4} & \color{blue}{\omega^6} & \color{red}{\omega^0} & \color{blue}{\omega^2} & \color{red}{\omega^4} & \color{blue}{\omega^6} \\
+\color{red}{\omega^0} & \color{blue}{\omega^3} & \color{red}{\omega^6} & \color{blue}{\omega^1} & \color{red}{\omega^4} & \color{blue}{\omega^7} & \color{red}{\omega^2} & \color{blue}{\omega^5} \\
+\color{red}{\omega^0} & \color{blue}{\omega^4} & \color{red}{\omega^0} & \color{blue}{\omega^4} & \color{red}{\omega^0} & \color{blue}{\omega^4} & \color{red}{\omega^0} & \color{blue}{\omega^4} \\
+\color{red}{\omega^0} & \color{blue}{\omega^5} & \color{red}{\omega^2} & \color{blue}{\omega^7} & \color{red}{\omega^4} & \color{blue}{\omega^1} & \color{red}{\omega^6} & \color{blue}{\omega^3} \\
+\color{red}{\omega^0} & \color{blue}{\omega^6} & \color{red}{\omega^4} & \color{blue}{\omega^2} & \color{red}{\omega^0} & \color{blue}{\omega^6} & \color{red}{\omega^4} & \color{blue}{\omega^2} \\
+\color{red}{\omega^0} & \color{blue}{\omega^7} & \color{red}{\omega^6} & \color{blue}{\omega^5} & \color{red}{\omega^4} & \color{blue}{\omega^3} & \color{red}{\omega^2} & \color{blue}{\omega^1} \\
 \end{array}\right ]
 \left [\begin{array}{@{}c@{}}
-\textcolor{red}{a_0} \\
-\textcolor{blue}{a_1} \\
-\textcolor{red}{a_2} \\
-\textcolor{blue}{a_3} \\
-\textcolor{red}{a_4} \\
-\textcolor{blue}{a_5} \\
-\textcolor{red}{a_6} \\
-\textcolor{blue}{a_7}
+\color{red}{a_0} \\
+\color{blue}{a_1} \\
+\color{red}{a_2} \\
+\color{blue}{a_3} \\
+\color{red}{a_4} \\
+\color{blue}{a_5} \\
+\color{red}{a_6} \\
+\color{blue}{a_7}
 \end{array}\right ]
 $$
 
@@ -181,27 +181,27 @@ Các số mũ trên bảng đã được lấy dư cho $8$. Ta sẽ đưa các c
 $$
 \left [
 \begin{array}{@{}cccc|cccc@{}}
-\textcolor{red}{\omega^0} & \textcolor{red}{\omega^0} & \textcolor{red}{\omega^0} & \textcolor{red}{\omega^0} & \textcolor{blue}{\omega^0} & \textcolor{blue}{\omega^0} & \textcolor{blue}{\omega^0} & \textcolor{blue}{\omega^0} \\
-\textcolor{red}{\omega^0} & \textcolor{red}{\omega^2} & \textcolor{red}{\omega^4} & \textcolor{red}{\omega^6} & \textcolor{blue}{\omega^1} & \textcolor{blue}{\omega^3} & \textcolor{blue}{\omega^5} & \textcolor{blue}{\omega^7} \\
-\textcolor{red}{\omega^0} & \textcolor{red}{\omega^4} & \textcolor{red}{\omega^0} & \textcolor{red}{\omega^4} & \textcolor{blue}{\omega^2} & \textcolor{blue}{\omega^6} & \textcolor{blue}{\omega^2} & \textcolor{blue}{\omega^6} \\
-\textcolor{red}{\omega^0} & \textcolor{red}{\omega^6} & \textcolor{red}{\omega^4} & \textcolor{red}{\omega^2} & \textcolor{blue}{\omega^3} & \textcolor{blue}{\omega^1} & \textcolor{blue}{\omega^7} & \textcolor{blue}{\omega^5} \\
+\color{red}{\omega^0} & \color{red}{\omega^0} & \color{red}{\omega^0} & \color{red}{\omega^0} & \color{blue}{\omega^0} & \color{blue}{\omega^0} & \color{blue}{\omega^0} & \color{blue}{\omega^0} \\
+\color{red}{\omega^0} & \color{red}{\omega^2} & \color{red}{\omega^4} & \color{red}{\omega^6} & \color{blue}{\omega^1} & \color{blue}{\omega^3} & \color{blue}{\omega^5} & \color{blue}{\omega^7} \\
+\color{red}{\omega^0} & \color{red}{\omega^4} & \color{red}{\omega^0} & \color{red}{\omega^4} & \color{blue}{\omega^2} & \color{blue}{\omega^6} & \color{blue}{\omega^2} & \color{blue}{\omega^6} \\
+\color{red}{\omega^0} & \color{red}{\omega^6} & \color{red}{\omega^4} & \color{red}{\omega^2} & \color{blue}{\omega^3} & \color{blue}{\omega^1} & \color{blue}{\omega^7} & \color{blue}{\omega^5} \\
 \hline
-\textcolor{red}{\omega^0} & \textcolor{red}{\omega^0} & \textcolor{red}{\omega^0} & \textcolor{red}{\omega^0} & \textcolor{blue}{\omega^4} & \textcolor{blue}{\omega^4} & \textcolor{blue}{\omega^4} & \textcolor{blue}{\omega^4} \\
-\textcolor{red}{\omega^0} & \textcolor{red}{\omega^2} & \textcolor{red}{\omega^4} & \textcolor{red}{\omega^6} & \textcolor{blue}{\omega^5} & \textcolor{blue}{\omega^7} & \textcolor{blue}{\omega^1} & \textcolor{blue}{\omega^3} \\
-\textcolor{red}{\omega^0} & \textcolor{red}{\omega^4} & \textcolor{red}{\omega^0} & \textcolor{red}{\omega^4} & \textcolor{blue}{\omega^6} & \textcolor{blue}{\omega^2} & \textcolor{blue}{\omega^6} & \textcolor{blue}{\omega^2} \\
-\textcolor{red}{\omega^0} & \textcolor{red}{\omega^6} & \textcolor{red}{\omega^4} & \textcolor{red}{\omega^2} & \textcolor{blue}{\omega^7} & \textcolor{blue}{\omega^5} & \textcolor{blue}{\omega^3} & \textcolor{blue}{\omega^1} \\
+\color{red}{\omega^0} & \color{red}{\omega^0} & \color{red}{\omega^0} & \color{red}{\omega^0} & \color{blue}{\omega^4} & \color{blue}{\omega^4} & \color{blue}{\omega^4} & \color{blue}{\omega^4} \\
+\color{red}{\omega^0} & \color{red}{\omega^2} & \color{red}{\omega^4} & \color{red}{\omega^6} & \color{blue}{\omega^5} & \color{blue}{\omega^7} & \color{blue}{\omega^1} & \color{blue}{\omega^3} \\
+\color{red}{\omega^0} & \color{red}{\omega^4} & \color{red}{\omega^0} & \color{red}{\omega^4} & \color{blue}{\omega^6} & \color{blue}{\omega^2} & \color{blue}{\omega^6} & \color{blue}{\omega^2} \\
+\color{red}{\omega^0} & \color{red}{\omega^6} & \color{red}{\omega^4} & \color{red}{\omega^2} & \color{blue}{\omega^7} & \color{blue}{\omega^5} & \color{blue}{\omega^3} & \color{blue}{\omega^1} \\
 \end{array}
 \right ]
 \left [\begin{array}{@{}c@{}}
-\textcolor{red}{a_0} \\
-\textcolor{red}{a_2} \\
-\textcolor{red}{a_4} \\
-\textcolor{red}{a_6} \\
+\color{red}{a_0} \\
+\color{red}{a_2} \\
+\color{red}{a_4} \\
+\color{red}{a_6} \\
 \hline 
-\textcolor{blue}{a_1} \\
-\textcolor{blue}{a_3} \\
-\textcolor{blue}{a_5} \\
-\textcolor{blue}{a_7}
+\color{blue}{a_1} \\
+\color{blue}{a_3} \\
+\color{blue}{a_5} \\
+\color{blue}{a_7}
 \end{array}\right ]
 $$
 
@@ -212,56 +212,60 @@ Vậy biểu thức cần tính có dạng:
 $$
 \left [
 \begin{array}{@{}cc@{}}
-\textcolor{red}{A} & \textcolor{blue}{B} \\
-\textcolor{red}{A} & \textcolor{blue}{-B} \\
+\color{red}{A} & \color{blue}{B} \\
+\color{red}{A} & \color{blue}{-B} \\
 \end{array}
 \right ]
 \left [
 \begin{array}{@{}c@{}}
-\textcolor{red}{X} \\
-\textcolor{blue}{Y} \\
+\color{red}{X} \\
+\color{blue}{Y} \\
 \end{array}
 \right]
 = \left[
 \begin{array}{@{}c@{}}
-\textcolor{red}{AX}+\textcolor{blue}{BY} \\
-\textcolor{red}{AX}-\textcolor{blue}{BY}
+\color{red}{AX}+\color{blue}{BY} \\
+\color{red}{AX}-\color{blue}{BY}
 \end{array}
 \right]
 $$
 
 Để ý rằng:
+
 $$
-\textcolor{blue}{B}=
+\color{blue}{B}=
 \left[
 \begin{array}{@{}cccc@{}}
-\textcolor{blue}{\omega^0} & \textcolor{blue}{\omega^0} & \textcolor{blue}{\omega^0} & \textcolor{blue}{\omega^0} \\
-\textcolor{blue}{\omega^1} & \textcolor{blue}{\omega^3} & \textcolor{blue}{\omega^5} & \textcolor{blue}{\omega^7} \\
-\textcolor{blue}{\omega^2} & \textcolor{blue}{\omega^6} & \textcolor{blue}{\omega^2} & \textcolor{blue}{\omega^6} \\
-\textcolor{blue}{\omega^3} & \textcolor{blue}{\omega^1} & \textcolor{blue}{\omega^7} & \textcolor{blue}{\omega^5} \\
+\color{blue}{\omega^0} & \color{blue}{\omega^0} & \color{blue}{\omega^0} & \color{blue}{\omega^0} \\
+\color{blue}{\omega^1} & \color{blue}{\omega^3} & \color{blue}{\omega^5} & \color{blue}{\omega^7} \\
+\color{blue}{\omega^2} & \color{blue}{\omega^6} & \color{blue}{\omega^2} & \color{blue}{\omega^6} \\
+\color{blue}{\omega^3} & \color{blue}{\omega^1} & \color{blue}{\omega^7} & \color{blue}{\omega^5} \\
 \end{array}
 \right ]
-= \left [
+=
+\left [
 \begin{array}{@{}cccc@{}}
 \omega^0 & & & \\
- & \omega^1 & & \\
- & & \omega^2 & \\
- & & & \omega^3 \\
+& \omega^1 & & \\
+& & \omega^2 & \\
+& & & \omega^3 \\
 \end{array}
 \right ]
 \left [
 \begin{array}{@{}cccc@{}}
-\textcolor{red}{\omega^0} & \textcolor{red}{\omega^0} & \textcolor{red}{\omega^0} & \textcolor{red}{\omega^0} \\
-\textcolor{red}{\omega^0} & \textcolor{red}{\omega^2} & \textcolor{red}{\omega^4} & \textcolor{red}{\omega^6} \\
-\textcolor{red}{\omega^0} & \textcolor{red}{\omega^4} & \textcolor{red}{\omega^0} & \textcolor{red}{\omega^4} \\
-\textcolor{red}{\omega^0} & \textcolor{red}{\omega^6} & \textcolor{red}{\omega^4} & \textcolor{red}{\omega^2} \\
+\color{red}{\omega^0} & \color{red}{\omega^0} & \color{red}{\omega^0} & \color{red}{\omega^0} \\
+\color{red}{\omega^0} & \color{red}{\omega^2} & \color{red}{\omega^4} & \color{red}{\omega^6} \\
+\color{red}{\omega^0} & \color{red}{\omega^4} & \color{red}{\omega^0} & \color{red}{\omega^4} \\
+\color{red}{\omega^0} & \color{red}{\omega^6} & \color{red}{\omega^4} & \color{red}{\omega^2} \\
 \end{array}
 \right ] 
 $$
 
-Vậy ta chỉ cần tính $\textcolor{red}{AX}$ và $\textcolor{red}{A}\textcolor{blue}{Y}$ là đủ để tính kết quả. Mặt khác, có thể thấy tính $\textcolor{red}{AX}$ và $\textcolor{red}{A}\textcolor{blue}{Y}$ tương đương với tính $\text{DFT}(a_0,a_2,a_4,a_6)$ và $\text{DFT}(a_1,a_3,a_5,a_7)$.
+
+Vậy ta chỉ cần tính $\color{red}{AX}$ và $\color{red}{A}\color{blue}{Y}$ là đủ để tính kết quả. Mặt khác, có thể thấy tính $\color{red}{AX}$ và $\color{red}{A}\color{blue}{Y}$ tương đương với tính $\text{DFT}(a_0,a_2,a_4,a_6)$ và $\text{DFT}(a_1,a_3,a_5,a_7)$.
 
 Xét trường hợp tổng quát, với $0\le i<\frac{n}{2}$, ta có (chú ý $i$ ở đây là chỉ số, không phải đơn vị ảo):
+
 \begin{align}
 A(\omega_n^i)&=\sum_ja_j\omega_n^{ij}=\sum_k a_{2k}\omega_n^{2k i}+\sum_k a_{2k+1}\omega_n^{(2k+1)i}\\&=\sum_k a_{2k}(\omega_n^2)^{ik}+\omega_n^i\sum_k a_{2k+1}(\omega_n^2)^{ik}\\
 &= \sum_k a_{2k}\omega_{n/2}^{ik}+\omega_n^i\sum_k a_{2k+1}\omega_{n/2}^{ik}
@@ -297,7 +301,9 @@ Ta có:
 $$c_l=\sum_k c_k\omega^{kl}=\sum_k \omega^{kl}\sum_ja_j\omega^{jk}=\sum_ja_j\sum_k\omega^{k(j+l)}$$
 
 Xét $j+l\not \equiv 0\pmod n$, ta có:
+
 $$\sum_k\omega^{k(j+l)}=\frac{(\omega^{j+l})^n-1}{\omega^{j+l}-1}=0$$
+
 bởi $w^{j+l}$ là một căn đơn vị.
 
 Từ đây ta suy ra $c_l=na_j$ với $j+l\equiv 0\pmod n$.

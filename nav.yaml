@@ -13,7 +13,7 @@ nav:
         - Meet In The Middle (MITM): algo/basic/meet-in-the-middle.md
         - Thuật toán sắp xếp: algo/basic/sorting.md
         - Một số Tài liệu hay về Thuật Toán: algo/basic/Tai-Lieu-Thuat-Toan.md
-        - Kĩ thuật hai con trỏ: algo/basic/two-pointers.md78
+        - Kĩ thuật hai con trỏ: algo/basic/two-pointers.md
       - Đại Số:
         - Lũy thừa nhị phân: algo/algebra/binary_exponentation.md
         - Thuật toán Euclid: algo/algebra/euclid.md
