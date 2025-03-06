@@ -564,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basic/two-pointers.md78" class="md-nav__link">
+      <a href="../../basic/two-pointers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5084,7 +5084,7 @@
 <p>Về biểu diễn <span class="arithmatex">\(z=r\exp(i\varphi)\)</span>, các bạn có thể tìm hiểu ở <a href="https://vi.wikipedia.org/wiki/C%C3%B4ng_th%E1%BB%A9c_Euler">Công thức Euler (Wikipedia)</a>. </p>
 <figure style="text-align: center;">
 
-<img width="450" src="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_088a9fcbefdaec5b900f87aab49f214f.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1708710223&Signature=zHr%2BU6CD5tcqMOhMhG30ergG7ug%3D">
+<img width="450" src="https://wiki.vnoi.info/algo/math/fft1.png">
 <figcaption>
     Hình 1. Biểu diễn số phức trên mặt phẳng
 </figcaption>
@@ -5109,7 +5109,7 @@
 </ul>
 <figure style="text-align: center;">
 
-<img width="450" src="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_1d9e8ec99fcfe217807febb08360976e.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1708710341&Signature=JKQ8pkt5Lg5xnkNp9rQs9KGoemE%3D">
+<img width="450" src="https://wiki.vnoi.info/algo/math/fft2.png">
 <figcaption>
     Hình 2. Biểu diễn các căn đơn vị cấp 8 trên mặt phẳng
 </figcaption>
@@ -5301,9 +5301,9 @@ A(\omega_n^{i+n/2})&amp;=A_0(\omega_{n/2}^i)-\omega_n^iA_1(\omega_{n/2}^i)
 Đặt <span class="arithmatex">\((b_0,b_1,\ldots,b_{n-1})=\text{DFT}(a_0,a_1,\ldots,a_{n-1})\)</span> và <span class="arithmatex">\((c_0,c_1,\ldots,c_{n-1})=\text{DFT}(b_0,b_1,\ldots,b_{n-1})\)</span>.</p>
 <p>Ta có:</p>
 <div class="arithmatex">\[c_l=\sum_k c_k\omega^{kl}=\sum_k \omega^{kl}\sum_ja_j\omega^{jk}=\sum_ja_j\sum_k\omega^{k(j+l)}\]</div>
-<p>Xét <span class="arithmatex">\(j+l\not \equiv 0\pmod n\)</span>, ta có:
-<span class="arithmatex">\(<span class="arithmatex">\(\sum_k\omega^{k(j+l)}=\frac{(\omega^{j+l})^n-1}{\omega^{j+l}-1}=0\)</span>\)</span>
-bởi <span class="arithmatex">\(w^{j+l}\)</span> là một căn đơn vị.</p>
+<p>Xét <span class="arithmatex">\(j+l\not \equiv 0\pmod n\)</span>, ta có:</p>
+<div class="arithmatex">\[\sum_k\omega^{k(j+l)}=\frac{(\omega^{j+l})^n-1}{\omega^{j+l}-1}=0\]</div>
+<p>bởi <span class="arithmatex">\(w^{j+l}\)</span> là một căn đơn vị.</p>
 <p>Từ đây ta suy ra <span class="arithmatex">\(c_l=na_j\)</span> với <span class="arithmatex">\(j+l\equiv 0\pmod n\)</span>.</p>
 <p>Ngoài ra, nếu ta sử dụng <span class="arithmatex">\(\omega^{-1}=\exp(\frac{-2\pi i}{n})\)</span> thay cho <span class="arithmatex">\(\omega\)</span> ở lần <span class="arithmatex">\(\text{DFT}\)</span> thứ hai, kết quả ta nhận được sẽ là <span class="arithmatex">\((na_0,na_1,\ldots,na_{n-1})\)</span> (bạn đọc tự chứng minh).</p>
 <p>Ta sẽ cài đặt chung cả biến đổi xuôi và ngược:</p>
