@@ -4591,16 +4591,16 @@
 <strong>Điều kiện:</strong> <span class="arithmatex">\(1\le n\le 10^5\)</span>.</p>
 </blockquote>
 <p><em><strong>Lưu ý</strong>: hai cách xếp được xem là khác nhau khi tồn tại một vị trí mà hai cách có hai loại ghế khác nhau.</em></p>
-<p><img alt="/uploads/basic-dynamic-programming-1_img1.png" src="/uploads/basic-dynamic-programming-1_img1.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/basic-dynamic-programming-1_img1.png" src="/fptoj_wiki/uploads/basic-dynamic-programming-1_img1.png" /></p>
 <p>Bây giờ ta sẽ xây dựng thuật giải:</p>
 <h3 id="thuat-toan-e-quy">Thuật toán đệ quy</h3>
 <p>Gọi số cách xếp <span class="arithmatex">\(i\)</span> cái ghế là <span class="arithmatex">\(f[i]\)</span>. Ta xét chiếc ghế thứ <span class="arithmatex">\(n\)</span>. 
 * Nếu nó có màu đen hoặc trắng thì chiếc ghế cạnh nó có thể có một trong ba màu. Do đó ta chỉ cần bố trí <span class="arithmatex">\(n-1\)</span> chiếc ghế còn lại thỏa mãn yêu cầu. Do có 2 cách chọn màu cho ghế thứ <span class="arithmatex">\(n\)</span> và <span class="arithmatex">\(f[n-1]\)</span> cách chọn màu cho các ghế còn lại nên số cách xếp trong trường hợp này là <span class="arithmatex">\(2 * f[n-1]\)</span>.</p>
-<p><img alt="/uploads/basic-dynamic-programming-1_img2.png" src="/uploads/basic-dynamic-programming-1_img2.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/basic-dynamic-programming-1_img2.png" src="/fptoj_wiki/uploads/basic-dynamic-programming-1_img2.png" /></p>
 <ul>
 <li>Nếu nó có màu đỏ thì chiếc ghế cạnh nó chỉ có thể có màu trắng hoặc đen. Do vậy nên chiếc ghế thứ <span class="arithmatex">\(n-2\)</span> có thể có một trong ba màu. Khi đó ta cũng chỉ cần bố trí <span class="arithmatex">\(n-2\)</span> chiếc ghế còn lại thỏa mãn yêu cầu. Số cách xếp trong trường hợp này là <span class="arithmatex">\(1* 2* f[n-2]\)</span>.</li>
 </ul>
-<p><img alt="/uploads/basic-dynamic-programming-1_img3.png" src="/uploads/basic-dynamic-programming-1_img3.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/basic-dynamic-programming-1_img3.png" src="/fptoj_wiki/uploads/basic-dynamic-programming-1_img3.png" /></p>
 <p>Với ý tưởng trên, ta có thể giải bài toán này như các bài toán đệ quy đơn giản. Cài đặt như sau:</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1">// Tính số cách sắp xếp n cái ghế</span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
@@ -4623,7 +4623,7 @@ Thuật toán trên có độ phức tạp lũy thừa nên chỉ áp dụng đ�
 Để tính <code>solve(997)</code> cần gọi hàm <code>solve(996)</code> và <code>solve(995)</code>.
 <span class="arithmatex">\(\ldots\)</span>
 Ta có thể biểu diễn các hàm được gọi bằng một sơ đồ như sau:</p>
-<p><img alt="/uploads/basic-dynamic-programming-1_img4.png" src="/uploads/basic-dynamic-programming-1_img4.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/basic-dynamic-programming-1_img4.png" src="/fptoj_wiki/uploads/basic-dynamic-programming-1_img4.png" /></p>
 <p>Từ sơ đồ trên ta thấy có nhiều hàm bị gọi rất nhiều lần một cách không cần thiết:
 * <code>solve(998)</code> được gọi <span class="arithmatex">\(2\)</span> lần
 * <code>solve(997)</code> được gọi <span class="arithmatex">\(3\)</span> lần
@@ -4927,10 +4927,10 @@ Dãy con của một dãy là dãy số thu được bằng cách bỏ đi một
 <strong>Input:</strong> Số nguyên <span class="arithmatex">\(n\)</span> và <span class="arithmatex">\(n\)</span> dòng tiếp theo có dòng thứ <span class="arithmatex">\(i\)</span> là thời điểm bắt đầu <span class="arithmatex">\(A_i\)</span> và kết thúc <span class="arithmatex">\(B_i\)</span> của cuộc họp thứ <span class="arithmatex">\(i\)</span>.
 <strong>Output:</strong> một dòng gồm số thứ tự ban đầu của các cuộc họp được bố trí, theo thứ tự thời gian.</p>
 </blockquote>
-<p><img alt="/uploads/basic-dynamic-programming-1_img5.png" src="/uploads/basic-dynamic-programming-1_img5.png" />
+<p><img alt="/fptoj_wiki/uploads/basic-dynamic-programming-1_img5.png" src="/fptoj_wiki/uploads/basic-dynamic-programming-1_img5.png" />
 <strong>Hướng dẫn</strong>:</p>
 <p>Sắp xếp các cuộc họp tăng dần theo thời điểm bắt đầu <span class="arithmatex">\(A_i\)</span>. Thế thì cuộc họp <span class="arithmatex">\(i\)</span> sẽ bố trí được sau cuộc họp <span class="arithmatex">\(j\)</span> khi và chỉ khi <span class="arithmatex">\(j&lt;i\)</span> và <span class="arithmatex">\(B_j \le A_i\)</span>. Yêu cầu bố trí được nhiều cuộc họp nhất có thể đưa về việc tìm dãy các cuộc họp dài nhất thoả mãn điều kiện trên.</p>
-<p><img alt="/uploads/basic-dynamic-programming-1_img6.png" src="/uploads/basic-dynamic-programming-1_img6.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/basic-dynamic-programming-1_img6.png" src="/fptoj_wiki/uploads/basic-dynamic-programming-1_img6.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
@@ -5040,7 +5040,7 @@ Dãy con của một dãy là dãy số thu được bằng cách bỏ đi một
 <p><em>Cho <span class="arithmatex">\(n\)</span> tam giác trên mặt phẳng. Tam giác <span class="arithmatex">\(i\)</span> bao tam giác <span class="arithmatex">\(j\)</span> nếu 3 đỉnh của tam giác <span class="arithmatex">\(j\)</span> đều nằm trong tam giác <span class="arithmatex">\(i\)</span> (có thể nằm trên cạnh). Hãy tìm dãy tam giác bao nhau có nhiều tam giác nhất.</em>
 <strong>Điều kiện:</strong> <span class="arithmatex">\(1\le n\le 1000\)</span> và tọa độ các đỉnh của các tam giác thuộc đoạn <span class="arithmatex">\({-10}^6\)</span> đến <span class="arithmatex">\(10^6\)</span>.</p>
 </blockquote>
-<p><img alt="/uploads/basic-dynamic-programming-1_img7.png" src="/uploads/basic-dynamic-programming-1_img7.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/basic-dynamic-programming-1_img7.png" src="/fptoj_wiki/uploads/basic-dynamic-programming-1_img7.png" /></p>
 <p><strong>Hướng dẫn</strong>:</p>
 <p>Sắp xếp các tam giác tăng dần về diện tích. Khi đó tam giác <span class="arithmatex">\(i\)</span> sẽ bao tam giác <span class="arithmatex">\(j\)</span> nếu <span class="arithmatex">\(j&lt;i\)</span> và 3 đỉnh của <span class="arithmatex">\(j\)</span> nằm trong <span class="arithmatex">\(i\)</span>. Từ đó có thể đưa về bài toán tìm dãy “tăng” dài nhất.</p>
 <p>Bài toán có một số biến thể khác như tìm dãy hình tam giác, hình chữ nhật… bao nhau có tổng diện tích lớn nhất.</p>
@@ -5049,7 +5049,7 @@ Dãy con của một dãy là dãy số thu được bằng cách bỏ đi một
 <li>Tính diện tích: điểm <span class="arithmatex">\(M\)</span> nằm trong nếu <span class="arithmatex">\(S(ABC) = S(ABM) + S(ACM) + S(BCM)\)</span>.</li>
 <li>Kẻ một tia song song <span class="arithmatex">\(Ox\)</span> từ <span class="arithmatex">\(M\)</span> và đếm số giao điểm với <span class="arithmatex">\(3\)</span> đoạn <span class="arithmatex">\(AB,BC,CA\)</span>. Nếu số giao điểm là số lẻ thì <span class="arithmatex">\(M\)</span> nằm trong tam giác.</li>
 </ul>
-<p><img alt="/uploads/basic-dynamic-programming-1_img8.png" src="/uploads/basic-dynamic-programming-1_img8.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/basic-dynamic-programming-1_img8.png" src="/fptoj_wiki/uploads/basic-dynamic-programming-1_img8.png" /></p>
 <h3 id="day-oi-dau">Dãy đổi dấu</h3>
 <blockquote>
 <p><em>Cho dãy số nguyên gồm <span class="arithmatex">\(n\)</span> phần tử <span class="arithmatex">\(a_1, a_2,\ldots, a_n\)</span> và các số nguyên dương <span class="arithmatex">\(L,U\)</span>. Hãy tìm dãy con đổi dấu dài nhất của dãy đó.</em>
@@ -5116,7 +5116,7 @@ Dãy con của dãy <span class="arithmatex">\(a\)</span> là dãy thu được 
 <p><em>Cho một bảng ô vuông gồm <span class="arithmatex">\(m\)</span> hàng và <span class="arithmatex">\(n\)</span> cột. Kí hiệu <span class="arithmatex">\((i, j)\)</span> là ô ở hàng <span class="arithmatex">\(i\)</span>, cột <span class="arithmatex">\(j\)</span>. Giả sử <span class="arithmatex">\((i, j)\)</span> có <span class="arithmatex">\(a_{i,j}\)</span> quả táo. Bạn An muốn đi từ <span class="arithmatex">\((1, 1)\)</span> đến <span class="arithmatex">\((m, n)\)</span>. Ở mỗi bước, An đi sang phải hoặc xuống dưới đúng một ô. Khi An ở ô <span class="arithmatex">\((i, j)\)</span>, An có thể lấy hết các quả táo ở ô đó. Tính số quả táo nhiều nhất mà An có thể lấy được.</em>
 <strong>Điều kiện:</strong> <span class="arithmatex">\(1\le mn\le10^6\)</span> và <span class="arithmatex">\(1\le a_{i, j}\le 10^9\)</span> với mọi <span class="arithmatex">\(i,j\)</span>.</p>
 </blockquote>
-<p><img alt="/uploads/basic-dynamic-programming-1_img9.png" src="/uploads/basic-dynamic-programming-1_img9.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/basic-dynamic-programming-1_img9.png" src="/fptoj_wiki/uploads/basic-dynamic-programming-1_img9.png" /></p>
 <p><strong>Ý tưởng:</strong> </p>
 <p>Bài toán này cũng tương tự như các ví dụ trước.</p>
 <p>Đầu tiên, trạng thái của bài toán chính là số quả táo nhiều nhất An có thể lấy khi đi từ ô <span class="arithmatex">\((1,1)\)</span> đến ô <span class="arithmatex">\((i,j)\)</span>, gọi là <span class="arithmatex">\(f[i][j]\)</span>.</p>
@@ -5124,7 +5124,7 @@ Dãy con của dãy <span class="arithmatex">\(a\)</span> là dãy thu được 
 <!--![Minh họa](https://raw.githubusercontent.com/Ryu204/Picture/main/table2.png)-->
 
 <p>Với mọi <span class="arithmatex">\(i,j\ge 2\)</span>, để đi từ <span class="arithmatex">\((1, 1)\)</span> đến <span class="arithmatex">\((i, j)\)</span> An có hai lựa chọn: đi qua <span class="arithmatex">\((i - 1, j)\)</span> hoặc đi qua <span class="arithmatex">\((i, j - 1)\)</span>. An sẽ chọn đường đi thu được nhiều táo nhất, do đó <span class="arithmatex">\(f[i][j] = a_{i, j} + \max(f[i][j - 1], f[i - 1][j])\)</span>.</p>
-<p><img alt="/uploads/basic-dynamic-programming-1_img10.png" src="/uploads/basic-dynamic-programming-1_img10.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/basic-dynamic-programming-1_img10.png" src="/fptoj_wiki/uploads/basic-dynamic-programming-1_img10.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -5151,7 +5151,7 @@ Dãy con của dãy <span class="arithmatex">\(a\)</span> là dãy thu được 
 <h2 id="xep-vali-knapsack">Xếp vali (Knapsack)</h2>
 <h2 id="mo-hinh">Mô hình</h2>
 <p>Có <span class="arithmatex">\(n\)</span> đồ vật, vật thứ <span class="arithmatex">\(i\)</span> có trọng lượng <span class="arithmatex">\(A_i\)</span> và giá trị <span class="arithmatex">\(B_i\)</span>. Hãy chọn ra một số các đồ vật, mỗi vật một cái để xếp vào 1 vali có trọng lượng tối đa <span class="arithmatex">\(W\)</span> sao cho tổng giá trị của vali là lớn nhất.</p>
-<p><img alt="/uploads/basic-dynamic-programming-1_img11.png" src="/uploads/basic-dynamic-programming-1_img11.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/basic-dynamic-programming-1_img11.png" src="/fptoj_wiki/uploads/basic-dynamic-programming-1_img11.png" /></p>
 <h2 id="cong-thuc">Công thức</h2>
 <p>Trạng thái bài toán: tổng giá trị lớn nhất của vali nếu khối lượng không vượt quá <span class="arithmatex">\(i\)</span>.</p>
 <p><strong>Nhận xét:</strong> giá trị của vali phụ thuộc vào 2 yếu tố: có bao nhiêu vật đang được xét và trọng lượng của các vật. Do đó bảng phương án sẽ là bảng 2 chiều:</p>
@@ -5275,7 +5275,7 @@ Dãy con của dãy <span class="arithmatex">\(a\)</span> là dãy thu được 
 <blockquote>
 <p><em>Một người có <span class="arithmatex">\(N\)</span> mảnh đất và <span class="arithmatex">\(M\)</span> dải đất. Các mảnh đất có thể coi là một tứ giác và các dải đất thì coi như một đường thẳng. Dọc theo các dải đất ông ta trồng các cây bách, dải đất thứ <span class="arithmatex">\(i\)</span> có <span class="arithmatex">\(A_i\)</span> cây bách. Ông ta cũng trồng các cây bách trên viền của các mảnh đất, mảnh đất thứ <span class="arithmatex">\(j\)</span> có <span class="arithmatex">\(B_j\)</span> cây bách. Cả ở trên các mảnh đất và dải đất, xen giữa 2 cây bách ông ta trồng một cây ôliu. Ông ta cho con trai được chọn các mảnh đất và dải đất tuỳ ý với điều kiện tổng số cây bách không vượt quá <span class="arithmatex">\(Q\)</span>. Người con trai phải chọn thế nào để có nhiều cây ôliu (loài cây mà anh ta thích) nhất.</em></p>
 </blockquote>
-<p><img alt="/uploads/basic-dynamic-programming-1_img12.png" src="/uploads/basic-dynamic-programming-1_img12.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/basic-dynamic-programming-1_img12.png" src="/fptoj_wiki/uploads/basic-dynamic-programming-1_img12.png" /></p>
 <p><strong>Hướng dẫn</strong></p>
 <p>Dễ thấy mảnh đất thứ <span class="arithmatex">\(i\)</span> có <span class="arithmatex">\(A_i\)</span> cây ôliu và dải đất thứ <span class="arithmatex">\(j\)</span> có <span class="arithmatex">\(B_j-1\)</span> cây ôliu. Coi các mảnh đất và dải đất là các “đồ vật”, đồ vật thứ <span class="arithmatex">\(k\)</span> có khối lượng <span class="arithmatex">\(W_k\)</span> và giá trị <span class="arithmatex">\(V_k\)</span> (nếu <span class="arithmatex">\(k\)</span> là mảnh đất <span class="arithmatex">\(i\)</span> thì <span class="arithmatex">\(W_k=V_k=A_i\)</span>, nếu <span class="arithmatex">\(k\)</span> là dải đất <span class="arithmatex">\(j\)</span> thì <span class="arithmatex">\(W_k=B_j,V_k=B_j-1\)</span>). Ta cần chọn các “đồ vật”, sao cho tổng “khối lượng” của chúng không vượt <span class="arithmatex">\(Q\)</span> và tổng “giá trị” là lớn nhất. Đây chính là bài toán xếp balô đã trình bày ở trên.</p>
 <h1 id="ket">Kết</h1>

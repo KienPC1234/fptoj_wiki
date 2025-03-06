@@ -4609,7 +4609,7 @@
 <ul>
 <li>Ví dụ mô tả thuật toán chia để trị với mảng <span class="arithmatex">\(<span class="arithmatex">\(A = \{9,2,6,3,1,5,7\}\)</span>\)</span>:</li>
 </ul>
-<p><img alt="/uploads/segment-tree-basic_img1.png" src="/uploads/segment-tree-basic_img1.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/segment-tree-basic_img1.png" src="/fptoj_wiki/uploads/segment-tree-basic_img1.png" /></p>
 </li>
 </ul>
 </li>
@@ -4618,7 +4618,7 @@
 <ul>
 <li><strong>Ví dụ:</strong> Trong ví dụ bên trên, khi sửa đổi phần tử có giá trị <span class="arithmatex">\(1\)</span> thành giá trị <span class="arithmatex">\(8\)</span> thì ta chỉ cần tính lại giá trị nhỏ nhất của các đoạn <span class="arithmatex">\([1, 7]\)</span>, <span class="arithmatex">\([5, 7]\)</span>, <span class="arithmatex">\([5, 6]\)</span> và <span class="arithmatex">\([5, 5]\)</span>.</li>
 </ul>
-<p><img alt="/uploads/segment-tree-basic_img2.png" src="/uploads/segment-tree-basic_img2.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/segment-tree-basic_img2.png" src="/fptoj_wiki/uploads/segment-tree-basic_img2.png" /></p>
 </li>
 </ul>
 <p><strong>Tổng quát</strong></p>
@@ -4642,7 +4642,7 @@
 <ul>
 <li><strong>Ví dụ:</strong> Ta có mảng <span class="arithmatex">\(<span class="arithmatex">\(A = \{9,2,6,3,1,5,7\}\)</span>\)</span> được kiểm soát bởi cây phân đoạn sau:</li>
 </ul>
-<p><img alt="/uploads/segment-tree-basic_img3.png" src="/uploads/segment-tree-basic_img3.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/segment-tree-basic_img3.png" src="/fptoj_wiki/uploads/segment-tree-basic_img3.png" /></p>
 <h1 id="cau-truc">Cấu trúc</h1>
 <p>Bây giờ ta đã sẵn sàng để xác định cấu trúc của cây phân đoạn:</p>
 <ul>
@@ -4681,7 +4681,7 @@
 <p>Để làm như vậy, trước tiên ta cần sửa đổi nút lá tương ứng. Các nút lá khác không bị ảnh hưởng, vì mỗi nút lá chỉ được liên kết với một phần tử trong mảng. Nút cha của nút đã sửa đổi cũng bị ảnh hưởng, vì đoạn nó quản lý cũng chứa phần tử đã sửa đổi, và các nút tổ tiên của nó cũng vậy, v.v... cho đến nút gốc. </p>
 <p>Nói cách khác, tất cả các nút nằm trên đường đi đơn từ gốc đến nút lá tương ứng đều bị ảnh hưởng. Ngoài ra, <strong>không còn nút nào khác bị ảnh hưởng</strong>. Do đó, với một dãy số gồm <span class="arithmatex">\(N\)</span> phần tử thì chiều cao của cây phân đoạn tương ứng sẽ là <span class="arithmatex">\(\mathcal{O}(\log{N})\)</span> nên chỉ có <span class="arithmatex">\(\mathcal{O}(\log{N})\)</span> nút cần được cập nhật.
 - <strong>Ví dụ:</strong> Cho mảng <span class="arithmatex">\(<span class="arithmatex">\(A = \{9,2,6,3,1,5,7\}\)</span>\)</span>. Phần tử có giá trị <span class="arithmatex">\(1\)</span> được thay đổi thành giá trị <span class="arithmatex">\(8\)</span> trong cây phân đoạn lấy giá trị nhỏ nhất.</p>
-<p><a href="/uploads/segment-tree-basic_gif1.gif">/uploads/segment-tree-basic_gif1.gif</a></p>
+<p><a href="/fptoj_wiki/uploads/segment-tree-basic_gif1.gif">/fptoj_wiki/uploads/segment-tree-basic_gif1.gif</a></p>
 <p>Thao tác cập nhật cây phân đoạn có thể được thực hiện bằng cách sử dụng một hàm đệ quy:
 - Để thực hiện cập nhật từ trên xuống, ta bắt đầu từ nút gốc; điều này dẫn đến lệnh gọi đệ quy tới một nút con quản lí đoạn chứa phần tử cần sửa đổi (nút con còn lại và cây con của nó không bị ảnh hưởng); v.v... Cho đến trường hợp cơ sở là nút lá được liên kết với phần tử cần cập nhật, ta sửa lại giá trị của nút lá đó. 
 - Sau khi hoàn tất lệnh gọi đệ quy cho các nút con <em>(trừ trường hợp cơ sở)</em>, giá trị của nút đang xét sẽ được cập nhật lại theo giá trị hai nút con của nó. </p>
@@ -4690,7 +4690,7 @@
 <p>Bây giờ, ta cần phải trả lời các truy vấn lấy giá trị. Ví dụ như: cho hai số nguyên <span class="arithmatex">\(l\)</span> và <span class="arithmatex">\(r\)</span>, hãy xác định phần tử có giá trị nhỏ nhất trong đoạn <span class="arithmatex">\([l, r]\)</span> của mảng <span class="arithmatex">\(A\)</span> với khoảng thời gian là <span class="arithmatex">\(\mathcal{O}(\log{n})\)</span>.</p>
 <p>Do thao tác lấy giá trị này phức tạp hơn thao tác cập nhật cây phân đoạn nên ta sẽ lấy một ví dụ minh họa để dễ hình dung: 
 - Giả sử, cho mảng <span class="arithmatex">\(<span class="arithmatex">\(A = \{9,2,6,3,1,5,7\}\)</span>\)</span> và ta muốn biết phần tử nhỏ nhất trong đoạn <span class="arithmatex">\([1, 6]\)</span> của mảng <span class="arithmatex">\(A\)</span>.</p>
-<p><img alt="/uploads/segment-tree-basic_img4.png" src="/uploads/segment-tree-basic_img4.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/segment-tree-basic_img4.png" src="/fptoj_wiki/uploads/segment-tree-basic_img4.png" /></p>
 <ul>
 <li>Gọi <span class="arithmatex">\(f(l,r)\)</span> là phần tử có giá trị nhỏ nhất trong đoạn <span class="arithmatex">\([l, r]\)</span>. Ta thấy rằng mỗi nút trong cây phân đoạn đều quản lí  một đoạn nào đó, ví dụ như nút gốc chứa <span class="arithmatex">\(f(1,7)\)</span>, nút con bên trái là <span class="arithmatex">\(f(1,4)\)</span>, nút bên phải là <span class="arithmatex">\(f(5,7)\)</span>, v.v...; và mỗi nút lá chứa <span class="arithmatex">\(f(i, i) = a_i\)</span>. Nhưng không có nút nào chứa <span class="arithmatex">\(f(1,6)\)</span>; tuy nhiên, ta nhận thấy rằng <span class="arithmatex">\(f(1,6) = \min{(f (1,4), f (5,6))}\)</span>, và có tồn tại các nút trong cây phân đoạn chứa hai giá trị đó <em>(được hiển thị bằng màu xanh dương trong hình trên)</em>.</li>
 </ul>
@@ -4706,7 +4706,7 @@
 <ul>
 <li>
 <p><strong>Ví dụ minh họa:</strong> Cho mảng <span class="arithmatex">\(<span class="arithmatex">\(A = \{9,2,6,3,1,5,7\}\)</span>\)</span>, ta có <span class="arithmatex">\(<span class="arithmatex">\(st[] = \{1, 2, 1, 2, 3, 1, 7, 9, 2, 6, 3, 1, 5\}\)</span>\)</span> (với <span class="arithmatex">\(st[]\)</span> là mảng biểu diễn cho <strong>Segment Tree</strong>, lưu lại thông tin của mỗi nút).</p>
-<p><img alt="/uploads/segment-tree-basic_img5.png" src="/uploads/segment-tree-basic_img5.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/segment-tree-basic_img5.png" src="/fptoj_wiki/uploads/segment-tree-basic_img5.png" /></p>
 <ul>
 <li>Chỉ số trên mảng được viết bằng màu đỏ bên cạnh mỗi nút, ví dụ như nút có chỉ số <span class="arithmatex">\(id = 2\)</span> sẽ quản lí đoạn <span class="arithmatex">\([1, 4]\)</span> và nút con bên trái của nó có chỉ số <span class="arithmatex">\(4\)</span>, còn nút con bên phải có chỉ số <span class="arithmatex">\(5\)</span>. </li>
 </ul>
@@ -4846,7 +4846,7 @@
 - Bây giờ, ta hãy xem xét một độ sâu bất kì. Theo giả thuyết quy nạp là ta thăm nhiều nhất <span class="arithmatex">\(4\)</span> nút. Nếu ta chỉ thăm nhiều nhất <span class="arithmatex">\(2\)</span> nút, thì ở độ sâu tiếp theo, số lượng nút được thăm nhiều nhất sẽ là <span class="arithmatex">\(4\)</span> nút. Điều đó thật hiển nhiên, bởi vì mỗi nút có thể tạo ra nhiều nhất <span class="arithmatex">\(2\)</span> lệnh gọi đệ quy. 
 - Vì vậy, giả sử rằng ta truy cập <span class="arithmatex">\(3\)</span> hoặc <span class="arithmatex">\(4\)</span> nút trong độ sâu hiện tại. Từ các nút đó, ta sẽ phân tích kỹ hơn các nút nằm ở giữa (nghĩa là nút thứ hai từ trái sang với số lượng nút đang được truy cập là <span class="arithmatex">\(3\)</span> và nút thứ <span class="arithmatex">\(2, \space 3\)</span> với số nút đang được truy cập là <span class="arithmatex">\(4\)</span>) . Vì truy vấn yêu cầu lấy giá trị của một đoạn con liên tục, ta biết rằng các phân đoạn tương ứng với các nút đã thăm ở giữa sẽ được bao phủ hoàn toàn bởi phân đoạn của truy vấn. Do đó các nút này sẽ không thực hiện bất kỳ lệnh gọi đệ quy nào tới các nút con nữa. Vì vậy, chỉ nút bên trái nhất và nút bên phải nhất mới có khả năng tiếp tục gọi đệ quy. Và hai nút đó sẽ chỉ tạo ra nhiều nhất <span class="arithmatex">\(4\)</span> lệnh gọi đệ quy, vì vậy độ sâu tiếp theo cũng sẽ đáp ứng đúng mệnh đề. 
     - <strong>Ví dụ:</strong> Giả sử, đoạn cần truy vấn là đoạn <span class="arithmatex">\([2, 5]\)</span>. Ở độ sâu thứ <span class="arithmatex">\(3\)</span>, ta sẽ truy cập vào ba nút quản lí các đoạn <span class="arithmatex">\([1, 2]\)</span>, <span class="arithmatex">\([3, 4]\)</span> và <span class="arithmatex">\([5, 6]\)</span> <em>(được đánh dấu bằng màu xanh dương)</em>. Khi đó, vì nút quản lí đoạn <span class="arithmatex">\([3, 4]\)</span> nằm hoàn toàn bên trong đoạn <span class="arithmatex">\([2, 5]\)</span> nên hàm đệ quy sẽ trả ra luôn giá trị của nút đó, mà <strong>không</strong> gọi đệ quy tới các nút con. Chỉ có hai nút là nút bên trái nhất quản lí đoạn <span class="arithmatex">\([1, 2]\)</span> và nút bên phải nhất quản lí đoạn <span class="arithmatex">\([5, 6]\)</span> mới được tiếp tục gọi đệ quy.</p>
-<pre><code>![/uploads/segment-tree-basic_img6.png](/uploads/segment-tree-basic_img6.png)
+<pre><code>![/fptoj_wiki/uploads/segment-tree-basic_img6.png](/fptoj_wiki/uploads/segment-tree-basic_img6.png)
 </code></pre>
 <ul>
 <li>Ta cũng có thể nói rằng một nhánh cây phân đoạn sẽ tiếp cận dần tới giới hạn bên trái của truy vấn và nhánh thứ hai tiếp cận tới giới hạn bên phải.</li>
@@ -4931,7 +4931,7 @@
 <p>Bây giờ, ta cần phải xác định các phép toán để "hợp nhất" hai nút con:
 - <code>pre</code> : Dễ thấy rằng tiền tố lớn nhất của nút cha sẽ bằng <em>max</em> tiền tố của nút con bên trái và tổng giá trị của nút con bên trái cộng với tiền tố của nút con bên phải.
     - <strong>Minh họa:</strong> <span class="arithmatex">\(\mathrm{pre}[l, r] = \max{(\mathrm{pre}[l, mid], \space \mathrm{sum}[l, mid] + \mathrm{pre}[mid + 1, r])}\)</span> với <span class="arithmatex">\(mid = \big\lfloor \frac{l + r}{2} \big\rfloor\)</span>.</p>
-<pre><code>![/uploads/segment-tree-basic_img7.png](/uploads/segment-tree-basic_img7.png)
+<pre><code>![/fptoj_wiki/uploads/segment-tree-basic_img7.png](/fptoj_wiki/uploads/segment-tree-basic_img7.png)
 </code></pre>
 <ul>
 <li><code>suf</code> : Hậu tố lớn nhất của nút cha sẽ bằng <em>max</em> hậu tố của nút con bên phải và tổng giá trị của nút con bên phải cộng với hậu tố của nút con bên trái. <em>Cách tính hậu tố tương tự như với tiền tố nên sẽ không minh họa lại nữa.</em></li>
@@ -4951,7 +4951,7 @@
 <ul>
 <li><strong>Minh họa:</strong> Trường hợp <span class="arithmatex">\(3\)</span>, với <span class="arithmatex">\(mid = \big\lfloor \frac{l + r}{2} \big\rfloor\)</span> :</li>
 </ul>
-<p><img alt="/uploads/segment-tree-basic_img8.png" src="/uploads/segment-tree-basic_img8.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/segment-tree-basic_img8.png" src="/fptoj_wiki/uploads/segment-tree-basic_img8.png" /></p>
 </li>
 <li>
 <p>Khi đó, giá trị của đoạn con lớn nhất nằm trong đoạn được quản lí bởi nút cha sẽ là giá trị lớn nhất của cả ba trường hợp trên.</p>
@@ -5148,7 +5148,7 @@
 <p><strong>Độ phức tạp</strong></p>
 <p>Với thao tác xây dựng cây phân đoạn, ta thấy rằng, ở mỗi độ sâu của cây, ta sẽ phải duyệt hết toàn bộ phần tử trong dãy để <em>insert</em> vào <em>multiset</em> của các nút cha. 
 - <strong>Ví dụ:</strong> Xét trường hợp tổng quát, với <span class="arithmatex">\(N = 8\)</span> là lũy thừa của <span class="arithmatex">\(2\)</span>, ta có cây phân đoạn đầy đủ sau:</p>
-<pre><code>![/uploads/segment-tree-basic_img9.png](/uploads/segment-tree-basic_img9.png)
+<pre><code>![/fptoj_wiki/uploads/segment-tree-basic_img9.png](/fptoj_wiki/uploads/segment-tree-basic_img9.png)
 
 - Ở độ sâu thứ $4$, mỗi nút là nút lá của cây nên ta có thể lấy trực tiếp giá trị từ các phần tử tương ứng trong dãy số. Vì có $N$ nút lá nên ta sẽ mất độ phức tạp $\mathcal{O}(N)$.
 - Ở độ sâu thứ $3$, để cập nhật giá trị cho nút quản lí đoạn $[1, 2]$ ta sẽ phải duyệt tất cả các phần tử của cả hai nút con, nghĩa là ta sẽ phải duyệt hết các phần tử trong đoạn $[1, 1]$ và $[2, 2]$. Tương tự với các nút quản lí đoạn $[3, 4]$, $[5, 6]$, $[7, 8]$. Do đó, ta cũng sẽ mất thêm độ phức tạp $\mathcal{O}(N)$.
@@ -5164,7 +5164,7 @@
 <p>Giả sử ta cần cập nhật đoạn <span class="arithmatex">\([u, v]\)</span>. Dễ thấy rằng, việc cập nhật tất cả các nút trên <strong>Segment Tree</strong> sẽ mất độ phức tạp rất lớn là <span class="arithmatex">\(\mathcal{O}(N \times \log{N})\)</span> (do tổng số phần tử nằm trong đoạn <span class="arithmatex">\([u, v]\)</span> có thể lên đến <span class="arithmatex">\(O(N)\)</span>). Do đó, với số lượng truy vấn cập nhật đoạn lớn, thao tác này sẽ không đủ tốt. </p>
 <p>Vậy nên, trong quá trình cập nhật, ta chỉ thay đổi giá trị ở các nút gần gốc nhất sao cho tổng tất cả các phạm vi mà các nút đó quản lí đúng bằng đoạn <span class="arithmatex">\([u, v]\)</span>. 
 - <strong>Ví dụ:</strong>  Cho mảng <span class="arithmatex">\(<span class="arithmatex">\(A = \{9,2,6,3,1,5,7\}\)</span>\)</span> và ta cần cập nhật đoạn <span class="arithmatex">\([1, 6]\)</span> :</p>
-<pre><code>![/uploads/segment-tree-basic_img10.png](/uploads/segment-tree-basic_img10.png)
+<pre><code>![/fptoj_wiki/uploads/segment-tree-basic_img10.png](/fptoj_wiki/uploads/segment-tree-basic_img10.png)
 
 - Ta chỉ cập nhật giá trị ở các nút quản lý đoạn $[1, 4]$ và $[5, 6]$. Giá trị của các nút quản lý đoạn $[1, 2]$, $[3, 4]$, $[1, 1]$, $[2, 2]$, $[3, 3]$, $[4, 4]$, $[5, 5]$, $[6, 6]$ sẽ không đúng. Ta sẽ chỉ cập nhật lại giá trị của các nút này khi thật sự cần thiết (Do đó kĩ thuật này được gọi là lazy - lười biếng).
 </code></pre>

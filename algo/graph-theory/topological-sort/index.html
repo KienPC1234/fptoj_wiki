@@ -4591,7 +4591,7 @@
 <li><strong>Thứ tự Tô-pô</strong> của một đồ thị có hướng là một thứ tự sắp xếp của các đỉnh sao cho với mọi cung từ đỉnh <span class="arithmatex">\(u\)</span> đến đỉnh <span class="arithmatex">\(v\)</span> trong đồ thị, <span class="arithmatex">\(u\)</span> luôn nằm trước <span class="arithmatex">\(v\)</span>.</li>
 <li>Bài toán xác định <strong>thứ tự Tô-pô</strong> gọi là <strong>Bài toán sắp xếp Tô-pô</strong>.</li>
 </ul>
-<p><img alt="/uploads/topological_sort_img1.png" src="/uploads/topological_sort_img1.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/topological_sort_img1.png" src="/fptoj_wiki/uploads/topological_sort_img1.png" /></p>
 <h1 id="cam-hung">Cảm hứng</h1>
 <ul>
 <li>Sắp xếp Tô-pô được áp dụng nhiều nhất đối với các bài toán biểu diễn mối quan hệ <strong>phụ thuộc</strong> giữa các đối tượng. </li>
@@ -4613,7 +4613,7 @@
 <li>Rõ ràng, một <span class="arithmatex">\(DAG\)</span> chỉ gồm <span class="arithmatex">\(1\)</span> đỉnh duy nhất luôn có thể được sắp xếp theo thứ tự Tô-pô. Khi đó, danh sách Tô-pô trong trường hợp này chỉ bao gồm chính đỉnh đó. </li>
 <li>Giả sử rằng bất kỳ <span class="arithmatex">\(DAG\)</span> nào có <span class="arithmatex">\(n\)</span> đỉnh đều có thể được sắp xếp theo thứ tự Tô-pô. Bây giờ hãy xem xét các <span class="arithmatex">\(DAG\)</span> có <span class="arithmatex">\(n+1\)</span> đỉnh. Nhớ lại rằng mọi <span class="arithmatex">\(DAG\)</span> đều có ít nhất một <strong>đỉnh nguồn</strong> (đỉnh không có cung vào). Hãy để <strong>đỉnh nguồn</strong> này làm giá trị đầu tiên trong danh sách Tô-pô, rồi loại bỏ đỉnh này cùng cách cạnh kề với nó ra khỏi đồ thị. Khi đó, ta sẽ có được đồ thị mới gồm <span class="arithmatex">\(n\)</span> đỉnh là đồ thị con của đồ thị ban đầu. Rõ ràng, các chu trình không thể được tạo ra bằng cách loại bỏ các cạnh và đỉnh. Bằng giả thiết ban đầu, ta có thể sắp xếp đồ thị con này theo thứ tự Tô-pô. Sau đó, ta nối thứ tự Tô-pô của đồ thị con vào cuối danh sách hiện tại để có được danh sách thứ tự Tô-pô của đồ thị <span class="arithmatex">\(n+1\)</span> đỉnh với <strong>đỉnh nguồn</strong> là giá trị đầu tiên trong danh sách.</li>
 <li><strong>Ví dụ minh họa:</strong> Để xác định thứ tự Tô-pô của <span class="arithmatex">\(DAG\)</span> gồm <span class="arithmatex">\(7\)</span> đỉnh, ta thêm đỉnh nguồn <span class="arithmatex">\(0\)</span> vào trong danh sách Tô-pô rồi nối thêm thứ tự Tô-pô của đồ thị con <span class="arithmatex">\(6\)</span> đỉnh. 
-<img alt="/uploads/topological_sort_img2.png" src="/uploads/topological_sort_img2.png" /></li>
+<img alt="/fptoj_wiki/uploads/topological_sort_img2.png" src="/fptoj_wiki/uploads/topological_sort_img2.png" /></li>
 <li>Bây giờ, với hai đỉnh bất kỳ <span class="arithmatex">\(u\)</span> và <span class="arithmatex">\(v\)</span> trong danh sách Tô-pô, giả sử <span class="arithmatex">\(u\)</span> đứng trước <span class="arithmatex">\(v\)</span>:<ul>
 <li>Nếu <span class="arithmatex">\(u\)</span> là giá trị đầu tiên trong danh sách (đỉnh nguồn), trong trường hợp đó, rõ ràng là <strong>không thể</strong> tồn tại cạnh nối từ <span class="arithmatex">\(v \rightarrow u\)</span>. </li>
 <li>Nếu cả hai đỉnh <span class="arithmatex">\(u\)</span> và <span class="arithmatex">\(v\)</span> đều không phải là giá trị đầu tiên trong danh sách, dù trong trường hợp nào thì chúng đều được sắp xếp đúng vì chúng thuộc phần đồ thị con được sắp xếp theo thứ tự Tô-pô. </li>
@@ -4660,7 +4660,7 @@
 <div class="highlight"><pre><span></span><code>1 2 7 5 6 3 4
 </code></pre></div></p>
 <p><strong>Note</strong>
-<img alt="/uploads/topological_sort_img3.png" src="/uploads/topological_sort_img3.png" /></p>
+<img alt="/fptoj_wiki/uploads/topological_sort_img3.png" src="/fptoj_wiki/uploads/topological_sort_img3.png" /></p>
 <h2 id="thuat-toan-1">Thuật toán 1</h2>
 <ul>
 <li>Từ phần <strong>chứng minh</strong> của định lý trên <em>(trong mục <strong>Điều kiện tồn tại thứ tự Tô-pô</strong>)</em>, ta có thuật toán để tìm ra một thứ tự Tô-pô như sau:<ol>
@@ -4737,7 +4737,7 @@
 </code></pre></div>
 <p><strong>Mô tả quá trình</strong>
 - Thứ tự Tô-pô <strong>không phải</strong> là duy nhất. Quá trình sau chỉ mô tả lại quá trình xác định <span class="arithmatex">\(1\)</span> thứ tự Tô-pô theo như code mẫu.</p>
-<p><a href="/uploads/topological_sort_gif1.gif">/uploads/topological_sort_gif1.gif</a></p>
+<p><a href="/fptoj_wiki/uploads/topological_sort_gif1.gif">/fptoj_wiki/uploads/topological_sort_gif1.gif</a></p>
 <ul>
 <li>Sau khi xác định được thứ tự Tô-pô của đồ thị là <code>topo = {1; 6; 7; 2; 4; 5; 3}</code>. Ta đánh số lại các đỉnh. Khi đó ta sẽ có mảng <code>ans = {1; 4; 7; 5; 6; 2; 3}</code>.</li>
 </ul>
@@ -4757,13 +4757,13 @@
 <li>Đối với <strong>thuật toán 2</strong>, quá trình tìm kiếm theo chiều sâu sẽ trả ra <strong>danh sách nghịch đảo thứ tự Tô-pô</strong>. Đơn giản hơn, nó chính là danh sách Tô-pô bị đảo ngược lại.</li>
 <li>Điều này tương đương với việc nếu tồn tại cung <span class="arithmatex">\(u \rightarrow v\)</span> thì <span class="arithmatex">\(u\)</span> có <strong>số thứ tự cao hơn</strong> <span class="arithmatex">\(v\)</span> trong <strong>danh sách nghịch đảo Tô-pô</strong>.</li>
 <li><strong>Ví dụ minh họa:</strong>
-<img alt="/uploads/topological_sort_img4.png" src="/uploads/topological_sort_img4.png" /></li>
+<img alt="/fptoj_wiki/uploads/topological_sort_img4.png" src="/fptoj_wiki/uploads/topological_sort_img4.png" /></li>
 <li><strong>Chứng minh:</strong> Hãy xem xét <strong>cây <em>DFS</em></strong> của đồ thị <em>(tìm hiểu thêm về cây <span class="arithmatex">\(DFS\)</span> tại <a href="../Depth-First-Search-Tree/">đây</a>)</em>:<ul>
 <li>Nếu <span class="arithmatex">\(u\)</span> là tổ tiên của <span class="arithmatex">\(v\)</span> trong cây <span class="arithmatex">\(DFS\)</span>, thì quá trình duyệt xong cây con gốc <span class="arithmatex">\(v\)</span> sẽ kết thúc sớm hơn quá trình duyệt xong cây con gốc <span class="arithmatex">\(u\)</span>. Do đó, <span class="arithmatex">\(u\)</span> sẽ có số thứ tự cao hơn <span class="arithmatex">\(v\)</span> trong danh sách.</li>
 <li>Nếu <span class="arithmatex">\(u\)</span> là tổ tiên của <span class="arithmatex">\(v\)</span> trong cây <span class="arithmatex">\(DFS\)</span> và tồn tại cung nối từ <span class="arithmatex">\(1\)</span> đỉnh thuộc cây con gốc <span class="arithmatex">\(v\)</span> đến đỉnh <span class="arithmatex">\(u\)</span> thì đồ thị có chu trình (không phải là <em>DAG</em>) nên sẽ không tồn tại thứ tự Tô-pô.</li>
 <li>Nếu <span class="arithmatex">\(u\)</span> <strong>không phải</strong> là tổ tiên của <span class="arithmatex">\(v\)</span> và <span class="arithmatex">\(v\)</span> cũng <strong>không phải</strong> là tổ tiên của <span class="arithmatex">\(u\)</span> trong cây <span class="arithmatex">\(DFS\)</span> thì khi đó, <span class="arithmatex">\(2\)</span> đỉnh <span class="arithmatex">\(u\)</span> và <span class="arithmatex">\(v\)</span> sẽ nằm trên <span class="arithmatex">\(2\)</span> nhánh khác nhau của cây <span class="arithmatex">\(DFS\)</span>. Do đó cung nối từ nhánh chứa đỉnh <span class="arithmatex">\(u\)</span> đến nhánh chứa đỉnh <span class="arithmatex">\(v\)</span> là <strong>cung chéo</strong> và đỉnh <span class="arithmatex">\(u\)</span> sẽ được duyệt sau <span class="arithmatex">\(v\)</span> nên sẽ có số thứ tự cao hơn <span class="arithmatex">\(v\)</span> trong danh sách.<ul>
 <li><strong>Ví dụ minh họa:</strong> Bắt đầu duyệt <span class="arithmatex">\(DFS\)</span> từ đỉnh <span class="arithmatex">\(S\)</span>. Các "cạnh nét liền" là cung của cây <span class="arithmatex">\(DFS\)</span>. Các "cạnh nét đứt" <strong>không phải</strong> là cung của cây <span class="arithmatex">\(DFS\)</span>. Với cung chéo <span class="arithmatex">\(u \rightarrow v\)</span>, đỉnh <span class="arithmatex">\(v\)</span> chắc chắn sẽ được duyệt trước <span class="arithmatex">\(u\)</span>. Vì nếu <span class="arithmatex">\(u\)</span> được duyệt trước <span class="arithmatex">\(v\)</span> thì đỉnh <span class="arithmatex">\(u\)</span> sẽ là <strong>tổ tiên</strong> của đỉnh <span class="arithmatex">\(v\)</span> và cung <span class="arithmatex">\(u \rightarrow v\)</span> sẽ không còn là cung chéo nữa, khi đó ta xét giống như ở trường hợp đầu tiên.
-<img alt="/uploads/topological_sort_img5.png" src="/uploads/topological_sort_img5.png" /></li>
+<img alt="/fptoj_wiki/uploads/topological_sort_img5.png" src="/fptoj_wiki/uploads/topological_sort_img5.png" /></li>
 </ul>
 </li>
 </ul>
@@ -4837,7 +4837,7 @@
 </code></pre></div>
 <p><strong>Mô tả quá trình</strong>
 - Thứ tự Tô-pô <strong>không phải</strong> là duy nhất. Quá trình sau chỉ mô tả lại quá trình xác định <span class="arithmatex">\(1\)</span> thứ tự Tô-pô theo như code mẫu.</p>
-<p><a href="/uploads/topological_sort_gif2.gif">/uploads/topological_sort_gif2.gif</a></p>
+<p><a href="/fptoj_wiki/uploads/topological_sort_gif2.gif">/fptoj_wiki/uploads/topological_sort_gif2.gif</a></p>
 <ul>
 <li>Sau khi xác định được thứ tự Tô-pô của đồ thị là <code>topo = {7; 6; 1; 4; 5; 2; 3}</code>. Ta đánh số lại các đỉnh. Khi đó ta sẽ có mảng <code>ans = {3; 6; 7; 4; 5; 2; 1}</code>.</li>
 </ul>

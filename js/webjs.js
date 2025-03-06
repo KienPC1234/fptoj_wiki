@@ -8,19 +8,20 @@ $(document).ready(function () {
   
 
 $(document).ready(function() {
-    $("details p").each(function() {
-        renderMathInElement(this, {
-          delimiters: [
-            {left: "$$", right: "$$", display: true},
-            {left: "\\begin{align}", right: "\\end{align}", display: true},   // Block math
-            {left: "$", right: "$", display: false},   // Inline math
-            {left: "\\[", right: "\\]", display: true}, // Block math kiểu LaTeX
-            {left: "\\(", right: "\\)", display: false} // Inline math kiểu LaTeX
-          ]
-        });
-    });
-
+  $('a.md-header__button.md-logo').attr('href', 'https://fptoj.com/');
+  $("details p").each(function() {
+      renderMathInElement(this, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "\\begin{align}", right: "\\end{align}", display: true},   // Block math
+          {left: "$", right: "$", display: false},   // Inline math
+          {left: "\\[", right: "\\]", display: true}, // Block math kiểu LaTeX
+          {left: "\\(", right: "\\)", display: false} // Inline math kiểu LaTeX
+        ]
+      });
+  });
 });
+
 $(document).on("toggle", "details", function() {
   $(this).find("p").each(function() {
       console.log("🔄 Mở <details> - Trước khi render:", $(this).html());

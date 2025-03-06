@@ -4597,7 +4597,7 @@
 - <code>find_set(v)</code> - cho biết <strong>đại diện</strong> của tập hợp có chứa phần tử <code>v</code>. Đại diện này sẽ là một phần tử của tập hợp đó và có thể thay đổi sau mỗi lần gọi thao tác <code>union_sets</code>. Ta có thể sử dụng đại diện đó để kiểm tra hai phần tử có nằm trong cùng một tập hợp hay không. <code>a</code> và <code>b</code> nằm trong cùng một tập hợp nếu như đại diện của hai tập chứa chúng là giống nhau và không nằm trong cùng một tập hợp nếu ngược lại.</p>
 <p>Ta có thể xử lí các thao tác một cách hiệu quả này với các tập hợp được biểu diễn dưới dạng các cây, mỗi phần tử là một đỉnh và mỗi cây tương ứng với một tập hợp. Gốc của mỗi cây sẽ là đại diện của tập hợp đó.</p>
 <p>Cấu trúc của cây được thể hiện qua ví dụ sau đây:</p>
-<p><img alt="/uploads/disjoint-set-union_img1.png" src="/uploads/disjoint-set-union_img1.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/disjoint-set-union_img1.png" src="/fptoj_wiki/uploads/disjoint-set-union_img1.png" /></p>
 <p>Ban đầu, mỗi phần tử thuộc một tập hợp riêng biệt, vậy mỗi đỉnh là một cây riêng biệt. Bước tiếp theo, ta gộp hai tập hợp chứa phần tử <span class="arithmatex">\(1\)</span> và <span class="arithmatex">\(2\)</span>. Sau đó, ta gộp hai tập hợp chứa phần tử <span class="arithmatex">\(3\)</span> và <span class="arithmatex">\(4\)</span>. Cuối cùng, ta gộp hai tập hợp chứa phần tử <span class="arithmatex">\(1\)</span> và <span class="arithmatex">\(3\)</span>.</p>
 <p>Với cách cài đặt này, ta sẽ lưu một mảng <code>parent</code> với <code>parent[v]</code> là cha của phần tử <code>v</code>.</p>
 <h2 id="cai-at-ngay-tho">Cài đặt "ngây thơ"</h2>
@@ -4663,7 +4663,7 @@
 <p>Giả dụ ta gọi <code>find_set(v)</code> với một đỉnh <code>v</code> bất kì, chúng ta tìm được <code>p</code> là gốc của cây, đồng thời cũng là giá trị của mọi hàm <code>find_set(u)</code> với <code>u</code> là một đỉnh nằm trên đường đi từ <code>u</code> đến <code>p</code>. Cách tối ưu ở đây chính là làm cho đường đi đến gốc của các đỉnh <code>u</code> ngắn đi bằng cách gán trực tiếp cha của các đỉnh <code>u</code> này thành <code>p</code>.</p>
 <p>Có thể thấy sau khi thực hiện một thao tác như vậy, cấu trúc cả cây có thể thay đổi. Ta có thể thấy điều này trong ví dụ sau đây:</p>
 <p><center>
-<a href="width=700px">/uploads/disjoint-set-union_img2.png</a>
+<a href="width=700px">/fptoj_wiki/uploads/disjoint-set-union_img2.png</a>
 </center></p>
 <p>Bên trái là cây ban đầu và bên phải là cây bị nén sau khi ta sử dụng thao tác <code>find_set(7)</code>, nén đường đi tới gốc của các đỉnh <span class="arithmatex">\(7, 5, 3, 2\)</span>.</p>
 <p>Thao tác <code>find_set</code> mới này được cài đặt như sau:
@@ -4756,12 +4756,12 @@
 <p>Với mỗi vị trí, ta sẽ có một con trỏ. Nếu người đứng ở vị trị này vẫn đang đứng trong hàng, con trỏ trỏ vào vị trị đó, nếu không thì con trỏ này sẽ trỏ vào vị trí ngay bên phải.</p>
 <p>Xét ví dụ sau với <span class="arithmatex">\(n = 5\)</span>, ban đầu ta có:</p>
 <p><center>
-<a href="width=600px">/uploads/disjoint-set-union_img3.png</a>
+<a href="width=600px">/fptoj_wiki/uploads/disjoint-set-union_img3.png</a>
 </center>
 <br></p>
 <p>Giả dụ người đứng ở vị trí <span class="arithmatex">\(2\)</span> và <span class="arithmatex">\(3\)</span> rời khỏi hàng:</p>
 <p><center>
-<a href="width=600px">/uploads/disjoint-set-union_img4.png</a>
+<a href="width=600px">/fptoj_wiki/uploads/disjoint-set-union_img4.png</a>
 </center>
 <br></p>
 <p>Dễ thấy để tìm người gần nhất bên phải mà chưa rời khỏi hàng, ta đi dần dần sang phải cho đến khi gặp một vị trí có con trỏ trỏ đến chính nó.</p>
@@ -5044,12 +5044,12 @@
 </code></pre></div>
 <p>Với cây con gốc <span class="arithmatex">\(u\)</span> đang xét, ta sẽ dfs xuống giải bài toán với đỉnh <span class="arithmatex">\(v\)</span> là con trực tiếp của đỉnh <span class="arithmatex">\(u\)</span>. Nếu giải như bài toán colquery, ở mỗi đỉnh ta sẽ lưu một cấu trúc dữ liệu map để lưu số lượng từng màu trong cây con đó. Sau đó ta sẽ gộp chúng lại để có được map chứa số lượng từng màu trong cây con gốc <span class="arithmatex">\(u\)</span> (Gộp các map của cây con không phải cây con lớn nhất vào map của cây con lớn nhất).</p>
 <p><center>
-<a href="width=400px">/uploads/disjoint-set-union_img17.png</a>
+<a href="width=400px">/fptoj_wiki/uploads/disjoint-set-union_img17.png</a>
 </center>
 <br></p>
 <p>Tuy nhiên, sự tối ưu của kỹ thuật này chính là ta có thể đảo thứ tự dfs và trả lời các truy vấn offline.</p>
 <p><center>
-<a href="width=800px">/uploads/disjoint-set-union_img16.png</a>
+<a href="width=800px">/fptoj_wiki/uploads/disjoint-set-union_img16.png</a>
 </center>
 <br></p>
 <p>Ta sẽ sử dụng duy nhất một mảng để đếm số lượng từng màu trong một cây con. Bằng cách nào đó, đến cuối hàm dfs của cây con gốc <span class="arithmatex">\(u\)</span>, ta có sẽ có mảng <span class="arithmatex">\(cnt\)</span> với <span class="arithmatex">\(cnt[c]\)</span> là số lượng đỉnh có màu <span class="arithmatex">\(c\)</span> trong cây con gốc <span class="arithmatex">\(u\)</span>.</p>
@@ -5066,39 +5066,39 @@
 <tbody>
 <tr>
 <td>dfs xuống cây con <span class="arithmatex">\(v_1\)</span>, lúc này trong mảng <span class="arithmatex">\(cnt\)</span> chứa các màu trong cây con này</td>
-<td><img alt="/uploads/disjoint-set-union_img5.png" src="/uploads/disjoint-set-union_img5.png" /></td>
+<td><img alt="/fptoj_wiki/uploads/disjoint-set-union_img5.png" src="/fptoj_wiki/uploads/disjoint-set-union_img5.png" /></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(v_1\)</span> không phải <code>bigChild</code>,  do đó ta xóa các màu trong cây con này ra khỏi mảng <span class="arithmatex">\(cnt\)</span></td>
-<td><img alt="/uploads/disjoint-set-union_img6.png" src="/uploads/disjoint-set-union_img6.png" /></td>
+<td><img alt="/fptoj_wiki/uploads/disjoint-set-union_img6.png" src="/fptoj_wiki/uploads/disjoint-set-union_img6.png" /></td>
 </tr>
 <tr>
 <td>dfs xuống cây con <span class="arithmatex">\(v_3\)</span>, lúc này trong mảng <span class="arithmatex">\(cnt\)</span> chứa các màu trong cây con này</td>
-<td><img alt="/uploads/disjoint-set-union_img7.png" src="/uploads/disjoint-set-union_img7.png" /></td>
+<td><img alt="/fptoj_wiki/uploads/disjoint-set-union_img7.png" src="/fptoj_wiki/uploads/disjoint-set-union_img7.png" /></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(v_3\)</span> không phải <code>bigChild</code>,  do đó ta xóa các màu trong cây con này ra khỏi mảng <span class="arithmatex">\(cnt\)</span></td>
-<td><img alt="/uploads/disjoint-set-union_img8.png" src="/uploads/disjoint-set-union_img8.png" /></td>
+<td><img alt="/fptoj_wiki/uploads/disjoint-set-union_img8.png" src="/fptoj_wiki/uploads/disjoint-set-union_img8.png" /></td>
 </tr>
 <tr>
 <td>dfs xuống cây con <span class="arithmatex">\(v_2\)</span>, lúc này trong mảng <span class="arithmatex">\(cnt\)</span> chứa các màu trong cây con này</td>
-<td><img alt="/uploads/disjoint-set-union_img9.png" src="/uploads/disjoint-set-union_img9.png" /></td>
+<td><img alt="/fptoj_wiki/uploads/disjoint-set-union_img9.png" src="/fptoj_wiki/uploads/disjoint-set-union_img9.png" /></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(v_2\)</span> là <code>bigChild</code>,  do đó ta giữ nguyên các màu trong cây con này trong mảng <span class="arithmatex">\(cnt\)</span></td>
-<td><img alt="/uploads/disjoint-set-union_img10.png" src="/uploads/disjoint-set-union_img10.png" /></td>
+<td><img alt="/fptoj_wiki/uploads/disjoint-set-union_img10.png" src="/fptoj_wiki/uploads/disjoint-set-union_img10.png" /></td>
 </tr>
 <tr>
 <td>Thêm các màu trong cây con <span class="arithmatex">\(v_1\)</span> vào mảng <span class="arithmatex">\(cnt\)</span></td>
-<td><img alt="/uploads/disjoint-set-union_img11.png" src="/uploads/disjoint-set-union_img11.png" /></td>
+<td><img alt="/fptoj_wiki/uploads/disjoint-set-union_img11.png" src="/fptoj_wiki/uploads/disjoint-set-union_img11.png" /></td>
 </tr>
 <tr>
 <td>Thêm các màu trong cây con <span class="arithmatex">\(v_3\)</span> vào mảng <span class="arithmatex">\(cnt\)</span></td>
-<td><img alt="/uploads/disjoint-set-union_img12.png" src="/uploads/disjoint-set-union_img12.png" /></td>
+<td><img alt="/fptoj_wiki/uploads/disjoint-set-union_img12.png" src="/fptoj_wiki/uploads/disjoint-set-union_img12.png" /></td>
 </tr>
 <tr>
 <td>Thêm đỉnh <span class="arithmatex">\(u\)</span> vào mảng <span class="arithmatex">\(cnt\)</span></td>
-<td><img alt="/uploads/disjoint-set-union_img13.png" src="/uploads/disjoint-set-union_img13.png" /></td>
+<td><img alt="/fptoj_wiki/uploads/disjoint-set-union_img13.png" src="/fptoj_wiki/uploads/disjoint-set-union_img13.png" /></td>
 </tr>
 </tbody>
 </table>

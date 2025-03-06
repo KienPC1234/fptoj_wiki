@@ -4584,12 +4584,12 @@
 <ul>
 <li>Phần đầu tăng chặt, đạt đến giá trị lớn nhất, sau đó giảm chặt. (concave)</li>
 </ul>
-<p><img src="http://vnoi.info/wiki/uploads/ternary_search_concave_func.png" width="200px" height="200px" /></p>
+<p><img src="http://vnoi.info/wiki/fptoj_wiki/uploads/ternary_search_concave_func.png" width="200px" height="200px" /></p>
 <p>Một hàm số thoả mãn tính chất này nếu tất cả các đoạn thẳng nối 2 điểm của đồ thị hàm số, nằm "bên dưới" của đồ thị.</p>
 <ul>
 <li>Phần đầu giảm chặt, đạt đến giá trị nhỏ nhất, sau đó tăng chặt. (convex)</li>
 </ul>
-<p><img src="http://vnoi.info/wiki/uploads/ternary_search_convex_func.png" width="200px" height="200px" /></p>
+<p><img src="http://vnoi.info/wiki/fptoj_wiki/uploads/ternary_search_convex_func.png" width="200px" height="200px" /></p>
 <p>Một hàm số thoả mãn tính chất này nếu tất cả các đoạn thẳng nối 2 điểm của đồ thị hàm số, đều nằm "bên trên" của đồ thị.</p>
 <p>Trong bài viết này chúng tôi sẽ giải quyết trường hợp 1, trường hợp 2 sẽ làm tương tự nhưng ngược lại. </p>
 <h1 id="bai-toan">Bài toán</h1>
@@ -4599,15 +4599,15 @@
 <ul>
 <li><span class="arithmatex">\([l, m_1]\)</span>. Khi đó, ta biết chắc chắn <span class="arithmatex">\(F(m_1) &gt; F(m_2)\)</span>.</li>
 </ul>
-<p><img alt="/uploads/ternary_search_case_1.png" src="/uploads/ternary_search_case_1.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/ternary_search_case_1.png" src="/fptoj_wiki/uploads/ternary_search_case_1.png" /></p>
 <ul>
 <li><span class="arithmatex">\([m_1, m_2]\)</span>. Ta không thể rút ra kết luận gì về <span class="arithmatex">\(F(m_1)\)</span> và <span class="arithmatex">\(F(m_2)\)</span>.</li>
 </ul>
-<p><img alt="/uploads/ternary_search_case_2.png" src="/uploads/ternary_search_case_2.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/ternary_search_case_2.png" src="/fptoj_wiki/uploads/ternary_search_case_2.png" /></p>
 <ul>
 <li><span class="arithmatex">\([m_2, R]\)</span>. Tương tự trường hợp đầu, ta biết chắc chắn <span class="arithmatex">\(F(m_1) &lt; F(m_2)\)</span>.</li>
 </ul>
-<p><img alt="/uploads/ternary_search_case_3.png" src="/uploads/ternary_search_case_3.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/ternary_search_case_3.png" src="/fptoj_wiki/uploads/ternary_search_case_3.png" /></p>
 <p>Ngược lại, bằng việc so sánh <span class="arithmatex">\(F(m_1)\)</span> và <span class="arithmatex">\(F(m_2)\)</span>, ta có thể rút ra kết luận như sau:</p>
 <ul>
 <li>Nếu <span class="arithmatex">\(F(m_1) &lt; F(m_2)\)</span>: Ta biết chắc chắn H nằm trong <span class="arithmatex">\([m_1, r]\)</span>.</li>

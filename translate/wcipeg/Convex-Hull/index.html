@@ -4586,7 +4586,7 @@
 <h1 id="gioi-thieu">Giới thiệu</h1>
 <p>Trong <strong>hình học tính toán (computational geometry)</strong>, <strong>bao lồi (convex hull)</strong> của một tập điểm là tập lồi (convex set) <strong>nhỏ nhất</strong> (theo diện tích, thể tích, ...) mà tất cả các điểm đều nằm trong tập đó.</p>
 <p>Theo một cách trực quan, nếu ta coi những điểm trong một tập hợp là những cái đinh đóng trên một tấm gỗ, bao lồi của tập điểm đó có viền ngoài tạo bởi sợi dây chun mắc vào những cái đinh sau khi bị kéo căng về các phía.</p>
-<p><img alt="/uploads/algo_geometry_convex_hull_nail.png" src="/uploads/algo_geometry_convex_hull_nail.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/algo_geometry_convex_hull_nail.png" src="/fptoj_wiki/uploads/algo_geometry_convex_hull_nail.png" /></p>
 <h1 id="cac-thuat-toan-tim-bao-loi-tren-mat-phang">Các thuật toán tìm bao lồi trên mặt phẳng</h1>
 <p>Bài toán tìm bao lồi của một tập điểm trên mặt phẳng là một trong những bài toán được nghiên cứu nhiều nhất trong hình học tính toán và có rất nhiều thuật toán để giải bài toán này. Sau đây là ba thuật toán phổ biến nhất, được giới thiệu theo thứ tự tăng dần về độ khó.</p>
 <p><strong>Chú ý 1:</strong> Bạn đọc nên xem qua <a href="algo/geometry/basic-geometry-1">Hình học tính toán phần 1</a> và <a href="algo/geometry/basic-geometry-2">Hình học tính toán phần 2</a> trước khi tiếp tục để biết về các khái niệm cơ bản.</p>
@@ -4596,7 +4596,7 @@
 <table>
 <thead>
 <tr>
-<th><img alt="/uploads/algo_geometry_convex_hull_gift_wrapping_algorithm.png" src="/uploads/algo_geometry_convex_hull_gift_wrapping_algorithm.png" /></th>
+<th><img alt="/fptoj_wiki/uploads/algo_geometry_convex_hull_gift_wrapping_algorithm.png" src="/fptoj_wiki/uploads/algo_geometry_convex_hull_gift_wrapping_algorithm.png" /></th>
 </tr>
 </thead>
 <tbody>
@@ -4737,7 +4737,7 @@
 <table>
 <thead>
 <tr>
-<th><a href="/uploads/algo_geometry_convex_hull_graham_scan.gif">/uploads/algo_geometry_convex_hull_graham_scan.gif</a></th>
+<th><a href="/fptoj_wiki/uploads/algo_geometry_convex_hull_graham_scan.gif">/fptoj_wiki/uploads/algo_geometry_convex_hull_graham_scan.gif</a></th>
 </tr>
 </thead>
 <tbody>
@@ -4804,7 +4804,7 @@
 <table>
 <thead>
 <tr>
-<th><img alt="/uploads/algo_geometry_convex_hull_UpperAndLowerConvexHulls.png" src="/uploads/algo_geometry_convex_hull_UpperAndLowerConvexHulls.png" /></th>
+<th><img alt="/fptoj_wiki/uploads/algo_geometry_convex_hull_UpperAndLowerConvexHulls.png" src="/fptoj_wiki/uploads/algo_geometry_convex_hull_UpperAndLowerConvexHulls.png" /></th>
 </tr>
 </thead>
 <tbody>
@@ -4826,7 +4826,7 @@
 <table>
 <thead>
 <tr>
-<th><a href="/uploads/algo_geometry_convex_hull_monotone_algorithm.gif">/uploads/algo_geometry_convex_hull_monotone_algorithm.gif</a></th>
+<th><a href="/fptoj_wiki/uploads/algo_geometry_convex_hull_monotone_algorithm.gif">/fptoj_wiki/uploads/algo_geometry_convex_hull_monotone_algorithm.gif</a></th>
 </tr>
 </thead>
 <tbody>
@@ -4914,7 +4914,7 @@
       - Thuật toán Graham và thuật toán chuỗi đơn điệu: Đổi CCW thành CW và ngược lại.
 - Diện tích bao lồi bằng <span class="arithmatex">\(0\)</span>. Có hai trường hợp như vậy: tất cả các điểm đều trùng nhau, hoặc tất cả điểm đều thẳng hàng.</p>
 <h1 id="bao-loi-3d">Bao lồi 3D</h1>
-<p><a href="/uploads/algo_geometry_convex_hull_3d.gif">/uploads/algo_geometry_convex_hull_3d.gif</a></p>
+<p><a href="/fptoj_wiki/uploads/algo_geometry_convex_hull_3d.gif">/fptoj_wiki/uploads/algo_geometry_convex_hull_3d.gif</a></p>
 <p>Tìm bao lồi trong 3D thực sự là một bài toán khó. Bài toán này chắc chắn sẽ không bao giờ được ra trong IOI, và học sinh trung học không cần phải đi sâu vào vấn đề này. Tuy nhiên, có một thuật toán <span class="arithmatex">\(\mathcal{O}(n^2)\)</span>  khá là đơn giản:
 - Đầu tiên, ta tìm hình chiếu của các điểm trên mặt phẳng <span class="arithmatex">\(Oxy\)</span>, và tìm một cạnh chắc chắn thuộc bao bằng cách lấy một điểm có tung độ lớn nhất rồi tìm điểm kia bằng cách chạy vòng lặp của thuật toán bọc gói một lần. Đây là phần đầu tiên của bao lồi.
 - Sau đó, xét cạnh vừa tìm được, tìm một điểm thứ ba để tạo thành một mặt tam giác của bao lồi. Ta chọn điểm thứ ba bằng cách tìm điểm để tất cả các điểm khác nằm ở phía bên phải của mặt tam giác đó (giống như thuật toán bọc gói, ta tìm cạnh để tất cả các điểm khác đều nằm về phía bên phải cạnh đó).
@@ -4934,12 +4934,12 @@ Mở rộng, các loại cocktail có thể pha chế từ <span class="arithmat
 <p>Để kiểm tra nhanh một điểm có nằm trong bao lồi hay không trong <span class="arithmatex">\(\mathcal{O}(\log{n})\)</span>, ta thực hiện như sau:
 - Gọi tập bao lồi là <span class="arithmatex">\(H\)</span>, giả sử tập <span class="arithmatex">\(H\)</span> được liệt kê theo chiều kim đồng hồ.
 - Đầu tiên, ta kiểm tra <span class="arithmatex">\((H_0, H_1, P)\)</span> có ngược chiều kim đồng hồ hay không (<span class="arithmatex">\(P\)</span> thoả thuộc vùng màu xanh).
-    <img alt="/uploads/algo_geometry_convex_hull_kmix1.png" src="/uploads/algo_geometry_convex_hull_kmix1.png" />
+    <img alt="/fptoj_wiki/uploads/algo_geometry_convex_hull_kmix1.png" src="/fptoj_wiki/uploads/algo_geometry_convex_hull_kmix1.png" />
 - Tiếp theo, ta kiểm tra <span class="arithmatex">\((H_{n-1}, H_0, P)\)</span> có ngược chiều kim đồng hồ hay không (<span class="arithmatex">\(P\)</span> thoả thuộc vùng màu cam).
-    <img alt="/uploads/algo_geometry_convex_hull_kmix2.png" src="/uploads/algo_geometry_convex_hull_kmix2.png" />
+    <img alt="/fptoj_wiki/uploads/algo_geometry_convex_hull_kmix2.png" src="/fptoj_wiki/uploads/algo_geometry_convex_hull_kmix2.png" />
 - Bây giờ, ta chặt nhị phân để tìm <strong>tia</strong> <span class="arithmatex">\(\overrightarrow{H_0H_x}\)</span> thoả mãn <span class="arithmatex">\(\overrightarrow{H_0H_x}\)</span> là tia gần điểm <span class="arithmatex">\(P\)</span> nhất ở phía <strong>bên phải</strong> bằng cách kiểm tra <span class="arithmatex">\(CCW(H_0,H_x,P)\)</span> (chi tiết xem ở phần cài đặt).
 - Sau khi có <span class="arithmatex">\(x\)</span> (ví dụ <span class="arithmatex">\(x=4\)</span>), ta biết được rằng <span class="arithmatex">\(P\)</span> thuộc vùng tạo bởi <span class="arithmatex">\(2\)</span> tia <span class="arithmatex">\(\overrightarrow{H_0H_{x-1}}\)</span> và <span class="arithmatex">\(\overrightarrow{H_0H_x}\)</span> (vùng màu tím).
-    <img alt="/uploads/algo_geometry_convex_hull_kmix3.png" src="/uploads/algo_geometry_convex_hull_kmix3.png" />
+    <img alt="/fptoj_wiki/uploads/algo_geometry_convex_hull_kmix3.png" src="/fptoj_wiki/uploads/algo_geometry_convex_hull_kmix3.png" />
 - Đến đây, ta kiểm tra <span class="arithmatex">\((H_{x-1}, H_x, P)\)</span> có cùng chiều kim đồng hồ hay không (tức <span class="arithmatex">\(P\)</span> có thuộc tam giác <span class="arithmatex">\((H_0,H_{x-1},H_x)\)</span> hay không).</p>
 <h3 id="cai-at_3">Cài đặt</h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>

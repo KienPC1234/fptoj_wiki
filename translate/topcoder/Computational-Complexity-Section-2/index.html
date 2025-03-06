@@ -4699,7 +4699,7 @@ Từ (1) ta có:</p>
 \]</div>
 <p>với một hằng số <span class="arithmatex">\(c\)</span> nào đó. Ta sẽ chứng minh rằng tồn tại một hằng số <span class="arithmatex">\(d\)</span> đủ lớn nào đó mà với mọi <span class="arithmatex">\(N\)</span> lớn ta có <span class="arithmatex">\(f (N) \leq dN lg N\)</span>. Ta sẽ chứng minh bằng quy nạp.</p>
 <p>Giả sử <span class="arithmatex">\(f (N/2) \leq d (N/2)lg(N/2)\)</span>. Ta có:</p>
-<p><img alt="/uploads/topcoder_translate_new57.png" src="/uploads/topcoder_translate_new57.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/topcoder_translate_new57.png" src="/fptoj_wiki/uploads/topcoder_translate_new57.png" /></p>
 <p>Nói cách khác, phép quy nạp sẽ đúng nếu <span class="arithmatex">\(d&gt;c\)</span>. Ta luôn luôn có thể chọn <span class="arithmatex">\(d\)</span> lớn thỏa mãn điều kiện này.</p>
 <p>Để hoàn thiện ta cần chứng minh rằng bất đẳng thức trên đúng với một vài giá trị đầu tiên của <span class="arithmatex">\(N\)</span>. Phép chứng minh khá phức tạp. Ý tưởng chính là nếu giá trị <span class="arithmatex">\(d\)</span> ta tìm được chưa đủ lớn, ta luôn có thể tăng <span class="arithmatex">\(d\)</span> sao cho các trường hợp đầu tiên của <span class="arithmatex">\(N\)</span> thỏa mãn bất đẳng thức.</p>
 <p>Lưu ý rằng trong ví dụ trên ta không thể chứng minh khi <span class="arithmatex">\(N = 1\)</span> với vì <span class="arithmatex">\(lg1 = 0\)</span>. Tuy nhiên, điều này không ảnh hưởng tới tính đúng đắn của phép chứng minh trên. Kết luận: từ (1) ta có  <span class="arithmatex">\(f (N) = O(N lg N)\)</span>.</p>
@@ -4710,12 +4710,12 @@ Từ (1) ta có:</p>
 <p>Tương tự như các phần trên, ta chỉ quan tâm tới cận trên tiệm cận. Để tìm giá trị này ta có thể "làm tròn" mỗi nhãn để việc tính tổng dễ dàng hơn. Ta minh họa cách làm trên bằng một vài ví dụ sau:</p>
 <h2 id="vi-du-4">Ví dụ 4</h2>
 <p>Cây đệ quy cho thuật toán <em>MergeSort</em> ở Ví dụ 3 với 5 phần tử.
-<img alt="/uploads/topcoder_translate_tree1.png" src="/uploads/topcoder_translate_tree1.png" /></p>
+<img alt="/fptoj_wiki/uploads/topcoder_translate_tree1.png" src="/fptoj_wiki/uploads/topcoder_translate_tree1.png" /></p>
 <p>Cây đệ quy cho công thức truy hồi tương ứng của <em>MergeSort</em>. Số trong mỗi đỉnh biểu thị số bước mà thuật toán thực thi tại đỉnh đó.</p>
-<p><img alt="/uploads/topcoder_translate_tree2.png" src="/uploads/topcoder_translate_tree2.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/topcoder_translate_tree2.png" src="/fptoj_wiki/uploads/topcoder_translate_tree2.png" /></p>
 <h2 id="vi-du-5">Ví dụ 5</h2>
 <p>Cây đệ quy trong trường hợp xấu nhất của phương trình (1):</p>
-<p><img alt="/uploads/topcoder_translate_tree3.png" src="/uploads/topcoder_translate_tree3.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/topcoder_translate_tree3.png" src="/fptoj_wiki/uploads/topcoder_translate_tree3.png" /></p>
 <p>Một cách xử lý phổ biến trong toán tổ hợp là tính tổng các cấu hình theo thứ tự mới khác với thứ tự mà các tổ hợp được tạo ra. Trong trường hợp này ta tính tổng theo từng mức trên cây (các đỉnh có cùng độ sâu). Không khó để nhận ra rằng tổng độ phức tạp ở mỗi mức là <span class="arithmatex">\(cN\)</span>.</p>
 <p>Câu hỏi thứ hai là: cây trên có bao nhiêu mức? Rõ ràng là lớp lá tương ứng với trường hợp cơ bản của thuật toán. Chú ý là kích cỡ mảng cần xử lý giảm một nửa khi đi từ mức trên xuống mức dưới. Vì sau <span class="arithmatex">\(lgN\)</span> bước ta có bài toán cơ bản với mảng có <span class="arithmatex">\(1\)</span> phần tử, chiều cao của cây (tổng số mức) sẽ là <span class="arithmatex">\(\Theta(logN)\)</span>.</p>
 <p>Từ hai nhận xét trên ta thu được kết quả cuối cùng: tổng độ phức tạp cần thực hiện là
@@ -4730,7 +4730,7 @@ $$
 f(N) = 3f(N/2) + \Theta(N^3)
 $$</p>
 <p>Cây đệ quy sẽ có dạng sau:</p>
-<p><img alt="/uploads/topcoder_translate_tree5.png" src="/uploads/topcoder_translate_tree5.png" /></p>
+<p><img alt="/fptoj_wiki/uploads/topcoder_translate_tree5.png" src="/fptoj_wiki/uploads/topcoder_translate_tree5.png" /></p>
 <p>Thử tính toán độ phức tạp tại vài mức đầu tiên, ta có:</p>
 <table>
 <tbody>
@@ -4765,7 +4765,7 @@ $$
 f(N) = 5f(N/3) + \Theta(N)
 $$
 Cây đệ quy sẽ có dạng sau
-<img alt="/uploads/topcoder_translate_tree4.png" src="/uploads/topcoder_translate_tree4.png" /></p>
+<img alt="/fptoj_wiki/uploads/topcoder_translate_tree4.png" src="/fptoj_wiki/uploads/topcoder_translate_tree4.png" /></p>
 <p>Như trên, thử tính số lệnh cần thực thi ở vài mức đầu tiên. Ta có:</p>
 <table>
 <tbody>
