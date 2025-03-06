@@ -1,5 +1,5 @@
 site_name: FPTOJ WIKI
-  
+site_url: https://github.com/KienPC1234/fptoj_wiki
 theme:
   name: material
   logo: uploads/icon.svg
