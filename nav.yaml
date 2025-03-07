@@ -1,7 +1,8 @@
 nav:
-  - Trang chủ: index.md
-  - Giới thiệu: about.md
-  - Test Markdown: markdown.md
+  - Trang chủ: 
+      - Home: index.md
+      - Giới thiệu: about.md
+      - Test Markdown: markdown.md
   - Thuật Toán:
       - Cơ Bản:
         - Đệ quy và Thuật toán quay lui: algo/basic/backtracking.md

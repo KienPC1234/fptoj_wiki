@@ -24,7 +24,7 @@ Tuy nhiên, một nhà toán học cổ Hy Lạp tên là Eratosthenes đã "ph�
 - Sau khi duyệt xong, các số còn lại trong sàng, hay nói cách khác các số được đánh dấu là số nguyên tố.
 
 Dưới đây là hình minh họa cho thuật toán trên. *Nguồn: [CP-Algorithm](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html)*
-![](https://hackmd.io/_uploads/HJup_OQSn.png)
+![img](../../uploads/HJup_OQSn.png)
 
 ### Code C++ minh họa
 ```cpp
@@ -90,7 +90,7 @@ void Eratosthenes(int n){
 
 Dưới đây là hình minh họa cho cải tiến trên. *Nguồn: [Wikipedia](https://vi.wikipedia.org/wiki/S%C3%A0ng_Eratosthenes)*
 
-![](https://hackmd.io/_uploads/SkCOvuXSn.gif)
+![img](../../uploads/SkCOvuXSn.gif)
 
 ---
 
@@ -552,19 +552,19 @@ Chú ý rằng ta phải chọn $S$ sao cho cân bằng giữa độ phức tạ
 
 **Wheel Factorization** là phương pháp cải tiến có thể loại bỏ đi rất nhiều trường hợp trước khi sàng nguyên tố. Thay vì chỉ xét các số lẻ, ta có thể loại bỏ các số là bội của $2, 3, 5, 7, \ldots$ Việc này có thể giúp chúng ta giảm đi ĐPT cả thời gian lẫn không gian đi một chút.
 
-![](https://hackmd.io/_uploads/HJWWXh4Sn.png)
+![img](../../uploads/HJWWXh4Sn.png)
 
 Ví dụ khi chọn $n = 2\cdot 3 = 6$ sẽ chỉ loại đi các số là bội của $2$ hoặc $3$.
 Bản chất của bánh xe khi này là chỉ giữ lại các số $2, 3$ và các số có dạng $6k+1$ hoặc $6k+5$.
 
-![](https://hackmd.io/_uploads/r1w8o3OHn.png)
+![img](../../uploads/r1w8o3OHn.png)
 
 Hoặc ví dụ khi chọn loại bỏ các bội của $2$ hoặc $3$ hoặc $5$, ta chọn $n = 2 \cdot 3 \cdot 5 = 30$
 Bản chất là ta chỉ giữ lại các số $2, 3, 5$ và các số có dạng $30k+i$ với $i <30$ và $i$ không chia hết cho $2,3,5$. 
 $\left(i \in \{1, 7, 11, 13, 17, 19, 23, 29 \}\right)$
 Trong trường hợp này, ta chỉ cần sử dụng mảng kiểm tra nguyên tố `is_prime` cho các số có dạng trên.
 Lý do người ta dùng bánh xe thì bạn đọc có thể xem ảnh dưới đây. *Nguồn: [Wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Pritchard#Overview)*
-![](https://hackmd.io/_uploads/SJX9g8nr2.gif)
+![img](../../uploads/SJX9g8nr2.gif)
 
 #### Code C++ minh họa
 
@@ -861,7 +861,7 @@ void sieve()
 
 So sánh *độ dài code* và *thời gian chạy* với $n = 10^9$ của một số sàng nguyên tố (*Nguồn: [Code cùng RR](https://www.facebook.com/photo/?fbid=483129447247239&set=pcb.483147020578815)*)
 
-![](https://hackmd.io/_uploads/HJNmI2Br3.png)
+![img](../../uploads/HJNmI2Br3.png)
 
 
 ## Một số sàng nguyên tố khác

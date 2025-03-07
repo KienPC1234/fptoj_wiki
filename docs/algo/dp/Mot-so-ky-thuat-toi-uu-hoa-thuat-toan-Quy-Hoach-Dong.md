@@ -314,7 +314,7 @@ Gọi:
 
 - $sumW_i$ là tổng của các $w_j$ với $i \le j$.
 - $sumD_i$ là tổng của các $d_j$ với $i \le j$.
-- $sumWS_i$ là tổng của các $w_j \* sumD_j$ với $i \le j$.
+- $sumWS_i$ là tổng của các $w_j * sumD_j$ với $i \le j$.
 
 Khi đó $cost(L, R)$ là chi phí vận chuyển các cây có chỉ số trong đoạn $[L,R]$ đến nhà máy đặt ở $R$ là: $sumWS_L - sumWS_R - sumD_R * (sumW_L - sumW_R)$.
 

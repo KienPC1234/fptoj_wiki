@@ -6,7 +6,6 @@ $(document).ready(function () {
   $("head").append(`<link rel="icon" type="image/svg+xml" href="${favicon}">`);
 });
   
-
 $(document).ready(function() {
   $('a.md-header__button.md-logo').attr('href', 'https://fptoj.com/');
   $("details p").each(function() {

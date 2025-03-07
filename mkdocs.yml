@@ -2,6 +2,20 @@ site_name: FPTOJ WIKI
 site_url: https://wiki.fptoj.com
 theme:
   name: material
+  features:
+    - navigation.footer        
+    - navigation.tabs          
+    - navigation.tabs.sticky   
+    - navigation.tracking     
+    - toc.integrate 
+    - toc.sticky          
+    - search.suggest         
+    - search.highlight          
+    - content.code.copy         
+    - content.code.annotate   
+    - content.tabs.link        
+    - header.autohide         
+
   logo: uploads/icon.svg
   palette:
     - scheme: default  
@@ -17,10 +31,12 @@ theme:
         icon: material/weather-night
         name: Chuyển sang chế độ sáng
 
+
 nav:
-  - Trang chủ: index.md
-  - Giới thiệu: about.md
-  - Test Markdown: markdown.md
+  - Trang chủ: 
+      - Home: index.md
+      - Giới thiệu: about.md
+      - Test Markdown: markdown.md
   - Thuật Toán:
       - Cơ Bản:
         - Đệ quy và Thuật toán quay lui: algo/basic/backtracking.md
@@ -190,15 +206,24 @@ nav:
 
 
 markdown_extensions:
-  - toc
+  - admonition
+  - toc:
+      permalink: true
   - pymdownx.superfences
-  - pymdownx.details
-  - pymdownx.extra  # Hỗ trợ [[TOC]]
-  - pymdownx.magiclink  # Tự động chuyển đổi link
+  - pymdownx.details     
+  - pymdownx.extra 
+  - pymdownx.magiclink 
   - pymdownx.pathconverter:
       base_path: "docs"
   - pymdownx.arithmatex:
       generic: true
+
+
+extra:
+  generator: false               
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/KienPC1234/fptoj_wiki
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
@@ -207,8 +232,5 @@ extra_javascript:
   - js/jquery-3.7.1.min.js
   - js/webjs.js
   
-
-
-
 extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css

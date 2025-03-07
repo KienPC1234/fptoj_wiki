@@ -15,7 +15,7 @@ Stack là một danh sách được bổ sung 2 thao tác: **thêm một phần 
 Có thể hình dung Stack như một chồng sách. Việc đặt một quyển sách lên trên cùng chính là thao tác thêm phần tử, và lấy ra quyển sách ở trên đầu là thao tác loại bỏ phần tử. Như vậy, quyển sách được đặt vào sau cùng sẽ luôn được lấy ra trước tiên. Vì tính chất này, Stack còn được gọi là danh sách **LIFO** (Last In - First Out, hay vào sau - ra trước).
 
 Hình ảnh minh họa cho Stack chứa các phần tử kiểu `char`:
-![](https://i.imgur.com/hMPdsl6.png)
+![img](../../uploads/hMPdsl6.png)
     
 Stack có khá nhiều ứng dụng trong lập trình thi đấu. Bài viết này sẽ xem xét các ứng dụng điển hình của Stack.
 
@@ -78,7 +78,7 @@ int main()
     return 0;
 }
 ```
-![](https://i.imgur.com/Fm9OL7a.png)
+![img](../../uploads/Fm9OL7a.png)
 
 Ngoài ra, ta có thể dùng `vector` để biểu diễn một Stack. Các hàm `push`, `top` và `pop` sẽ được thay bằng `push_back`, `pop_back` và `back` khi sử dụng `vector`.
 
@@ -233,10 +233,10 @@ int evaluate(string s)
 Xét ví dụ: \\(S = 2 \times 3 - 4 \times 5\\).
 
 Giá trị của \\(val\\) và \\(op\\) sau khi xử lý xâu \\(S\\):
-![](https://i.imgur.com/r2zmJwN.png)
+![img](../../uploads/r2zmJwN.png)
 
 Quá trình xử lý danh sách toán tử \\(op\\):
-![](https://i.imgur.com/UAV9GBN.png)
+![img](../../uploads/UAV9GBN.png)
 
 ### Bài toán 2
 
@@ -250,7 +250,7 @@ Nếu \\(S\\) là dãy ngoặc đúng, với mỗi vị trí trong \\(S\\) bạn
 * Nếu xâu \\(A\\) và \\(B\\) đều là dãy ngoặc đúng thì xâu \\(A + B\\) cũng là dãy ngoặc đúng
 
 Hình ảnh minh họa cho một dãy ngoặc đúng. Các cặp dấu ngoặc tương ứng được tô cùng màu:
-![](https://i.imgur.com/K1Obiw8.png)
+![img](../../uploads/K1Obiw8.png)
 
 #### Nhận xét
 
@@ -360,7 +360,7 @@ Bài toán 2 có thể được mở rộng thêm: dãy có thể có cả ngo�
 
 Minh họa cho quá trình với \\(S = \\) "\\(([\{\}])()\\)":
 
-![](https://i.imgur.com/p3JM7FF.png)
+![img](../../uploads/p3JM7FF.png)
 
 ## Sử dụng Stack để khử đệ quy
 
@@ -417,7 +417,7 @@ Stack đơn điệu là ngăn xếp mà các phần tử của nó xét từ đ�
 
 Hình ảnh minh họa cho một Stack đơn điệu giảm:
 
-![](https://i.imgur.com/bzwD9F1.png)
+![img](../../uploads/bzwD9F1.png)
 
 ### Bài toán
 
@@ -440,7 +440,7 @@ Theo mô hình này, giá trị \\(j\\) gần \\(i\\) nhất \\((j < i)\\) mà \
 
 Hình ảnh minh họa, số ở hàng trên là chiều cao mỗi người, ở hàng dưới là chỉ số người gần nhất ở bên trái cao hơn họ:
 
-![](https://i.imgur.com/KZWZoll.png)
+![img](../../uploads/KZWZoll.png)
 
 Ta có thể cải tiến mô hình bằng việc chỉnh sửa cách thức xếp hàng.
 Khi người thứ \\(i\\) xếp hàng, họ sẽ thực hiện các thao tác sau:
@@ -455,7 +455,7 @@ Như vậy, số mà mỗi người nhớ lại chính là **chỉ số của ng
 
 Giả sử mảng \\(A = [1, 2, 7, 4, 3, 6]\\). Các bước diễn ra như sau:
 
-![](https://i.imgur.com/39cNzvd.png)
+![img](../../uploads/39cNzvd.png)
 
 Dễ thấy chiều cao của người trong hàng luôn tạo thành một dãy đơn điệu.
 
@@ -502,7 +502,7 @@ Ví dụ:
 
 Hình chữ nhật lớn nhất có diện tích \\(10\\)
 
-![](https://i.imgur.com/wm76udO.png)
+![img](../../uploads/wm76udO.png)
 
 ##### Cách giải
 

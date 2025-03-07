@@ -1,10 +1,12 @@
 # Giới thiệu
 
-Thư viện FPTOJ được xây dựng với mục đích chia sẻ kiến thức Tin học đến với tất cả mọi người. Bạn có thể đọc bài giới thiệu của bọn mình [ở đây](about).
+Thư viện **FPTOJ** là một bản fork của [VNOI Wiki](https://wiki.vnoi.info/).
+
+FPTOJ được xây dựng với mục đích chia sẻ kiến thức Tin học đến với tất cả mọi người. Bạn có thể đọc bài giới thiệu của bọn mình [ở đây](about).
 
 Bạn đọc bài viết nhưng không hiểu? Hãy hỏi [ở đây](https://www.facebook.com/groups/163215593699283/).
 
-Ở trang chủ này, các bài viết về thuật toán được đánh dấu về độ khó từ (1\*) đến (5\*) với ý nghĩa:
+Ở trang chủ này, các bài viết về thuật toán được đánh dấu về độ khó từ (1*) đến (5*) với ý nghĩa:
 
 - (⭐): Cơ bản,
 - (⭐⭐): Kiến thức cần biết để thi HSG QG, ACM ICPC,
@@ -12,7 +14,7 @@ Bạn đọc bài viết nhưng không hiểu? Hãy hỏi [ở đây](https://ww
 - (⭐⭐⭐⭐): Kiến thức rất khó,
 - (⭐⭐⭐⭐⭐): Kiến thức rất chuyên sâu về 1 vấn đề nào đó, chỉ áp dụng được với rất ít bài khó.
 
-Hiện tại bọn mình chưa có bài viết về chủ đề Lý thuyết đồ thị, do phần này những quyển sách như sách thầy Lê Minh Hoàng, Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay về Thuật Toán](algo/basic/Tai-Lieu-Thuat-Toan)) đã viết rất chi tiết.
+Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay về Thuật Toán](algo/basic/Tai-Lieu-Thuat-Toan)) đã viết rất chi tiết.
 
 # Thuật toán
 

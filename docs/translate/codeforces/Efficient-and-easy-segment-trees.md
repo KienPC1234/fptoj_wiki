@@ -17,14 +17,14 @@ Cây phân đoạn được sử dụng khi chúng ta có một mảng $A$, th�
 
 Ta cài đặt Segment Tree bằng một cây nhị phân hoàn chỉnh có dạng như sau:
 
-![](http://i.imgur.com/GGBmcEP.png)
+![img](../../uploads/GGBmcEP.png)
 
 Trong hình vẽ trên:
 
 - Ta dùng ký hiệu *Chỉ số nút*: đoạn $[l, r)$ (ký hiệu đoạn chứa biên $l$ và không chứa biên $r$).
 - Tại hàng cuối lưu các phần tử của mảng (đánh số từ 0) là các lá của cây.
 
-Giả sử độ dài của mảng là lũy thừa của 2 (như 16 trong ví dụ) thì ta được cây nhị phân hoàn chỉnh. Khi đi từ dưới lên ta ghép cặp nút có chỉ số $(2\*i,2\*i+1)$ và tổng hợp giá trị của chúng thành giá trị của nút cha có chỉ số $i$. Bằng cách này, khi tính tổng đoạn $\[3,11)$, ta chỉ cần cộng giá trị tại các nút 19,5,12 và 26 (các nút được in đậm) mà không cần phải cộng cả 8 giá trị trong đoạn. Cùng xem qua cách cài đặt (C++) dưới đây:
+Giả sử độ dài của mảng là lũy thừa của 2 (như 16 trong ví dụ) thì ta được cây nhị phân hoàn chỉnh. Khi đi từ dưới lên ta ghép cặp nút có chỉ số $(2 \times i,2 \times i+1)$ và tổng hợp giá trị của chúng thành giá trị của nút cha có chỉ số $i$. Bằng cách này, khi tính tổng đoạn $[3,11)$, ta chỉ cần cộng giá trị tại các nút 19,5,12 và 26 (các nút được in đậm) mà không cần phải cộng cả 8 giá trị trong đoạn. Cùng xem qua cách cài đặt (C++) dưới đây:
 
 ```cpp
 const int N = 1e5;  // giới hạn của mảng
@@ -66,7 +66,7 @@ Cùng tìm hiểu cách chương trình hoạt động một cách rất hiệu 
 
 1. Ta có thể thấy được trong hình, các lá được lưu tại những nút liên tiếp với chỉ số bắt đầu từ $n$, phần tử thứ $i$ tương ứng nút có chỉ số là $i+n$. Do đó chúng ta có thể lưu mảng ban đầu trực tiếp vào cây đúng vị trí của từng phần tử.
 2. Trước khi thực hiện các truy vấn ta cần khởi tạo cây với độ phức tạp là $O(n)$. Vì nút cha luôn có chỉ số nhỏ hơn các con của nó nên ta chỉ cần duyệt qua các nút theo thứ tự giảm dần. Phép biến đổi bit trong *build()* tương ứng với phép tính `t[i] = t[2*i] + t[2*i+1]`. (Trong code trên dùng xử lý bit: `t[i] = t[i<<1] + t[i<<1|1]`).
-3. Thay đổi giá trị của một phần tử cũng khá đơn giản tốn thời gian tỉ lệ với độ cao của cây, độ phức tạp là $O(\log(n))$. Ta chỉ cần cập nhật giá trị tại các nút cha của nút đó. Do đó chỉ cần đi lên cây biết rằng cha của nút $p$ là nút $p/2$ (hay `p>>1`). Phép `p^1` biến đổi $2\*i$ thành $2\*i+1$ hay ngược lại, đó là nút con còn lại của nút $p$.
+3. Thay đổi giá trị của một phần tử cũng khá đơn giản tốn thời gian tỉ lệ với độ cao của cây, độ phức tạp là $O(\log(n))$. Ta chỉ cần cập nhật giá trị tại các nút cha của nút đó. Do đó chỉ cần đi lên cây biết rằng cha của nút $p$ là nút $p/2$ (hay `p>>1`). Phép `p^1` biến đổi $2 \times i$ thành $2 \times i+1$ hay ngược lại, đó là nút con còn lại của nút $p$.
 4. Tính tổng tốn độ phức tạp là $O(log(n))$. Để hiểu rõ hơn tính logic của thuật toán bạn có thể thử với ví dụ đoạn $\[3,11)$ và thấy rằng kết quả là tổng của các nút 19, 26, 12 và 5 (theo thứ tự). Ý tưởng chung là như sau:
   - Nếu $l$ (biên trái của đoạn) là lẻ (`if l&1`) thì $l$ là nút con phải của cha nó, cũng có nghĩa là đoạn cần truy vấn chứa nút $l$ nhưng không chứa cha nó. Do đó ta cộng `t[l]` vào kết quả và nhảy đến nút bên phải của cha nút $l$: $l=(l+1)/2$.
   - Nếu $l$ chẵn, nó là con bên trái của cha nó và đoạn cần truy vẫn cũng chứa cha nó  (trừ khi đoạn bị giới hạn bởi biên phải), nên ta nhảy đến cha của nút $l$: $l=l/2$.
@@ -83,7 +83,7 @@ Chúng ta đã đề cập đến các mảng có kích thước là luỹ thừ
 
 Phần giải thích sẽ phức tạp hơn, trước hết hãy xem qua những ưu điểm của của nó:
 
-1. Cây phân đoạn sử dụng bộ nhớ đúng $2\*n$, không phải $4\*n$ như một số cách cài đặt khác.
+1. Cây phân đoạn sử dụng bộ nhớ đúng $2 \times n$, không phải $4 \times n$ như một số cách cài đặt khác.
 2. Các phần tử của mảng được lưu trên đoạn liên tiếp bắt đầu từ chỉ số $n$.
 3. Tất cả thao tác đều rất đơn giản và hiệu quả.
 
@@ -187,7 +187,7 @@ int h = sizeof(int) * 8 - __builtin_clz(n);
 int d[N];
 ```
 
-$h$ là độ cao của cây và là bit cao nhất trong $n$. `d[i]` là thao tác được lưu lại để truyền cho các nút con của nút $i$ khi cần thiết (xem ví dụ để hiểu rõ hơn, hoặc đọc thêm [Lazy Propagation trong bài viết về Segment Tree](http://vnoi.info/wiki/algo/data-structures/segment-tree-extend#2-lazy-propagation)). Kích thước của mảng là $N$ vì ta không cần lưu thông tin này tại các nút lá (do các nút lá không có con). Do đó ta cần tất cả là $3\*N$ bộ nhớ sử dụng.
+$h$ là độ cao của cây và là bit cao nhất trong $n$. `d[i]` là thao tác được lưu lại để truyền cho các nút con của nút $i$ khi cần thiết (xem ví dụ để hiểu rõ hơn, hoặc đọc thêm [Lazy Propagation trong bài viết về Segment Tree](http://vnoi.info/wiki/algo/data-structures/segment-tree-extend#2-lazy-propagation)). Kích thước của mảng là $N$ vì ta không cần lưu thông tin này tại các nút lá (do các nút lá không có con). Do đó ta cần tất cả là $3 \times N$ bộ nhớ sử dụng.
 
 Ở trên ta nói `t[i]` là giá trị tương ứng với đoạn của nó. Nhưng bây giờ điều này không hoàn toàn đúng:
 

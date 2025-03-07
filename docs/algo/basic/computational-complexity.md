@@ -233,7 +233,7 @@ Bạn đọc có thể thấy rõ với thuật toán sắp xếp *Merge Sort (S
 
 *Minh họa về cách thuật toán Merge Sort hoạt động:*
 
-![](https://i.imgur.com/aqQU9hE.png)
+![img](../../uploads/aqQU9hE.png)
 
 **Phân tích:**
 Gọi $f(n)$ là ĐPT của hàm `MergeSort(S)` với $n = |S|$

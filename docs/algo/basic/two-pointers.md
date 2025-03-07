@@ -206,7 +206,7 @@ $c = [1, 2, 3, 6, 6, 7, 8, 10]$
 * Vì tất cả các phần tử trong dãy $a$ đều đã được đưa vào dãy $c$ nên từ đưa lần lượt các phần tử chưa được chọn trong dãy $b$ vào trong dãy $c$ 
 $c = [1, 2, 3, 6, 6, 7, 8, 10, 12, 14,15]$
 
-![](https://i.imgur.com/ZVXyx2n.gif)
+![img](../../uploads/ZVXyx2n.gif)
 
 
 **Cài đặt**
@@ -363,7 +363,7 @@ $a = [2, 5, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}6}, 8, \und
 
 * Vì $a[i]+a[j]=6+10=x$ nên hai vị trí cần tìm là hai vị trí $i$ và $j$.
 
-![](https://i.imgur.com/4kDvgwj.gif)
+![img](../../uploads/4kDvgwj.gif)
 
 **Ví dụ 2:** $a = [2, 3, 7, 8, 10, 12, 15]$ và $x = 16$.
 
@@ -413,7 +413,7 @@ $a = [2, 3, 7, \overset{\underset{\downarrow}{\color{red}i}}{ \underset{\overset
 
 * Vì $i=j$ nên không tìm được hai vị trí cần tìm.
 
-![](https://i.imgur.com/1KUtV6g.gif)
+![img](../../uploads/1KUtV6g.gif)
 
 **Cài đặt**
 ```cpp
@@ -754,7 +754,7 @@ $a = [2, 6, 5, 3, 6, 8, 9]$ và $s=20$
 
 * $ans = max(ans, r - l + 1)$
 
-![](https://i.imgur.com/S3HQo51.gif)
+![img](../../uploads/S3HQo51.gif)
 
 **Cài đặt**
 
@@ -833,7 +833,7 @@ $${\color{blue}\underbrace{\color{black}x_0,x_1,...,x_{m-1}}_{}},{\color{red}\un
 
 Dãy số có thể biễu diễn như hình sau đây:
 
-![](https://i.imgur.com/0lHu5lA.png)
+![img](../../uploads/0lHu5lA.png)
 
 Bài toán có thể giải quyết nếu chúng ta phần tử bắt đầu chu kỳ ($x_{\mu}$) và độ dài của chu kỳ $\lambda$.
 
@@ -1029,7 +1029,7 @@ Ta có thể tính được giá trị này bằng cách xác định
 
 Giá trị $n = \mu + \lambda = 4 + 8 = 12$.
 
-![](https://i.imgur.com/JwbJOWD.gif)
+![img](../../uploads/JwbJOWD.gif)
 
 **Độ phức tạp**
 
