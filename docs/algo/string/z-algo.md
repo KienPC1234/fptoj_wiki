@@ -1,4 +1,4 @@
-# Z-function
+## Z-function
 **Người viết**: Nguyễn Nhật Minh Khôi - Đại học Khoa học Tự nhiên - ĐHQG-HCM
 
 **Reviewer**:
@@ -11,7 +11,7 @@
 
 
 
-## Định nghĩa
+### Định nghĩa
 Trong blog này, chúng ta sẽ tìm hiểu về hàm $Z$ (Z-function) của một chuỗi $S$ và những ứng dụng của nó.
 
 Cho một chuỗi $S$ độ dài $n$, ký hiệu là $S[0\ldots n - 1]$, ta có hàm $Z$ tương ứng là một mảng $z[0\ldots n - 1]$, với $z[i]$ là độ dài tiền tố chung lớn nhất của chuỗi $S[0 \ldots n - 1]$ và $S[i \ldots n - 1]$.
@@ -31,7 +31,7 @@ Ví dụ hàm $z$ với $S = aaabaab$:
 | 5 | $\color{red}{a}aabaab$   | $\color{red}{a}b$        | $1$           |
 | 6 | $aaabaab$   | $b$         | $0$           |
 
-## Thuật toán ngây thơ
+### Thuật toán ngây thơ
 Thuật toán ngây thơ rất đơn giản, với mọi $i$, ta sẽ tìm $z[i]$ bằng cách vét cạn, bắt đầu với $z[i] = 0$ và tăng $z[i]$ lên cho đến khi gặp kí tự đầu tiên không trùng và lưu ý $i + z[i]$ phải hợp lệ (bé hơn hoặc bằng vị trí cuối chuỗi $n - 1$). Thuật toán được trình bày như sau:
 ```c++
 vector<int> z_function(string s) {
@@ -45,7 +45,7 @@ vector<int> z_function(string s) {
 ```
 Độ phức tạp của thuật toán này là $O(n^2)$, trong phần sau ta sẽ tối ưu thuật toán này về độ phức tạp $O(n)$.
 
-## Thuật toán tối ưu
+### Thuật toán tối ưu
 Để tối ưu thuật toán, ta có một nhận xét: nếu ta đã tính được $z[k]$ (ở đây chỉ xét $z[k] > 0$), ta có thông tin rằng đoạn $S[k \ldots k + z[k] - 1]$ khớp với đoạn $S[0 \ldots z[k] - 1]$. Tận dụng thông tin này, ta có thể rút ngắn quá trình tính các $z[i]$ ở sau ($i > k$). Để ngắn gọn, tạm thời đặt $l = k, r = k + z[k] - 1$. Cụ thể có hai trường hợp:
 - $i \leq r$: vì đoạn $s[l \ldots r]$ giống với đoạn $s[0 \ldots r - l]$, do đó ta không cần duyệt lại đoạn $s[i\ldots r]$ mà chỉ cần lấy lại $z[i - l]$ đã tính trước đó, tuy nhiên $z[i - l]$ có thể lớn hơn $r - i + 1$, tức vượt biên $r$ đã duyệt, do đó ta chỉ lấy khởi tạo của $z[i]$ là:
 $$
@@ -89,8 +89,8 @@ Từ hai nhận xét này, ta thấy một điều quan trọng, đó là **phé
 
 Kĩ thuật hai con trỏ cũng là một cách giải thích khác cho thuật toán này. Ta có thể tưởng tượng $l$ và $r$ là hai con trỏ luôn tăng, việc thực hiện phép `++z[i]` trong vòng lặp `while` cũng tương đương với việc tăng $r$ lên một đơn vị ($l$ lúc này sẽ được gán lại bằng $i$ hiện tại). Khi đó, vì $r$ không bao giờ tăng quá $n - 1$ lần nên phép `++z[i]` cũng không bao giờ thực hiện quá $n - 1$ lần, ta kết luận thuật toán có độ phức tạp $O(n)$.
 
-## Một số ứng dụng
-### So khớp chuỗi
+### Một số ứng dụng
+#### So khớp chuỗi
 Cho chuỗi $S$ độ dài $n$ và $T$ độ dài $m$, ta cần tìm chuỗi con liên tục trong $S$ sao cho chuỗi con đó bằng với chuỗi $T$. Bạn đọc có thể nộp bài ở [VNOJ](https://oj.vnoi.info/problem/substr).
 
 Thuật toán trong trường hợp này rất đơn giản, ta chỉ cần tạo chuỗi mới $P = T + \diamond + S$, khi đó ta chỉ cần tính $z$ của chuỗi $P$ mới này và chọn ra các $i$ có $z[i] = m$. Ở đây, $\diamond$ là một ký tự đặc biệt dùng để phân tách $T$ và $S$ trong chuỗi $P$, đảm bảo $z[i]$ không vượt quá độ dài của $T$, ký tự $\diamond$ này phải thoả điều kiện là không nằm trong cả chuỗi $S$ và chuỗi $T$.
@@ -113,7 +113,7 @@ vector<int> string_matching(string s, string t) {
 }
 ```
 
-### Số lượng chuỗi con phân biệt trong một chuỗi $O(n^2)$
+#### Số lượng chuỗi con phân biệt trong một chuỗi $O(n^2)$
 Cho chuỗi $S$ có độ dài $n$, ta cần tìm số lượng chuỗi con phân biệt của $s$.
 
 Chúng ta sẽ giải quyết bài này một cách tuần tự như sau: biết được số lượng chuỗi con phân biệt của chuỗi $s$ hiện tại là $k$, ta thêm một ký tự $c$ vào, **đếm xem có bao nhiêu chuỗi con phân biệt mới của $s + c$ và cập nhật lại $k$**.
@@ -140,7 +140,7 @@ int num_substr(string s) {
 
 Chú ý rằng thay vì thêm dần dần ký tự vào cuối chuỗi $s$, ta có thể làm điều ngược lại là bỏ dần các ký tự ở đầu chuỗi $s$, độ phức tạp của hai cách làm này là tương đương nhau.
 
-### Period finding
+#### Period finding
 Cho chuỗi $S$ độ dài $n$, ta cần tìm chuỗi $t$ ngắn nhất sao cho ta có thể tạo ra $s$ bằng cách ghép một hoặc nhiều bản sao của chuỗi $t$ lại.
 
 Cách giải bài này là tính hàm $z$ cho $S$, sau đó xét các $i$ mà $n$ chia hết cho $i$ và dừng lại ở $i$ đầu tiên thoả $i + z[i] = n$. Khi đó kết quả của chúng ta là $i$.
@@ -160,7 +160,7 @@ int length_compress(string s) {
 
 Tính đúng đắn của thuật toán đã được chứng minh ở phần *Compressing a string* trong [link này](https://cp-algorithms.com/string/prefix-function.html).
 
-## Bài tập luyện tập
+### Bài tập luyện tập
 - [VNOI Z-function collection](https://oj.vnoi.info/tags/?tag_id=z_func)
 
 <!-- - [UVA # 455 "Periodic Strings" [Difficulty: Medium]](https://onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=396)

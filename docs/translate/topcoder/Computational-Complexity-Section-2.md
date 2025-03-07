@@ -1,4 +1,4 @@
-# Độ phức tạp tính toán - phần 2
+## Độ phức tạp tính toán - phần 2
 
 
 
@@ -6,12 +6,12 @@ Nguồn bài: [Topcoder](https://www.topcoder.com/community/data-science/data-sc
 
 [...đọc phần 1](http://vnoi.info/translate/topcoder/Computational-Complexity-Section-1)
 
-# Giới thiệu
+## Giới thiệu
 
 Trong phần này của bài viết chúng ta sẽ tập trung vào việc ước lượng độ phức tạp cho các chương trình đệ quy. Về mặt bản chất việc này sẽ dẫn tới khảo sát độ tăng của các hàm độ phức tạp thời gian thỏa mãn các công thức truy hồi. Nếu bạn chưa hiểu chính xác thế nào là một thuật giải đệ quy thì không cần lo lắng vì nó sẽ được giải thích trong các phần sau. Trước mắt chúng ta sẽ xem xét trường hợp đơn giản hơn - các chương trình không sử dụng đệ quy.
 
 
-# Vòng lặp lồng nhau
+## Vòng lặp lồng nhau
 
 Để mở đầu, ta xét các chương trình đơn giản không sử dụng các lời gọi đệ quy. Với các chương trình như vậy, ba quy tắc phổ biến dễ áp dụng để tìm cận trên của độ phức tạp là:
 
@@ -19,7 +19,7 @@ Trong phần này của bài viết chúng ta sẽ tập trung vào việc ướ
 - Nếu các vòng lặp nối tiếp nhau thì **cộng** các cận đó với nhau
 - Nếu các vòng lặp lồng nhau thì **nhân** các cận với nhau
 
-## Ví dụ 1
+### Ví dụ 1
 
 Ước lượng độ phức tạp của đoạn mã sau:
 ```cpp
@@ -48,7 +48,7 @@ Từ nhận xét trên ta có tổng độ phức tạp của thuật toán tron
 Từ ví dụ trên người đọc đã có khả năng phân tích độ phức tạp của các phần mã đơn giản sử dụng phương pháp như đã trình bày. Chúng ta sẽ đi tới xem xét các chương trình có sử dụng đệ quy (tức là một hàm số mà trong thân hàm của nó sẽ gọi tới chính nó với tham số khác) và phân tích ảnh hưởng của những lời gọi đệ quy này tới độ phức tạp của chúng.
 
 
-# Sử dụng đệ quy để sinh các cấu hình tổ hợp
+## Sử dụng đệ quy để sinh các cấu hình tổ hợp
 
 Một ứng dụng phổ biến của đệ quy là cài đặt thuật toán quay lui để sinh ra tất cả các nghiệm của một bài toán. Ý tưởng chung là đào sâu vào từng nhánh nghiệm đến khi nhánh nghiệm này được thử hết thì quay lại bước trước đó để thử các nhánh nghiệm khác.
 
@@ -56,7 +56,7 @@ Cách tiếp cận này không phải lúc nào cũng áp dụng được, có n
 
 Lưu ý là ta luôn luôn có thể sinh ra tất cả các chuỗi của 0 và 1, kiểm tra từng chuỗi một (kiểm tra xem chuỗi đó có tương ứng với một nghiệm hợp lệ hay không) và lưu lại nghiệm tốt nhất. Nếu ta có thể tìm một cận trên của kích cỡ nghiệm tốt nhất, số nghiệm phải kiểm tra là hữu hạn. Tuy nhiên cách làm này không đủ nhanh và không nên dùng nó nếu có cách làm khác.
 
-## Ví dụ 2
+### Ví dụ 2
 
 Một thuật toán quay lui đơn giản để sinh ra tất cả các hoán vị của các số tự nhiên từ 0 tới $N-1$
 
@@ -91,11 +91,11 @@ Trong trường hợp này, dễ thấy cận dưới chính là số lượng n
 
 Tuy vậy cách làm này thường là không khả thi do nó phải khảo sát một số lượng lớn các nghiệm - thường là hàm mũ hoặc lớn hơn thế.
 
-# Chia để trị sử dụng đệ quy
+## Chia để trị sử dụng đệ quy
 
 Từ ví dụ 2 chúng ta có thể nhầm tưởng rằng đệ quy chạy không hiệu quả và làm cho tốc độ thực thi rất chậm. Không phải lúc nào điều này cũng đúng. Ngược lại, đệ quy có thể là một công cụ rất mạnh để thiết kế những thuật toán hiệu quả. Cách thông thường để thiết kệ một giải thuật đệ quy hiệu quả là áp dụng tư tưởng **Chia để Trị** - chia bài toán thành nhiều phần, xử lý các phần nhỏ tách biệt nhau và cuối cùng ghép các kết quả con lại để được kết quả cho bài toán lớn. Dễ thấy rằng, phần "xử lý các phần nhỏ tách biệt nhau" thường được cài đặt bằng đệ quy - tiếp tục chia phần nhỏ thành phần nhỏ hơn cho tới khi đủ nhỏ để giải trực tiếp bằng các thuật toán đơn giản.
 
-## Ví dụ 3
+### Ví dụ 3
 
 Mã giả mô tả thuật toán sắp xếp trộn *MergeSort*
 
@@ -146,7 +146,7 @@ Lưu ý rằng đây không phải là một "phương trình" theo nghĩa truy�
 
 Trong các phần cuối cùng của bài viết này, ta sẽ bàn luận một vài phương pháp giải các "phương trình" trên. Tuy nhiên trước đó ta sẽ tìm hiểu thêm một chút về các hàm logarit.
 
-# Lưu ý về hàm logarit
+## Lưu ý về hàm logarit
 
 Tới đây bạn có thể đặt câu hỏi: tác giả viết một vài thuật toán có độ phức tạp là hàm logarit ví dụ $O(NlogN)$, vậy cơ số của hàm logarit này là bao nhiêu? Tại sao ta không sử dụng cơ số 2 để có $O(Nlog_2N)$?
 
@@ -175,7 +175,7 @@ $$
 a^{log_bN} = a^{log_aN/log_ab} = (a^{log_aN})^{1/log_ab} = N^{log_ba} \space\space\space(3)
 $$
 
-# Phương pháp Thay Thế
+## Phương pháp Thay Thế
 
 Phương pháp này có thể được tổng kết trong một câu: dự đoán cận trên (tiệm cận) của $f$ và (cố gắng) chứng minh bằng quy nạp.
 
@@ -198,7 +198,7 @@ Nói cách khác, phép quy nạp sẽ đúng nếu $d>c$. Ta luôn luôn có th
 
 Lưu ý rằng trong ví dụ trên ta không thể chứng minh khi $N = 1$ với vì $lg1 = 0$. Tuy nhiên, điều này không ảnh hưởng tới tính đúng đắn của phép chứng minh trên. Kết luận: từ (1) ta có  $f (N) = O(N lg N)$.
 
-# Phương pháp Cây Đệ Quy
+## Phương pháp Cây Đệ Quy
 
 Với một người mới bắt đầu thì phương pháp trên không hữu dụng lắm. Để sử dụng phương pháp Thay Thế ta cần phải có một dự đoán tốt về cận trên của độ phức tạp, và để có dự đoán tốt đó ta cần có một vài thông tin, hiểu biết về hàm độ phức tạp trước. Câu hỏi là, làm thế nào để thu thập các hiểu biết này? Trước tiên ta sẽ xem xét kỹ hơn về cơ chế chạy đệ quy của nó của hàm số trên (bằng việc chạy thử từng bước đệ quy của nó).
 
@@ -208,7 +208,7 @@ Giả sử ta đánh dấu mỗi đỉnh bằng một nhãn biểu thị độ p
 
 Tương tự như các phần trên, ta chỉ quan tâm tới cận trên tiệm cận. Để tìm giá trị này ta có thể "làm tròn" mỗi nhãn để việc tính tổng dễ dàng hơn. Ta minh họa cách làm trên bằng một vài ví dụ sau:
 
-## Ví dụ 4
+### Ví dụ 4
 
 Cây đệ quy cho thuật toán *MergeSort* ở Ví dụ 3 với 5 phần tử.
 ![/uploads/topcoder_translate_tree1.png](/uploads/topcoder_translate_tree1.png)
@@ -217,7 +217,7 @@ Cây đệ quy cho công thức truy hồi tương ứng của *MergeSort*. Số
 
 ![/uploads/topcoder_translate_tree2.png](/uploads/topcoder_translate_tree2.png)
 
-## Ví dụ 5
+### Ví dụ 5
 
 Cây đệ quy trong trường hợp xấu nhất của phương trình (1):
 
@@ -233,13 +233,13 @@ $ \Theta(cN log N) = \Theta(N log N)$.
 Nếu bạn chưa hoàn toàn tin tưởng vào kết quả vừa thu được thì có thể áp dụng phương pháp Thay Thế ở trên để kiểm tra lại. Trong phần sau ta sẽ thấy là tồn tại những định lý cụ thể để có thể chứng minh chặt chẽ kết quả thu được ở trên.
 
 
-# Cây Đệ Quy mở rộng
+## Cây Đệ Quy mở rộng
 
 Ví dụ 5 ở trên cho ta một câu hỏi: việc tổng độ phức tạp ở mỗi mức của cây bằng nhau có phải là trùng hợp hay không?
 
 Trả lời: Không và Có. Không, vì một lý do đơn giản mà ta sẽ xem ở phần sau. Có, vì không phải lúc nào tổng các mức cũng bằng nhau như vậy - hai ví dụ sau đây sẽ minh họa cho điều đó.
 
-## Ví dụ 6
+### Ví dụ 6
 
 Ta thử áp dụng phương pháp Cây Đệ Quy để giải cho phương trình sau:
 $$
@@ -286,7 +286,7 @@ Một nguyên lý tổng quát quan trọng ta có thể rút ra từ ví dụ n
 
 Từ kết quả trên ta có một nhận xét quan trọng về thuật toán đệ quy biểu diễn bằng công thức truy hồi có tính chất trên: lệnh gọi đệ quy giải bài toán con không tốn thời gian thực thi bằng việc chuẩn bị lời gọi và xử lý sau lời gọi đệ quy. (Nói cách khác, nếu ta cần cải tiến thuật toán thì phải tập trung tối hưu hóa hai việc đó).
 
-## Ví dụ 7
+### Ví dụ 7
 Giờ chúng ta cùng thử áp dụng phương pháp Cây Đệ Quy để giải phương trình sau:
 $$
 f(N) = 5f(N/3) + \Theta(N)
@@ -331,7 +331,7 @@ Ta kết luận rằng tổng độ phức tạp của thuật toán biểu di�
 
 Lưu ý là cơ số 3 trong hàm logarit cho ta kết quả mũ chính xác, vì vậy cơ số này rất quan trọng. Nếu là cơ số khác thì giá trị tiệm cận cũng sẽ thay đổi.
 
-# Định lý Tổng Quát
+## Định lý Tổng Quát
 
 Từ các ví dụ trên chúng ta đã thấy một quy luật giải các công thức truy hồi. Cho một công thức truy hồi, lập cây đệ quy tương ứng và tính tổng độ phức tạp trên mỗi mức. Kết quả thu được sẽ là một dãy cấp số nhân. Nếu đó là dãy giảm, tổng độ phức tạp trên toàn cây sẽ tỷ lệ với độ phức tạp của đỉnh gốc. Nếu là dãy tăng, tổng độ phức tạp sẽ tỷ lệ với  tổng độ phức tạp ở các lá. Nếu là dãy không đổi thì tổng độ phức tạp sẽ là (độ phức tạp trên một mức) nhân với (chiều cao cây).
 
@@ -360,7 +360,7 @@ Trường hợp $3$ tương ứng với **Ví dụ 6**. Hầu hết thời gian 
 Lưu ý điều kiện thêm vào ở trường hợp $3$. Để trường hợp $3$ đúng ta cần có điều kiện của hàm $p$ phải thỏa mãn thời gian thực thi hàm $p$ lớn hơn tổng thời gian thực thi ở các đỉnh con cháu. Thật ra đây không phải là một vấn đề cần phải chú tâm quá nhiều bởi trong các kỳ thi các hàm $p$ mà bạn có thể gặp hầu như sẽ thỏa mãn điều kiện trên (nếu rơi vào trườn hợp $3$).
 
 
-## Ví dụ 8
+### Ví dụ 8
 
 Gọi $f(N)$ là thời gian mà thuật toán nhân ma trận **Strassen** cần để nhân hai ma trận vuông kích cỡ $N$ x $N$. Đây là một thuật toán đệ quy, thực hiện $7$ lời gọi hàm đệ quy, mỗi hàm nhân hai ma trận có kích cỡ $N/2$ x $N/2$ và sau đó tổng hợp kết quả trong $\Theta(N^2)$.
 
@@ -373,7 +373,7 @@ $$
 
 Sử dụng định lý Tổng Quát, ta thấy Trường hợp $1$ có thể áp dụng được. Vì vậy độ phức tạp của thuật toán Strassen là $\Theta(N^{log_27}) \approx \Theta({N^{2.807}})$. Lưu ý là thuật toán cổ điển nhân ma trận theo định nghĩa có độ phức tạp $ \Theta(N^3)$.
 
-## Ví dụ 9
+### Ví dụ 9
 Thỉnh thoảng ta có thể gặp trường hợp mà kích cỡ các bài toán con không bằng nhau. Một ví dụ là thuật toán **Trung vị của 5** để tìm phần tử lớn thứ *k* của một mảng số. Thuật toán trên được chứng minh là có độ phức tạp thỏa mãn công thức
 
 $$
@@ -384,6 +384,6 @@ Công thức trên giải như thế nào? Phương pháp cây Đệ Quy có th�
 
 Chúng ta sẽ không trả lời các câu hỏi trên tại đây, và tài liệu này cũng không phải là tài liệu duy nhất về chủ đề độ phức tạp thuật toán. Nếu bạn đang thắc mắc về các câu hỏi trên thì bạn đã nắm được cơ bản đủ để sử dụng trong các kỳ thi thuật toán. Nếu bạn muốn trả lời các câu hỏi trên thì có thể tìm đọc trong các sách chính thống.
 
-# Lời người dịch
+## Lời người dịch
 
 Trong bài viết 2 phần này tác giả **misof** đã giới thiệu khá đầy đủ về độ phức tạp tính toán để có thể sử dụng trong các kỳ thi lập trình. Tác giả đã bỏ qua một vài điểm như xử lý phần nguyên, chứng minh độ phức tạp bằng phép tính lấy giới hạn, lời giải cho phần 1 của Ví dụ 9 (xem lời giải tại [đây](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2012/lecture-notes/MIT6_046JS12_lec01.pdf)), định lý Tổng Quát mở rộng (dùng để giải phần 2 của ví dụ 9) và một vài chi tiết khác. Bạn đọc quan tâm tới các phần bị bỏ qua có thể tìm đọc cuốn **Introduction to Algorithm, 3rd edition** [link](http://bayanbox.ir/view/4177858657730907268/introduction-to-algorithms-3rd-edition.pdf) thường được biết đến với tên gọi **CLRS** (4 chữ cái đầu tên của 4 tác giả), hình như đã có bản dịch tiếng Việt. Các bạn yêu thích học trực tuyến có thể tìm khóa **Analysis and Design of Algorithms** trên trang web *mentorsnet.org* (bằng tiếng Anh), đây là khóa học của giảng viên Ấn Độ và họ có slides bài giảng rất chi tiết gồm cả toàn bộ chứng minh của định lý Tổng Quát cơ bản và mở rộng. Ngoài ra, sau khi đã thuần thục về độ phức tạp tính toán các bạn có thể tìm hiểu thêm về các khái niệm lớp $P$ và $NP, NP-Hard, NP-Complete$. Hiểu biết về $P$ và $NP$ sẽ giúp các bạn tiếp cận với một dạng bài đang trở nên phổ biến gần đây là **tham số cố định khả tính** (*fixed-parameter-tractability* hay *FPT*). Bạn có thể tìm hiểu về *FPT* qua bài viết trên blog của **Petr** [ở đây](http://petr-mitrichev.blogspot.com/2016/07/a-fixed-parameter-tractable-week.html). Tiềm năng của *FPT* theo mình nghĩ là rất lớn với ứng dụng không chỉ trong việc thi các kỳ thi thuật toán mà còn trong giải các bài toán thực tế.

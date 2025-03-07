@@ -1,4 +1,4 @@
-# **Cây chỉ số nhị phân (Binary Indexed Tree)**
+## **Cây chỉ số nhị phân (Binary Indexed Tree)**
 
 **Tác giả:** 
 - Bùi Nguyễn Đức Tân - Phổ thông Năng khiếu, Đại học Quốc gia Thành phố Hồ Chí Minh
@@ -11,17 +11,17 @@
 
 
 
-# Giới thiệu
+## Giới thiệu
 Cây chỉ số nhị phân (tên tiếng Anh là Binary Indexed Tree) hay cây Fenwick là một cấu trúc dữ liệu được sử dụng khá phổ biến trong lập trình thi đấu vì có thể cài đặt nhanh, dễ dàng so với các CTDL khác.
 
-# Bài toán
+## Bài toán
 Cho mảng $A$ gồm $N$ phần tử (đánh số từ $1$). Có $Q$ truy vấn thuộc 2 loại:
 - $1$ $u$ $v$: cộng $v$ vào $A[u]$.
 - $2$ $p$: tính tổng các phần tử từ $A[1]$, $A[2]$, $A[3]$, ..., $A[p]$.
 
 Giới hạn: $N, Q \le 2 \cdot 10^5$
 
-## Ngây thơ 1
+### Ngây thơ 1
 Với truy vấn loại 1, ta đơn thuần tăng phần tử $a[u]$ thêm $v$.
 Với truy vấn loại 2, ta duyệt qua tất cả phần tử trong đoạn $[1 \dots p]$ và cộng giá trị vào biến kết quả.
 
@@ -41,7 +41,7 @@ int getSum(int p) {
 }
 ```
 
-### Phân tích
+#### Phân tích
 - Độ phức tạp khi update: $\mathcal{O}(1)$.
 - Độ phức tạp khi truy vấn: $\mathcal{O}(p) = \mathcal{O}(N)$. <!--đpt tương đương với số ptu của mảng-->
 - Có $Q$ truy vấn, vì thế độ phức tạp là $\mathcal{O}(Q + Q \cdot N) = \mathcal{O}(Q \cdot N)$
@@ -49,7 +49,7 @@ int getSum(int p) {
 
 Đối chiếu giới hạn, cách "ngây thơ" trên tỏ ra chậm chạp, không đủ để xử lí yêu cầu bài toán.
 
-## Ngây thơ 2
+### Ngây thơ 2
 Nhận thấy đây là một dạng của bài toán Range Sum Query, ta có thể áp dụng mảng cộng dồn (prefix sum) để tính nhanh tổng một đoạn.
 
 Khi cập nhật giá trị một phần tử, ta đồng thời cập nhật tất cả các prefix chứa phần tử đó.
@@ -74,7 +74,7 @@ int getSum(int p) {
     return sum[p];
 }
 ```
-### Phân tích
+#### Phân tích
 - Độ phức tạp tiền xử lý: $\mathcal{O}(N)$
 - Độ phức tạp khi update: $\mathcal{O}(p)$ = $\mathcal{O}(N)$
 - Độ phức tạp khi truy vấn: $\mathcal{O}(1)$
@@ -83,7 +83,7 @@ Nếu bài toán không có truy vấn cập nhật, độ phức tạp là $\ma
 
 Để có thể giải quyết bài toán một cách hiệu quả, ta cần một CTDL có thể sử dụng tính chất prefix sum để trả về kết quả nhanh, đồng thời có thể nhanh chóng cập nhật giá trị cho prefix.
 
-# Cây chỉ số nhị phân
+## Cây chỉ số nhị phân
 Cấu trúc prefix sum được biểu diễn qua sơ đồ sau:
 
 ![img](../../uploads/hllVMYY.png)
@@ -91,7 +91,7 @@ Cấu trúc prefix sum được biểu diễn qua sơ đồ sau:
 **Nhận xét:** Mỗi phần tử $sum[i]$ chứa tổng của tất cả phần tử từ $[1\dots i]$; vì thế, phần tử $sum[i]$ sẽ chứa phần tử $a[j]$ nếu thỏa $i \ge j$, số phần tử $sum$ cần cập nhật là $j - i + 1$, gần tương đương độ dài của mảng.
 
 Để tăng tốc độ cập nhật phần tử, cần bố trí lại phạm vi của từng đoạn gắn với $sum[i]$ để cực tiểu số phần tử $sum$ cần cập nhật nhưng vẫn phải đảm bảo tính liên tục để áp dụng tính chất của prefix sum.
-## Giới thiệu tổng quát
+### Giới thiệu tổng quát
 Mỗi chỉ số $n$ đều có thể biểu diễn bằng tổng của các lũy thừa cơ số $2$, vì thế, để tính tổng của các phần tử thuộc $[1 \ldots n]$, ta có thể tách đoạn này thành các đoạn nhỏ hơn có độ dài $2^k$ và cộng lại tổng tính được trên từng đoạn.
 
 Cụ thể, đặt $n = 2^{i_1} + 2^{i_2} + \ldots + 2^{i_k}$ $(i_1 > i_2 > \ldots > i_k \ge 0)$. Để tính tổng từ $[1 \ldots n]$, ta tính tổng các phần tử thuộc đoạn $[1;2^{i_1}]$, sau đó tính tiếp tổng của đoạn $[2^{i_1} + 1;2^{i_1} + 2^{i_2}]$, lặp lại quá trình này cho đến khi ta đến đoạn cuối cùng là $[2^{i_1} + 2^{i_2} + \ldots + 2^{i_{k - 1}} + 1;n]$. $n$ có thể có tối đa $\log_2 n$ bits, vì thế độ phức tạp khi tính tổng theo cách này là $\mathcal{O}(C \log n)$, trong đó $\mathcal{O}(C)$ là độ phức tạp khi lấy tổng một đoạn.
@@ -105,7 +105,7 @@ Dưới đây là hình ảnh minh họa cây BIT:
 
 Trong hình trên, những đoạn được tô đậm là đoạn của phần tử chỉ số $n$ được BIT lưu trữ; những đoạn được tô nét mảnh không được lưu trữ trực tiếp mà sẽ được truy cập gián tiếp.
 
-## Cài đặt BIT
+### Cài đặt BIT
 
 Mặc dù có bản chất là cây, tính chất ở trên cho phép chúng ta lưu trữ BIT dưới dạng một mảng đơn giản có độ dài bằng với độ dài mảng ta đang làm việc.
 
@@ -113,7 +113,7 @@ Mặc dù có bản chất là cây, tính chất ở trên cho phép chúng ta 
 int bit[N];
 ```
 
-### Thao tác tìm tổng
+#### Thao tác tìm tổng
 
 Để tìm tổng các phần tử trong đoạn $[1 \ldots n]$, ta sẽ lần lượt đi qua tất cả bit của $n$ theo giá trị tăng dần. Mỗi lần đi qua $n$, ta sẽ cộng $bit[n]$ vào kết quả hiện tại, rồi trừ đi bit nhỏ nhất của $n$ khỏi chính nó; quá trình lặp lại cho đến khi $n = 0$.
 
@@ -132,7 +132,7 @@ int getSum(int p) {
 
 Độ phức tạp khi truy vấn tổng: $\mathcal{O}(\log n)$.
 
-### Thao tác cập nhật
+#### Thao tác cập nhật
 
 Để cập nhật phần tử tại vị trí $u$, ta sẽ thực hiện quá trình ngược lại so với khi truy vấn tìm tổng: cộng bit nhỏ nhất vào $u$ cho đến khi $u$ vượt ngoài biên của mảng.
 
@@ -150,14 +150,14 @@ Chứng minh tính đúng đắn của thuật trên như sau: mỗi khi ta cộ
 
 Mỗi lần cộng thêm, bit cuối luôn bị dịch lên ít nhất 1 lần, dẫn đến có tối đa $\log n$ lần dịch bit. Vì thế độ phức tạp khi cập nhật là $\mathcal{O}(\log n)$.
 
-## Lưu ý
+### Lưu ý
 Bằng cây chỉ số nhị phân (BIT), ta dễ dàng tính được prefix sum và cập nhật giá trị chỉ trong $\mathcal{O}(\log n)$, mặt khác so với các CTDL khác, BIT dễ dàng cài đặt hơn rất nhiều và không tốn quá nhiều thời gian để code.
 
 Quay lại bài toán đầu, nếu chúng ta thay đổi yêu cầu thành tìm tổng trên đoạn $[l \ldots r]$, tính chất của prefix sum dễ dàng cho ta tìm được kết quả thông qua phép $sum(r) - sum(l - 1)$. Tuy nhiên, không phải tất cả phép toán nào đều cho phép chúng ta dễ dàng lấy kết quả thông qua phép hiệu như vậy. Đối với các phép $min, gcd$, không tồn tại phép hiệu cho ta phép lấy kết quả của một đoạn dễ dàng, vì thế ta không thể áp dụng BIT đối với những bài toán loại này. 
 
 Đây là một khuyết điểm mấu chốt của BIT, vì thế cần nắm rõ tính chất và những bài toán để quyết định có nên sử dụng BIT không.
 
-# Cập nhật đoạn
+## Cập nhật đoạn
 Ta thay đổi nội dung bài toán ban đầu như sau:
 - $1$ $v$ $l$ $r$: cộng $v$ vào tất cả phần tử $A[l]$, $A[l + 1]$, $A[l + 2]$, ..., $A[r]$.
 - $2$ $u$: tìm giá trị hiện tại của $A[u]$.
@@ -165,7 +165,7 @@ Ta thay đổi nội dung bài toán ban đầu như sau:
 
 Ta có thể cài đặt "ngây thơ" bằng cách áp dụng hàm `update()` trên tất cả phần tử cần được cập nhật, độ phức tạp khi này là $\mathcal{O}(Q \cdot N \log N)$. Dĩ nhiên cách này quá chậm, đòi hỏi ta cần tìm một cách cập nhật đoạn một cách nhanh hơn để giữ nguyên độ phức tạp $\mathcal{O}(N \log N)$.
 
-## Truy vấn từng phần tử
+### Truy vấn từng phần tử
 Mảng hiệu (difference array) là một loại mảng lưu hiệu giữa các phần tử liền kề với nhau.
 
 Mảng hiệu được xây dựng bằng cách sau: 
@@ -227,7 +227,7 @@ int get(int u) {
 }
 
 ```
-## Truy vấn trên đoạn
+### Truy vấn trên đoạn
 ![img](../../uploads/K4d4qmh.png)
 
 Hình trên sẽ giúp ta minh họa trực quan hơn mối quan hệ về tổng các phần tử với mảng $A$ và mảng hiệu $diff$.
@@ -295,7 +295,7 @@ int rangeSum(int l, int r) {
 }
 ```
 
-# Bài tập áp dụng
+## Bài tập áp dụng
 - [LQDOJ - Query-Sum](https://lqdoj.edu.vn/problem/querysum)
 - [LQDOJ - Query-Sum 2](https://lqdoj.edu.vn/problem/querysum2)
 - [LQDOJ - Candies](https://lqdoj.edu.vn/problem/candies)

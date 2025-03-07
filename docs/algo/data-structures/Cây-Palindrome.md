@@ -1,6 +1,6 @@
 Cây Palindrome (hay còn được gọi là Eertree) là một loại cấu trúc dữ liệu được dùng để giải một số bài toán liên quan đến Palindrome.
 
-# Cấu trúc của cây Palindrome
+## Cấu trúc của cây Palindrome
 Như mọi loại cây khác, cây Palindrome cũng có nút.
 
 ![](/uploads/palindrome_tree_1.png)
@@ -21,7 +21,7 @@ Trong ví dụ trên, vì $a$ là palindrome hậu tố lớn nhất của $aba$
 
 Lưu ý rằng ta không chứa xâu palindrome vào nút khi cài đặt thực tế, nếu làm vậy ta sẽ tiêu tốn quá nhiều bộ nhớ. Nút thực tế sẽ chứa độ dài xâu palindrome, chữ cái được gán vào các cung, và các liên kết hậu tố.
 
-# Xây dựng cây Palindrome
+## Xây dựng cây Palindrome
 Ở đây mình sẽ hướng dẫn tạo cây Palindrome chứa tất cả các palindrome con của một xâu $s$. Ta thấy: Một xâu độ dài $n$ sẽ không có quá $n$ xâu palindrome con, vì vậy cây Palindrome sẽ không có quá $n + 2$ nút (do phải thêm 2 gốc nữa).
 
 Ta sẽ xử lí từng chữ cái một trong xâu. Giả sử ta đã xử lí được tiền tố $p$ của xâu, và giờ ta phải xét đến chữ cái $x$ tiếp theo.

@@ -1,4 +1,4 @@
-# Hình học tính toán phần 1: Những khái niệm cơ bản
+## Hình học tính toán phần 1: Những khái niệm cơ bản
 
 **Tác giả:** 
 - Lê Minh Hoàng - Phổ thông Năng khiếu, ĐHQG-HCM
@@ -16,7 +16,7 @@ Hình học mặc dù là một chủ đề hết sức phổ biến, song vẫn
 
 Nếu đã nắm vững các khái niệm trong bài viết này, các bạn có thể chuyển sang [phần 2](algo/geometry/basic-geometry-2).
 
-# Vector
+## Vector
 Vector là một đối tượng có cả độ lớn và hướng. Hướng của vector là hướng từ điểm đầu đến điểm cuối của nó.
 
 ![dd](../../uploads/JdJPAOc.png)
@@ -36,18 +36,18 @@ y = y_B - y_A
 
 ![dđ](../../uploads/5ddR4P4.gif)
 
-## Độ lớn của vector
+### Độ lớn của vector
 Độ lớn của $1$ vector được xác định bằng khoảng cách giữa điểm đầu và điểm cuối của nó.
 **Ví dụ:** Độ lớn của $\overrightarrow{\rm AB}(x,y)$ kí hiệu là $|\overrightarrow{\rm AB}|$ và được xác định bằng:
 
 ![dd](../../uploads/1rQrzkN.png)
 
-# Phép cộng trừ vector
+## Phép cộng trừ vector
 Có một số phép toán có thể thực hiện trên vector, đơn giản nhất là phép cộng trừ vector: bạn có thể cộng trừ 2 vector với nhau để được một vector mới.
 
 Xuyên suốt bài viết, chúng ta sẽ dùng dấu cộng (**+**) và trừ (**-**) để biểu diễn cho phép cộng và trừ vector.
 
-## Phép cộng 2 vector
+### Phép cộng 2 vector
 
 ![dd](../../uploads/Lblu42q.png)
 
@@ -59,16 +59,16 @@ Giả sử ta có $2$ vector $\overrightarrow{\rm u}(x_1, y_1)$ và $\overrighta
 
 ![dd](../../uploads/sKDldWR.png)
 
-## Phép trừ 2 vector
+### Phép trừ 2 vector
 ![dd](../../uploads/p1QmwFb.png)
 
-### Vector đối
+#### Vector đối
 Cho vector $\overrightarrow{\rm a}$, vector có cùng độ lớn và ngược hướng với vector $\overrightarrow{\rm a}$ được gọi là vector đối của vector $\overrightarrow{\rm a}$, kí hiệu là $-\overrightarrow{\rm a}$.
 Mỗi vector đều có vector đối, chẳng hạn vector đối của $\overrightarrow{\rm AB}$ là $\overrightarrow{\rm BA}$, nghĩa là $-\overrightarrow{\rm AB} = \overrightarrow{\rm BA}$.
 
 ![dd](../../uploads/SY5FFFo.png)
 
-### Định nghĩa hiệu của 2 vector
+#### Định nghĩa hiệu của 2 vector
 Hiệu của vector $\overrightarrow{\rm u}$ với vector $\overrightarrow{\rm v}$ chính là tổng của $\overrightarrow{\rm u}$ và $-\overrightarrow{\rm v}$.
 
 ![image](../../uploads/z9pRvDQ.png)
@@ -80,7 +80,7 @@ Nếu 2 vector có chung điểm cuối thì vector hiệu có hướng từ đi
 
 Nhấn vào [**đây**](https://www.desmos.com/calculator/po7zxtgzxw) để tương tác với hình trên Desmos.
 
-# Tích vô hướng (Dot product)
+## Tích vô hướng (Dot product)
 Không như phép cộng trừ vector là tương đối trực quan và dễ hiểu, vector có 2 phép toán kém trực quan hơn là tích vô hướng (dot product) và tích có hướng (cross product).
 
 Tích vô hướng có thể được định nghĩa bằng đại số hoặc hình học. 2 định nghĩa này là tương đương khi sử dụng tọa độ Descartes.
@@ -91,7 +91,7 @@ $$\overrightarrow{\rm u} \cdot \overrightarrow{\rm v} = | \overrightarrow{\rm u}
 
 ![image](../../uploads/iHks23u.png)
 
-## Ví dụ
+### Ví dụ
 Tính tích vô hướng của 2 vector $\overrightarrow{\rm u}(5,12)$ và $\overrightarrow{\rm v}(-6,8)$
 
 ![image](../../uploads/Qm8P625.png)
@@ -116,8 +116,8 @@ $$\cos(\theta) = \dfrac{\overrightarrow{\rm u} \cdot \overrightarrow{\rm v}}{|\o
 
 **Lưu ý:** tích vô hướng không chỉ giới hạn trong hình học phẳng, nghĩa là ta có thể sử dụng tích vô hướng cho các vector có số chiều tuỳ ý, và đẳng thức trên vẫn đúng.
 
-# Tích có hướng (Cross product)
-## Trong không gian 3 chiều
+## Tích có hướng (Cross product)
+### Trong không gian 3 chiều
 Tích có hướng là một phép nhân vector trong không gian ba chiều. Nó khác tích vô hướng ở chỗ kết quả thu được là một vector thay cho một vô hướng. Vector này **vuông góc** với mặt phẳng chứa 2 vector đầu vào của phép nhân.
 
 Tích có hướng được định nghĩa bằng công thức: $\overrightarrow{\rm a} \times \overrightarrow{\rm b} = \overrightarrow{n} \cdot |\overrightarrow{\rm a}| \cdot |\overrightarrow{\rm b}| \cdot \sin(\theta)$ với:
@@ -126,7 +126,7 @@ Tích có hướng được định nghĩa bằng công thức: $\overrightarrow
 
 |![image](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Cross_product_vector.svg/220px-Cross_product_vector.svg.png)|![image](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Right_hand_rule_cross_product.svg/330px-Right_hand_rule_cross_product.svg.png)|
 
-## Trong không gian 2 chiều (mặt phẳng)
+### Trong không gian 2 chiều (mặt phẳng)
 Nếu xét trong hình học phẳng thì vector kết quả lúc này vuông góc và có hướng đi vào/ra mặt phẳng đang xét, do đó ta có thể bỏ qua đặc điểm về hướng, và sử dụng tích có hướng như là một đại lượng vô hướng.
 
 Tương tự tích vô hướng, tích có hướng trong không gian 2 chiều cũng có thể được định nghĩa bằng 2 cách:
@@ -141,7 +141,7 @@ Với góc $\alpha$ thỏa mãn $0° < \alpha < 180°$ thì $\sin(\alpha) > 0$ n
 
 Ta cũng có thể xác định dấu của tích có hướng bằng quy tắc bàn tay phải nhưng về bản chất thì cũng giống với việc xét góc theo chiều ngược kim đồng hồ.
 
-## Ví dụ
+### Ví dụ
 Tính tích có hướng của 2 vector $\overrightarrow{\rm u}(5,12)$ và $\overrightarrow{\rm v}(-6,8)$
 
 ![image](../../uploads/Qm8P625.png)
@@ -174,7 +174,7 @@ bằng diện tích của hình bình hành có 2 cạnh bên là \( \overrighta
 
 Do đó, **diện tích của một tam giác** còn bằng một nửa giá trị tuyệt đối của tích có hướng với 2 vector thành phần là 2 cạnh của tam giác.
 
-# Khoảng cách giữa điểm và đường thẳng
+## Khoảng cách giữa điểm và đường thẳng
 Tìm khoảng cách giữa điểm và đường thẳng rất thường gặp trong các bài toán hình học.
 
 ![image](../../uploads/WBPuzNU.png)
@@ -199,8 +199,8 @@ Có vài cách khác nhau để xử lý trường hợp này, một trong số 
 Tương tự, nếu $\overrightarrow{\rm AB} \cdot \overrightarrow{\rm AC} < 0$, điểm gần $C$ nhất là $A$. Nếu cả hai tích vô hướng đều $\ge 0$, thì điểm gần $C$ nhất sẽ nằm giữa $A$ và $B$.
 
 ```cpp
-#define x first
-#define y second
+## define x first
+## define y second
 typedef pair<int, int> pii;
 
 // Compute the dot product AB ⋅ AC
@@ -280,7 +280,7 @@ db linePointDist(const point &A, const point &B, const point &C, bool isSegment)
 ```
 Nếu bạn sử dụng C++ thì bạn nên tìm hiểu về struct và tự viết class/struct geo_2D của riêng mình. Nó sẽ giúp các bài toán hình học trở nên đơn giản hơn nhiều.
 
-# Luyện tập
+## Luyện tập
 Học phải đi đôi với hành, do đó mình đề xuất cho các bạn [Codeforces Gym 100168](https://codeforces.com/gym/100168). Tuy đề bài trong gym được viết bằng tiếng Nga nhưng rất ngắn gọn và đi thẳng vào bài toán nên các bạn có thể dễ dàng [google translate](https://translate.google.com/?hl=vi&sl=ru&tl=en&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%BC%D0%B8%D1%80&op=translate).
 
 Bên dưới là một số bài tập có liên quan đến bài viết này, mình đã tóm tắt yêu cầu bài toán để các bạn có thể hiểu đề dễ dàng hơn.

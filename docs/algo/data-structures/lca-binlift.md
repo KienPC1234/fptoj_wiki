@@ -1,4 +1,4 @@
-# Lowest Common Ancestor (LCA) - Binary Lifting
+## Lowest Common Ancestor (LCA) - Binary Lifting
 
 **Tác giả:** 
 - Lê Minh Hoàng - Phổ thông Năng khiếu, ĐHQG-HCM
@@ -13,7 +13,7 @@
 
 
 
-# Giới thiệu
+## Giới thiệu
 
 Bài toán tìm tổ tiên chung gần nhất (Lowest Common Ancestor - LCA) là một dạng bài quen thuộc thường gặp trong các cuộc thi lập trình thi đấu.
 
@@ -35,7 +35,7 @@ void preprocess() {
 }
 ```
 
-# Bài toán
+## Bài toán
 
 Cho một cây gồm $N$ đỉnh có gốc tại đỉnh $1$. Có $Q$ truy vấn, mỗi truy vấn gồm $1$ cặp số $(u, v)$ và ta cần tìm LCA của $u$ và $v$, tức là tìm một đỉnh $w$ xa gốc nhất nằm trên đường đi từ $u$ và $v$ đến gốc. Đặc biệt, nếu $u$ là tổ tiên của $v$, thì $u$ là LCA của $u$ và $v$.
 
@@ -44,7 +44,7 @@ Giới hạn: $N, Q \leq 2 \cdot 10^5$
 <!--430x678-->
 ![img](../../uploads/f5rB83v.png)
 
-## Ngây thơ
+### Ngây thơ
 
 - Đặt $h(u)$ là độ cao của đỉnh $u$ (độ cao của $1$ đỉnh được định nghĩa bằng khoảng cách từ đỉnh đó đến gốc của cây). Ví dụ: $h(1) = 0, h(3) = 1, h(9) = 3,\ldots$
 - Để trả lời truy vấn $(u, v)$, không mất tính tổng quát, giả sử $h(u) > h(v)$:
@@ -97,22 +97,22 @@ int lca(int u, int v) {
 }
 ```
 
-### Phân tích:
+#### Phân tích:
 - Độ phức tạp tiền xử lý: $\mathcal{O}(N)$ (tạo mảng $h$)
 - Độ phức tạp khi truy vấn: $\mathcal{O}(N)$ (độ cao tối đa của 1 đỉnh là $N-1$ nên số bước nhảy tối đa là $N-1$)
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp là $\mathcal{O}(N + Q \cdot N) = O(Q \cdot N)$
 
 Đối chiếu giới hạn, cách "ngây thơ" trên tỏ ra chậm chạp, không đủ để xử lí yêu cầu bài toán.
 
-# Binary Lifting (nâng nhị phân)
+## Binary Lifting (nâng nhị phân)
 Đầu tiên, ta sẽ tìm hiểu về ý tưởng của Binary Lifting qua bài toán con của $LCA$.
 
-## Bài toán 1
+### Bài toán 1
 Cho một cây gồm $N$ đỉnh có gốc tại đỉnh $1$. Có $Q$ truy vấn, mỗi truy vấn gồm $1$ cặp số $(u, k)$, ta cần in ra tổ tiên thứ $k$ của $u$ (tổ tiên thứ $k$ của $u$ là $par[par[\ldots[u \underset{\color{blue}{k \text{ lần}}}{\color{blue}{\underbrace{\color{blue}{]\ldots]]}}}}$ ).
 
 Giới hạn: $N, Q \leq 10^5$
 
-### Thuật toán ngây thơ
+#### Thuật toán ngây thơ
 Ta lặp lại câu lệnh `u = par[u]` trong k lần.
 ```cpp
 int par[N];
@@ -125,7 +125,7 @@ int ancestor_k(int u, int k) {
 }
 ```
 
-#### Phân tích:
+##### Phân tích:
 - Độ phức tạp tiền xử lý: $\mathcal{O}(N)$ (tạo mảng $par$)
 - Độ phức tạp truy vấn: $\mathcal{O}(K) = \mathcal{O}(N)$
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp là $\mathcal{O}(N + Q \cdot N)$
@@ -133,7 +133,7 @@ int ancestor_k(int u, int k) {
 Câu hỏi đặt ra là ta còn có thể tối ưu thời gian truy vấn được hay không?
 - Nhận xét: Thay vì nhảy từng bước nhỏ độ dài $1$, ta có thể nhảy các bước lớn độ dài $2$. Từ đó, ta có thể giảm thời gian truy vấn xuống còn $\mathcal{O}(\frac{K}2)$
 
-### Thuật toán tối ưu 1.1
+#### Thuật toán tối ưu 1.1
 - Ta xây dựng mảng $up2[N]$ là tổ tiên thứ $2$ của mỗi đỉnh.
 - Khi truy vấn, ta nhảy các bước độ dài $2$ trước, sau đó kiểm tra xem $k$ có $\geq 1$ hay không (vì $k$ mod $2$ dư $0$ hoặc $1$).
 
@@ -157,13 +157,13 @@ int ancestor_k(int u, int k) {
 }
 ```
 
-#### Phân tích:
+##### Phân tích:
 - Độ phức tạp tiền xử lý: $\mathcal{O}(2N)$ (tạo mảng $par$ và $up2$)
 - Độ phức tạp truy vấn: $\mathcal{O}(\frac{K}2 + 1) = \mathcal{O}(\frac{N}2 + 1)$ (1 vòng while và 1 lệnh if)
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp thời gian là $\mathcal{O}(2N + Q \cdot (\frac{N}2 + 1))$
 - Độ phức tạp bộ nhớ: $\mathcal{O}(2N)$ (2 mảng $par$ và $up2$)
 
-### Thuật toán tối ưu 1.2
+#### Thuật toán tối ưu 1.2
 Ta còn có thể tối ưu thời gian truy vấn được hay không?
 - Nhận xét: Thay vì nhảy từng bước nhỏ độ dài $2$, ta có thể nhảy các bước lớn độ dài $4$. Từ đó, ta có thể giảm thời gian truy vấn xuống còn $\mathcal{O}(\frac{K}4)$.
 
@@ -182,13 +182,13 @@ int ancestor_k(int u, int k) {
 }
 ```
 
-#### Phân tích:
+##### Phân tích:
 - Độ phức tạp tiền xử lý: $\mathcal{O}(3N)$ (tạo mảng $par$, $up2$ và $up4$)
 - Độ phức tạp truy vấn: $\mathcal{O}(\frac{K}4 + 2) = \mathcal{O}(\frac{N}4 + 2)$ (1 vòng while và 2 lệnh if)
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp thời gian là $\mathcal{O}(3N + Q \cdot (\frac{N}4 + 2))$
 - Độ phức tạp bộ nhớ: $\mathcal{O}(3N)$ (3 mảng $par$, $up2$ và $up4$)
 
-### Thuật toán tối ưu 1.3
+#### Thuật toán tối ưu 1.3
 Ta vẫn có thể tối ưu thời gian truy vấn bằng cách nhảy các bước lớn hơn (độ dài $8$).
 
 ```cpp
@@ -208,13 +208,13 @@ int ancestor_k(int u, int k) {
 }
 ```
 
-#### Phân tích:
+##### Phân tích:
 - Độ phức tạp tiền xử lý: $\mathcal{O}(4N)$ (tạo mảng $par$, $up2$, $up4$ và $up8$)
 - Độ phức tạp truy vấn: $\mathcal{O}(\frac{K}8 + 3) = \mathcal{O}(\frac{N}8 + 3)$ (1 vòng while và 3 lệnh if)
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp thời gian là $\mathcal{O}(4N + Q \cdot (\frac{N}8 + 3))$
 - Độ phức tạp tiền xử lý: $\mathcal{O}(4N)$ (4 mảng $par$, $up2$, $up4$ và $up8$)
 
-### Thuật toán tối ưu 2
+#### Thuật toán tối ưu 2
 Nếu ta làm tiếp như thuật toán tối ưu $1.3$ (tiếp tục tạo các mảng $up16, up32, \dots, up65536$) ta sẽ có $\log_2(N)$ mảng up, độ phức tạp bài toán lúc này như sau:
 - Độ phức tạp tiền xử lý: $\mathcal{O}(N \cdot (1 + \log_2(N)) = \mathcal{O}(N \cdot \log_2(N))$ (mảng $par$ và $\log_2$ mảng $up$)
 - Độ phức tạp truy vấn: $\mathcal{O}(\frac{K}{2^{\log_2(N)}} + \log_2(N)) = \mathcal{O}(\log_2(N))$ (1 vòng while và $log_2$ lệnh if)
@@ -256,7 +256,7 @@ int ancestor_k(int u, int k) {
 }
 ```
 
-### Thuật toán tối ưu 3
+#### Thuật toán tối ưu 3
 Nhận xét: Ta luôn có thể tách một số nguyên dương thành tổng các lũy thừa phân biệt của 2 (hệ nhị phân). Ví dụ: $25 = 2^4 + 2^3 + 2^0 = 11001_2$.
 
 Từ nhận xét trên, ta có một cách khác để nhảy lên tổ tiên thứ $k$ của $u$ là duyệt $j$ từ $0$ đến $\log_2(k)$, nếu bit thứ $j$ của $k$ là $1$ thì ta cho $u$ nhảy lên tổ tiên thứ $2^j$ của nó.
@@ -279,10 +279,10 @@ int ancestor_k(int u, int k) {
 
 Qua đó, ta có thể thấy rằng Binary Lifting chỉ đơn giản là một cách tiền xử lý dữ liệu nhằm giúp cho thời gian truy vấn tối ưu hơn. Về tính chất, Binary Lifting khá giống với chặt nhị phân, khác ở chỗ mỗi lần, Binary Lifting thì ta thử nhảy $2^k$ đơn vị, còn chặt nhị phân thì ta thử nhảy $\frac{hi - lo + 1}{2}$ đơn vị.
 
-## Bài toán 2
+### Bài toán 2
 Cho một cây có trọng số gồm $N$ đỉnh có gốc tại đỉnh $1$. Có $Q$ truy vấn, mỗi truy vấn gồm $1$ cặp số $(u, x)$, ta cần in ra $v$ là tổ tiên xa nhất của $u$ thỏa tổng trọng số trên đường đi từ $u$ đến $v$ $\leq x$. Giới hạn: $N, Q \leq 10^5$
 
-### Thuật toán 1
+#### Thuật toán 1
 Ta xây dựng mảng $dist[u][j]$ là khoảng cách từ $u$ đến tổ tiên thứ $2^j$ của $u$.
 
 Cách làm dễ nhận ra là chặt nhị phân giá trị của $k$, sau đó so sánh $x$ với khoảng cách từ $u$ đến tổ tiên thứ $k$ của $u$.
@@ -313,12 +313,12 @@ int solve(int u, int x) {
 }
 ```
 
-#### Phân tích
+##### Phân tích
 - Độ phức tạp tiền xử lý: $\mathcal{O}(N\log N)$ (tạo mảng $up$ và $dist$)
 - Độ phức tạp truy vấn: $\mathcal{O}(\log N)$ (chặt nhị phân) $\times$ $\mathcal{O}(\log N)$ (tính khoảng cách) = $\mathcal{O}(\log^2N)$
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp là $\mathcal{O}(N\log N + Q\log^2N)$
 
-### Thuật toán 2
+#### Thuật toán 2
 Ta có nhận xét:
 - Ta đã tính trước các khoảng cách có độ lớn $2^j$ (mảng $dist$)
 - Từ đó, ta có thể nhảy theo từng bước $2^j$ để tính khoảng cách trong $\mathcal{O}(1)$
@@ -342,12 +342,12 @@ int solve(int u, int x) {
 }
 ```
 
-#### Phân tích
+##### Phân tích
 - Độ phức tạp tiền xử lý: $\mathcal{O}(N\log N)$ (tạo mảng $up$ và $dist$)
 - Độ phức tạp truy vấn: $\mathcal{O}(\log N)$ (chặt nhị phân) $\times$ $\mathcal{O}(1)$ (tính khoảng cách) = $\mathcal{O}(\log N)$
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp là $\mathcal{O}(N\log N + Q\log N)$
 
-## Ứng dụng Binary Lifting vào bài toán LCA
+### Ứng dụng Binary Lifting vào bài toán LCA
 Dễ thấy: nếu $x$ là tổ tiên chung của $u$ và $v$ ($x \neq$ gốc) thì $par[x]$ cũng là tổ tiên chung của $u$ và $v$. Do đó, ta có thể tìm tổ tiên chung gần nhất của $u$ và $v$ bằng Binary Lifting.
 
 Bằng cách sử dụng mảng $up$, ta có thể nhảy từ $u$ đến bất kì tổ tiên nào chỉ trong $\mathcal{O}(\log N)$ (bài toán tìm tổ tiên thứ $k$). Ta có thể tính mảng này bằng hàm $DFS$ như sau:
@@ -406,17 +406,17 @@ int lca(int u, int v) {
 }
 ```
 
-## Phân tích:
+### Phân tích:
 - Độ phức tạp tiền xử lý: $\mathcal{O}(N\log N)$
 - Độ phức tạp khi truy vấn: $\mathcal{O}(\log N)$
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp là $\mathcal{O}(N\log N + Q\log N)$
 
-# Bài toán 1
+## Bài toán 1
 [**VNOJ - PWALK**](https://oj.vnoi.info/problem/pwalk)
-## Tóm tắt
+### Tóm tắt
 Cho $1$ cây $N$ đỉnh có trọng số $(N \le 1000)$. Cần trả lời $Q$ truy vấn, mỗi truy vấn yêu cầu tìm khoảng cách giữa 2 đỉnh $u$ và $v$ trong cây.
 
-## Ý tưởng
+### Ý tưởng
 
 Chọn đỉnh $1$ làm gốc của cây.
 Với mỗi đỉnh của cây, ta tính $f(u)$ là khoảng cách của mỗi đỉnh đến đỉnh $1$ bằng cách duyệt qua tất cả các đỉnh trong cây.
@@ -430,11 +430,11 @@ Với hai đỉnh $u$ và $v$ bất kì, xét đường đi từ gốc của câ
 
 Từ hai quan sát trên, thấy được chỉ cần ba giá trị $f(u)$, $f(v)$ và $f(p)$ để tính $dist(u, v)$. Khi cộng $f(u)$ và $f(v)$, các đỉnh thuộc phần giao bị tính đến 2 lần, vì vậy ta tính $dist(u, v) = f(u) + f(v) - 2 * f(p)$.
 
-## Cài đặt
+### Cài đặt
 ```cpp
-#include<iostream>
-#include<vector>
-#include<cmath>
+## include<iostream>
+## include<vector>
+## include<cmath>
 using namespace std;
 
 const int N = 1000 + 3;
@@ -503,14 +503,14 @@ int main() {
 }
 ```
 
-# Bài toán 2
+## Bài toán 2
 [**VNOJ - FSELECT**](https://oj.vnoi.info/problem/fselect)
-## Tóm tắt
+### Tóm tắt
 Cho $1$ cây $N$ đỉnh và một số nguyên dương $K$ là số nhóm $(N \le 2\cdot 10^5, K \le \frac{N}{2})$. Đỉnh thứ $i$ thuộc nhóm $x_i$.
 
 Output gồm $K$ dòng, dòng thứ $i$ chứa $1$ số nguyên dương là khoảng cách xa nhất giữa $2$ đỉnh bất kì thuộc nhóm thứ $i$.
 
-## Ý tưởng
+### Ý tưởng
 - Với bài toán tìm khoảng cách xa nhất giữa 2 đỉnh trên cây, ta có thể làm như sau
     - **Bước 1:** Chọn 1 đỉnh bất kì, đặt là đỉnh $A$.
     - **Bước 2:** Tìm $1$ đỉnh bất kì xa đỉnh $A$ nhất, đặt là $B$.
@@ -518,17 +518,17 @@ Output gồm $K$ dòng, dòng thứ $i$ chứa $1$ số nguyên dương là kho�
 - Lúc này, khoảng cách giữa $2$ đỉnh $B$ và $C$ chính là khoảng cách xa nhất giữa $2$ đỉnh trên cây và được định nghĩa là đường kính của cây.
 - Chứng minh thuật toán: [here](http://courses.csail.mit.edu/6.046/fall01/handouts/ps9sol.pdf) (Exercise 9-1).
 
-## Thuật toán
+### Thuật toán
 Từ bài toán trên, ta có thể tìm khoảng cách lớn nhất giữa 2 đỉnh thuộc mỗi nhóm như sau:
 - **Bước 1:** Chọn 1 đỉnh bất kì thuộc nhóm, đặt là $A$.
 - **Bước 2:** Tìm $1$ đỉnh bất kì thuộc nhóm xa đỉnh $A$ nhất, đặt là $B$.
 - **Bước 3:** Tìm khoảng cách lớn nhất từ đỉnh $B$ đến các đỉnh thuộc nhóm còn lại.
 
-## Cài đặt
+### Cài đặt
 ```cpp
-#include<iostream>
-#include<vector>
-#include<cmath>
+## include<iostream>
+## include<vector>
+## include<cmath>
 using namespace std;
 
 const int N = 2e5 + 8;
@@ -607,26 +607,26 @@ int main() {
 }
 ```
 
-# Bài toán 3
+## Bài toán 3
 [**VNOJ - HBTLCA**](https://oj.vnoi.info/problem/hbtlca)
-## Tóm tắt
+### Tóm tắt
 Cho $1$ cây $N$ đỉnh có gốc là đỉnh $1$ và $M$ truy vấn thuộc $1$ trong $2$ loại:
 - $!$ $root$ : Chọn $root$ làm gốc của cây.
 - $?$ $u$ $v$ : Tìm tổ tiên chung gần nhất của $2$ đỉnh $u$ và $v$.
 
 Giới hạn: $N, M \le 10^5$
 
-## Thuật toán
+### Thuật toán
 - Xét cây có gốc là đỉnh bất kì (giả sử là đỉnh $1$), trong $3$ đỉnh $lca(u, v)$, $lca(u, root)$, $lca(v, root)$ sẽ luôn tồn tại ít nhất $2$ đỉnh trùng nhau, đỉnh còn lại chính là $lca(u, v)$ trong cây có gốc là $root$.
 - Phần chứng minh khá dễ, xin phép nhường lại cho bạn đọc như một bài tập.
 
-## Cài đặt
+### Cài đặt
 
 ```cpp
-#include<iostream>
-#include<algorithm>
-#include<vector>
-#include<cmath>
+## include<iostream>
+## include<algorithm>
+## include<vector>
+## include<cmath>
 using namespace std;
 typedef long long ll;
 
@@ -693,7 +693,7 @@ int main() {
 }
 ```
 
-# Bài tập áp dụng
+## Bài tập áp dụng
 - [**SPOJ - LCA**](https://www.spoj.com/problems/LCA/)
 - [**SPOJ - QTREE2**](https://www.spoj.com/problems/QTREE2/)
 - [**VNOJ - PWALK**](https://oj.vnoi.info/problem/pwalk)

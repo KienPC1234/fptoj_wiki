@@ -1,4 +1,4 @@
-# Bài toán RMQ và bài toán LCA
+## Bài toán RMQ và bài toán LCA
 
 **Nguồn**: [Topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/range-minimum-query-and-lowest-common-ancestor/)
 
@@ -7,19 +7,19 @@
 Trong bài viết này, tác giả sẽ giới thiệu với bạn 2 bài toán cơ bản: Bài toán RMQ và bài toán LCA, cũng như mối liên hệ giữa 2 bài toán này.
 
 
-# Các định nghĩa
+## Các định nghĩa
 
 Gỉa sử thuật toán có thời gian tiền xử lý là $f(n)$ và thời gian trả lời 1 truy vấn là $g(n)$. Ta ký hiệu độ phức tạp tổng quát của thuật toán là $< f(n),g(n) >$.
 
 Trong bài này, khi viết $\log{N}$, chúng ta hiểu là log cơ số 2 của $N$.
 
-## Bài toán Range Minimum Query (RMQ)
+### Bài toán Range Minimum Query (RMQ)
 
 Cho mảng $A[0,N-1]$. Bạn cần trả lời $Q$ truy vấn. Mỗi truy vấn gồm 2 số $i$, $j$ và bạn cần đưa ra vị trí của phần tử có giá trị nhỏ nhất trong đoạn từ $i$ đến $j$ của mảng $A$, ký hiệu là $RMQ_A(i,j)$.
 
 ![](http://community.topcoder.com/i/education/lca/RMQ_001.gif)
 
-## Bài toán Lowest Common Ancestor (LCA)
+### Bài toán Lowest Common Ancestor (LCA)
 
 Cho cây có gốc $T$. Bạn cần trả lời $Q$ truy vấn. Mỗi truy vấn gồm 2 số $u$, $v$ và bạn cần tìm nút xa gốc nhất mà là tổ tiên của cả 2 nút $u$ và $v$, ký hiệu là $LCA_T(u,v)$.
 
@@ -27,13 +27,13 @@ Cho cây có gốc $T$. Bạn cần trả lời $Q$ truy vấn. Mỗi truy vấn
 
 
 
-# Bài toán RMQ
+## Bài toán RMQ
 
-## Thuật toán $< O(1), O(N) >$
+### Thuật toán $< O(1), O(N) >$
 
 Thuật toán hiển nhiên nhất cho bài RMQ là ta không cần tiền xử lý gì cả. Với mỗi truy vấn, ta xét lần lượt từng phần tử từ $i$ đến $j$ để tìm phần tử nhỏ nhất. Hiển nhiên, độ phức tạp thuật toán này là $< O(1), O(N) >$.
 
-## Thuật toán $< O(N^2),O(1) >$
+### Thuật toán $< O(N^2),O(1) >$
 
 Lưu giá trị của $RMQ_A(i,j)$ trong một bảng $M[0,N-1][0,N-1]$.
 
@@ -53,7 +53,7 @@ Thuật toán sẽ có độ phức tạp $< O(N^3),O(1) >$. Tuy nhiên ta có t
 
 Có thể thấy thuật toán này khá chậm và tốn bộ nhớ $O(N^2)$ nên sẽ không hữu ích với những dữ liệu lớn hơn.
 
-## Thuật toán $< O(N),O(\sqrt N) >$
+### Thuật toán $< O(N),O(\sqrt N) >$
 
 Ta có thể chia mảng thành $\sqrt N$ phần. Ta sử dụng một mảng $M[0, \sqrt N]$ để lưu giá trị mỗi phần. $M$ có thể dễ dàng tính được trong $O(N)$:
 
@@ -63,7 +63,7 @@ Ta có thể chia mảng thành $\sqrt N$ phần. Ta sử dụng một mảng $M
 
 Dễ thấy thuật toán không sử dụng quá $3\sqrt N$ phép toán cho mỗi truy vấn.
 
-## Sparse Table (ST)
+### Sparse Table (ST)
 
 Đây là một hướng tiếp cận tốt hơn để tiền xử lý $RMQ$ cho các đoạn con có độ dài $2^k$, sử dụng quy hoạch động.
 
@@ -101,7 +101,7 @@ void process2(int M[MAXN][LOGMAXN], int A[MAXN], int N)
 Độ phức tạp tổng quát của thuật toán này là $< O(NlogN),O(1) >$
 
 
-## Cây phân đoạn (segment tree, interval tree, range tree)
+### Cây phân đoạn (segment tree, interval tree, range tree)
 
 Ta biểu diễn cây bằng một mảng $M[1,2*2^{[logN]+1}]$ với $M[i]$ là vị trí có giá trị nhỏ nhất trong đoạn mà nút $i$ quản lý.
 
@@ -163,9 +163,9 @@ int query(int node, int b, int e, int M[MAXIND], int A[MAXN], int i, int j)
 
 Mỗi truy vấn sẽ được thực hiện trong $O(logN)$ và thuật toán có độ phức tạp tổng quát là $< O(N),O(logN) >$
 
-# Bài toán LCA
+## Bài toán LCA
 
-## Thuật toán $< O(N), O(N) >$
+### Thuật toán $< O(N), O(N) >$
 
 Thuật toán đơn giản nhất như sau:
 
@@ -200,7 +200,7 @@ function LCA(u, v):
   return u
 ```
 
-## Thuật toán $< O(N),O(\sqrt N) >$
+### Thuật toán $< O(N),O(\sqrt N) >$
 
 Ý tưởng chia input thành các phần bằng nhau như trong bài toán $RMQ$ cũng có thể được sử dụng với $LCA$. Chúng ta sẽ chia cây thành $\sqrt H$ phần, với $H$ là chiều cao cây. Phần đầu bao gồm các tầng từ $0$ đến $\sqrt H-1$, phần 2 sẽ gồm các tầng từ $\sqrt H$ đến $2\sqrt H-1$,...:
 
@@ -259,7 +259,7 @@ int LCA(int T[MAXN], int P[MAXN], int L[MAXN], int x, int y)
 
 Hàm này sử dụng tối đa $2\sqrt H$ phép toán. Với cách tiếp cận này chúng ta có thuật toán $< O(N),O(\sqrt H) >$, trong trường hợp tệ nhất thì $N=H$ nên độ phức tạp tổng quát của thuật toán là $< O(N),O(\sqrt N) >$.
 
-## Thuật toán $< O(NlogN),O(logN) >$
+### Thuật toán $< O(NlogN),O(logN) >$
 
 Ứng dụng Sparse Table chúng ta có một thuật toán nhanh hơn. Đầu tiên chúng ta tính một bảng $P[1,N][1,logN]$ với $P[i][j]$ là tổ tiên thứ $2^j$ của $i$:
 
@@ -330,7 +330,7 @@ Mỗi lần gọi hàm này chỉ tốn tối đa $2logH$ phép toán. Trong tr�
 
 Bài toán LCA còn có nhiều cách giải thú vị khác. Các bạn có thể tham khảo thêm trong [bài viết này](algo/data-structures/lca).
 
-# Từ LCA đến RMQ
+## Từ LCA đến RMQ
 
 Ta có thể biến đổi bài toán LCA thành bài toán RMQ trong thời gian tuyến tính, do đó mà mọi thuật toán để giải bài toán RMQ đều có thể sử dụng để giải bài toán LCA. Hãy cùng xét ví dụ sau:
 
@@ -352,7 +352,7 @@ Gỉa sử $H[u]<H[v]$. Dễ thấy việc cần làm lúc này là tìm nút c�
 
 Cũng dễ thấy là mỗi 2 phần tử liên tiếp trong $L$ đều hơn kém nhau đúng 1 đơn vị.
 
-# Từ RMQ đến LCA
+## Từ RMQ đến LCA
 
 Một [**cây Cartesian**](http://wcipeg.com/wiki/Cartesian_tree) của một dãy $A[0,N-1]$ là một cây nhị phân $C(A)$ có gốc là phần tử nhỏ nhất trong $A$ và có vị trí $i$. Cây con trái của $C(A)$ là cây Cartesian của $A[0,i-1]$ nếu $i>0$, ngược lại thì không có. Cây con phải của $C(A)$ là cây Cartesian của $A[i+1,N-1]$.
 
@@ -462,7 +462,7 @@ void computeTree(int A[MAXN], int N, int T[MAXN])  {
 }
 ```
 
-# Thuật toán $< O(N),O(1) >$ cho bài toán RMQ thu hẹp
+## Thuật toán $< O(N),O(1) >$ cho bài toán RMQ thu hẹp
 
 Bài toán $RMQ$ phát sinh khi giải bài toán LCA chỉ là trường hợp đặc biệt của bài toán RMQ tổng quát, do ta có điều kiện $\|A[i]-A[i-1]\|=1$ với mọi $i\in[1,N-1]$ (lý do là 2 phần tử liên tiếp có quan hệ cha con với nhau). Ta gọi bài toán $RMQ$ này là bài toán RMQ thu hẹp. Trong 1 số tài liệu còn được gọi là bài toán $\pm 1 RMQ$. Trong mục này, ta sẽ nghiên cứu một thuật toán có độ phức tạp tốt hơn cho bài toán RMQ thu hẹp.
 
@@ -488,7 +488,7 @@ Kết hợp mảng $T$, $P$ với Sparse table cho mảng $M$, ta có thể tr�
   được giá trị này trong $O(1)$.
 
 
-# Một số bài để luyện tập
+## Một số bài để luyện tập
 
 - [CF #278 Div 1 - B](http://codeforces.com/contest/487/problem/B)
 - [Bayan 2015 Contest Warm Up - D](http://codeforces.com/contest/475/problem/D)

@@ -1,4 +1,4 @@
-# Thuật toán đường quét
+## Thuật toán đường quét
 
 **Nguời viết:** 
 - Ngô Nhật Quang - HUS High School for Gifted Students
@@ -14,13 +14,13 @@
 
 
 
-# Giới thiệu
+## Giới thiệu
 
 Trong bài viết này, chúng ta sẽ đi tìm hiểu về thuật toán đường quét - một thuật toán khá hữu ích trong hình học tính toán. Thuật toán này được xây dựa trên một ý tưởng mạnh mà đơn giản: sử dụng một đường thẳng dọc và "quét" qua mặt phẳng.
 
 Tuy vậy, trên thực tế, việc "quét" toàn bộ các điểm trên mặt phẳng là bất khả thi nên chúng ta chỉ có thể xét một vài điểm cần thiết mà thôi.
 
-## Lưu ý trước khi đọc bài viết
+### Lưu ý trước khi đọc bài viết
 
 Các khái niệm sau được đề cập xuyên suốt bài viết:
 
@@ -41,11 +41,11 @@ Như đã đề cập ở phía trên, khi ứng dụng thuật toán đường 
 
 Ngoài ra, bài viết gốc có đề cập tới bài toán bao lồi, nhưng chủ đề này sẽ không được đề cập trong bài viết này này bởi VNOI Wiki đã có một bài viết khá hoàn thiện ở [đây](https://vnoi.info/wiki/translate/wcipeg/Convex-Hull.md).
 
-# Bài toán tìm cặp điểm gần nhất
+## Bài toán tìm cặp điểm gần nhất
 
 Link bài: [SPOJ - CLOPPAIR](https://www.spoj.com/problems/CLOPPAIR/)
 
-## Đề bài
+### Đề bài
 
 Cho một danh sách $n$ điểm. Tìm khoảng cách Euclid ngắn nhất tạo bởi hai trong số các điểm đó.
 
@@ -54,7 +54,7 @@ Giới hạn:
 - $2 \leqslant n \leqslant 50000$
 - Toạ độ các điểm là số nguyên $-10^6 \leqslant x, y \leqslant 10^6$
 
-## Phân tích
+### Phân tích
 
 Ta có thể dễ dàng nhận thấy bài này có thể giải quyết với độ phức tạp $O(n^2)$, nhưng sẽ không thể qua được giới hạn thời gian 1 giây. Tuy vậy, áp dụng thuật toán đường quét, chúng ta có thể giảm độ phức tạp xuống $O(n\log{n})$.
 
@@ -89,16 +89,16 @@ Thuật toán của chúng ta cụ thể như sau. Đầu tiên sắp xếp danh
 
 Ta nhận thấy mỗi điểm được thêm vào và xoá khỏi $T$ đúng một lần. Do đó tổng chi phí cho các thao tác thêm và xoá điểm là $O(n \log{n})$. Tại mỗi bước, chi phí tìm kiếm là $O(\log{n})$ và có $O(1)$ điểm ta cần xét. Tóm lại, độ phức tạp thời gian của thuật toán là $O(n \log{n})$.
 
-## Cài đặt mẫu
+### Cài đặt mẫu
 
 Trong phần cài đặt này, các khoảng cách được lưu dưới dạng bình phương để tránh bị sai số.
 
 ```cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
-#define ll long long
+## define ll long long
 
 struct Point{
     ll x, y;
@@ -177,11 +177,11 @@ signed main() {
 }
 ```
 
-# Bài toán tìm giao điểm của các đoạn thẳng song song với trục toạ độ
+## Bài toán tìm giao điểm của các đoạn thẳng song song với trục toạ độ
 
 Link bài: [SPOJ - CS345A1](https://www.spoj.com/problems/CS345A1/)
 
-## Đề bài
+### Đề bài
 
 Cho các đoạn thẳng song song trục $Ox$ hoặc trục $Oy$, yêu cầu trả lại số các giao điểm.
 
@@ -190,7 +190,7 @@ Giới hạn:
 - $1 \leqslant n \leqslant 100000$
 - Toạ độ $x$, $y$ của mỗi điểm là số thực thỏa mãn $0 \leqslant x, y \leqslant 1$
 
-## Phân tích
+### Phân tích
 
 Ta bắt đầu với ý tưởng quét qua tất cả đoạn thẳng tương tự như bài toán tìm cặp điểm gần nhất.
 
@@ -228,14 +228,14 @@ Minh họa thuật toán:
 <img src="https://i.imgur.com/xj1XD68.gif"  style="width: 60%">
 </center>
 
-## Cài đặt mẫu
+### Cài đặt mẫu
 
 ```cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
-#define ll long long
+## define ll long long
 
 const int N = 1e5 + 5;
 const double EPS = 1e-9;
@@ -326,11 +326,11 @@ signed main() {
 }
 ```
 
-# Bài toán tìm tổng diện tích phủ bởi các hình chữ nhật
+## Bài toán tìm tổng diện tích phủ bởi các hình chữ nhật
 
 Link bài: [VNOJ - AREA](https://oj.vnoi.info/problem/area)
 
-## Đề bài
+### Đề bài
 
 Trên mặt phẳng toạ độ, ta vẽ $N$ hình chữ nhật có các cạnh song song với trục toạ độ. Tính tổng diện tích che phủ bởi $N$ hình chữ nhật này.
 
@@ -339,7 +339,7 @@ Giới hạn:
 -   $1 \leqslant n \leqslant 10000$
 -   Mỗi hình chữ nhật có toạ độ góc trái dưới và góc phải trên lần lượt là $x_1$, $y_1$ và $x_2$, $y_2$ sao cho $0 \leqslant x_1 \leqslant x_2 \leqslant 30000$ và $0 \leqslant y_1 \leqslant y_2 \leqslant 30000$
 
-## Phân tích
+### Phân tích
 
 Tương tự như bài toán tìm giao điểm của các đoạn thẳng, chúng ta có thể xử lí bằng cách biểu diễn mỗi hình chữ nhật thành hai "sự kiện" - một biểu thị cho cạnh bên trái và một biểu thị cho cạnh bên phải của hình chữ nhật - và duy trì một tập $S$ chứa các hình chữ nhật mà đoạn thẳng quét của chúng ta đang cắt qua. Khi chúng ta quét qua cạnh bên trái, ta thêm hình chữ nhật đó vào $S$, khi quét qua cạnh bên phải thì ta xoá hình chữ nhật tương ứng khỏi $S$.
 
@@ -373,10 +373,10 @@ Chi tiết việc cập nhật hai giá trị tại mỗi bước độc giả c
 
 <!-- Cũng như bài toán [tìm số giao điểm](#Bài-toán-tìm-giao-điểm-của-các-đoạn-thẳng), chúng ta cũng có thể sử dụng phương pháp nén số kết hợp cây phân đoạn hoặc cây chỉ số nhị phân để giải. Chúng ta cũng sẽ trải các cạnh nằm ngang của các hình chữ nhật lên cây, tuy vậy, khi tính diện tích chúng ta sẽ có một chút thay đổi để hoàn thành. Mỗi khi bắt đầu một cạnh nằm dọc (cũng là bắt đầu vào hình chữ nhật mới) chúng ta sẽ cộng diện tích hình cũ, và xử lí hình hiện tại. -->
 
-## Cài đặt mẫu
+### Cài đặt mẫu
 
 ```cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -443,11 +443,11 @@ signed main() {
 }
 ```
 
-# Bài toán tìm cây khung Manhattan nhỏ nhất
+## Bài toán tìm cây khung Manhattan nhỏ nhất
 
 Link bài: [Kattis - GRIDMST](https://open.kattis.com/problems/gridmst)
 
-## Đề bài
+### Đề bài
 
 Cho $N$ điểm (có thể trùng nhau). Trọng số giữa mỗi đỉnh là khoảng cách Manhattan giữa chúng. Tìm trọng số của cây khung nhỏ nhất qua $N$ điểm đó.
 
@@ -456,7 +456,7 @@ Giới hạn:
 -   $1 \leqslant N \leqslant 100000$
 -   $N$ dòng, mỗi dòng 2 số nguyên $x$, $y$ sao cho $0 \leqslant x, y \leqslant 1000$ là toạ độ mỗi điểm.
 
-## Phân tích
+### Phân tích
 
 Ý tưởng chính của thuật giải là nếu như số cạnh ta cần xét là $O(n)$ thì ta có thể sử dụng các thuật toán tìm cây khung nhỏ nhất như Kruskal hay Prim để giải bài toán trong $O(n \log{n})$.
 
@@ -521,12 +521,12 @@ Chúng ta đã nói về cách chia các điểm và về cách quét theo thứ
 
 Ý tưởng tìm cặp điểm gần nhất ở mỗi góc có thể giải quyết cả bài toán Cây khung nhỏ nhất với khoảng cách Euclid, nhưng độ phức tạp sẽ không còn là $O(N\log N)$ trong trường hợp xấu nhất, bởi khoảng cách giờ không còn là phương trình tuyến tính nữa. Giải quyết bài toán này trong $O(N\log N)$ không phải là điều không thể, bởi khi đó, nó là một bài toán con của phép tam giác hoá Delaunay. -->
 
-## Cài đặt mẫu
+### Cài đặt mẫu
 
 Cảm ơn bạn Trần Xuân Bách (HUS High School for Gifted Students) đã đóng góp vào đoạn code này.
 
 ```cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 using namespace std;
 
 const int INF = 1e8;
@@ -661,7 +661,7 @@ int main() {
 }
 ```
 
-# Bài tập ví dụ
+## Bài tập ví dụ
 
 [TopCoder - BoxUnion](https://community.topcoder.com/stat?c=problem_statement&pm=4463)
 
@@ -679,11 +679,11 @@ int main() {
 
 [CSA - The Sprawl](https://csacademy.com/contest/archive/task/the-sprawl)
 
-# Kết
+## Kết
 
 Giống như quy hoạch động, thuật toán đường quét là một công cụ mạnh vì nó không chỉ là một thuật toán, mà còn là một dạng thuật toán mà có thể dùng để giải một phạm vi các bài toán rất rộng, bao gồm một số bài toán không được nêu ở đây (như phép tam giác hóa Delaunay) và cả các dạng mới chỉ xuất hiện lần đầu trong một cuộc thi.
 
-# Tham khảo
+## Tham khảo
 
 1. [bmerry, TopCoder: Line Sweep Algorithm](https://www.topcoder.com/thrive/articles/Line%20Sweep%20Algorithms)
 2. [Leo J. Guibas, Jorge Stolfi, On computing all north-east nearest neighbors in the L1 metric](https://www.sciencedirect.com/science/article/abs/pii/0020019083900455)

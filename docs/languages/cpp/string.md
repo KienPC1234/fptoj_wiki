@@ -1,8 +1,8 @@
-# Xâu trong C++
+## Xâu trong C++
 
 Bài viết sưu tầm trên mạng.
 
-# 0. Kiểu chuỗi của C và hạn chế
+## 0. Kiểu chuỗi của C và hạn chế
 
 Khi mới học C, chắc các bạn đều rất bối rối khi làm việc với xâu ký tự, việc sử dụng con trỏ lưu xâu ký tự rất phức tạp, dễ gây lỗi khiến nhiều người cho rằng nó không bằng xâu ký tự trong Pascal.
 
@@ -12,12 +12,12 @@ Các chương trình C++ có thể sử dụng chuỗi theo cách thức cũ c�
 - Không thể gán giá trị hay sử dụng phép toán `+` (ghép chuỗi) và các phép toán so sánh như: `>` (lớn hơn), `<` (nhỏ hơn),... mà phải gọi các hàm thư viện trong `<string.h>`;
 - Nếu dùng kỹ thuật cấp phát động thì phải quản lý việc cấp thêm bộ nhớ khi chuỗi dãn ra (chẳng hạn do ghép chuỗi) và phải hủy bộ nhớ (khi không dùng nữa) để tránh việc cạn kiệt bộ nhớ của máy tính trong trường hợp có nhiều chương trình hoạt động đồng thời.
 
-# 1. Kiểu chuỗi string trong thư viện STL của C++
+## 1. Kiểu chuỗi string trong thư viện STL của C++
 
 Thư viện chuẩn STL (Standard Template Library) cung cấp kiểu `string` (xâu ký tự), giúp các bạn tránh khỏi hoàn toàn các phiền phức nêu trên.Các chỉ thị `#include` cần khai báo để sử dụng string:
 
 ```cpp
-#include <string>
+## include <string>
 using std::string;
 //using namespace std;
 ```
@@ -38,11 +38,11 @@ Nếu bạn muốn tận dụng các hàm của C-String, cần chuyển đổi 
   string s(s_old);
   ```
 
-# 2. Các phương thức, phép toán tiện ích của kiểu string
+## 2. Các phương thức, phép toán tiện ích của kiểu string
 
 Kiểu `string` của STL hỗ trợ các nhóm phương thức và phép toán tiện ích sau đây.
 
-## a) Các phép toán và phương thức cơ bản
+### a) Các phép toán và phương thức cơ bản
 
 - Các toán tử `+`, `+=` dùng để ghép hai chuỗi và cũng để ghép một ký tự vào chuỗi;
 - Các phép so sánh theo thứ tự từ điển: `==` (bằng nhau), `!=` (khác nhau), `>` (lớn hơn), `>=` (lớn hơn hay bằng), `<` (nhỏ hơn), `<=` (nhỏ hơn hay bằng);
@@ -131,7 +131,7 @@ String thực chất là một `vector<char>` có bổ sung thêm một số hà
   }
   ```
 
-## b) Các phương thức chèn, xóa, lấy chuỗi con:
+### b) Các phương thức chèn, xóa, lấy chuỗi con:
 
 - Phương thức `substr(int pos, int nchar)` trích ra chuỗi con của một chuỗi cho trước, ví dụ `str.substr(2,4)` trả về chuỗi con gồm 4 ký tự của chuỗi `str` kể từ ký tự ở vị trí thứ 2 (ký tự đầu tiên của chuỗi ở vị trí 0).
 
@@ -193,7 +193,7 @@ String thực chất là một `vector<char>` có bổ sung thêm một số hà
   }
   ```
 
-## c) So sánh
+### c) So sánh
 
 Bạn có thể đơn giản là sử dụng những toán tử quan hệ (`==`, `!=`, `<`, `<=`, `>=`) được định nghĩa sẵn. Tuy nhiên, nếu muốn so sánh một phần của một chuỗi thì sẽ cần sử dụng phương thức `compare()`:
 
@@ -211,8 +211,8 @@ Ví dụ:
 
 ```cpp
 // comparing apples with apples
-#include <iostream>
-#include <string>
+## include <iostream>
+## include <string>
 using namespace std;
 int main ()
 {
@@ -230,7 +230,7 @@ int main ()
 }
 ```
 
-## d) Các phương thức tìm kiếm và thay thế
+### d) Các phương thức tìm kiếm và thay thế
 
 - Phương thức `find()` tìm kiếm xem một ký tự hay một chuỗi nào đó có xuất hiện trong một chuỗi `str` cho trước hay không. Có nhiều cách dùng phương thức này:
 
@@ -289,7 +289,7 @@ int main ()
   getchar();
   ```
 
-## e) Tách xâu
+### e) Tách xâu
 
 Trong việc xử lý xâu ký tự, không thể thiếu được các thao tác tách xâu ký tự thành nhiều xâu ký tự con thông qua các ký tự ngăn cách. Các hàm này có sẵn trong các ngôn ngữ khác như Visual Basic, Java, hay thậm chí là trong `<string.h>`. Với STL, các bạn có thể dễ dàng làm điều này với `stringstream`:
 
@@ -367,9 +367,9 @@ Sau đây là ví dụ bên trên được viết lại dùng hàm thành viên 
 
 ```cpp
 // strings vs c-strings
-#include <iostream>
-#include <string.h>
-#include <string>
+## include <iostream>
+## include <string.h>
+## include <string>
 using std::string;
 int main ()
 {
@@ -401,7 +401,7 @@ cac
 ban
 ```
 
-## f) Chuyển đổi hàng loạt với transform
+### f) Chuyển đổi hàng loạt với transform
 
 ```cpp
 OutputIterator transform( InputIterator first,
@@ -409,9 +409,9 @@ InputIterator last,
 OutputIterator result,
 UnaryOperation unary_op );
 
-#include <cctype> // for toupper
-#include <string>
-#include <algorithm> //for transform
+## include <cctype> // for toupper
+## include <string>
+## include <algorithm> //for transform
 using namespace std;
 char alphabet(char c)
 {
@@ -429,6 +429,6 @@ int main()
 }
 ```
 
-## g) Một số phương thức khác
+### g) Một số phương thức khác
 
 Còn nhiều phương thức tiện ích khác như: `append()`, `rfind()`, `find_first_not_of()`, `find_last_not_of()`, `swap()`. Cách dùng các hàm này đều được trình bày trong hệ thống hướng dẫn (help) của các môi trường có hỗ trợ STL (trong VC++ là MSDN). Ngoài ra các phương thức như `find_first_of()` tương tự như `find()`, `find_last_of()` tương tự như `rfind()`

@@ -1,16 +1,16 @@
-# Chia căn (sqrt decomposition) và ứng dụng: Phần 2
+## Chia căn (sqrt decomposition) và ứng dụng: Phần 2
 
 **Tác giả**: Nguyễn *RR* Thành Trung
 
 Tiếp nối chuỗi bài viết về các thuật toán chia căn, trong bài viết này chúng ta sẽ bàn về kĩ thuật tăng tốc độ trả lời truy vấn bằng cách sắp xếp chúng theo một thứ tự nhất định, còn gọi là **Mo's algorithm**.
 
-# Bài toán
+## Bài toán
 
 Cho một dãy số $A$ gồm $N$ phần tử. Cần thực hiện $Q$ truy vấn, mỗi truy vấn $(i, j)$ yêu cầu tìm $mode(A_i, ..., A_j)$. (Mode của một tập hợp là giá trị xuất hiện nhiều lần nhất trong tập hợp đó). Giới hạn: $N, Q, A_i \le 10^5$.
 
 Khi đọc đề một bài toán truy vấn kiểu này, có lẽ CTDL đầu tiên mà các bạn nghĩ đến là Interval Tree. Nhưng có điều gì đó không ổn trong bài này: Khi có thông tin của 2 nút con $[l, mid]$ và $[mid+1, r]$, rất khó để tìm được bất kỳ thông tin hữu ích nào của $[l, r]$.
 
-# Duyệt
+## Duyệt
 
 Chúng ta xuất phát từ thuật toán duyệt hồn nhiên như sau:
 
@@ -47,7 +47,7 @@ Sau khi trả lời truy vấn $[l_1, r_1]$, để trả lời truy vấn $[l_2,
 
 Như vậy, độ phức tạp của ta là tổng $\|l_i - l_{i-1}\| + \|r_i - r_{i-1}\|$, nhân thêm $\mathcal{O}(logN)$ để đếm và tìm phần tử lớn nhất của mảng đếm.
 
-# Thuật toán Mo
+## Thuật toán Mo
 
 Thuật toán Mo là một cách sắp xếp lại các truy vấn, sao cho tổng $\|l_i - l_{i-1}\| + \|r_i - r_{i-1}\|$ không quá $O(N \* \sqrt{N} + Q \* \sqrt{N})$.
 
@@ -84,7 +84,7 @@ Mo's algorithm có độ phức tạp là $O(N \* \sqrt{N} + Q \* \sqrt{N})$. Đ
 
 Vậy, độ phức tạp là $O(N \* \sqrt{N} + Q \* \sqrt{N})$.
 
-# Áp dụng
+## Áp dụng
 
 Sử dụng Mo's Algorithm, bạn đã có thể thu được một thuật toán hoàn chỉnh cho bài này với độ phức tạp $O(N \* \sqrt{N} + Q \* \sqrt{N})$:
 
@@ -107,7 +107,7 @@ Sử dụng Mo's Algorithm, bạn đã có thể thu được một thuật toá
 Vì tổng các thao tác thêm và xóa khi áp dụng Mo's Algorithm không quá $O(N \* \sqrt{N} + Q \* \sqrt{N})$, ta thu được một thuật toán với độ phức tạp này.
 
 
-# Mở rộng
+## Mở rộng
 
 Với mục đích làm bài toán khó hơn, ta xét trường hợp mà CTDL của ta chỉ cho phép thực hiện đúng 2 thao tác:
 
@@ -155,11 +155,11 @@ Chi tiết cài đặt:
        rollback();
 ```
 
-# Cải tiến
+## Cải tiến
 
 Các bạn có thể đọc thêm về cách cải tiến tốc độ chạy của Mo sử dụng TSP và Hilbert curve [tại đây](https://codeforces.com/blog/entry/61203).
 
-# Bài tập áp dụng
+## Bài tập áp dụng
 
 - [Codeforces Yandex 2011 Round 2 - D](http://codeforces.com/contest/86/problem/D)
 - [Codechef - GERALD07](https://www.codechef.com/problems/GERALD07)

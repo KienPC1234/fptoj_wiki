@@ -1,6 +1,6 @@
-# Bảng băm (Hash Table)
+## Bảng băm (Hash Table)
 
-# Tư tưởng
+## Tư tưởng
 
 Bảng băm là một CTDL thường được sử dụng như một từ điển: mỗi phần tử trong bảng băm là một cặp (khóa, giá trị). Nếu so sánh với mảng, khóa được xem như chỉ số của mảng, còn giá trị giống như giá trị mà ta lưu tại chỉ số tương ứng. Bảng băm không như các loại từ điển thông thường - ta có thể tìm được giá trị thông qua khóa của nó.
 
@@ -19,7 +19,7 @@ Giải thích hình minh họa:
 
 Nếu các kết quả của hàm hash được phân bố đều, các bucket sẽ có kích thước xấp xỉ nhau. Giả sử số bucket đủ lớn, mỗi buckets sẽ chỉ có một vài phần tử trong chúng. Điều này làm cho việc tìm kiếm rất hiệu quả.
 
-# Độ phức tạp
+## Độ phức tạp
 
 Gọi:
 
@@ -28,9 +28,9 @@ Gọi:
 
 Giá trị $n/k$ được gọi là **load factor**. Khi load factor nhỏ (xấp xỉ 1), và giá trị của hàm Hash phân bố đều, độ phức tạp của các thao tác trên Hash table là $\mathcal{O}(1)$.
 
-# Hash collision
+## Hash collision
 
-## Separate chaining
+### Separate chaining
 
 Trường hợp một hash bucket chứa nhiều hơn một giá trị ta gọi đó là **Hash collision** (va chạm). Việc xử lý hash collision rất quan trọng đối với độ hiệu quả của bảng băm. Một trong những phương pháp đơn giản nhất là cài đặt các [danh sách liên kết](algo/data-structures/array-vs-linked-lists) ở các bucket. Kĩ thuật này được gọi là **Separate chaining**:
 
@@ -41,7 +41,7 @@ Giải thích hình minh họa:
 - Mỗi bucket là 1 danh sách liên kết
 - John Smith và Sandra Dee cùng có giá trị hàm hash là 152, nên ở bucket 152, ta có 1 danh sách liên kết chứa 2 phần tử.
 
-## Open Addressing
+### Open Addressing
 
 Tư tưởng của **Open Addressing** là, khi xảy ra Hash collision, ta lưu vào một vị trí tiếp theo trong bảng băm. Ví dụ:
 
@@ -57,7 +57,7 @@ Trong hình minh họa:
 - Để cài đặt được cách này, Load factor phải nhỏ hơn 1.
 - Khi tìm kiếm 1 phần tử, ta phải kiểm tra tất cả các bucket bắt đầu từ bucket của giá trị Hash, đến khi bucket trống (ví dụ ta tìm Sandra Dee thì phải tìm bucket 152, 153; tìm Ted Baker thì phải tìm bucket 152, 153, 154. Nếu ta tìm 1 người khác có giá trị Hash là 152, thì phải tìm cả bucket 152, 153, 154 và 155 (chỉ khi bucket 155 trống, ta mới chắc chắn người đó không có trong Hash table).
 
-# Cài đặt
+## Cài đặt
 
 Dưới đây là cài đặt Hash table đơn giản, hỗ trợ thao tác thêm và tìm kiếm. Hash table này sử dụng separate chaining, và dùng vector thay cho linked list để đơn giản.
 
@@ -100,13 +100,13 @@ private:
 };
 ```
 
-# Kết luận
+## Kết luận
 
 Trong phát triển ứng dụng, bảng hash thuận tiện để lưu trữ dữ liệu tham khảo, chẳng hạn như chữ viết tắt tên đầy đủ của các tổ chức. Trong giải quyết bài toán, bảng hash thật sự hữu ích để tiếp cận hướng giải quyết chia để trị cho bài toán cái túi (knapsack-type).
 
 Giả sử, chúng ta được yêu cầu tìm một số lượng ống nhỏ nhất để xây dựng một đường ống với chiều dài cố định và chúng ta có 38 ống. Bằng cách chia thành hai tập – 19 và tính toán tất cả trường hợp ghép ống có thể ở mỗi tập, chúng ta tạo ra một bảng hash kết nối giữa độ dài mà các tổ hợp ống tạo thành với số lượng ống ít nhất cần dùng. Sau đó, với mỗi tổ hợp ống được xây dựng trong một tập, chúng ta có thể tra cứu liệu có tồn tại đường ống với độ dài phù hợp ở tập bên kia để cả hai ống tạo nên một đường ống với độ dài yêu cầu với số ống là ít nhất.
 
-# Các tài liệu tham khảo:
+## Các tài liệu tham khảo:
 
 - [Topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/data-structures/)
 - [Wikipedia](https://en.wikipedia.org/wiki/Hash_table)

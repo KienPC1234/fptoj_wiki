@@ -1,4 +1,4 @@
-# Deque - hàng đợi hai đầu
+## Deque - hàng đợi hai đầu
 
 **Hàng đợi hai đầu** (**deque**) là cấu trúc dữ liệu chứa 0 hoặc nhiều phần tử có cùng kiểu dữ liệu và được biểu diễn bằng một hàng có phần tử _đầu_ (**front**) và phần tử _cuối_ (**last**). **Deque** hỗ trợ 4 thao tác như sau:
 
@@ -21,13 +21,13 @@ Hai thao tác _lấy giá trị_ thật sự không cần thiết, bởi _lấy 
 
 
 
-# Thuật ngữ
+## Thuật ngữ
 
 Thuật ngữ **deque** là cách gọn ngắn tắt của _double-ended queue_ (hàng đợi hai đầu). Sở dĩ là vì nó có thể thêm, bớt phần tử ở cả hai đầu; còn thuật ngữ **queue** ở đây là một lớp cấu trúc dữ liệu cho phép thêm, bớt phần tử (nhưng không thể tìm kiếm). Một phần tử được xem là **đứng trước** một phần tử khác nếu nó gần với phần tử đầu (**front**) hơn là phần tử còn lại; ngược, lại, một phần tử được xem là **đứng sau** một phần tử khác nếu nó xa với phần tử đầu (**front**) hơn là phần tử còn lại. **Push** một phần tử là thêm phần tử đó vào hàng đợi, **pop** đẩy ra một phần tử. Lưu ý rằng _điểm đầu_ (**front**) và _điểm cuối_ (**last**) là tương đương nhau, khi thay đổi toàn bộ điểm cuối và đầu trong giải thuật của chúng ta thì nó vẫn hoạt động tương tự như trước đó.
 
-# Cài đặt
+## Cài đặt
 
-## Cài đặt bằng mảng
+### Cài đặt bằng mảng
 
 - Khi sử dụng mảng để biển diễn **deque**, thì giá trị của **deque** sẽ được lưu giữ bằng những phần tử liên tiếp trong mảng. Tuy nhiên, đối vấn cách cài đặt này, thì nếu ta muốn đặt phần tử có _chỉ số thấp nhất_ (**front**) luôn luôn cố định ở một chỉ số (ví dụ $0$ hoặc $1$), hay nói cách khác, chỉ số thấp nhất luôn là cố định thì: Khi ta muốn **pop front** (thêm phần tử phía trước vào đầu hàng đợi), ta sẽ phải tịnh tiến toàn bộ các phần tử về bên trái sao cho phần tử có _chỉ số thấp nhất_ (**front**) sẽ lưu giá trị của phần tử _tiếp theo_ (**next**) và tương tự với các phần tử còn lại. Cũng như đối với việc **push front** (thêm phần tử vào đầu hàng đợi), toàn bộ những phần tử hiện tại trong **deque** sẽ phải tịnh tiến về bên phải để phần tử _chỉ số thấp nhất_ (**front**) sẽ lưu giá trị của phần tử vừa thêm vào, trong khi các phần tử còn lại sẽ lưu phần tử _đứng trước_. Thế nên, với cách cài đặt thế này, mỗi thao tác thực hiện sẽ tốn chi phí là **$O(n)$** - với $n$ là số lượng phần tử hiện đang có của **deque**. 
 
@@ -67,7 +67,7 @@ cấu trúc deque
 
 - Lưu ý rằng, nếu **deque** đã đầy rồi nhưng ta vẫn **push** thêm các phần tử vào thì kích thước của **deque** lúc này sẽ là $0$, và một số phần tử cũ sẽ bị ghi đè lên bằng các phần tử mới. Ngoài ra, khi kích thước của deque là $0$ nhưng ta lại muốn xóa đi phần tử thì lúc này, kích thước của **deque** sẽ là cực đại. Việc thêm vào các đoạn mã _kiểm tra lỗi_, _kiểm tra rỗng_ và _copy_ **deque** được lược bỏ đi nhằm mục đích ngắn gọn code.
 
-## Cài đặt bằng danh sách liên kết
+### Cài đặt bằng danh sách liên kết
 
 - Cài đặt bằng mảng xoay vòng hầu như đã là phương pháp tối ưu, tuy nhiên trong một vài trường hợp, khi mà số lượng phần tử cần không thể xác định được, lúc này ta sẽ sử dụng _danh sách liên kết_ (**linked list**) để biểu diễn **deque**. Chi tiết cho cách cài đặt này được mô tả bằng đoạn mã giả như sau:
 
@@ -96,7 +96,7 @@ cấu trúc deque
 - Ta có thể dễ dàng nhận ra, **deque** đơn thuần chỉ là chứa các thao tác của **list** sẵn có. (Ở đây ta giả định rằng **list** bao gồm cả hàm trả về kích thước, nếu không thì ta sẽ thêm hàm trả về kích thước trong **deque**).
 
 
-## Lớp **deque** trong STD C++
+### Lớp **deque** trong STD C++
 - Trong STD C++, lớp `deque` nằm trong tiêu đề `<deque>`, là một _cấu trúc dữ liệu_ có khả năng chứa mọi kiểu dữ liệu (**cố định**), và kiểu dữ liệu này xem được xem như một thông số mẫu. Do đó, ví dụ như `deque<char>` là một hàng đợi hai đầu chứa các ký tự. Cấu trúc dữ liệu này cho phép sử dụng các hàm sau: (lưu ý rằng `T` là kiểu dữ liệu mà hàng đợi đó lưu trữ)
 
 1.  `void push_front(const T& x)`: thêm x vào đầu **deque**.

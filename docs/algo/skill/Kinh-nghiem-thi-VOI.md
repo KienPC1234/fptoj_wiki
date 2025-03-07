@@ -2,7 +2,7 @@
 title: Kinh nghiệm thi VOI
 ---
 
-# Kinh nghiệm thi VOI
+## Kinh nghiệm thi VOI
 
 **Tác giả**: 
 - Trần Xuân Bách - HUS High School for Gifted Students
@@ -11,13 +11,13 @@ title: Kinh nghiệm thi VOI
 
 Khác với các kì thi khác, bản chất thi offline của VOI khiến thí sinh phải rất cẩn trọng và tỉ mỉ khi code. Bài viết dưới đây sẽ chỉ ra các lỗi sai mà các bạn thường gặp, đồng thời chỉ ra cách khắc phục chúng.
 
-# Các lỗi sai thường gặp
+## Các lỗi sai thường gặp
 
 Hai lỗi đầu tiên rất dễ tránh nếu bạn làm như sau:
 
 5-7 phút trước khi hết giờ, các bạn nên chạy lại tất cả các bài **bằng file**. Kiểm tra xem tất cả ví dụ đúng chưa, rồi sau đó đóng code lại và **không sửa** gì nữa.
 
-## Dịch lỗi
+### Dịch lỗi
 
 <figure style="text-align: center">
 <img width="70%" src="https://i.imgur.com/imtNf6p.png">
@@ -35,7 +35,7 @@ Một trong những lỗi "ngớ ngẩn" nhất có thể xảy ra trong kì thi
 <figcaption>Đừng thêm #define int long long lúc cuối giờ...</figcaption>
 </figure>
 
-## Đọc/ghi file sai
+### Đọc/ghi file sai
 
 Do thể thức đọc/ghi qua file của VOI khác với các trang thi như Codeforces hay AtCoder, nên nhiều bạn còn cẩu thả ở phần này. Các bạn nên:
 
@@ -67,15 +67,15 @@ Do thể thức đọc/ghi qua file của VOI khác với các trang thi như Co
 <figcaption style="text-align:center">Nạn nhân xấu số khác</figcaption>
 </figure>
 
-## Lỗi khi input/output
+### Lỗi khi input/output
 
-### In thừa debug
+#### In thừa debug
 Trước khi nộp bài, hãy gõ `Ctrl+F` để tìm tất cả các lần xuất hiện của `cout`/`printf`, khi đó *gần như* chắc chắn bạn sẽ không bỏ sót dòng debug nào hết!
 Trừ khi bạn dùng `cerr`...
 
 **Lưu ý:** Đừng xoá nhầm cả dòng output [như mình](https://discord.com/channels/660930260405190688/660934748566454276/1000076316147724378)
 
-### Đọc chưa hết input
+#### Đọc chưa hết input
 
 ```cpp
 int n, a[N];
@@ -113,7 +113,7 @@ int tests; cin >> tests; while (tests--){
 }
 ```
 
-### Output thừa
+#### Output thừa
 
 ```cpp
 int n, m, a[N][N];
@@ -157,7 +157,7 @@ if (!check()){
 }
 ```
 
-## Tràn mảng
+### Tràn mảng
 
 Vì VOI không cho phép bạn được sai sót, nên việc để thừa mảng không phải là việc đáng bận tâm lắm. Bình thường mình sẽ khai báo mảng như sau:
 
@@ -176,11 +176,11 @@ Không nên truy cập mảng từ $0$ vì ai biết khi nào bạn truy cập n
 
 Lưu ý một số giới hạn mảng đặc biệt: Segment Tree có giới hạn là $4\times n$, Euler Tour (trong cách cài đặt <$\mathcal O(n\log n)$, $\mathcal O(1)$> của LCA) có giới hạn là $2 \times n$.
 
-## Tràn số
+### Tràn số
 
 Cách dễ nhất để đề phòng tràn số là thêm một dòng `#define int long long` ngay sau khi include thư viện. Bạn sẽ không phải lo chuyện cast biến từ int sang long long, tuy nhiên thời gian chạy của code sẽ lâu hơn gấp đôi.
 
-### Tràn số khi modulo
+#### Tràn số khi modulo
 
 Với các bài yêu cầu tính đáp án theo một modulo nào đó (thường là $10^9 + 7$ hoặc $998244353$), thì bạn phải đặc biệt cẩn thận khi code. Chỉ cần quên một phép `%` thôi là bạn sẽ bay phần lớn điểm của bài.
 
@@ -215,7 +215,7 @@ Vậy các lỗi nào các bạn hay gặp?
   
   Lí do là vì phép mod số âm sẽ ra số âm, nên bạn phải cộng thêm mod để đảm bảo giá trị không âm trước khi mod thêm lần nữa.
 
-#### Cách giải quyết
+##### Cách giải quyết
 
 Mình sẽ code riêng các phép tính cộng, trừ, nhân ra thành hàm để đảm bảo mình mod sau mỗi phép tính và không cần phải xử lí phép trừ mỗi bước nữa.
 
@@ -234,7 +234,7 @@ int mul(int x, int y){
 }
 ```
 
-### Các dạng tràn số khác
+#### Các dạng tràn số khác
 - Tràn số khi shift bit: `1 << x` sẽ tràn int nếu $x \ge 31$.
   Để kết quả là long long, hãy dùng `1ll << x`.
 - Dùng `builtin_popcount`, `builtin_clz` cho long long.
@@ -248,9 +248,9 @@ Mình có lời khuyên là đừng dùng `INT_MAX` hay `LLONG_MAX` vì bạn s�
 
 Thay vào đó, hãy dùng các biến `const int inf = 1e9 + 7`, `const long long infll = (long long)1e18 + 7`. Nếu dùng memset thì các bạn có thể dùng biến "cách tư duy của Trung Quốc" `memset(dist, 0x3f, sizeof(dist));`[^1] --- các giá trị của $dist$ sẽ được gán bằng 1061109567.
 
-## Sử dụng iterator và STL
+### Sử dụng iterator và STL
 
-### Cộng trừ iterator và dereference
+#### Cộng trừ iterator và dereference
 
 ```cpp
 vector <int> b;
@@ -270,7 +270,7 @@ Ngoài ra, nếu $itr1$ là $b.begin()$, thì dòng `itr2--;` cũng sẽ bị UB
 
 Để phòng tránh thì tốt nhất là bạn đừng động đến iterator luôn :D. Trong trường hợp bất đắc dĩ, thì bạn phải cố gắng xét hết mọi trường hợp corner case thôi.
 
-### Các hàm STL đặc biệt cần lưu ý
+#### Các hàm STL đặc biệt cần lưu ý
 
 - Để chặt nhị phân trên `set`, các bạn phải dùng hàm riêng `set::lower_bound(value)`.
   Dùng hàm `lower_bound(set::begin(), set::end(), value)` có độ phức tạp **ít nhất** là $\mathcal O(n)$. Tương tự cho các hàm khác như `upper_bound` và cấu trúc dữ liệu khác như `multiset`.
@@ -281,9 +281,9 @@ Ngoài ra, nếu $itr1$ là $b.begin()$, thì dòng `itr2--;` cũng sẽ bị UB
 - Bạn sẽ bị tràn số nếu bạn dùng `a.size() - 1` khi $a$ rỗng, do `a.size()` trả về một số unsigned.
   Để sửa thì bạn có thể dùng một dòng define chắp vá của mình: `#define isz(a) ((signed)(a).size()`
 
-## Các lỗi sai khác
+### Các lỗi sai khác
 
-### Truyền CTDL vào hàm
+#### Truyền CTDL vào hàm
 
 ```cpp
 // Pass by value
@@ -320,7 +320,7 @@ int ssize(vector <int>& a){
 
 Các bạn có thể đọc thêm tại [đây](https://stackoverflow.com/questions/5060137/passing-as-const-and-by-reference-worth-it).
 
-### Reset mảng
+#### Reset mảng
 
 ```cpp
 const int N = 1e5 + 5;
@@ -343,9 +343,9 @@ Với các bài multitest, **tuyệt đối không được memset** (trừ khi 
 
 **Lưu ý:** Khi soát lại bài, hãy kiểm tra lại xem mình đã reset mọi biến trước mỗi test chưa.
 
-## Fast I/O
+### Fast I/O
 
-### Không dùng endl
+#### Không dùng endl
 
 `cout << endl` tương đương với `cout << '\n' << flush`. Flush được dùng để đưa output đang ở trong buffer ra ngay lập tức, nhằm đồng bộ dữ liệu được đưa ra từ chương trình ra bên ngoài như terminal chẳng hạn. Tuy nhiên vì ta đọc/ghi qua file nên flush không để làm gì cả và nó còn rất chậm nữa.
 
@@ -353,7 +353,7 @@ Cách dùng thay thế là `cout << '\n'`. Nếu bạn quen tay dùng `endl` r�
 
 Các bạn có thể đọc thêm tại [đây](https://stackoverflow.com/questions/64253865/whats-the-difference-between-stdendl-and-n).
 
-### Dùng sync_with_stdio và cin.tie
+#### Dùng sync_with_stdio và cin.tie
 
 Để đẩy tốc độ nhập/xuất nhanh hơn nữa, thêm hai dòng này ở trên cùng hàm `main`:
 
@@ -370,23 +370,23 @@ int main(){
 
 Các bạn có thể đọc thêm tại [đây](https://stackoverflow.com/questions/31162367/significance-of-ios-basesync-with-stdiofalse-cin-tienull)
 
-# Những kinh nghiệm khác
+## Những kinh nghiệm khác
 
-## Tối ưu
+### Tối ưu
 
 Nếu code bạn đã chính xác rồi, nhưng khi bạn chạy thử một test to thì bị TLE, thì phải làm thế nào để tối ưu?
 
 **Lưu ý: Không dùng pragma!!!**
 
-### Dùng mảng
+#### Dùng mảng
 
 Dùng mảng so với dùng `vector` có thể làm code bạn nhanh hơn một chút, nhưng như thế là quá ít ;). Hiệu quả của việc này sẽ cao hơn nhiều nếu bạn dùng để tối ưu `stack`, `queue` hay `deque`, vì cả stack và queue đều được cài đặt "ngầm" bằng deque, và deque có constant rất cao cả về time và memory.
 
-### Khử đệ quy
+#### Khử đệ quy
 
 Các bạn có thể đọc bài viết [này](https://vnoi.info/wiki/algo%2Fdata-structures%2FStack.md?redirected_from=translate%2Fdata-structures%2FStack.md#s%E1%BB%AD-d%E1%BB%A5ng-stack-%C4%91%E1%BB%83-kh%E1%BB%AD-%C4%91%E1%BB%87-quy) trên VNOI wiki. Nếu có thể thì bạn hãy cài stack trong này bằng mảng như đã nói ở trên.
 
-## Dùng struct
+### Dùng struct
 
 Mình thấy nhiều bạn khi lưu cạnh của đồ thị thường hay dùng `pair <pair <int, int>, int>` hoặc `tuple <int, int, int>`. Code thế này sẽ làm giảm tốc độ code của bạn (phải gõ liên tục `edge[i].first.second`) và còn dễ bug nữa. Những lúc như thế này các bạn có thể dùng `struct` trong C++, là một công cụ khá hữu ích trong việc "đóng gói" dữ liệu.
 
@@ -443,7 +443,7 @@ for (int i = 1; i <= n; i++){
 
 Các bạn có thể đọc thêm tại [đây](https://en.cppreference.com/w/cpp/language/operators)
 
-# Sinh test
+## Sinh test
 
 Trên VNOI đã có bài viết rất tốt tại [đây](https://vnoi.info/wiki/algo/skill/viet-trinh-cham.md). Mình muốn bổ sung thêm trường hợp khi các bạn cần viết checker:
 

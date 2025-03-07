@@ -1,17 +1,17 @@
-# Fun with Bits
+## Fun with Bits
 Bài viết bởi [bmerry](https://www.topcoder.com/members/bmerry).
 
 Nguồn: [Topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/a-bit-of-fun-fun-with-bits/)
 
 
 
-# Giới thiệu 
+## Giới thiệu 
 
 Hầu hết các kĩ thuật tối ưu dùng trong các kì thi Topcoder đều là những kĩ thuật cao cấp, có nghĩa là, các kĩ thuật này tối ưu trực tiếp thuật toán hơn là tối ưu cách cài đặt. Tuy nhiên, có một kĩ thuật tối ưu cơ bản nhưng sử dụng rất hiệu quả là thao tác bit (bit manipulation), hay sử dụng những bit thuộc biểu diễn của một số nguyên để biểu diễn một tập hợp. Nó không chỉ làm tăng tốc độ chạy, giảm dung lượng bộ nhớ, mà còn làm code chúng ta trở nên đơn giản hơn.
 
 Mình sẽ bắt đầu bằng việc nhắc lại một số kiến thức cơ bản về bit, trước khi nghiên cứu những kĩ thuật sâu hơn. 
 
-# Cơ bản 
+## Cơ bản 
 
 Những thứ quan trọng nhất trong thao tác bit là những toán tử trên bit (bit-wise operator): `&` (and), `|` (or), `~` (not) và `^` (xor). Chắc hẳn các bạn đã quá quen với ba toán tử đầu tiên trong các phép toán logic (`&&`, `||`, và `!`). Dưới đây là bảng chân trị (truth tables): 
 
@@ -91,7 +91,7 @@ Gán bit bằng 0 (Clear bit)
 Truy cập giá trị (Test bit)
 `(A & 1 << bit) != 0`
 
-#  Tách từng bit
+##  Tách từng bit
 
 Trong phần này, chúng ta sẽ bàn đến việc tìm vị trí của bit 1 cao nhất (bit 1 nằm xa nhất về bên trái) và thấp nhất (bit 1 nằm xa nhất về bên phải) trong một số. Đây là những phép toán cơ bản để tách một tập hợp ra thành những phần tử.
 
@@ -103,7 +103,7 @@ CPU 386 có hỗ trợ duyệt bit (bit scanning): BSF (bit scan forward) và BS
 
 Cuối cùng, còn một phương pháp khác để thay thế trong những testcase mà dùng vòng lặp tốn nhiều thời gian. Sử dụng mỗi byte của số nguyên 4 byte hoặc số nguyên 8 byte để tính trước bảng 256 phần tử lưu trữ vị trí của bit 1 cao nhất (thấp nhất) trong byte đó. Bit 1 cao nhất (thấp nhất) của số nguyên là giá trị lớn nhất (giá trị nhỏ nhất) của bảng này. Phương pháp này được đề cập đến để làm đa dạng thêm các phương pháp, tốc độ cũng chưa được đánh giá rõ ràng qua các kì thi Topcoder.
 
-# Đếm số bit
+## Đếm số bit
 
 Chúng ta có thể dễ dàng kiểm tra một số có phải là luỹ thừa của 2 bằng cách xoá bit 1 thấp nhất và kiểm tra xem nếu kết quả có bằng 0 chưa. Tuy nhiên, trong một số trường hợp chúng ta cần phải biết có bao nhiêu bit đã được set (bit đã được set là bit 1, bit chưa được set là bit bằng 0), chúng ta cần phải thực hiện nhiều việc phức tạp hơn tí. 
 
@@ -111,13 +111,13 @@ GCC có một hàm gọi là `__builtin_popcount` thực hiện đúng những t
 
 Những người dùng các ngôn ngữ khác không thể dùng cách này (mặc dù họ có thể cài đặt lại nó). Nếu một số được dự đoán rằng có rất ít bit 1, một phương pháp thay thế là chỉ cần lặp lại quá trình tìm bit 1 thấp nhất và xoá nó.
 
-# Tất cả các tập con 
+## Tất cả các tập con 
 
 Một ưu điểm lớn của thao tác bit là việc duyệt qua tất cả các tập con của một tập hợp N phần tử rất đơn giản: mỗi số nguyên đại diện cho một tập con. Hơn thế nữa, nếu A là tập con của B thì số nguyên đại diện cho A sẽ nhỏ hơn số nguyên đại diện cho B, rất tiện lợi cho việc kết hợp với quy hoạch động. 
 
 Việc duyệt qua tất cả các tập con của một tập con khác cũng rất dễ dàng (được biểu diễn bằng một dãy bit), nếu bạn không quan tâm đến thứ tự duyệt ngược lại (hoặc có thể lưu các tập hợp vào một danh sách và đi ngược lại). Mẹo được sử dụng cũng giống như việc tìm bit 1 thấp nhất vậy. Nếu chúng ta trừ đi 1 từ tập con, thì phần tử đại diện bởi bit 1 đó sẽ được xoá, và mỗi phần tử 0 phía bên phải nó đều trở thành 1. Tuy nhiên, chúng ta chỉ muốn các phần tử được chọn là những phần tử có trong tập cha. Nên bước lặp chỉ cần thay thế ngắn gọn bằng `i = (i - 1) & superset`.
 
-## Cài đặt:
+### Cài đặt:
 
 ```cpp
 // xét tất cả các tập con khác rỗng của S
@@ -125,7 +125,7 @@ for (int i = S; i > 0; i = (i - 1) & S); {
 }
 ```
 
-# Chỉ cần một bit sai cũng 0 điểm
+## Chỉ cần một bit sai cũng 0 điểm
 
 Có một số lỗi mà mọi người thường mắc phải khi sử dụng các thao tác bit. Chú ý cẩn thận với code của bạn. 
 
@@ -135,7 +135,7 @@ Có một số lỗi mà mọi người thường mắc phải khi sử dụng c
 
 3. Nếu bạn muốn viết những dòng code C/C++ dùng ở nhiều nơi, hãy đảm bảo rằng bạn sử dụng kiểu unsigned, cụ thể trong trường hợp bạn có ý định sử dụng bit cao nhất (top-most). C99 nói rằng dịch bit trên giá trị âm sẽ trả về undefined. Java chỉ có kiểu dữ liệu có dấu: `>>` sẽ tự động  thay đổi dấu của giá trị nếu cần thiết (nhưng đây là thứ bạn thường không muốn xảy ra), nhưng toán tử đặc biệt này của Java là `>>>` sẽ thêm các số 0 vào phía trước sau khi dịch. 
 
-# Một số mẹo hay (và cute)
+## Một số mẹo hay (và cute)
 
 Có một số mẹo hay có thể sử dụng với thao tác bit.
 Những mẹo này khá hay để đem đi chém gió với bạn bè, nhưng thông thường hiệu quả cũng không cải thiện lắm ở thực tế.
@@ -173,7 +173,7 @@ Xác định `x ? y : -y`, trong đó x bằng 0 hoặc 1
 
 Câu lệnh trên chạy được trên kiến trúc số bù 2 (tồn tại ở hầu hết các máy tính bạn thấy ngày nay), trong đó số âm được biểu diễn bằng cách đảo tất cả các bit và cộng thêm cho 1. Chú ý rằng trên i686 và trước đó, câu lệnh này chạy khá hiệu quả (không cần rẽ nhánh ) nhờ vào lệnh `CMOVE` (di chuyển có điều kiện).
 
-# Bài tập mẫu
+## Bài tập mẫu
 
 [TCCC 2006, Round 1B Medium](https://community.topcoder.com/stat?c=problem_statement&pm=6725&rd=10100)
  

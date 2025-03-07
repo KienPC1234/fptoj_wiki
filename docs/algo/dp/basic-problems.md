@@ -1,12 +1,12 @@
-# Một số bài toán quy hoạch động điển hình
+## Một số bài toán quy hoạch động điển hình
 
 Bài viết sưu tầm trên mạng.
 
 
 
-# 1. Dãy con đơn điệu dài nhất
+## 1. Dãy con đơn điệu dài nhất
 
-## 1.1. Mô hình
+### 1.1. Mô hình
 
 Cho dãy $A_1,A_2,..., A_n$. Hãy tìm một dãy con tăng có nhiều phần tử nhất của dãy.
 
@@ -17,7 +17,7 @@ Cho dãy $A_1,A_2,..., A_n$. Hãy tìm một dãy con tăng có nhiều phần t
 
 Đặc trưng này có thể mất đi trong một số bài toán khác tùy vào yêu cầu cụ thể. Chẳng hạn bài: [Tam giác bao nhau](#1-dãy-con-đơn-điệu-dài-nhất_1-4-một-số-bài-toán-khác_dãy-tam-giác-bao-nhau).
 
-## 1.2. Công thức QHĐ
+### 1.2. Công thức QHĐ
 
 Hàm mục tiêu: $f$: độ dài dãy con.
 
@@ -32,7 +32,7 @@ Ta có công thức QHĐ để tính $L_i$ như sau:
 
 Tính $L_i$: phần tử đang được xét là $A_i$. Ta tìm đến phần tử $A_j < A_i$ có $L_j$ lớn nhất. Khi đó nếu bổ sung $A_i$ vào sau dãy con $...A_j$ ta sẽ được dãy con tăng dần dài nhất xét từ $A_1...A_i$.
 
-## 1.3. Cài đặt
+### 1.3. Cài đặt
 
 Bảng phương án là một mảng một chiều $L$ để lưu trữ các giá trị của hàm QHĐ $L_i$. Đoạn chương trình tính các giá trị của mảng $L$ như sau:
 
@@ -49,11 +49,11 @@ Như vậy độ phức tạp bộ nhớ của bài toán là $O(n)$, độ ph�
 
 Có một số phương pháp cài đặt tốt hơn so với phương pháp trên, cho chi phí thời gian là $O(nlogn)$, một trong những cách đó là dùng [Segment Tree](algo/data-structures/segment-tree-extend).
 
-## 1.4. Một số bài toán khác
+### 1.4. Một số bài toán khác
 
 Bài toán dãy con đơn điệu tăng dài nhất có biến thể đơn giản nhất là bài toán dãy con đơn điệu giảm dài nhất, tuy nhiên chúng ta có thể coi chúng như là một. Sau đây là một số bài toán khác.
 
-### Bố trí phòng họp (mất tính thứ tự so với dãy ban đầu)
+#### Bố trí phòng họp (mất tính thứ tự so với dãy ban đầu)
 
 **Bài toán**:
 
@@ -63,7 +63,7 @@ Có $n$ cuộc họp, cuộc họp thứ $i$ bắt đầu vào thời điểm $A
 
 Sắp xếp các cuộc họp tăng dần theo thời điểm kết thúc $B_i$. Thế thì cuộc họp $i$ sẽ bố trí được sau cuộc họp $j$ khi và chỉ khi $j<i$ và $B_j \le A_i$. Yêu cầu bố trí được nhiều cuộc họp nhất có thể đưa về việc tìm dãy các cuộc họp dài nhất thoả mãn điều kiện trên.
 
-### Cho thuê máy
+#### Cho thuê máy
 
 **Bài toán**:
 
@@ -82,7 +82,7 @@ for i:=1 to n do
   end;
 ```
 
-### Dãy tam giác bao nhau
+#### Dãy tam giác bao nhau
 
 **Bài toán**:
 
@@ -96,7 +96,7 @@ Bài toán có một số biến thể khác như tìm dãy hình tam giác, hì
 
 Việc kiểm tra điểm $M$ có nằm trong tam giác $ABC$ không có thể dựa trên phương pháp tính diện tích: điểm $M$ nằm trong nếu $S(ABC) = S(ABM) + S(ACM) + S(BCM)$.
 
-### Dãy đổi dấu
+#### Dãy đổi dấu
 
 **Bài toán**:
 
@@ -114,7 +114,7 @@ Ta dễ dàng suy ra:
 - $L_i = max(1, P_j + 1)$, với mọi $j$ thỏa mãn: $j \le i-L$ và $A_i - U \le A_j < A_i$.
 - $P_i = max(1, L_j + 1)$, với mọi $j$ thỏa mãn: $j \le i-L$ và $A_i < A_j \le A_i + U$.
 
-### Dãy số WAVIO
+#### Dãy số WAVIO
 
 **Bài toán**:
 
@@ -126,7 +126,7 @@ $L1_i$ là mảng ghi độ dài lớn nhất của 1 dãy con tăng dần tríc
 
 $L2_i$: mảng ghi độ dài lớn nhất của dãy con giảm dần trích ra từ dãy $N$ phần tử kể từ phần tử $A_N$ đến $A_i$. Ta tìm phần tử $j$ trong 2 mảng $L1$, $L2$ thỏa mãn $L1_j + L2_j$ lớn nhất.
 
-### Xếp các khối đá
+#### Xếp các khối đá
 
 **Bài toán**:
 
@@ -139,13 +139,13 @@ Các khối đá đều có dạng hình hộp chữ nhật và được đặc 
 
 Hãy chỉ ra cách để xây dựng được một cái tháp sao cho số khối đá được dùng là nhiều nhất.
 
-# 2. Vali (B)
+## 2. Vali (B)
 
-## 2.1. Mô hình
+### 2.1. Mô hình
 
 Có $n$ đồ vật, vật thứ $i$ có trọng lượng $A_i$ và giá trị $B_i$. Hãy chọn ra một số các đồ vật, mỗi vật một cái để xếp vào 1 vali có trọng lượng tối đa $W$ sao cho tổng giá trị của vali là lớn nhất.
 
-## 2.2. Công thức
+### 2.2. Công thức
 
 Hàm mục tiêu: $f$: tổng giá trị của vali.
 
@@ -159,7 +159,7 @@ Tính $L(i,j)$: vật đang xét là $a_i$ với trọng lượng của vali kh�
 
 Tóm lại ta có $L[i,j] = max(L(i-1, j - A_i) + B_i, L(i-1, j))$.
 
-## 2.3. Cài đặt
+### 2.3. Cài đặt
 
 ```pascal
 For i:=1 to n do
@@ -169,9 +169,9 @@ For i:=1 to n do
 
 ```
 
-## 2.4. Một số bài toán khác
+### 2.4. Một số bài toán khác
 
-### Dãy con có tổng bằng S
+#### Dãy con có tổng bằng S
 
 **Bài toán**:
 
@@ -197,7 +197,7 @@ for i := 1 to n do
 
 Dễ thấy độ phức tạp bộ nhớ của cách cài đặt trên là $O(m)$, độ phức tạp thời gian là $O(n \* m)$, với $m$ là tổng của $n$ số. Hãy tự kiểm tra xem tại sao vòng for thứ 2 lại là `for downto` chứ không phải là `for to`.
 
-### Chia kẹo
+#### Chia kẹo
 
 **Bài toán**:
 
@@ -212,7 +212,7 @@ Gọi $T$ là tổng số kẹo của $n$ gói. Chúng ta cần tìm số $S$ l�
 
 Khi đó sẽ có cách chia với chênh lệch 2 phần là $T-2S$ là nhỏ nhất và dãy con có tổng bằng $S$ ở trên gồm các phần tử là các gói kẹo thuộc phần thứ nhất. Phần thứ hai là các gói kẹo còn lại.
 
-### Market (Olympic Balkan 2000)
+#### Market (Olympic Balkan 2000)
 
 **Bài toán**:
 
@@ -224,7 +224,7 @@ Ví dụ: có 3 con cá, khối lượng lần lượt là: 3, 2, 4. Mua lượn
 
 Thực chất bài toán là tìm các số $S$ mà có một dãy con của dãy $a$ có tổng bằng $S$. Ta có thể dùng phương pháp đánh dấu của bài chia kẹo ở trên rồi đếm các giá trị $t$ mà $L[t]=1$.
 
-### Điền dấu
+#### Điền dấu
 
 **Bài toán**:
 
@@ -242,7 +242,7 @@ Khi cài đặt, có thể dùng một mảng 2 chiều (lưu toàn bộ bảng 
 
 Bài này có một biến thể là đặt dấu sao cho kết quả là một số chia hết cho $k$. Ta có thuật giải tương tự bài toán trên bằng cách thay các phép cộng, trừ bằng các phép cộng và trừ theo modulo $k$ và dùng mảng đánh dấu với các giá trị từ 0 đến $k-1$ (là các số dư có thể có khi chia cho $k$). Đáp số của bài toán là $L[n,0]$.
 
-### Expression
+#### Expression
 
 **Bài toán**:
 
@@ -252,7 +252,7 @@ Cho $n$ số nguyên. Hãy chia chúng thành 2 nhóm sao cho tích của tổng
 
 Gọi $T$ là tổng $n$ số nguyên đó. Giả sử ta chia dãy thành 2 nhóm, gọi $S$ là tổng của một nhóm, tổng nhóm còn lại là $T-S$ và tích của tổng 2 nhóm là $S\*(T-S)$. Bằng phương pháp đánh dấu ta xác định được mọi số $S$ là tổng của một nhóm (như bài Market) và tìm số $S$ sao cho $S\*(T-S)$ đạt max.
 
-### Farmer (IOI 2004)
+#### Farmer (IOI 2004)
 
 **Bài toán**
 
@@ -263,9 +263,9 @@ Một người có $N$ mảnh đất và $M$ dải đất. Các mảnh đất c�
 Dễ thấy mảnh đất thứ $i$ có $A_i$ cây ôliu và dải đất thứ $j$ có $B_j-1$ cây ôliu. Coi các mảnh đất và dải đất là các “đồ vật”, đồ vật thứ $k$ có khối lượng $W_k$ và giá trị $V_k$ (nếu $k$ là mảnh đất $i$ thì $W_k=V_k=A_i$, nếu $k$ là dải đất $j$ thì $W_k=B_j$, $V_k=B_j-1$). Ta cần chọn các “đồ vật”, sao cho tổng “khối lượng” của chúng không vượt $Q$ và tổng “giá trị” là lớn nhất. Đây chính là bài toán xếp balô đã trình bày ở trên.
 
 
-# 3. Biến đổi xâu
+## 3. Biến đổi xâu
 
-## 3.1. Mô hình
+### 3.1. Mô hình
 
 Cho 2 xâu $X$, $F$. Xâu gốc có $n$ kí tự $X_1 X_2 ... X_n$, xâu đích có $m$ kí tự $F_1 F_2 ... F_m$. Có 3 phép biến đổi:
 
@@ -275,7 +275,7 @@ Cho 2 xâu $X$, $F$. Xâu gốc có $n$ kí tự $X_1 X_2 ... X_n$, xâu đích 
 
 Hãy tìm số ít nhất các phép biến đổi để biến xâu $X$ thành xâu $F$.
 
-## 3.2. Hướng dẫn
+### 3.2. Hướng dẫn
 
 Hàm mục tiêu: $f$: số phép biến đổi.
 
@@ -314,9 +314,9 @@ Tổng kết lại, ta có công thức QHĐ:
 
 Bài này ta có thể tiết kiệm biến hơn bằng cách dùng 2 mảng 1 chiều tính lẫn nhau và một mảng đánh dấu 2 chiều để truy vết.
 
-## 3.3. Một số bài toán khác
+### 3.3. Một số bài toán khác
 
-### Xâu con chung dài nhất
+#### Xâu con chung dài nhất
 
 **Bài toán**:
 
@@ -364,7 +364,7 @@ for i:=1 to m do
     end;
 ```
 
-### Bắc cầu
+#### Bắc cầu
 
 **Bài toán**:
 
@@ -376,7 +376,7 @@ Gọi các thành phố của Alpha lần lượt là $A_1,A_2,..., A_M$; các t
 
 Bài toán của chúng ta trở thành bài toán tìm dãy con chung dài nhất, ở  đây hai phần tử “bằng” nhau nếu chúng có quan hệ kết nghĩa.
 
-### Palindrome (IOI 2000)
+#### Palindrome (IOI 2000)
 
 **Bài toán**:
 
@@ -399,13 +399,13 @@ Ta có thuật toán đơn giản hơn như sau:
 - Gọi $P$ là xâu đảo của $S$ và $T$ là xâu con chung dài nhất của $S$ và $P$. Khi đó các kí tự của $S$ không thuộc $T$ cũng là các kí tự cần thêm vào để $S$ trở thành đối xứng. Đáp số của bài toán sẽ là $n-k$, với $k$ là độ dài của $T$.
 - Ví dụ: `S=edbabcd`, xâu đảo của $S$ là `P=dcbabde`. Xâu con chung dài nhất của $S$ và $P$ là `T=dbabd`. Như vậy cần thêm 2 kí tự là `e` và `c` vào để $S$ trở thành xâu đối xứng.
 
-# 4. Vali (A)
+## 4. Vali (A)
 
-## 4.1. Mô hình
+### 4.1. Mô hình
 
 Cho $n$ vật, vật $i$ nặng $A_i$ và có giá trị $B_i$. Hãy chọn ra một số vật để cho vào balô sao cho tổng khối lượng không vượt quá $W$ và tổng giá trị là lớn nhất. Chú ý rằng mỗi vật có thể được chọn nhiều lần.
 
-## 4.2. Công thức
+### 4.2. Công thức
 
 Gọi $L(i,j)$ là tổng giá trị lớn nhất khi được chọn $i$ vật từ 1 đến $i$ cho vào balô với tổng khối lượng không vượt quá $j$. $L(n,W)$ sẽ là đáp số của bài toán (là giá trị lớn nhất có được nếu chọn $n$ vật và tổng khối lượng không vượt quá $W$).
 
@@ -418,7 +418,7 @@ Công thức tính $L(i,t)$ như sau:
 
 Trong đó: $L(i-1,t)$ là giá trị có được nếu không đưa vật $i$ vào balô, $L(i,t-A_i) + B_i$  là giá trị có được nếu chọn vật $i$.
 
-## 4.3. Cài đặt
+### 4.3. Cài đặt
 
 Ta có thể dùng một mảng 2 chiều để lưu bảng phương án, tuy nhiên dựa trên nhận xét rằng để tính dòng $i$ của bảng phương án chỉ cần dòng $i-1$, ta chỉ cần dùng 2 mảng một chiều $P$ và $L$ có chỉ số từ 0 đến $m$ để lưu 2 dòng đó. Đoạn chương trình con tính bảng phương án như sau.
 
@@ -436,9 +436,9 @@ for i := 1 to n do
 Nếu để ý kĩ bạn sẽ thấy rằng đoạn trình trên chỉ viết giống công thức QHĐ chứ chưa tối ưu. Chẳng hạn đã có lệnh gán `P:=L`, sau đó lại có gán `L[t]:=P[t]` với các giá trị `t<a[i]` là không cần thiết. Bạn đọc có thể tự cải tiến để chương trình tối ưu hơn.
 Độ phức tạp bộ nhớ là $O(m)$ và độ phức tạp thời gian là $O(m \* n)$.
 
-## 4.4. Một số bài toán khác
+### 4.4. Một số bài toán khác
 
-### Đổi tiền
+#### Đổi tiền
 
 **Bài toán**
 
@@ -457,9 +457,9 @@ Do đó ta cũng xây dựng hàm QHĐ một cách tương tự: Gọi $L[i,t]$ 
 
 Công thức này khác công thức của bài xếp balô ở chỗ: dùng hàm **min** chứ không phải hàm **max** (vì cần tìm cách chọn ít hơn).
 
-# 5. Nhân ma trận
+## 5. Nhân ma trận
 
-## 5.1. Mô hình
+### 5.1. Mô hình
 
 Nhân một ma trận kích thước $m \* n$ với một ma trận $n \* p$, số phép nhân phải thực hiện là $m \* n \* p$. Mặt khác phép nhân các ma trận có tính kết hợp, tức là: $(A \* B) \* C = A \* (B \* C)$
 
@@ -467,7 +467,7 @@ Do đó khi tính tích nhiều ma trận, ta có thể thực hiện theo các 
 
 Cho $N$ ma trận $A_1, A_2, ..., A_N$, ma trận $A$ có kích thước là $d_{i-1} \* d_i$. Hãy xác định trình tự nhân ma trận $A_1 \* A_2 \* ... \* A_N$ sao cho số phép nhân cần thực hiện là ít nhất.
 
-## 5.2. Công thức
+### 5.2. Công thức
 
 Gọi $F(i,j)$ là số phép nhân để tính tích các ma trận từ $A_i$ đến $A_j$ $(A_i \* A_{i+1} \* ... \* A_j)$.
 
@@ -485,7 +485,7 @@ Ma trận kết quả của phép nhân $(A_i..A_k)$ có kích thước $d_{i-1}
 
 Ta chọn vị trí $k$ cho số phép nhân ít nhất.
 
-## 5.3. Cài đặt
+### 5.3. Cài đặt
 
 Bảng phương án là một mảng 2 chiều $F$ để lưu $F[i,j]$. Chú ý khi cài đặt là để tính được $F[i,j]$, ta phải tính $F[i,k]$ và $F[k+1,j]$ trước. Phương pháp đơn giản để làm điều đó là phương pháp đệ quy có nhớ.
 
@@ -514,9 +514,9 @@ end;
 
 Với cách cài đặt trên, độ phức tạp bộ nhớ là $O(n^2)$, độ phức tạp thời gian là $O(n^3)$.
 
-## 5.4. Một số bài toán khác
+### 5.4. Một số bài toán khác
 
-### Chia đa giác
+#### Chia đa giác
 
 **Bài toán**
 
@@ -533,7 +533,7 @@ Tóm lại công thức QHĐ như sau:
 - $F[i,j]=0$ với $j<i+3$.
 - $F[i,j]=min(F[i,k]+F[k,j]+d[i,k]+d[k,j])$ với $k=i+1,...j-1$. $F[1,n]$ là tổng đường chéo của cách chia tối ưu.
 
-### Biểu thức số học (IOI 1999)
+#### Biểu thức số học (IOI 1999)
 
 **Bài toán**
 
@@ -551,13 +551,13 @@ Tóm lại, công thức QHĐ là:
 
 (Chú là là các hạng tử của dãy đều không âm và các phép toán là `+` hoặc `*` nên $F[i,k]$ và $F[k+1,j]$ đạt max thì $F[i,k] \cdot F[k+1,j]$ cũng đạt max).
 
-# 6. Ghép cặp
+## 6. Ghép cặp
 
-## 6.1. Mô hình
+### 6.1. Mô hình
 
 Có $n$ lọ hoa sắp thẳng hàng và $k$ bó hoa được đánh số thứ tự từ nhỏ đến lớn. Cần cắm $k$ bó hoa trên vào $n$ lọ sao cho hoa có số thứ tự nhỏ phải đứng trước hoa có số thứ tự lớn. Giá trị thẩm mỹ tương ứng khi cắm hoa $i$ vào lọ thứ $j$ là $v(i,j)$. Hãy tìm 1 cách cắm sao cho tổng giá trị thẫm mỹ là lớn nhất. Chú ý rằng mỗi bó hoa chỉ được cắm vào 1 lọ và mỗi lọ cũng chỉ cắm được 1 bó hoa.
 
-## 6.2. Công thức
+### 6.2. Công thức
 
 Nhận xét rằng bài toán nêu trên là một bài toán ghép cặp có yêu cầu về thứ tự nên ta có thể giải quyết bằng phương pháp QHĐ.
 
@@ -573,7 +573,7 @@ $L(i,j)$: tổng giá trị thẩm mỹ lớn nhất khi xét đến hoa $i$ và
   - Cắm hoa $i$ vào lọ $j$. Tổng giá trị thẩm mỹ là $L[i-1,j-1]+V(i,j)$. (Bằng tổng giá trị trước khi cắm cộng với giá trị thẩm mỹ khi cắm hoa $i$ vào lọ $j$)
   - Không cắm hoa $i$ vào lọ $j$ (có thể cắm vào lọ trước $j$), giá trị thẫm mỹ của cách cắm là như cũ: $L[i,j-1]$
 
-## 6.3. Cài đặt
+### 6.3. Cài đặt
 
 ```pascal
 L[i,j]:= -maxint;
@@ -584,9 +584,9 @@ For i:=1 to k do
          else if i<j then L[i,j]:=max(L[i-1,j-1]+v[i,j],L[i,j-1]);
 ```
 
-## 6.4. Một số bài toán khác
+### 6.4. Một số bài toán khác
 
-### Câu lạc bộ
+#### Câu lạc bộ
 
 **Bài toán**
 
@@ -596,7 +596,7 @@ Có $n$ phòng học chuyên đề và $k$ nhóm học được đánh số th�
 
 Khi xếp nhóm $i$ vào phòng $j$ thì số lần chuyển ghế chính là độ chênh lệch giữa số ghế trong phòng $i$ và số học sinh trong nhóm. Đặt $V[i,j]:=\|A_i - B_j\|$
 
-### Mua giày (Đề QG bảng B năm 2003)
+#### Mua giày (Đề QG bảng B năm 2003)
 
 **Bài toán**
 
@@ -606,20 +606,20 @@ Trong hiệu có $n$ đôi giày, đôi giày $i$ có kích thước $H_i$. Có 
 
 Lập công thức giải như bài Câu lạc bộ. Chú ý chứng minh tính đúng đắn của bổ đề heuristic sau: Cho 2 dãy tăng dần các số dương $A_1, A_2, ..., A_N$, $B_1, B_2, ..., B_N$. Gọi $C_1, C_2, ..., C_N$ là một hoán vị bất kỳ của dãy $B$. Khi đó: $\|A_1-B_1\| + \|A_2-B_2\| + ... + \|A_N-B_N\| \le \|A_1-C_1\| + \|A_2 - C_2\| + ... + \|A_N-C_N\|$
 
-# 7. Di chuyển
+## 7. Di chuyển
 
-## 7.1. Mô hình
+### 7.1. Mô hình
 
 Cho bảng $A$ gồm $M \* N$ ô. Từ ô $(i,j)$ có thể di chuyển sang 3 ô $(i+1,j)$, $(i+1,j-1)$ và $(i+1,j+1)$. Hãy xác định một lộ trình đi từ hàng 1 đến hàng $M$ sao cho tổng các ô đi qua là lớn nhất.
 
-## 7.2. Công thức
+### 7.2. Công thức
 
 Gọi $F(i,j)$ là giá trị lớn nhất có được khi di chuyển đến ô $(i,j)$. Có 3 ô có thể đi đến ô $(i,j)$ là $(i-1,j)$, $(i-1,j-1)$ và $(i-1,j+1)$. Do đó ta có công thức QHĐ như sau:
 
 - $F[1,j]=A[1,j]$
 - $F[i,j]=max(F[i-1,j],F([i-1,j-1],F[i-1,j+1])+A[i,j]$ với $i>1$
 
-## 7.3. Cài đặt
+### 7.3. Cài đặt
 
 Bảng phương án là bảng 2 chiều $F[0..m,0..n]$. (Tất cả các ô trên biên đều cho giá trị bằng 0).
 
@@ -634,9 +634,9 @@ for i:=1 to m do
 
 Cách cài đặt này cho độ phức tạp bộ nhớ và thời gian đều là $O(n^2)$. Ta có thể tiết kiệm không gian nhớ bằng cách tính trực tiếp trên mảng $A$.
 
-## 7.4. Một số bài toán khác
+### 7.4. Một số bài toán khác
 
-### Tam giác (IOI 1994)
+#### Tam giác (IOI 1994)
 
 **Bài toán**
 

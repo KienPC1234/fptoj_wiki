@@ -1,4 +1,4 @@
-# Hàm Mobius
+## Hàm Mobius
 
 **Tác giả**: RR
 
@@ -6,7 +6,7 @@
 
 Trong bài viết này mình sẽ tiếp tục giới thiệu về hàm Mobius. Ở trong bài viết về [Hàm nhân tính](algo/math/multiplicative-function) mình đã giới thiệu hàm Mobius là một hàm nhân tính và có ứng dụng trong những bài toán sử dụng nguyên lý bù trừ. Trong bài viết này mình sẽ đi sâu vào ứng dụng của hàm Mobius.
 
-# Định nghĩa
+## Định nghĩa
 
 **Hàm Mobius** $\mu(n)$ được định nghĩa như sau:
 
@@ -26,7 +26,7 @@ for (int i = 1; i <= N; i++)
 ```
 
 
-# Ứng dụng trong nguyên lý bù trừ
+## Ứng dụng trong nguyên lý bù trừ
 
 Ta xét bài toán [CF #305 - Div 1 C](http://codeforces.com/contest/547/problem/C)
 
@@ -78,5 +78,5 @@ Do đó, ta thu được thuật toán với độ phức tạp $O(Q*x)$ với $
 Các bạn có thể tham khảo cài đặt [ở đây](http://codeforces.com/contest/547/submission/11299564)
 
 
-# Công thức nghịch đảo Mobius
+## Công thức nghịch đảo Mobius
 

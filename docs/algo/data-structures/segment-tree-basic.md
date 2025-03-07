@@ -1,4 +1,4 @@
-# Cây Phân Đoạn (cơ bản)
+## Cây Phân Đoạn (cơ bản)
 
 **Nguồn:** [wcipeg](http://wcipeg.com/wiki/Segment_tree), [cp-algorithms](https://cp-algorithms.com/data_structures/segment_tree.html), [Tất tần tật về Cây Phân Đoạn (Segment Tree) - VNOI](algo/data-structures/segment-tree-extend)
 
@@ -18,7 +18,7 @@
 
 **LƯU Ý:** Mọi số thứ tự trong bài viết đều được đánh số bắt đầu từ $1$. 
 
-# Mở đầu
+## Mở đầu
 
 **Cây phân đoạn** ***(Segment Tree)*** là một cấu trúc dữ liệu rất linh hoạt được sử dụng nhiều trong các kỳ thi, đặc biệt là trong những bài toán xử lý trên dãy số.
 
@@ -26,7 +26,7 @@
 
 Còn nếu bạn muốn tìm hiểu sâu hơn về **Segment Tree** thì bạn có thể tham khảo bài viết: [Tất tần tật về Cây Phân Đoạn (Segment Tree) - VNOI](algo/data-structures/segment-tree-extend).
 
-# Ý tưởng 
+## Ý tưởng 
 
 Một trong những ứng dụng phổ biến nhất của **Segment Tree** là giải quyết bài toán [$Range \space Minimum \space Query \space \mathit{(RMQ)}$](translate/topcoder/Range-Minimum-Query-and-Lowest-Common-Ancestor). Trong bài toán này, ta được cho một mảng $A$ và $Q$ truy vấn; mỗi truy vấn gồm cặp số $l$ và $r$, yêu cầu tìm phần tử có giá trị nhỏ nhất trong đoạn từ $l$ đến $r$ của mảng $A$. 
 - **Ví dụ:** Ta có mảng $$A = \{9,2,6,3,1,5,7\}$$. Với truy vấn $l = 3$ và $r = 6$, đáp án sẽ là $\min{(6,3,1,5)} = 1$. Sau đó, một truy vấn khác với $l = 1$ và $r = 3$ thì đáp án là $2$; v.v...
@@ -66,7 +66,7 @@ Nếu ta biểu diễn các hàm gọi đệ quy này bằng cấu trúc [cây](
 
 ![/uploads/segment-tree-basic_img3.png](/uploads/segment-tree-basic_img3.png)
 
-# Cấu trúc
+## Cấu trúc
 
 Bây giờ ta đã sẵn sàng để xác định cấu trúc của cây phân đoạn:
 
@@ -78,11 +78,11 @@ Bây giờ ta đã sẵn sàng để xác định cấu trúc của cây phân �
 - Chiều cao của cây phân đoạn là $\mathcal{O}(\log{N})$, bởi vì khi đi xuống từ gốc đến lá, kích thước của mỗi đoạn giảm đi một nửa.
 - Tại mỗi độ sâu của cây, không có phần tử nào được quản lý bởi $2$ nút khác nhau của cây.
 
-# Các thao tác trên cây phân đoạn
+## Các thao tác trên cây phân đoạn
 
 Có $3$ thao tác cơ bản trên cây phân đoạn:
 
-## Xây dựng
+### Xây dựng
 
 Để có thể có thể lấy giá trị và sửa đổi dãy số, trước tiên ta cần phải xây dựng một cây phân đoạn hợp lệ. 
 
@@ -102,7 +102,7 @@ Có $2$ cách để xây dựng một cây phân đoạn:
         2. Ngược lại, nếu nút đang xét không phải là nút lá, ta gọi đệ quy để tính toán giá trị của hai nút con. Sau khi hai lệnh gọi đệ quy được thực hiện, giá trị của nút đang xét sẽ bằng giá trị được "hợp nhất" từ hai nút con.
     - Do thủ tục đệ quy bắt đầu từ đỉnh gốc nên ta có thể tính toán được toàn bộ cây phân đoạn.
 
-## Cập nhật
+### Cập nhật
 
 Bây giờ ta muốn sửa đổi một phần tử cụ thể trong mảng, giả sử ta muốn thực hiện việc gán $a_i = x$. Và phải cập nhật lại cây phân đoạn, sao cho nó tương ứng với mảng mới đã sửa đổi.
 
@@ -119,7 +119,7 @@ Thao tác cập nhật cây phân đoạn có thể được thực hiện bằn
 
 Tương tự như thao tác xây dựng cây phân đoạn, cách cập nhật cây phân đoạn "từ dưới lên" cũng có thể thực hiện được.
 
-## Lấy giá trị
+### Lấy giá trị
 
 Bây giờ, ta cần phải trả lời các truy vấn lấy giá trị. Ví dụ như: cho hai số nguyên $l$ và $r$, hãy xác định phần tử có giá trị nhỏ nhất trong đoạn $[l, r]$ của mảng $A$ với khoảng thời gian là $\mathcal{O}(\log{n})$.
 
@@ -142,7 +142,7 @@ Khi đấy, nút con bên trái đó (nút $f(5, 6)$) sẽ là một **trường
 
 Đệ quy kết thúc và giá trị nhỏ nhất của đoạn cần truy vấn chính là giá trị nhỏ nhất của các nút đã được chọn.
 
-# Cài đặt
+## Cài đặt
 
 Thứ khiến ta cần phải cân nhắc ở đây chính là cách lưu trữ cây phân đoạn. Tất nhiên, ta có thể tạo ra một cấu trúc cây và danh sách cạnh, lưu trữ phạm vi quản lí của từng nút và các thông tin của nó. Tuy nhiên điều này đòi hỏi phải lưu trữ nhiều thông tin dư thừa. 
 
@@ -174,7 +174,7 @@ Do đó, ta sẽ cài đặt **Segment Tree** để giải quyết bài toán tr
 - Mảng `st[]` - Lưu thông tin của mỗi nút trên **Segment Tree**.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -256,15 +256,15 @@ int main() {
 }
 ```
 
-## Đánh giá
+### Đánh giá
 
 Ở phần **[Các thao tác trên cây phân đoạn](algo/data-structures/segment-tree-basic)** có nhắc đến $2$ cách để cài đặt **Segment Tree**. Vì sự khác biệt về tốc độ của hai cách có thể là không đáng kể, nên bài viết này sẽ chỉ cài đặt theo cách thông thường nhất là sử dụng **phương pháp đệ quy**.
 
 **Segment Tree** còn có một cách cài đặt khác sử dụng ít bộ nhớ hơn (sử dụng tối đa $2 \times N$ phần tử), cài đặt ngắn hơn và chạy nhanh hơn. Tuy nhiên thì nó không dễ hiểu bằng cách cài đặt trên. *Bạn có thể tham khảo thêm tại đây:* ***[VNOI - Efficient and easy segment trees](translate/codeforces/Efficient-and-easy-segment-trees)***.
 
-# Phân tích độ phức tạp
+## Phân tích độ phức tạp
 
-## Bộ nhớ
+### Bộ nhớ
 
 Ta xét $2$ trường hợp:
 
@@ -279,15 +279,15 @@ Do đó, số nút của cây cho dãy $N$ phần tử (với $N \le 2^k$) là k
 
 *Tham khảo thêm các cách chứng minh khác tại đây: [**Codeforces – Blog entry 49939**](http://codeforces.com/blog/entry/49939).*
 
-## Thời gian
+### Thời gian
 
-### Thao tác xây dựng
+#### Thao tác xây dựng
 
 Thao tác xây dựng sẽ yêu cầu một số lượng hoạt động không đổi trên mỗi nút của cây phân đoạn. Với mảng có $N$ phần tử thì số lượng nút của cây phân đoạn xấp xỉ $4 \times N$ *(đã chứng minh ở trên)*, và vì thao tác xây dựng mất thời gian tuyến tính nên sẽ có độ phức tạp là $\mathcal{O}(4 \times N)$. 
 
 Ta có thể nhận thấy rằng thao tác xây dựng nhanh hơn so với việc thực hiện các thao tác cập nhật riêng biệt *(việc duyệt từng phần tử của mảng để cập nhật sẽ mất độ phức tạp $\mathcal{O}(N \times \log{N})$ )*.
 
-### Thao tác cập nhật
+#### Thao tác cập nhật
 
 Với thao tác cập nhật, một số lượng các hoạt động không đổi được thực hiện cho mỗi nút trên đường đi đơn từ gốc đến nút lá tương ứng với phần tử cần sửa đổi. Đồng nghĩa với việc ở mỗi độ sâu của cây, ta chỉ gọi đệ quy tới không quá $1$ nút con. 
 
@@ -297,7 +297,7 @@ Phân tích đoạn *code* trên, ta xét các trường hợp:
 
 Vì số lượng các nút trên đường đi đơn từ gốc đến nút lá tương ứng được giới hạn bởi chiều cao của cây là $\mathcal{O}(\log{N})$ nên độ phức tạp của thao tác cập nhật sẽ là $\mathcal{O}(\log{N})$.
 
-### Thao tác lấy giá trị
+#### Thao tác lấy giá trị
 
 Trước tiên, ta hãy xem xét từng độ sâu của của cây. Từ đó có thể thấy rằng đối với mỗi độ sâu, ta chỉ truy cập không quá $4$ nút. Và vì chiều cao của cây là $\mathcal{O}(\log{N})$ nên độ phức tạp của thao tác lấy giá trị là $\mathcal{O}(\log{N})$.
 
@@ -313,11 +313,11 @@ Ta có thể chứng minh rằng mệnh đề này *(truy cập nhiều nhất b
 
 Do đó, ta sẽ chỉ truy cập nhiều nhất $4 \times \log{N}$ nút trên cây phân đoạn, và đó cũng chính là độ phức tạp của thao tác lấy giá trị.
 
-# Ví dụ 1
+## Ví dụ 1
 
 [VNOI - ITEZ2](https://oj.vnoi.info/problem/segtree_itez2)
 
-## Bài toán
+### Bài toán
 Bạn được cho một mảng gồm $n$ số nguyên. Ban đầu tất cả các số của mảng đều là $0$. Nhiệm vụ của bạn là xử lí $2$ loại truy vấn:
 - Loại $1$ có dạng $1 \space x \space y$ : Gán phần tử ở vị trí thứ $x$ trong dãy thành số $y$ $(1 \le x \le n, \|y\| \le 10^9)$.
 - Loại $2$ có dạng $2 \space l \space r$ : In ra tổng các phần tử trong đoạn từ $l$ đến $r$ $(1 \le l \le r \le n)$.
@@ -326,13 +326,13 @@ Với mỗi truy vấn loại $2$, hãy in ra câu trả lời trên một dòng
 
 $\circ \space \space 1 \le n, q \le 10^5$ (với $q$ là số lượng truy vấn).
 
-## Phân tích
+### Phân tích
 
 Vì ban đầu giá trị của tất cả phần tử trong mảng đều bằng $0$ nên ta không cần phải thực hiện thao tác xây dựng cây phân đoạn.
 
 Nhận thấy rằng, trên cây phân đoạn, mỗi nút không phải lá sẽ chứa tổng giá trị tại các nút con của nó. Do đó, ta chỉ cần thay thế tất cả các phép toán *min* ở ví dụ trên *(trong phần **[Cài đặt](algo/data-structures/segment-tree-basic)**)* bằng các phép toán cộng.
 
-## Cài đặt
+### Cài đặt
 
 **Cấu trúc dữ liệu:**
 
@@ -340,7 +340,7 @@ Nhận thấy rằng, trên cây phân đoạn, mỗi nút không phải lá s�
 - Mảng `st[]` - Lưu thông tin của mỗi nút trên **Segment Tree**.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -385,17 +385,17 @@ int main() {
 }
 ```
 
-## Đánh giá
+### Đánh giá
 
 **Độ phức tạp**
 
 Với mỗi truy vấn, ta sẽ mất $\mathcal{O}(\log{n})$ cho mỗi thao tác trên **Segment Tree**. Do đó, độ phức tạp của thuật toán là $\mathcal{O}(q \times \log{n})$.
 
-# Ví dụ 2
+## Ví dụ 2
 
 [VNOI - GSS](https://oj.vnoi.info/problem/gss)
 
-## Bài toán
+### Bài toán
 
 Cho dãy số $a_1, a_2, ..., a_n$ $(\|a_i\| \le 15000, \space n \le 50000)$.
 
@@ -403,7 +403,7 @@ Hàm $q(x, y)$ =  $\max \Big( \displaystyle\sum_{k = i}^{j} a_k$, với $x \le i
 
 Cho $m$ $(m \le 50000)$ câu hỏi dạng $x, y$ $(1 \le x \le y \le n)$, hãy tính các $q(x, y)$.
 
-## Phân tích
+### Phân tích
 
 Ở bài toán này, mỗi nút của cây phân đoạn lưu lại các thông tin sau:
 - `pre` : Tiền tố có tổng giá trị lớn nhất trên đoạn.
@@ -434,7 +434,7 @@ Bây giờ, ta cần phải xác định các phép toán để "hợp nhất" h
     
 Với mỗi truy vấn, đáp án chính là $\mathrm{maxsum}[x, y]$.
 
-## Cài đặt
+### Cài đặt
 
 **Cấu trúc dữ liệu:**
 
@@ -443,7 +443,7 @@ Với mỗi truy vấn, đáp án chính là $\mathrm{maxsum}[x, y]$.
 - Mảng `st[]` - Lưu thông tin của mỗi nút trên **Segment Tree**.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -509,7 +509,7 @@ int main() {
 }
 ```
 
-## Đánh giá
+### Đánh giá
 
 **Độ phức tạp**
 
@@ -517,11 +517,11 @@ int main() {
 
 Nhìn chung, độ phức tạp của thuật toán là $\mathcal{O}(4 \times n + m \times \log{n})$.
 
-# Ví dụ 3
+## Ví dụ 3
 
 [VNOI - ITDS1](https://oj.vnoi.info/problem/segtree_itds1)
 
-## Bài toán
+### Bài toán
 
 Cho một dãy số có $N$ số. Bạn cần xử lí $2$ loại truy vấn:
 - Truy vấn loại $1$ có dạng $1 \space i \space v$, ta đổi số ở vị trí $i$ thành $v$.
@@ -529,7 +529,7 @@ Cho một dãy số có $N$ số. Bạn cần xử lí $2$ loại truy vấn:
 
 $\circ \space \space 1 \le N, M \le 10^5$ (với $M$ là số lượng truy vấn).
 
-## Phân tích
+### Phân tích
 
 Trong bài toán này, mỗi nút của cây phân đoạn là một ***[multiset](http://www.cplusplus.com/reference/set/multiset/)*** chứa các phần tử trong đoạn mà nó quản lí. Khi đó, để hợp nhất các nút con, ta chỉ cần *insert* toàn bộ phần tử của cả $2$ nút con vào nút cha. 
 
@@ -539,7 +539,7 @@ Thay vào đó, ta nhận thấy rằng, khi thay đổi giá trị $a[i]$ thàn
 
 Với truy vấn loại $2$, ta thực hiện tương tự như thao tác lấy giá trị. Tuy nhiên, mỗi khi xét đến nút mà đoạn nó quản lí nằm hoàn toàn bên trong đoạn cần truy vấn *(trường hợp cơ sở)*, ta sử dụng hàm [$\textit{lower_bound()}$](https://www.cplusplus.com/reference/set/multiset/lower_bound/) để trả ra giá trị nhỏ nhất mà vẫn lớn hơn hoặc bằng $k$ trong *multiset* của nút đó.
 
-## Cài đặt
+### Cài đặt
 
 **Cấu trúc dữ liệu:**
 
@@ -548,7 +548,7 @@ Với truy vấn loại $2$, ta thực hiện tương tự như thao tác lấy 
 - Mảng `st[]` - Lưu thông tin của mỗi nút trên **Segment Tree**.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
  
 using namespace std;
  
@@ -622,7 +622,7 @@ int main() {
 }
 ```
 
-## Đánh giá
+### Đánh giá
 
 Ngoài ra còn có cách cài đặt khác đơn giản hơn, ta có thể cài đặt hàm `update` theo cách cập nhật *"từ dưới lên trên"* (không sử dụng đệ quy) như sau:
  - Ta sẽ bắt đầu xuất phát từ nút lá tương ứng với phần tử cần sửa đổi và đi dần lên nút gốc. 
@@ -662,11 +662,11 @@ Với mỗi thao tác cập nhật hoặc lấy giá trị, ta mất độ phứ
 
 Nhìn chung, độ phức tạp của thuật toán là $\mathcal{O}(N \times \log^2{N} + M \times \log^2{N})$.
 
-# Cập nhật lười (Lazy Propagation)
+## Cập nhật lười (Lazy Propagation)
 
 Đây là kĩ thuật được sử dụng trong **Segment Tree** để giảm độ phức tạp của **Segment Tree** với các truy vấn cập nhật đoạn.
 
-## Ý tưởng
+### Ý tưởng
 
 Giả sử ta cần cập nhật đoạn $[u, v]$. Dễ thấy rằng, việc cập nhật tất cả các nút trên **Segment Tree** sẽ mất độ phức tạp rất lớn là $\mathcal{O}(N \times \log{N})$ (do tổng số phần tử nằm trong đoạn $[u, v]$ có thể lên đến $O(N)$). Do đó, với số lượng truy vấn cập nhật đoạn lớn, thao tác này sẽ không đủ tốt. 
 
@@ -679,7 +679,7 @@ Vậy nên, trong quá trình cập nhật, ta chỉ thay đổi giá trị ở 
 
 Cụ thể, ta xem xét bài toán sau:
 
-## Bài toán
+### Bài toán
  
 [VNOI - ITLAZY](https://oj.vnoi.info/problem/segtree_itlazy) 
  
@@ -691,7 +691,7 @@ Với mỗi truy vấn loại $2$, hãy in ra câu trả lời trên một dòng
  
 $\circ \space \space 1 \le n, q \le 10^5$ (với $q$ là số lượng truy vấn).
  
-## Phân tích 
+### Phân tích 
 
 Ban đầu, ta thực hiện thủ tục xây dựng cây phân đoạn như bình thường.
 
@@ -711,7 +711,7 @@ Với truy vấn loại $1$, thao tác cập nhật đoạn $[u, v]$. Giả sử
     - `lazy[id] = 0` - chú ý ta cần phải thực hiện thao tác này, nếu không mỗi phần tử của dãy sẽ bị tăng lên nhiều lần, do ta đẩy xuống nhiều lần.
 - Bây giờ, để cập nhật đoạn, ta thực hiện tương tự như ở **[thao tác lấy giá trị](algo/data-structures/segment-tree-basic)**, là xác định tập hợp ít nút nhất sao cho tổng tất cả các phạm vi mà các nút đó quản lí đúng bằng đoạn cần cập nhật. Khi đó, ta sửa lại giá trị của các nút thuộc tập hợp này và lưu lại giá trị cần cập nhật vào $lazy$ tương ứng với các nút con của chúng.
 
-## Cài đặt
+### Cài đặt
 
 **Cấu trúc dữ liệu:**
 
@@ -721,7 +721,7 @@ Với truy vấn loại $1$, thao tác cập nhật đoạn $[u, v]$. Giả sử
 - Mảng `lazy[]` - Lưu trữ các giá trị cần cập nhật của mỗi nút trên **Segment Tree**.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -801,7 +801,7 @@ int main() {
     }
 }
 ```
-## Đánh giá
+### Đánh giá
 
 **Độ phức tạp**
 
@@ -809,11 +809,11 @@ Tương tự như thao tác lấy giá trị, độ phức tạp của thao tác
 
 Nhìn chung, độ phức tạp của cả bài toán là $\mathcal{O}(q \times \log{n})$.
  
-# Ví dụ 4
+## Ví dụ 4
 
 [Codeforces - 558E A Simple Task](https://codeforces.com/problemset/problem/558/E)
 
-## Bài toán
+### Bài toán
 
 Cho một chuỗi kí tự $S$ độ dài $n$ *(chỉ chứa các chữ cái tiếng Anh in thường)* và $q$ truy vấn, mỗi truy vấn có dạng $i \space j \space k$ có nghĩa là hãy sắp xếp chuỗi con gồm các kí tự từ $i$ đến $j$ theo thứ tự không giảm nếu $k = 1$ hoặc theo thứ tự không tăng nếu $k = 0$.
 
@@ -822,7 +822,7 @@ In ra chuỗi cuối cùng sau khi đã thực hiện tất cả các truy vấn
 - $1 \le n \le 10^5; \space 0 \le q \le 50000$.
 - $1 \le i \le j \le n; \space k \in \{ 0, 1 \}$.
 
-## Phân tích
+### Phân tích
 
 Để giải quyết bài toán, ta sử dụng kĩ thuật **[sắp xếp đếm phân phối *(Counting sort)*](https://en.wikipedia.org/wiki/Counting_sort)**. Vì vậy, đối với mỗi truy vấn, ta sẽ đếm số lần xuất hiện của mỗi ký tự và sau đó cập nhật đoạn như sau:
 
@@ -854,7 +854,7 @@ Ta sử dụng kỹ thuật **Lazy Propagation** để cập nhật các đoạn
 
 Vì thao tác cập nhật cây phân đoạn này là gán giá trị ($0$ hoặc $1$) nên ta sẽ khởi tạo giá trị ban đầu của mảng $lazy$ bằng $-1$.
 
-## Cài đặt
+### Cài đặt
 
 **Cấu trúc dữ liệu:**
 
@@ -864,7 +864,7 @@ Vì thao tác cập nhật cây phân đoạn này là gán giá trị ($0$ ho�
 - Mảng `lazy[][]` - Lưu trữ các giá trị cần cập nhật của mỗi nút trên **Segment Tree** tương ứng với mỗi kí tự.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -962,17 +962,17 @@ int main() {
 }
 ```
 
-## Đánh giá
+### Đánh giá
 
 **Độ phức tạp**
 
 Độ phức tạp của thuật toán là $\mathcal{O}(q \times 26 \times \log{n})$.
 
-# Ví dụ 5
+## Ví dụ 5
 
 [VNOI - ITLADDER](https://oj.vnoi.info/problem/segtree_itladder)
 
-## Bài toán
+### Bài toán
 
 Cho một dãy số có $N$ số, ban đầu tất cả bằng $0$. Bạn cần xử lí $2$ loại truy vấn:
 - Truy vấn loại $1$ có dạng $1 \space L \space R \space A \space B$, ta cộng thêm vào phần tử thứ $i$ thêm $(i − L)A + B$ đơn vị với mọi $L \le i \le R$.
@@ -980,13 +980,13 @@ Cho một dãy số có $N$ số, ban đầu tất cả bằng $0$. Bạn cần 
 
 $\circ \space \space 1 \le N, M \le 10^5$ (với $M$ là số lượng truy vấn). Các số trong *input* đều lớn hơn hoặc bằng $1$ và nhỏ hơn hoặc bằng $10^9$.
 
-## Phân tích
+### Phân tích
 
 - Với truy vấn loại $1$: Ta để ý đến giá trị được cộng vào. Với mọi $L \le i \le R$, ta cộng thêm vào phần tử thứ $i$ thêm $(i − L)A + B = iA + B - LA$ đơn vị. Trong đó $B – LA$ là không đổi với mọi phần tử trong truy vấn đề cập đến nên ta có thể dễ dàng sử dụng kĩ thuật **Lazy Propagation** để cập nhật. Còn lại là $iA$ đơn vị, giá trị này thay đổi nên phải dùng mảng $lazy$ thứ $2$ để lưu lại những giá trị dạng này. Nhận thấy rằng, khi mỗi phần tử trong đoạn $[l, r]$ tăng thêm $iA$ đơn vị thì tổng giá trị của cả đoạn $[l, r]$ sẽ tăng thêm $A \times (r + l) \times (r - l + 1) \space / \space 2$.
     Từ đó, bài toán chuyển về **Segment Tree** bình thường với $2$ mảng $lazy$.
 - Với truy vấn loại $2$ : Ta thực hiện thao tác lấy giá trị trên cây phân đoạn. 
 
-## Cài đặt
+### Cài đặt
 
 **Cấu trúc dữ liệu:**
 
@@ -995,7 +995,7 @@ $\circ \space \space 1 \le N, M \le 10^5$ (với $M$ là số lượng truy vấ
 - Mảng `lazy[]` - Lưu trữ các giá trị cần cập nhật của mỗi nút trên **Segment Tree**.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -1062,13 +1062,13 @@ int main() {
     }
 }
 ```
-## Đánh giá
+### Đánh giá
 
 **Độ phức tạp**
 
 Độ phức tạp của thuật toán là $\mathcal{O}(M \times \log{N})$.
 
-# Bài tập áp dụng
+## Bài tập áp dụng
 
 - [VNOI - Educational Segment Tree Contest](https://oj.vnoi.info/contest/segtree)
 - [VOJ - Blogspot Segment Tree](http://vnspoj.blogspot.com/p/blog-page_96.html)

@@ -1,4 +1,4 @@
-# Khử nhân ma trận
+## Khử nhân ma trận
 
 **Tác giả**: [Nguyễn Tiến Trung Kiên](http://news.zing.vn/thay-giao-sinh-nam-1997-cua-cac-cao-thu-hsg-quoc-gia-post480645.html)
 
@@ -8,13 +8,13 @@ Nguyễn Tiến Trung Kiên là cựu học sinh Chuyên Tổng Hợp, với 1 H
 
 
 
-# Giới thiệu
+## Giới thiệu
 
 [Nhân ma trận](algo/trick/matrix-multiplication) thật sự hữu dụng. Có nhiều bài toán khi $n$ nhỏ, ta dùng **DP** (**Dynamic Programming - Quy Hoạch Động**) để giải. Nhưng khi $n$ lớn (khoảng $10^9$), ta phải dùng nhân ma trận để giảm **độ phức tạp**. Trong quá trình code nhân ma trận, việc sinh ra ma trận gốc không phải lúc nào cũng đơn giản. Tôi đã tìm ra một phương pháp tốt để giải những bài toán này mà không cần nhân ma trận.
 
 Khi dùng phương pháp này, ta không cần phải sinh ma trận gốc và không cần cài phép toán nhân hai ma trận $A \* B$ và luỹ thừa ma trận $A^k$. Tuy nhiên, phương pháp này chỉ dùng được trong các bài toán đếm, nghĩa là nó không thể hoàn toàn thay thế nhân ma trận.
 
-# Bắt đầu bằng ví dụ đơn giản nhất
+## Bắt đầu bằng ví dụ đơn giản nhất
 
 Để ví dụ, tôi sẽ dùng bài toán sau:
 
@@ -69,7 +69,7 @@ input n, L
 output f(n, 0, 0, 0)
 ```
 
-# Tổng quát
+## Tổng quát
 
 Với trường hợp $f(n, [a,b,c,...])$ được tính từ $f(n-1, [a,b,c,...])$
 
@@ -124,7 +124,7 @@ Chú ý tại trường hợp $n=0$, việc $n=0$ không có nghĩa đó là k�
 
 ```cpp
 map<int, int> G[21][3][21][3][2];
-#define C p][Just][p0][Just0][Stop
+## define C p][Just][p0][Just0][Stop
 
 long g(int n, int p, int Just, int p0, int Just0, bool Stop) {
     if (p>=::p) p=::p;
@@ -161,7 +161,7 @@ Chú ý ở code trên, `::p` và `p` là khác nhau. `::p` là biến `p` toàn
 
 Độ phức tạp ở code trên là $\mathcal{O}(p^3 log^2 n)$. Thực tế, ta có thể không dùng `map`, bằng cách thêm một tham số là `Depth` đại diện cho độ sâu của hàm quy hoạch động. Khi đó, độ phức tạp mất đi một thừa số $log n$, giảm xuống còn $\mathcal{O}(p^3 log n)$. Code trên tôi dùng `map` cho nó dễ hiểu.
 
-# $f(n) = f(n-1) + f(n-2)$
+## $f(n) = f(n-1) + f(n-2)$
 
 Bây giờ, chúng ta sẽ tính số fibonacci thứ $10^9$ (trong một modulo nào đó). Chắc hẳn là bạn đã biết cách dùng nhân ma trận, nó khá dễ. Tuy nhiên, bây giờ chúng ta sẽ thử giải bằng cách không dùng nhân ma trận. Xem bài toán sau:
 

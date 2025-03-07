@@ -1,4 +1,4 @@
-# Machine Learning - Classification - phần 2
+## Machine Learning - Classification - phần 2
 
 **Nguồn:** [Achoum's blog](http://blog.mathieu.guillame-bert.com/2015/07/20/machine-learning-for-dummies-part-2/)
 
@@ -6,11 +6,11 @@ Trong bài viết trước ([link](translate/ml/Machine-Learning-Classification-
 
 Trở lại câu chuyện về hoa diên vĩ (Iris flower): Chúng ta có một danh sách các bông hoa diên vĩ được mô tả bằng độ dài và độ dày của đài hoa và cánh hoa (**attributes**). Chúng ta cũng đã biết chủng loại của tất cả các bông hoa trừ một cái duy nhất (chúng ta sẽ gọi nó là *"bông diên vĩ bí ẩn"*) và mục tiêu cuối cùng là tìm ra chủng loại của bông diên vĩ bí ẩn này. Với bài toán này, chúng ta giả sử rằng những thuộc tính trên là đặc trưng của chủng loại.
 
-# Giải pháp 1: Quan sát tương đồng (*The same observation solution*)
+## Giải pháp 1: Quan sát tương đồng (*The same observation solution*)
 
 Giải pháp đầu tiên mà ta thường nghĩ đến trong trường hợp này là tìm kiếm một bông diên vĩ khác với độ dài và độ dày của đài hoa và cánh hoa giống với bông diên vĩ bí ẩn. Nếu có, nhiều khả năng chủng loại của bông hoa này cũng tương đồng với bông hoa bí ẩn. Không may mắn thay, rất hiếm khi chúng ta tìm được hai bông diên vĩ với những thông số giống hệt nhau. Trên thực tế, tìm kiếm một quan sát với các thuộc tính giống hệt hiếm khi là một giải pháp tốt, sẽ luôn có những sự khác biệt dù là rất nhỏ.
 
-# Giải pháp 2: Hàng xóm gần nhất (*The 1-nearest neighbors solution*)
+## Giải pháp 2: Hàng xóm gần nhất (*The 1-nearest neighbors solution*)
 
 Thay vì tìm kiếm một bông diên vĩ với các giá trị thuộc tính tương đồng, chúng ta sẽ tìm kiếm những bông hoa *gần giống* với bông hoa bí ẩn. Nếu hai bông diên vĩ có kích thước rất gần giống nhau, chúng trông sẽ rất giống nhau và vì vậy, có thể chúng thuộc cùng một chủng loại.
 
@@ -38,7 +38,7 @@ Nhờ những bước tính toán và so sánh như trên, bạn có thể tìm 
 
 ![translate_ml_nearest_neighbor](http://blog.mathieu.guillame-bert.com/wp-content/uploads/2015/07/irises.png)
 
-# Giải pháp 3: k-hàng xóm gần nhất (*The k-nearest neighbors solution*)
+## Giải pháp 3: k-hàng xóm gần nhất (*The k-nearest neighbors solution*)
 
 Thông thường, giải pháp *hàng xóm gần nhất* (*The 1-nearest neighbors solution*) cho kết quả tốt, nhưng trong nhiều trường hợp, vì nhiều nguyên nhân khác nhau mà giải pháp này cho kết quả thiếu chính xác. Một trong những nguyên nhân có thể là sự thiếu chính xác trong phép đo các thuộc tính. Điều này dẫn đến việc tính khoảng cách không đúng, và như vậy thuật toán không thể tìm ra lớp (**class**) đúng nhất.
 

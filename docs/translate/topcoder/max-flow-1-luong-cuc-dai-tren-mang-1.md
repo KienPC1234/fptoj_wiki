@@ -1,4 +1,4 @@
-# Luồng cực đại trên mạng - Maxflow network
+## Luồng cực đại trên mạng - Maxflow network
 
 **Biên soạn:** Đỗ Việt Anh
 
@@ -7,11 +7,11 @@
 
 
 
-# 0. Kiến thức cần biết
+## 0. Kiến thức cần biết
 
 Để có thể hiểu được bài viết bạn đọc cần biết các khái niệm về [lý thuyết đồ thị](https://vi.wikipedia.org/wiki/L%C3%BD_thuy%E1%BA%BFt_%C4%91%E1%BB%93_th%E1%BB%8B) và bài viết giới thiệu về bài toán [luồng cực đại trên mạng](translate/wcipeg/Flows)
 
-# 1. Ứng dụng
+## 1. Ứng dụng
 
 - Chính tên bài toán đã cho thấy một ứng dụng của nó đó là tính lượng nước có thể vận chuyển giữa hai địa điểm(điểm phát và điểm thu) trong hệ thống
 
@@ -19,7 +19,7 @@
 
 Trên đây là 2 ứng dụng dễ thấy của bài toán rất mong được góp ý để làm phong phú nội dung của mục này
 
-# 2. Phát biểu bài toán
+## 2. Phát biểu bài toán
 
 Cho một mạng (network) có dạng một đồ thị vô hướng $G=(E,V)$ ($V$ là tập đỉnh, $E$ là tập cạnh) có:
 
@@ -35,11 +35,11 @@ hình dưới đây biểu diễn một luồng cực đại trên mạng và m�
 
 [/uploads/max_flow_img_1.jpg](/uploads/max_flow_img_1.jpg)
 
-# 3. cách giải bài toán
+## 3. cách giải bài toán
 
 Trước hết để giải được bài toán ta biết hai khái niệm mạng thặng dư (residual network) và đường tăng luồng (augment path)
 
-## 3.1 mạng thặng dư - residual network
+### 3.1 mạng thặng dư - residual network
 
 Mạng thặng dư $G'(E',V')$ của mạng $G(E,V)$ cho biết sức chứa còn lại trên mạng $G(E,V)$ khi đã gửi một số luồng $f^{\*}$ qua nó và được xây dựng như sau:
 
@@ -54,11 +54,11 @@ Mạng thặng dư $G'(E',V')$ của mạng $G(E,V)$ cho biết sức chứa cò
 [/uploads/max_flow_2a.jpg](/uploads/max_flow_2a.jpg)
 [/uploads/max_flow_2b.jpg](/uploads/max_flow_2b.jpg)
 
-## 3.2 đường tăng luồng - augment path
+### 3.2 đường tăng luồng - augment path
 
 Đường tăng luồng là một đường đi đơn từ đỉnh phát $s$ (source) đến đỉnh thu $t$ (sink) trong mạng thặng dư $G'$ mà kênh trên đường đi chưa bị bão hòa ( $f'[u,v] < c'[u,v]$, một kênh $e'(u,v)$ được gọi là bão hòa nếu $f'(u,v)=c'(u,v)$).
 
-## 3.3 ví dụ
+### 3.3 ví dụ
 
 bằng việc xem xét đường tăng luồng s_A_C_t trên mạng thặng dư $G'$ chúng ta có thể tăng luồng lên 1 vì s_A và A_C có thể cho một luồng có giá trị là 3 nhưng C_t chỉ có thể cho một luồng 1 đi qua, do đó ta sẽ lấy giá trị nhỏ nhất trên đường đi để thực hiện tăng giá trị luồng. Sau khi tăng luồng lên một ta có hình như sau:
 
@@ -72,7 +72,7 @@ Ta có thể thấy từ $s$ đến $t$ tồn tại một đường đi đơn (�
 
 [/uploads/max_flow_1b.jpg](/uploads/max_flow_1b.jpg)
 
-## 3.4 Thuật toán Ford–Fulkerson
+### 3.4 Thuật toán Ford–Fulkerson
 
 Từ ví dụ trên ta có thể đi đến thuật toán như sau:
 
@@ -133,7 +133,7 @@ def increase_flow(int minCapacity, int source, int sink)
         f[sink][previousVertex] -= minCapacity
         sink = previousVertex
 
-# Trong khi vẫn tồn tại đường tăng luồng
+## Trong khi vẫn tồn tại đường tăng luồng
 while find_augment_from_to(s,t):
     # tăng luồng
     increase_flow(s, t)
@@ -142,11 +142,11 @@ while find_augment_from_to(s,t):
 
 Để hiểu rõ hơn về thuật toán và cách chứng minh bạn có thể đọc tiếp các phần sau:
 
-## 3.5 tính đúng dắn
+### 3.5 tính đúng dắn
 
 Để có thể chứng minh được thuật toán trước hết ta cần biết 2 khái niệm lát cắt $s-t$ và lát cắt $s-t$ hẹp nhất trên mạng thặng dư G'
 
-### 3.5.1 Lát cắt $s-t$
+#### 3.5.1 Lát cắt $s-t$
 
 Lát cắt là một các phân hoạch tập các đỉnh $V'$ trong mạng thặng dư $G'$ thành 2 tập $X$ và $Y$ thỏa mãn đỉnh phát $s$ thuộc $X$ và đỉnh thu $t$ thuộc $Y$. Ta có giá trị luồng của lát cắt là $f(X, Y)$ và $c(X, Y)$ (trong đó $f(X,Y)=\sum_{u \in X}\sum_{v \in Y} f'[u,v]$ và $c(X,Y)=\sum_{u \in X}\sum_{v \in Y} c'[u,v]$) ta có thể chứng mình được 2 điều sau:
 
@@ -155,11 +155,11 @@ Lát cắt là một các phân hoạch tập các đỉnh $V'$ trong mạng th�
 
 - Giá trị luồng $f(s,V') = f(X,Y)$
 
-### 3.5.2 Lát cắt s-t hẹp nhất
+#### 3.5.2 Lát cắt s-t hẹp nhất
 
 lát cắt hẹp nhất là lát cắt có f(X,Y) là nhỏ nhất (hay f(X, Y) = c(X, Y)). Từ khái niệm lát cắt và lát cắt nhỏ nhất ta có thể dẫn đến cách chứng minh sau
 
-### 3.5.3 chứng minh
+#### 3.5.3 chứng minh
 
 ta có thể chứng minh 3 nhận định sau là tương đương:
 
@@ -176,15 +176,15 @@ Chứng minh:
 
 - $(3) \rightarrow (1)$: Ta có thể thấy $f(s,V') = f(X, Y) \le c(X, Y)$, do đó $f(s,V')$ là luồng cực đại vì nếu tồn tại một luồng $f^{\*} > f(s,V')$ sẽ vô lý với nhận xét trong mục lát cắt $s-t$ 3.5.1 .
 
-## 3.6 Các thuật toán tìm đường tăng luồng
+### 3.6 Các thuật toán tìm đường tăng luồng
 
 Như đã nói $O(\|f^{\*}\|.E)$ là độ phức tạp của thuật toán Ford-Fulkerson nó phụ thuộc 2 yếu tố là tìm đường tăng luồng $O(E)$ và số lần tăng luồng $f^{\*}$ do đó ta có thể tối ưu 1 trong 2 hoặc cả 2 nếu muốn thuật toán chạy nhanh hơn. Trong mục này ta sẽ tìm hiểu cách để có thể giảm được số lần tăng luồng $f^{\*}$ điều này phụ thuộc nhiều vào việc chọn đường tăng luồng nào để tăng, các phương pháp dưới đây đều có độ phức tạp là $O(\|f^{\*}\|.E)$ nhưng đa số các trường hợp sẽ có độ tốt tăng dần theo thứ tự trình bày sau:
 
-### 3.6.1 Sử dụng thuật toán thuật toán tìm kiếm theo chiều sâu(Deep First Search-DFS)
+#### 3.6.1 Sử dụng thuật toán thuật toán tìm kiếm theo chiều sâu(Deep First Search-DFS)
 
 Thuật toán này có ưu điểm là dễ dàng cài đặt nhưng thông thường số lần tăng luồng là khá lớn. Code đã được trình bày ở cuối mục 3.4. Mặc dù cài đặt có đơn giản nhưng sẽ có thời gian chạy thực tế lớn hơn thuật toán BFS dưới đây.
 
-### 3.6.2 Sử dụng thuật toán tìm kiếm theo chiều rộng(Breadth First Search-BFS)
+#### 3.6.2 Sử dụng thuật toán tìm kiếm theo chiều rộng(Breadth First Search-BFS)
 
 mặc dù dùng bfs để tìm đường mở có độ phức tạp lý thuyết bằng với khi tìm đường tăng luồng bằng dfs nhưng thuật toán này trong thực tế lại nhanh hơn nhiều độ phức tạp lý thuyết.
 
@@ -221,7 +221,7 @@ def find_augment_from_to(int source, int sink):
     return visited[sink]
 ```
 
-### 3.6.3 Sử dụng thuật toán tìm kiếm ưu tiên(Priority First Search-PFS)
+#### 3.6.3 Sử dụng thuật toán tìm kiếm ưu tiên(Priority First Search-PFS)
 
 Thuật toán này tìm ra đường mở có thể tăng luồng lớn nhất trong tất cả các đường mở và khá giống với thuật toán Dijkstra tìm đường đi ngắn nhất vì cùng sử dụng hàng đợi ưu tiên priority_queue, nó được chứng minh có độ phức tạp là $E * logU$ với U là khả năng thông qua lớn nhất và độ phức tạp của hàng đợi ưu tiên (priority_queue) là $E*logE$ nhưng cũng như khi dùng bfs để tìm đường mở pfs cũng chạy nhanh hơn lý thuyết rất nhiều
 
@@ -262,18 +262,18 @@ def find_augment_from_to(int source, int sink):
     return visited[sink]
 ```
 
-# 4. Bài toán liên quan
+## 4. Bài toán liên quan
 
-## Mạng với nhiều điểm phát và nhiều điểm thu
+### Mạng với nhiều điểm phát và nhiều điểm thu
 
 Cho một mạng gồm $n$ đỉnh với $p$ điểm phát $A_{1}, A_{2},..,A_{p}$ và q điểm thu $B_{1}, B_{2},...,B_{p}$. Mỗi cung của mạng được gán khả năng thông qua là số
 nguyên. Các đỉnh phát chỉ có cung đi ra và các đỉnh thu chỉ có cung đi vào. Một luồng trên mạng này là một phép gán cho mỗi cung một số thực gọi là luồng trên cung đó không vượt quá khả năng thông qua và thoả mãn với mỗi đỉnh không phải đỉnh phát hay đỉnh thu thì tổng luồng đi vào bằng tổng luồng đi ra. Giá trị luồng bằng tổng luồng đi ra từ các đỉnh phát = tổng luồng đi vào các đỉnh thu. Hãy tìm luồng cực đại trên mạng.
 
-## Cặp ghép cực đại trên đồ thị 2 phía
+### Cặp ghép cực đại trên đồ thị 2 phía
 
 Một lớp học khiêu vũ có N bạn nam $B_{1},B_{2},...,B_{N}$ và M bạn nữ $G_{1},G_{2},...,G_{M}$ ở buổi học đầu tiên các bạn nam được yêu cầu mời một bạn nữ làm bạn nhảy cùng trong cả khóa học theo khảo sát chúng ta biết được bảng giá trị like[i][j], like[i][j]=True nếu bạn nữ Gj chấp nhận lời đề nghị từ bạn nam Bi và like[i][j]=False ngược lại nếu bạn gái Gj không chấp nhận lời mời từ bạn nam Bi. Bạn hãy xác định số cặp nhảy nhiều nhất có thể của lớp học.
 
-## Tập đại diện
+### Tập đại diện
 
  Một lớp học có n bạn nam, n bạn nữ. Cho m món quà lưu niệm, (n ≤ m). Mỗi bạn có sở thích về một số món quà nào đó. Hãy tìm cách phân cho mỗi bạn nam tặng một món quà cho một bạn nữ thoả mãn:
 
@@ -285,7 +285,7 @@ Một lớp học khiêu vũ có N bạn nam $B_{1},B_{2},...,B_{N}$ và M bạn
 
 - Món quà nào đã được một bạn nam chọn thì bạn nam khác không được chọn nữa
 
-## Mạng với khả năng thông qua của các đỉnh và các cạnh
+### Mạng với khả năng thông qua của các đỉnh và các cạnh
 
 Cho một mạng với đỉnh phát A và đỉnh thu B. Mỗi cung (u, v) được gán khả năng thông qua c[u, v]. Mỗi đỉnh v khác với A và B được gán khả năng thông qua d[v]. Một luồng trên mạng được định nghĩa như trước và thêm điều kiện:
 
@@ -293,12 +293,12 @@ Cho một mạng với đỉnh phát A và đỉnh thu B. Mỗi cung (u, v) đư
  
 Hãy tìm luồng cực đại trên mạng.
 
-## Lát cắt hẹp nhất: 
+### Lát cắt hẹp nhất: 
 
 Cho một đồ thị liên thông gồm n đỉnh và m cạnh, hãy tìm cách bỏ đi một số ít nhất các cạnh để làm cho đồ thị mất đi tính liên thông
 
 
-# 5. Một số bài để luyện tập
+## 5. Một số bài để luyện tập
 
 - [VNOJ - NKFLOW](https://oj.vnoi.info/problem/nkflow/)
 - [SPOJ - FASTFLOW](https://www.spoj.com/problems/FASTFLOW/)
@@ -307,7 +307,7 @@ Cho một đồ thị liên thông gồm n đỉnh và m cạnh, hãy tìm cách
 - [VNOJ - STNODE](https://oj.vnoi.info/problem/stnode/)
 - [codeforces - flows](http://codeforces.com/problemset/tags/flows)
 
-# 6. Nguồn tham khảo
+## 6. Nguồn tham khảo
 
 - **<a href="http://www.hnue.edu.vn/Portals/0/TeachingSubject/hongntcntt/07b6e3d3-6727-489d-a0c5-c81f5f24daa1ly-thuyet-do-thi---le-minh-hoang.pdf" target="_blank">Lý thuyết đồ thị</a> - DSAP Textbook** của thầy **_<a href="http://hnue.edu.vn/directories/?hoanglm" target="_blank">Lê Minh Hoàng</a>_ - Đại học sư phạm Hà Nội**
 

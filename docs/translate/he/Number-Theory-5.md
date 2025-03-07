@@ -1,4 +1,4 @@
-# Số học 5 - Các kiến thức cơ bản về Tổ hợp (Combinatorics)
+## Số học 5 - Các kiến thức cơ bản về Tổ hợp (Combinatorics)
 
 Nguồn: [HackerEarth](https://www.hackerearth.com/practice/notes/number-theory-ii/)
 
@@ -7,9 +7,9 @@ Người dịch: Bùi Việt Dũng
 
 
 
-# Tập hợp (Set)
+## Tập hợp (Set)
 
-## Tập hợp (Set) là gì?
+### Tập hợp (Set) là gì?
 
 Trong toán học, tập hợp là một nhóm các phần tử, mỗi phần tử phân biệt với nhau.
 
@@ -21,7 +21,7 @@ Tập hợp là một trong những khái niệm cơ bản trong Toán học.
 
 Tập hợp các hình đa giác được biểu diễn trong biểu đồ Venn.
 
-## Tập con (Subset)
+### Tập con (Subset)
 
 Nếu mọi phần tử thuộc tập $A$ cũng thuộc tập hợp $B$, thì tập $A$ là **tập con** của tập $B$, kí hiệu là $A \subset B$.
 
@@ -47,11 +47,11 @@ Ví dụ:
 
 $A$ là tập con của tập $B$.
 
-## Các phép toán với tập hợp
+### Các phép toán với tập hợp
 
 Có nhiều phép toán có khả năng xây dựng một tập hợp mới dựa trên các tập hợp đã cho.
 
-### Phép hợp (Union)
+#### Phép hợp (Union)
 
 Hai tập hợp có thể được ghép vào nhau. Hợp của hai tập hợp $A$ và $B$, kí hiệu là $A \cup B$, là một tập hợp gồm các phần tử thuộc tập $A$ hoặc thuộc tập $B$.
 
@@ -77,7 +77,7 @@ Một vài tính chất cơ bản của phép hợp:
 
 - $A \subset B$ khi và chỉ khi $A \cup B = B$.
 
-### Phép giao (Intersection)
+#### Phép giao (Intersection)
 
 Một tập hợp mới có thể được xây dựng từ các phẩn tử mà cả hai tập đều có. Giao cuả hai tập hợp $A$ và $B$, kí hiệu $A \cap B$, là tập hợp các phần tử cùng thuộc tập $A$ và tập $B$. Nếu $A \cap B = \varnothing$, tập $A$ và tập $B$ là hai **tập rời nhau (disjoint)**.
 
@@ -104,7 +104,7 @@ Một vài tính chất cơ bản của phép hợp:
 
 - $A \subset B$ khi và chỉ khi $A \cap B = A$.
 
-### Phép lấy hiệu (Relative complement)
+#### Phép lấy hiệu (Relative complement)
 
 Ta có thể thực hiên phép trừ với hai tập hợp. Hiệu của hai tập hợp $A$ và $B$, kí hiệu là $A \backslash B$, là tập hợp bao gồm tất cả các phần tử thuộc $A$ nhưng không thuộc $B$. Lưu ý rằng ta có thể trừ phần tử mà không thuộc tập hợp, ví dụ như bỏ phần tử 'xanh' khỏi tập hợp {1,2,3}, khi đó tập hợp {1,2,3} không bị thay đổi.
 
@@ -142,7 +142,7 @@ Một vài tính chất cơ bản của phép lấy hiệu
 
 - $U' = \varnothing$ và $\varnothing' = U$.
 
-# Các quy tắc cơ bản
+## Các quy tắc cơ bản
 
 Kí hiệu $\|A\|$ là số phần tử của tập $A$ (hay còn được gọi là lực lượng của tập $A$).
 
@@ -164,9 +164,9 @@ Lí do ta phải cộng trừ giao của một số tập hợp vì nếu ta kh�
 
 Các quy tắc trên cũng đúng khi ta có ba hay nhiều tập hợp.
 
-## Các kiến thức cơ bản về Chỉnh hợp và Hoán vị (Permutation)
+### Các kiến thức cơ bản về Chỉnh hợp và Hoán vị (Permutation)
 
-### Chỉnh hợp không lặp (Permutation of Distinct Objects)
+#### Chỉnh hợp không lặp (Permutation of Distinct Objects)
 
 Cho tập hợp $A$ gồm $n$ phần tử. Mỗi bộ gồm $k$ ($0 \leq k \leq n$) phần tử được sắp thứ tự của tập hợp $A$ được gọi là một chỉnh hợp chập $k$ của $n$ phần tử thuộc $A$.
 
@@ -182,7 +182,7 @@ $A_n^k = n(n-1)...(n-k+1) = \frac{n!}{(n-k)!}$.
 
 với $n!=1.2.3...n$ và $0! = 1$.
 
-### Hoán vị không lặp
+#### Hoán vị không lặp
 
 Mỗi một chỉnh hợp chập $n$ của $n$ phần tử là một hoán vị của $n$ phần tử đó.
 
@@ -192,7 +192,7 @@ Số hoán vị của $n$ được tính bởi công thức:
 
 $P_n = n!$.
 
-### Hoán vị lặp (Permutation with Repetition)
+#### Hoán vị lặp (Permutation with Repetition)
 
 Hoán vị trong đó mỗi phần tử xuất hiện ít nhất một lần được gọi là hoán vị lặp.
 
@@ -200,17 +200,17 @@ Số hoán vị lặp của $n$ phần tử thuộc $k$ loại, mà các phần 
 
 $P(n_1,n_2,...,n_k) = \frac{n!}{n_1!n_2!...n_k!}$
 
-## Các đối tượng tổ hợp (Combinatorial Objects)
+### Các đối tượng tổ hợp (Combinatorial Objects)
 
 Một **song ánh (bijection)** là tương ứng một-một giữa hai tập hợp, ví dụ tập hợp những người chồng và tập hợp những người vợ (một chồng chỉ có một vợ, và một vợ chỉ có đúng một chồng). Do đó, nếu bạn biết được lực lượng của một tập hợp, bạn có thể biết được lực lượng của tập kia. Ta có thể sử dụng tính chất này trong nhiều bài toán Tổ hợp, đặc biệt là các bài toán đếm, nhưng trước tiên, ta phải biết tính lực lượng của một tập các đối tượng tổ hợp.
 
-### Tổ hợp không lặp (Combinations without repetition)
+#### Tổ hợp không lặp (Combinations without repetition)
 
 Trong tổ hợp, ta thường phải chọn một tập các phần tử nào đó và không quan tâm đến thứ tự của chúng. Số lượng tập con $k$ phần tử của một tập $n$ phần tử (còn gọi là số tổ hợp chập $k$ của $n$ phần tử) là:
 
 $\binom{n}{k} = C^k_n = \frac{n!}{k!(n-k)!}$
 
-### Tổ hợp có lặp (Combinations with repetition)
+#### Tổ hợp có lặp (Combinations with repetition)
 
 Giả sử ta cần chọn $k$ phần tử từ một tập $n$ phần tử, không quan trọng thứ tự và một phần tử có thể được chọn nhiều lần. Khi đó, số cách chọn là số tổ hợp lặp chập $k$ của $n$ phần tử và có giá trị là:
 
@@ -218,7 +218,7 @@ $\overline{C^k_n} = \binom{n+k-1}{k} = \frac{(n+k-1)!}{k!(n-1)!}$
 
 Một tính chất thú vị về số tổ hợp có lặp: $\overline{C^k_n}$ là số nghiệm nguyên không âm của phương trình: $x_1+x_2+...+x_n = k$ với $k$ là hằng số nguyên dương.
 
-## Vector nhị phân (Binary Vectors)
+### Vector nhị phân (Binary Vectors)
 
 Vector nhị phân là kiểu dữ liệu ``<bitset>`` trong C++ STL.
 
@@ -232,7 +232,7 @@ Ngoài ra, các tính chất về tổ hợp của vector nhị phân cũng rấ
 
 Khoảng cách giữa hai vector nhị phân $a$ và $b$ là số lượng giá trị $i$ nguyên không âm thỏa mãn $a_i \ne b_i$
 
-## Hệ thức truy hồi (Recurrence Relations)
+### Hệ thức truy hồi (Recurrence Relations)
 
 Hệ thức truy hồi là công cụ hỗ trợ đắc lực trong các bài toán đếm. Truy hồi còn giúp ta định nghĩa được nhiều cấu trúc như cây, danh sách, công thức quy hoạch động hay các thuật toán "chia để trị", nên truy hồi được sử dụng rất nhiều trong tin học.
 
@@ -246,11 +246,11 @@ Hệ thức truy hồi là một phương trình dùng để xác định dãy s
 
 Ta thường dễ dàng tìm được hệ thức truy hồi để giải các bài toán đếm. Giải hệ thức truy hồi để có được dạng công thức cần tìm là cả một nghệ thuật, tuy vậy ta có thể sử dụng trực tiếp hệ thức truy hồi để giải một số bài toán đơn giản.
 
-## Hệ số nhị thức (Binomial Coefficients)
+### Hệ số nhị thức (Binomial Coefficients)
 
 Hệ số nhị thức $\binom{n}{k}$ được sử dụng để đếm số cách chọn $k$ vật trong số $n$ vật.
 
-### Đếm số đường đi trên lưới (Paths Across a Grid)
+#### Đếm số đường đi trên lưới (Paths Across a Grid)
 
 Có bao nhiêu cách để đi từ góc trái trên của một bảng $n * m$ ô đến góc phải dưới của ô đó, nếu ta chỉ được phép đi về bên phải hoặc đi xuống dưới. Ta thấy mọi đường đi hợp lệ có $n+m$ bước, và hai đường đi khác nhau nếu và chỉ nếu chúng có một bước đi xuống dưới khác nhau, vậy ta có $\binom{n+m}{n}$ cách đi.
 
@@ -266,7 +266,7 @@ ta dễ dàng khởi tạo tất cả các giá trị nCr trong O(N^2).
 Code có thể chạy được với n <= 5000 và mod bất kỳ (không cần nguyên tố).
 */
 //by Tanmay Chaudhari
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 using namespace std;
 
 const int MOD = 1e9 + 7;
@@ -308,12 +308,12 @@ Khởi tạo trước ifac[i] = i!^-1 mod P (nghịch đảo modulo P của i!).
 Từ đó dễ dàng tính được nCr trong O(1).
 */
 //by Tanmay Chaudhari
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 using namespace std;
 
 const int MOD = 1e9 + 7;
-#define N 2123456
-#define LL long long
+## define N 2123456
+## define LL long long
 
 LL fac[N], ifac[N];
 
@@ -360,9 +360,9 @@ int main()
 }
 ```
 
-## Một vài dãy số cơ bản (Counting Sequences)
+### Một vài dãy số cơ bản (Counting Sequences)
 
-### Dãy số Catalan
+#### Dãy số Catalan
 
 Định nghĩa: $C_n=\sum_{k=0}^{n-1} C_kC_{n-1-k}=\frac{1}{n+1}\binom{2n}{n}$
 
@@ -382,13 +382,13 @@ Các ứng dụng của dãy số Catalan:
 
 [Và còn nhiều ứng dụng khác...](https://en.wikipedia.org/wiki/Catalan_number#Applications_in_combinatorics)
 
-### Số Euler 
+#### Số Euler 
 
 Số Euler $\big \langle^n_k \big \rangle$ là số lượng hoán vị các số từ 1 đến $n$ mà có đúng $k$ phần tử lớn hơn phần tử đứng trước nó. Hệ thức truy hồi tính số Euler được lập bằng cách xét mỗi hoán vị $p$ của 1,2,...,$n-1$. Có $n$ vị trí để thêm số $n$ vào hoán vị, và một cách thêm số $n$ có thể làm tăng số phần tử lớn hơn phần tử đứng trước nó của $p$, hoặc bảo toàn số phần tử lớn hơn phần tử đứng trước nó. Vì vậy, 
 
 [/uploads/number-theory-euler-number.gif](/uploads/number-theory-euler-number.gif)
 
-### Bài toán phân tích một số nguyên (Integer Partitions) 
+#### Bài toán phân tích một số nguyên (Integer Partitions) 
 
 Ta xét bài toán sau:
 
@@ -413,7 +413,7 @@ Ví dụ: $n=5$ có 7 cách phân tích:
 Cách dễ nhất để đếm số cách phân tích số $n$ là định nghĩa hàm $f(n,k)$ là số cách phân tích số $n$ thành tổng của các số nguyên dương nhỏ hơn hoặc bằng $k$. Các cách phân tích số $n$ thành tổng cách số nguyên dương nhỏ hơn hoặc bằng $k$ có thể chia làm hai loại: chứa số $k$ trong phép phân tích và không chứa số $k$ trong phép phân tích, vì thế ta có $f(n,k)=f(n-k,k)+f(n,k-1)$. Ngoài ra, ta còn dễ dàng có được $f(1,1)=1$ và $f(n,k)=0$ với $k>n$. 
 
 
-# Bài tập
+## Bài tập
 
 - [Hackerearth - Ankit and Race Team](https://www.hackerearth.com/problem/algorithm/ankit-and-race-team-10/description/)
 - [Hackerearth - Tic Tac Toe](https://www.hackerearth.com/problem/algorithm/tic-tac-toe/)

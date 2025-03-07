@@ -1,4 +1,4 @@
-# Lý thuyết trò chơi
+## Lý thuyết trò chơi
 
 Người viết: Nguyễn Nhật Minh Khôi
 
@@ -6,13 +6,13 @@ Reviewer chính: Trần Quang Lộc, Hồ Ngọc Vĩnh Phát
 
 Trong thực tế, có rất nhiều loại trò chơi khác nhau, tuy nhiên trong bài viết này, chúng ta sẽ chỉ giới hạn trong các **trò chơi tổ hợp cân bằng** vì độ phổ biến của nó trong lập trình thi đấu.
 
-## Giới thiệu: trò chơi bốc sỏi
+### Giới thiệu: trò chơi bốc sỏi
 Trước khi đi vào các định nghĩa, chúng ta sẽ đi qua một ví dụ để hiểu được vấn đề mà lý thuyết trò chơi với trò chơi tổ hợp cân bằng giải quyết.
 
-### Phát biểu trò chơi
+#### Phát biểu trò chơi
 Hai bạn An và Bình đang chơi bốc sỏi, trò chơi được phát biểu như sau: cho một đống sỏi có $n$ viên sỏi, hai bạn sẽ luân phiên bốc sỏi từ đống sỏi, mỗi lượt chỉ được bốc $1$, $2$ hoặc $3$ viên sỏi, người lấy được viên sỏi cuối cùng sẽ là người chiến thắng. Biết rằng An đi trước, Bình đi sau. Hãy tìm một chiến thuật để An có thể chiến thắng trò chơi.
 
-### Cách giải
+#### Cách giải
 Ta sẽ tiếp cận bài toán bằng cách giải những trường hợp đơn giản trước, sau đó rút ra quy luật chung cho trường hợp tổng quát.
 
 Với $n = 1, 2$ hoặc $3$, An luôn chiến thắng bằng cách lấy hết sỏi trong lượt bốc đầu tiên.
@@ -33,10 +33,10 @@ Vậy chiến thuật tối ưu của An dựa trên số sỏi hiện tại $m$
 
 với $\bmod$ là phép lấy phần dư.
 
-## Trò chơi tổ hợp cân bằng
+### Trò chơi tổ hợp cân bằng
 Trò chơi ở trên chính là một ví dụ điển hình cho trò chơi tổ hợp cân bằng. Trong phần này, chúng ta sẽ tổng quát hóa bài toán này thành định nghĩa trò chơi tổ hợp cân bằng để thể giải được một lớp bài toán lớn hơn.
 
-### Định nghĩa
+#### Định nghĩa
 **Trò chơi tổ hợp** là trò chơi gồm: *hai người chơi (ở đây gọi người chơi trước là $A$ và người chơi sau là $B$)*, một *tập **hữu hạn** các trạng thái* $S$ (viết tắt của State) có thể đạt được của trò chơi. Mỗi người chơi có một *tập các bước di chuyển hợp lệ* $Q$ để di chuyển từ trạng thái này sang trạng thái khác (gọi là luật chơi) và một tập các trạng thái kết thúc gọi là $T \subset S$ (viết tắt của Terminal). Hai người chơi sẽ luân phiên di chuyển từ trạng thái này sang trạng thái khác. Người đến được trạng thái kết thúc trước sẽ là người chiến thắng.
 
 > Trong trò chơi ví dụ, giả sử $n = 8$ thì mỗi trạng thái sẽ là số sỏi còn lại hiện tại của trò chơi. Do đó tập trạng thái của trò chơi là $S = \{0,1,\ldots, 8\}$ (hình dưới).
@@ -54,7 +54,7 @@ Trò chơi ở trên chính là một ví dụ điển hình cho trò chơi tổ
 Khi hai người chơi có tập các bước di chuyển hợp lệ $Q$ và tập trạng thái kết thúc $T$ giống nhau thì trò chơi được gọi là **trò chơi tổ hợp cân bằng**. Nói cách khác, hai người chơi chỉ khác nhau ở đúng một điểm là người này được đi trước, người kia đi sau.
 > Trò chơi bốc sỏi ở ví dụ chính là một trò chơi tổ hợp cân bằng, do cả An và Bình đều chỉ được cho phép bốc $1$, $2$, hoặc $3$ viên sỏi một lần và đều thắng khi bốc được viên sỏi cuối cùng.
 
-### Chiến thuật thắng
+#### Chiến thuật thắng
 Mục tiêu của chúng ta khi giải các bài toán với trò chơi tổ hợp cân bằng là tìm ra chiến thuật mà ở đó một trong hai người chơi luôn có thể ép người còn lại thua. Chiến thuật như vậy gọi là một **chiến thuật thắng**.
 
 Rõ ràng khi phân tích trò chơi bốc sỏi, ta thấy rằng nếu cả An và Bình đều chơi tối ưu thì chỉ cần biết được trạng thái ban đầu của trò chơi, ta có thể xác định được người đi trước (An) sẽ thắng hay thua. Nếu số sỏi ban đầu là $n$ chia hết cho $4$, Bình chắc chắn sẽ thắng do bạn sẽ luôn ép An đi tới trạng thái có $n$ chia hết cho $4$ và cuối cùng là $n = 0$ (cũng chia hết cho $4$). Lập luận tương tự, nếu $n$ không chia hết cho $4$ thì chắc chắn An sẽ thắng.
@@ -81,7 +81,7 @@ Khi xây dựng được tập $P$ và $N$ theo các ràng buộc trên, ta có 
 
 Qua đó, ta thấy được ý nghĩa của việc đặt tên tập $P$ và $N$. $P$ là viết tắt của *positive*, đặt tên như vậy vì người nào đi đến trạng thái này sẽ có lợi, đó là lý do tại sao các trạng thái kết thúc lại thuộc $P$, vì người chơi nào đi tới được trạng thái kết thúc sẽ có lợi (thắng trò chơi). Tương tự, $N$ là viết tắt của *negative*, đặt tên như vậy vì người nào đi đến trạng thái thuộc tập $N$ sẽ bị bất lợi (vì người kia sẽ luôn tìm cách đi được vào trạng thái thuộc $P$).
 
-### Thuật toán xác định tập P và N
+#### Thuật toán xác định tập P và N
 Ta có ý tưởng thuật toán để tìm tập $P$ và $N$ như sau:
 ```
 // Hàm kiểm tra một trạng thái thuộc P (true) hay N (false)
@@ -105,10 +105,10 @@ bool isInP(State u) {
 
 Tuy nhiên, thuật toán này có một nhược điểm, đó là **gọi lại cùng một giá trị quá nhiều lần** do không lưu lại kết quả trong quá trình đệ quy. Cách giải quyết chính là quy hoạch động top-down (hay còn gọi là đệ quy có nhớ), trong đó ta có một mảng $dp$ lưu lại kết quả của những trạng thái đã từng xét. Để hiểu thêm, bạn hãy xem cài đặt tìm trò chơi bốc sỏi ở phần ví dụ sau.
 
-### Ví dụ cài đặt thuật toán cho trò chơi bốc sỏi
+#### Ví dụ cài đặt thuật toán cho trò chơi bốc sỏi
 Đầu tiên, ta cần thêm các thư viện cần thiết, cũng như khai báo mảng $dp$ để nhớ kết quả của những trạng thái đã đệ quy.
 ```c++
-#include<bits/stdc++.h>
+## include<bits/stdc++.h>
 
 using namespace std;
 
@@ -166,10 +166,10 @@ int main() {
 }
 ```
 
-## Trò chơi Nim chuẩn
+### Trò chơi Nim chuẩn
 Sau khi đã tìm hiểu lý thuyết trò chơi tổ hợp cân bằng tổng quát, phần tiếp theo ta sẽ áp dụng lý thuyết đó vào một bài toán kinh điển trong lý thuyết trò chơi - trò chơi Nim - đại diện tiêu biểu cho trò chơi tổ hợp cân bằng.
 
-### Phát biểu trò chơi
+#### Phát biểu trò chơi
 Có $n$ đống sỏi, và mỗi đống lần lượt có $p_1, p_2, \ldots, p_n$ sỏi, trong đó mỗi số $p_i$ là một số nguyên không âm. Mỗi trạng thái trò chơi tương ứng với mỗi bộ $n$ cho biết số sỏi của từng đống này.
 
 Có hai người chơi thay phiên nhau bỏ sỏi. Người chơi trong lượt hiện tại có thể loại bỏ bao nhiêu sỏi tùy thích, miễn là tất cả các sỏi đều cùng một đống. Hình thức hơn, người chơi sẽ chọn một đống sỏi $i$ và số lượng sỏi $s$ để loại bỏ khỏi đống ($0 < s \leq p_i$), sau đó thay $p_i$ bằng $p_i-s$. Chú ý rằng người chơi không thể bỏ qua lượt của mình mà không bỏ viên sỏi nào cả. Sau đó, đến lượt người chơi kia loại bỏ sỏi, lần lượt như vậy tới khi trò chơi kết thúc.
@@ -178,7 +178,7 @@ Trò chơi kết thúc khi không còn sỏi trên bàn chơi. Người chiến 
 
 Trò bốc sỏi ở ví dụ trên chính là biến thể của trò chơi Nim chuẩn, khác hai chỗ là ở đây chỉ có một đống sỏi ($n = 1$) và số sỏi lấy ra tối đa ở mỗi đống là $3$.
 
-### Giá trị Nim
+#### Giá trị Nim
 Mục tiêu lớn nhất của chúng ta vẫn là xác định xem ai là người thắng nếu cả hai người chơi tối ưu, hay nói cách khác là xác định được chiến thuật thắng.
 
 Tuy nhiên, khi bắt tay vào làm, bạn sẽ gặp ngay một rào cản, đó là trạng thái của trò chơi đang được biểu diễn dưới dạng **một bộ các số nguyên** chứ không phải một số nguyên, điều đó gây khó khăn cho chúng ta khi tổng quát hóa lời giải và lập trình, một khó khăn rất dễ thấy đó là nếu chúng ta xài mảng $dp$ nhiều chiều để lưu trạng thái đã tính thì có khả năng khi $n$ thay đổi đoạn code cũ sẽ không dùng được nữa do số chiều của mảng đã thay đổi. Theo suy nghĩ tự nhiên, chúng ta sẽ cố gắng tìm cách kết hợp thông tin của bộ trạng thái $n$ số lại thành một số nguyên duy nhất. Một cách khả thi để làm điều này chính là *giá trị Nim*, ký hiệu là $g$.
@@ -199,7 +199,7 @@ $$g = p_1 \oplus p_2 \oplus \ldots \oplus p_n$$
 
 Ví dụ: với trò chơi Nim có ba đống sỏi với số sỏi lần lượt là $5$, $7$, $3$ thì tổng Nim là $0101 \oplus 0111 \oplus 0011 = 0001$.
 
-### Định lý Bouton
+#### Định lý Bouton
 Tuy nhiên, trong phần trình bày ở phía trên có một giả thuyết rất quan trọng mà ta chỉ mới thừa nhận chứ chưa chứng minh, đó là *trạng thái trò chơi hiện tại thuộc $N$ khi giá trị Nim dương và thuộc $P$ khi giá trị Nim bằng $0$*. Thực ra, nhận xét đó là một định lý đã được chứng minh, gọi là định lý Bouton. Phần này khuyến khích bạn đọc hiểu về các tính chất của phép toán [bitwise XOR](https://vi.wikipedia.org/wiki/Ph%C3%A9p_to%C3%A1n_thao_t%C3%A1c_bit#XOR).
 
 **Định lý Bouton**: trạng thái của trò chơi Nim $(p_1, p_2, \ldots, p_n)$ thuộc $P$ khi và chỉ khi tổng Nim $g$ của nó bằng $0$.
@@ -246,7 +246,7 @@ Rõ ràng $\hat{P}$ và $\hat{N}$ thỏa mãn ba điều kiện theo định ngh
 
 Qua định lý Bouton, chúng ta có một cách xác định tập $P$ và $N$ dựa trên tổng Nim, hơn thế nữa với việc chứng minh định lý Bouton, ta không chỉ biết được trạng thái thắng/thua của trò chơi mà còn có thể xây dựng được một chiến thuật thắng cụ thể.
 
-## Cài đặt
+### Cài đặt
 Hàm `isInP` trong trường hợp này rất đơn giản, nếu lưu số lượng sỏi mỗi đống vào vector số nguyên thì thuật toán chỉ đơn giản là XOR của các phần tử với nhau, độ phức tạp thuật toán là $O(n)$.
 ```c++
 bool isInP(vector<int> v) {
@@ -256,7 +256,7 @@ bool isInP(vector<int> v) {
     return (g == 0);
 }
 ```
-### Misère Nim
+#### Misère Nim
 
 Ngoài trò chơi Nim chuẩn, có rất nhiều biến thể của trò chơi Nim. Một trong số đó là misère Nim, cách chơi giống như trò chơi Nim bình thường, tuy nhiên thay vì người lấy viên sỏi cuối cùng sẽ thắng, trong Misère Nim thì người lấy viên sỏi cuối cùng sẽ thua. 
 
@@ -264,9 +264,9 @@ Khi đó, dựa vào trạng thái bắt đầu, ta có thể xác định việ
 - Nếu tất cả đống sỏi đều có số sỏi nhỏ hơn hơn $2$ (tức chỉ gồm các đống sỏi có $0$ và $1$ viên): nếu số lượng đống sỏi còn sỏi là lẻ (tức giá trị Nim $g=1$) thì người chơi đầu tiên sẽ thua, ngược lại (tức $g=0$) thì người chơi đầu tiên sẽ thắng.
 - Các trường hợp còn lại: Người chơi đầu tiên sẽ thắng nếu giá trị Nim hiện tại $g > 0$ , ngược lại sẽ thua. Chiến thuật để giành chiến thắng là chơi theo chiến lược Nim thông thường, trừ khi bước di chuyển tiếp theo làm các đống sỏi đều có nhỏ hơn $2$ viên, lúc đó người chơi thực hiện nước đi hiện tại sẽ đặt số lượng đống có $1$ viên sỏi là số lẻ để ép người kia phải bốc viên cuối cùng. Ta có thể chứng minh được nếu một người đang ở trạng thái có giá trị Nim $g > 0$, anh ta luôn có thể quyết định số lượng đống sỏi là chẵn hay lẻ và do đó luôn là người chiến thắng.
 
-## Định lý Sprague-Grundy
+### Định lý Sprague-Grundy
 
-### Đồ thị của trò chơi
+#### Đồ thị của trò chơi
 Nếu xem mỗi trạng thái trong tập trạng thái $S$ là một đỉnh, mỗi cạnh có hướng $(u,v)$ thể hiện cho việc từ trạng $u$ có thể di chuyển đến trạng thái $v$ (tức $(u,v)$ là một phần tử thuộc tập các bước di chuyển di chuyển hợp lệ $Q$) thì ta có thể xây dựng một đồ thị có hướng $(V,E)$ với tập đỉnh $V$ và tập cạnh $E$ tương ứng với tập trạng thái $S$ và tập các bước di chuyển $Q$ như đã nói. Ở đây có một quan sát quan trọng rằng ta tất cả các trạng thái kết thúc sẽ ứng với những đỉnh những đỉnh có bậc ra bằng $0$ (tức từ đỉnh này không đi tới được bất kỳ đỉnh nào khác)
 
 > Ví dụ: trong trò chơi bốc sỏi ở phần đầu, giả sử ta chỉ có một đống sỏi $4$ viên, thì đồ thị của trò chơi sẽ như hình dưới, trạng thái kết thúc $0$ có bậc ra bằng $0$.
@@ -275,7 +275,7 @@ Nếu xem mỗi trạng thái trong tập trạng thái $S$ là một đỉnh, m
 
 Cũng cần chú ý rằng các trò chơi được xem xét trong phần định lý Sprague-Grundy có một tính chất quan trọng, đó là chúng sẽ **kết thúc trong hữu hạn bước**. Khi đó, hiển nhiên đồ thị trò chơi phải không tồn tại chu trình, vì nếu tồn tại chu trình, sẽ tồn tại trường hợp người chơi cố tình đi theo chu trình đó và sẽ không bao giờ đến được đỉnh kết thúc, nghĩa là khi đó trò chơi sẽ lặp vĩnh viễn. Loại đồ thị có hướng không có chu trình như trên còn có thể gọi tắt là DAG ([Directed Acyclic Graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph)).
 
-### Trò chơi tổng
+#### Trò chơi tổng
 Để có thể kết hợp nhiều trò chơi đơn lẻ với nhau, ta đặt ra khái niệm trò chơi tổng.
 
 **Trò chơi tổng**: Cho trò chơi $G_1(S_1,Q_1, T_1)$ và $G_2(S_2,Q_2,T_2)$ với $S_i,Q_i, T_i$ là tập trạng thái, tập các bước di chuyển hợp lệ và tập trạng thái kết thúc ứng với trò chơi $1$ và $2$, trò chơi tổng $G = G_1 + G_2$ là trò chơi có:
@@ -285,7 +285,7 @@ Cũng cần chú ý rằng các trò chơi được xem xét trong phần địn
 
 > Ví dụ: trò chơi Nim có $3$ đống sỏi có thể xem như trò chơi tổng của ba trò chơi $G_1$, $G_2$ và $G_3$, với $G_1$ là trò chơi chỉ bốc ở đống sỏi thứ $1$, $G_2$ là trò chơi chỉ bốc ở đống sỏi thứ $2$, $G_3$ là trò chơi chỉ bốc ở đống sỏi thứ $3$.
 
-### Mở rộng trò chơi Nim
+#### Mở rộng trò chơi Nim
 Định lý Bouton đã cho chúng ta một cách giải rất đẹp cho trò chơi Nim chuẩn, nhưng trong thực tế, hầu hết các bài lý thuyết trò chơi trong lập trình thi đấu sẽ không là trò chơi Nim chuẩn mà sẽ được thay đổi luật chơi ở một số điểm. Lúc ấy, định lý Bouton sẽ không thể giải quyết các dạng bài này. Trong phần này, ta sẽ trình bày hai định lý quan trọng để giải quyết các trò chơi cân bằng kết thúc trong hữu hạn bước. Tuy nhiên ta sẽ chỉ trình bày về động lực hình thành và định nghĩa của hai định lý. Để hiểu rõ hơn, bạn đọc hãy đọc phần Phụ lục để hiểu được chứng minh.
 
 Để giải quyết, ta quay lại chiến lược ban đầu của mình - phân tách trạng thái trò chơi thành nhiều trò chơi con có cùng cấu trúc, tìm một số tính chất đặc biệt của mỗi trò chơi con, sau đó kết hợp chúng lại với nhau để có câu trả lời cho trò chơi gốc.
@@ -334,7 +334,7 @@ Như vậy, ta thấy rằng thực ra cách giải trò chơi Nim cũng chỉ l
 
 và định lý Bouton tương đương định lý 2.
 
-### Định lý Sprague-Grundy
+#### Định lý Sprague-Grundy
 Định lý Sprague-Grundy phát biểu rằng: mọi trò chơi tổ hợp cân bằng kết thúc trong hữu hạn bước đều tương đương với trò chơi Nim một cột, trong đó trạng thái $x$ của trò chơi hiện tại tương ứng với trạng thái trò chơi Nim một cột có $g(x)$ viên sỏi, trong đó $g(x)$ là giá trị Sprague-Grundy của $x$.
 
 Sở dĩ có nhận xét này là vì ở trạng thái $x$ có giá trị Sprague-Grundy $g(x)$, hàm mex cho chúng ta một "lời hứa", lời hứa đó là: từ $x$ với giá trị Sprague-Grundy $g(x)$, ta có thể đi đến tất cả các trạng thái $y$ có giá trị Sprague-Grundy từ $0$ đến $g(x)-1$. Điều này có sự tương đồng với việc trong trò chơi Nim một cột, từ trạng thái $n$ có thể đi đến tất cả trạng thái từ $0$ đến $n-1$.
@@ -343,7 +343,7 @@ Tuy nhiên, luật chơi trò chơi Nim một cột này không giống với b�
 
 Định lý Sprague-Grundy cho ta sự liên tưởng giữa một trò chơi tổ hợp cân bằng với trò chơi Nim một cột - một trò chơi tổ hợp cân bằng đơn giản, cung cấp cho ta một cách nhìn trực quan hơn về trò chơi tổ hợp cân bằng. Tuy bản thân định lý không có nhiều ứng dụng, nhưng các định lý phụ trợ cho việc chứng minh định lý này lại là nền móng quan trọng cho việc giải các trò chơi tổ hợp cân bằng, chính là các định lý 1 và 2 ở phần trước. Để tránh bài viết quá dài dòng, ở đây sẽ không trình bày lại chứng minh của định lý này, bạn đọc có thể tham khảo thêm về cách chứng minh định lý Sprague-Grundy bằng khái niệm trò chơi tương đương được đề cập đến trong [wiki](https://en.wikipedia.org/wiki/Sprague%E2%80%93Grundy_theorem).
 
-### Ví dụ
+#### Ví dụ
 Ta sẽ ví dụ với trò chơi sau
 
 Cho bàn cờ $N \times N$ với $K$ quân mã trên đó. Không giống như quân mã trong cờ vua truyền thống, những quân mã này chỉ có thể di chuyển như thể hiện trong hình bên dưới (vì vậy tọa độ của các con sẽ chỉ bị giảm chứ không tăng, đảm bảo trò chơi kết thúc trong hữu hạn bước). Cùng một lúc có thể có nhiều quân ở cùng một ô của bàn cờ. Hai người chơi thay phiên nhau di chuyển. Khi tới lượt, người chơi chọn một trong các quân mã và di chuyển nó. Người chơi không thể thực hiện nước đi ở lượt của mình là người thua.
@@ -411,13 +411,13 @@ bool isFirstWin(vector<Cell> Q) {
 ```
 Độ phức tạp thời gian của thao tác tính giá trị Sprague-Grundy của trò chơi thành phần là $O(N^2)$ do ta phải duyệt tất cả các ô trong bàn cờ, nhưng do dùng đệ quy có nhớ nên ta không phải tính một ô nào quá $1$ lần. Độ phức tạp thời gian của thao tác XOR $K$ giá trị Sprague-Grundy là $O(K)$, mà $K \leq N^2$, do đó độ phức tạp thời gian của toàn bộ thuật toán là $O(N^2)$.
 
-## Bài tập luyện tập
+### Bài tập luyện tập
 - [VNOI Parigame](https://oj.vnoi.info/problem/parigame)
 - [Codeforce 1451F](https://codeforces.com/contest/1451/problem/F)
 - [Codeforce 305E](https://codeforces.com/contest/305/problem/E)
 - [Codeforce 1312F](https://codeforces.com/contest/1312/problem/F)
 
-## Phụ lục
+### Phụ lục
 Phần này sẽ chứng minh cơ sở toán học cho hai định lý $1$ và $2$ ở phần **Định lý Sprague-Grundy**, để hiểu rõ hơn tại sao lại có hai định lý trên, bạn đọc hãy đọc phần này.
 
 **Định lý 1**: Trong một trò chơi tổ hợp cân bằng, trạng thái $u$ thuộc $P$ khi và chỉ khi giá trị Sprague-Grundy $g(u) = 0$.

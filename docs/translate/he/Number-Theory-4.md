@@ -1,4 +1,4 @@
-# Số học 4 - Phi hàm Euler
+## Số học 4 - Phi hàm Euler
 
 Nguồn: [HackerEarth](https://www.hackerearth.com/practice/notes/number-theory-iii/) và 1 số bài viết trên Wikipedia
 
@@ -6,7 +6,7 @@ Người dịch: Bùi Việt Dũng
 
 
 
-# Phi hàm Euler (Euler's totient function)
+## Phi hàm Euler (Euler's totient function)
 
 **Định nghĩa:** $\phi(N)$ là số số nguyên tố cùng nhau với $N$ trong đoạn từ 1 đến $N$.
 
@@ -46,7 +46,7 @@ int phi(int n) {
 
 **Độ phức tạp của thuật toán:** $O(\sqrt{N})$.
 
-# Công thức
+## Công thức
 
 Một công thức thường gặp để tính phi:
 
@@ -77,11 +77,11 @@ int eulerPhi(int n) { // = n (1-1/p1) ... (1-1/pn)
 
 Trong trường hợp đặc biệt, $N = p^{k}, \phi(N) = p^{k-1} \* (p-1)$.
 
-# Hàm Nhân tính
+## Hàm Nhân tính
 
 Để tính Phi hàm Euler nhanh hơn, các bạn cần biết về [Hàm Nhân Tính](algo/math/multiplicative-function).
 
-# Bài tập áp dụng:
+## Bài tập áp dụng:
 
 - [VNOJ - VOSPOW](http://vnoi.info/problems/VOSPOW)
 - [VNOJ - GCDSUM](http://vnoi.info/problems/GCDSUM/)

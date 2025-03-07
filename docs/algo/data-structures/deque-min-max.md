@@ -1,4 +1,4 @@
-# Hàng đợi hai đầu (deque) và Bài toán tìm max-min trong đoạn tịnh tiến
+## Hàng đợi hai đầu (deque) và Bài toán tìm max-min trong đoạn tịnh tiến
 
 **Tác giả:** 
 - **Bùi Minh Hoạt** - Hung Vuong High School for the Gifted, Phu Tho Province
@@ -8,7 +8,7 @@
 
 
 
-# **Định nghĩa**
+## **Định nghĩa**
 Deque (Double-ended queue) là một kiểu dữ liệu trừu tượng tổng quát hóa một hàng đợi. Nó là nó kiểu danh sách mà có thể bổ sung và loại bỏ một phần ở đầu hoặc cuối danh sách.
 ![img](../../uploads/0f5hQR9.png)
 
@@ -25,7 +25,7 @@ Deque (Double-ended queue) là một kiểu dữ liệu trừu tượng tổng q
 - Độ phức tạp thời gian của tất cả các hoạt động trong deque là $O(1)$
 - Độ phức tạp thời gian của truy cập ngẫu nhiên theo chỉ mục là $O(n)$
 
-# **Bài toán 1**
+## **Bài toán 1**
 
 Cho một dãy $A$ gồm $N$ phần tử được đánh số từ 1 đến $N$. Phần tử thứ $i$ có giá trị là $A[i]$. Cho $k$ là một số nguyên dương ($k ≤ N$). Với mỗi phần tử $i$ ($k ≤ i ≤ N$), tìm giá trị nhỏ nhất của các phần tử trong đoạn từ $i – k + 1$ đến $i$ trên dãy $A$.
 $minRange[i] =$ giá trị nhỏ nhất trong đoạn $[i - k + 1 … i]$
@@ -54,7 +54,7 @@ $minRange[i] =$ giá trị nhỏ nhất trong đoạn $[i - k + 1 … i]$
 4
 ```
 
-## **Phân tích**
+### **Phân tích**
 
 Với bài toán này ta có thể duyệt tất cả các đoạn gồm $k$ phần tử liên tiếp trong mảng $A$ để tìm giá trị nhỏ nhất.
 ![img](../../uploads/nI9T8t3.png)
@@ -130,7 +130,7 @@ Từ các nhận xét như kia, ta có thể dễ dàng hình thành thuật to�
 - **Bước 3:** Nếu vị trị của phần tử đầu tiên trong hàng đợi không nằm trong khoảng đoạn xét thì ta loại bỏ nó.
 - **Bước 4:** Đáp án cần tìm chính là giá trị của phần tử đầu tiên trong deque.
 
-## **Cài đặt**
+### **Cài đặt**
 
 **Tìm min trong đoạn tịnh tiến**
 
@@ -163,20 +163,20 @@ for (int i = 1; i <= N; ++i) {
 }
 ```
 
-## **Đánh giá**
+### **Đánh giá**
 Tất cả các thao tác cơ bản trên deque **(pop_back(), pop_front() và push_back())** có thể dễ dàng được thực hiện với thời gian chạy là $O(1)$.
 Mỗi phần tử vào deque đúng $1$ lần và bị loại bỏ đúng $1$ lần nên độ phức tạp của thuật toán này khi xây dựng là $O(N)$ trong mỗi lần tìm $min$ trong đoạn tịnh tiến.
 
-## **Mở rộng**
+### **Mở rộng**
 
-### **Tìm giá trị lớn nhất**
+#### **Tìm giá trị lớn nhất**
 
 Để tìm giá trị lớn nhất thì ta làm ngược lại quá trình tìm giá trị nhỏ nhất.
 
 Ta sẽ tạo $1$ deque nhằm mục đích lưu vị trí của phần tử có giá trị lớn nhất.
 
 Ở bước 1, thay vì loại bỏ các phần tử có giá trị lớn hơn hoặc bằng ra khỏi đầu deque thì ta sẽ loại bỏ các phần tử có giá trị nhỏ hơn hoặc bằng ra khỏi đầu deque. Lúc này, phần tử đầu deque luôn là phần tử lớn nhất. Và ở mọi thời điểm giá trị trong deque luôn là giảm nghiêm ngặt.
-### **Tại sao ta không nên sử dụng cấu trúc dữ liệu cây phân đoạn?**
+#### **Tại sao ta không nên sử dụng cấu trúc dữ liệu cây phân đoạn?**
 
 Ta chỉ có thể giải quyết bài toán này bằng cấu trúc dữ liệu $Segment$ $Tree$. 
 Để xây dựng được cây $Segment$ $Tree$ thì chúng ta sẽ phải chuẩn bị:
@@ -184,7 +184,7 @@ Ta chỉ có thể giải quyết bài toán này bằng cấu trúc dữ liệu
 - Khởi tạo: $O(log_{2}N)$
 - Ta phải trả lời $N - K + 1$ vị trí. Do đó tổng độ phức tạp sẽ là $O(log_{2}N + (N - K + 1) \cdot log_{2}N)$
 
-### **Khi nào thì không thể dùng deque để tìm max min trong đoạn tịnh tiến?**
+#### **Khi nào thì không thể dùng deque để tìm max min trong đoạn tịnh tiến?**
 
 Với phương pháp dùng deque để tìm $max-min$ trong đoạn tịnh tiến thì bạn sẽ không thể giải quyết được bài toán sau:
 
@@ -199,11 +199,11 @@ Tuy nhiên thuật toán này chỉ thực sự hiệu quả khi chúng ta khôn
 
 Để giải quyết được bài toán này thì chúng ta có thể sử dụng cấu trúc cây phân đoạn với độ phức tạp là $O(Mlog_{2}N)$.
 
-## **Một số lỗi thường gặp**
+### **Một số lỗi thường gặp**
 Khi lấy giá trị trong deque ra thì bạn chưa kiểm tra hàng đợi của mình có đang rỗng không? Nếu hàng đợi rỗng mà bạn vẫn lấy giá trị $front()$ hoặc $back()$ thì chương trình sẽ sinh lỗi.
 
-# **Bài toán 2**
-## **Đề bài**
+## **Bài toán 2**
+### **Đề bài**
 Trong một round đấu, rồng thần của Hoạt có thể khạc tối đa đạt $N$ phát chí mạng vào team địch. Sát thương chí mạng của lần khạc thứ $i$ gây ra là $A_i$. Tuy nhiên rồng thần cần có một khoảng thời gian để hồi lại mana. Vậy nên rồng thần không thể khạc $K$ lần chí mạng liên tiếp. 
 Bạn hãy chỉ cho Hoạt cách điều khiển sức mạnh của rồng thần sao cho tổng sát thương chí mạng gây ra của rồng thần là lớn nhất.
 **Input:**
@@ -223,7 +223,7 @@ Bạn hãy chỉ cho Hoạt cách điều khiển sức mạnh của rồng th�
 ```
 **Giải thích:** Rồng thần sẽ khạc ở những thời điểm $1$, $2$ rồi $4$, $5$ sau cùng là $7$. Tổng sát thương sẽ là $1 + 4 + 3 + 6 + 9 = 23$.
 
-## **Phân tích**
+### **Phân tích**
 Phân loại bài: data structures, dp
 
 Gọi $dp[i]$ là tổng sát thương nhỏ nhất mà rồng thần đã bỏ qua khi xét đến vị trí $i$ và sẽ tiếp tục bỏ qua phát khạc thứ $i$
@@ -248,7 +248,7 @@ cout << ans - dp[N + 1] << '\n';
 **Nhận xét:** 
 Ta cập nhật giá trị $dp[i]$ bởi đoạn các giá trị $dp[j]$ liên tục. Do đó ta có thể dễ dàng cài đặt bằng cây phân đoạn với độ phức tạp: $O(N \cdot log_{2}N)$
 Tuy nhiên ta nhận thấy rằng, đây chính là **bài toán tìm min trong đoạn tịnh tiến**. Ta sẽ làm tương tự như bài toán $1$ với độ phức tạp: $O(N)$
-## **Cài đặt**
+### **Cài đặt**
 **Ta cần phải sử dụng những cấu trúc sau:**
 - Cấu trúc dữ liệu hàng đợi hai đầu: $deque$ - Lưu lại vị trí của phần tử có giá trị nhỏ nhất
 - Mảng $A$, lưu các phần tử nhập vào, tốn $O(N)$ bộ nhớ
@@ -268,8 +268,8 @@ for (int i = 1; i <= N + 1; ++i) {
 cout << ans - dp[N + 1] << '\n';
 ```
 
-# **Bài toán 3**
-## **Đề bài**
+## **Bài toán 3**
+### **Đề bài**
 **Tòa nhà chọc trời**
 	Có $N$ tòa nhà chọc trời được đánh số từ $1$ đến $N$. Tòa nhà thứ $i$ có độ cao là $H[i]$. Từ tòa nhà thứ $i$ ta có thể nhảy đến tòa nhà thứ $j$ $(i < j)$ nếu như thỏa mãn một trong các điều kiện sau:
 - $i + 1 = j$
@@ -313,7 +313,7 @@ Hiện tại Gnar đang đứng trên tòa nhà $1$. Mục tiêu của anh ấy 
 2
 ```
 **Bạn có thể nộp bài tại [đây](https://codeforces.com/contest/1407/problem/D)**
-## **Phân tích**
+### **Phân tích**
 **Phân loại bài:** data structures, dp, graph
 
 **Trường hợp 1:** Nếu $i + 1 = j$ thì ta có thể xây dựng đồ thị cạnh nối giữa $i$ và $j$.
@@ -355,7 +355,7 @@ Gọi $r[k]$ là vị trí xa nhất tính từ vị trí $k$ về bên phải n
 Do đó ta xây dựng đồ thị có cạnh nối giữa tòa nhà $l[k] - 1$ với tòa nhà $r[k] + 1$
 
 Khi đã xây dựng được đồ thị thì có thể quy hoạch động hoặc sử dụng thuật toán tìm đường đi ngắn nhất $BFS$ để tính số lần nhảy ít nhất. 
-## **Cài đặt**
+### **Cài đặt**
 
 **Xây dựng mảng L**
 ```cpp
@@ -420,12 +420,12 @@ for (int k = 1; k <= N; ++k) {
 }
 ```
 
-## **Đánh giá**
+### **Đánh giá**
 -    Số cạnh tối đa trong bài toán này: $M = 3 \cdot N$
 -    Chi phí thời gian xây dựng 4 mảng $L, R, l, r$ là $O(N)$
 -    Chi phí thời gian thuật toán $BFS$ là $O(N + M)$
 
-# **Bài tập áp dụng**
+## **Bài tập áp dụng**
 - [MINK](https://oj.vnoi.info/problem/mink)
 - [QBRECT](https://oj.vnoi.info/problem/qbrect)
 - [KAGAIN](https://oj.vnoi.info/problem/kagain)

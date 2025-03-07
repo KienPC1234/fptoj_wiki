@@ -1,8 +1,8 @@
-#Hướng dẫn cài đặt OpenCV trên Windows
+## Hướng dẫn cài đặt OpenCV trên Windows
 
 [Bài viết gốc](http://dangkhoasdc.github.io/cai-dat-opencv-tren-windows-visual-studio/)
 
-##Biên dịch thư viện OpenCV
+### Biên dịch thư viện OpenCV
 
 Điểm thuận lợi của việc tự cài đặt và biên dịch thư viện có thể kể đến như sau:
 1. Hỗ trợ IDE mới nhất, như trong bản OpenCV 3.0 (22/11/2015) thì chưa có bản biên dịch sẵn dành cho VS 2015.
@@ -32,7 +32,7 @@ Bước 4: Dùng Visual Studio để mở solution có tên là OPENCV. Lưu ý:
 
 ![](http://dangkhoasdc.github.io/images/install_opencv/target_arch.png)
 
-##Cấu hình Opencv trên Visual Studio
+### Cấu hình Opencv trên Visual Studio
 
 Bước 1: Tạo một Project (Empty Project).
 
@@ -43,7 +43,7 @@ Trước khi thực hiện tiếp các công việc cấu hình cho project. Ta 
 2. Cấu hình các file cần thiết khi lập 
 3. Cấu hình các file cần thiết cho quá trình thực thi. Bởi trong Visual Studio có 2 target khi run bao gồm Debug và Release, nên ta cần phải cấu hình riêng biệt cho mỗi target đó.
 
-##Cấu hình header file
+### Cấu hình header file
 
 Click chuột phải vào tên project (InstallOpencv) chọn Properties (Hoặc nhấn Alt + F7).
 
@@ -51,7 +51,7 @@ Click chuột phải vào tên project (InstallOpencv) chọn Properties (Hoặc
 
 Phía bên phần Sidebar chọn C/C++, General, mục Additional Include Directories ta trỏ đến thư mục opencv\build\include (không phải sources\build\include). Để đảm bảo ta có thể check bằng cách kiểm tra xem thư mục include đó có các header file không. Xong nhấn OK.
 
-##Cấu hình thư viện cho quá trình lập trình
+### Cấu hình thư viện cho quá trình lập trình
 
 Nhấn Alt + F7 để vào phần Properties của Project. Chọn Thẻ Linker, mục Additional Library Directories ta trỏ đến thư mục lib\Debug (trong ví dụ này là: C:\oepncv\sources\build\lib\Debug). Vì đang cấu hình cho target là Debug nên phần Configuration phải là Debug
 
@@ -101,7 +101,7 @@ Phần Additional Dependencies sẽ là:
 >opencv_videoio300.lib
 >opencv_videostab300.lib
 
-##Cấu hình thư viện cho quá trình thực thi
+### Cấu hình thư viện cho quá trình thực thi
 
 Khi thực hiện build 1 chương trình, VS sẽ tạo ra trong thư mục của Solution một thư mục với cấu trúc như sau: \Debug và \Release. Trong ví dụ này là x64\Debug, x64\Release. Ta chép toàn bộ file trong build\bin\Debug vào x64\Debug, tương tự như vậy đối với build\bin\Release và x64\Release.
 
@@ -110,8 +110,8 @@ Tạo một file cpp và run thử chương trình.
 Mã nguồn:
 
 ```cpp
-#include <opencv2/opencv.hpp>
-#include <iostream>
+## include <opencv2/opencv.hpp>
+## include <iostream>
 using namespace cv;
 using namespace std;
 int main() {
@@ -127,7 +127,7 @@ int main() {
 
 Kết quả ta được như hình trên.
 
-##Tuy nhiên
+### Tuy nhiên
 
 Có một chữ tuy nhiên to đùng như vậy vì với cách cấu hình thế này có khá là nhiều bất cập:
 
@@ -137,7 +137,7 @@ Có một chữ tuy nhiên to đùng như vậy vì với cách cấu hình th�
 
 Ta sẽ giải quyết từ dễ đến khó trước.
 
-##Additional Dependencies
+### Additional Dependencies
 
 Sau khi biên dịch xong thư viện ta mở Command Line và trỏ đến thư mục sources\build\lib
 
@@ -147,7 +147,7 @@ Gõ lệnh sau:
 
 Sau khi gõ xong thì trong thư mục build sẽ xuất hiện 2 file text là DependenciesDebug và DependenciesRelease chứa danh sách tât cả các file libs. Mỗi lần sử dụng chỉ cần mở file lên và chép vào.
 
-#Lib Configuration
+## Lib Configuration
 
 Mở Command Line (Với quyền Admin - click chuột phải vào biểu tượng Start và chọn Command Promp) và gõ lệnh
 
@@ -169,7 +169,7 @@ Chọn Advanced system settings. Trong thẻ Advanced chọn Environment Variabl
 
 Xong, và từ giờ trở đi ta không cần phải chép các file trong build\bin vào trong project nữa.
 
-##Sao lưu config của project
+### Sao lưu config của project
 
 Trong sidebar Property Manager ta thấy danh sách các config architecture trong project tương ứng với từng target .
 

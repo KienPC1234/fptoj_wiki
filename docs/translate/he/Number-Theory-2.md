@@ -1,4 +1,4 @@
-# Số học 2 - Số nguyên tố, Sàng Eratosthenes
+## Số học 2 - Số nguyên tố, Sàng Eratosthenes
 
 Nguồn: [HackerEarth](https://www.hackerearth.com/practice/notes/number-theory-1/) và 1 số bài viết trên Wikipedia
 
@@ -9,7 +9,7 @@ Người dịch: Bùi Việt Dũng
 Bạn có thể đọc phần 1 về Modulo & GCD [ở đây](translate/he/So-hoc-Phan-1-Modulo-gcd).
 
 
-# Số nguyên tố (Prime Numbers)
+## Số nguyên tố (Prime Numbers)
 
 Số nguyên tố là số nguyên lớn hơn 1 và có đúng 2 ước là 1 và chính nó.
 
@@ -19,7 +19,7 @@ Ví dụ, 5 là số nguyên tố vì 5 chỉ chia hết cho 1 và 5. Tuy nhiên
 
 Có rất nhiều phương pháp để kiểm tra một số nguyên có phải là số nguyên tố hay không.
 
-## Thuật toán "ngây thơ"
+### Thuật toán "ngây thơ"
 
 Ta sẽ duyệt hết tất cả các số từ 1 đến $N$ và đếm số ước của $N$. Nếu số ước của $N$ là 2 thì $N$ là số nguyên tố, nếu không thì $N$ không là số nguyên tố.
 
@@ -36,7 +36,7 @@ bool isPrime(int n) {
 
 **Độ phức tạp của thuật toán:** Độ phức tạp của thuật toán là $O(N)$ do ta phải duyệt hết các số từ 1 đến $N$.
 
-## Một thuật toán tốt hơn
+### Một thuật toán tốt hơn
 
 Xét hai số nguyên dương $N$ và $D$ thỏa mãn $N$ chia hết cho $D$ và $D$ nhỏ hơn $\sqrt{N}$. Khi đó $\frac{N}{D}$ phải lớn hơn $\sqrt{N}$. $N$ cũng chia hết cho $\frac{N}{D}$. Vì thế, nếu $N$ có ước nhỏ hơn $\sqrt{N}$ thì $N$ cũng có ước lớn hơn $\sqrt{N}$. Do đó, ta chỉ cần duyệt đến $\sqrt{N}$.
 
@@ -51,7 +51,7 @@ bool isPrime(int n) {
 **Độ phức tạp của thuật toán:** Độ phức tạp của thuật toán là $O(\sqrt{N})$ do ta phải duyệt từ 1 đến $\sqrt{N}$.
 
 
-# Sàng Eratosthenes (Sieve of Eratosthenes)
+## Sàng Eratosthenes (Sieve of Eratosthenes)
 
 Sàng Eratosthenes dùng để tìm các số nguyên tố nhỏ hơn hoặc bằng số nguyên $N$ nào đó. Nó còn có thể được sử dụng để kiểm tra một số nguyên nhỏ hơn hoặc bằng $N$ hay không.
 
@@ -98,7 +98,7 @@ Số lần lặp của vòng lặp trong là:
 
 Độ phức tạp tổng: $N.(\frac{1}{2}+\frac{1}{3}+\frac{1}{5}+...)=O(N\log{N})$.
 
-# Phân tích thừa số nguyên tố với sàng Eratosthenes
+## Phân tích thừa số nguyên tố với sàng Eratosthenes
 
 Cách cài đặt:
 
@@ -159,7 +159,7 @@ Phương pháp này rất hữu ích khi ta phải phân tich nhiều số nhỏ
 
 **Tính chất thú vị:** Nếu $N=p_1^{q_1}.p_2^{q_2}...p_k^{q_k}$ với $p_1,p_2,...,p_k$ là các số nguyên tố thì $N$ có $(q_1+1).(q_2+1)...(q_k+1)$ ước phân biệt.
 
-# Sàng Eratosthenes trên đoạn
+## Sàng Eratosthenes trên đoạn
 
 Đôi khi bạn phải tìm tất cả các số không phải trên đoạn $[1;N]$ mà là trên đoạn $[L;R]$ với $R$ lớn.
 
@@ -202,7 +202,7 @@ bool isPrime(int n) {
 }
 ```
 
-# Bài tập áp dụng:
+## Bài tập áp dụng:
 
 - [SPOJ - PRIME1](http://www.spoj.com/problems/PRIME1/)
 - [VNOJ - NKABD](https://oj.vnoi.info/problem/nkabd/)

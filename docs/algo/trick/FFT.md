@@ -1,4 +1,4 @@
-# FFT
+## FFT
 
 
 
@@ -6,7 +6,7 @@ Tác giả: ngmq
 
 Trong bài này chúng ta sẽ tìm hiểu về thuật toán nhân nhanh hai đa thức sử dụng phép biến đổi Fourier nhanh (*Fast Fourier Transform - FFT*) và cách cài đặt của nó. Bài viết này sẽ chỉ nêu chứng minh sơ lược của một vài tính chất được sử dụng. Các chứng minh chi tiết có thể tìm thấy ở mục tài liệu tham khảo phía cuối của bài viết.
 
-# Vài nét lịch sử
+## Vài nét lịch sử
 
 Phép biến đổi Fourier (*Fourier Transform*) là một trong số những phát kiến toán học đặc sắc có lịch sử hào hùng, gắn liền với những phát kiến khoa học và chiến tranh quân sự ở thế kỷ 19 và 20. **Joseph Fourier** (1768-1830) là một nhà khoa học làm việc trong đội quân thám hiểm Ai Cập của Napoleon từ năm 1798. Sau khi cách mạng Pháp kết thúc năm 1799, Fourier trở về Pháp và tham gia xây dựng lại đất nước trong vai trò một giáo sư của đại học École Polytechnique. Trong quá trình làm việc với các công trình xây dựng cầu đường và đóng tàu, ông đặc biệt quan tâm tới bài toán mô tả quá trình truyền dẫn nhiệt trong kim loại, điều dẫn tới sự ra đời của phép biến đổi Fourier liên tục vào năm 1807 trong một báo cáo của ông tại viện hoàng gia Paris. Trong đó, ông mô tả mọi hàm số, kể cả các hàm số không liên tục đều có thể được biểu diễn dưới dạng tổng của một số vô hạn các hàm số lượng giác. Phát biểu này của Fourier gây chấn động và ấn tượng tới mức nhà toán học Pháp cùng thời là **Lagrange** cho rằng việc nghĩ ra phát kiến này là *gần như không thể* ("nothing short of impossible") [1]. Trong hơn một trăm năm sau đó phép biến đổi Fourier trở thành một đối tượng nghiên cứu phổ biến và liên tục được phát triển, hoàn thiện bởi vô số các tên tuổi lớn của toán lý thuyết [2].
 
@@ -14,7 +14,7 @@ Trong khi phiên bản nguyên thủy có lịch sử hoành tráng như vậy, 
 
 Nghiên cứu chỉ ra rằng mắt và tai người, động vật có "cài đặt" sẵn thuật toán biến đổi Fourier để giúp chúng ta nhìn và nghe, vì vậy nó được GS **Ronald Coifman** của đại học Yale gọi là *Phương pháp phân tích dữ liệu của tự nhiên* ("Nature's way of analyzing data") [1].
 
-# Phép nhân hai đa thức
+## Phép nhân hai đa thức
 
 Cho hai đa thức $p(x), q(x)$ có bậc $d, e$ như sau:
 
@@ -39,7 +39,7 @@ $$
 Cách làm theo định nghĩa là ta nhân mỗi hệ số của $p(x)$ với tất cả các hệ số của $q(x)$ rồi cộng các hệ số của cùng tổng số mũ. Vì hai đa thức có $d+1$ và $e+1$ hệ số nên cách làm này có độ phức tạp là $O((d+1)(e+1)) = O(de)$. Khi $d$ và $e$ tương đối lớn cỡ $10^3$ hoặc $10^4$ trở lên thì độ phức tạp này là quá lớn để chạy trên máy tính, đặc biệt là các máy tính nhúng đòi hỏi tốc độ tính toán nhanh. Phép biến đổi FFT giúp thực hiện phép nhân nói trên trong độ phức tạp $O(N*logN)$ trong đó $N$ là lũy thừa của $2$ nhỏ nhất lớn hơn $d$ và $e$.
 
 
-# Biểu diễn đa thức qua ma trận Vandermonde
+## Biểu diễn đa thức qua ma trận Vandermonde
 
 *Kể từ phần này trở về sau, ta quy ước $n$ là số hệ số của đa thức (bậc $n-1$) và $n$ là một lũy thừa của 2 ($n = 2, 4, 8, 16, 32, 64...$).*
 
@@ -97,7 +97,7 @@ Từ định lý 2, ta thấy rằng 1 đa thức bất kỳ có 2 cách biểu 
 4. Chuyển đa thức $c(x)$ về cách biểu diễn 1 (dùng FFT).
 
 
-# Nghiệm nguyên thủy
+## Nghiệm nguyên thủy
 
 Như đã phân tích ở trên, ta cần chọn dãy $z_i$ sao cho việc biến đổi đa thức giữa 2 cách biểu diễn có thể thực hiện một cách hiệu quả. Nếu ta chọn $z_i$ là các **nghiệm nguyên thủy** thoả mãn:
 
@@ -119,7 +119,7 @@ $$
 
 Dễ thấy là nghiệm nguyên thủy thứ $k$ có thể được tính trong $O(1)$ với $n$ đã biết.
 
-## Một số tính chất đặc biệt của ma trận Vandermonde nghiệm nguyên thủy
+### Một số tính chất đặc biệt của ma trận Vandermonde nghiệm nguyên thủy
 
 **Tính chất 1:** Ma trận nghịch đảo $V^{-1}$ được tính theo công thức: $V^{-1}[i,j] = {V[i,j]^{-1} \over n}$ với $i, j = 0, 1,...n-1$ là chỉ số hàng và cột của ma trận.
 
@@ -173,7 +173,7 @@ $$
 
 **Hệ quả:** Phép biến đổi Fourier ngược (*inverse Fourier transform*) có cùng độ phức tạp với phép biển đổi Fourier.
 
-# Phép biến đổi Fourier nhanh
+## Phép biến đổi Fourier nhanh
 
 Trong phần trên ta đã thấy vai trò của ma trận Vandermonde $V$ là biến đổi một vector cột $a_0, a_1, ...a_{n-1}$ thành một vector cột khác cùng kích cỡ $p(z_0), p(z_1), ...p(z_{n-1})$. Phép biến đổi này được gọi là "Biến đổi Fourier rời rạc" (*Discrete Fourier Transform*). Lưu ý là mặc dù hai khái niệm "Biến đổi Fourier rời rạc" (*DFT*) và "Phép biến đổi Fourier nhanh" (*FFT*) là khác nhau nhưng vì khi cài đặt DFT người ta luôn sử dụng FFT nên hai khái niệm này được coi như đồng nhất.
 
@@ -201,7 +201,7 @@ $$
 FFT(x_{i=n/2, n/2+1, n/2+2,...n-1}) = FFT(x_{i=0, 2, 4, ...x_{n-2}}) - w_n^i FFT(x_{i=1, 3, 5...n-1})
 $$
 
-## Thuật toán nhân hai đa thức
+### Thuật toán nhân hai đa thức
 
 Đến đây ta đã có thể hoàn thiện chương trình nhân 2 đa thức $p(x), q(x)$ và lưu kết quả thành $h(x)$:
 ```
@@ -221,16 +221,16 @@ h(x) = FFT_ngược(fh) // biến đổi Fourier ngược và lưu vào kết qu
 end function
 ```
 
-# Lưu ý về kỹ thuật cài đặt
+## Lưu ý về kỹ thuật cài đặt
 
 Vì FFT đòi hỏi phải sử dụng số phức và (trong nhiều trường hợp) khử đệ quy nên có thể gây khó khăn cho các bạn chưa quen, phần này sẽ hướng dẫn sơ lược về cách cài đặt sử dụng `C++`.
 
-## Khai báo
+### Khai báo
 
 Để sử dụng số phức trong `C++` ta cần khai báo thư viện `complex`:
 
 ```cpp
-#include <complex>
+## include <complex>
 ```
 Vì `C++` cài đặt `complex` là một lớp (`class`) gồm 2 trường thực (`real()`) và ảo (`imag()`) nên khi sử dụng ta cần chỉ định kiểu dữ liệu cho hai trường này. Hai kiểu dữ liệu thông dụng là `double` hoặc `long double`:
 
@@ -243,11 +243,11 @@ Sau khi được định nghĩa bằng lệnh `typedef` thì để khai báo bi�
 
 Một số phiên bản cài đặt tự định nghĩa lớp số ảo bằng một `struct` hoặc `class`. Nếu lớp tự viết này không có chức năng đặc biệt nào thì việc này là không cần thiết vì bản thân `<complex>` đã là một lớp rồi. Bạn có thể xem qua file thư viện trong thư mục cài đặt trình biên dịch, ví dụ với CodeBlocks thì đường dẫn có dạng `CodeBlocks\MinGW\lib\gcc\mingw32\4.7.1\include\c++\complex` (file ko có phần mở rộng).
 
-## Chuẩn hóa bậc đa thức
+### Chuẩn hóa bậc đa thức
 
 Trong các phần trên ta đã giả sử rằng $n$ là lũy thừa của $2$. Để đảm bảo tính đối xứng và thuận tiện khi cài đặt, nếu đề bài không cho trước $n$ bậc của đa thức là lũy thừa của $2$ thì ta cần chuẩn hóa thành số lũy thừa nhỏ nhất mà lớn hơn $n$. Chẳng hạn với $n = 10^5$ thì giá trị chuẩn hóa là $2^{17} = 131072$ vì $2^{16} = 65536 < 10^5$. Các hệ số của bậc cao hơn giá trị $n$ ban đầu gán bằng $0$.
 
-## Đệ quy và Khử đệ quy
+### Đệ quy và Khử đệ quy
 
 **Đệ quy:**
 
@@ -334,7 +334,7 @@ void inverse_fft_slow(int n, vb& a)
 Màu đỏ là các nhóm chẵn và màu xanh là các nhóm lẻ. Các bạn hãy dựa vào tính chẵn lẻ và để ý các số nhị phân $0, 1$ trong hình vẽ để tự viết chương trình FFT khử đệ quy hoặc giải thích tính đúng đắn của đoạn mã sau (đây là hàm FFT đã được dùng để giải bài POST2)
 
 ```cpp
-#define PI acos(-1)
+## define PI acos(-1)
 const int NBIT = 18;
 const int N = 1<<18; // chuẩn hóa bậc của đa thức là 18
 base W[N]; // mảng lưu các nghiệm nguyên thủy
@@ -460,7 +460,7 @@ void fft(int n, vb& a, bool invert)
 Một số cách cài đặt khác sử dụng con trỏ cũng làm tăng tốc độ thực thi, có thể xem thêm trong trang của **emaxx** phần tài liệu tham khảo. Cũng trong trang của **emaxx** có thể tìm thấy cách cài đặt gộp hai hàm `fft` và `inverse_fft` lại làm một sử dụng một biến bool invert làm cho code ngắn gọn hơn.
 
 
-# Bài tập luyện tập
+## Bài tập luyện tập
 
 - [VNOJ POST2](https://oj.vnoi.info/problem/post2/)
 - [FFT problems on Codeforces](http://codeforces.com/problemset/tags/fft)
@@ -468,7 +468,7 @@ Một số cách cài đặt khác sử dụng con trỏ cũng làm tăng tốc 
 - [SumOfArrays - Topcoder SRM 603](https://community.topcoder.com/stat?c=problem_statement&pm=12910&rd=15836) và [Hướng dẫn giải](https://apps.topcoder.com/wiki/display/tc/SRM+603)
 
 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 
 - [1] Rohit Thummalapalli. Fourier Transform: Nature’s Way of Analyzing Data. *Yale Scientific*, 2010. [Link](http://www.yalescientific.org/2010/12/fourier-transform-natures-way-of-analyzing-data/)
 - [2] Alejandro Dominguez. Highlights in the History of the Fourier Transform. IEEE Pulse, 2016. [Link](http://pulse.embs.org/january-2016/highlights-in-the-history-of-the-fourier-transform/)

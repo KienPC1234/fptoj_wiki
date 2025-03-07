@@ -1,4 +1,4 @@
-# Những cách tiếp cận bài toán: Phần 1
+## Những cách tiếp cận bài toán: Phần 1
 
 Bài viết bởi [leadhyena_inran](https://www.topcoder.com/members/leadhyena_inran/).
 
@@ -8,7 +8,7 @@ Nguồn: [Topcoder](https://www.topcoder.com/community/data-science/data-science
 
 Giải bài là một nghệ thuật, nó có thể gây khó khăn cho cả những coder kì cựu nhất cũng như những người mới học. Để tìm cách giải phù hợp, chúng ta phải biết kết hợp nhiều phương pháp khác nhau như cảm nhận bằng trực giác, sáng tạo và thậm chí là may mắn. Cảm giác bất lực trước những bài khó thường làm chúng ta nản chí, và có thể bỏ cuộc giữa chừng. Tuy nhiên, không gì là không thể nếu bạn có đủ quyết tâm cũng như kĩ năng cần thiết. Bởi lí do đó, bài hướng dẫn này sẽ đưa ra những kĩ năng để giúp các bạn chọn những hướng tiếp cận rõ ràng cho những bài toán như vậy.
 
-# Tư duy theo lối mòn (Pattern Mining and Wrong Mindset)
+## Tư duy theo lối mòn (Pattern Mining and Wrong Mindset)
 
 Chúng ta rất dễ hướng các suy nghĩ vào việc tìm giải thuật dựa trên từng dạng của đề bài. Với những người đã làm khá nhiều bài tập, họ sẽ nhận ra được dạng của những bài toán khác nhau, và khi đọc thấy một bài toán nào đó quen thuộc, thì suy nghĩ hiện ra ngay tức khắc trong đầu là: *“Ồ, đây là dạng bài X, nên sử dụng thuật toán này, áp dụng kĩ thuật này”*. Cách này khá hữu ích đối với những người mới học: nếu chưa thể giải được, thì họ sẽ tập trung vào luyện tập với những dạng đề bài này để khiến nó trở thành một dạng bài quen thuộc.
 
@@ -16,7 +16,7 @@ Tuy nhiên, cách tiếp cận này cũng có nhược điểm khá lớn. Có n
 
 Tư duy lối mòn thường khiến ta ảo tưởng rằng mọi bài toán đều đã được "phân loại" và ta chỉ cần áp dụng "đúng thuật", trong khi thực tế điều này bất khả thi. Khi ta tạm quên hết những lối mòn đó và sử dụng hết khả năng suy nghĩ, phân tích, trình độ của ta sẽ được cải thiện rất nhiều.
 
-# Coding Kata
+## Coding Kata
 
 Đây là thử thách đầu tiên: hãy chọn bất cứ bài tập nào trong Practice Rooms mà bạn chưa làm. Hốt nó, cho dù phải mất bao nhiêu thời gian, và hoàn thành nó (có thể sử dụng editorial nếu quá "bí"). Sau khi làm xong (accepted), hãy xem bạn mất bao nhiêu thời gian để giải. Tiếp theo, xóa hết code và **gõ** lại lần nữa, check thời gian sau khi làm xong. Tiếp tục lần thứ 3 như thế.
 
@@ -25,7 +25,7 @@ Thời gian hoàn thành lần đầu tiên là thời gian để giải bài to
 Ở nhiều môn võ, có một thuật ngữ luyện tập gọi là *kata*. Người tập sẽ thi triển những đòn thế được kịch bản sẵn và cố phòng thủ trước các đòn tấn công - cũng đã được kịch bản. Thoạt nghe thì phương pháp này chả có tác dụng gì vì sẽ chẳng lúc nào đánh nhau được "tiện" như vậy. Hơn nữa có vẻ như nó khuyến khích lối tư duy, luyện tập theo lối mòn được đề cập ở trên. Thế nhưng *kata* sẽ cho người tập cảm giác của việc có một kế hoạch rõ ràng và khuyến khích ý chí. Tin học cũng như vậy; chỉ sau khi code 3 lần một dạng bài trong một thời gian đủ nhiều ta mới nhuần nhuyễn hết mọi mặt của bài toán - định hướng, trình bày code và debug.
 
 
-# Chiến thuật định hướng giải bài (Approach Tactics)
+## Chiến thuật định hướng giải bài (Approach Tactics)
 
 Bây giờ bạn đã biết việc định hướng giải bài nó như thế nào và nó bao gồm những gì, bạn sẽ nhận ra rằng trước đây bạn đã biết khá nhiều cách để tiếp cận một bài toán. Dạng như *“Tôi dùng Quy hoạch động (dynamic programming) cho bài đó”*, *“Tôi có thể dùng tham lam (greedy) để giải bài này không?”*, *“Đừng nói với tôi rằng duyệt (brute-force) có thể ăn bài này”*. Thật ra bạn đang dùng sai những từ ngữ ở đây, vì bạn không thể phân loại mỗi bài tập chỉ với tham hay duyệt. Có rất rất nhiều dạng bài tập, và cũng rất nhiều cách tiếp cận, và thậm chí với mỗi hướng tiếp cận có thể tồn tại rất nhiều cách thể hiện khác nhau. Cách dùng từ như vậy chỉ tổng quát được những bước đi lớn để đến được đáp án.
 
@@ -36,7 +36,7 @@ Những coder có kiến thức toán cơ bản tốt sẽ có thể biết đư
 Để luyện tập cách tư duy và tìm ra phương pháp phù hợp với mình, ghi chú lại hướng giải của các bài toán là rất quan trọng. Sau đó hãy viết một bài phân tích dựa trên những gì bạn đã làm, càng chi tiết càng tốt, để những người khác có thể biết được cách bạn suy nghĩ như thế nào. Việc viết lại như thế không chỉ giúp bạn hiểu rõ hơn cách tiếp cận của mình, mà còn tìm ra được những sai lầm của bản thân và cải thiện nó. Hãy nhớ rằng, rất khó để cải thiện được những điều mà bạn còn chưa hiểu.
 
 
-# Chia nhỏ vấn đề
+## Chia nhỏ vấn đề
 
 Hãy bàn về một trong những cách tiếp cận phổ biến nhất: chia nhỏ vấn đề ra, còn được gọi là tiếp cận từ trên xuống (top-down programming). Ý tưởng cơ bản ở đây là code của bạn phải được thực hiện theo thứ tự, nên hãy bắt đầu bằng việc suy nghĩ xem phần chương trình chính sẽ cần những gì trước khi xây dựng những hàm con. Điều này cho phép bạn thấy được tổng thể chương trình, cũng như chia nhỏ vấn đề từ những thứ phức tạp cho đến đơn giản.
 
@@ -52,13 +52,13 @@ Cái hay của các tiếp cận này là tạo ra một hệ thống cấp bậ
 
 Cách tiếp cận này có thể ứng dụng khá hiệu quả vào những bài toán đệ quy. Toàn bộ ý tưởng của đệ quy đó là chia vấn đề lớn thành những vấn đề nhỏ hơn nhưng giống chính xác với vấn đề gốc, vậy chúng ta chỉ cần giải được một 1 vấn đề gốc là xong. Cách tiếp cận này cũng được sử dụng rất phổ biến trong [functional programming](https://en.wikipedia.org/wiki/Functional_programming) (một lớp các ngôn ngữ lập trình mà chương trình được xây dựng chỉ từ các hàm). Có khá nhiều bài viết đã bàn sâu về vấn đề này, nhưng ý tưởng cơ bản chính là nếu ta chia nhỏ bài toán một cách đúng đắn, chương trình sẽ tự động gửi tham số qua mỗi lời gọi hàm, không cần thiết lưu trữ dữ liệu giữa các bước. Nhưng có một nhược điểm là sẽ khó debug hơn.
 
-# Kế hoạch debug
+## Kế hoạch debug
 
 Bất cứ khi nào có một cách tiếp cận, chúng ta phải luôn có một kế hoạch debug cho cách tiếp cận đó. Có rất nhiều khả năng xảy ra làm cho chương trình chúng ta chạy sai, bằng cách suy nghĩ trước các hướng chương trình sẽ chạy sai, chúng ta có thể ngăn chặn bug trước khi code. Hơn thế nữa, nếu không vượt qua được các test mẫu, chúng ta sẽ biết ngay vị trí thích hợp để bắt đầu tìm lỗi. Cuối cùng, bằng cách chú ý đến điểm trọng yếu nhất, sẽ dễ dàng hơn để chứng minh cách tiếp cận của bạn là đúng.
 
 Với trường hợp tiếp cận top-down, việc chia nhỏ những phần code thành những hàm con giúp chúng ta cô lập những phần code lỗi và chỉ phải sửa lại code ở một nơi. Cũng như việc test được một tổ hợp các hàm dễ bị bug nhất. Copy và paste nhiều lúc cũng làm việc sửa lỗi tốn nhiều công sức hơn thay vì viết riêng một hàm con. Một kinh nghiệm nữa cho cách tiếp cận từ trên xuống là chúng ta nên tìm bugs bên trong hàm trước khi tìm giữa những lời gọi hàm. Những cách này tạo nên một chiến thuật debug: biết được vị trí nào cần test trước tiên, chỗ nào bạn nghĩ là sai và cần kiểm tra, hay chứng minh những đoạn code chuẩn và bỏ qua chúng. Nếu luyện tập thường xuyên, bạn sẽ thấy rằng những kĩ năng này vô cùng hữu ích.
 
-# Atomic Code
+## Atomic Code
 
 Nếu chúng ta đi đến một phần code mà chúng ta không thể chia nhỏ được nữa, thì phần đó gọi là **atomic code**. Hi vọng các bạn đều biết cách code những phần như vậy, vì đó sẽ là những phần bạn sẽ code thường xuyên nhất. Nhưng đừng lo nếu bạn chưa thuần thục nó, những atomic code khó như vậy thường làm cho bài toán trở nên thú vị hơn, và thình thoảng thấy trước được điều đó sẽ giúp bạn có một bước tiến lớn trong việc tìm cách tiếp cận đúng đắn, hạn chế được việc phung phí thời gian cho những cách tiếp cận sai.
 

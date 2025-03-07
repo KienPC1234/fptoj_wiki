@@ -1,4 +1,4 @@
-# Nhân ma trận (Matrix multiplication)
+## Nhân ma trận (Matrix multiplication)
 
 **Nguồn**: Biên soạn lại từ bài viết của Nguyễn *RR* Thành Trung, Nguyễn Mạnh Quân.
 
@@ -16,15 +16,15 @@
 
 
 
-# Mở đầu
+## Mở đầu
 
 Thông thường, để đạt được độ phức tạp thuật toán như mong muốn, cách làm thường là tìm ra một thuật toán ban đầu làm cơ sở, rồi từ đó dùng các kỹ năng để giảm độ phức tạp của thuật toán. Trong bài viết này, tôi xin giới thiệu với bạn đọc một kỹ năng khá thông dụng: **Nhân ma trận**.
 
-# Định nghĩa 
+## Định nghĩa 
 
 **Tham khảo:** [Ma trận_wikipedia](https://vi.wikipedia.org/wiki/Ma_tr%E1%BA%ADn_(to%C3%A1n_h%E1%BB%8Dc))
 
-## Ma trận
+### Ma trận
 
 **Ma trận** là một mảng chữ nhật gồm các số, ký hiệu, hoặc biểu thức, sắp xếp theo hàng và cột mà mỗi ma trận tuân theo những quy tắc định trước. 
 Các ô trong ma trận được gọi là các phần tử của ma trận. Các phần tử được xác định bằng $2$ địa chỉ hàng $i$ và cột $j$ tương ứng (Kí hiệu là $a_{ij}$).
@@ -39,7 +39,7 @@ $$\begin{bmatrix} a_{11} & a_{12} & ... & a_{1n} \newline a_{21} & a_{22} & ... 
 
     $A = \begin{bmatrix} 1 & 2 \newline 5 & 7 \newline 6 & 3 \end{bmatrix}$
     
-### Ma trận vuông
+#### Ma trận vuông
 
 Ma trận vuông là ma trận có số hàng và số cột bằng nhau. Ma trận $(n \times n)$ còn gọi là ma trận vuông cấp $n$. Các phần tử $a_{ii}$ tạo thành **đường chéo chính** của ma trận vuông.
 
@@ -47,7 +47,7 @@ Ma trận vuông là ma trận có số hàng và số cột bằng nhau. Ma tr�
 
     \begin{bmatrix} 1 & 2 & 0 \newline 3 & 0 & 1 \newline 2 & 3 & 1 \end{bmatrix}
  
-### Ma trận đơn vị (Identity Matrix)
+#### Ma trận đơn vị (Identity Matrix)
 
 Ma trận đơn vị $I_n$ cấp $n$ là một ma trận $(n \times n)$ trong đó mọi phần tử trên [đường chéo chính](https://vi.wikipedia.org/wiki/%C4%90%C6%B0%E1%BB%9Dng_ch%C3%A9o_ch%C3%ADnh) bằng $1$ và tất cả những phần tử khác đều bằng $0$. Ma trận đơn vị cấp $n$ cũng chính là ma trận vuông cấp $n$.
 
@@ -61,7 +61,7 @@ Ma trận đơn vị $I_n$ cấp $n$ là một ma trận $(n \times n)$ trong đ
     
     $I_n = \begin{bmatrix} 1 & 0 & ... & 0 \newline 0 & 1 & ... & 0 \newline \vdots & \vdots & \ddots & \vdots \newline 0 & 0 & ... & 1 \end{bmatrix}$
 
-### Vector hàng và vector cột
+#### Vector hàng và vector cột
 
 **Vector hàng** hay **ma trận hàng** là một ma trận $(1 \times n)$, tức là ma trận chỉ gồm một một hàng đơn gồm $n$ phần tử.
 
@@ -77,7 +77,7 @@ $\mathbf{a} \cdot \mathbf{b} = \begin{bmatrix} a_1 & a_2 & ... & a_n \end{bmatri
 
 **Tham khảo:** [Vector hàng và cột](https://vi.wikipedia.org/wiki/Vect%C6%A1_h%C3%A0ng_v%C3%A0_c%E1%BB%99t)
 
-## Phép nhân ma trận
+### Phép nhân ma trận
 
 Phép nhân hai ma trận chỉ thực hiện được khi số lượng cột trong ma trận thứ nhất phải bằng số lượng hàng trong ma trận thứ hai. Ma trận kết quả, được gọi là **tích ma trận**, có số lượng hàng của ma trận đầu tiên và số cột của ma trận thứ hai. 
 
@@ -107,7 +107,7 @@ Hay viết $C_{ij} = \begin{bmatrix} a_{i1} & a_{i2} & ... & a_{in} \end{bmatrix
 
 ![](https://i.imgur.com/k2XpJwF.gif)
 
-### Tính chất của phép nhân ma trận
+#### Tính chất của phép nhân ma trận
 
 - Tính chất kết hợp: $(AB)C = A(BC)$.
 - Tính chất phân phối: $(A+B)C = AC+BC$, cũng như $C(A+B) = CA+CB$. 
@@ -120,7 +120,7 @@ Hay viết $C_{ij} = \begin{bmatrix} a_{i1} & a_{i2} & ... & a_{in} \end{bmatrix
 
 Bạn có thể tìm hiểu thêm về **phép cộng trừ ma trận** tại [đây](https://vi.wikipedia.org/wiki/Ph%C3%A9p_c%E1%BB%99ng_ma_tr%E1%BA%ADn).
 
-## Lũy thừa ma trận
+### Lũy thừa ma trận
 
 Cho ma trận vuông $A$ cấp $n$. Khi đó ta có phép tính ma trận $A$ lũy thừa $k$ (kí hiệu: $A^k$), với $k$ là một số nguyên không âm.
 
@@ -140,12 +140,12 @@ $A^k = \underbrace{A \times A \times A \times ... \times A}_\text{k}$
 
 Nhờ **tính chất kết hợp** của phép nhân ma trận nên ta có thể tính nhanh lũy thừa của ma trận tương tự như cách tính hàm mũ thông thường  bằng phương pháp **chia để trị**  (tính $a^k$ với $a$ là số nguyên). Bạn có thể tìm hiểu về cách tính hàm mũ tại [đây](/translate/he/Number-Theory-3).
 
-# Cài đặt
+## Cài đặt
 
 **Lưu ý:** Khác với định nghĩa bên trên, trong cách cài đặt sau, các hàng và cột của ma trận được đánh số bắt đầu từ $0$ để thuận tiện cho việc xử lí.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -267,7 +267,7 @@ int main(){
 
 Bạn có thể tham khảo thêm cách cài đặt khác tại [đây](https://isocpp.org/wiki/faq/operator-overloading#matrix-subscript-op).
 
-## Đánh giá
+### Đánh giá
 
 Ngoài cách cài đặt tính **lũy thừa ma trên** như trên thì ta còn có thể cài đặt theo một cách khác bằng đệ quy như sau:
 
@@ -283,7 +283,7 @@ Matrix pow(long long exp) {
 }
 ```
 
-### **Độ phức tạp**
+#### **Độ phức tạp**
 
 **Nhân ma trận:** Với ma trận $A$ kích thước $(m \times n)$ và ma trận $B$ kích thước $(n \times p)$. Độ phức tạp của thuật toán để tính $A \times B$ là $\mathcal{O}(m \times n \times p)$.
 
@@ -291,17 +291,17 @@ Matrix pow(long long exp) {
 
 **Lũy thừa ma trận:** Với ma trận vuông $A$ cấp $n$, thuật toán tính $A^k$ có độ phức tạp $\mathcal{O}(n^3 \times \log{k})$.
 
-# Ví dụ 1
+## Ví dụ 1
 
 Chúng ta hãy cùng xem xét một ví dụ kinh điển nhất trong ứng dụng của phép nhân ma trận.
 
-## Bài toán
+### Bài toán
 
 [LATGACH4 - Lát gạch 4](https://oj.vnoi.info/problem/latgach4)
 
 Cho một hình chữ nhật kích thước $2 \times N$ $(1 \le N \le 10^9)$. Hãy đếm số cách lát các viên gạch nhỏ kích thước $1 \times 2$ và $2 \times 1$ vào hình trên sao cho không có phần nào của các viên gạch nhỏ thừa ra ngoài, cũng không có vùng diện tích nào của hình chữ nhật không được lát.
 
-## Phân tích
+### Phân tích
 
 Gọi $F_i$ là số cách lát các viên gạch nhỏ vào hình chữ nhật kích thước $2 \times i$. Ta có:
 
@@ -362,12 +362,12 @@ Ma trận $A$ còn được gọi là **ma trận hệ số** và ma trận $\be
 
 Vậy bài toán trên được đưa về dạng **nhân ma trận**. $F_N$ được tính dựa vào phép lũy thừa của ma trận $A$    .
 
-## Cài đặt
+### Cài đặt
 
 **Lưu ý:** Khác với định nghĩa bên trên. Trong cách cài đặt sau, các hàng và cột của ma trận được đánh số bắt đầu từ $0$ để thuận tiện cho việc xử lí.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -445,17 +445,17 @@ int main(){
 }
 ```
 
-## Đánh giá
+### Đánh giá
 
 **Độ phức tạp**
 
 Độ phức tạp của thuật toán là $\mathcal{O}(T \times 2^3 \times \log{N})$. Với $T$ là số lượng bộ test.
 
-# Ví dụ 2
+## Ví dụ 2
 
 Bây giờ chúng ta sẽ cùng xem xét một ví dụ tổng quát hơn của **ví dụ 1**.
 
-## Bài toán
+### Bài toán
 
 [SEQ - Recursive Sequence](http://www.spoj.com/problems/SEQ)
 
@@ -466,7 +466,7 @@ Cho $2$ dãy số nguyên độ dài $k$ ($1 \le k \le 10$) là $b_1, b_2, ..., 
 
 **Yêu cầu:** Tính $a_n$ với $n \le 10^9$. Đáp án in ra theo *modulo* $10^9$.
 
-## Phân tích
+### Phân tích
 
 Cũng như trong **ví dụ 1**, ta xét các lớp số:
 
@@ -495,12 +495,12 @@ Từ đó, ta thu được cách làm như trong **ví dụ 1**. Vì ta cần t�
 
 $\Rightarrow \begin{bmatrix} a_{n - k + 1} \newline a_{n - k + 2} \newline \vdots \newline a_{n-1} \newline a_{n} \end{bmatrix} = D^{n - k} \times \begin{bmatrix} a_1 \newline a_2 \newline \vdots \newline a_{k-1} \newline a_k \end{bmatrix} = D^{n - k} \times \begin{bmatrix} b_1 \newline b_2 \newline \vdots \newline b_{k-1} \newline b_k \end{bmatrix}$ (vì $a_i = b_i$ với $1 \le i \le k$)
 
-## Cài đặt
+### Cài đặt
 
 **Lưu ý:** Khác với định nghĩa bên trên. Trong cách cài đặt sau, các hàng và cột của ma trận được đánh số bắt đầu từ $0$ để thuận tiện cho việc xử lí.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -590,15 +590,15 @@ int main(){
 }
 ```
 
-## Đánh giá
+### Đánh giá
 
 **Độ phức tạp**
 
 Độ phức tạp của thuật toán là $\mathcal{O}(t \times k ^ 3 \times \log{(n - k)})$. Với $t$ là số lượng bộ test.
 
-# Ví dụ 3
+## Ví dụ 3
 
-## Bài toán
+### Bài toán
 
 [VNOJ - THBAC](https://oj.vnoi.info/problem/thbac/)
 
@@ -615,7 +615,7 @@ Các loại quy luật có thể có:
 - `E i j` : Các vi khuẩn thuộc bầy $i$ và bầy $j$ đổi vị trí cho nhau.
 - `F 0 0` : Vị trí các vi khuẩn di chuyển trên vòng tròn. Nghĩa là các vi khuẩn ở bầy $i$ di chuyển sang bầy $(i +1) \space mod \space N$. Các di chuyển xảy ra đồng thời.
 
-## Phân tích
+### Phân tích
 
 Cách làm đơn giản nhất là chúng ta mô phỏng lại số lượng vi khuẩn trong mỗi bầy qua từng đơn vị thời gian. Cách làm này có độ phức tạp $\mathcal{O}(T \times N \times k)$ với $\mathcal{O}(k)$ là độ phức tạp cho xử lý số lớn. Cách này không thể chạy được với $T$ lớn.
 
@@ -685,15 +685,15 @@ Như vậy, $Y = S \times X^t \times X_1 \times X_2 \times ... \times X_r$ là m
 
 Như vậy, thuật toán đến đây đã rõ. Ta phân tích $T = M \times t + r$, nhờ đó, ta có thể giải quyết bài toán trong $\mathcal{O}(N^3 \times M)$ cho bước tính ma trận $X$ và $\mathcal{O}(N^3 \times (\log{T/M} + M))$ cho bước tính $Y$. Bài toán được giải quyết.
 
-# Ví dụ 4
+## Ví dụ 4
 
-## Bài toán
+### Bài toán
 
 [beautynumbers - Số đẹp](https://oj.vnoi.info/problem/beautynumbers)
 
 Số đẹp là một số nguyên dương với bất kỳ chữ số lẻ nào $(1, 3, 5, 7, 9)$ đều xuất hiện lẻ lần nếu nó xuất hiện và bất kỳ chữ số chẵn nào $(0, 2, 4, 6, 8)$ cũng xuấn hiện chẵn lần nếu nó xuất hiện. Ví dụ số $141222124$ là một số đẹp. Gọi $f_n$ là số lượng số đẹp có không quá $n$ chữ số. Yêu cầu với một số $n$ $(1 \le n \le 10^{18})$ tính $f_n \bmod 1000000123$.
 
-## Phân tích
+### Phân tích
 
 Cách làm đơn giản nhất là ta sử dụng [quy hoạch động](/translate/topcoder/dynamic-programming) với $4$ trạng thái: 
 
@@ -707,7 +707,7 @@ Ta không phải lưu **số chữ số chẵn đã xuất hiện** vì nếu ch
 Do đó, ta có công thức quy hoạch động theo như code sau:
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -780,12 +780,12 @@ Do đó, ta cần phải cải tiến thuật toán bằng **lũy thừa ma tr�
 
 Tối ưu hóa thuật toán bằng cách tách $n$ thành các lũy thừa của $2$ sau đó sử dụng các ma trận hệ số tương ứng đã tính toán trước để tính nhanh kết quả.
 
-## Cài đặt
+### Cài đặt
 
 **Lưu ý:** Trong cách cài đặt sau, các hàng và cột của ma trận được đánh số bắt đầu từ $0$ để thuận tiện cho việc xử lí.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -905,7 +905,7 @@ int main() {
 }
 ```
 
-## Đánh giá
+### Đánh giá
 
 **Độ phức tạp**
 
@@ -915,9 +915,9 @@ Vì ma trận kết quả có kích thước là $($(số trạng thái) $\times
 
 Ngoài ra, kể cả khi ta không giảm số trạng thái xuống còn khoảng $6 \times 6 \times 6 \space / \space 2$ thì thuật toán này vẫn đủ tốt.
 
-# Ví dụ 5
+## Ví dụ 5
 
-## Bài toán 
+### Bài toán 
 
 [Codeforces - 446C DZY Loves Fibonacci Numbers](https://codeforces.com/contest/446/problem/C)
 
@@ -935,7 +935,7 @@ Cho một dãy gồm $n$ số nguyên: $a_1, a_2, ..., a_n$. Có $m$ truy vấn,
 
 Hãy thực hiện tất cả các truy vấn.
 
-## Phân tích 
+### Phân tích 
 
 Bằng phương pháp quy nạp, ta có thể dễ dàng chứng minh $2$ định lý sau:
  
@@ -952,12 +952,12 @@ Sau khi sử dụng các tính chất trên, bài toán trở thành một hoạ
 Ở bài viết này, tôi sẽ sử dụng phương pháp **nhân ma trận** kết hợp với cây phân đoạn để giải quyết bài toán. Với mỗi nút của cây sẽ lưu lại ma trận hệ số của dãy $Fibonacci$.
 
 
-## Cài đặt
+### Cài đặt
 
 **Lưu ý:** Trong cách cài đặt sau, các hàng và cột của ma trận được đánh số bắt đầu từ $0$ để thuận tiện cho việc xử lí.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -1086,7 +1086,7 @@ main() {
 }
 ```
 
-## Đánh giá
+### Đánh giá
 
 Ở thuật toán này, ta sử dụng mảng tĩnh để lưu ma trận thay vì sử dụng mảng động *(Vector)* như những bài toán trước. Vì số lượng ma trận phải lưu lên đến $4 \times n$ nên việc khai báo mảng động sẽ khiến thuật toán bị quá thời gian.
 
@@ -1094,9 +1094,9 @@ main() {
 
 Với mỗi truy vấn, ta sẽ mất độ phức tạp $\mathcal{O}(\log{N})$ cho các thao tác trên cây phân đoạn. Và ta cũng mất thêm $\mathcal{O}(2^2)$ và $\mathcal{O}(2^3)$ cho các phép cộng và phép nhân ma trận. Nhìn chung, độ phức tạp của thuật toán là $\mathcal{O}(m \times \log{N} \times 2^3)$.
 
-# Ví dụ 6
+## Ví dụ 6
 
-## Phép nhân ma trận cộng tối thiểu (Min-plus matrix multiplication)
+### Phép nhân ma trận cộng tối thiểu (Min-plus matrix multiplication)
 
 **Tham khảo:** [Min-plus matrix multiplication](https://en.wikipedia.org/wiki/Min-plus_matrix_multiplication)
 
@@ -1104,7 +1104,7 @@ Nhận thấy rằng, ta hoàn toàn có thể thay thế phép nhân và phép 
 
 Từ đó, ta có thể thu được một lớp các bài toán khác. Sau đây là một ví dụ minh hoạ cho nhóm các bài toán này.
 
-## Bài toán
+### Bài toán
 
 [CSES - Graph Paths II](https://cses.fi/problemset/task/1724)
 
@@ -1114,7 +1114,7 @@ Cho đồ thị có hướng có trọng số gồm $N$ đỉnh và $M$ cạnh. 
 - $1 \le M \le N(N−1)$
 - $1 \le k \le 10^9$
 
-## Phân tích
+### Phân tích
 
 Gọi ma trận $C(k)$ kích thước $N \times N$, với $C(k) [i,j]$ là độ dài đường đi ngắn nhất từ $i$ đến $j$ đi qua đúng $k$ cạnh.
 
@@ -1142,9 +1142,9 @@ Do đó, $C(k) = A^k$
 
 Như vậy, bài toán được đưa về bài toán tính lũy thừa của một ma trận, ta hoàn toàn có thể giải tương tự các ví dụ trước. Cài đặt phép nhân ma trận mới này hoàn toàn không phức tạp hơn cài đặt phép nhân ma trận thông thường. Việc cài đặt xin nhường lại cho bạn đọc.
 
-# Phép toán kết hợp và độ phức tạp tính toán
+## Phép toán kết hợp và độ phức tạp tính toán
 
-## Nhân tổ hợp dãy ma trận
+### Nhân tổ hợp dãy ma trận
 
 Trong phần [Cài đặt](algo/trick/matrix-multiplication#cài-đặt), ta đã có thuật toán nhân hai ma trận $A$ kích cỡ $(m \times n)$ và $B$ kích cỡ $(n \times p)$ cần độ phức tạp $\mathcal{O}(m \times n \times p)$. Giả sử ta có thêm ma trận $C$ có kích cỡ $(p \times q)$ và ta cần tính tích $A \times B \times C$. Xét hai cách thực hiện phép nhân này:
 
@@ -1159,11 +1159,11 @@ Khi độ dài của dãy ma trận tăng lên, sự khác biệt có thể còn
 
 Trong thực tế, bài toán xác định thứ tự nhân ma trận hiệu quả nhất là một bài toán rất phổ biến, bạn có thể tìm đọc chi tiết thêm tại [đây](/algo/dp/basic-problems#5-nhân-ma-trận) hoặc ở [Phần 3 mục 3.5 Phép Nhân Tổ Hợp dãy Ma Trận trong sách Giải thuật và lập trình của thầy Lê Minh Hoàng](/algo/basic/Tai-Lieu-Thuat-Toan).
 
-## Giải thuật Freivalds kiểm tra tích hai ma trận
+### Giải thuật Freivalds kiểm tra tích hai ma trận
 
 [Giải thuật Freivalds](https://en.wikipedia.org/wiki/Freivalds%27_algorithm) là một ví dụ điển hình về việc áp dụng thứ tự thực hiện phép nhân ma trận để giảm độ phức tạp tính toán của phép nhân một dãy ma trận. Bài toán đặt ra là cho ba ma trận vuông $A, B, C$ có kích cỡ $N \times N$ với $N \le 1000$. Ta cần kiểm tra xem $C$ có phải là tích của $A$ và $B$, nói cách khác ta cần kiểm tra $A \times B = C$ có phải là mệnh đề đúng hay không (đây chính là bài [VMATRIX - VNOI Marathon 2014](https://oj.vnoi.info/problem/vmatrix/)).
 
-### **Phân tích**
+#### **Phân tích**
 
 Cách làm thông thường là nhân trực tiếp hai ma trận $A, B$ rồi so sánh kết quả với $C$. Như đánh giá trong phần [Cài đặt](algo/trick/matrix-multiplication#cài-đặt), độ phức tạp của cách làm này là $\mathcal{O}(N^3)$, với $N = 1000$ thì cách làm này không đủ nhanh. Giải thuật $\mathrm{Freivalds}$ thực hiện việc kiểm tra thông qua thuật toán xác suất kiểu [Monte Carlo](https://vi.wikipedia.org/wiki/Ph%C6%B0%C6%A1ng_ph%C3%A1p_Monte_Carlo) với $k$ lần thử cho xác suất kết luận sai là xấp xỉ $2^{-k}$, mỗi lần thử có độ phức tạp $\mathcal{O}(N^2)$. Các bước cơ bản của một phép thử $\mathrm{Freivalds}$ như sau:
 
@@ -1177,14 +1177,14 @@ Ta thực hiện $k$ lần thử, nếu gặp phép thử trả về `False` th�
 
 Xét bước thứ $2$, ta thấy rằng phép thử $\mathrm{Freivalds}$ chỉ có ý nghĩa nếu như ta có thể thực hiện phép nhân $A \times B \times v$ trong thời gian $\mathcal{O}(N^2)$ (vì phép nhân $C \times v$ đã đạt sẵn $\mathcal{O}(N^2)$ rồi). Thay vì thực hiện tuần tự từ trái qua phải sẽ cần $\mathcal{O}(N^3)$, ta thực hiện theo thứ tự $A \times (B \times v)$. Vì kết quả của phép nhân $B$ và $v$ là một ma trận $(N \times 1)$ nên độ phức tạp tổng cộng sẽ là $\mathcal{O}(N^2)$. Trên tất cả các phép thử, độ phức tạp là $\mathcal{O}(k \times N^2)$. 
 
-### **Cài đặt**
+#### **Cài đặt**
 
 Bài toán [VMATRIX - VNOI Marathon 2014](https://oj.vnoi.info/problem/vmatrix)
 
 **Lưu ý:** Trong cách cài đặt sau, các hàng và cột của ma trận được đánh số bắt đầu từ $0$ để thuận tiện cho việc xử lí.
 
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -1283,11 +1283,11 @@ int main(){
 }
 ```
 
-### **Đánh giá**
+#### **Đánh giá**
 
 Ngoài thuật toán trên, ta vẫn có thể nhân trực tiếp $2$ ma trận $A, B$ rồi so sánh với $C$ bằng cách sử dụng thuật toán nhân ma trận $\mathrm{Strassen}$ với độ phức tạp $\mathcal{O}(N^{\log_2{7}}) = \mathcal{O}(1000^{\log_2{7}}) \approx \mathcal{O}(2.6 \times 10^8)$. Tuy nhiên, cách cài đặt này phức tạp hơn.
 
-# Bài tập áp dụng
+## Bài tập áp dụng
 
 - [Codeforces - 1182E Product Oriented Recurrence](https://codeforces.com/problemset/problem/1182/E)
 - [HackerEarth - PK and interesting language](https://www.hackerearth.com/problem/algorithm/pk-and-interesting-language/description/)

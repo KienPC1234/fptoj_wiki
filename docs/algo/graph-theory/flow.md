@@ -1,4 +1,4 @@
-# Bài toán Luồng cực đại trên mạng
+## Bài toán Luồng cực đại trên mạng
 
 **Tác giả:** 
 - Nguyễn Đức Kiên, Trường Đại học Công nghệ, ĐHQGHN.
@@ -15,7 +15,7 @@
 
 Luồng cực đại (Maximum Flow) và Lát cắt cực tiểu/hẹp nhất (Minimum Cut) là những bài toán quan trọng trong lớp các bài toán về đồ thị. Bài viết sau đây sẽ giới thiệu một vài nội dung cơ bản về bài toán luồng cực đại và các thuật toán liên quan.
 
-## Một số khái niệm sử dụng trong bài viết
+### Một số khái niệm sử dụng trong bài viết
 Để hiểu hơn về phần này, bạn đọc nên có sẵn những kiến thức cơ bản về đồ thị, cũng như biểu diễn và duyệt (BFS, DFS, ...) chúng. 
 
 Bài viết sẽ không nêu lại các khái niệm cơ bản về đồ thị.
@@ -25,9 +25,9 @@ Bài viết sẽ không nêu lại các khái niệm cơ bản về đồ thị.
 - **Cạnh đi ra khỏi đỉnh $u$**: Các cạnh có dạng $(u, v)$, với $v$ là đỉnh bất kỳ của đồ thị.
 - **Đường đi đơn từ $s$ tới $t$**: Dãy các đỉnh $s, u_1, u_2, ..., u_k, t$ sao cho giữa hai đỉnh liên tiếp trong dãy tồn tại một cạnh nối chúng theo đúng chiều như trên.
 
-## Bài toán Luồng cực đại
+### Bài toán Luồng cực đại
 
-### Các định nghĩa
+#### Các định nghĩa
 Có rất nhiều hình ảnh thực tế để miêu tả một mạng và luồng trên mạng đó, như một mạng điện, một mạng kết nối dữ liệu giữa các máy, hay phổ biến hơn là một hệ thông ống nước.
 
 Một đồ thị $G(V, E)$ được gọi là **mạng** (network) nếu nó là đồ thị **có hướng**, trong đó:
@@ -94,13 +94,13 @@ Nếu ta hiểu mạng như một hệ thống ống nước, nó sẽ như sau:
 - Và tất nhiên tổng lượng nước xuất hiện trong mạng sẽ là lượng nước ta cấp cho nguồn. Bể chứa cũng sẽ thu được từng đó nước.
 - Còn một lát cắt là một cách bỏ đi các ống sao cho nước không thể chảy từ nguồn đến bể nữa bằng bất kỳ cách nào.
 
-### Bài toán
+#### Bài toán
 **Đề bài**: Cho mạng $G(V, E)$ với $m$ đỉnh và $n$ cạnh có đỉnh phát là $s$, đỉnh thu là $t$ ($n \le 1000, 1 \le s, t \le n$). Hãy tìm một luồng trong mạng sao cho giá trị của nó là lớn nhất. 
 Luồng này gọi là **luồng cực đại** trên mạng $G$.
 
 *Đề bài VNOI*: [NKFLOW](https://oj.vnoi.info/problem/nkflow)
 
-## Phương pháp Ford-Fulkerson. Thuật toán Edmonds-Karp.
+### Phương pháp Ford-Fulkerson. Thuật toán Edmonds-Karp.
 <details> 
 <summary>
 <b>Đôi lời về lịch sử thuật toán</b>
@@ -114,7 +114,7 @@ Nhiều tài liệu mà chúng ta đang dùng có sử dụng cụm từ "thuậ
 </p>
 </details>
 
-### Các khái niệm
+#### Các khái niệm
 Giả sử tại một thời điểm, ta đã có một luồng trên đồ thị, với giá trị luồng trên cạnh $(u, v)$ là $f(u, v)$.
 
 Với mọi cạnh $(u, v)$, ta định nghĩa thêm giá trị $f(v, u) = -f(u, v)$. Về mặt ý nghĩa, việc định nghĩa này cho ta biết luồng hiện tại trên cạnh này có thể giảm đi một lượng bao nhiêu.
@@ -148,7 +148,7 @@ Việc xây dựng cả một đồ thị thặng dư sau từng bước rất t
 
 Còn nếu bạn muốn hiểu theo kiểu "ống nước" thì đường tăng luồng có thể coi như một đường nước chảy từ nguồn đến bể chứa. Đối với các "ống đi ngược" như "ống" $(5, 2)$ trên hình, ta hiểu đây là một cách phân phối lại nước: thêm $1$ đơn vị nước vào nút $5$ sẽ dẫn đến việc phải bớt $1$ đơn vị từ ống $(2, 5)$ để đảm bảo đoạn sau vẫn đủ nước; ở đầu $2$ phần nước thay vì chảy vào ống này đi ra đầu $5$ thì nó sẽ đưa phần nước này sang ống $(2, 4)$.
 
-### Thuật toán
+#### Thuật toán
 Đầu tiên ta gán giá trị mọi luồng trên tất cả mọi cạnh thành $0$.
 
 Ta đi tìm một đường tăng luồng có thể có trên đồ thị. Nhắc lại rằng, đường tăng luồng chỉ chứa các cạnh (kể cả "cạnh" ngược) có $r > 0$, hay $c - f > 0$.
@@ -167,7 +167,7 @@ Hình GIF trên mô tả phương pháp Ford-Fulkerson trên mạng ta vừa l�
 
 Hai thuật BFS và DFS có độ phức tạp giống nhau, nhưng trên thực tế BFS chạy nhanh hơn DFS khi đi tìm đường tăng luồng. Thuật Edmonds-Karp sử dụng BFS.
 
-### Tính đúng đắn
+#### Tính đúng đắn
 
 **Định lý**: Phương pháp Ford-Fulkerson cho kết quả là luồng cực đại.
 
@@ -211,9 +211,9 @@ Nhưng theo định lý về luồng và lát cắt đã trình bày ở trên t
 - Khả năng thông qua của lát cắt hẹp nhất trên một mạng bằng giá trị của luồng cực đại trên mạng đó. **Lát cắt hẹp nhất** (mincut) là lát cắt có khả năng thông qua nhỏ nhất trong số mọi lát cắt thuộc mạng.
 - Nếu mọi giá trị $c$ trên luồng đều là số nguyên thì giá trị luồng cực đại cũng là số nguyên.
 
-### Cài đặt
+#### Cài đặt
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -302,7 +302,7 @@ int main()
 
 ```
 
-### Độ phức tạp
+#### Độ phức tạp
 Trong bài toán chúng ta xét, tất cả các khả năng thông qua của các cạnh đều là số nguyên. Do đó, mỗi bước tăng luồng đều làm tăng giá trị của luồng lên ít nhất $1$ đơn vị. Khi sử dụng thuật BFS hoặc DFS để tìm đường tăng luồng, độ phức tạp sẽ vào cỡ $O(E)$. Do đó, độ phức tạp của phương pháp Ford-Fulkerson sẽ là $O(Ef)$, với $f$ là giá trị của luồng cực đại trên mạng. Đây không phải là một độ phức tạp với thời gian đa thức trên kích thước đồ thị.
 
 Với thuật toán Edmonds-Karp, khi sử dụng BFS, sau $O(EV)$ lần tìm đường tăng luồng, chúng ta sẽ tìm được kết quả. Độ phức tạp của thuật toán này là $O(E^2V)$.
@@ -310,14 +310,14 @@ Bạn có thể tham khảo chứng minh độ phức tạp này tại [đây](h
 
 Khi thực hiện giải thuật Edmonds-Karp, các đánh giá ban đầu về độ phức tạp có thể sai lệch nhiều so với thực tế. Mặc dù độ phức tạp của thuật toán là tương đối lớn trong trường hợp tệ nhất, nó vẫn hoạt động hiệu quả trong hầu hết các trường hợp. 
 
-## Thuật toán Dinic
+### Thuật toán Dinic
 Như đã nói ở trên, tuy đánh giá về độ phức tạp của thuật Edmonds-Karp không hề đẹp, nó vẫn chạy đủ nhanh trong thực tế. Tất nhiên, vẫn có những trường hợp thuật này chạy chưa được ổn lắm, điển hình là khi mạng có rất nhiều cạnh, ví dụ có dạng của đồ thị đầy đủ với $\frac{V(V - 1)}{2}$ cạnh thì độ phức tạp của thuật toán sẽ là $O(V^5)$, rất khủng khiếp. Thuật toán Dinic sẽ làm giảm độ phức tạp của thuật đi một chút. 
 
 Thuật toán này được Yefim A. Dinitz (nhiều tài liệu để tên là E. A. Dinic) đề xuất năm 1970. Nó được chứng minh là có độ phức tạp $O(EV^2)$, tốt hơn thuật toán Edmonds-Karp.
 
 Thuật toán Dinic sử dụng nhiều ý tưởng của phương pháp Ford-Fulkerson để tìm đường tăng luồng. Để đọc và hiểu được phần dưới đây, bạn nên có kiến thức về phương pháp này trước.
 
-### Các khái niệm
+#### Các khái niệm
 - Thuật toán Dinic vẫn sử dụng khái niệm **đồ thị thặng dư** giống như trong phương pháp Ford-Fulkerson. Nhắc lại, đồ thị thặng dư là đồ thị mà ứng với mỗi cạnh $(u, v)$ sẽ có hai cạnh, một cạnh $(u, v)$ có trọng số $r(u, v) = c(u, v) - f(u, v)$ và một cạnh $(v, u)$ có trọng số $f(u, v)$.
 - Một **luồng cản** (blocked flow) là một tập các cạnh trên đồ thị có dạng giống như luồng trên mạng sao cho mọi đường đi từ $s$ đến $t$ đều chứa ít nhất một cạnh thuộc tập này.
 - Gọi $d(u)$ là **mức/cấp** (level) của đỉnh $u$ - đường đi ngắn nhất (tính bằng số cạnh) để đi từ $s$ đến $u$ trên đồ thị thặng dư. Định nghĩa **đồ thị phân cấp** (layered network) của đồ thị ban đầu là đồ thị chỉ chứa các cạnh $(u, v)$ **có trọng số dương** thoả mãn $d(v) = d(u) + 1$, tức là các cạnh tham gia tạo thành đường đi ngắn nhất đến tất cả các đỉnh.
@@ -326,7 +326,7 @@ Thuật toán Dinic sử dụng nhiều ý tưởng của phương pháp Ford-Fu
 
 *Đồ thị phân cấp (tất cả các đường có màu) và luồng cản (xanh lam) của đồ thị thặng dư*
 
-### Thuật toán
+#### Thuật toán
 Ta dựng đồ thị phân cấp của đồ thị thặng dư. Trên đồ thị này, ta tìm một luồng cản rồi tăng luồng ở tất cả các cạnh trên luồng cản này càng nhiều càng tốt. Nói cách khác, đây là phương pháp Ford-Fulkerson với các đường tăng luồng là các đường cản trong luồng cản. Lặp lại quá trình trên cho tới khi ta không thể tìm được đường đi từ $s$ tới $t$ trên đồ thị phân cấp nữa, hay $d(t)$ không xác định.
 
 Để tìm luồng cản, ta sử dụng DFS để tìm từng đường cản một. Mỗi đường cản là một đường đi có trọng số dương từ $s$ tới $t$ trên đồ thị phân cấp. Đây là lý do thuật Dinic được gọi là "dùng cả BFS và DFS để tìm luồng".
@@ -340,7 +340,7 @@ Ta dựng đồ thị phân cấp của đồ thị thặng dư. Trên đồ th�
 Hình GIF trên mô tả thuật toán Dinic. Tất cả các cạnh có màu đều là các cạnh nằm trên đồ thị phân cấp. Các cạnh màu xanh và đỏ là các cạnh nằm trên luồng cản tìm được sau mỗi bước.
 
 
-### Tính đúng đắn
+#### Tính đúng đắn
 **Định lý**: Thuật toán Dinic cho kết quả là luồng cực đại
 
 <details> 
@@ -353,10 +353,10 @@ Thuật toán Dinic dừng khi nó không thể tìm một đường cản trên
 </p>
 </details>
 
-### Cài đặt
+#### Cài đặt
 Trong bước DFS, để lập trình đơn giản hơn một chút, ta sẽ kết hợp DFS và tăng luồng. Mỗi lần đi tìm đường cản, ta có thể kết hợp lưu lại giá trị $\Delta$ nhỏ nhất trên đường này luôn, và khi đường này đến được $t$, ta thực hiện tăng luồng trên những cạnh đã xét.
 ``` cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -446,7 +446,7 @@ int32_t main()
 
 ```
 
-### Độ phức tạp
+#### Độ phức tạp
 **Định lý**: Thuật toán Dinic có độ phức tạp là $O(EV^2)$
 
 <details>
@@ -495,7 +495,7 @@ Tổng kết hai phần lại, chúng ta có độ phức tạp thuật toán Di
 </p>
 </details>
 
-## Bài toán ví dụ
+### Bài toán ví dụ
 *Đề bài VNOI*: [FLOW1](https://oj.vnoi.info/problem/flow1)
 
 **Tóm tắt đề bài**: Có $2n$ học sinh đến từ hai trường SP, TH và $m$ bài toán. Mỗi học sinh có thể giải tốt một số bài toán cho trước. Cần chọn $n$ bài toán sao cho: 
@@ -532,7 +532,7 @@ Phần cài đặt chi tiết thuật toán trên sẽ dành cho bạn đọc.
 </p>
 </details>
 
-## Một số chú ý
+### Một số chú ý
 - Khi giải các bài toán về luồng hoặc lát cắt, loại bài liên quan đến **mạng đơn vị** (mạng có các khả năng thông qua trên các cạnh là $1$) khá phổ biến. Trên những mạng này, khi tìm thành công luồng cực đại, luồng các cạnh sẽ chỉ ở một trong hai trạng thái: đầy ($f = 1$) hoặc rỗng ($f = 0$); còn luồng cực đại sẽ có dạng một số đường đi không giao nhau.
 - Khi mạng đơn vị có dạng đồ thị hai phía (đồ thị có thể chia các đỉnh thành $2$ tập hợp sao cho không có hai đỉnh nào cùng một tập hợp có cạnh nối đến nhau) cùng với đỉnh nguồn và đỉnh đích, bài toán trở thành dạng **cặp ghép cực đại trên đồ thị hai phía**. Bạn đọc nên tìm hiểu thêm về bài toán này để đưa ra những giải thuật linh hoạt hơn trong từng trường hợp cụ thể.
 - Như đã nói ở trên, cách đánh giá độ phức tạp của các thuật toán trên có thể sai lệch tương đối so với thực tế. Vì vậy, khi làm những bài luồng, đôi lúc bạn có thể tính ra một độ phức tạp rất lớn, nhưng thuật toán lại chạy tốt. Ngay như bài NKFLOW ở trên, chúng ta vẫn AC được với độ phức tạp $O(E^2V)$.
@@ -540,7 +540,7 @@ Phần cài đặt chi tiết thuật toán trên sẽ dành cho bạn đọc.
 - Edmonds-Karp và Dinic là hai thuật phổ biến nhưng không phải duy nhất để tìm luồng cực đại. Bạn có thể tìm hiểu thêm về thuật [push-relabel](https://cp-algorithms.com/graph/push-relabel.html) (1985) và [MPM](https://cp-algorithms.com/graph/mpm.html) (1978) tại CP Algorithms. Gần đây, đã có những thuật tinh vi hơn tìm được luồng với độ phức tạp $O(EV)$, như thuật của King, Rao, and Tarjan (1994), của Orlin (2012). Thậm chí, năm 2022, đã có thêm một thuật toán giải bài toán gần với bài này là min-cost flow với thời gian gần tuyến tính $O(E^{1+o(1)})$.
 
 
-## Luyện tập
+### Luyện tập
 - [BAOVE](https://oj.vnoi.info/problem/baove)
 - [STNODE](https://oj.vnoi.info/problem/stnode)
 - [KWAY](https://oj.vnoi.info/problem/kway)
@@ -555,7 +555,7 @@ Phần cài đặt chi tiết thuật toán trên sẽ dành cho bạn đọc.
 
 Ngoài ra, bạn đọc có thể luyện tập bằng các bài tập khác có gắn tag `flows` trên VNOJ và các OJ khác.
 
-## Tài liệu tham khảo
+### Tài liệu tham khảo
 - Lê Minh Hoàng (2003), *Giải thuật và lập trình*
 - Steven Halim, Felix Halim (2013), *Competitive Programing 3*
 - CP Algorithms: 

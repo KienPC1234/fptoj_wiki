@@ -1,4 +1,4 @@
-# Hàm nhân tính
+## Hàm nhân tính
 
 **Tác giả**: RR
 
@@ -7,7 +7,7 @@
 Trong bài viết này, mình sẽ giới thiệu về hàm nhân tính cũng như ứng dụng của nó trong Competitive Programming (lập trình thi đấu).
 
 
-# 1. Định nghĩa
+## 1. Định nghĩa
 
 Một hàm $f(n)$, $n \in N$ được coi là **hàm nhân tính** ([Multiplicative Function](https://crypto.stanford.edu/pbc/notes/numbertheory/mult.html)) nếu:
 Với mọi cặp số nguyên tố cùng nhau $n$, $m \in N$ ta có $f(mn)=f(m)f(n)$.
@@ -44,7 +44,7 @@ Ta có thể chứng minh hàm $f$ là hàm nhân tính như sau:
 Như vậy, $f(m \* n) = f(m) \* f(n)$.
 
 
-# 2. Ứng dụng 1
+## 2. Ứng dụng 1
 
 Giờ ta xét bài toán sau:
 
@@ -59,17 +59,17 @@ Giờ ta xét bài toán sau:
 Nếu bạn chưa biết sàng có thể đọc [ở đây](translate/topcoder/Mathematics-for-Topcoders).
 
 
-## 2.1. Bước 1
+### 2.1. Bước 1
 
 Như đã chứng minh ở phần trước, $f$ là hàm nhân tính.
 
 
-## 2.2. Bước 2
+### 2.2. Bước 2
 
 Với một số nguyên tố $p$, ta có $f(p^k) = k + 1$, do các ước của $p^k$ là $1, p, p^2, ..., p^k$.
 
 
-## 2.2. Bước 3
+### 2.2. Bước 3
 
 Đầu tiên, ta dùng sàng để:
 
@@ -128,7 +128,7 @@ int main() {
 
 ```
 
-# 3. Ứng dụng 2
+## 3. Ứng dụng 2
 
 Ta xét bài toán sau:
 
@@ -171,7 +171,7 @@ if (n > 1) {  // giá trị hiện tại của n là số nguyên tố
 ```
 
 
-# 4. Dirichlet Convolution
+## 4. Dirichlet Convolution
 
 Việc chứng minh trực tiếp một hàm là hàm nhân tính như ví dụ về hàm số ước ở trên không hề đơn giản. Chẳng hạn, bạn hãy thử chứng minh hàm $f(n)$ là hàm nhân tính với $f(n)$ là tổng các ước của số $n$. Dĩ nhiên bạn có thể chứng minh trâu bò bằng cách viết ra một đống công thức, tuy nhiên ở mục này mình sẽ hướng dẫn các bạn một phương pháp kỳ diệu hơn.
 
@@ -209,7 +209,7 @@ Như vậy, $(f \times g)$ cũng là hàm nhân tính.
 
 Để hiểu thêm về Dirichlet Convolution, ta xét vài ví dụ:
 
-## 4.1. Ví dụ 1
+### 4.1. Ví dụ 1
 
 Xét hàm $f(n) = 1$ và $g(n) = 1$. Rõ ràng $f$ và $g$ đều là hàm nhân tính.
 
@@ -219,7 +219,7 @@ $$
 
 Như vậy $(f \* g)(n)$ là số ước của số $n$ và là hàm nhân tính.
 
-## 4.2. Ví dụ 2
+### 4.2. Ví dụ 2
 
 Xét hàm $f(n) = n$ và $g(n) = 1$. Rõ ràng $f$ và $g$ đều là hàm nhân tính.
 
@@ -231,7 +231,7 @@ Như vậy $(f \times g)(n)$ là tổng các ước của $n$ và là hàm nhân
 
 Tổng quát hơn, với hằng số $k$ bất kỳ, hàm $f(n) = \sum_{d \| n}{d^k}$ là hàm nhân tính.
 
-## 4.3. Các hàm nhân tính thường gặp
+### 4.3. Các hàm nhân tính thường gặp
 
 Sau đây là các hàm nhân tính thường gặp. Bạn có thể thử chứng minh những hàm này là hàm nhân tính dựa theo định nghĩa hoặc Dirichlet Convolution. Việc nắm được những hàm này sẽ giúp thuận lợi hơn trong việc gỉai những bài liên quan đến hàm nhân tính.
 
@@ -249,14 +249,14 @@ Sau đây là các hàm nhân tính thường gặp. Bạn có thể thử chứ
 
 
 
-# 5. Tổng kết
+## 5. Tổng kết
 
 Như vậy, nếu bạn chứng minh được một hàm $f$ là hàm nhân tính, và tìm được công thức $O(1)$ cho $f(p^k)$ thì sẽ dễ dàng tính được tất cả các giá trị $f(i), i \le N$ trong $O(N*logN)$.
 
 Bạn cũng nên nắm được những hàm nhân tính thường gặp, từ đó giúp nhận dạng bài toán dễ dàng hơn.
 
 
-## Bài luyện tập
+### Bài luyện tập
 
 - [VNOJ - GCDSUM](https://oj.vnoi.info/problem/gcdsum/)
 
@@ -269,6 +269,6 @@ Gợi ý: Tìm cách bỏ phép cộng trong công thức của $f_r(n)$.
 - [CF #400 - E](http://codeforces.com/contest/776/problem/E)
 
 
-# Reference
+## Reference
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Multiplicative_function)

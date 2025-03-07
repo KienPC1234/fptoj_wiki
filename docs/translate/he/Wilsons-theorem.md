@@ -1,14 +1,14 @@
-# Định lý Wilson
+## Định lý Wilson
 
 
 
 Nguồn: [hackerearth](https://www.hackerearth.com/notes/lucas-theorem-wilsons-theorem/)
 
-# Định lý
+## Định lý
 
 Số tự nhiên $n>1$ là số nguyên tố khi và chỉ khi $(n-1)!\equiv n-1\ (mod \ n)$.
 
-# Ví dụ
+## Ví dụ
 
 - Với $n=4$:
 
@@ -40,7 +40,7 @@ Số tự nhiên $n>1$ là số nguyên tố khi và chỉ khi $(n-1)!\equiv n-1
 
 	$(n-1)!\ mod\ n\ =0$
 
-# Chứng minh
+## Chứng minh
 
 Mệnh đề đúng với $n=2$ và $n=3$. Ta giả sử $n>3$.
 
@@ -76,6 +76,6 @@ Vậy $n$ phải là số nguyên tố.
 
 Định lý Wilson cho ta cách tính nhanh $(n-1)!\ mod \ n$ khi $n$ là số nguyên tố.
 
-# Luyện tập
+## Luyện tập
 
 - [Factorial Again - HackerEarth](https://www.hackerearth.com/problem/algorithm/factorial-again-1/)

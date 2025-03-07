@@ -1,4 +1,4 @@
-# Đệ quy và Thuật toán quay lui
+## Đệ quy và Thuật toán quay lui
 
 **Người viết**:
 - Nguyễn Đức Kiên, Trường Đại học Công nghệ, ĐHQGHN.
@@ -10,7 +10,7 @@
 
 
 
-# Mở đầu
+## Mở đầu
 
 <figure>
     <img src="../../../uploads/BkRIUcdV2.jpg" alt="nh">
@@ -20,8 +20,8 @@
 
 Trong cuộc sống, chúng ta đôi khi bắt gặp những hình ảnh về một vật mà chứa bên trong nó là một vật khác giống hệt nó, như búp bê Matryoska, cửa sổ OBS khi bạn cố dùng nó để quay màn hình của chính nó, sách giáo khoa Toán lớp 3 cũ, [link này](https://hackmd.io/@kiennguyen246/Sy8rkeYQn), ... Tương tự như vậy, trong khoa học máy tính và lập trình, chúng ta xây dựng khái niệm về đệ quy.
 
-# Đệ quy và giải thuật đệ quy
-## Khái niệm
+## Đệ quy và giải thuật đệ quy
+### Khái niệm
 >Ta gọi một đối tượng là **đệ quy** (recursion) nếu nó được định nghĩa qua chính nó hoặc một đối tượng cùng dạng với chính nó bằng quy nạp.
 
 *Ví dụ*:
@@ -40,7 +40,7 @@ Nếu ta đem so sánh với con Matryoska, thì trường hợp cơ sở là co
 
 Lý thuyết suông thì quá khó hiểu, hãy cùng xem một số ví dụ:
 
-## Tính giai thừa
+### Tính giai thừa
 **Bài toán:** Cho số tự nhiên $n$ ($n \leq 15$). Tính $n!$
 
 **Phân tích:**
@@ -82,7 +82,7 @@ void factorial_2()
 }
 ```
 
-## Tính số Fibonacci
+### Tính số Fibonacci
 Dãy Fibonacci là dãy số được định nghĩa theo công thức truy hồi sau:
 $$
 f_n =
@@ -115,8 +115,8 @@ Cần chú ý rằng ở chương trình này cần có tới 2 trường hợp 
 - Bài toán có thể được giải qua những bài toán con nào tương tự không? Nếu được, đó là gì?
 - Tới trạng thái nào, chúng ta sẽ dừng lại? 
 
-# Thuật toán quay lui
-## Khái niệm
+## Thuật toán quay lui
+### Khái niệm
 >Thuật toán **quay lui** (backtracking) dùng để giải bài toán liệt kê các cấu hình. Mỗi cấu hình được xây dựng bằng cách xây dựng từng phần tử, mỗi phần tử được chọn bằng cách thử tất cả các khả năng.
 
 Tóm gọn lại, chúng ta đang xây dựng một danh sách gồm tất cả các tập hợp (hay dãy, ...), mà mỗi phần tử được xét tất cả các trường hợp có thể của nó. Phương pháp này cũng gọi là **duyệt vét cạn**.
@@ -157,7 +157,7 @@ Bạn đọc có thể thử vẽ sơ đồ tính toán giống như bài giai t
 
 Bạn vừa tiếp thu một lượng khá lớn kiến thức, và có thể sẽ gặp chút vấn đề. Không sao, chúng ta hãy đi vào ví dụ để hiểu hơn.
 
-## Sinh các dãy nhị phân
+### Sinh các dãy nhị phân
 **Bài toán:** Liệt kê tất cả các dãy nhị phân độ dài $n$, là dãy có tất cả $n$ ký tự và gồm toàn các ký tự $0$ và $1$.
 Ví dụ, với $n = 3$ ta có các dãy $000, 001, 010, 011, 100, 101, 110, 111$.
 
@@ -198,7 +198,7 @@ int main()
 ```
 Chú ý rằng, cách sinh này cũng chưa phải là tốt nhất nếu xét về độ dài của code. Sử dụng các phép toán trên bit của C++ sẽ giúp liệt kê tất cả các dãy trên với một đoạn code đơn giản hơn nhiều mà thời gian chạy vẫn không chậm hơn (tất nhiên là không cần sử dụng đệ quy).
 
-## Sinh tổ hợp (tập hợp con)
+### Sinh tổ hợp (tập hợp con)
 **Bài toán:** Cho tập $S = \{1, 2, 3, ..., n\}$. In ra tất cả các tập con có chính xác $k$ phần tử của $S$. Hai tập con là hoán vị của nhau chỉ tính là một.
 
 **Phân tích:**
@@ -247,7 +247,7 @@ int main()
 
 Còn về hướng biểu diễn dãy nhị phân, bạn đọc hãy thử tự suy nghĩ và cài đặt. Trong lập trình thi đấu, khi phải duyệt mọi tập con, cách này dễ đọc và hiệu quả hơn hẳn. Nhưng đây là bài giới thiệu về đệ quy nên là... 
 
-## Bài toán phân tích số
+### Bài toán phân tích số
 **Bài toán:** Ở một quốc gia có $n$ loại tiền gồm các mệnh giá $a_1, a_2, ..., a_n$ ($n \leq 10$). Có những cách nào để lấy các tờ tiền sao cho tổng mệnh giá của chúng là $S$? Biết rằng mỗi mệnh giá tiền có thể được lấy nhiều lần và hai cách lấy là hoán vị của nhau chỉ tính là một.
 Ví dụ: với 3 loại tiền mệnh giá $10, 20, 50$, có $10$ cách lấy tiền để có tổng là $100$, bao gồm $10$ tờ $10$, hoặc $2$ tờ $50$, hoặc $3$ tờ $10$, $1$ tờ $20$ và $1$ tờ $50$, ...
 
@@ -305,7 +305,7 @@ int main()
 
 Nếu bạn đọc để ý kỹ thì chúng ta không sử dụng tham số `pos` trong hàm `genMoneySet` vào mục đích gì cả. Có thể bỏ tham số này đi, và chúng ta có một hàm đệ quy không tham số. Tham số này ở đây chỉ giúp chúng ta hiểu hàm này hơn thôi.
 
-## Bài toán xếp hậu
+### Bài toán xếp hậu
 [Xếp hậu](https://en.wikipedia.org/wiki/Eight_queens_puzzle) là bài toán rất kinh điển, có lẽ nếu bạn học đệ quy quay lui ở đâu thì cũng sẽ gặp.
 
 **Bài toán:** Tìm tất cả các cách xếp $n$ ($n \leq 12$) quân Hậu lên một bàn cờ $n \times n$ sao cho không có hai quân Hậu nào có thể ăn được nhau. Nếu có hai cách là hoán vị của nhau (về vị trí) thì chỉ tính là một, ví dụ hai tập hợp $\{(1, 2), (3, 4), (5, 6)\}$ và $\{(1, 2), (5, 6), (3, 4)\}$ chỉ lấy $1$. Hai quân Hậu được gọi là có thể ăn được nhau nếu chúng nằm cùng hàng, cột hoặc đường chéo của bàn cờ.
@@ -406,7 +406,7 @@ int main()
 
 Nếu bạn thực hiện thuật toán một cách chính xác, với $n = 8$ bạn sẽ thu được $92$ cách xếp thoả mãn. $92$ cách có vẻ nhiều, nhưng nếu không code, liệu bạn có xếp được không? :)).
 
-# Kỹ thuật Nhánh cận
+## Kỹ thuật Nhánh cận
 Trong một số trường hợp, thay vì yêu cầu liệt kê tất cả các cách chọn thoả mãn, ta sẽ phải tìm xem cách nào là **cách chọn tốt nhất**. Khi đó, việc dùng phương pháp **nhánh cận** (branch and bound) sẽ giúp chúng ta giải những bài toán dạng như vậy.
 
 Thực chất, đây vẫn là thuật toán quay lui, nhưng thay vì in ra hoặc lưu lại tất cả kết quả trong mỗi lần tính toán, ta cập nhật lại trạng thái tốt nhất. Để thuật toán tối ưu hơn, nếu tại một bước, bất kỳ bước nào tiếp theo cũng không thể làm cho kết quả tốt hơn kết quả hiện có, ta có thể bỏ qua nó luôn.
@@ -463,18 +463,18 @@ int main()
 }
 ```
 
-# Chú ý thêm
-## Vì sao lại dùng đệ quy?
+## Chú ý thêm
+### Vì sao lại dùng đệ quy?
 Ưu điểm mà chúng ta thấy ngay được của việc sử dụng đệ quy là viết code ngắn gọn hơn. Lấy ví dụ, khi tính số Fibonacci mà không sử dụng đệ quy, ta sẽ phải tạo hai biến nhớ cho số gần thứ nhì và gần nhất, cộng chúng lại, lưu vào biến mới rồi cập nhật hai biết nhớ; hoặc có thể sử dụng mảng rồi cập nhật lại sao mỗi lần tính. Chúng đều làm cho đoạn code trở nên dài hơn một chút so với việc dùng đệ quy ở trên. Nhưng ở những bài toán lớn hơn, ví dụ như những bài toán sinh dãy ở trên, việc không sử dụng đệ quy sẽ làm bài lời giải của chúng ta cồng kềnh hơn rất nhiều.
 
 Một ưu điểm khác của đệ quy giúp giải dễ dàng các bài toán có dạng một phần nhỏ hơn của công việc cộng thêm một vài lệnh khác, ví dụ như các bài toán duyệt cây và đồ thị.
 
 Tất nhiên, đệ quy không phải công cụ toàn năng. Đệ quy làm cho thuật toán trở nên khó hiểu hơn khi đọc trực tiếp, đặc biệt là với những thuật toán dài. Đệ quy cũng sử dụng thời gian và bộ nhớ hơn so với phương pháp duyệt trực tiếp, do bộ nhớ cần phải lưu trữ lại stack các hàm đệ quy.
 
-## Một số ứng dụng của đệ quy
+### Một số ứng dụng của đệ quy
 Ngoài các bài toán sinh hoặc duyệt vét cạn, đệ quy còn được sử dụng phổ biến trong các bài toán duyệt cây, duyệt đồ thị và quy hoạch động. Rất nhiều bài toán "chia để trị" khác cũng sử dụng đệ quy, điển hình là thuật toán QuickSort.
 
-## Độ phức tạp của đệ quy
+### Độ phức tạp của đệ quy
 Một hàm đệ quy có dạng như sau:
 ``` cpp
 void recursive(int x)
@@ -494,11 +494,11 @@ Có một cách hiệu quả để xác định độ phức tạp của các h�
 
 Ngoài ra, trong một số bài toán yêu cầu tính toán ta cũng có thể lưu lại kết quả trả về của một vài vòng đệ quy để không phải duyệt lại những phần đã duyệt rồi. Phương pháp này gọi là **đệ quy có nhớ**.
 
-# Luyện tập
+## Luyện tập
 - [Một số bài tập trên VNOI](https://oj.vnoi.info/contest/backtrack)
 - [MNS](https://community.topcoder.com/stat?c=problem_statement&pm=1744&rd=4545)
 - [Bridge Crossing](https://community.topcoder.com/stat?c=problem_statement&pm=1599&rd=4535)
 - [Weird Rooks](https://community.topcoder.com/stat?c=problem_statement&pm=3998&rd=6533)
 - Giải Sudoku: Hãy thử vào [sudoku.com](https://sudoku.com), tìm một bảng Sudoku bất kì rồi thử viết một chương trình sử dụng đệ quy quay lui để giải nó. 
-# Tài liệu tham khảo
+## Tài liệu tham khảo
 - Lê Minh Hoàng (2003), *Giải thuật và lập trình* 

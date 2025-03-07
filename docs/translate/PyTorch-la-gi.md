@@ -109,7 +109,7 @@ tensor([[4., 4., 4.],
 Phép cộng tại chỗ (lưu ý việc tiết kiệm bộ nhớ là khá quan trọng để tăng hiệu quả tính toán)
 
 In [23]:
-# Cộng x vào y
+## Cộng x vào y
 y.add_(x)
 print(y)
 tensor([[4., 4., 4.],
@@ -192,8 +192,8 @@ Tensors trên CUDA
 (CUDA là nền tảng tính toán GPU của NVidia) Tensor có thể được chuyển đến thiết bị bất kỳ bằng cách gọi hàm .to .
 
 In [35]:
-# Chạy nếu như máy tính hỗ trợ CUDA (có GPU của NVidia)
-# Dùng ``torch.device`` để đưa tensors ra/vào GPU
+## Chạy nếu như máy tính hỗ trợ CUDA (có GPU của NVidia)
+## Dùng ``torch.device`` để đưa tensors ra/vào GPU
 if torch.cuda.is_available():
     device = torch.device("cuda")          # a CUDA device object
     y = torch.ones_like(x, device=device)  # directly create a tensor on GPU

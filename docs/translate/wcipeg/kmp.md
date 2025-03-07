@@ -1,10 +1,10 @@
-# Thuật toán Knuth-Morris-Pratt (KMP)
+## Thuật toán Knuth-Morris-Pratt (KMP)
 
 **Nguồn**: [wcipeg](http://wcipeg.com/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
 
 **Người dịch**: Trần Kim Thạch
 
-# Giới thiệu
+## Giới thiệu
 
 Trước khi đọc bài này, bạn có thể đọc về các thuật ngữ trong xử lý xâu cũng như về bài toán so khớp chuỗi [ở đây](algo/string/basic)
 
@@ -16,11 +16,11 @@ Cụ thể hơn, ta muốn tính toán trước cách xâu $S$ tự khớp với
 
 Cùng với quá trình tiền xử lí tuyến tính $O(\|T\|)$ (với $\|T\|$ là độ dài xâu $T$), thuật toán có thời gian chạy tuyến tính.
 
-## Cảm hứng
+### Cảm hứng
 
 Cảm hứng của KMP có thể được minh họa rõ nhất qua 3 ví dụ dưới đây.
 
-### Ví dụ 1
+#### Ví dụ 1
 
 ```
 S = aaa
@@ -73,7 +73,7 @@ Và tương tự, lại kết luận được:
 
 Ta sau đó chỉ cần so $S_3$ với $T_5$, tìm được một đáp án nữa, cứ thế tiếp tục. Trong khi thuật toán duyệt cần đến $3$ phép tính cho mỗi lần so sánh $S$ với một xâu con của $T$, kĩ thuật của chúng ta chỉ cần $3$ phép tính ở lần lặp đầu và $1$ cho mỗi kết quả sau, và không xét lại các kí tự của $T$. (Đây cũng là cách con người giải quyết bài toán) 
 
-### Ví dụ 2
+#### Ví dụ 2
 
 ```
 S = aaa
@@ -104,7 +104,7 @@ Nên $S_1 \neq T_3$, ta không cần tìm $S$ ở vị trí thứ $3$ của $T$ 
 
 Sau khi so sánh ở vị trí 4 và thấy tiếp tục không khớp, ta dùng lập luận tương tự loại bỏ vị trí số $5$ và $6$, và bắt đầu lại ở vị trí số $7$ (ở đây 2 xâu khớp nhau). Lần nữa, hãy chú ý các kí tự của $T$ được duyệt qua theo trình tự.
 
-### Ví dụ 3
+#### Ví dụ 3
 
 Đây là một ví dụ phức tạp hơn:
 
@@ -133,7 +133,7 @@ Tới đây hãy nhớ lại rằng:
 
 Ta suy ra $S_1 = T_4$, $S_2 = T_5$. Vậy ta sẽ tiếp tục kiểm tra vị trí số 4 bằng việc so sánh $S_3$ với $T_6$. Làm theo cách này, ta loại bỏ được hai trường hợp và bắt đầu duyệt lại không phải ở đầu mà ở giữa xâu $S$, tránh được việc xét lại $T_4$ và $T_5$.
 
-## Ý tưởng chính
+### Ý tưởng chính
 
 *Gọi $S^i$ là tiền tố độ dài $i$ của xâu $S$.*
 
@@ -159,7 +159,7 @@ Bảng $\pi$, gọi là **hàm tiền tố**, chiếm bộ nhớ tuyến tính, 
 
 Tổng quát, bảng $\pi$ cho ta biết, sau một lần khớp hoặc không khớp giữa "cây kim" và "đống rơm", vị trí tiếp theo trong "đống rơm" ta cần kiểm tra là gì. Các phép so sẽ tiếp tục ở các vị trí tiếp theo, không bao giờ quay ngược về các kí tự ta đã kiểm tra rồi.
 
-## Tính toán độ phức tạp
+### Tính toán độ phức tạp
 
 Để tính độ phức tạp cho hàm tiền xử lí, trước tiên ta có quan sát:
 
@@ -211,7 +211,7 @@ for i ∈ [2..m]
 Thuật toán có độ phức tạp $O(m)$. Để hiểu tại sao thì hãy để ý, `k` không bao giờ âm; nó không thể giảm nhiều hơn mức nó tăng. `k` chỉ tăng ở dòng `k ← k+1`, vốn chỉ bị gọi nhiều nhất là $m-1$ lần. Vậy `k` giảm nhiều nhất là k lần. Nhưng `k` giảm ở mỗi lần lặp của vòng `while`, vậy tổng tất cả các bước trong vòng `while` không quá $O(m)$. Tất cả những câu lệnh trong vòng `for` đều có độ phức tạp là hằng số, nên cả thuật toán có độ phức tạp $O(m)$.
 
 
-## So khớp
+### So khớp
 
 Coi như ta đã xây dựng xong bảng $\pi$. Đây là lúc ta sử dụng những thông tin cực khổ lấy được này. Giả sử rằng ta đã kiểm tra đang vị trí thứ $j$, và $k$ kí tự đầu của $S$ đã khớp. Nói cách khác:
 
@@ -285,7 +285,7 @@ for i ∈ [1..n]
 
 Ở đây, `i` tương ứng với `j+k` ở đoạn code trên. Mỗi lần lặp của vòng lặp trong của một trong 2 đoạn code tương ứng với một lần lặp của vòng lặp ngoài ở đoạn còn lại. Ở đoạn thứ hai, ta cũng có thể chứng minh thuật có độ phức tạp $O(n)$; mỗi lần vòng `while` ở trong được thực hiện, giá trị của `k` giảm, nhưng nó không thể giảm nhiều hơn `n` lần bởi `k` khởi đầu là không và không bao giờ âm. `k` chỉ tăng nhiều nhất một lần ở vòng lặp ngoài (tức nhiều nhất tổng cộng `n` lần). Vậy vòng lặp trong chỉ lặp nhiều nhất `n` lần, và tất cả các câu lệnh khác có độ phức tạp hằng số.
 
-## Bài tập áp dụng:
+### Bài tập áp dụng:
 
 - [VNOJ - SUBSTR](https://oj.vnoi.info/problem/substr).
     - [Code C++](http://ideone.com/4E11f6)

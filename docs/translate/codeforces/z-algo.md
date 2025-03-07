@@ -1,4 +1,4 @@
-# Z Algorithm
+## Z Algorithm
 
 **Nguồn bài**: [Codeforces](http://codeforces.com/blog/entry/3107)
 
@@ -8,11 +8,11 @@ Trước khi đọc bài này, các bạn có thể đọc bài [Xử lý xâu](
 
 **Z Algorithm** hay còn gọi là **Z Function** là thuật toán áp dụng cho các bài so khớp chuỗi.
 
-# Bài toán
+## Bài toán
 
 Cho một chuỗi $S$ có độ dài $n$, thuật toán Z Function tạo ra một mảng $Z$ mà tại mỗi vị trí $i$, ta có $Z_i$ là độ dài chuỗi con dài nhất là tiền tố của $S$ bắt đầu tại vị trí $S_i$, hay nói một cách khác $Z_i$ là một số nguyên $k$ lớn nhất mà $S_j=S_{i + j}$ với mọi $0 \le j < k$. Trường hợp $S_i \ne S_0$ thì $Z_i = 0$.
 
-# Thuật toán
+## Thuật toán
 
 Ta duyệt qua tất cả các ký tự của $S$ (chỉ số $i$ từ 1 đến $n - 1$). Trong quá trình duyệt, ta duy trì một đoạn $[L, R]$ với $R$ là một số lớn nhất thỏa $1 \le L \le i \le R$ và $[L, R]$ là một tiền tố của $S$ (Nếu không xuất hiện các đoạn như vậy thì đặt $L = R = -1$).
 
@@ -26,10 +26,10 @@ Giả sử ta đã xây dựng được đoạn $[L, R]$ và các giá trị $Z[
     - Nếu $Z_k < R - i + 1$ thì sẽ không có chuỗi con nào là tiền tố của $S$ dài hơn $Z_k$ bắt đầu tại $S_i$. Nghĩa là $Z_i = Z_k$ và đoạn $[L, R]$ vẫn giữ nguyên (do đoạn $[L, R]$ chỉ thay đổi nếu chuỗi tiền tố bắt đầu tại $S_i$ vượt ra khỏi đoạn $[L, R]$).
     - Nếu $Z_k \ge R - i + 1$ thì chuỗi $S[i..]$ là tiền tố của $S$ và có nhiều hơn $R - i + 1$ ký tự (tức là kết thúc sau vị trí $R$). Như vậy ta cần cập nhật đoạn $[L, R]$ bằng cách đặt lại $L = i$ và so sánh từ vị trí $S[R + 1]$ trở đi để được một vị trí $R$ mới. Đồng thời, ta tính được giá trị của $Z_i$.
 
-# Độ phức tạp:
+## Độ phức tạp:
 Tại mỗi bước trong vòng lặp, chúng ta không cần so sánh ký tự tại các vị trí nhỏ hơn $R$, và mỗi lần ký tự $R$ phù hợp thì ta tăng $R$ lên một, vì thế ta sẽ tốn nhiều nhất $n$ phép so sánh. Ngoài ra, với mỗi giá trị $i$, ta chỉ tìm thấy một ký tự không phù hợp (điều kiện tăng $R$). Vì thế không thể có nhiều hơn $n$ phép so sánh cho kết quả sai. Đưa đến độ phức tạp thuật toán là $O(n)$.
 
-# Cài đặt:
+## Cài đặt:
 
 Có thể dễ dàng cài đặt. Chú ý việc tối ưu hóa $L = R = i$ được sử dụng khi $S_0 \ne S_i$ (Điều đó không làm ảnh hưởng đến thuật toán kể từ giá trị kế tiếp $i > R$ không phân biệt).
 
@@ -56,7 +56,7 @@ for (int i = 1; i < n; i++)
    }
 ```
 
-# Áp dụng
+## Áp dụng
 
 [VNOJ - SUBSTR](https://oj.vnoi.info/problem/substr/)
 

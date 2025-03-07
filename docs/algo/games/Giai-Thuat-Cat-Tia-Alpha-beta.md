@@ -4,25 +4,25 @@ Tác giả: Vũ Trọng Quang
 
 Giải thuật cắt tỉa Alpha-beta cực kỳ quan trọng khi lập trình các trò chơi như cờ vua hay cờ tướng, khi các không gian trạng thái của những trò chơi này có độ phức tạp cao. Cắt tỉa Alpha-beta sẽ giúp loại bỏ những không gian trạng thái không cần thiết và hỗ trợ tối ưu hóa thuật toán tìm kiếm Minimax.
 
-## Giới thiệu
+### Giới thiệu
 
 Giải thuật cắt tỉa Alpha-beta từng được nhiều nhà khoa học máy tính đề xuất ý tưởng và không ngừng được cải tiến cho đến ngày nay. Giải thuật này thường sử dụng chung với thuật toán tìm kiếm Minimax nhằm hỗ trợ giảm bớt các không gian trạng thái trong cây trò chơi, giúp thuật toán Minimax có thể tìm kiếm sâu và nhanh hơn. Giải thuật cắt tỉa Alpha-beta có nguyên tắc đơn giản "Nếu biết là trường hợp xáu thì không cần phải xét thêm".
 
-## Tiền đề bài viết
+### Tiền đề bài viết
 Trong thời gian tìm hiểu và thực thi thuật toán Minimax, nguồn tài liệu của STDIO luôn là ưu tiên tìm kiếm đầu tiên của tôi. Trong lúc thực hiện việc tối ưu thuật toán, các tài liệu nói về Minimax đều nói về thuật toán cắt tỉa Alpha-beta và đây là động lực để tôi viết bài viết này nhằm giúp hoàn thiện phần còn lại của bài viết [Giải Thuật Tìm Kiếm Minimax](https://www.stdio.vn/articles/read/283/giai-thuat-tim-kiem-minimax) trên STDIO.
 
 Đây cũng là lời cảm ơn đến anh [La Kiến Vinh](https://www.stdio.vn/users/index/1/la-kien-vinh), người thầy đã mang lại nhiều cảm hứng và ấn tượng cho tôi.
 
-## Đối tượng hướng đến
+### Đối tượng hướng đến
 Bài viết dành cho các bạn đã vững lập trình và có kiến thức về các giải thuật tìm kiếm. Bài viết cũng yêu cầu bạn đọc xem qua Giải Thuật Tìm Kiếm Minimax trước khi tiếp tục.
 
-## Giải thuật cắt tỉa Alpha-beta
-### Chiến lược cắt tỉa
+### Giải thuật cắt tỉa Alpha-beta
+#### Chiến lược cắt tỉa
 Nút Max có một giá trị alpha (lớn hơn hoặc bằng alpha – luôn tăng), nút min có một giá trị beta (nhỏ hơn hoặc bằng beta – luôn giảm).
 
 Khi chưa có alpha và beta xác định thì thực hiện tìm kiếm sâu (depth-first) để xác định được alpha, beta, và truyền ngược lên các nút cha.
 
-### Cắt tỉa như thế nào?
+#### Cắt tỉa như thế nào?
 Một số sách và tài liệu có đề cập với việc cắt tỉa alpha và cắt tỉa beta, ở đây tôi cũng sẽ nói về việc đó và dùng một cách khác đó là dùng các khoảng trong toán học. Hãy nhìn cây trò chơi phía dưới để hình dung cách để cắt tỉa.
 
 ![cay_tro_choi](https://wiki.vnoi.info/algo/game/alpha-beta1.png)
@@ -52,18 +52,18 @@ Sau khi duyệt toàn bộ các con của B thì tại B – beta = 3, và tại
 
 Các bạn tự duyệt phần còn lại nhé. Đừng lo lắng, nếu không hiểu có thể đọc lại vài lần hoặc có thể comment, mình sẽ giải đáp giúp các bạn.
 
-## [Trò chơi giải trí với AI hay](https://play.google.com/store/apps/dev?id=8454869713871668206)
+### [Trò chơi giải trí với AI hay](https://play.google.com/store/apps/dev?id=8454869713871668206)
 
 -   [Cờ Carô với AI hay](http://play.google.com/store/apps/details?id=com.popoko.gomokuvn)
 -   [Cờ Vua với AI hay](http://play.google.com/store/apps/details?id=com.popoko.chessru)
 -   [Cờ Gomoku với AI hay](http://play.google.com/store/apps/details?id=com.popoko.gomokukr)
 -   [Trò chơi Dò Mìn](http://play.google.com/store/apps/details?id=com.popoko.minesweeper)
 
-## Lời kết
+### Lời kết
 Bài viết đã khái quát về lý thuyết việc cắt tỉa alpha-beta, còn việc hiện thực nó trong code như thế nào thì có thể mình sẽ dành một bài viết sau bao gồm mã giả và cả cách hiện thực bằng Python 2.7.
 
 Một số thuật ngữ hoặc kiến thức chưa chính xác mong các bạn chỉ bảo giúp mình vì khả năng mình cũng hơi kém chỉ mong có thể giúp mọi người có cảm hứng cùng học, cùng hiểu và cùng đam mê.
 
-## Tham khảo
+### Tham khảo
 PDF về Minimax và cắt tỉa Alpha-beta:
 http://staff.agu.edu.vn/nvhoa/AI/lecture4.pdf - 10/05/2017

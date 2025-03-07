@@ -1,9 +1,9 @@
-# Palindrome tree
+## Palindrome tree
 **Nguồn:** [http://adilet.org/blog/25-09-14/](http://adilet.org/blog/25-09-14/)
 
 Cây Palindrome (hay còn được gọi là Eertree), được phát minh bởi [Mikhail Rubinchik](http://codeforces.com/profile/MikhailRubinchik), là một loại cấu trúc dữ liệu được sử dụng để giải một số bài toán liên quan đến Palindrome.
 
-# Cấu trúc của cây Palindrome
+## Cấu trúc của cây Palindrome
 Như mọi loại cây khác, cây Palindrome cũng có nút.
 
 ![/uploads/palindrome_tree_1.png](/uploads/palindrome_tree_1.png)
@@ -24,7 +24,7 @@ Trong ví dụ trên, vì a là palindrome hậu tố lớn nhất của aba nê
 
 Lưu ý rằng ta không chứa xâu palindrome vào nút khi cài đặt thực tế, nếu làm vậy ta sẽ tiêu tốn quá nhiều bộ nhớ. Nút thực tế sẽ chứa độ dài xâu palindrome, chữ cái được gán vào các cung, và các liên kết hậu tố.
 
-# Xây dựng cây Palindrome
+## Xây dựng cây Palindrome
 Ở đây mình sẽ hướng dẫn tạo cây Palindrome chứa tất cả các palindrome con của một xâu s. Ta thấy: Một xâu độ dài $n$ sẽ không có quá $n$ xâu palindrome con, vì vậy cây Palindrome sẽ không có quá $n$ + 2 nút (do phải thêm 2 gốc nữa).
 
 Ta sẽ xử lí từng chữ cái một trong xâu. Giả sử ta đã xử lí được tiền tố $p$ của xâu, và giờ ta phải xét đến chữ cái $x$ tiếp theo.
@@ -55,27 +55,27 @@ Vậy ta đã có được thuật toán xây dựng cây Palindrome. Xử lí t
 
 Để biết thêm thông tin chi tiết, bạn có thể tham khảo [code](https://github.com/ADJA/algos/blob/master/Strings/PalindromeTree.cpp). (bạn không cần chú ý đến biến $num$ vì nó được cho thêm vào để giải bài toán cụ thể). Bạn có thể thấy code không quá dài cũng như việc cài đặt rất đơn giản.
 
-# Độ phức tạp
+## Độ phức tạp
 Xét quá trình xây dựng cây Palindrome cho một xâu độ dài $n$. Ta thấy rằng khi ta xử lí từng chữ cái một, đầu của liên kết hậu tố palindrome lớn nhất của tiền tố được xử lí luôn di chuyển sang bên phải. Do đó, độ phức tạp của việc xây dựng cây Palindrome là $O(n)$.
 
-# Ứng dụng
+## Ứng dụng
 
-## Đếm số lượng palindrome xuất hiện thêm
+### Đếm số lượng palindrome xuất hiện thêm
 Bài toán: Cho thêm chữ cái $x$ vào cuối xâu $S$, đếm số lượng palindrome xuất hiện thêm trong xâu $S$. Ví dụ khi ta cho thêm chữ cái a vào cuối xâu aba, ta có thêm một palindrome nữa là aa.
 
 Lời giải khá là rõ ràng: Ta xây dựng cây Palindrome cho xâu $S$ ban đầu, và với mỗi chữ cái mới thêm vào, ta biết được số palindrome mới xuất hiện thêm bằng cách đếm số nút vừa được tạo ra trên cây Palindrome. Lưu ý: số palindrome xuất hiện thêm sau khi thêm một chữ cái vào một xâu bằng 1 hoặc bằng 0.
 
-## Đếm số lượng xâu con liên tiếp là palindrome
+### Đếm số lượng xâu con liên tiếp là palindrome
 
 Code giải bài này bằng cây Palindrome đã có ở trên. Bài toán này còn có thể giải bằng thuật toán Manachar, tuy vậy ta nên giải bằng cây Palindrome vì cây Palindrome còn có thể ứng dụng cho nhiều bài toán khác.
 
-## Số lần xuất hiện của palindrome trong xâu
+### Số lần xuất hiện của palindrome trong xâu
 
 Ngoài sử dụng cây Palindrome bạn có thể sử dụng [Hash](http://vnoi.info/wiki/algo/string/hash) để giải bài này.
 
-# Bài tập
+## Bài tập
 
-## Các bài trên Timus
+### Các bài trên Timus
 [Timus - Palindromes and Super Abilities](http://acm.timus.ru/problem.aspx?num=1960)
 
 [Timus - 31 Palindromes](http://acm.timus.ru/problem.aspx?space=1&num=2044)
@@ -84,17 +84,17 @@ Ngoài sử dụng cây Palindrome bạn có thể sử dụng [Hash](http://vno
 
 [Timus - Richness of binary words](http://acm.timus.ru/problem.aspx?space=1&num=2037)
 
-## Các bài trên Codeforces
+### Các bài trên Codeforces
 
 [CERC 14 - Bài G - Virus synthesis](http://codeforces.com/gym/100543/attachments/download/2854/20142015-acmicpc-central-europe-regional-contest-cerc-14-en.pdf)
 
 [Codeforces Beta Round #17 - Bài E - Palisection](http://codeforces.com/problemset/problem/17/E)
 
-## Các bài trên SPOJ
+### Các bài trên SPOJ
 
 [SPOJ - Number of Palindromes](http://www.spoj.com/problems/NUMOFPAL/)
 
-## Các bài trên các trang khác
+### Các bài trên các trang khác
 
 [Đếm số lượng xâu con liên tiếp là palindrome](http://informatics.mccme.ru/moodle/mod/statements/view.php?chapterid=1750)
 

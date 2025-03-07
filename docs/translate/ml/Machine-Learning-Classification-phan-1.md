@@ -1,4 +1,4 @@
-# Machine Learning - Classification - phần 1
+## Machine Learning - Classification - phần 1
 
 **Nguồn**: [Achoum's blog](http://blog.mathieu.guillame-bert.com/2015/07/12/introduction-to-machine-learning/)
 
@@ -10,13 +10,13 @@ Mục tiêu của tác giả với chuỗi bài viết này là giúp các bạn
 
 Chuỗi bài viết trong chủ đề này gồm có 3 bài. Bài viết đầu tiên sẽ giới thiệu về một trong những nhiệm vụ chính của Machine Learning: **Phân loại** (**Classification**). Bài viết thứ hai trình bày và minh hoạ hai kỹ thuật quan trọng của Machine Learning được áp dụng trong bài toán phân loại: một trong số đó tuy rất đơn giản nhưng được sử dụng rộng rãi, cái còn lại là một kỹ thuật rất mới. Cuối cùng, bài viết thứ ba sẽ nói về cách các nhà khoa học máy tính đánh giá chất lượng của một kỹ thuật trong Machine Learning.
 
-# Định nghĩa
+## Định nghĩa
 
 Thật sự không dễ để có thể đưa ra một định nghĩa chính xác của Machine Learning. Nói một cách nôm na, Machine Learning là các chương trình giúp đưa ra dự đoán hoặc giúp người dùng hiểu về các hiện tượng phức tạp.
 
 Machine Learning là một chủ đề rộng lớn với rất nhiều chủ đề con. Thay vì cố gắng đưa ra những định nghĩa chung chung, bài viết sẽ chỉ tập trung vào một chủ đề duy nhất: Phân loại **(Classification)**. Bài toán phân loại chỉ là một trong rất nhiều chủ đề của Machine Learning, nhưng là một trong những chủ đề quan trọng nhất. Khi người ta nói đến Machine Learning, thông thường họ nói đến bài toán phân loại (nếu họ không chỉ rõ chủ đề khác).
 
-# Phân loại (Classification)
+## Phân loại (Classification)
 
 Ý tưởng của bài toán phân loại bắt đầu như sau: Chúng ta có một danh sách các *quan sát* (*observation*). Một *quan sát* là một khái niệm chung chung. Với Machine Learning, một quan sát thường là sự mô tả một đối tượng trong một trạng thái nào đó. Để hiểu rõ hơn, hãy xét một ví dụ rất phổ biến trong Machine Learning: hoa diên vĩ (Iris flowers). Giả sử một quan sát là sự mô tả một bông hoa. Với mỗi bông hoa, chúng ta có bốn thông số: độ dày và chiều dài của đài hoa (sepal) và cánh hoa (petal). Trên thực tế, ví dụ về hoa diên vĩ nổi tiếng với cái tên **the Iris dataset** và đây là bộ dữ liệu được sử dụng rất rộng rãi trong giới nghiên cứu Machine Learning để tìm hiểu về các thuật toán phân loại.
 

@@ -1,9 +1,9 @@
-# Bài toán [LUBENICA](https://oj.vnoi.info/problem/lubenica)
+## Bài toán [LUBENICA](https://oj.vnoi.info/problem/lubenica)
 
-## Thuật toán
+### Thuật toán
 Bài này có nhiều hướng giải, một trong số đó là sử dụng kỹ thuật [Heavy Light Decomposition](https://vnoi.info/wiki/algo/data-structures/heavy-light-decomposition.md), tuy nhiên có 1 cách làm đơn giản hơn cho bài này là sử dụng [LCA và RMQ](https://vnoi.info/wiki/translate/topcoder/Range-Minimum-Query-and-Lowest-Common-Ancestor)
 
-## Giải bằng LCA  
+### Giải bằng LCA  
 
 Gọi `up[u][i].par` là tổ tiên thứ $2^i$ của $u$, `maxc` là cạnh có trọng số lớn nhất trên đường đi từ u lên `up[u][i]`. Tương tự với `minc` là cạnh có trọng số nhỏ nhất. Có thể tính $up[u][0]$ khi dfs dựng cây, tức là nút cha trực tiếp của u, cũng là cạnh từ cha đến u.
 Có thể tính `up[u][i]` (i > 0) thông qua công thức QHĐ sau:
@@ -25,13 +25,13 @@ Khi đó `up[u][i].maxc` ta sẽ cập nhật bằng giá trị lớn nhất c�
 Tương tự cho min.
 Sau đó với mỗi truy vấn tìm LCA của hai đỉnh rồi tìm min và max trên mỗi đoạn này
 
-## Code mẫu
+### Code mẫu
 ```cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 using namespace std;
-#define fi first
-#define se second
-#define bit(x, k) (1ll&((x) >> (k)))
+## define fi first
+## define se second
+## define bit(x, k) (1ll&((x) >> (k)))
 
 const int N = 1e5 + 11;
 const int INF = 1e9 + 11;

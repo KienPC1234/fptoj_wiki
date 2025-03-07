@@ -1,4 +1,4 @@
-# Hình học tính toán phần 2: Sự giao nhau của đường thẳng và các ứng dụng
+## Hình học tính toán phần 2: Sự giao nhau của đường thẳng và các ứng dụng
 
 **Tác giả:** 
 - Lê Minh Hoàng - Phổ thông Năng khiếu, ĐHQG-HCM
@@ -16,7 +16,7 @@ Trong [phần 1](algo/geometry/basic-geometry-1), chúng ta đã tìm hiểu cá
 
 **Lưu ý:** một số hình ảnh được chụp từ Desmos, và đều có link Desmos tương ứng ở dưới mỗi hình, các bạn có thể nhấn vào link để tương tác với hình và các tham số.
 
-# Giao điểm của hai đường thẳng
+## Giao điểm của hai đường thẳng
 Một trong những bài toán con phổ biến nhất trong các bài toán hình học là giao điểm đường thẳng. Mặc dù phổ biến nhưng nhiều người vẫn gặp rắc rối với nó.
 
 Đầu tiên, ta có câu hỏi nhỏ là: đường thẳng được cho dưới dạng nào? và chúng ta muốn sử dụng ở dạng nào? Ở trường hợp lý tưởng thì đường thẳng sẽ ở dạng $Ax + By = C$, với $A, B, C$ là các hệ số xác định đường thẳng. Tuy nhiên, ta hiếm khi được cho đường thẳng ở dạng này, nhưng ta có thể dễ dàng có được từ hai điểm cho trước. Ví dụ có hai điểm **phân biệt** $(x_1,y_1)$ và $(x_2,y_2)$, và để tìm $A, B, C$ cho phương trình trên, ta đặt:
@@ -89,8 +89,8 @@ Ta cũng nên cẩn thận với vấn đề về độ chính xác của số t
 
 Ngoài ra, ta còn có thể sử dụng tích có hướng để kiểm tra hai đoạn thẳng giao nhau với ưu điểm là không phụ thuộc vào sai số khi tọa độ các đỉnh đều là số nguyên.
 
-## Kiểm tra giao điểm của 2 đoạn thẳng (sử dụng tích có hướng)
-### **CW và CCW**
+### Kiểm tra giao điểm của 2 đoạn thẳng (sử dụng tích có hướng)
+#### **CW và CCW**
 
 **Nhắc lại phần 1**: Với góc $\alpha$ thỏa mãn $0° < \alpha < 180°$ thì $\sin(\alpha) > 0$ nên nếu góc ngược chiều kim đồng hồ $\theta < 180°$ thì tích có hướng **dương**, ngược lại tích có hướng **âm**.
 
@@ -99,20 +99,20 @@ Ngoài ra, ta còn có thể sử dụng tích có hướng để kiểm tra hai
 - Nếu $\overrightarrow{\rm AB} \times \overrightarrow{\rm AC} < 0$ thì $A,B,C$ cùng chiều kim đồng hồ (CW).
 - Nếu $\overrightarrow{\rm AB} \times \overrightarrow{\rm AC} = 0$ thì $A,B,C$ thẳng hàng.
 
-|![](https://i.imgur.com/Qz3w0Wg.png)|
+|![img](../../uploads/Qz3w0Wg.png)|
 
-### **Kiểm tra giao điểm của 2 đoạn thẳng**
-#### Tồn tại 3 điểm thẳng hàng
+#### **Kiểm tra giao điểm của 2 đoạn thẳng**
+##### Tồn tại 3 điểm thẳng hàng
 Nếu tồn tại 3 trong 4 điểm đầu mút thẳng hàng, ta kiểm tra xem có tồn tại đầu mút của đoạn thẳng này thuộc đoạn thẳng kia hay không:
 - Nếu có thì rõ ràng là 2 đoạn thẳng giao nhau tại ít nhất 1 điểm (tại đầu mút vừa xét).
 
-|![](https://i.imgur.com/ikP58hq.png)|
+|![img](../../uploads/ikP58hq.png)|
 
 - Nếu không thì rõ ràng là 2 đoạn thẳng không thể giao nhau.
 
-|![](https://i.imgur.com/wc6dups.png)|
+|![img](../../uploads/wc6dups.png)|
 
-#### Không tồn tại 3 điểm thẳng hàng
+##### Không tồn tại 3 điểm thẳng hàng
 Nếu không tồn tại 3 trong 4 điểm đầu mút thẳng hàng thì 2 đoạn thẳng $AB$ và $CD$ giao nhau khi:
 - $C$ và $D$ nằm khác phía đối với đường thẳng $AB$ và
 - $A$ và $B$ nằm khác phía đối với đường thẳng $CD$.
@@ -130,7 +130,7 @@ $$\begin{cases}
 (\overrightarrow{\rm CD} \times \overrightarrow{\rm CA}) \cdot (\overrightarrow{\rm CD} \times \overrightarrow{\rm CB}) < 0
 \end{cases}$$
 
-|![](https://i.imgur.com/c5v5L4d.png)|
+|![img](../../uploads/c5v5L4d.png)|
 
 Nhấn vào [**đây**][intersect] để tương tác với hình trên Desmos.
 
@@ -164,12 +164,12 @@ bool intersect(Point A, Point B, Point C, Point D) {
 }
 ```
 
-# Tìm đường tròn đi qua 3 điểm
+## Tìm đường tròn đi qua 3 điểm
 Từ $3$ điểm không thẳng hàng, có duy nhất một đường tròn đi qua $3$ điểm đó. Nhưng làm thế nào để tìm được tâm của nó? Vấn đề này hoá ra là một ứng dụng đơn giản của bài toán giao điểm đường thẳng.
 
 Chúng ta sẽ tìm đường trung trực của 2 đoạn $XY$ và $YZ$, sau đó tìm giao điểm của hai đường này, điểm đó chính là tâm của đường tròn.
 
-![](https://i.imgur.com/bQrxrA8.png)
+![img](../../uploads/bQrxrA8.png)
 
 Nhấn vào [**đây**][circle] để tương tác với hình trên Desmos.
 
@@ -180,13 +180,13 @@ Các bước để tìm đường trung trực của đoạn $XY$:
 - **Bước 2:** tìm trung điểm $M$ của đoạn $XY$ bằng cách lấy trung bình cộng của $2$ hoành độ và trung bình cộng của $2$ tung độ.
 - **Bước 3:** viết phương trình đường thẳng của đường thẳng vuông góc với đường thẳng $XY$ có dạng là $-Bx + Ay = D$.
 
-![](https://i.imgur.com/jYRUgh8.png =700x500)
+![img](../../uploads/jYRUgh8.png =700x500)
 
 Nhấn vào [**đây**][pendicular] để tương tác với hình trên Desmos.
 
 - **Bước 4:** ta thay tọa độ của trung điểm $M$ vào phương trình đường thẳng ở bước $3$ để tìm $D$ và xác định đường trung trực.
 
-## Ví dụ
+### Ví dụ
 Cho $2$ điểm $X(2,-3)$ và $Y(1,0)$, để tìm đường trung trực của đoạn $XY$, ta thực hiện như sau:
 - **Bước 1:** Tìm phương trình đường thẳng $XY$, ta đặt:
 
@@ -248,10 +248,10 @@ Line Perpendicular_Bisector(Point A, Point B) {
 }
 ```
 
-# Phép đối xứng
+## Phép đối xứng
 Để lấy đối xứng một điểm $X$ qua một đường thẳng (trục đối xứng), ta tìm giao điểm $Y$ của trục đối xứng và đường thẳng vuông góc với trục đối xứng đi qua $X$, sau đó lấy $X'$ đối xứng với $X$ qua $Y$.
 
-## Ví dụ
+### Ví dụ
 Cho điểm $X(1,-3)$ và đường thẳng $(d):4x-3y=-5$, để tìm điểm $X'$ đối xứng với $X$ qua $(d)$, ta thực hiện như sau:
 
 - **Bước 1**: Gọi đường thẳng đi qua $X$ và vuông góc với trục đối xứng có dạng: $(d'):3x + 4y = D$.
@@ -279,7 +279,7 @@ X'_x = 2Y_x - X_x = 2 \cdot (-1.88) - 1 = -4.76 \\
 X'_y = 2Y_y - X_y = 2 \cdot (-0.84) - (-3) = 1.32
 \end{cases}$$
 
-|![](https://i.imgur.com/wDQu2gx.png)|
+|![img](../../uploads/wDQu2gx.png)|
 
 Nhấn vào [**đây**][symmetry] để tương tác với hình trên Desmos.
 
@@ -305,7 +305,7 @@ Point Symmetry(Point X, Line d) {
 }
 ```
 
-# Phép quay
+## Phép quay
 Cho điểm $A(x,y)$, để quay điểm $A$ **ngược chiều kim đồng hồ** một góc $\theta$ quanh **gốc tọa độ**, ta đơn giản sử dụng công thức:
 
 $$\begin{cases}
@@ -328,13 +328,13 @@ Bảng chuyển đổi một số giá trị thường dùng:
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Radian|0 |$\frac{\pi}{12}$| $\frac{\pi}6$| $\frac{\pi}4$| $\frac{\pi}3$| $\frac{5\pi}{12}$| $\frac{\pi}2$| $\pi$|
 
-![](https://i.imgur.com/7iEnloB.png)
+![img](../../uploads/7iEnloB.png)
 
 Nhấn vào [**đây**][rotation1] để tương tác với hình trên Desmos.
 
 Để quay điểm $A$ quanh một điểm $C$ khác không phải gốc tọa độ, ta tịnh tiến hệ tọa độ sao cho $C$ trùng với gốc tọa độ, quay bằng công thức trên rồi tịnh tiến hệ tọa độ về vị trí ban đầu.
 
-## Ví dụ
+### Ví dụ
 Cho $2$ điểm $A(1,4)$ và $C(2,2)$, để quay $A$ ngược chiều kim đồng hồ 1 góc $45°$ quanh $C$, ta thực hiện như sau:
 - **Bước 1:** tịnh tiến hệ tọa độ sao cho $C$ trùng với gốc tọa độ. Lúc này, điểm $A$ có tọa độ mới là $A'=(1-2,4-2)=(-1,2)$.
 
@@ -352,7 +352,7 @@ $$B=\left( -\dfrac{3\sqrt{2}}{2}+2, \dfrac{\sqrt{2}}{2}+2 \right)$$
 Vậy quay $A(1,4)$ ngược chiều kim đồng hồ 1 góc $45°$ quanh $C(2,2)$, ta được điểm
 $$B\left( -\dfrac{3\sqrt{2}}{2}+2, \dfrac{\sqrt{2}}{2}+2 \right)$$
 
-|![](https://i.imgur.com/t66DtWV.png)|
+|![img](../../uploads/t66DtWV.png)|
 
 Nhấn vào [**đây**][rotation2] để tương tác với hình trên Desmos.
 
@@ -365,7 +365,7 @@ Point Rotations(Point A, Point C, double rad) {
 }
 ```
 
-# Tổng hợp các link desmos trong bài
+## Tổng hợp các link desmos trong bài
 - [Kiểm tra giao điểm của 2 đoạn thẳng (sử dụng tích có hướng)][intersect]
 - [Đường tròn đi qua 3 điểm][circle]
 - [2 đường thẳng vuông góc][pendicular]
@@ -373,10 +373,11 @@ Point Rotations(Point A, Point C, double rad) {
 - [Phép quay (quanh tâm O)][rotation1]
 - [Phép quay (quanh điểm bất kì)][rotation2]
 
-# Luyện tập
+## Luyện tập
 Học phải đi đôi với hành, do đó mình đề xuất cho các bạn [Codeforces Gym 100168](https://codeforces.com/gym/100168). Tuy đề bài trong gym được viết bằng tiếng Nga nhưng rất ngắn gọn và đi thẳng vào bài toán nên các bạn có thể dễ dàng [google translate](https://translate.google.com/?hl=vi&sl=ru&tl=en&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C%20%D0%BC%D0%B8%D1%80&op=translate).
 
 Bên dưới là một số bài tập có liên quan đến bài viết này, mình đã tóm tắt yêu cầu bài toán để các bạn có thể hiểu đề dễ dàng hơn.
+
 - **Codeforces Gym - 100168K**: cho 2 đường thẳng có dạng $Ax+By+C=0$, tìm giao điểm
 - [**CSES - Line Segment Intersection**](https://cses.fi/problemset/task/2190): kiểm tra 2 đoạn thẳng có giao nhau hay không
 - **Codeforces Gym - 100168M**: cho 2 điểm, viết phương trình đường thẳng
@@ -389,9 +390,12 @@ Bên dưới là một số bài tập có liên quan đến bài viết này, m
 - [**CSES - Point in Polygon**](https://cses.fi/problemset/task/2192): xác định vị trí của 1 điểm với 1 đa giác
 - [**Codeforces - Robo-Footballer**](https://codeforces.com/contest/248/problem/C) (vận dụng)
 
-[intersect]:  https://www.desmos.com/calculator/lvmr5hulij
-[circle]:     https://www.desmos.com/calculator/dlumjpoue3
-[pendicular]: https://www.desmos.com/calculator/2qrirvdzmc
-[symmetry]:   https://www.desmos.com/calculator/6buimwzjzq
-[rotation1]:  https://www.desmos.com/calculator/byol69tsay
-[rotation2]:  https://www.desmos.com/calculator/rcs6z4pous
+## Desmos
+
+- [Intersect](https://www.desmos.com/calculator/lvmr5hulij)
+- [Circle](https://www.desmos.com/calculator/dlumjpoue3)
+- [Perpendicular](https://www.desmos.com/calculator/2qrirvdzmc)
+- [Symmetry](https://www.desmos.com/calculator/6buimwzjzq)
+- [Rotation 1](https://www.desmos.com/calculator/byol69tsay)
+- [Rotation 2](https://www.desmos.com/calculator/rcs6z4pous)
+

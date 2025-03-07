@@ -1,4 +1,4 @@
-# Số học 4.5 - Nghịch đảo modulo
+## Số học 4.5 - Nghịch đảo modulo
 
 Nguồn: [e-maxx](https://e-maxx-eng.appspot.com/algebra/module-inverse.html)
 
@@ -6,7 +6,7 @@ Người dịch: Nguyễn Thành Trung (RR)
 
 
 
-# Định nghĩa:
+## Định nghĩa:
 
 Xét số nguyên dương $m$. Xét các số nguyên trên modulo $m$ (từ 0 đến $m-1$).
 
@@ -24,7 +24,7 @@ Trong bài viết này, mình sẽ trình bày 2 cách khác nhau để tìm ngh
 - [Tính a^b % c bằng chia để trị](translate/he/Number-Theory-3)
 - [Phi hàm Euler](translate/he/Number-Theory-4)
 
-# Extended Euclid
+## Extended Euclid
 
 Như đã trình bày trong bài viết [Số học 1](translate/he/So-hoc-Phan-1-Modulo-gcd), nếu $gcd(a, m) = 1$, ta luôn luôn tìm được 2 số nguyên x và y thoả mãn:
 
@@ -48,7 +48,7 @@ else {
 }
 ```
 
-# Tính nghịch đảo modulo bằng a^b % c
+## Tính nghịch đảo modulo bằng a^b % c
 
 Khi $gcd(a, m) = 1$, theo định lý Euler, ta có:
 
@@ -67,7 +67,7 @@ Nhân cả 2 vế với $a^{-1}$, ta được:
 
 Như vậy, ta có thể dùng thuật toán [Tính a^b % c bằng chia để trị](translate/he/Number-Theory-3) để tính nghịch đảo modulo với độ phức tạp $O(\log{m})$.
 
-# Tính tất cả nghịch đảo modulo m
+## Tính tất cả nghịch đảo modulo m
 
 Trong trường hợp $m$ là số nguyên tố, ta cũng có thể tính tất cả nghịch đảo modulo của toàn bộ $[1, m-1]$ với độ phức tạp $O(m)$ như sau:
 
@@ -87,7 +87,7 @@ Nhân cả 2 vế với nghịch đảo modulo của $i$ và nghịch đảo mod
 
 $r[i] \equiv -floor(m/i) \* r[m \% i] \pmod{m}$
 
-# Các bài luyện tập
+## Các bài luyện tập
 
 *   [UVa 11904 - One Unit Machine](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3055)
 *   [Hackerrank - Longest Increasing Subsequence Arrays](https://www.hackerrank.com/contests/world-codesprint-5/challenges/longest-increasing-subsequence-arrays)

@@ -1,4 +1,4 @@
-# Bảng băm (Hash Tables)
+## Bảng băm (Hash Tables)
 
 Bảng băm là một cấu trúc dữ liệu đặc biệt thường được sử dụng như một từ điển. Trong đó, mỗi khóa mang theo một giá trị tương ứng. Khóa được xem như chỉ số của giá trị tương ứng. Bảng băm không như các loại từ điển cổ điển – mọi người có thể tìm được khóa thông qua giá trị của nó.
 
@@ -12,6 +12,6 @@ Trong phát triển ứng dụng, bảng hash thuận tiện để lưu trữ d�
 
 Giả sử, chúng ta được yêu cầu tìm một số lượng ống nhỏ nhất để xây dựng một đường ống với chiều dài cố định và chúng ta có 38 ống. Bằng cách chia thành hai tập – 19 và tính toán tất cả trường hợp ghép ống có thể ở mỗi tập, chúng ta tạo ra một bảng hash kết nối giữa độ dài mà các tổ hợp ống tạo thành với số lượng ống ít nhất cần dùng. Sau đó, với mỗi tổ hợp ống được xây dựng trong một tập, chúng ta có thể tra cứu liệu có tồn tại đường ống với độ dài phù hợp ở tập bên kia để cả hai ống tạo nên một đường ống với độ dài yêu cầu với số ống là ít nhất.
 
-# Các tài liệu tham khảo:
+## Các tài liệu tham khảo:
 
 - [Topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/data-structures/)

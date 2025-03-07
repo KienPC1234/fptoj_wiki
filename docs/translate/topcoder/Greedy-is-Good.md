@@ -1,8 +1,8 @@
-# Thuật toán Tham lam
+## Thuật toán Tham lam
 
 **Nguồn bài**: [Topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/greedy-is-good/)
 
-# Ví dụ minh họa
+## Ví dụ minh họa
 
 John Smith đang gặp rắc rối! Anh ấy là một thành viên của **Topcoder** và sau khi học cách để trở thành bậc thầy trong việc đối phối với các bài toán quy hoạch động, anh ấy bắt đầu giải quyết hàng loạt các bài tập. Nhưng chiếc máy tính *"dễ bảo"* của anh bắt đầu trở chứng vào hôm nay. Vào mỗi buổi sáng như thường lệ, John thức dậy vào lúc 10 giờ sáng, uống một cốc cà phê và bắt đầu giải các bài tập trước khi thưởng thức bữa sáng. Mặc dù có thứ gì đó *"sai sai"* so với mọi hôm, nhưng dựa vào kho tàng kiến thức mà anh ấy vừa mới gặt hái được, John đã viết chương trình với một tốc độ thần thánh. Mệt mỏi với việc cấp phát ma trận vào mỗi buổi sáng, chiếc máy tính thông báo rằng: **"Segmentation fault!"**. Dù cho dạ dày còn đang rỗng, song với ý tưởng thông minh của mình, John đã vượt qua rắc rối bằng cách chèn thêm một vòng lặp. Nhưng chiếc máy tính lại gào lên: **"Time limit exceeded!"**.
 
@@ -26,7 +26,7 @@ Là một con người tràn trề sinh lực, John muốn dành thời gian nhi
 
 Giờ anh ấy muốn thực hiện được tối đa các hoạt động trong thời gian biểu trên. Mặc dù để lên kế hoạch hiệu quả thì cần phải có chút lý trí, nhưng giờ thì hồn anh ấy đã đắm chìm vào kỳ nghỉ rồi.
 
-## Phát biểu bài toán
+### Phát biểu bài toán
 
 Liệu ta có thể giúp anh ấy có một kỳ nghỉ tuyệt vời? Ta hoàn toàn có thể! Đầu tiên, ta cần phải trình bày lại bài toán:
 
@@ -37,7 +37,7 @@ Liệu ta có thể giúp anh ấy có một kỳ nghỉ tuyệt vời? Ta hoàn
 Mỗi hoạt động chỉ có hai chọn lựa là có hoặc không. Với mỗi trường hợp chọn lựa cho hoạt động thứ nhất, ta lại có thêm 2 lựa chọn cho hoạt động thứ 2. Phân tích nhanh ta sẽ thấy được rằng có $2^n$ trường hợp, và trong tình huống này thì sẽ có $2^{10} = 1024$ trường hợp. Với mỗi trường hợp ta sẽ kiểm tra xem có thể thực hiện được các hoạt động đó không: có 2 cặp hoạt động nào bị trùng thời gian hay không. Sau khi xét hết các phương án, ta dễ dàng tìm ra 1 phương án có nhiều hoạt động nhất. Với khá nhiều sự chọn lựa như thế này, John buộc phải nhờ đến sự giúp đỡ của chiếc máy tính đang mệt mỏi. Nhưng điều gì sẽ xảy ra nếu John có tới 50 hoạt động trong danh sách? Thậm chí dùng đến cả siêu máy tính nhanh nhất thế giới thì cũng cần đến vài năm để tìm ra câu trả lời. Thế nên, phương án này khá phi thực tế.
 
 
-## Tiếp cận 1
+### Tiếp cận 1
 
 Chúng ta cần tìm một cách tiếp cận mới. Một phương án tốt có lẽ là thực hiện công việc ngay khi thời cơ đến: Nếu ta có hai hoạt động và chúng bị trùng về thời gian, ta sẽ ưu tiên lựa chọn hoạt động bắt đầu trước nhằm tiết kiệm thời gian (nghĩa là hoạt động có $L_i$ nhỏ hơn). Nếu áp dụng cách này vào 10 hoạt động trên thì:
 
@@ -46,7 +46,7 @@ Chúng ta cần tìm một cách tiếp cận mới. Một phương án tốt c�
 
 Và chưa đầy một ngày nhưng anh ấy đã thực hiện được 2 hoạt động. Thật tuyệt vời! Nhưng thật ra, đó chỉ là **lựa chọn tốt nhất** lúc này thôi. Và bây giờ thì ta có gì, 5 ngày ăn chơi ở Hawaii và cho đến tận tối thứ 7 thì anh ấy vẫn chỉ thực hiện được 2 hoạt động. Hãy nghĩ xem trong 5 ngày đó anh ta đã có thể thực hiện được những gì. Mặc dù đơn giản và thực thi rất nhanh, song rất không may là thuật toán này lại không chính xác.
 
-## Tiếp cận 2
+### Tiếp cận 2
 
 Hãy thử một mánh khóe khác. Giờ ta sẽ bỏ những hoạt động tiêu tốn nhiều thời gian như đi *Du lịch Hawaii* bằng cách lựa chọn những hoạt động tốn ít thời gian nhất (nghĩa là có $R_i - L_i$ nhỏ nhất) và kiểm tra xem nó có hợp lí với những hoạt động đã chọn trước đó chưa rồi tiếp tục quá trình. Theo như thời gian biểu ở trên thì hoạt động đầu tiện được chọn lựa sẽ là tắm. Với thời gian chỉ 15 phút, đây chính là **lựa chọn tối ưu cục bộ** (**local best**). Và giờ điều mà ta cần biết đó là có thể giữ được **tối ưu cục bộ** khi mà những hoạt động thích hợp khác được chọn lựa. Thời gian biểu của John sẽ như sau:
 
@@ -65,7 +65,7 @@ Trong 10 hành động, ta đã lựa ra được 6 hành động, không tệ c
 
 Áp dụng thuật toán của ta, John đã tham gia một cuộc hẹn hò chóng vánh (màu đỏ), để rồi anh ấy đã bỏ lỡ cả bài thi trong trường (màu xanh da trời) lẫn trận đấu bóng rổ của đội anh ấy yêu thích (màu xanh lá). Là một **Topcoder**, chúng ta cần phải viết ra một chương trình hoàn toàn chính xác, chứ không phải chỉ đúng trong 1 số trường hợp. Chỉ cần một trường hợp duy nhất chúng ta không giải quyết được sẽ dẫn tới một thất bại toàn diện.
 
-## Tiếp cận 3
+### Tiếp cận 3
 
 Những gì mà chúng ta thường làm trong tình huống này là phân tích điều gì đã gây ra lỗi ở cách làm trước để tránh lặp lại nó trong tương lai. Hãy xem xét lại trường hợp sai. Cuộc hẹn hò trùng thời gian với cả việc làm bài thi lẫn trận đấu bóng rổ, trong khi cả trận đấu bóng rổ lẫn làm bài thi chỉ trùng lặp với một mình cuộc hẹn hò. Vậy thì ý tưởng cũng tự sinh ra từ vấn đề này. Tại sao ta không chọn hoạt động ít bị trùng lặp nhất so với những hoạt động còn lại? Nghe có vẻ hợp lí!
 
@@ -78,7 +78,7 @@ Những gì mà chúng ta thường làm trong tình huống này là phân tíc
 Nhưng hoạt động được biểu diễn bằng gạch màu xanh chính là những lựa chọn tối ưu trong thời gian biểu trên. Nhưng hoạt động tô màu đỏ trùng lặp với 2 hoạt động nên nó sẽ được chọn trước. Vẫn còn 4 hoạt động thích hợp khác trước hoạt động đỏ, nhưng chúng đều bị trùng lặp lẫn nhau, thế nên ta chỉ có thể lựa chọn thêm 1 hoạt động. Điều tương tự cũng xảy ra đối với 4 hoạt động sau hoạt động màu đỏ, nhưng ta vẫn chỉ có thể chọn 1. Vậy tổng cộng theo phương pháp này, ta vẫn chỉ có thể chọn 3 hoạt động, trong khi kết quả tối ưu là 4.
 
 
-## Tiếp cận 4
+### Tiếp cận 4
 
 Tổng quát lại, ta đã thử 3 cách khác nhau, và mỗi cách đều có thiếu sót:
 
@@ -138,7 +138,7 @@ Vấn đề của John Smith đã được giải quyết, tuy nhiên đây ch�
 Bài tập tương tự: [Boxing](http://www.topcoder.com/stat?c=problem_statement&pm=2977&rd=5880)
 
 
-# [**BioScore**](https://community.topcoder.com/stat?c=problem_statement&pm=3038)
+## [**BioScore**](https://community.topcoder.com/stat?c=problem_statement&pm=3038)
 
 **Bài toán**
 
@@ -253,7 +253,7 @@ Return Best
 Đối với mảng lưu điểm đã cho (trong trường hợp của chúng ta là mảng $S$), ta sẽ tính kết quả cuối cùng bằng việc chỉ tính tổng của tích $F[I] \* S[I] (1 \le I \le 10)$.
 
 
-# [**GoldMine**](https://community.topcoder.com/stat?c=problem_statement&pm=1957&rd=4650)
+## [**GoldMine**](https://community.topcoder.com/stat?c=problem_statement&pm=1957&rd=4650)
 
 **Bài toán**
 
@@ -351,7 +351,7 @@ Vì $b1+b2 \le a1+a2 \le a1+b1 \le a1+max(a2, b1)$, **lựa chọn Tham lam** c�
 
 Cài đặt thuật toán này hoàn toàn không khó, tuy nhiên ta cần phải xử lý thêm một vài trường hợp nữa (tất cả các công nhân đều phải được phân công, chỉ có tối đa sáu người trong một mỏ và nếu một công nhân có thể được đặt tối ưu ở nhiều mỏ, ưu tiên mỏ có chỉ số nhỏ hơn).
 
-## [**WorldPeace**](https://community.topcoder.com/stat?c=problem_statement&pm=2420&rd=5850)
+### [**WorldPeace**](https://community.topcoder.com/stat?c=problem_statement&pm=2420&rd=5850)
 
 **Bài toán:**
 Cho **n** đất nước, mỗi nước có dân số của họ. Hãy chia thành thành các nhóm có **k** người không có cùng quốc tịch. Hãy cho biết số lượng nhóm tối đa có thể đạt được.
@@ -416,7 +416,7 @@ Return Groups
 
 Nếu cách tiếp cận này thật sự đúng, ta hoàn toàn có thể nhận ra được. Mặc dù nó có thể thoát khỏi ánh mắt sắc nhọn của Tomek cũng như là test hệ thống, nhưng có vẻ là nó sẽ không thể nào đưa ra kết quả quả đúng với mọi bộ test khả thi. Đây chính một ví dụ cho thấy nếu được tinh chỉnh, từ một thuật toán tham lam đơn giản (nhưng vẫn còn khiếm khuyết) cũng cũng có thể trở thành một giải thuật "đúng". Để biết thêm về thuật toán chính xác cho bài này, xem lời giải ở [Match Editorial](http://community.topcoder.com/tc?module=Static&d1=match_editorials&d2=srm204).
 
-## Tổng kết
+### Tổng kết
 
 Tham lam thường dễ nghĩ ra, dễ cài đặt và chạy nhanh, nhưng không phải lúc nào cũng đúng. Khi bạn sử dụng duyệt hoặc quy hoạch động, nó giống như bạn đang di chuyển trên mặt đất an toàn. Còn đối với tham lam, thì giống như bạn đang đi trên một bãi mìn. Như bạn đã thấy qua ví dụ 1, có rất nhiều cách tham khác nhau nhưng chỉ có một cách cho kết quả đúng. Vì vậy, khi làm bài, bạn luôn luôn nên tìm cách chứng minh tính đúng đắn của thuật tham.
 
@@ -441,9 +441,9 @@ Không tồn tại một công thức chung nào cho việc áp dụng Tham lam,
 
 * Ngoài ra, việc học tập một số thuật toán có sử dụng Tham lam sẽ giúp nắm vững phương pháp này hơn ([thuật toán Prim](http://weierstrass.is.tokushima-u.ac.jp/ikeda/suuri/dijkstra/Prim.shtml), [thuật toán Kruskal](http://weierstrass.is.tokushima-u.ac.jp/ikeda/suuri/kruskal/Kruskal.shtml), [thuật toán Dijkstra](http://www-b2.is.tokushima-u.ac.jp/~ikeda/suuri/dijkstra/Dijkstra.shtml))
 
-## Bài tập mở rộng
+### Bài tập mở rộng
 
-### Cấp độ 1
+#### Cấp độ 1
 
 - [GroceryBagger](https://community.topcoder.com/stat?c=problem_statement&pm=3450&rd=5868) – SRM 222
 - [FanFailure](http://community.topcoder.com/stat?c=problem_statement&pm=2235&rd=5070) – SRM 195
@@ -454,7 +454,7 @@ Không tồn tại một công thức chung nào cho việc áp dụng Tham lam,
 - [Boxing](http://community.topcoder.com/stat?c=problem_statement&pm=2977&rd=5880) – TCO04 Round 3
 - [Unblur](http://community.topcoder.com/stat?c=problem_statement&pm=2945&rd=5884) – TCO04 Semifinal Room 3
 
-### Cấp độ 2
+#### Cấp độ 2
 
 - [Crossroads](https://community.topcoder.com/stat?c=problem_statement&pm=3042&rd=5863) – SRM 217
 - [TCSocks ](http://community.topcoder.com/stat?c=problem_statement&pm=2894&rd=5853)– SRM 207
@@ -462,7 +462,7 @@ Không tồn tại một công thức chung nào cho việc áp dụng Tham lam,
 - [BioScore](https://community.topcoder.com/stat?c=problem_statement&pm=3038&rd=5882) – TCO04 Semifinal Room 1
 - [Rationalization](https://community.topcoder.com/stat?c=problem_statement&pm=2347&rd=5870) – SRM 224
 
-### Cấp độ 3
+#### Cấp độ 3
 
 - [GoldMine](https://community.topcoder.com/stat?c=problem_statement&pm=1957&rd=4650) – SRM 169
 - [MLBRecord](https://community.topcoder.com/stat?c=problem_statement&pm=2236&rd=5879) – TCO04 Round 2

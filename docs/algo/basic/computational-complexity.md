@@ -1,4 +1,4 @@
-# Độ phức tạp thời gian
+## Độ phức tạp thời gian
 
 **Người viết:**
 - Nguyễn Minh Hiển - Trường Đại học Công nghệ, ĐHQGHN
@@ -10,12 +10,12 @@
 
 
 
-# **Giới thiệu**
+## **Giới thiệu**
 Thông thường khi viết một thuật toán, ta thường quan tâm nó chạy nhanh hay chậm, tốn nhiều bộ nhớ hay không.
 
 Để ước lượng thời gian chạy của một thuật toán dựa  trên *kích thước đầu vào*, chúng ta sử dụng khái niệm: **Độ phức tạp thời gian của thuật toán**.
 
-# **Khái niệm độ phức tạp thời gian (ĐPT)**
+## **Khái niệm độ phức tạp thời gian (ĐPT)**
 >**Độ phức tạp thời gian** là một hàm $f$ đo *số thao tác cơ bản* mà một thuật toán thực thi, với tham biến $n$ là kích thước đầu vào: $y = f(n)$
 
 Trên thực tế, đa phần các thuật toán sẽ được đánh giá theo *trường hợp xấu nhất (worst case)* vì sự đơn giản và thực tế của nó.
@@ -27,11 +27,13 @@ Trong *trường hợp xấu nhất* là khi ta luôn chọn phải phần tử 
 
 Trong từng trường hợp khác nhau của dữ liệu vào, việc tính toán chính xác hàm $f(n)$ (với $x$ tổng quát) thường rất khó. Và ở đây, chúng ta sử dụng *độ phức tạp BigO hay O-lớn* thay thế.
 
-# **Độ phức tạp BigO**
+## **Độ phức tạp BigO**
 Xét 2 hàm số dương $f(n)$ và $g(n)$
 Ta ký hiệu: $f(n) = O(g(n))$
 >Theo định nghĩa giải tích, ký hiệu trên tương đương với:
-$$\lim\limits_{n \rightarrow \infty} \sup\dfrac{f(n)}{g(n)} < \infty$$
+
+> $$\lim\limits_{n \rightarrow \infty} \sup\dfrac{f(n)}{g(n)} < \infty$$
+
 >Gọi là "hàm $f$ không tăng (tiệm cận) nhanh hơn $g$".
 
 **Nói một cách dễ hiểu:** $f(n) = O(g(n))$ thì tồn tại hằng số $c > 0$ để khi $n$ đủ to $($với mọi $n \ge n_0$ nào đó$)$ thì $f(n) \le c\times g(n)$.
@@ -40,8 +42,8 @@ Ví dụ:
 * $f(n) = 2n + 10$ là $O(n)$ vì khi chọn $c = 3$, chỉ cần $n \ge 10$ thì $f(n) = 2n + 10 \le 3n = c \times n$
 * $2n^2 + 10$ thì không phải là $O(n)$ nữa, mà sẽ là $O(n^2)$ (chọn $c = 3$ và $n \ge 4$)
 
-# **Một số quy tắc tính toán ĐPT**
-## Các quy tắc cơ bản
+## **Một số quy tắc tính toán ĐPT**
+### Các quy tắc cơ bản
 - Các phép sau được tính là lệnh đơn: phép đọc, viết, gán và các toán tử cơ bản *(toán tử số học, quan hệ, logic, bit, gán, hỗn hợp)*
  Các phép này có ĐPT $O(1)$
 - Xét các lệnh `S1, S2, ..., Sm` và ĐPT tương ứng của chúng là $O(f_1), O(f_2), \ldots, O(f_m)$ với $f_i$ là các hàm của dữ liệu đầu vào.
@@ -54,7 +56,7 @@ $E$ là một biểu thức logic.
     `for i := E1 to E2 do S1`
     Tính ĐPT sẽ tương tự chuỗi các lệnh liên tiếp. Giả sử $S_1$ được lặp lại $g$ lần thì ĐPT sẽ là $O(g \times f_1)$ với $g$ cũng là hàm của dữ liệu đầu vào.
 
-## Một số chú ý quan trọng
+### Một số chú ý quan trọng
 - Tất cả các bài toán có ĐPT đa thức bậc $k$ thì có ĐPT là $O(n^k)$. Các hằng số, hệ số đa thức thường (không phải luôn luôn) được bỏ qua.
 >Ký hiệu $\log n$ là logarit của $n$ theo cơ số $X$ *(với $X$ được định nghĩa bằng $2, e, 10$ tùy sách)*. Tuy nhiên với phép chuyển cơ số $\log_ab = \dfrac{\log b}{\log a}$ và $\log b$ là một hằng số nhỏ nên ta sẽ không cần quá quan tâm $X$ là cơ số bao nhiêu nữa).
 - Coi $\log n \sim n^\alpha$ với $0 < \alpha < 1$
@@ -81,8 +83,8 @@ Ví dụ: $n\log^2 n + n^2 + m\log n + 1 +q^2 = O(n^2+m\log n +q^2)$
 Tuy nhiên, việc có ĐPT đáp ứng bộ dữ liệu như trong bảng trên, không có nghĩa thuật toán sẽ chạy nhanh (trong khoảng $1s$). Bạn đọc có thể xem chi tiết trong phần **Mở rộng. Hằng số ĐPT**
 
 ---
-# Ví dụ
-## Vòng lặp
+## Ví dụ
+### Vòng lặp
 Dựa vào các quy tắc, ta rút ra được một số `mẹo` khi tính ĐPT các vòng lặp:
     
     1. Tính số lần lặp tối đa của một vòng lặp
@@ -122,7 +124,7 @@ for (int i = 0; i < n; i++){
 ```
 Vòng `i` lặp `n` lần, vòng `j` lặp tổng cộng $1 + 2 + \ldots + n = \dfrac{n \times (n + 1)}{2}$ lần, nên ĐPT chung vẫn sẽ là $\boldsymbol{O(n^2)}$ dù số phép tính đã được giảm đi khá nhiều.    
 
-## Hai con trỏ
+### Hai con trỏ
 Cho một mảng `a[]` đã được sắp xếp. Xác định xem liệu có tồn tại $2$ phần tử trong mảng mà cách nhau $d$ đơn vị hay không.
 Xét lời giải sau:
 ```c++
@@ -147,7 +149,7 @@ Thoạt nhìn, nó khá giống với vòng lặp lồng ở **Ví dụ i.2.** v
 - Thuật toán trên sở dĩ gọi là $2$ con trỏ bởi $2$ biến $i$ và $j$ độc lập, dù cho vòng lặp $j$ nằm trong vòng lặp $i$.
 - Khi gặp vòng lặp lồng, ta cần chú ý hơn, hoặc để chính xác thì nên cộng từng vòng lặp con bên trong. Sau này ta sẽ gặp các thuật toán tối ưu khá ảo như `Knuth's Optimization` hay `Knapsack on tree`, thì ta phải dùng cách này để tính ĐPT một cách chính xác hơn.
 
-## Tìm kiếm nhị phân
+### Tìm kiếm nhị phân
 Cho một dãy được sắp xếp tăng dần, kiểm tra xem dãy có tồn tại giá trị `target` không.
 Xét lời giải bằng tìm kiếm nhị phân như sau:
 ```c++
@@ -170,12 +172,12 @@ int binary_search(int a[], int sizeA, int target) {
 Ở mỗi bước, kích thước của mảng cần tìm kiếm bị giảm đi một nửa. Sau $\lceil \log_2 n \rceil$ bước, thì số phần tử của mảng là $1$ và dừng tìm kiếm.
 Từ đó ĐPT của thuật toán là $\boldsymbol{O(\log n)}$ với $n$ là số phần tử ban đầu của không gian tìm kiếm.
 
-## Đệ quy
-### **Thuật toán quay lui sinh cấu hình tổ hợp**
+### Đệ quy
+#### **Thuật toán quay lui sinh cấu hình tổ hợp**
 
 Đây là một đoạn code sinh tất cả các hoán vị từ $1$ đến $n$ với $(n \le 10)$ 
 ```c++
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 using namespace std;
 const int N = 10;
 
@@ -217,7 +219,7 @@ int main()
 
 
 ---
-### **Chia để trị**
+#### **Chia để trị**
 Đôi khi ĐPT của một thuật toán đệ quy không quá lớn như $O(n!)$.
 Bạn đọc có thể thấy rõ với thuật toán sắp xếp *Merge Sort (Sắp xếp trộn)* sau đây:
 
@@ -276,8 +278,8 @@ Chọn $c = \max\limits_{n \le T}(c'')$, ta được đpcm.
 
 > Bạn đọc có thể tham khảo dạng tổng quát của bài toán: [Master theorem (Định lý thợ)](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms))
 
-## ĐPT và chuỗi nghịch đảo
-### **Ví dụ 1**
+### ĐPT và chuỗi nghịch đảo
+#### **Ví dụ 1**
 Tính độ phức tạp thời gian của đoạn code sau:
 ```c++
 int cnt = 0;
@@ -309,7 +311,7 @@ $f(n)$ cũng chính là số cặp số nguyên dương $(i, j)$ thỏa mãn: $i
 
 ---
 
-### **Ví dụ 2**
+#### **Ví dụ 2**
 Tính độ phức tạp thời gian của giải thuật sàng nguyên tố Erathosenes:
 ```c++
 for (int i = 2; i * i <= n; i++) is_prime[i] = true;
@@ -326,15 +328,15 @@ Vì thế độ phức tạp thời gian là $O\left( n \times \left(\dfrac{1}{2
 $$O\left( n \times \left(\dfrac{1}{2} + \dfrac{1}{3} +\ldots+\dfrac{1}{p} \right) \right) = O\left(n \cdot \underset{{p \le n}}{\sum\limits_{p \style{font-family:Cambria Math}{\large\text{ nguyên tố}}}}\dfrac{1}{p}\right) = \boldsymbol{O( n \log (\log n))}$$
 
 
-# Mở rộng
-## Họ hàm O(n)
+## Mở rộng
+### Họ hàm O(n)
 $O(n)$ thuộc một họ [hàm Bachmann–Landau](https://en.wikipedia.org/wiki/Big_O_notation#Family_of_Bachmann%E2%80%93Landau_notations). Và trong họ hàm này, có một số hàm cũng được dùng để đánh giá ĐPT là $\Omega(n)$ (Omega lớn) và $\Theta(n)$ (Theta lớn).
 <!--    - Nếu như $O(n)$ đánh giá cận trên,
     - Thì $\Omega(n)$ sẽ đánh giá cận dưới: $f(n) = \Omega(g(n))$ thì $\lim_{n \rightarrow \infty} \inf \frac{f(n)}{g(n)} > 0$
     - Và $\Theta(n)$ sẽ là kết hợp cả 2: $f(n) = \Theta(g(n)) \Leftrightarrow \begin{align} f(n) = O(g(n))\\ f(n) = \Omega(g(n))\end{align}$ -->
 Tuy $\Theta(n)$ đánh giá cận chính xác $($không phải cận trên như $O(n))$, nhưng ta vẫn sử dụng $O(n)$ vì sự phổ biến và dễ viết của nó.
 
-## Hằng số ĐPT
+### Hằng số ĐPT
 - Với hầu hết các thuật toán thường gặp trong thực tế, **giá trị hằng số của $O$ (hoặc $Θ$) thường là khá nhỏ. Nếu một thuật toán là $O(n^2)$, ĐPT chính xác là vào khoảng $10n^2$ chứ không phải $10^3n^2$**.
 Nói cách khác: nếu hằng số quá lớn thì thường là các hằng số đó có liên quan tới các đại lượng có sẵn trong đề bài. Khi đó, ta cần gán một tên gọi cho hằng số đó và thêm nó vào đánh giá ĐPT, thay vì bỏ qua.
     - *Ví dụ:* thay vì để $O(1000 \times n)$ rồi suy ra ĐPT là $O(n)$ thì nên viết thành $O(q\times n)$ với $q = 1000$
@@ -351,7 +353,7 @@ Nói cách khác: nếu hằng số quá lớn thì thường là các hằng s�
 - Vì thế, trong từng trường hợp, ta nên chú ý chọn thuật toán cho phù hợp nhất để tối ưu thời gian chạy chương trình.
 Và đặc biệt khi sử dụng các hàm trong thư viện sẵn có hay các code sẵn có thì nên hiểu cơ bản cách hoạt động và tốc độ của nó.
     
-# Lời kết
+## Lời kết
 Với lập trình viên, *độ phức tạp thời gian* là một công cụ hữu ích để ước chừng thời gian thực thi của một thuật toán, hay so sánh giữa các thuật toán với nhau.
 Trong các kỳ thi lập trình, kích cỡ của tập dữ liệu thường được cho trước trong đề bài. Dựa vào điều đó, thí sinh có thể ước chừng *độ phức tạp* rồi tìm ra thuật toán phù hợp. Hoặc là khi đã nghĩ ra một vài thuật toán thì liệu thuật toán nào đáng để cài đặt? Nên chọn những thuật toán nào để cài đặt?
 ĐPT BigO - phân tích dựa trên tiệm cận là một công cụ mạnh mẽ. Nhưng Big O bỏ qua các hằng số, và đôi khi các hằng số lại quan trọng. Vì thế phải sử dụng nó một cách khôn khéo nhất để đạt hiệu quả cao trong lập trình.

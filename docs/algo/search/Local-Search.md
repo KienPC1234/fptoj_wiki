@@ -1,10 +1,10 @@
-# Local Search
+## Local Search
 
 Tác giả: Nguyễn Thành Trung (RR)
 
 
 
-# Bài toán mở đầu (TSP)
+## Bài toán mở đầu (TSP)
 
 Cho N điểm trên mặt phẳng, đánh số từ 1 đến N. Tìm một chu trình xuất phát từ điểm thứ 1, đi qua tất cả các điểm, mỗi đỉnh đúng 1 lần và quay trở về đỉnh ban đầu.
 
@@ -14,7 +14,7 @@ Khi gặp bài NP, ta chỉ có thể tìm cách đưa ra một kết quả càn
 
 Bạn có thể nộp thử bài này ở [VNOJ](https://oj.vnoi.info/problem/torch/).
 
-# Tham Lam
+## Tham Lam
 
 Một thuật toán rất hồn nhiên nhất là, xuất phát từ điểm thứ 1, tại mỗi bước, ta sẽ di chuyển đến điểm gần nó nhất (mà chưa được di chuyển đến trước đó). Lặp lại N lần, ta thu được một chu trình.
 
@@ -61,7 +61,7 @@ Dưới đây là kết quả khi mình chạy với một bộ test được si
 
 Khi quan sát kết quả của thuật toán trên, dễ thấy có rất nhiều cặp cạnh cắt nhau. Khi tồn tại 2 cạnh AB và CD cắt nhau, ta có thể đảo nó thành AC và BD hoặc AD và BC, và giữ nguyên phần còn lại của chu trình. Như vậy ta có thể thu được một kết quả tốt hơn. Nhận xét này đưa ta đến với ý tưởng thứ 2:
 
-# Local Search
+## Local Search
 
 Xét một chu trình ban đầu bất kỳ. Xét tất cả $N^2$ cặp cạnh, với mỗi cặp cạnh u, v, ta có chu trình `1 --> u-1 --> u --> v-1 --> v --> 1`, ta thử đổi nó thành `1 --> u-1 --> v-1 --> u --> v --> 1`. Nếu việc đổi này cho ta một chu trình có trọng số nhỏ hơn, ta giữ lại chu trình mới này.
 
@@ -104,7 +104,7 @@ Minh họa cho test trên (chú ý rằng mình cài đặt sai và không xét 
 
 Trong các bước trên có đề cập đến khái niệm "kề" của 2 cấu hình. Khái niệm này chỉ đơn giản là tập những cấu hình mà ta xét đến khi đang ở một cấu hình nhất định. Chẳng hạn trong bài toán mở đầu, với mỗi đường đi, các cấu hình kề nó là các đường đi nhận được khi đổi một cặp cạnh.
 
-# Local Search dưới cách hiểu của đại số
+## Local Search dưới cách hiểu của đại số
 
 Xét một bài toán tìm giá trị lớn nhất của một hàm 2 chiều J(theta0, theta1).
 
@@ -112,7 +112,7 @@ Xét một bài toán tìm giá trị lớn nhất của một hàm 2 chiều J(
 
 Hình vẽ trên mô tả cách làm của local search: Xuất phát từ điểm xanh đậm, ta xét các điểm ở gần nó, tìm điểm mà J lớn nhất, rồi di chuyển đến điểm đó.
 
-# Bài tập áp dụng:
+## Bài tập áp dụng:
 
 - [ACM ICPC National Vietnam 2017 - Bài E](https://open.kattis.com/contests/vietnam-national17-open/problems/europeantrip)
     - Đây là một bài tập điển hình về áp dụng Local Search trong lập trình thi đấu (Competitive programming). Các bạn nên làm thử bài này trước khi làm những bài khác.

@@ -1,4 +1,4 @@
-# Mảng hậu tố (Suffix Array)
+## Mảng hậu tố (Suffix Array)
 
 **Mảng Hậu Tố** là một CTDL giúp **sort** các **hậu tố** theo **thứ tự từ điển**.
 
@@ -68,13 +68,13 @@ _Code:_
 Suffix array O(n lg^2 n)
 LCP table O(n)
 */
-#include <cstdio>
-#include <algorithm>
-#include <cstring>
+## include <cstdio>
+## include <algorithm>
+## include <cstring>
 
 using namespace std;
 
-#define REP(i, n) for (int i = 0; i < (int)(n); ++i)
+## define REP(i, n) for (int i = 0; i < (int)(n); ++i)
 
 namespace SuffixArray
 {
@@ -121,6 +121,6 @@ namespace SuffixArray
 
 Source: [mukel](http://codeforces.com/profile/mukel)
 
-# Tài liệu tham khảo:
+## Tài liệu tham khảo:
 
 - [Codeforces](http://codeforces.com/blog/entry/15729)

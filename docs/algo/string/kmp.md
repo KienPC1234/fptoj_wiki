@@ -1,4 +1,4 @@
-# Thuật toán KMP 
+## Thuật toán KMP 
 
 **Người viết:** Trịnh Quang Anh - University of Melbourne
 
@@ -14,13 +14,13 @@ Bài viết được dịch từ [đây](https://cp-algorithms.com/string/prefix
 
 **Kiến thức cần biết**: Xử lý xâu cơ bản. Bạn đọc có thể xem lại các thuật ngữ và bài tập về xâu [tại đây](https://vnoi.info/wiki/algo/string/basic).
 
-# Giới thiệu
+## Giới thiệu
 
 Một trong những bài toán kinh điển nhất về xử lý xâu là bài toán so khớp chuỗi: Cho xâu $s$ độ dài $n$ và xâu $t$ độ dài $m$, đếm số lần $s$ xuất hiện trong $t$. Chẳng hạn, nếu $s = \text{"ab"}$ và $t = \text{"aabcabaab"}$, thì $s$ xuất hiện $3$ lần tại ở các vị trí $1$, $4$, $7$ của $t$. Mục tiêu của chúng ta là tìm một thuật toán tối ưu hơn để giải quyết bài toán này, thay vì duyệt từng vị trí để kiểm tra trong $O(mn)$.
 
 Knuth-Morris-Pratt (KMP) là một thuật toán có độ phức tạp **$O(n+m)$** để giải quyết bài toán so khớp chuỗi. Ý tưởng của KMP là mở rộng một hậu tố kết thúc tại $i$ sang hậu tố kết thúc tại $i+1$ mà vẫn đảm bảo khớp với tiền tố tương ứng, từ đó cải thiện độ phức tạp nhờ loại bỏ được thao tác so sánh xâu tốn kém. Các phần tiếp theo sẽ nói rõ các bước để đạt được điều này. Nhưng trước tiên, ta sẽ làm quen với khái niệm **hàm tiền tố**, một hàm giúp chúng ta phân tích kỹ hơn về các cấu trúc "tự khớp" trong xâu $s$, và là cốt lõi của thuật toán KMP.
 
-# Định nghĩa 
+## Định nghĩa 
 
 *Lưu ý: Xuyên suốt bài viết này các vị trí trong mỗi xâu sẽ được đếm từ 0.*
 
@@ -35,7 +35,7 @@ Ví dụ, hàm tiền tố của xâu "$abcabcd$" là $[0, 0, 0, 1, 2, 3, 0]$ v�
 
 Tính nhanh hàm tiền tố là hết sức quan trọng vì nó là một bước thiết yếu trong thuật toán KMP. Ở phần sau, bài viết giới thiệu một thuật toán "ngây thơ" để tính hàm tiền tố với độ phức tạp $O(n^3)$. Từ đó, ta sẽ dùng các nhận xét để tối ưu thuật toán thành độ phức tạp $O(n)$. 
 
-# Thuật toán ngây thơ
+## Thuật toán ngây thơ
 
 Từ biểu diễn toán học của hàm tiền tố, ta có thể xây dựng một thuật vét cạn như sau: Với mỗi $i$ từ $0$ đến $n - 1$, duyệt qua mọi $k$ để kiểm tra điều kiện $s[0 \dots k-1] = s[i - (k-1) \dots i]$, khi đó $\pi[i]$ là giá trị lớn nhất của $k$ có điều kiện được thỏa mãn. 
 
@@ -53,10 +53,10 @@ vector<int> prefix_function(string s) {
 
 Do có $O(n^2)$ cặp $(i, k)$ và so sánh hai xâu bằng `s.substr()` mất $O(n)$, độ phức tạp của thuật toán này là $O(n^3)$.
 
-# Thuật toán tối ưu để tìm hàm tiền tố
+## Thuật toán tối ưu để tìm hàm tiền tố
 Một chút bối cảnh lịch sử: Thuật toán này được tìm ra bởi Morris, chỉ vài tuần trước khi được Knuth tìm ra một cách độc lập. Morris & Pratt đăng báo cáo vào năm 1970, rồi cả ba đồng xuất bản thuật toán này vào năm 1977 (Nguồn: [Wikipedia](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)) 
 
-## Phép tối ưu đầu tiên
+### Phép tối ưu đầu tiên
 
 Nhận xét quan trọng đầu tiên là giá trị của hàm tiền tố chỉ có thể tăng thêm tối đa $1$ đơn vị khi duyệt từ $i$ lên $i + 1$. 
 
@@ -87,7 +87,7 @@ vector<int> prefix_function(string s) {
 
 Tuy nhiên, chúng ta có thể làm tốt hơn. 
 
-## Phép tối ưu thứ hai 
+### Phép tối ưu thứ hai 
 Trước tiên, ta nhận thấy nhược điểm làm cho thuật toán có độ phức tạp $O(n^2)$ là thao tác so sánh xâu mất $O(n)$. 
 
 Như đã đề cập từ đầu bài viết, ý tưởng chính để triệt tiêu thao tác này là mở rộng một hậu tố kết thúc ở $i$ đã khớp tiền tố để có được một hậu tố kết thúc ở $i + 1$ cũng khớp với tiền tố.
@@ -123,7 +123,7 @@ Nếu $s[k] \neq s[i+1]$, lập luận tương tự, độ dài lớn thứ ba c
 Từ đó, ta có thể duyệt qua mọi hậu tố kết thúc tại $i$ khớp với tiền tố độ dài $j$ như sau: Ban đầu đặt $j = \pi[i]$, để đến độ dài tiếp theo thỏa mãn, ta gán $j = \pi[j-1]$. Tương tự lập luận ở phần [phép tối ưu đầu tiên](#Phép-tối-ưu-đầu-tiên), khi chuyển từ $i$ sang $i+1$ ta gán $j = \pi[i] = j+1$ nên $j$ tăng tối đa $1$, và khi cập nhật $j = \pi[j-1]$ thì $j$ giảm ít nhất $1$. Do đó, ta chỉ duyệt qua $O(n)$ giá trị của $j$ và mỗi lần thao tác so sánh hai ký tự mất $O(1)$, đẫn đến độ phức tạp tổng là $O(n)$. 
 
 
-## Thuật toán cuối cùng
+### Thuật toán cuối cùng
 Tổng kết lại, thuật toán của chúng ta hoạt động như sau: 
 
 1. Tính hàm tiền tố $\pi[i]$ bằng cách duyệt từ $i = 1$ đến $i = n - 1$ (gán mặc định $\pi[0] = 0$).
@@ -136,7 +136,7 @@ Tổng kết lại, thuật toán của chúng ta hoạt động như sau:
 <img src="https://i.imgur.com/6LnQDXZ.gif"  style="width: 60%">
 </center>
 
-## Cài đặt
+### Cài đặt
 
 Cài đặt các bước trên rất ngắn và trực quan: 
 
@@ -161,9 +161,9 @@ Một điểm đáng lưu ý nữa là đây là một thuật toán **online**:
 
 Về mặt bộ nhớ, ta vẫn cần phải lưu lại xâu và giá trị các hàm tiền tố trước đó nên vẫn cần đến $O(n)$ bộ nhớ. Trường hợp đặc biệt là khi hàm tiền tố luôn nhỏ hơn một hằng số $M$ nào đó, khi đó ta chỉ cần lưu $M + 1$ chữ cái đầu và $M + 1$ hàm tiền tố tương ứng của xâu. Nhận xét này sẽ tỏ ra rất hữu ích ở các phần sau. 
 
-# Ứng dụng 
+## Ứng dụng 
 
-## Thuật toán Knuth-Morris-Pratt (KMP)
+### Thuật toán Knuth-Morris-Pratt (KMP)
 Quay trở lại với bài toán ban đầu: Đếm số lần xâu $s$ độ dài $n$ xuất hiện trong xâu $t$ độ dài $m$. Lời giải cho bài toán này - thuật toán KMP - là một áp dụng kinh điển của hàm tiền tố. Vậy làm thế nào để dùng hàm tiền tố khi có hai xâu cần khớp chứ không phải trong một xâu? Bằng cách gộp chúng vào nhau.
 
 Nhận xét rằng nếu ta nối xâu $t$ vào sau xâu $s$ và hai xâu được ngăn cách bởi một ký tự $\text{#}$ không nằm trong cả 2 xâu (ví dụ nếu $s$, $t$ gồm toàn chữ cái thì có thể lấy $\text{#}$ là $0$, xâu mới là $s + 0 + t$), thì mỗi một lần $s$ xuất hiện trong $t$ tương đương với một vị trí $i$ ở xâu mới có hàm tiền tố = $\pi[i] = n$. 
@@ -192,7 +192,7 @@ Code trên lưu cả hai xâu $s$, $t$ nên vẫn dùng $O(n + m)$ bộ nhớ, n
 
 Tổng kết lại, thuật toán KMP giải quyết được bài toán so khớp chuỗi trong thời gian $O(n + m)$ và sử dụng $O(n)$ bộ nhớ.
 
-## Đếm số lần xuất hiện của từng tiền tố 
+### Đếm số lần xuất hiện của từng tiền tố 
 
 **Bài toán**
 Ở đây ta xét hai bài toán tương đối giống nhau: 
@@ -244,7 +244,7 @@ for (int i = n - 1; i > 0; i--)
 
 Để giải quyết phiên bản thứ 2, ta chỉ cần áp dụng kỹ thuật được sử dụng ở thuật toán KMP: **nối hai xâu để tạo xâu mới $s + \text{#} + t$ và xây dựng hàm tiền tố cho xâu này**. Sau đó, tìm $ans$ tương tự như phiên bản 1, đáp án là $ans$ của các vị trí $i$ thuộc về xâu $t$ ($i \ge n + 1$). 
 
-## Đếm số xâu con phân biệt trong một xâu 
+### Đếm số xâu con phân biệt trong một xâu 
 
 **Bài toán**
 Cho một xâu $s$ có độ dài $n$. Đếm số xâu con phân biệt của $s$. 
@@ -263,7 +263,7 @@ Vậy số xâu mới bị lặp với một xâu con có trước là $\pi_{max
 
 Ngoài ra, thay vì mỗi bước cập nhật kết quả sau khi thêm một chữ cái vào cuối xâu hiện tại, ta cũng có thể thêm một chữ vào đầu xâu hiện tại, hoặc bắt đầu với xâu hoàn chỉnh và mỗi bước bỏ đi chữ cái đầu (hoặc cuối). Độ phức tạp $O(n^2)$ cũng chưa phải là độ phức tạp tốt nhất - ta có thể đếm số xâu con của một xâu trong $O(n)$ hoặc $O(n \log n)$ nhờ mảng hậu tố (Suffix Array). 
 
-## Nén xâu
+### Nén xâu
 
 **Bài toán**
 Cho một xâu $s$ độ dài $n$. Tìm xâu $t$ có độ dài nhỏ nhất sao cho có thể tạo được xâu $s$ bằng cách lặp lại xâu $t$ hữu hạn lần. 
@@ -303,7 +303,7 @@ $$\underbrace{s_0 ~ s_1}_k ~ \rlap{\underbrace{\phantom{s_2 ~ s_3 ~ s_4 ~ s_5 ~ 
 
 $$s_0 = s_2, s_1 = s_3, s_2 = s_4, s_3 = s_0, s_4 = s_1 \\ \Rightarrow s_0 = s_1 = s_2 = s_3 = s_4  \\ \Rightarrow s_0 ~ \text{nén được } s$$
 
-## Tạo automaton từ hàm tiền tố
+### Tạo automaton từ hàm tiền tố
 
 Một kỹ thuật đặc trưng đã được sử dụng ở các bài nêu trên là: ghép hai xâu $s, t$ vào nhau bằng một ký tự ngăn cách $\text{#}$ không nằm trong $s$ hoặc $t$, rồi tính hàm tiền tố cho xâu $s + \text{#} + t$ này. 
 Việc $\text{#}$ là ký tự không nằm trong cả hai xâu dẫn tới $\pi[i]$ không thể vượt quá $\lvert s \rvert$ với mọi $i$, qua đó cho phép chúng ta chỉ cần lưu xâu $s + \text{#}$ và các giá trị $\pi$ tương ứng với xâu này.
@@ -412,7 +412,7 @@ t_4 &= t_2^{10} + t_3^{100}
 
 Ta không thể dựng cả xâu vì độ lớn bùng nổ lên tới $100^{100}$ chữ cái (!). Tuy nhiên, cách giải cho bài nay không khác gì bài trước, đó là xây dựng automaton và tìm quy hoạch động để miêu tả cách trạng thái thay đổi. 
 
-# Bài tập
+## Bài tập
 Test code KMP: [VNOJ - SUBSTR](https://oj.vnoi.info/problem/substr)
 * [Codeforces - Anthem of Berland](http://codeforces.com/contest/808/problem/G)
 * [Codeforces - MUH and Cube Walls](https://codeforces.com/problemset/problem/471/D)

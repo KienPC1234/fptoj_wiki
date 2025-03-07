@@ -1,6 +1,6 @@
-# Tổng hợp các lời khuyên cho các kỳ thi
+## Tổng hợp các lời khuyên cho các kỳ thi
 
-## Những lời khuyên trước khi thi QG 2017 - Phạm Văn Hạnh (skyvn97)
+### Những lời khuyên trước khi thi QG 2017 - Phạm Văn Hạnh (skyvn97)
 
 Nguồn: [Facebook VNOI](https://www.facebook.com/groups/163215593699283/permalink/1326300137390817)
 
@@ -9,7 +9,7 @@ Vậy là chỉ còn hơn 10 ngày nữa, kì thi học sinh giỏi quốc gia s
 Đừng quên check [Facebook VNOI](https://www.facebook.com/groups/163215593699283/) mỗi ngày để có được những lời khuyên bổ ích. Lưu ý rằng đây chỉ là những lời khuyên dựa trên kinh nghiệm thi VOI của mình, vì vậy các bạn nên tham khảo và áp dụng cho phù hợp.
 Chúc các bạn một năm mới tràn đầy niềm vui và gặt hái nhiều may mắn, khởi đầu bằng một kỳ thi HSG thành công rực rỡ.
 
-### 10. Làm lại đề VOI 5 năm trước
+#### 10. Làm lại đề VOI 5 năm trước
 
 Nguồn: [Facebook VNOI](https://www.facebook.com/groups/163215593699283/permalink/1327577510596413)
 
@@ -32,13 +32,13 @@ Kết quả thi chính thức:
 - [2015](https://drive.google.com/file/d/0B3SHDvqX-049Y1VSN3plZ3VsYzQ/view)
 - [2014](https://drive.google.com/file/d/0B3SHDvqX-049azdxVnE3bHQwTUE/view)
 
-### 9. Đọc lại phần Đồ thị trong cuốn sách của thầy Hoàng
+#### 9. Đọc lại phần Đồ thị trong cuốn sách của thầy Hoàng
 
 Nguồn: [Facebook VNOI](https://www.facebook.com/groups/163215593699283/permalink/1329795130374651/)
 
 Đồ thị là chủ đề phổ biến nhất trong mỗi đề thi quốc gia. Năm nào cũng có đồ thị, ít thì một bài, nhiều thì có thể là hai (2016, 2013, 2012) hay thậm chí ba bài (2014). Không chỉ các đoạn mã nguồn và thuật toán, bạn cần chú ý đến cả phần lý thuyết và những khái niệm như chu trình/đường đi euler/hamilton, chu trình/đường đi đơn, đa đồ thị, khuyên,... để tránh việc không nắm được đề bài nếu như các khái niệm này xuất hiện trong đề. Các thuật toán như khớp, cầu, FordBellman dễ bị lãng quên do số lượng bài về nó không nhiều, nhưng hoàn toàn có thể gặp lại trong đề thi. Bài REFORM (VOI 2015 ) là điển hình của việc nhiều bạn không nhớ các thuật toán về cầu nên không giải được bài này, dù thuật toán của nó khá tự nhiên và đơn giản.
 
-### 8. Chú trọng việc rèn luyện kĩ năng code hơn là suy nghĩ
+#### 8. Chú trọng việc rèn luyện kĩ năng code hơn là suy nghĩ
 
 Nguồn: [Facebook VNOI](https://www.facebook.com/groups/163215593699283/permalink/1332255456795285/)
 
@@ -47,7 +47,7 @@ Vì vậy, bạn không được chủ quan. Giải nhất PreVOI hoàn toàn c�
 
 Vì tương lai con em chúng ta, ngay từ lúc này, bạn nên chịu khó code nhiều, code chắc tay, code cẩn thận thay vì nghĩ những bài quá khó.
 
-### 7. Tận dụng các kì thi thử để xác định chiến thuật trong kì thi thật
+#### 7. Tận dụng các kì thi thử để xác định chiến thuật trong kì thi thật
 
 Nguồn: [Facebook VNOI](https://www.facebook.com/groups/163215593699283/permalink/1332788813408616/)
 
@@ -55,7 +55,7 @@ Nguồn: [Facebook VNOI](https://www.facebook.com/groups/163215593699283/permali
 
 Chúc các bạn thi tốt :D
 
-### 6. Đánh giá tốc độ của một thuật toán
+#### 6. Đánh giá tốc độ của một thuật toán
 
 Nguồn: [Facebook VNOI](https://www.facebook.com/groups/163215593699283/permalink/1334546679899496/)
 
@@ -67,7 +67,7 @@ Tuy nhiên, cách đánh giá trên khá phiến diện, vì nhiều lý do: Hà
 
 Ví dụ, bài MINROAD 2014, hồi đấy mình nghĩ ra một thuật toán O(Nlog^2N), với giới hạn N <= 3e5. Mình ngồi code luôn bài đấy, mà không nghĩ để tối ưu xuống O(NlogN). Về sau, mình phát hiện ra mình là người duy nhất code thuật đó, tất cả mọi người khác trong đội đều làm O(NlogN) hay O(N). Mình nghĩ quyết định lúc đó khá hợp lý, bởi hồi đấy mình code khá chậm và rất tệ, nên cần ưu tiên việc code và kiểm tra hơn và chấp nhận không được điểm tối đa bài đó.
 
-### 5. Không sử dụng các thuật toán "lạ" trong kỳ thi VOI.
+#### 5. Không sử dụng các thuật toán "lạ" trong kỳ thi VOI.
 
 Nguồn: [Facebook VNOI](https://www.facebook.com/groups/163215593699283/permalink/1341529935867837/)
 
@@ -87,7 +87,7 @@ Tất nhiên, không có bất kỳ giới hạn kiến thức nào trong kì th
 
 Nhớ rằng, VOI không là chỗ thích hợp cho việc phô trương sức mạnh, hãy cẩn thận và chắc chắn để đảm bảo những sự cố thương tâm không xảy ra.
 
-### 4. Về các bài multitest
+#### 4. Về các bài multitest
 
 Nguồn: [Facebook VNOI](https://www.facebook.com/groups/163215593699283/permalink/1338258636194967/)
 
@@ -113,7 +113,7 @@ Có một kinh nghiệm nhỏ để giúp các bạn tránh việc khơ�
 - Khi đọc code, bạn điểm danh từng biến, với mỗi biến, bạn tìm lệnh khởi tạo của biến đó trong code, sau đó mới kiểm tra đến biến tiếp theo…
 - Thay vì viêc khởi tạo theo kiểu “For i := 1 -> N a[i] = 0”, nên dùng fillChar hoặc memset.
 
-### 3. Điều chỉnh đồng hồ máy thi cho đúng với thời gian thực
+#### 3. Điều chỉnh đồng hồ máy thi cho đúng với thời gian thực
 
 Nguồn: [Facebook VNOI](https://www.facebook.com/groups/163215593699283/permalink/1340150249339139/)
 
@@ -121,7 +121,7 @@ Nguồn: [Facebook VNOI](https://www.facebook.com/groups/163215593699283/permali
 Tưởng tượng, 8h bắt đầu thi, máy tính bạn chỉ 7h. Đến khi máy tính chỉ 9h45, bạn yên tâm còn 75p, quá thừa để AC cả 3 bài, và bắt đầu chìm vào giấc ngủ. Thế nhưng, 15p sau thình lình gv gọi bạn dậy và bạn chợt nhận ra tương lai sụp đổ, cuộc đời bế tắc. Do đó, việc kiểm soát thời gian là vô cùng quan trọng.
 Một trong những lỗi về chiến lược mà kể cả những ng đã thi nhiều lần mà vẫn mắc, đó là quá cay cú đi tìm lời giải cho một bài toán, kết quả là không còn thời gian chạy trâu các bài còn lại. Nên nhớ rằng, đôi khi sub cuối bài 2 khó hơn rất nhiều, nhưng lại ít điểm hơn sub 1 bài 3, do đó trước khi bắt đầu nghĩ một bài, bạn cần đặt gia hạn mức thời gian nghĩ bài đó.
 
-### 2. Sử dụng thư viện thay thế bits/stdc++.h
+#### 2. Sử dụng thư viện thay thế bits/stdc++.h
 
 Với các bạn code C++, việc #include<bitch/stdc++.h> vô cùng tiện lợi, nó giúp bạn khỏi bận tâm về việc include mọi thư viện khác. Tuy nhiên, cách đây ba năm, mọi bản G++ tích hợp sẵn trong Themis đều quá cũ, việc sử dụng thư viện này chắc chắn dẫn tới lỗi biên dịch. Cách đây hai năm, việc sử dụng thư viện này vẫn được coi là điều cấm kỵ trong kì thi học sinh giỏi quốc gia. Ngày nay, do các bản Themis đã được cập nhật, việc sử dụng thư viện trên đã được chấp nhận. Do vậy, theo quan điểm cá nhân, #include<bits/stdc++.h> không phải là lựa chọn mạo hiểm. Tuy nhiên, không một quy định nào nói rõ phiên bản Themis nào sẽ được sử dụng, nên cũng không lấy gì đảm bảo rằng #include<bits/stdc++.h> không phải là tai họa. Bởi vậy, các bạn nên nhớ tên các thư viện sau đây để include thay thế cho thư viện huyền thoại kia.
 
@@ -139,7 +139,7 @@ Danh sách các thư viện hay dùng:
 3. Các thư viện cấu trúc dữ liệu STL: vector, queue, stack, set, map, string,...
 Các bạn thấy thư viện nào hay dùng mà chưa được liệt kê trong bài viết này, hãy để lại comment để mình bổ sung nhé :)
 
-### 1. Một số kinh nghiệm nho nhỏ khác:
+#### 1. Một số kinh nghiệm nho nhỏ khác:
 Kỳ thi quốc gia đã đến thật gần. Các bạn đã bỏ ra rất nhiều công sức, tâm huyết và niềm tin vào những tháng học đôij tuyển rồi phải không :) để có những bước chuẩn bị hoàn hảo cuối cùng, hãy tham khảo bài viết dưới đây.
 (NOTE: Post này chỉ nhằm mục đích giải trí. Bạn nào cảm thấy quá căng thẳng hoặc có tính mê tín thì có thể k đọc nữa.)
 
@@ -173,7 +173,7 @@ Ngày 5/1, các giờ hoàng đạo bao gồm Sửu (1h - 3h), Ngọ (11h - 13h)
 Nếu có thể, hãy làm bài thi quốc gia vào những khoảng thời gian này, sẽ có lợi cho bạn hơn.
 Trong ngày mai, mình sẽ cố gắng liệt kê thêm những kinh nghiệm khác để chia sẻ với các bạn. Chúc các bạn nghỉ ngơi thoải mái và có một buổi khai mạc rực rỡ :)
 
-### 0. Nghỉ ngơi thư giãn thoải mái.
+#### 0. Nghỉ ngơi thư giãn thoải mái.
 
 Giờ k phải là lúc lo âu căng thẳng hay xám hối vì sự lười nhác của bạn nữa. Hãy nghỉ ngơi, thư giản thoải mái, làm những gì khiến bạn sung sướng nhất trong ngày cuối cùng này.
 
@@ -187,11 +187,11 @@ À quên, chúc 5 bạn NDT, GTTV, DXB, NPD và TQA ngày mai vui vẻ :) Ah
 
 
 
-# 1 vài góp ý sau kỳ thi VO17 - RR
+## 1 vài góp ý sau kỳ thi VO17 - RR
 
 Nguồn: [Facebook VNOI](https://www.facebook.com/groups/163215593699283/permalink/1338438256177005/)
 
-## 1
+### 1
 
 Khi đi thi các bạn cần chú ý tránh những code có thể dẫn đến Compile Error:
 
@@ -212,13 +212,13 @@ namespace A {
 int main() { A::solve(); }
 ```
 
-## 2
+### 2
 
 Bài 2 ngày 1 (VO17TV) có 1 số bạn dùng Suffix array. Cách này đúng nhưng cài đặt phức tạp hơn rất nhiều so với dùng hash. Khi đi thi mỗi lựa chọn sai lầm về thuật toán kiểu này sẽ làm bạn tiêu tốn rất nhiều thời gian, và thường không sửa chữa kịp.
 
 Vì vậy khi nghĩ ra bất kỳ thuật toán nào, bạn nên tiếp tục suy nghĩ xem có cách nào đơn giản hơn không. Chỉ bắt đầu code khi thật sự chắc chắn không có cách nào tốt hơn.
 
-## 3
+### 3
 
 Có chiến thuật rõ ràng cho 1 bài. Với những bài cài đặt phức tạp như bài VO17BACH, bạn cần có chiến thuật rõ ràng ngay từ đầu là debug như thế nào.
 

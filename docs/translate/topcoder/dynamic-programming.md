@@ -1,4 +1,4 @@
-# Nhập môn Quy hoạch động
+## Nhập môn Quy hoạch động
 
 Nguồn: [Topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/).
 
@@ -7,9 +7,9 @@ Có rất nhiều bài toán được áp dụng **quy hoạch động (QHĐ)** 
 Note: Trong bài này có thể có nhiều phần bạn đã biết, bạn hoàn toàn có thể chuyển qua đọc phần khác.
 
 
-# Beginner
+## Beginner
 
-## QHĐ là gì ?
+### QHĐ là gì ?
 
 **QHĐ** là kĩ thuật được được dùng khi có một công thức và một (hoặc một vài) trạng thái bắt đầu. Một bài toán được tính bởi các bài toán nhỏ hơn đã tìm ra trước đó. **QHĐ** có độ phức tạp đa thức nên sẽ chạy nhanh hơn quay lui và duyệt trâu.
 
@@ -21,13 +21,13 @@ Bây giờ chúng ta sẽ xây dựng thuật giải:
 
 Đầu tiên, cần tìm một trạng thái của bài toán.
 
-## Trạng thái là gì ?
+### Trạng thái là gì ?
 
 Trạng thái là một trường hợp, một bài toán con của bài toán lớn.
 
 Ví dụ, trạng thái trong bài này là số lượng xu nhỏ nhất để tổng bằng $i$, với $i \le S$. Để tìm ra trạng thái $i$, cần phải tìm tất cả các trạng thái $j$ mà $(j < i)$. Một khi đã tìm ra trạng thái $i$, ta có thể dễ dàng tìm ra trạng thái của $i+1$.
 
-## Làm thế nào để tìm được ?
+### Làm thế nào để tìm được ?
 
 Với mỗi $j$, $V_j \le i$, tìm số đồng xu nhỏ nhất để tổng bằng $i-V_j$. Giả sử nó bằng $m$. Nếu $m+1$ nhỏ hơn số lượng đồng xu hiện tại cho tổng $i$ thì ta cập nhập nó bằng $m+1$.
 
@@ -132,7 +132,7 @@ Vậy là chúng ta đã tìm được lời giải cho 3 đồng xu tổng bằ
 Dựa vào bảng trên, ta có thể truy vết lại được những đồng xu nào được chọn để tối ưu bài toán.
 Bài QHĐ trên còn có một cách tiếp cận khác nữa. Lần này, ta sẽ không tính liên tiếp các tổng. Bắt đầu từ trạng thái 0. Thử nhét đồng xu thứ 1 vào các tổng đã tính. Nếu như tổng $t$ có số đồng xu ít hơn số đồng xu hiện tại thì tiến hành cập nhật. Rồi tiếp tục thử với đồng thứ 2, 3 cho đến khi thử hết các đồng. Ví dụ, nhét đồng 1 (giá trị 1) vào tổng 0 ta có tổng 1. Vì ta chưa tính tổng 1 nên $S[1] = 1$. Nhét đồng 1 vào tổng 1 ta có $S[2] = 2$. Tiếp tục làm như vậy với các tổng còn lại. Sau đồng 1, ta nhét đồng 2(giá trị 3) vào tổng 0 ta được 1, mà $S[3] = 3 > 1$, ta cập nhật $S[3] = 1$. Tiếp tục nhét đồng 2 vào các tổng còn lại, cũng nhứ thử nhét các đồng xu khác.
 
-#Elementary
+## Elementary
 
 Bây giờ, chúng ta cùng đến một khái niệm mới, **công thức truy hồi (recurrent relation)**, mối liên hệ giữa những trạng thái.
 
@@ -196,7 +196,7 @@ Gợi ý: Tại mỗi bước, chọn ra trong số các đỉnh chưa thăm mà
  - [BadNeighbors](http://community.topcoder.com/tc?module=ProblemDetail&rd=5009&pm=2402) – 2004 TCCC Round 4.
  - [FlowerGarden](http://community.topcoder.com/tc?module=ProblemDetail&rd=5006&pm=1918) – 2004 TCCC Round 1.
 
-# Intermediate
+## Intermediate
 
 Tới đây bạn sẽ được làm quen với QHĐ 2 chiều.
 
@@ -226,7 +226,7 @@ $S[i][j]$ có thể được tính từ trái sang phải, từ trên xuống d�
  - [AvoidRoads](http://community.topcoder.com/tc?module=ProblemDetail&rd=4709&pm=1889) – 2003 TCO Semifinals 4
  - [ChessMetric](http://community.topcoder.com/tc?module=ProblemDetail&rd=4482&pm=1592) – 2003 TCCC Round 4
 
-#Upper-Intermediate
+## Upper-Intermediate
 
 Phần này sẽ giới thiệu với bạn những bài toán cùng với một số điều kiện.
 
@@ -275,7 +275,7 @@ Có thể dễ dàng thấy đây là một bài Dijkstra cơ bản, tuy nhiên 
  - [QuickSums](http://community.topcoder.com/tc?module=ProblemDetail&rd=5072&pm=2829) – SRM 197 Div 2
  - [ShortPalindromes](http://community.topcoder.com/tc?module=ProblemDetail&rd=4630&pm=1861) – SRM 165 Div 2
 
-# Advanced
+## Advanced
 
 Những bài sau đây sẽ cần một chút kĩ năng phân tích để có thể tối ưu chúng thành bài QHĐ.
 

@@ -1,4 +1,4 @@
-# Một vài bài tập về Palindrome
+## Một vài bài tập về Palindrome
 
 **Tác giả**: Nguyễn Hoành Tiến
 
@@ -6,7 +6,7 @@
 
 Palindrome hay còn gọi là xâu đối xứng, xâu đối gương là tên gọi của những xâu kí tự mà khi viết từ phải qua trái hay từ trái qua phải thì xâu đó không thay đổi. VD: MADAM, IOI,... Nhờ tính chất đặc biệt đó mà có khá nhiều bài tập có liên quan đến Palindrome, phần lớn trong chúng thường đi kèm với QHĐ. Tôi xin giới thiệu với các bạn một vài bài tập như vậy.
 
-# Bài 1: Kiểm tra Palindrome
+## Bài 1: Kiểm tra Palindrome
 
 **Bài toán**: Cho 1 xâu. Kiểm tra nó có phải là Palindrome hay không?
 
@@ -47,13 +47,13 @@ end;
 
 ```
 
-# Bài 2: Xâu con Palindrome dài nhất
+## Bài 2: Xâu con Palindrome dài nhất
 
 **Bài toán**: Cho một xâu S, độ dài không quá 1000 kí tự. Tìm palindrome dài nhất là xâu con của S (Xâu con là một dãy các kí tự liên tiếp).
 
 Đây cũng là một bài cơ bản với nhiều cách làm.
 
-## Cách 1: QHĐ
+### Cách 1: QHĐ
 
 Dùng mảng `F[i, j]` có ý nghĩa: `F[i, j] = true/false` nếu đoạn gồm các kí tự từ $i$ đến $j$ của $S$ có/không là palindrome.
 
@@ -89,7 +89,7 @@ Kết quả là: $Max(j-i+1) \le j$ thỏa $F[i,j] = True$.
 
 Chú ý: Với $N$ lớn, ta phải thay mảng 2 chiều $F$ bằng 3 mảng 1 chiều và dùng thêm biến max lưu giá trị tối ưu.
 
-## Cách 2: Duyệt có cận
+### Cách 2: Duyệt có cận
 
 Ta xét từng vị trí $i$:
 
@@ -153,7 +153,7 @@ Cách làm này có độ phức tạp: $max \* (N-max)$. Vì vậy nó chạy n
 
 Bài này còn có một cách NlogN nữa là dùng [Suffix Aray](algo/data-structures/suffix-array), thậm chí có cách $O(N)$ là sử dụng Suffix Tree và [thuật toán tìm LCA](algo/data-structures/lca). Đương nhiên cách cài đặt không hề dễ dàng, tôi sẽ thảo luận với các bạn vào một dịp khác.
 
-# Bài 3: Chia một xâu thành ít nhất các Palindrome
+## Bài 3: Chia một xâu thành ít nhất các Palindrome
 
 **Bài toán**: Cho 1 xâu độ dài không quá 1000. Chia nó thành ít nhất các Palindrome.
 
@@ -194,7 +194,7 @@ end;
 
 Vậy thuật toán của chúng ta có độ phức tạp tính toán là $O(N^2)$, chi phí bộ nhớ là $O(N)$.
 
-# Bài 4: Pal - Ioicamp - Marathon 2005-2006
+## Bài 4: Pal - Ioicamp - Marathon 2005-2006
 
 **Bài toán**: Cho một xâu, hỏi nó có bao nhiêu xâu con là palindrome; xâu con ở đây gồm các kí tự không cần liên tiếp độ dài không quá 120.
 
@@ -269,7 +269,7 @@ end;
 
 Đoạn chương trình trên chỉ có tính mô phỏng, muốn hoàn thiện bạn phải cài đặt các phép tính cộng trừ số lớn vì kết quả có thể lên tới $2^{n-1}$. Độ phức tạp của thuật toán là $O(N^2)$. Vì vậy, chúng ta hoàn toàn có thể làm với $N = 1000$, khí đó cần rút gọn mảng $F$ thành ba mảng một chiều.
 
-# Bài 5: Palindrome - IOI 2000
+## Bài 5: Palindrome - IOI 2000
 
 **Bài toán**: Cho một xâu độ dài không quá 500, hỏi phải thêm vào nó ít nhất bao nhiêu xâu kí tự để nó trở thành một palindrome.
 
@@ -283,6 +283,6 @@ Ta có công thức:
 
 Bài này được ra từ thời năm 2000, khi đó bộ nhớ cho phép rất nhỏ. Muốn chương trình chạy với $n = 500$ thì cần rút gọn $F$ thành ba mảng một chiều. Muốn truy vết, bạn phải dùng mảng bit hoặc dùng dữ liệu động.
 
-# Bài tập luyện tập:
+## Bài tập luyện tập:
 
 - [SPOJ - PALIN](http://www.spoj.com/problems/PALIN/)

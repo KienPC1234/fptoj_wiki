@@ -1,4 +1,4 @@
-# Lũy thừa nhị phân
+## Lũy thừa nhị phân
 
 **Tác giả:**
 * Cao Thanh Hậu - Trường Đại học Khoa học Tự Nhiên, ĐHQG-HCM
@@ -9,11 +9,11 @@
 
 
 
-# Lời nói đầu
+## Lời nói đầu
 
 Phép tính lũy thừa là một trong những phép tính cơ bản nhất, xuất hiện rất nhiều trong các công thức toán học và tất nhiên cũng có hàng tá các ứng dụng trong tin học. Vậy đâu là cách tính lũy thừa hiệu quả nhất trong lập trình và những ứng dụng của lũy thừa là gì, mời bạn đọc cùng tìm hiểu.
 
-# Thuật toán và cài đặt
+## Thuật toán và cài đặt
 
 Để gợi ý cho bạn đọc, hãy cùng giải câu đố sau: hãy tính $3^{10}$ bằng các phép nhân sao cho số phép nhân cần dùng là ít nhất. Trong mỗi phép nhân, bạn chỉ được sử dụng thừa số là $3$ hoặc là kết quả của một phép nhân trước đó.
 
@@ -70,9 +70,9 @@ long long Pow(long long a, long long b) {
 
 Thuật toán có độ phức tạp là $\log(b)$.
 
-# Ứng dụng
+## Ứng dụng
 
-## Tính lũy thừa chia lấy dư
+### Tính lũy thừa chia lấy dư
 
 Khi $a > 1$ và $b$ lớn thì $a^b$ rất lớn, vì vậy người ta thường yêu cầu tính $a^b$ chia lấy dư cho một số tự nhiên $M$ nào đó.
 
@@ -101,7 +101,7 @@ Trong các trường hợp $b$ rất lớn so với $m$, có thể áp dụng t�
 
 Một ví dụ điển hình ứng dụng tính chất bên trên là tính $a^{b^c} \mod M$ với $M$ là một số nguyên tố. Khi đó, ta cần tính $a^{b^c \mod (M - 1)} \mod M$
 
-## Nhân lấy dư
+### Nhân lấy dư
 
 Cần tính $a \times b \text{ mod } m$.
 
@@ -130,7 +130,7 @@ long long Mul(long long a, long long b) {
 }
 ```
 
-## Tính số Fibonacci lớn - Phép nhân ma trận
+### Tính số Fibonacci lớn - Phép nhân ma trận
 
 Để hiểu rõ phần này, bạn đọc cần nắm các kiến thức cơ bản về [nhân ma trận](https://vnoi.info/wiki/algo/trick/matrix-multiplication.md)
 
@@ -158,7 +158,7 @@ $$
 
 Vì phép nhân ma trận có tính chất kết hợp nên ta dễ dàng áp dụng kĩ thuật lũy thừa nhị phân (thay số nguyên thành ma trận) để đạt được độ phức tạp $O(\log(n))$.
 
-# Luyện tập
+## Luyện tập
 
 [Kiểm tra siêu máy tính](https://oj.vnoi.info/problem/tnhtest)
 
@@ -166,6 +166,6 @@ Vì phép nhân ma trận có tính chất kết hợp nên ta dễ dàng áp d�
 
 [LOCKER](https://www.spoj.com/problems/LOCKER/)
 
-# Tham khảo
+## Tham khảo
 
 Bài viết được tham khảo từ [Algorithms for Competitive Programming](https://cp-algorithms.com/algebra/binary-exp.html).

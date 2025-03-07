@@ -1,4 +1,4 @@
-# Public Key Cryptography
+## Public Key Cryptography
 
 **Tác giả**: Hoàng Gia Minh
 
@@ -6,7 +6,7 @@ Bài viết này nhằm giúp bạn đọc nắm được ý tưởng cơ bản 
 
 
 
-# 1. Một số khái niệm
+## 1. Một số khái niệm
 
 **Mã hóa** (Encryption): Quá trình chuyển đổi thông tin từ dạng thông thường (có thể đọc được) sang dạng không đọc được (nếu không có khóa bí mật), nhằm bảo mật thông tin.
 
@@ -14,9 +14,9 @@ Bài viết này nhằm giúp bạn đọc nắm được ý tưởng cơ bản 
 
 **Khóa** (Key): Một đoạn thông tin được sử dụng để mã hóa và/hoặc giải mã.
 
-# 2. Lịch sử
+## 2. Lịch sử
 
-## 2.1. Mã hóa khóa đối xứng (_Symmetric-key cryptography_)
+### 2.1. Mã hóa khóa đối xứng (_Symmetric-key cryptography_)
 
 Cho đến trước năm 1976, các phương pháp mã hóa đều là mã hóa đối xứng. 
 
@@ -31,7 +31,7 @@ Các hệ mã hóa đối xứng sử dụng **cùng một khóa** cho cả bên
 - Để đảm bảo trong 1 nhóm $n$ người cần phải có 1 số lượng khóa khá lớn - $\frac{n(n-1)}{2}$ khóa. Điều này dẫn đến một bài toán về việc lưu trữ, phân phối một số lượng lớn khóa mà vẫn phải đảm bảo sự an toàn của chúng.
 - Do bên gửi và nhận sử dụng chung khóa, chúng ta không thể xác định được nguồn gốc của một thông điệp (message).
 
-## 2.2. Mã hóa khóa công khai (_Public-key cryptography_)
+### 2.2. Mã hóa khóa công khai (_Public-key cryptography_)
 
 Vào năm 1874, William Stanley Jevons viết trong quyển _The Principles of Science_ về mối liên hệ giữa các hàm một chiều và mật mã học. Đặc biệt, ông đã đi sâu vào bài toán phân tích ra thừa số nguyên tố (sau này được sử dụng trong thuật toán RSA). 
 
@@ -43,15 +43,15 @@ Khác với mã đối xứng, mã hóa khóa bất đối xứng sử dụng m�
 
 ![Hình minh họa](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Public_key_encryption.svg/500px-Public_key_encryption.svg.png)
 
-# 3. Ứng dụng
+## 3. Ứng dụng
 
 Mật mã hóa khóa công khai hay còn gọi là mã hóa bất đối xứng có 2 ứng dụng phổ biến sau:
 
-## 3.1. Mã hóa công khai (_Public-key encryption_): 
+### 3.1. Mã hóa công khai (_Public-key encryption_): 
 
 Một thông điệp được mã hóa bằng khóa công khai của người nhận. Thông điệp này chỉ có thể giải mã được bằng khóa bí mật mà chỉ người nhận có. 
 
-## 3.2. Chữ ký điện tử (_Digital signatures_): 
+### 3.2. Chữ ký điện tử (_Digital signatures_): 
 
 Chữ ký điện tử là thông tin đi kèm với dữ liệu nhằm mục đích xác định chủ sở hữu của dữ liệu đó.
 
@@ -63,7 +63,7 @@ Cụ thể hơn, bên gửi sẽ tính ra mã hash $h$ của văn bản, sau đ�
 - Giải mã _"chữ ký"_ $\sigma$ thành $h'$ bằng khóa công khai.
 - So sánh $h$ và $h'$, nếu chúng bằng nhau thì quá trình xác thực thành công, ngược lại quá trình xác thực thất bại.
 
-# 4. RSA
+## 4. RSA
 
 RSA là một trong những phương pháp mã hóa khóa công khai đầu tiên được ứng dụng rộng rãi trong việc đảm bảo an toàn khi truyền thông tin. Sự bất đối xứng của hệ mã này được dựa trên quan sát là khó có thể phân tích ra thừa số nguyên tố của một số là tích của 2 số nguyên tố. RSA được tạo thành bằng chữ cái đầu tiên của Ron **R**ivest, Adi **S**hamir, Lenonard **A**dleman, 3 người đầu tiên mô tả thuật toán vào năm 1977.
 
@@ -75,7 +75,7 @@ và dù cho có biết cả $e$, $n$ hay cả $m$ thì cũng rất khó để t�
 
 Tiếp theo chúng ta sẽ đi sâu vào từng công đoạn của 1 hệ mã, bao gồm việc mã hóa, giải mã và sinh khóa.
 
-## 4.1 Mã hóa
+### 4.1 Mã hóa
 
 Giả sử rằng Bob muốn gửi mẫu tin $M$ cho Alice.
 
@@ -87,7 +87,7 @@ Bob gửi $c$ cho Alice.
 
 Lưu ý rằng sao khi mã hóa, chính Bob cũng không thể giải mã được từ $c$ thành $m$.
 
-## 4.2. Giải mã
+### 4.2. Giải mã
 
 Alice tính lại ra $m$ từ $c$ dựa vào khóa bí mật $d$:
 
@@ -95,7 +95,7 @@ $ c^d \equiv (m^e)^d \equiv m \pmod n $
 
 Dựa vào $m$, Alice có thể khôi phục lại mẫu tin ban đầu $M$.
 
-## 4.3. Sinh khóa (Key generation)
+### 4.3. Sinh khóa (Key generation)
 
 - Chọn 2 số nguyên tố khác nhau $p$ và $q$.
 
@@ -142,18 +142,18 @@ Không mất tính tổng quát, giả sử $gcd(m, n) = p$. Ta có:
 (chứng mình tương tự trong trường hợp 1)
 
 
-## 4.4. Sample code
+### 4.4. Sample code
 
 ```python
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+## !/usr/bin/env python
+## -*- coding: utf-8 -*-
 
 import random
 
 def is_prime(n):
     return all([(n % j) for j in range(2, int(n ** 0.5) + 1)]) and n > 1
 
-# Sinh ra số nguyên tố ngẫu nhiên trong [left, right) mà khác exclude
+## Sinh ra số nguyên tố ngẫu nhiên trong [left, right) mà khác exclude
 def random_prime(left, right, exclude = -1):
     p = random.randint(left, right - 1);
     if is_prime(p) and p != exclude:
@@ -161,11 +161,11 @@ def random_prime(left, right, exclude = -1):
     else:
         return random_prime(left, right - 1, exclude)
 
-# Thuật toán tìm nghịch đảo modulo
-# MMI(A, n) = x thỏa mãn (Ax) mod n = 1
+## Thuật toán tìm nghịch đảo modulo
+## MMI(A, n) = x thỏa mãn (Ax) mod n = 1
 MMI = lambda A, n,s=1,t=0,N=0: (n < 2 and t%N or MMI(n, A%n, t, s-A/n*t, N or n),-1)[n<1]
 
-# Thuật toán sinh khóa
+## Thuật toán sinh khóa
 def rsa_generate():
     p = random_prime(1, 255)
     q = random_prime(1, 255, p)
@@ -186,7 +186,7 @@ def rsa_decrypt(encrypt_message, n, d):
     return pow(encrypt_message, d, n)
 
 
-# Example
+## Example
 n, e, d = rsa_generate()
 
 print 'n={0}, e={1}, d={2}'.format(n, e, d)
@@ -201,7 +201,7 @@ decrypted_message = rsa_decrypt(encrypted_message, n, d)
 print 'Decrypted message: {0}'.format(decrypted_message)
 ```
 
-# 5. Tham khảo
+## 5. Tham khảo
 
 [Wiki - Public-key Cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography)
 

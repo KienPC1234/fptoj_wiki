@@ -1,4 +1,4 @@
-# Machine Learning 101 (1): Làm quen
+## Machine Learning 101 (1): Làm quen
 
 Tác giả: Nguyễn Xuân Khánh
 

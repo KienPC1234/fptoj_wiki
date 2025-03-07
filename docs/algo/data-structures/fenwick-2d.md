@@ -1,4 +1,4 @@
-# Cây chỉ số nhị phân 2 chiều (BIT 2 chiều)
+## Cây chỉ số nhị phân 2 chiều (BIT 2 chiều)
 
 **Tác giả:** 
 - Phạm Công Minh - THPT chuyên Khoa học Tự Nhiên, ĐHQGHN 
@@ -12,14 +12,14 @@
 
 
 
-# Giới thiệu
+## Giới thiệu
 
 BIT 2 chiều là cấu trúc dữ liệu mở rộng của BIT 1 chiều. Công dụng chính của BIT 2 chiều là xử lý các truy vấn lên hình chữ nhật con trên một mảng 2 chiều. 
 
 Bài viết yêu cầu người đọc hiểu rõ cách hoạt động của BIT 1 chiều. Các bạn có thể đọc về BIT 1 chiều tại đây: [VNOI - Cây chỉ số nhị phân](https://vnoi.info/wiki/algo/data-structures/fenwick.md#c%C3%A2y-ch%E1%BB%89-s%E1%BB%91-nh%E1%BB%8B-ph%C3%A2n).
 
 
-# Bài toán
+## Bài toán
 
 **Các định nghĩa**:
 
@@ -38,7 +38,7 @@ Cho mảng 2 chiều $A$ có $N$ hàng $M$ cột (đánh số từ 1). Có $Q$ t
 
 Giới hạn: $1 \leq N, M \leq 10^3$, $1 \leq Q \leq 2 \times 10^5$ 
 
-## Thuật toán ngây thơ 1
+### Thuật toán ngây thơ 1
 
 Với truy vấn 1, ta cộng trực tiếp vào mảng. Với truy vấn 2, ta duyệt qua từng phần tử của $A[1:u][1:v]$ và cộng giá trị vào kết quả.
 
@@ -61,13 +61,13 @@ int query(int u, int v){
 
 ```
 
-### Phân tích
+#### Phân tích
 
 * Độ phức tạp khi cập nhật: $O(1)$
 * Độ phức tạp khi truy vấn: $O(u \times v) = O(N \times M)$
 * Có $Q$ truy vấn, nên độ phức tạp là $O(Q + Q \times N \times M) = O(Q \times N \times M)$
 
-## Thuật toán ngây thơ 2
+### Thuật toán ngây thơ 2
 
 Ta định nghĩa $lsb(x)$ là giá trị của bit $1$ nhỏ nhất trong biểu diễn nhị phân của $x$. Ví dụ:
 
@@ -105,14 +105,14 @@ void preprocess(){
 
 ```
 
-### Phân tích
+#### Phân tích
 
 * Độ phức tạp tiền xử lý: $O(N \times M \times \log M)$
 * Độ phức tạp khi cập nhật: $O(\log M)$
 * Độ phức tạp khi truy vấn: $O(u \times \log M) = O(N \times \log M)$
 * Có Q truy vấn, nên độ phức tạp là $O(Q \times \log M + Q \times N \times \log M) = O(Q \times N \times \log M)$
 
-# BIT 2 chiều
+## BIT 2 chiều
 
 Ta gọi BIT trong phần ngây thơ 2 là $BIT_{nt}$. Như vậy $BIT_{nt}[i][j] = \sum A[i:i][j-lsb(j) + 1 : j]$
 
@@ -144,7 +144,7 @@ Dưới đây là hình minh họa cho trường hợp $N = 3, M = 4$.
 
 
 
-## Cài đặt
+### Cài đặt
 
 Ta khai báo BIT 2 chiều dưới dạng một mảng $N \times M$ , trong đó `BIT[u][v]` lưu giá trị của phần tử thứ $v$ trong BIT thứ $u$;
 
@@ -182,14 +182,14 @@ $$
 \end{align}
 $$
 
-## Phân tích
+### Phân tích
 
 
 * Độ phức tạp khi cập nhật: $O(\log N \times \log M)$
 * Độ phức tạp khi truy vấn: $O(\log N \times \log M)$
 * Có Q truy vấn, nên độ phức tạp là $O(Q \times \log N \times \log M)$
 
-## Cập nhật hình chữ nhật con, truy vấn phần tử
+### Cập nhật hình chữ nhật con, truy vấn phần tử
 
 Ta thay đổi bài toán ban đầu như sau:
 
@@ -221,7 +221,7 @@ Nếu vẫn chưa rõ, bạn đọc có thể tham khảo hình minh họa sau:
 
 ![img](../../uploads/r1_4NmvPh.png)
 
-### Cài đặt
+#### Cài đặt
 
 Hàm cập nhật:
 
@@ -237,7 +237,7 @@ void rectAdd(int a, int b, int u, int v, int x){
 
 Hàm truy vấn tương tự như phần trước.
 
-## Cập nhật hình chữ nhật con, truy vấn hình chữ nhật con
+### Cập nhật hình chữ nhật con, truy vấn hình chữ nhật con
 
 Ta thay đổi bài toán ban đầu:
 
@@ -298,7 +298,7 @@ int query(int u, int v){
 }
 ```
 
-# Kĩ thuật nén BIT 2 chiều
+## Kĩ thuật nén BIT 2 chiều
 
 *Phần này được lấy nhiều cảm hứng từ [blog cá nóc cắn cáp](https://leduythuccs.github.io/2019-05-30-k-thu-t-n-n-c-y-bit2d/)*
 
@@ -364,7 +364,7 @@ void query(int u, int v){
 
 ```
 
-# Bài tập áp dụng
+## Bài tập áp dụng
 
 * [SPOJ - MATSUM](https://www.spoj.com/problems/MATSUM/)
 * [Codeforces - The Untended Antiquity](https://codeforces.com/problemset/problem/869/E)

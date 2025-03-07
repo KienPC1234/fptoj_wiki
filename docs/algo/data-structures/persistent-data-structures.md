@@ -1,10 +1,10 @@
-# Persistent Data Structures
+## Persistent Data Structures
 
 **Tác giả:** Nguyễn *RR* Thành Trung
 
 
 
-# 1. Mở đầu
+## 1. Mở đầu
 
 **Persistent Data Structures** là những cấu trúc dữ liệu được dùng khi chúng ta cần có **toàn bộ lịch sử** của các thay đổi trên 1 cấu trúc dữ liệu (CTDL). (Chú ý rằng từ **persistent** còn được dùng trong **persistent storage** với một nghĩa hoàn toàn khác).
 
@@ -33,9 +33,9 @@ Tại sao lại là **một cách hiệu quả**? Bởi vì ta hoàn toàn có t
 
 Trong các phần dưới đây, mình sẽ trình bày về 2 kĩ thuật thông thường của Persistent Data Structures.
 
-# 2. Persistent IT
+## 2. Persistent IT
 
-## Tư tưởng
+### Tư tưởng
 
 Quay trở lại bài toán. Chúng ta biết rằng mỗi thao tác update trên IT chỉ mất $O(logN)$. Điều này tương đương với việc mỗi thao tác update chỉ làm thay đổi $O(logN)$ nút trên cây. Như vậy ta hoàn toàn có thể lưu lại tất cả các thay đổi trên tất cả các nút trong $O(Q*logN)$.
 
@@ -48,7 +48,7 @@ Từ đó, ta rút ra được một tư tưởng cài đặt thuật toán:
 Tư tưởng này còn được gọi là **Path Copy** trong các tài liệu tiếng Anh.
 
 
-## Cài đặt:
+### Cài đặt:
 
 ```cpp
 
@@ -123,15 +123,15 @@ Giải thích:
 - Hàm `get`:
     - Trả lại max của một đoạn được quản lý bởi nút `nodeId`
 
-## Phân tích
+### Phân tích
 
 - Cách cài đặt Persistent Data Structures trong mục này rất hiệu quả. Nó hoàn toàn không làm tăng thêm độ phức tạp (persistent IT có độ phức tạp mỗi thao tác là $O(logN)$), và bộ nhớ cần thêm là tối ưu: $O(Q \* logN)$.
 - Tuy nhiên, cách cài đặt này không dễ áp dụng với những CTDL khác. Chẳng hạn sẽ rất khó để cài đúng BIT với phương pháp này. Ở mục tiếp theo, mình sẽ trình bày một phương pháp cài đặt khác có thể dùng cho BIT, tuy nhiên có độ phức tạp lớn hơn.
 
 
-# 3. Persistent BIT
+## 3. Persistent BIT
 
-## Tư tưởng:
+### Tư tưởng:
 
 Tại mỗi nút của BIT, thay vì lưu một giá trị, ta lưu lại tất cả các cặp (version, giá trị) ở nút đó.
 
@@ -140,13 +140,13 @@ Tại mỗi nút của BIT, thay vì lưu một giá trị, ta lưu lại tất 
 
 Cách cài đặt này được gọi là **Fat Node** trong các tài liệu tiếng Anh.
 
-## Cài đặt:
+### Cài đặt:
 
 Code BIT trích từ bài IPSC 2011 - Grid Surveillance:
 
 ```cpp
 
-#define _(x) (x & (-(x)))
+## define _(x) (x & (-(x)))
 
 // Persistent BIT
 vector< pair<int,int> > bit[4100][4100];
@@ -187,12 +187,12 @@ int get(int time, int x, int y) {
 
 ```
 
-## Phân tích:
+### Phân tích:
 
 - Độ phức tạp cho mỗi thao tác update không thay đổi (ví dụ với BIT, vẫn là $O(logN)$). Nhưng độ phức tạp cho mỗi thao tác query bị tăng lên $logN$ (ví dụ với BIT, độ phức tạp cho mỗi thao tác là $O(log^2(N)$) thay vì $O(logN)$.
 - Tuy nhiên, cách cài đặt này tổng quát hơn, dễ dàng được áp dụng cho nhiều CTDL khác nhau, ví dụ cả BIT và IT.
 
-# 4. Retroactive Data Structures
+## 4. Retroactive Data Structures
 
 Một lớp CTDL khác tương đối giống với **Persistent Data Structures**, nhưng có tính ứng dụng thực tế cao hơn là **Retroactive Data Structures**:
 
@@ -212,7 +212,7 @@ Sự khác biệt về cách xử lý trục thời gian khiến cho Retroactive
 Trên thực tế, Retroactive Data Structures còn đang dừng lại ở việc là một khái niệm, chứ chưa có một phương pháp cài đặt nào hiệu quả. Các bạn nếu muốn tìm hiểu có thể nghiên cứu thêm về cơ chế rollback trong database hoặc tìm kiếm thêm về Retroactive Data Structures.
 
 
-# Bài tập áp dụng
+## Bài tập áp dụng
 
 - [SPOJ - COT](http://www.spoj.com/problems/COT/)
 - [SPOJ - MKTHNUM](http://www.spoj.com/problems/MKTHNUM/)

@@ -1,4 +1,4 @@
-#Mật mã và Code
+## Mật mã và Code
 
 Giả sử rằng bạn muốn chuyển một bức thư cho một người bạn của mình, có thể là "cô ấy" hoặc "anh ấy", nhưng bạn không muốn người khác biết được nội dung của bức thư là gì. 
 

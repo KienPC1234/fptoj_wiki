@@ -1,4 +1,4 @@
-# Disjoint Set Union
+## Disjoint Set Union
 
 **Nguời viết:** 
 - Ngô Nhật Quang - HUS High School for Gifted Students
@@ -10,11 +10,11 @@
 
 
 
-# Giới thiệu
+## Giới thiệu
 
 **Disjoint Set Union**, hay **DSU**, là một cấu trúc dữ liệu hữu dụng và thường xuyên được sử dụng trong các kì thi CP. DSU, đúng như tên gọi của nó, là một cấu trúc dữ liệu có thể quản lí một cách hiệu quả một tập hợp của các tập hợp.  
 
-# Bài toán
+## Bài toán
 
 Cho một đồ thị có $n$ đỉnh, ban đầu không có cạnh nào. Chúng ta phải xử lí các truy vấn như sau:
 - Thêm một cạnh giữa đỉnh $x$ và đỉnh $y$ trong đồ thị.
@@ -22,7 +22,7 @@ Cho một đồ thị có $n$ đỉnh, ban đầu không có cạnh nào. Chúng
 
 Một thành phần liên thông trong đồ thị là một đồ thị con trong đó giữa bất kì hai đỉnh nào đều có đường đi đến nhau, và không thể nhận thêm bất kì một đỉnh nào mà vẫn duy trì tính chất trên.
 
-# Cấu trúc dữ liệu Disjoint Set Union
+## Cấu trúc dữ liệu Disjoint Set Union
 
 Nếu ta coi mỗi đỉnh trong đồ thị là một phần tử và mỗi thành phần liên thông trong đồ thị là một tập hợp, truy vấn thứ nhất sẽ trở thành gộp hai tập hợp lần lượt chứa phần tử $x$ và $y$ thành một tập hợp mới và truy vấn thứ hai trở thành hỏi hai phần tử $x$ và $y$ có nằm trong cùng một tập hợp hay không.
 
@@ -41,7 +41,7 @@ Ban đầu, mỗi phần tử thuộc một tập hợp riêng biệt, vậy m�
 
 Với cách cài đặt này, ta sẽ lưu một mảng `parent` với `parent[v]` là cha của phần tử `v`.
 
-## Cài đặt "ngây thơ"
+### Cài đặt "ngây thơ"
 
 Để tạo một tập hợp mới gồm phần tử `v` (hay `make_set(v)`), ta chỉ cần tạo một cây có gốc là `v`, với `parent[v] = v`.
 
@@ -70,7 +70,7 @@ Như đã nói, đây là cách cài đặt ngây thơ, ta có thể dễ dàng 
 
 Điều này đương nhiên là không thể chấp nhận được, vì vậy ta sẽ tìm hiểu hai phương pháp tối ưu thuật toán dưới đây.
 
-## Tối ưu 1 - Gộp theo kích cỡ / độ cao
+### Tối ưu 1 - Gộp theo kích cỡ / độ cao
 
 Phương pháp tối ưu này sẽ thay đổi thao tác `union_sets`. Chính xác hơn, ta sẽ thay đổi cách xét trong hai cây đang gộp, gốc của cây nào sẽ là cha của gốc của cây còn lại.
 
@@ -116,7 +116,7 @@ void union_sets(int a, int b) {
 
 Chỉ cần sử dụng phương pháp tối ưu này, độ phức tạp của thao tác `find_set` sẽ trở thành $\mathcal{O}(\log{n})$. Tuy nhiên, ta vẫn còn có thể làm tốt hơn thế khi kết hợp với phương pháp tối ưu thứ hai.
 
-## Tối ưu 2 - Nén đường đi
+### Tối ưu 2 - Nén đường đi
 
 Phương pháp tối ưu này nhằm tăng tốc thao tác `find_set`. 
 
@@ -147,7 +147,7 @@ int find_set(int v) {
 }
 ```
 
-## Độ phức tạp thời gian
+### Độ phức tạp thời gian
 
 Khi kết hợp cả hai phương pháp tối ưu bên trên lại, ta sẽ đạt được độ phức tạp trung bình cho thao tác `find_set` là $\mathcal{O}(\alpha(n))$ với $\alpha(n)$ là hàm Ackermann nghịch đảo. Tuy nhiên hàm này **tăng rất chậm** (với $\alpha(n) \le 3$ với $n \le 61$ và $\alpha(n) \le 4$ với xấp xỉ $n < 10^{600}$).
 
@@ -155,7 +155,7 @@ Khi kết hợp cả hai phương pháp tối ưu bên trên lại, ta sẽ đ�
 
 Một điều đáng lưu ý là nếu như chúng ta chỉ sử dụng phương pháp tối ưu $2$, độ phức tạp trung bình của thao tác `find_set` cũng chỉ là $\mathcal{O}(\log{n})$.
 
-## Chứng minh độ phức tạp thời gian
+### Chứng minh độ phức tạp thời gian
 
 **Tối ưu gộp set theo kích cỡ**: Gọi $a$ là độ lớn của cây con có gốc là đỉnh $v$, $b$ là độ lớn của cây con có gốc là $p$ (cha của đỉnh $v$). Dễ thấy rằng $b \ge 2 \times a$ do số lượng đỉnh trong cây con gốc $p$ mà không thuộc cây con gốc $v$ lớn hơn hoặc bằng $a$. Do vậy độ sâu tối đa của cây sẽ là $\log_2{n}$.
 
@@ -163,7 +163,7 @@ Một điều đáng lưu ý là nếu như chúng ta chỉ sử dụng phương
 
 **Kết hợp hai phương pháp tối ưu**: Phần chứng minh này khá dài dòng và khó hiểu, bạn đọc có thể tìm hiểu tại [đây](http://e-maxx.ru/bookz/files/dsu/Efficiency%20of%20a%20Good%20But%20Not%20Linear%20Set%20Union%20Algorithm.%20Tarjan.pdf) hoặc [đây](https://codeforces.com/blog/entry/98275).
 
-## Một cách cài đặt khác
+### Một cách cài đặt khác
 
 Ở trong một số tài liệu như Giải thuật và lập trình (thầy Lê Minh Hoàng) hay thư viện Atcoder, thay vì cài đặt cấu trúc dữ liệu DSU bằng hai mảng `parent` và `sz`, chỉ một mảng `lab` được sử dụng.
 
@@ -190,9 +190,9 @@ void union_sets(int a, int b) {
 }
 ```
 
-# Một số ứng dụng của DSU
+## Một số ứng dụng của DSU
 
-## Lưu thêm thông tin khác cho mỗi tập hợp
+### Lưu thêm thông tin khác cho mỗi tập hợp
 
 Ngoài việc lưu các thông tin về cấu trúc cây, ta có thể lưu các hàm có tính chất giao hoán và kết hợp của từng tập hợp. Ví dụ, ta có thể lưu tổng các phần tử/ giá trị phần tử bé nhất của từng tập hợp. Lúc này, các thao tác của dsu sẽ được cài đặt như sau:
 
@@ -236,15 +236,15 @@ int find_min(int v) { // Trả về giá trị bé nhất của các phần tử
 }
 ```
 
-## Bài toán xếp hàng
+### Bài toán xếp hàng
 
-### Bài toán
+#### Bài toán
 
 Cho $n$ người đang xếp hàng ở các vị trí từ $1$ đến $n$. Viết chương trình xử lí các truy vấn:
 - Người đứng ở vị trí thứ $i$ rời khỏi hàng.
 - Tìm người gần nhất về bên phải vị trí $p$ mà chưa rời khỏi hàng.
 
-### Lời giải
+#### Lời giải
 
 Với mỗi vị trí, ta sẽ có một con trỏ. Nếu người đứng ở vị trị này vẫn đang đứng trong hàng, con trỏ trỏ vào vị trị đó, nếu không thì con trỏ này sẽ trỏ vào vị trí ngay bên phải.
 
@@ -268,7 +268,7 @@ Chúng ta có thể sử dụng cấu trúc dữ liệu DSU để lưu trữ cá
 
 Để ý kĩ hơn, ta thấy vị trí ta cần tìm chính là vị trí có thứ tự lớn nhất trong tập hợp. Ta có thể lưu phần tử lớn nhất trong một tập hợp như đã nói ở phần trên, qua đó đạt được độ phức tạp trung bình $\mathcal{O}(\alpha{(n)})$ với mỗi truy vấn.
 
-### Code mẫu
+#### Code mẫu
 ```cpp
 void make_set(int v) {
     parent[v] = v;
@@ -302,17 +302,17 @@ int find_next(int p) { // Trả vè thứ tự của người gần nhất về 
 }
 ```
 
-## Tối ưu thuật toán tìm cây khung nhỏ nhất trong đồ thị
+### Tối ưu thuật toán tìm cây khung nhỏ nhất trong đồ thị
 
 Sử dụng DSU, ta có thể tối ưu độ phức tạp của thuật toán tìm cây khung nhỏ nhất của đồ thị từ $\mathcal{O}(m \log{n} + n^2)$ xuống $\mathcal{O}(m \log{n})$. 
 
 Bạn đọc có thể tìm hiểu kĩ hơn ở [blog](../graph-theory/minimum-spanning-tree.md) tìm cây khung nhỏ nhất trong đồ thị.
 
-## Đảo ngược truy vấn
+### Đảo ngược truy vấn
 
 Do tính chất một chiều của cấu trúc dữ liệu DSU (chỉ thêm chứ không xóa được), ở một số bài ta phải đảo ngược thứ tự của các truy vấn trong bài để giải.
 
-### Bài toán
+#### Bài toán
 
 [Codeforces 722C - Destroying Array](https://codeforces.com/contest/722/problem/C)
 
@@ -322,7 +322,7 @@ Các phần tử sẽ lần lượt bị phá hủy theo thứ tự hoán vị t
 
 Giới hạn: $1\le n \le 10^5, 0 \le a_i \le 10^9$.
 
-### Lời giải
+#### Lời giải
 
 Do các phần tử là các số nguyên không âm, ta có thể thấy rằng nếu sau khi một số phần tử bị phá hủy, dãy bị chia thành $k$ đoạn con liên tiếp thì đáp án sẽ là một trong $k$ đoạn con này.
 
@@ -330,11 +330,11 @@ Do các phần tử là các số nguyên không âm, ta có thể thấy rằng
 
 Khi một số được hồi sinh, ta sẽ kiểm tra bên trái số đó, nếu có số nào đã được hồi sinh từ trước thì ta sẽ thêm cạnh giữa số đó và số bên trái số đó. Tương tự với số bên phải. Dễ thấy rằng mọi lúc các thành phần liên thông trong DSU sẽ thể hiện cho một đoạn con liên tiếp. Việc lưu trữ tổng của một thành phần liên thông đã được nhắc đến ở phần trước.
 
-### Code mẫu
+#### Code mẫu
 ```cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
-#define int long long
+## define int long long
 
 using namespace std;
 
@@ -396,13 +396,13 @@ signed main() {
 }
 ```
 
-## Kiểm tra tính chất hai phía của đồ thị online
+### Kiểm tra tính chất hai phía của đồ thị online
 
-### Bài toán
+#### Bài toán
 
 Cho một đồ thị có $n$ đỉnh, ban đầu không có cạnh nào. Xử lí các truy vấn thêm cạnh vào đồ thị. Hỏi sau truy vấn nào thì đồ thị không còn là đồ thị hai phía?
 
-### Lời giải
+#### Lời giải
 
 Dựa vào tính chất của đồ thị hai phía, dễ thấy rằng với mọi cặp đỉnh thuộc cùng một phía sẽ có đường đi bắt kì giữa chúng có độ dài chẵn. Nói cách khác, nếu ta chọn một đỉnh $l$ trong một thành phần liên thông, hai đỉnh $a$ và $b$ sẽ nằm cùng một phía nếu như khoảng cách của hai đỉnh này tới đỉnh $l$ có cùng tính chẵn lẻ.
 
@@ -448,15 +448,15 @@ void union_sets(int a, int b) {
 }
 ```
 
-# Một số kĩ thuật sử dụng tính chất của DSU
+## Một số kĩ thuật sử dụng tính chất của DSU
 
 Ngoài ra tính chất của DSU còn được sử dụng trong một số kĩ thuật khá phổ biến.
 
-## Kĩ thuật gộp set (Small-to-Large Merging)
+### Kĩ thuật gộp set (Small-to-Large Merging)
 
 Giả sử ta cần lưu trực tiếp các phần tử của một tập hợp bằng một cấu trúc dữ liệu như set/map, thì liệu có cách nào đủ hiệu quả để thực hiện thao tác `union_sets` hay không? Câu trả lời là có và kĩ thuật này được gọi là gộp set (small-to-large merging).
 
-### Bài toán
+#### Bài toán
 
 [VNOJ - colquery](https://oj.vnoi.info/problem/colquery)
 
@@ -466,7 +466,7 @@ Cho $q$ truy vấn, mỗi truy vấn thuộc một trong hai dạng sau:
 - $1\,u\,v$: Thêm một cạnh nối giữa $u$ và $v$.
 - $2\,u\,c$: Tính số đỉnh có màu $c$ trong thành phần liên thông chứa $u$.
 
-### Lời giải
+#### Lời giải
 
 Chúng ta vẫn sẽ sử dụng cấu trúc dữ liệu DSU trong bài này, và lưu thêm một map chứa số lượng từng màu tại gốc của từng cây.
 
@@ -474,10 +474,10 @@ Trong thao tác `union_sets`, ta sẽ chuyển lần lượt các phần tử tr
 
 Gọi số phần tử nằm trong hai dãy số lớn hơn và bé hơn lần lượt là $a$ và $b$. Dễ thấy được rằng $a + b \ge 2 \cdot b$, nên mỗi lần một phần tử bị di chuyển, nó sẽ bị di chuyển tới một dãy số có kích thước lớn hơn ít nhất hai lần kích thước dãy số ban đầu nó nằm trong. Vì vậy mà ta thấy rằng một phần tử chỉ bị di chuyển tối đa $\log_2{n}$ lần, qua đó mà đạt được độ phức tạp $\mathcal{O}(n \log{n})$.
 
-### Code mẫu
+#### Code mẫu
 
 ```cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -543,15 +543,15 @@ signed main() {
 
 Độ phức tạp thuật toán: $\mathcal{O}(n \log^2{n})$, có thêm một $\log$ do ta phải lưu giữ thông tin bằng cấu trúc dữ liệu map.
 
-## Kĩ thuật DSU trên cây (Sack)
+### Kĩ thuật DSU trên cây (Sack)
 
 Đây là một thuật toán sử dụng ý tưởng gộp set ở phần trước để giải quyết một số bài toán truy vấn trên cây một cách hiệu quả.
 
-### Bài toán
+#### Bài toán
 
 Cho một cây có $n$ đỉnh với gốc là đỉnh $1$, đỉnh thứ $i$ được tô màu $c_i$. Cho $q$ truy vấn có dạng $v\,c$, với mỗi truy vấn in ra số lượng đỉnh có màu $c$ trong cây con gốc $v$.
 
-### Lời giải
+#### Lời giải
 
 Sử dụng ý tưởng gộp set ở phần trước, ta có thể dễ dàng đạt được độ phức tạp $\mathcal{O}(n \log^2{n} + q\log{n})$. Tuy nhiên, ta còn có thể làm tốt hơn với kĩ thuật DSU trên cây
 
@@ -632,9 +632,9 @@ Ta có thể thấy rõ hơn thông tin mà mảng $cnt$ lưu trữ trong quá t
 
 Lúc này mảng $cnt$ đã có đủ các màu trong cây con gốc $u$ và ta có thể trả lời các truy vấn của đỉnh $u$.
 
-### Code mẫu
+#### Code mẫu
 ```cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 
 using namespace std;
 
@@ -709,26 +709,26 @@ signed main() {
 }
 ```
 
-# Tham khảo
+## Tham khảo
 - [CP-Algorithms](https://cp-algorithms.com/data_structures/disjoint_set_union.html)
 - [Codeforces ITMO Academy: pilot course](https://codeforces.com/edu/course/2/lesson/7)
 - [Codeforces blog: DSU trên cây (Sack)](https://codeforces.com/blog/entry/44351)
 
-# Bài tập
+## Bài tập
 
-## Disjoint Set Union
+### Disjoint Set Union
 - [Codeforces ITMO Academy: pilot course](https://codeforces.com/edu/course/2/lesson/7)
 - [Codeforces Problemset](https://codeforces.com/problemset?tags=dsu)
 - [VNOJ ILSBIN](https://oj.vnoi.info/problem/ilsbin)
 - [VOI 2011 Bài 6](https://oj.vnoi.info/problem/upgranet)
 - [VOI 2020 Bài 2](https://oj.vnoi.info/problem/voi20bus)
 
-## Kỹ thuật Gộp set
+### Kỹ thuật Gộp set
 - [Codeforces 1380E](https://codeforces.com/problemset/problem/1380/E)
 - [SGU 507](https://codeforces.com/problemsets/acmsguru/problem/99999/507)
 - Các bài trong [phần DSU trên cây](#Kỹ-thuật-DSU-trên-cây)
 
-## Kỹ thuật DSU trên cây
+### Kỹ thuật DSU trên cây
 - [Codeforces 208E](https://codeforces.com/contest/208/problem/E)
 - [Codeforecs 246E](https://codeforces.com/contest/246/problem/E)
 - [Codeforces 600E](https://codeforces.com/problemset/problem/600/E)

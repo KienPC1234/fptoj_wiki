@@ -1,4 +1,4 @@
-# Số học 3 - Tính (a^b) % c
+## Số học 3 - Tính (a^b) % c
 
 Nguồn: [HackerEarth](https://www.hackerearth.com/practice/notes/number-theory-1/) và 1 số bài viết trên Wikipedia
 
@@ -8,7 +8,7 @@ Người dịch: Bùi Việt Dũng
 
 Xét bài toán tính $a^b\%c$, với $\%$ là dấu đồng dư thức và $b$ có thể rất lớn (ví dụ $b \leq 10^{18}$).
 
-# Thuật toán "ngây thơ"
+## Thuật toán "ngây thơ"
 
 $a^b$ có thể viết là $a.a.a.a...$ với $b$ chữ $a$. Do đó ta có thể nhân $b$ lần $a$ để có được kết quả.
 
@@ -28,7 +28,7 @@ Vì vậy trong code trên ta tính $(ans.a)\%c$ bằng cách tính $((ans\%c).(
 
 **Độ phức tạp của thuật toán:** $O(b)$.
 
-# Thuật toán "chia để trị"
+## Thuật toán "chia để trị"
 
 Dễ dàng nhận thấy thuật toán trên không hiệu quả, vì thế ta cần tìm thuật toán hiệu quả hơn. Ta có thể giải bài toán này với độ phức tạp $O(\log_{2}{b})$ bằng kĩ thuật **lũy thừa bằng cách bình phương (exponentiation by squaring)**. Kĩ thuật này chỉ cần $O(\log_{2}{b})$ lần bình phương và $O(\log_{2}{b})$ phép nhân để ra kết quả. Rõ ràng cách giải này hiệu quả hơn nhiều lần so với thuật toán "ngây thơ".
 

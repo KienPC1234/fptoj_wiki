@@ -1,15 +1,15 @@
-# Tìm kiếm tam phân - Ternary Search
+## Tìm kiếm tam phân - Ternary Search
 
 
 
-# Tìm kiếm tam phân - Ternary Search 
+## Tìm kiếm tam phân - Ternary Search 
 
 Nguồn: [e-maxx](https://e-maxx-eng.appspot.com/num_methods/ternary_search.html) 
 
 Người dịch: Đỗ Thanh Lam
 
 
-# Mở đầu
+## Mở đầu
 
 Cho một hàm F(x) chỉ có một cực trị duy nhất (unimodal). Có hai dạng hàm F(x) cơ bản:
 
@@ -29,12 +29,12 @@ Một hàm số thoả mãn tính chất này nếu tất cả các đoạn th�
 Trong bài viết này chúng tôi sẽ giải quyết trường hợp 1, trường hợp 2 sẽ làm tương tự nhưng ngược lại. 
 
 
-# Bài toán
+## Bài toán
 
 Cho một hàm $F(x)$ trong đoạn $[l, r]$ thoả mãn: $F$ tăng chặt tới một cực đại (điểm H) rồi giảm chặt. Yêu cầu tìm điểm đạt giá trị lớn nhất (điểm H).
 
 
-# Thuật toán
+## Thuật toán
 
 Xét hai vị trí $m_1$ và $m_2$ trong đoạn $[l, r]$ sao cho $l < m_1 < m_2 < r$. Rõ ràng cực trị có thể nằm ở 1 trong 3 phần:
 
@@ -70,7 +70,7 @@ Nếu ta lặp đi lặp lại K lần, thì độ lớn của [l, r] sẽ chỉ
 Độ phức tạp thuật toán là $O(logT)$ với T là độ chính xác mà ta cần thực hiện.
 
 
-## Cài đặt
+### Cài đặt
 
 ```cpp
 
@@ -92,12 +92,12 @@ double max_f(double left, double right) {
 ```
 
 
-# Mở rộng
+## Mở rộng
 
 Tìm kiếm tam phân cũng có thể dùng để giải các bài toán trên 2D với hàm dạng $f(x, y)$ nếu hàm f là hàm lồi. Ví dụ bài [E trong đề ACM ICPC Vietnam National Round 2017](https://open.kattis.com/contests/vietnam-national17-open/problems/europeantrip), lời giải chi tiết [ở đây](https://docs.google.com/document/d/1cDQEaf_YabpefiG7PiQZErHbr7AJIFjt7IIiDv9n4N4/edit).
 
 
-# Bài tập tự luyện 
+## Bài tập tự luyện 
 
 
 

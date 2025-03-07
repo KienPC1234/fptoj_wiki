@@ -1,4 +1,4 @@
-# **Các thuật toán về tìm đường đi ngắn nhất**
+## **Các thuật toán về tìm đường đi ngắn nhất**
 
 **Tác giả:** 
 - Trần Hoài An - THPT Hoàng Lê Kha, Tây Ninh
@@ -8,7 +8,7 @@
 
 
 
-# Giới thiệu
+## Giới thiệu
 
 Bài toán tìm đường đi ngắn nhất trên đồ thị là một trong những bài toán đa dạng, có nhiều ứng dụng thực tế (như trong Google Maps, hay các bài toán networking, ...). Các dạng bài về tìm đường đi ngắn nhất cũng thường xuyên có mặt trong các kì thi lập trình. 
 
@@ -21,11 +21,11 @@ Cần lưu ý rằng, [có một thuật toán thông dụng khác](https://vnoi
 
 
 
-# 1. Thuật toán Bellman - Ford
+## 1. Thuật toán Bellman - Ford
 
 Thuật toán Bellman-Ford dùng để giải quyết bài toán **đường đi ngắn nhất một nguồn** (Single-source shortest path), đồ thị **có thể có trọng số âm**.
 
-## Bài toán.
+### Bài toán.
 Cho đồ thị có hướng $N$ đỉnh và $M$ cạnh, và một đỉnh nguồn là đỉnh $S$. Mỗi cạnh có trọng số nguyên. **Trọng số này có thể âm hoặc dương hoặc bằng 0**. Với mỗi đỉnh $u$ từ $1$ đến $N$. Yêu cầu xuất kết quả tại mỗi đỉnh $u$ như sau: 
 
 1. Nếu không tồn tại đường đi từ $S$ đến $u$ thì in ra: **Impossible**
@@ -59,7 +59,7 @@ Giới hạn bài toán : $1 \le N \le 1000, 1 \le M \le 5000$
 -Infinity
 Impossible
 ```
-### Khái niệm về chu trình âm
+#### Khái niệm về chu trình âm
 
 * Chu trình âm là một chu trình trong đó tổng trọng số các cạnh là số âm. Ví dụ trong hình dưới, ta có một chu trình âm $0 \rightarrow 1 \rightarrow 2$ có tổng trọng số là $7-9+1 = -1$
 
@@ -68,7 +68,7 @@ Impossible
 * Nếu trên đường đi từ $u$ đến $v$ chứa chu trình âm thì độ dài đường đi ngắn nhất từ $u$ đến $v$ sẽ là $-\infty$. Vì vậy nên sự xuất hiện của chu trình âm trong đồ thị sẽ khiến một số cặp đỉnh không tồn tại đường đi ngắn nhất (chỉ tồn tại đường đi có độ dài âm vô cực).
     * Ví dụ: Ở đồ thị trên, đường đi ngắn nhất từ $4$ đến $5$ sẽ có cách đi là vô hạn lần qua chu trình âm đã nhắc đến, sau đó mới đi đến $5$. Như vậy không có đường đi ngắn nhất.
 
-## Ý tưởng của thuật toán.
+### Ý tưởng của thuật toán.
 Xét trường hợp đơn giản hơn, khi đồ thị không có trọng số âm (tức đường đi ngắn nhất luôn tồn tại).
 
 Thuật toán Bellman-Ford sẽ lặp nhiều lần. Ở mỗi vòng lặp, ta sẽ đi qua **tất cả** các cạnh $(u, v)$ trên đồ thị, so sánh đường đi $S \rightarrow v$ đã tìm được với đường đi $S \rightarrow u \rightarrow v$
@@ -83,7 +83,7 @@ Có thể chứng minh được rằng, vòng lặp trên cần thực hiện $N
 
 - **Chứng minh**: Nhận xét rằng một đường đi ngắn nhất bất kì sẽ không có đỉnh nào được đi lại quá một lần. Như vậy một đường đi ngắn nhất sẽ không có quá $N-1$ cạnh. Việc thực hiện phép tính $D_v = D_u + W_{u, v}$ cũng đồng nghĩa với thêm một cạnh $u \rightarrow v$ vào hành trình đi từ $s$ đến $v$. Vậy một $D_u$ chỉ có thể được tối ưu tối đa $N-1$ lần, và từ lần thứ $N$ trở đi sẽ không thể tối ưu hơn được nữa.
 
-## Cài Đặt
+### Cài Đặt
 Ở thuật toán này, đồ thị thường được lưu ở dạng **danh sách cạnh**. 
 
 * Định nghĩa $W[u, v]$ là trọng số cạnh nối từ đỉnh $u$ đến đỉnh $v$ (nếu có). 
@@ -129,7 +129,7 @@ void bellmanFord(int n, int S, vector<Edge> &e, vector<long long> &D, vector<int
 }
 ```
 
-## Tìm lại đường đi ngắn nhất
+### Tìm lại đường đi ngắn nhất
 Thao tác tìm đường đi ngắn nhất từ $S$ đến $u$ khá đơn giản, ta sẽ bắt đầu từ đỉnh $u$, sau đó truy vết theo mảng $trace$ ngược về $S$.
 
 ```cpp
@@ -148,11 +148,11 @@ vector<int> trace_path(vector<int> &trace, int S, int u) {
 
 ```
 
-## Các trường hợp có chu trình âm
+### Các trường hợp có chu trình âm
 
 Thuật toán Bellman-Ford có thể xử lí được thêm trường hợp nhận biết chu trình âm, cũng như nhận biết nếu không tồn tại đường đi ngắn nhất đến một đỉnh.
 
-### Nhận biết đường đi âm vô cực
+#### Nhận biết đường đi âm vô cực
 
 - Nhận xét tiếp rằng, ta có thể chạy vòng quanh chu trình âm liên tục để được đường đi ngắn hơn. Như vậy thuật toán Bellman-Ford ở vòng lặp thứ $N$ trở đi vẫn sẽ liên tục tối ưu được đường đi, thay vì dừng lại ở lần thứ $N-1$.
     - Ta chỉ cần chạy thuật toán Bellman-Ford thêm một lần nữa với $N$ vòng lặp, những đỉnh nào vẫn còn tối ưu được ở lần chạy thứ hai sẽ tối ưu được mãi mãi, và đó là các đỉnh không tồn tại đường đi ngắn nhất.
@@ -174,7 +174,7 @@ for(int T = 0; T < n; T++){
 }
 ```
 
-### Tìm chu trình âm
+#### Tìm chu trình âm
 
 Một số bài toán có thể yêu cầu ta tìm một chu trình âm bất kì trong đồ thị. Ta có thể chỉnh sửa thuật toán Bellman-Ford lại như sau:
 - Thay vì chạy $N$ vòng lặp Bellman-Ford như trường hợp trên, ta chỉ cần chạy một vòng lặp. Như vậy là đủ để phát hiện ít nhất một đỉnh có đường đi bằng $-\infty$ (nếu có).
@@ -224,11 +224,11 @@ bool findNegativeCycle(int n, vector<long long> &D, vector<int> &trace, vector<i
 ```
 
 
-# 2. Thuật toán Dijkstra
+## 2. Thuật toán Dijkstra
 
 Thuật toán Dijkstra dùng để giải quyết bài toán **đường đi ngắn nhất một nguồn** (Single-source shortest path), đồ thị **trọng số không âm**.
 
-## Bài toán.
+### Bài toán.
 
 Cho một đồ thị có hướng với $N$ đỉnh (được đánh số từ $0$ đến $N-1$), $M$ cạnh có hướng, có trọng số, và một đỉnh nguồn $S$. **Trọng số của tất cả các cạnh đều không âm**. Yêu cầu tìm ra đường đi ngắn nhất từ đỉnh $S$ tới tất cả các đỉnh còn lại (hoặc cho biết nếu không có đường đi).
 
@@ -260,7 +260,7 @@ Hình ảnh của Test ví dụ. Ở đồ thị này, đỉnh nguồn là đỉ
 
 ![](https://i.imgur.com/UhI67bO.png)
 
-## Ý tưởng của thuật toán.
+### Ý tưởng của thuật toán.
 
 Giống như thuật toán Bellman-Ford, thuật toán Dijkstra cũng tối ưu hóa đường đi bằng cách xét các cạnh $(u, v)$, so sánh hai đường đi $S \rightarrow v$ sẵn có với đường đi $S \rightarrow u \rightarrow v$. 
 
@@ -268,7 +268,7 @@ Thuật toán hoạt động bằng cách duy trì một tập hợp các đỉn
 
 Cụ thể hơn, thuật toán sẽ duy trì đường đi ngắn nhất đến tất cả các đỉnh. Ở mỗi bước, chọn đường đi $S \rightarrow u$ có tổng trọng số nhỏ nhất trong tất cả các đường đi đang được duy trì. Sau đó tiến hành tối ưu các đường đi $S \rightarrow v$ bằng cách thử kéo dài thành $S \rightarrow u\rightarrow v$ như đã mô tả trên.
 
-## Minh họa thuật toán
+### Minh họa thuật toán
 Ta sẽ minh họa thuật toán bằng một đồ thị như hình. Định nghĩa:
 - $D_u$ là đường đi ngắn nhất từ đỉnh nguồn đên đỉnh $u$ đã tìm được.
 - $P_u$ nhận hai giá trị $true$, $false$ cho biết đỉnh $P_u$ đã được chọn để tối ưu chưa.
@@ -301,7 +301,7 @@ Sau bước này, $D = [0, 4, 1, 3]$, $P = [true, false, true, true]$
 
 Đến đây, tất cả các đỉnh đều đã được đánh dấu. Thuật toán kết thúc. Đường đi ngắn nhất tìm được từ đỉnh $0$ là $D = [0, 4, 1, 3]$.
 
-## Cài đặt
+### Cài đặt
 Ở thuật toán này, ta sẽ lưu đồ thị dưới dạng **danh sách kề**. Ta định nghĩa như sau:
 
 - $D[u]$ là đường đi ngắn nhất từ $s\rightarrow u$. Ban đầu khởi tạo $D[u] = \infty$ với mọi $u$, riêng $D[s] = 0$.
@@ -359,7 +359,7 @@ void dijkstra(int n, int S, vector<vector<Edge>> E, vector<long long> &D, vector
     }
 }
 ```
-## Cải tiến đối với đồ thị thưa
+### Cải tiến đối với đồ thị thưa
 
 * Nhận xét rằng bước đầu tiên: "Tìm đỉnh $u$ có $D_u$ nhỏ nhất và $P_u = false$", có thể được cải tiến. Ta có thể sử dụng cấu trúc dữ liệu [Heap](https://vnoi.info/wiki/translate/wcipeg/Binary-Heap.md) (cụ thể là Min Heap) hoặc cây nhị phân tìm kiếm để cải tiến bước này.
     * Mỗi lần tối ưu hóa $D_v$, ta đẩy cặp $\{D_v, v\}$ vào trong Heap. 
@@ -424,7 +424,7 @@ void dijkstraSparse(int n, int s, vector<vector<Edge>> &E, vector<long long> &D,
 }
 ```
 
-## Tìm lại đường đi ngắn nhất
+### Tìm lại đường đi ngắn nhất
 Cũng giống như thuật toán Bellman-Ford, để tìm lại đường đi ngắn nhất từ $S$ về $u$, ta sẽ bắt đầu từ đỉnh $u$, sau đó truy vết theo mảng $trace$ ngược về $S$.
 
 ```cpp
@@ -444,12 +444,12 @@ vector<int> trace_path(vector<int> &trace, int S, int u) {
 ```
 
 
-# 3. Thuật toán Floyd-Warshall
+## 3. Thuật toán Floyd-Warshall
 
 Thuật toán Floyd-Warshll dùng để giải quyết bài toán **đường đi ngắn nhất mọi cặp đỉnh** (All-pairs shortest path), đồ thị **có thể có trọng số âm**.
 
 
-## Bài toán
+### Bài toán
 
 Cho đồ thị gồm $N$ đỉnh và một ma trận trọng số $W$, trong đó ô $(i,j)$ cho biết rằng có một đường đi trực tiếp từ $i\rightarrow j$ với trọng số là $W_{i, j}$. Yêu cầu  tìm đường đi ngắn nhất giữa **mọi cặp đỉnh** trên đồ thị.
 
@@ -477,7 +477,7 @@ Giới hạn bài toán: $1 \leq N \leq 100$
 6 8 7 3 0
 ```
 
-## Ý tưởng của thuật toán.
+### Ý tưởng của thuật toán.
 
 Ý tưởng của thuật toán này là: "Liệu chúng ta có thể chèn một đỉnh $k$ vào đường đi ngắn nhất giữa 2 đỉnh $u$ và $v$?". 
 
@@ -493,7 +493,7 @@ Ta nhận thấy có một cấu trúc đệ quy, chia nhỏ bài toán ở đâ
 
 Đến đây ta có thể sử dụng trực tiếp công thức quy hoạch động để cài đặt thuật toán. Tuy nhiên, để đảm bảo bộ nhớ, ta có thể tính các $D(u, v, k)$ với $k$ lần lượt từ $1$ đến $N$, và khi cài đặt chỉ cần lưu lại $D(u, v)$.
 
-## Cài đặt
+### Cài đặt
 
 - Định nghĩa:
 
@@ -540,7 +540,7 @@ void floydWarshall(int n, vector<vector<long long>> &w, vector<vector<long long>
 }
 ```
 
-## Tìm lại đường đi ngắn nhất
+### Tìm lại đường đi ngắn nhất
 Giống như hai thuật toán Bellman-Ford và Dijkstra, để tìm đường đi từ $u$ đến $v$, ta sẽ bắt đầu từ $v$, truy ngược về $u$ theo mảng trace đã tìm được.
 
 ```cpp
@@ -558,7 +558,7 @@ vector<int> trace_path(vector<vector<int>> &trace, int u, int v) {
 }
 
 ```
-# 4. Lưu ý
+## 4. Lưu ý
 
 * Bảng so sánh các thuật toán được đề cập:
  
@@ -583,7 +583,7 @@ vector<int> trace_path(vector<vector<int>> &trace, int u, int v) {
     * Như vậy, để Dijkstra $N$ lần tốt hơn, ta cần có $N*MlogN < N^3$ suy ra $M < N^2/logN$ (tương tự như so sánh giữa hai cách cài đặt thuật Dijkstra).
 
 
-# Bài tập vận dụng.
+## Bài tập vận dụng.
 
 Thuật toán Bellman-Ford:
 

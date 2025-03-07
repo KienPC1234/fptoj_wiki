@@ -1,4 +1,4 @@
-# Sàng nguyên tố
+## Sàng nguyên tố
 
 **Người viết:**
 - Nguyễn Minh Hiển - Trường Đại học Công nghệ, ĐHQGHN
@@ -15,8 +15,8 @@ Khi cần tìm ra các số nguyên tố từ $1$ đến $n$, ta có thể duy�
 Tuy nhiên, một nhà toán học cổ Hy Lạp tên là Eratosthenes đã "phát minh" ra một "thuật toán" hiệu quả hơn. Ban đầu, Eratosthenes đã lấy lá cọ và ghi tất cả các số từ $2$ cho đến $100$. Sau đó, ông đã chọc thủng các hợp số và giữ nguyên các số nguyên tố. Bảng số nguyên tố còn lại trông rất giống một cái sàng. Cho đến ngày nay, "thuật toán" này được phổ biến rộng rãi với cái tên **sàng nguyên tố Eratosthenes**.
 
 
-## Sàng nguyên tố Eratosthenes (Sieve of Eratosthenes)
-### Hướng tiếp cận
+### Sàng nguyên tố Eratosthenes (Sieve of Eratosthenes)
+#### Hướng tiếp cận
 - Ban đầu, ta cho tất cả các số từ $2$ đến $n$ vào sàng và đánh dấu tất cả các số. (Các số không được đánh dấu sau cùng sẽ bị loại khỏi sàng).
 - Duyệt lần lượt các số từ $2$ đến $n$. Nếu số đang xét:
     - Đã được đánh dấu $\Rightarrow$ *số nguyên tố*: ta bỏ đánh dấu tất cả các bội (khác chính nó) của số nguyên tố này để loại các bội ấy ra khỏi sàng. 
@@ -26,7 +26,7 @@ Tuy nhiên, một nhà toán học cổ Hy Lạp tên là Eratosthenes đã "ph�
 Dưới đây là hình minh họa cho thuật toán trên. *Nguồn: [CP-Algorithm](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html)*
 ![img](../../uploads/HJup_OQSn.png)
 
-### Code C++ minh họa
+#### Code C++ minh họa
 ```cpp
 const int maxn = 1000000 + 5; //10^6 + 5
 bool is_prime[maxn]; // mảng bool khởi tạo với các giá trị false
@@ -96,9 +96,9 @@ Dưới đây là hình minh họa cho cải tiến trên. *Nguồn: [Wikipedia]
 
 
 
-## **Ứng dụng**
-### Phân tích thừa số nguyên tố
-#### Phân tích số nguyên nhỏ
+### **Ứng dụng**
+#### Phân tích thừa số nguyên tố
+##### Phân tích số nguyên nhỏ
 Khi phân tích các số nhỏ $i \approx 10^6$, thay vì lưu kết quả kiểm tra tính nguyên tố của $i$ ở mảng `is_prime[i]`, ta có thể sử dụng `min_prime[i]` lưu ước nguyên tố nhỏ nhất của số `i`.
 
 ```cpp
@@ -152,7 +152,7 @@ $$\sum\limits_{p\text{ nguyên tố}} v_p\left(n!\right) < \sum\limits_{p\text{ 
 </p>
 </details>
 
-#### Phân tích số nguyên lớn hơn
+##### Phân tích số nguyên lớn hơn
 > Nhận xét: Nếu tất cả các số nguyên trong đoạn $\left[ 2;\sqrt{n} \right]$ đều không phải là ước của $n$ thì $n$ là số nguyên tố.
 
 Dựa vào `Nhận xét` trên, để phân tích một số nguyên $n$ lớn (khoảng $10^9$ hay $10^{12}$), ta xây dựng được thuật toán với độ phức tạp $\boldsymbol{O \left(\sqrt n \right)}$ dưới đây:
@@ -199,7 +199,7 @@ Trong đó $\pi\left( x \right)$ là số số nguyên tố trong đoạn $\left
 
 ---
 
-### Tìm số nguyên tố trong đoạn [L; R]
+#### Tìm số nguyên tố trong đoạn [L; R]
 
 Đôi khi bạn phải tìm tất cả các số không phải trên đoạn $[1;N]$ mà là trên đoạn $[L;R]$ có kích thước nhỏ nhưng $R$ lớn.
 Ví dụ như $R - L + 1 \approx 1e6$ và $R \approx 10^{12}$.
@@ -273,7 +273,7 @@ Tuy nhiên, ta lại được lợi thế hơn về **độ phức tạp không 
 
 Nguyên nhân là ta dùng tất cả các *số nguyên* trong đoạn $\left[ 2;\sqrt R \right]$ đó để đánh dấu trong đoạn $[L; R]$ nên sẽ mất $O \left( (R - L + 1) \cdot \left(\dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{4} + \ldots + \dfrac{1}{\left\lfloor \sqrt R \right\rfloor} \right) \right) = O \left( N \log (R) \right)$.
 
-## Một số ví dụ
+### Một số ví dụ
 [VNOI - Phi hàm Euler](https://oj.vnoi.info/problem/etf)
 *Tóm tắt đề:* 
 Cho số nguyên dương $T$ và $T$ số nguyên dương $n_i$. Hãy tính phi hàm $\varphi(n_i)$ của $T$ số nguyên dương đã cho.
@@ -298,7 +298,7 @@ Dựa vào công thức trên, đầu tiên ta sẽ gán <code>f[i] = i</code>. 
 </p>
 
 ```cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 using namespace std;
 
 const int maxn = 1e6;
@@ -328,11 +328,11 @@ int main(){
 ```
 </details>
 
-## Một số cải tiến của sàng nguyên tố Eratosthenes
+### Một số cải tiến của sàng nguyên tố Eratosthenes
 > Sàng nguyên tố Eratosthenes với ĐPT thời gian $\boldsymbol{O(n \log \log n)}$ đã khá phù hợp với hầu hết các bài toán lập trình thi đấu. Tuy nhiên điểm yếu chí mạng của nó chính là ĐPT không gian $\boldsymbol{O(n)}$.
 > Một số cải tiến dưới đây có thể không phù hợp với những bạn mới chỉ biết đến sàng nguyên tố. Các bạn hãy luyện tập với các bài tập luyện tập trước khi đến với các cải tiến bên dưới nha!
 
-### So sánh mảng bool và vector<bool>
+#### So sánh mảng bool và vector<bool>
 - Một biến `bool` chỉ có hai giá trị `true/false` nên về mặt lý thuyết chỉ cần 1 bit để lưu trữ nó. Nhưng bình thường, các máy tính hiện nay khi lưu trữ biến `bool` sẽ sử dụng $1$ byte (tương đương với $8$ bits) để truy cập nhanh chóng. Vì thế một mảng `bool a[n]` sẽ cần đến $n$ bytes.
 - `vector<bool>` được tối ưu để lưu trữ $1$ biến `bool` trong $1$ bit thay vì $1$ byte, ngoài ra còn có $40$ bytes sử dụng cho khởi tạo `vector<bool>` ban đầu. Tuy nhiên, việc tối ưu về bộ nhớ khiến ta phải truy cập bit một các gián tiếp: mỗi lần truy cập, đọc, ghi bit ta cần tách nhỏ từng bit của byte đó. Trong trường hợp bộ dữ liệu nhỏ (khoảng $10^6$), truy cập như vậy sẽ chậm hơn so với việc truy cập trực tiếp.
 - Tóm lại, ta có bảng dưới đây
@@ -344,11 +344,11 @@ int main(){
 
 
 
-### **Chỉ sàng số lẻ**
+#### **Chỉ sàng số lẻ**
 Một cải tiến khác cũng có thể được sử dụng đó là chỉ tiến hành kiểm tra với số lẻ (số chẵn chỉ có $2$ là số nguyên tố).
 Điều này có thể giảm cả không gian để lưu trữ lẫn số bước tính toán đi một nửa.
 <!-- -->
-#### Code C++ minh họa
+##### Code C++ minh họa
 
 ```cpp
 vector<bool> is_prime;
@@ -370,11 +370,11 @@ void sieve_odd(int n){
 **Độ phức tạp không gian: $\boldsymbol{O\left(\dfrac{n}{2}\right)}$**
 
 ---
-### **Sử dụng bitset**
+#### **Sử dụng bitset**
 Trong C++, `std::bitset` là một công cụ hữu hiệu trong việc lưu trữ và xử lý dãy nhị phân.
 `std::bitset` sử dụng cách lưu bit tương tự `std::vector<bool>` và nhanh hơn `std::vector<bool>` một chút. Tuy nhiên kích thước `MAX` của `std::bitset<MAX>` phải được biết lúc biên dịch.
 
-#### Code C++ minh họa
+##### Code C++ minh họa
 ```cpp
 const int maxn = 1e6;
 bitset<maxn + 1> is_prime;
@@ -398,11 +398,11 @@ void sieve_bitset(int n){
 Một cách khác, vì biến `bool` lưu trong bộ nhớ thường là $1$ byte ($8$ bits), tuy nhiên thực chất chỉ cần sử dụng $1$ bit. Vì thế ta có thể sử dụng một biến `int` để lưu nhiều biến `bool`. Để code được nhanh chóng, ở đây ta nên sử dụng các [phép toán trên bit](https://vi.wikipedia.org/wiki/Ph%C3%A9p_to%C3%A1n_thao_t%C3%A1c_bit#C%C3%A1c_to%C3%A1n_t%E1%BB%AD_thao_t%C3%A1c_bit).
 
 
-#### Code C++ minh họa
+##### Code C++ minh họa
 
 ```cpp
-#define doc(n) (prime_bits[n >> 3] & (1 << (n & 7)))
-#define set(n) {prime_bits[n >> 3] |= (1 << (n & 7));}
+## define doc(n) (prime_bits[n >> 3] & (1 << (n & 7)))
+## define set(n) {prime_bits[n >> 3] |= (1 << (n & 7));}
 vector<int> prime_bits;
 void sieve_bits(int n){
     prime_bits.assign((n >> 3) + 5, 0);
@@ -424,11 +424,11 @@ Trong code bên trên, `int` được sử dụng để lưu $8$ giá trị `boo
 Trên thực tế, `int/unsigned int` chứa $4$ bytes hay $32$ bits. Nhờ đó, một số `int/unsigned int` có thể lưu trữ đến $32$ giá trị `bool`. Và bạn đọc có thể thử cách lưu $32$ giá trị thay vì $8$ vào code bên trên.
 
 ---
-### **Sàng nguyên tố tuyến tính - Linear Sieve**
+#### **Sàng nguyên tố tuyến tính - Linear Sieve**
 >- Sàng nguyên tố này được cải tiến từ Sàng Eratosthenes. Tuy có ĐPT thời gian là $\boldsymbol{O(n)}$ nhưng với những bộ dữ liệu khoảng $10^6$ thì không nhanh hơn Sàng Eratosthenes là mấy.
 >- Sàng $O(n)$ này có lưu lại các ước nguyên tố nhỏ nhất của các số không vượt quá $n$ nên sẽ phù hợp cho các bài toán liên quan đến phân tích thừa số nguyên tố.
 
-#### Hướng tiếp cận
+##### Hướng tiếp cận
 Xét $\text{min_prime}[i]$ là ước nguyên tố nhỏ nhất của $i$
 Mảng $\text{primes}[]$ sẽ lưu tất cả các số nguyên tố đã tìm được.
 Duyệt các số từ $2$ đến $n$. Ta có $2$ trường hợp:
@@ -440,7 +440,7 @@ Trong cả hai trường hợp, ta đều cần cập nhật giá trị của $\
 Chúng ta có thể làm như sau: Duyệt các số nguyên $i$ từ $2$ đến $n$. Với mỗi số nguyên $i$, ta sẽ gán $\text{min_prime} [i * p_j] = p_j$ với $p_j$ là các số nguyên tố $\le \text{min_prime} [i]$.
 
 
-#### Code C++ minh họa
+##### Code C++ minh họa
 
 ```cpp
 vector<int> min_prime, primes;
@@ -480,7 +480,7 @@ Vì có duy nhất một cách biểu diễn $x = \text{min_prime}[x] \cdot i$ n
 ---
 </details>
 
-### Sàng phân đoạn - Block Sieve / Segmented Sieve
+#### Sàng phân đoạn - Block Sieve / Segmented Sieve
 > Đây là một trong số những phương pháp hữu hiệu khắc phục điểm yếu về không gian của sàng nguyên tố Eratosthenes.
 
 Xét code sàng Erathosenes sau:
@@ -503,7 +503,7 @@ Gọi $S$ là kích thước của mỗi đoạn. Như thế, chúng ta sẽ có
 
 Với mỗi đoạn, vòng lặp `for (int j = i * i; j <= n; j += i)` sẽ thay đổi sao cho `j` chỉ chạy trong đoạn đang xét.
 
-#### Code C++ minh họa
+##### Code C++ minh họa
 ```cpp
 vector<int> primes;
 void segmented_sieve(int n) {
@@ -548,7 +548,7 @@ void segmented_sieve(int n) {
 Chú ý rằng ta phải chọn $S$ sao cho cân bằng giữa độ phức tạp không gian và thời gian. Thông thường thì ta hay chọn $S = \sqrt n$.
 
 ---
-### **Bánh xe phân tích - Wheel Factorization**
+#### **Bánh xe phân tích - Wheel Factorization**
 
 **Wheel Factorization** là phương pháp cải tiến có thể loại bỏ đi rất nhiều trường hợp trước khi sàng nguyên tố. Thay vì chỉ xét các số lẻ, ta có thể loại bỏ các số là bội của $2, 3, 5, 7, \ldots$ Việc này có thể giúp chúng ta giảm đi ĐPT cả thời gian lẫn không gian đi một chút.
 
@@ -566,7 +566,7 @@ Trong trường hợp này, ta chỉ cần sử dụng mảng kiểm tra nguyên
 Lý do người ta dùng bánh xe thì bạn đọc có thể xem ảnh dưới đây. *Nguồn: [Wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Pritchard#Overview)*
 ![img](../../uploads/SJX9g8nr2.gif)
 
-#### Code C++ minh họa
+##### Code C++ minh họa
 
 ```cpp
 // Các thông số của bánh xe
@@ -625,7 +625,7 @@ Xét kích thước "bánh xe" là $mod = 2 \cdot 3 \cdot 5 \ldots$ có thể ch
 
 Và vì lý do bộ nhớ cache mà người ta chỉ thường chọn modulo $mod \in 30; 210$. Các số lọc được tiếp tục kiểm tra bằng cách khác như bên trên.
 
-### Kết hợp các cải tiến
+#### Kết hợp các cải tiến
 Bên trên là một số cách cải tiến thường được sử dụng. Tuy nhiên bạn có thể kết hợp các cải tiến một cách hợp lý để tạo ra một sàng nguyên tố mạnh mẽ. 
 
 Dưới đây là một số sàng được sưu tầm bởi [*Code cùng RR*](https://www.facebook.com/code.cung.rr).
@@ -864,7 +864,7 @@ So sánh *độ dài code* và *thời gian chạy* với $n = 10^9$ của một
 ![img](../../uploads/HJNmI2Br3.png)
 
 
-## Một số sàng nguyên tố khác
+### Một số sàng nguyên tố khác
 Ngoài Sàng Eratosthenes, còn có một số sàng nguyên tố khác như:
 - [Sàng nguyên tố Atkin](https://en.wikipedia.org/wiki/Sieve_of_Atkin) với ĐPT $O(n)$
 - [Sàng nguyên tố Sundaram](https://en.wikipedia.org/wiki/Sieve_of_Sundaram) với ĐPT $O(n\log n)$
@@ -873,7 +873,7 @@ Ngoài Sàng Eratosthenes, còn có một số sàng nguyên tố khác như:
 Tuy nhiên, khi gặp các bộ dữ liệu $n$ vào khoảng $10^6$ thì các sàng này hầu như chạy chậm hơn so với Sàng Eratosthenes thông thường.
 
 
-## Mở rộng
+### Mở rộng
 - Sử dụng cách sàng như sàng nguyên tố chúng ta có thể xây dựng các sàng cho các số có tính chất đặc biệt khác, ví dụ như lưu ước chính phương lớn nhất, thay các số nguyên tố thành các số phân biệt có tính chất nào đó ... Ví dụ như [VNOI - Duyên Hải 2020 - Lớp 10 - Bài 2](https://oj.vnoi.info/problem/dhbb2020_square)
 - **Hàm** $\boldsymbol{\pi(x)}$ là hàm đếm số số nguyên tố không vượt quá số dương $x$.
 Và theo định lý số nguyên tố (Prime Number Theorem), ta có một công thức để ước lượng: 
@@ -884,8 +884,8 @@ Xem code bằng C++ tại [thuật toán Lehmer - đếm số lượng số nguy
 - Để phân tích thừa số nguyên tố thì có hai sàng tốt hơn sàng nguyên tố: [Quadratic Sieve](https://en.wikipedia.org/wiki/Quadratic_sieve) và [General number field sieve](https://en.wikipedia.org/wiki/General_number_field_sieve)
 - Ngoài ra có thể tham khảo thêm các code sàng nguyên tố được sưu tầm bởi [*Code cùng RR*](https://www.facebook.com/code.cung.rr) tại [đây.](https://github.com/ngthanhtrung23/CompetitiveProgramming/blob/master/benchmark/sieve.cpp?fbclid=IwAR0pZChhgX4-P0ud5eD_z3lgYGOPYqcdegsUYNlC3Da1wn6F4v1u8hXuf0Q)
 
-## Bài tập luyện tập
-### Sàng nguyên tố cơ bản
+### Bài tập luyện tập
+#### Sàng nguyên tố cơ bản
 * [VNOI - Free Contest 75 - FPRIME](https://oj.vnoi.info/problem/fc075_fprime)
 * [VNOI - Free Contest 102 - PRIME](https://oj.vnoi.info/problem/fc075_fprime)
 * [VNOI - Bedao Grand Contest 01 - KPRIME](https://oj.vnoi.info/problem/bedao_g01_kprime)
@@ -918,7 +918,7 @@ Xem code bằng C++ tại [thuật toán Lehmer - đếm số lượng số nguy
 - [Codeforces - Nodbach Problem](https://codeforces.com/problemset/problem/17/A)
 - [Codefoces - Colliders](https://codeforces.com/problemset/problem/154/B)
 
-### Sàng nguyên tố cải tiến. Thuật toán Meissel-Lehmer
+#### Sàng nguyên tố cải tiến. Thuật toán Meissel-Lehmer
 - [VNOI - Prime Number Theorem](https://oj.vnoi.info/problem/cprime) <!-- Sàng cải tiến -->
 - [SPOJ - Primes2](https://www.spoj.com/problems/PRIMES2/) <!-- Sàng cải tiến -->
 - [SPOJ - KPrimes2](https://www.spoj.com/problems/KPRIMES2/) <!-- Sàng cải tiến -->
@@ -928,7 +928,7 @@ Xem code bằng C++ tại [thuật toán Lehmer - đếm số lượng số nguy
 
 
 
-## Nguồn tham khảo
+### Nguồn tham khảo
 Bài viết được tổng hợp từ các nguồn dưới đây:
 * CP - Algorithms: 
     - [Sieve of Eratosthenes](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html)

@@ -1,4 +1,4 @@
-# Heavy-Light Decomposition (HLD)
+## Heavy-Light Decomposition (HLD)
 
 **Tác giả:** 
 - Phạm Hoàng Hiệp – University of Georgia
@@ -10,22 +10,22 @@
 
 
 
-## Mở đầu
-### Giới thiệu về HLD
+### Mở đầu
+#### Giới thiệu về HLD
 **Heavy-Light Decomposition (HLD)**, dịch ra tiếng Việt là phân chia nặng nhẹ là một kỹ thuật thường được dùng trong những bài toán xử lý trên cây. 
 
 Trong bài viết này, để ngắn gọn và dễ nhớ, chúng ta sẽ gọi tên kỹ thuật là **HLD**. 
 
 Tuy nghe tên có vẻ kinh khủng nhưng trên thực tế, đây là một kỹ thuật có ý tưởng khá tự nhiên và có tính ứng dụng cao, có thể được sử dụng trong nhiều bài tập.
 
-### Kiến thức cần biết
+#### Kiến thức cần biết
 - Các thuật toán duyệt đồ thị cơ bản (DFS, BFS, ...)
 - Cây
 - [Lowest Common Ancestor (LCA) - Tổ tiên chung gần nhất](https://vnoi.info/wiki/algo/data-structures/lca.md)
 - [Segment Tree](https://vnoi.info/wiki/algo/data-structures/segment-tree-extend.md)
 - [Euler tour on tree](https://vnoi.info/wiki/algo/graph-theory/euler-tour-on-tree.md) (nên biết nhưng không bắt buộc)
 
-### Bài toán
+#### Bài toán
 Để trả lời câu hỏi HLD sẽ giúp chúng ta làm gì, chúng ta sẽ cùng giải một bài toán. 
 
 Trước hết, chúng ta sẽ đến với phiên bản dễ hơn của bài toán như sau. 
@@ -36,7 +36,7 @@ Cho một mảng số nguyên dương gồm tối đa $10^5$ phần tử. Chúng
 
 Bài toán trên là một bài toán quen thuộc và có thể được xử lý đơn giản bằng cách sử dụng Segment Tree. Nhưng, giả sử thay vì mảng một chiều, chúng ta cần xử lý bài toán trên cây thì phải làm như thế nào? 
 
-#### Phát biểu bài toán
+##### Phát biểu bài toán
 
 Bạn đọc có thể đọc đề bài cụ thể và nộp code tại [đây](http://www.usaco.org/current/index.php?page=viewproblem2&cpid=921)
 
@@ -46,8 +46,8 @@ Cho một cây (một đồ thị có $n$ đỉnh và $n-1$ cạnh và giữa ha
 
 Đường đi từ $u$ đến $v$ trên đồ thị được định nghĩa là một chuỗi các đỉnh $u, w_1, w_2, ..., w_k, v$ trong đó tồn tại một cạnh nối giữa $u$ và $w_1$, $w_1$ và $w_2$, ..., $w_{k-1}$ đến $w_k$, $w_k$ đến $v$. Với mỗi cặp đỉnh $u$, $v$ bất kỳ trên cây tồn tại một và chỉ một đường đi từ $u$ đến $v$.
 
-## HLD
-### Ý tưởng chính
+### HLD
+#### Ý tưởng chính
 
 Vậy chính xác thì HLD sẽ làm gì để giúp chúng ta giải được phiên bản "trên cây" của bài toán trên? Liệu chúng ta có thể biến cây cho trước thành một mảng để giải bài toán trên đó? Câu trả lời là không. Tuy nhiên chúng ta có thể chia cây thành một số phần, và giải bài toán trên từng phần đó.
 Cụ thể như sau, giả sử có cây sau đây
@@ -85,11 +85,11 @@ Ngoài ra, nếu ta duyệt cây bằng DFS *ưu tiên các đỉnh liền trong
 
 Như vậy, chúng ta đi qua không quá $O(\log(n))$ chuỗi, với mỗi chuỗi chúng ta có thể thực hiện trả lời truy vấn hoặc update trong $O(\log(n))$ trên Segment tree nên độ phức tạp cho việc trả lời các truy vấn và cập nhật trên một đường đi giữa hai đỉnh bất kỳ trên cây là $O(\log^2(n))$
 
-### Chi tiết cài đặt
+#### Chi tiết cài đặt
 
 Thông thường, do việc sử dụng HLD sẽ đi kèm với một cấu trúc dữ liệu nào đó và duyệt đồ thị, code có thể sẽ dài và gồm nhiều phần. Tuy nhiên, nếu nắm chắc ý tưởng chính thì cài đặt HLD rất đơn giản. 
 
-#### Tiền xử lý
+##### Tiền xử lý
 
 Đầu tiên, ta cần phải tính kích thước của cây con từng đỉnh để lấy ra các con "nặng" của từng đỉnh một. Ngoài ra, ta cần tính thêm độ sâu các đỉnh để phục vụ cho thao tác tính LCA.
 
@@ -108,7 +108,7 @@ void Dfs(int s, int p = -1) {
 mảng $Sz, Depth$ và $Par$ lần luợt lưu kích thuớc cây con, độ sâu và cha (tổ tiên trực tiếp) của các đỉnh trên cây
 mảng $AdjList$ là mảng vector để lưu lại thông tin về đồ thị. $AdjList[s]$ là vector gồm các đỉnh kề với $s$.
 
-#### Tìm cạnh nặng, cạnh nhẹ và tạo các chuỗi
+##### Tìm cạnh nặng, cạnh nhẹ và tạo các chuỗi
 
 Sau đó chúng ta thực hiện phân chia các đỉnh vào các chuỗi. Với mỗi đỉnh, cần lưu lại chuỗi của đỉnh và vị trí của đỉnh khi đặt các chuỗi liên tiếp với nhau (để thuận tiện cho việc xử lý truy vấn). Với mỗi chuỗi, chúng ta cần biết đỉnh đầu tiên của chuỗi (để thực hiện việc nhảy giữa các chuỗi).
 
@@ -145,7 +145,7 @@ $CurChain$ và $CurPos$ lần lượt là các biến lưu lại chỉ số củ
 
 Như vậy, với mỗi đỉnh, chúng ta sẽ tìm cạnh nặng và đi xuống cạnh đó trước. Sau đó, chúng ta sẽ lần lượt tạo ra các chuỗi mới và nhảy sang các đỉnh nhẹ. Như vậy, thứ tự duyệt đồ thị sẽ đảm bảo mỗi chuỗi được lưu đúng thứ tự từ trên xuống dưới trong một đoạn liên tiếp trên mảng $Arr$.
 
-#### Tìm LCA
+##### Tìm LCA
 
 Trong phần lớn các bài toán sử dụng HLD để thực hiện truy vấn trên đường đi, chúng ta cần tìm tổ tiên chung gần nhất và thực hiện thao tác lần lượt từ hai đỉnh đến tổ tiên chung này. Rất may là chúng ta có thể sử dụng chính những thông tin đã lưu để tìm ra LCA một cách nhanh chóng.
 
@@ -170,7 +170,7 @@ int LCA(int u, int v) {
 }
 ```
 
-#### Segment tree
+##### Segment tree
 
 Duới đây là các thao tác xử lý trên segment tree. Phần này sẽ đủ để xử lý phiên bản không trên cây của bài toán.
 
@@ -208,7 +208,7 @@ int Calc(int id, int tl, int tr, int l, int r) {
 ```
 
 
-#### Các thao tác trên cây
+##### Các thao tác trên cây
 
 Và cuối cùng, chúng ta sẽ có các hàm để xử lý truy vấn trên cây. Tất nhiên có thể đưa toàn bộ phần này vào trong main mà không tăng độ dài code. Tuy nhiên để dễ nhìn và tiện debug, chúng ta sẽ code riêng hàm để xử lý truy vấn trên đuờng đi từ đỉnh $u$ đến đỉnh $v$.
 
@@ -244,7 +244,7 @@ Hàm $Query$ dùng để trả lời truy vấn tổng XOR của các số trên
 
 Có thể thấy, cách nhảy trong khi tính toán Query chính là cách nhảy khi tìm LCA. Trên thực tế, chúng ta không cần tìm LCA trước mà có thể thực hiện việc đó ngay khi tính Query. Nhưng trong bài này, phần tìm LCA được code riêng một hàm để dễ hiểu và tiện giải thích.
 
-#### Code đầy đủ
+##### Code đầy đủ
 
 Dưới đây là code đầy đủ cho bài toán (kết hợp của tất cả các đoạn trên, khai báo biến và hàm main) để bạn đọc tham khảo. (Code nộp AC)
 
@@ -252,7 +252,7 @@ Dưới đây là code đầy đủ cho bài toán (kết hợp của tất cả
 <summary><b>Code</b></summary>
 
 ```cpp
-#include<bits/stdc++.h>
+## include<bits/stdc++.h>
 using namespace std;
 const int MaxN = 1e5 + 5;
 
@@ -416,7 +416,7 @@ signed main() {
 }
 ```
 </details>
-### Bài viết tham khảo và bài tập luyện tập
+#### Bài viết tham khảo và bài tập luyện tập
 
 Bài viết trên được tham khảo từ bài viết gốc [Hybrid Tutorial 1: Heavy-Light Decomposition](https://codeforces.com/blog/entry/81317). Bạn đọc có thể tham khảo và xem video hướng dẫn kèm theo của galen_colin. Ngoài ra có thể tham khảo bài viết của [CP algo](https://cp-algorithms.com/graph/hld.html).
 

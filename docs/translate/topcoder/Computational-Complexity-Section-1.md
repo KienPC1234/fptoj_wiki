@@ -1,15 +1,15 @@
-# Độ phức tạp tính toán
+## Độ phức tạp tính toán
 
 
 
 Nguồn bài: [Topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/computational-complexity-section-1/)
 
-# Giới thiệu
+## Giới thiệu
 Trong bài viết này tôi sẽ giới thiệu tới các bạn về chủ đề độ phức tạp tính toán. Trước khi đi vào định nghĩa chính xác của các khái niệm, bài viết sẽ giải thích các lý luận đằng sau những khái niệm đó. Tôi cho rằng việc hiểu các lý luận này có thể còn quan trọng hơn bản thân định nghĩa của các khái niệm.
 
-# Tầm quan trọng của những lý luận
+## Tầm quan trọng của những lý luận
 
-## Ví dụ 1
+### Ví dụ 1
 Giả sử bạn được phân công viết một chương trình để xử lý một tập dữ liệu gồm nhiều bản ghi mà công ty của bạn đã thu thập. Bạn cài đặt hai thuật toán và kiểm tra chúng bằng một vài tập dữ liệu khác nhau. Thời gian chạy được thống kê trong bảng 1.
 <table>
 <tbody>
@@ -52,7 +52,7 @@ Các câu hỏi trên dẫn tới câu hỏi cốt lõi hơn: **Làm sao để s
 
 Có thể kết luận được rằng trong hầu hết các trường hợp - cho trước 2 thuật toán, hoặc là một thuật toán gần như luôn luôn tốt hơn, hoặc là cả hai xấp xỉ tốt như nhau. Như vậy, chúng ta sẽ định nghĩa độ tốt của thuật toán dựa vào đánh giá độ hiệu quả chạy trên toàn bộ tập dữ liệu như trên. Đánh giá này sẽ là ý tưởng chính đằng sau các định nghĩa cụ thể mà chúng ta sẽ đề cập về sau.
 
-## Mẹo gộp hai thuật toán
+### Mẹo gộp hai thuật toán
 
 Nếu đối chiếu với hai thuật toán ví dụ 1, không khó để thấy rằng có một thuật toán với thời gian chạy tương tự với chúng trong bảng 2
 
@@ -87,9 +87,9 @@ Nếu đối chiếu với hai thuật toán ví dụ 1, không khó để thấ
 - Nếu số lượng phần tử quá nhỏ, chạy thuật toán sắp xếp chèn *InsertSort* (vì *InsertSort* chạy nhanh hơn với tập dữ liệu kích thước nhỏ).
 - Nếu vị trí phần tử chốt không tốt, chuyển sang chạy thuật toán sắp xếp trộn *MergeSort*.
 
-# Thế nào là độ hiệu quả của thuật toán?
+## Thế nào là độ hiệu quả của thuật toán?
 
-## Ví dụ 2
+### Ví dụ 2
 
 Giả sử bạn có đoạn mã sau:
 
@@ -106,7 +106,7 @@ Thực tế trên dẫn ta tới câu hỏi quan trọng hơn: đánh giá quan 
 
 Tuy nhiên, thế nào là là trường hợp xấu nhất? Một cách đơn giản để làm cho thuật toán chạy chậm hơn là  tăng kích cỡ đầu vào. Vì cận trên của số phần tử đã bị chặn bởi đề bài, các câu hỏi quan trọng hơn là: tập đầu vào xấu nhất trong các tập có cùng số phần tử là tập nào? Khi tăng kích cỡ tập đầu vào thì độ phức tạp trong trường hợp xấu nhất **tăng như thế nào**?
 
-## Lưu ý về kích cỡ tập đầu vào
+### Lưu ý về kích cỡ tập đầu vào
 
 Hiểu chính xác thì "kích cỡ tập đầu vào" là đại lượng gì? Theo định nghĩa chính thống, kích cỡ tập đầu vào được viết thành một tập hữu hạn các ký tự (với ít nhất 02 'ký tự'). Trong bài này ta có thể coi tập ký tự đó là các số tự nhiên từ 0 tới 255. Như vậy "kích cỡ tập đầu vào" được tính đúng bằng số bytes của tệp chứa dữ liệu đầu vào (input file).
 
@@ -120,7 +120,7 @@ Với cách tiếp cận đó, kể từ đây cho tới cuối bài viết ta k
 
 Một trường hợp cần lưu ý là khi viết một số $N$ ta chỉ cần $log(N)$ khoảng trống (ví dụ để viết 123456 trong hệ cơ số 10 ta chỉ cần $log_{10}(123456)$ chữ số). Cần phân biệt hai đại lượng này - với thuật toán kiểm tra số nguyên tố đơn giản có độ phức tạp đa thức trên **độ lớn** của số được kiểm tra chứ không phải là trên **số lượng chữ số** của số đó! Nếu bạn chưa từng gặp khái niệm *độ phức tạp đa thức* thì cũng không cần lo lắng vì khái niệm này sẽ được giải thích trong phần sau.
 
-## Tính toán độ hiệu quả của thuật toán như thế nào?
+### Tính toán độ hiệu quả của thuật toán như thế nào?
 Nhắc lại rằng cho trước một bộ dữ liệu đầu vào, ta có thể đếm số bước thực hiện các phép toán của một thuật toán bằng cách mô phỏng các bước chạy thuật toán đó trên bộ dữ liệu được cho. Giả sử ta tiến hành đếm như vậy với tất cả các bộ dữ liệu có kích thước tối đa $N$. Ký hiệu $f(N)$ là số bước cần thực hiện nhiều nhất (trường hợp xấu nhất). Hàm $f$ được gọi là **độ phức tạp thời gian**, hoặc ngắn gọn **thời gian chạy** của thuật toán.
 
 Nói cách khác, nếu ta có dữ liệu vào với kích cỡ $N$, việc thực hiện thuật toán mất tối đa $f(N)$ bước.
@@ -141,7 +141,7 @@ Sự khác biệt như trên sẽ luôn xảy ra nếu một trong hai thuật t
 
 
 
-# Các khái niệm cơ bản
+## Các khái niệm cơ bản
 
 Gọi $f, g$ là các hàm số dương không giảm trên tập số nguyên dương (lưu ý rằng *hàm thời gian chạy* thỏa mãn điều kiện này). Ta nói rằng "$f(N)$ thuộc $O(g(N))$" (cách đọc: "$f$ thuộc O-lớn của $g$") nếu tồn tại các giá trị $c$ và $N_0$ thỏa mãn điều kiện sau:
 
@@ -196,7 +196,7 @@ Khi nói về độ phức tạp thời gian/bộ nhớ của một thuật toá
 
 Với các bài toán trên đồ thị, độ phức tạp $ \Theta$(N + M) được gọi là "tuyến tính theo độ lớn của đồ thị".
 
-## Xác định thời gian chạy dựa vào đánh giá cận trên
+### Xác định thời gian chạy dựa vào đánh giá cận trên
 
 Với hầu hết các thuật toán thường gặp trong thực tế, giá trị hằng số của $O$ (hoặc $ \Theta$) thường là khá nhỏ. Nếu một thuật toán là $ \Theta(N^2)$, độ phức tạp chính xác là vào khoảng $10N^2$ chứ không phải $10^7N^2$.
 
@@ -231,10 +231,10 @@ Trong một kỳ thi trên TopCoder, một thuật toán thực thi 1 000 000 00
 </table>
 Bảng 3: Giá trị $N$ lớn nhất để các thuật toán có độ phức tạp khác nhau chạy trong tối đa 8 giây
 
-# Lưu ý khi phân tích độ phức tạp thuật toán
+## Lưu ý khi phân tích độ phức tạp thuật toán
 Thông thường khi trình bày một thuật toán, cách tốt nhất để đánh giá độ phức tạp của nó là ký pháp Theta $\Theta$. Tuy nhiên, trong thực tế thường ta chỉ trình bày cận $O-lớn$ vì ký pháp này dễ viết hơn và phổ biến hơn. Nhắc lại rằng $O-lớn$ chỉ mang ý nghĩa cận trên. Thông thường ta tìm cận trên $O-lớn$ nhỏ nhất có thể.
 
-## Ví dụ 3
+### Ví dụ 3
 Cho một mảng A đã được sắp xếp. Xác định xem liệu có tồn tại 02 phần tử trong mảng mà cách nhau D đơn vị hay không. Xét lời giải sau
 
 ```cpp
@@ -250,7 +250,7 @@ Thoạt nhìn ta có thể sẽ đánh giá thuật toán trên có cận $O(N^2
 
 Mệnh đề "thuật toán trên là $O(N^2)$" vẫn là một mệnh đề đúng. Tuy nhiên bằng việc nói rằng "thuật toán trên là $O(N)$" ta cung cấp nhiều thông tin hơn về thuật toán đó.
 
-# Kết luận
+## Kết luận
 
 Chúng ta đã chỉ ra cách viết các cận (trên, dưới) theo độ phức tạp tính toán của thuật toán. Ta cũng đã chứng minh rằng các cận đó là các thuộc tính cơ bản và thường là hiệu quả để đánh giá các thuật toán.
 Trong phần sau chúng ta sẽ phân tích làm thế nào để ước lượng độ phức tạp tính toán của các thuật toán. Như ta đã thấy trong Ví dụ 3 việc phân tích này có thể trở nên khá khó khăn. Một nguyên nhân khác làm cho việc phân tích khó khăn là *các thuật toán đệ quy*. Các vấn đề này sẽ được xử lý trong [phần 2](translate/topcoder/Computational-Complexity-Section-2) của bài viết.

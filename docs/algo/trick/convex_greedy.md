@@ -1,4 +1,4 @@
-# Sum-constrained convex optimization
+## Sum-constrained convex optimization
 
 **Người viết:**
 - Đặng Đoàn Đức Trung - UT Austin
@@ -8,23 +8,23 @@
 
 
 
-## Giới thiệu
+### Giới thiệu
 
 Mục đích của bài viết này là để giới thiệu cho mọi người về một mô típ đã xuất hiện trong nhiều bài tập trung bình khó tới khó -- tối ưu tổng của một số hàm lồi cho trước. Ý tưởng giải chung của các bài toán này thường là như nhau: tham lam trên chi phí tăng của các hàm lồi này (ta sẽ định nghĩa chi phí tăng ở phần tiếp theo).
 
 *Bài viết này là phần 1 của một chuỗi 2 bài viết; phần 2 của chuỗi bài viết này mình sẽ giới thiệu thuật toán tìm tổng Minkowski của các bao lồi.*
 
-### Lưu ý trước khi đọc
+#### Lưu ý trước khi đọc
 
 Mình sẽ sử dụng các khái niệm sau xuyên suốt bài viết.
 
 - Hàm $f$ định nghĩa trên tập số nguyên được gọi là **hàm lồi** nếu với mọi $i \in \mathbb{Z}$, ta có $f(i) - f(i - 1) \le f(i + 1) - f(i)$.
 
-## Bài toán tổng quát
+### Bài toán tổng quát
 
 Ta xét bài toán tổng quát sau.
 
-### Đề bài
+#### Đề bài
 
 Cho $n$ hàm lồi $f_1, f_2, \dots, f_n$ được định nghĩa trên tập số nguyên không âm và một giá trị $k$ cho trước. Tìm $n$ số nguyên không âm $x_1, x_2, \dots, x_n$ sao cho:
 - $x_1 + x_2 + \dots + x_n = k$.
@@ -34,7 +34,7 @@ In ra giá trị nhỏ nhất của $f(x_1) + f(x_2) + \dots + f(x_n)$.
 
 Giới hạn: $1 \le n, k \le 2 \cdot 10^5$.
 
-### Phân tích
+#### Phân tích
 
 Để việc trình bày được thuận tiện hơn, đầu tiên ta xét bài toán với $n = 2$.
 
@@ -61,7 +61,7 @@ Với $n$ lớn hơn, ta có thuật toán tương tự: khởi tạo mọi $x_i
 
 Ta có thể sử dụng heap để cài đặt thuật toán trên với độ phức tạp là $O((n + k) \log n)$.
 
-### Cài đặt
+#### Cài đặt
 
 ```cpp
 int n; // Số lượng hàm f_i
@@ -87,11 +87,11 @@ long long cost_greedy(int k) {
 }
 ```
 
-## Minh họa tham chi phí tăng
+### Minh họa tham chi phí tăng
 
 Link bài: [CF - 1428E](https://codeforces.com/contest/1428/problem/E).
 
-### Đề bài
+#### Đề bài
 
 Có $n$ củ cà rốt có độ dài $a_1, a_2, \dots, a_n$. Người chủ muốn cắt các củ cà rốt này các phần *có độ dài nguyên dương* cho $k$ chú thỏ. Một phần cà rốt có độ dài $x$ sẽ mất $x^2$ giây để ăn. Người chủ này muốn cắt cà rốt thành $k$ phần sao cho tổng thời gian ăn hết $k$ phần này là nhỏ nhất có thể.
 
@@ -99,7 +99,7 @@ Giới hạn:
 - $1 \le n, k \le 10^5$.
 - $1 \le a_i \le 10^6$.
 
-### Phân tích
+#### Phân tích
 
 Xét hàm $f_i(p)$ là tổng thời gian ăn nhỏ nhất nếu ta chỉ xét củ cà rốt $a_i$, và củ cà rốt này được chia thành đúng $p$ phần.
 
@@ -109,10 +109,10 @@ Quan trọng hơn, ta nhận thấy là mọi $f_i$ là hàm lồi. Để chứn
 
 Bởi thế, ta có thể dùng ý tưởng tham lam được đề cập ở phần bài toán tổng quát để cài đặt bài này với độ phức tạp là $O((n + k) \log n)$.
 
-### Cài đặt
+#### Cài đặt
 
 ```cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 using namespace std;
  
 struct carrot {
@@ -158,11 +158,11 @@ int main() {
 }
 ```
 
-## Tham chi phí tăng + chặt nhị phân
+### Tham chi phí tăng + chặt nhị phân
 
 Link bài: [CF - 1344D](https://codeforces.com/problemset/problem/1344/D).
 
-### Đề bài
+#### Đề bài
 
 Cho mảng $a$ gồm $n$ số nguyên dương và một số $k$, bạn cần tìm mảng $b$ gồm $n$ số nguyên thỏa mãn:
 - $0 \le b_i \le a_i$ với mọi $i$.
@@ -176,17 +176,17 @@ Giới hạn:
 - $1 \le a_i \le 10^9$.
 - $1 \le k \le \sum_{i=1}^n a_i$.
 
-### Phân tích
+#### Phân tích
 Nếu ta đặt $f_i(x) = x(a_i - x^2)$, thì ta nhận thấy là $f_i(x)$ là *hàm lõm* (hay nói cách khác, $-f_i(x)$ là hàm lồi). Để chứng minh điều này, với mọi $x$ ta có
 $$f_i(x + 1) - f_i(x) = -3x^2 - 3x - 1 + a_i$$
 và vế phải giảm dần khi $x$ tăng dần. Vì thế, ta có thể dùng ý tưởng tổng quát như trên. Tuy nhiên, với $k \sim 10^{14}$ ở bài toán này, ta không thể trực tiếp sử dụng thuật toán trên. Để tối ưu, ta có thể chặt nhị phân chi phí tăng lớn thứ $k$. Khi đang xét chặt nhị phân với giá trị $m$, ta cần tìm với mọi $i$ giá trị $b_i$ lớn nhất sao cho $f_i(b_i + 1) - f_i(b_i) \ge m$; thao tác này có thể được thực hiện với độ phức tạp $O(1)$ nếu sử dụng công thức phương trình bậc hai, hoặc với độ phức tạp $O(\log a_i)$ nếu sử dụng thêm 1 vòng chặt nhị phân. Vì thế, ta có thể giải bài trên với độ phức tạp là $O(n \log^2 A)$ hoặc $O(n \log A)$ với $A = \sum_{i=1}^n a_i$.
 
-### Cài đặt
+#### Cài đặt
 
 Một số lưu ý khi cài đặt thuật toán trên: sẽ có thể tồn tại giá trị $m$ mà số lượng chi phí tăng $< m$ bé hơn $k$, nhưng số lượng chi phí tăng $\le m$ thì lại lớn hơn $k$ (vì có thể có nhiều chi phí tăng đúng bằng $m$). Ta cần phải cẩn thận khi cài đặt trường hợp này.
 
 ```cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 using namespace std;
 
 const long long INF = 4E18;
@@ -249,11 +249,11 @@ int main() {
 }
 ```
 
-## Tham đạo hàm
+### Tham đạo hàm
 
 Link bài: [SEERC 2022 - M](https://codeforces.com/gym/104114/problem/M).
 
-### Đề bài
+#### Đề bài
 Jerry có một cái cây vô hướng có $n$ đỉnh, trong đó mỗi đỉnh được đặt $c_i$ miếng phô mai.
 
 Có một chú chuột hiện đang đứng ở đỉnh $1$ và muốn đi tới đỉnh $n$ để thoát khỏi cái cây này. Ở mỗi bước, chú chuột này sẽ dùng mũi đánh hơi số lượng phô mai ở những đỉnh kề đỉnh chú chuột đang đứng, rồi di chuyển tới một đỉnh kề ngẫu nhiên với xác suất tỉ lệ thuận với số lượng phô mai hiện có ở đỉnh này. Lưu ý rằng chú chuột này sẽ không bao giờ quay trở lại những đỉnh chú chuột đã đi trước đó. Nếu không còn đỉnh kề nào hợp lệ để di chuyển, chú chuột sẽ bị kẹt ở đỉnh này mãi mãi.
@@ -266,7 +266,7 @@ Giới hạn:
 - $1 \le n \le 2 \cdot 10^5$.
 - $1 \le x, c_i \le 10^9$.
 
-### Phân tích
+#### Phân tích
 
 Đầu tiên ta nhận thấy là ta chỉ nên đặt phô mai ở những đỉnh trên đường đi từ $1$ tới $n$ không bao gồm $1$. Ngoài ra, với mỗi đỉnh $u$ trên đường đi từ $1$ tới $n$, ta có thể tính được $b_u$ là tổng số lượng phô mai ở những đỉnh là con của cha của $u$ --- nói cách khác, $\frac{c_u}{b_u}$ là xác suất đi tới đỉnh $u$ từ đỉnh cha của $u$ trước khi thao tác. Sau khi thêm $x_u$ miếng phô mai vào đỉnh $u$, xác suất này trở thành $\frac{c_u + x_u}{b_u + x_u}$. Vì thế, xác suất đi tới $n$ sẽ là là $\prod_{u \in \{1 \to n\}} \frac{c_u + x_u}{b_u + x_u}$. Để thuận tiện hơn, ta xét logarit của hàm này: $\sum_{u \in \{1 \to n\}} \log(c_u + x_u) - \log(b_u + x_u)$.
 
@@ -327,12 +327,12 @@ Trên thực tế, với riêng bài toán này, ta chỉ cần sử dụng các
 
 Vì thế, bài toán có thể được giải với độ phức tạp $O(n (\log n + \log \epsilon^{-1}))$.
 
-### Cài đặt
+#### Cài đặt
 
 Ở đây mình không sử dụng $\epsilon$; thay vào đó, điều kiện thoát của mình là khi tổng của $\hat{x}_u$ cách $x$ tối đa là $n$.
 
 ```cpp
-#include <bits/stdc++.h>
+## include <bits/stdc++.h>
 using namespace std;
 
 long double log_prob(long double c, long double b) {
@@ -426,6 +426,6 @@ int main() {
 }
 ```
 
-## Bài tập áp dụng
+### Bài tập áp dụng
 - [CodeSprint 2023 - L](https://codesprintla23.kattis.com/contests/codesprintla23open/problems/codesprintla23.bloopergame)
 - [ICPC Danang 2019 - F](https://open.kattis.com/problems/fairbandwidthsharing)

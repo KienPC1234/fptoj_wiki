@@ -1,4 +1,4 @@
-# Skip Lists
+## Skip Lists
 
 **Tác giả**: Vũ *chipchip* Phúc Hoàng
 
@@ -12,7 +12,7 @@ May mắn thay, dân competitive programmers đã tìm ra cách sử dụng Skip
 
 
 
-# Bài toán cơ bản
+## Bài toán cơ bản
 
 Hãy lập trình một cấu trúc dữ liệu S có thể thực hiện các thao tác sau:
 
@@ -20,7 +20,7 @@ Hãy lập trình một cấu trúc dữ liệu S có thể thực hiện các t
 * Xóa một phần tử $x$ khỏi $S$.
 * Cho một phần tử $x$, tìm một phần tử gần $x$ nhất trong $S$.
 
-# Các hướng tiếp cận
+## Các hướng tiếp cận
 
 Ta sẽ xét một số cấu trúc dữ liệu (chưa đề cập đến Skip Lists) sử dụng để giải bài toán cơ bản trên:
 
@@ -47,7 +47,7 @@ Ta nhận thấy mỗi cấu trúc dữ liệu kể trên đều có nhược đ
 
 Từ đó, Skip Lists, một phiên bản nâng cấp của Sorted Linked List, được sử dụng trong competitive programming như một sự thay thế cho Balanced Binary Search Tree. Về tộc độ và bộ nhớ, Skip Lists không thua gì Balanced Binary Search Tree, tuy nhiên lại dễ cài đặt hơn rất nhiều.
 
-# Ý tưởng Skip Lists
+## Ý tưởng Skip Lists
 
 Skip Lists là một phiên bản nâng cấp của Sorted Linked Lists. Ta hãy bắt đầu với một ví dụ về Sorted Linked List chứa 8 số và nghĩ cách cải thiện vấn đề của nó.
 
@@ -77,11 +77,11 @@ Từ đó ta có nhận xét sau: Các liên kết trên mỗi tầng không nh�
 
 Đây chính là Skip Lists - một cấu trúc dữ liệu được xây dựng bằng nhiều tầng Sorted Linked List được xây dựng một cách ngẫu nhiên, trong đó tầng cao chứa những bước nhảy dài hơn và tầng thấp chứa những bước nhảy ngắn hơn. Skip Lists cho phép ta thực hiện thao tác tìm kiếm với độ phức tạp xấp xỉ $O(log(N))$.
 
-# So sánh các cấu trúc dữ liệu
+## So sánh các cấu trúc dữ liệu
 
 ![Table](http://i.imgur.com/HupUh3y.png)
 
-# Hướng dẫn chi tiết
+## Hướng dẫn chi tiết
 
 Học phải đi đôi với hành. Cách hiểu lý thuyết nhanh nhất là đập ngay vào bài tập. Ta sẽ đi chi tiết vào cách sử dụng Skip Lists để giải bài [CPPSET](https://oj.vnoi.info/problem/cppset). Bạn hãy đọc đề và ngẫm nghĩ một lúc trước khi đọc tiếp bài viết này. Bài giải ở dưới được code bằng ngôn ngữ C++98.
 
@@ -243,14 +243,14 @@ void SkipLists::erase(int value) {
 
 Với 6 hàm trên, bạn đã có thể mô phỏng một cách đơn giản một cái set "dỏm" để giải bài này. Bạn hãy thử tự làm tiếp và nộp trên SPOJ nhé. Toàn bộ code cho bài CPPSET có thể xem ở [đây](http://ideone.com/53t3Eh).
 
-# Mở rộng
+## Mở rộng
 
 * Ở trên mới là một code Skip Lists đơn giản nhất mô phỏng std::set để giải bài CPPSET. Liệu bạn có thể code lại một std::set hoàn hảo bằng Skip Lists không? Hãy thử xem!
 * Code trên sử dụng cả liên kết xuôi (`next_column`) và liên kết ngược (`previous_column`) để dễ xử lí. Bạn có thể code lại CPPSET mà không cần sử dụng liên kết ngược không?
 * Khi xây dựng cột để chèn vào Skip Lists, ta sử dụng kĩ thuật tung đồng xu với xác suất 1/2 mỗi mặt để xây dựng chiều cao cột. Tại sao phải là 1/2, liệu có thể là một con số khác không? Bạn hãy thử các con số khác nhau, sử dụng cả phân tích lý thuyết và thực nghiệm, cho thấy độ hiệu quả của các con số khác.
 * Hẳn bạn sẽ thắc mắc dùng Skip Lists làm gì khi nó cũng chỉ để thay std::set, mà std::set thì có sẵn rồi. Skip Lists có rất nhiều ứng dụng và khả năng tùy biến nâng cao mà sẽ được giới thiệu trong phần 2 của bài viết này, giúp nó làm được những điều std::set không thể làm được, đơn giản nhất là tìm phần thử lớn thứ k trong tập hợp. Bạn thử tự nghĩ cách tìm phần tử lớn thứ k trong Skip Lists xem.
 
-# Lời kết
+## Lời kết
 
 Trên đây là những gì cơ bản nhất các bạn có thể biết về Skip Lists, hi vọng các bạn có thể ứng dụng cấu trúc dữ liệu tuyệt vời này một cách hiệu quả trong các contests. Cá nhân mình thấy Skip Lists là một cấu trúc dữ liệu rất hay nhưng ít được sử dụng, competitive programmers Việt Nam chúng ta thường thích dùng Splay Tree hơn mặc dù chẳng mấy ai dám code lúc đi thi... Mình rất mong sau bài viết này mọi người sẽ dùng Skip Lists nhiều hơn.
 

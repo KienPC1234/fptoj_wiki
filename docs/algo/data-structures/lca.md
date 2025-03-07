@@ -1,4 +1,4 @@
-# Các phương pháp giải bài toán LCA
+## Các phương pháp giải bài toán LCA
 
 **Tác giả**: Khúc Anh Tuấn
 
@@ -17,14 +17,14 @@ Trước khi đọc bài viết này, bạn cần đọc bài viết: [Bài toá
 Để giải bài toán LCA ta có thể chuyển sang bài toán RMQ tương ứng và có thể giải bằng một số cách khác nhau. Trong bài viết này chúng ta sẽ đề cập tới một số phương pháp giải bài toán LCA một cách trực tiếp.
 
 
-# Bài toán LCA (Least Common Ancestor):
+## Bài toán LCA (Least Common Ancestor):
 
 Input: 1 cây với $n$ đỉnh.
 
 Truy vấn: với 2 nút $u$, $v$ bất kỳ của cây $T$, truy vấn $LCA(u,v)$ cho biết cha chung gần nhất của 2 đỉnh $u$, $v$ trong cây $T$, tức là cho biết đỉnh xa gốc nhất là cha của cả $u$ và $v$.
 
 
-# Cách 1 - Sparse Table
+## Cách 1 - Sparse Table
 
 Từ cây đầu vào ta có thể xây dựng được mảng $F[1..n]$ với $F[i]$ cho ta biết nút cha của nút $i$. Sau đó ta có thể xây dựng mảng $A[1..n][0..logN]$ với $A[i][j]$ cho ta biết nút tổ tiên thứ $2^j$ của nút $i$. Xây dựng mảng $A$ mất $O(Nlog(N))$ sử dụng phương pháp QHĐ. Gọi $d(i)$ là khoảng cách tới gốc của nút $i$. Để xác định $LCA(u,v)$ ta thực hiện các bước sau:
 
@@ -34,7 +34,7 @@ Từ cây đầu vào ta có thể xây dựng được mảng $F[1..n]$ với $
 Tất nhiên trong quá trình thay một nút bằng nút tổ tiên của nó, ta sẽ sử dụng mảng $A$ để có thể nhảy một lần được nhiều bước. Khi đó độ phức tạp của thuật toán sẽ là $< O(Nlog(N)), O(log(N)) >$.
 
 
-# Cách 2 - Euler Tour + Interval Tree
+## Cách 2 - Euler Tour + Interval Tree
 
 Từ cây đầu vào ta sử dụng thủ tục DFS để xây dựng 2 mảng:
 
@@ -53,7 +53,7 @@ Xây dựng mảng $A[1..n]$ với $A[i]$ cho ta biết $postnum[k]$ với $k$ l
 
 Độ phức tạp của thuật toán này cũng giống như thuật toán 1 với thời gian là $<O(Nlog(N)),O(log(N))>$ như chỉ mất $O(N)$ bộ nhớ.
 
-# Cách 3
+## Cách 3
 
 Cũng tương tự cách 2 ta khởi tạo các mảng $prevnum[1..n]$ và $postnum[1..n]$. Mảng $A[1..n]$ với $A[i]$ cho ta biết đỉnh $k$ sao cho $prevnum[k] = i$. Như vậy ta cần tìm $LCA(u,v)$ trong mảng con $A[1..min(prevnum[u],prevnum[v])]$. Ta có thể sử dụng phương pháp chặt nhị phân kết hợp đệ quy để làm cận (khá tốt) như sau:
 
@@ -69,7 +69,7 @@ Cũng tương tự cách 2 ta khởi tạo các mảng $prevnum[1..n]$ và $post
 Thuật toán trên nếu chỉ thực hiện 2 trường hợp đầu thì độ phức tạp cho mỗi lần chất vấn là $LogN$, còn nếu chỉ thực hiện trường hợp 3 thì độ phức tạp sẽ là $N$. Qua khảo sát bằng việc chạy chương trình cho thấy thời gian thực hiện trung bình của thuật toán này ngang với các thuật toán với độ phức tạp $<O(Nlog(N)),O(log(N))>$. Thuật toán này tuy có độ phức tạp lớn nhưng lại là phương pháp tiết kiệm bộ nhớ và cài đặt dễ dàng nên đây là thuật toán có ứng dụng cao trong làm bài.
 
 
-# Cách 4 - Heavy Light Decomposition
+## Cách 4 - Heavy Light Decomposition
 
 Sử dụng [Heavy Light Decomposition](algo/data-structures/heavy-light-decomposition).
 
@@ -112,7 +112,7 @@ Thuật toán này sẽ chạy trong thời gian $<O(N),O(log(N))>$.
 
 Thuật toán này khá linh hoạt và có thể mở rộng ra để ứng dụng vào nhiều bài toán khác trên cây. Để ý rằng nếu cây ban đầu có trọng số ở mỗi cạnh, sau khi chia thành các cây suy biến thì cạnh của mỗi cây suy biến sẽ giống như các phần tử liên tiếp của  một mảng. Do đó ta hoàn toàn có thể sử dụng các cấu trúc dữ liệu như Interval Tree để quản lý việc thay đổi hay chất vấn thông tin về các cạnh này. Đây chính là ý tưởng để làm bài [QTREE](http://www.spoj.pl/problems/QTREE).
 
-# Cách 5 - Xử lý offline
+## Cách 5 - Xử lý offline
 
 Đây là một phương pháp để giải bài toán LCA khi đã biết trước mọi câu hỏi chất vấn. Cách làm này tuy không linh hoạt nhưng thời gian chạy khá nhanh và tiết kiệm bộ nhớ. Tư tưởng của phương pháp này là trả lời các câu chất vấn theo một thứ tự khác dễ dàng hơn. Với mỗi nút của cây ta sẽ lưu nó trong một tập hợp có nhãn. Ban đầu mỗi nút thuộc một tập hợp khác nhau và nhãn của tập hợp chính là chỉ số của nút đó. Sau đó ta thực hiện thủ tục DFS, trước khi thoát ra khỏi thủ tục DFS ta thực hiện 2 thao tác sau :
 
@@ -123,7 +123,7 @@ Ta sẽ chứng minh “Đỉnh cha chung chính là nhãn của tập hợp ch�
 
 Để thực hiện thao tác hợp nhất 2 tập hợp với thời gian ngắn, ta có thể sử dụng cấu trúc disjoint set giống như trong thuật toán Kruskal. Độ phức tạp của phương pháp này là $(M+N)log(N)$ với $M$ là số thao tác.
 
-# Các bài tập áp dụng:
+## Các bài tập áp dụng:
 
 - [VNOJ - LUBENICA](https://oj.vnoi.info/problem/lubenica)
 - [SPOJ - LCA](http://www.spoj.com/problems/LCA/)

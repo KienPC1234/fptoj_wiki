@@ -1,8 +1,8 @@
-# Định lý Lucas
+## Định lý Lucas
 
 
 
-# Định lý
+## Định lý
 
 Nếu $M$ là số nguyên tố thì $C_{N}^{K} \equiv C_{n_0}^{k_0}.C_{n_1}^{k_1}...C_{n_{p}}^{k_{p}} \ (mod \ M)$
 
@@ -18,7 +18,7 @@ $N=n_0.M^0+n_1.M^1+...+n_{p}.M^{p}$
 
 $K=k_0.M^0+k_1.M^1+...+k_{p}.M^{p}$
 
-# Chứng minh
+## Chứng minh
 
 Với $M$ là số nguyên tố và $i$ là số nguyên với $1 \leq i < M$
 
@@ -74,9 +74,9 @@ Từ đó suy ra: $\sum_{K=0}^{N}C_{N}^{K}.X^K \equiv \sum_{K=0}^{N}\prod_{i=0}^
 
 $\Leftrightarrow C_N^K \equiv \prod_{i=0}^{p}C_{n_i}^{k_i} \ (mod \ M)$
 
-# Cài đặt
+## Cài đặt
 
-## Biểu diễn một số $N$ ở dạng cơ số $M$
+### Biểu diễn một số $N$ ở dạng cơ số $M$
 
 ```cpp
 vector<int> getRepresentation(int N) {
@@ -92,9 +92,9 @@ vector<int> getRepresentation(int N) {
 
 Đoạn code trên chạy trong thời gian $O(log_M N)$
 
-## Tính $C_{n_i}^{k_i}$
+### Tính $C_{n_i}^{k_i}$
 
-### Thuật toán $< O(n^2),O(1) >$
+#### Thuật toán $< O(n^2),O(1) >$
 
 Với $N$ nhỏ ta có thể sử dụng công thức tam giác Pascal để tính trước trong $O(n^2)$ và truy vấn trong $O(1)$:
 
@@ -112,11 +112,11 @@ for (int i = 0; i < M; ++i) {
 
 ```
 
-### Thuật toán $< O(M),O(logM) >$
+#### Thuật toán $< O(M),O(logM) >$
 
 Với $M$ nhỏ các bạn có thể tiền xử lý trong $O(M)$ và truy vấn trong $O(logM)$ bằng trick #3 ở [đây](https://www.hackerearth.com/notes/powerful-tricks-with-calculation-modulo/).
 
-#### Tiền xử lý
+##### Tiền xử lý
 
 ```cpp
 long long fact[M];
@@ -127,7 +127,7 @@ for (int i = 1; i < M; ++i) {
 
 ```
 
-#### Truy vấn
+##### Truy vấn
 
 ```cpp
 int C(int N, int K) {
@@ -162,7 +162,7 @@ int binpow(int a, int n) {
 
 ```
 
-## Tính $C_N^K$
+### Tính $C_N^K$
 
 ```cpp
 vector<int> n = getRepresentation(N);
@@ -174,7 +174,7 @@ for (int i = 0; i < k.size(); ++i) {
 
 ```
 
-# Trường hợp $M$ không là số nguyên tố
+## Trường hợp $M$ không là số nguyên tố
 
 Chúng ta thực hiện các bước như sau:
 
@@ -184,6 +184,6 @@ Chúng ta thực hiện các bước như sau:
 
 - Sử dụng [Định lý Thặng dư Trung Hoa](https://en.wikipedia.org/wiki/Chinese_remainder_theorem) để khôi phục $C_N^K \ mod \ M$
 
-# Luyện tập
+## Luyện tập
 
 - [Xông đất ngày tết - SPOJ](https://oj.vnoi.info/problem/c11TCT/)
