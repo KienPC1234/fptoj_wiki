@@ -1,4 +1,3 @@
-## Quy hoạch động cơ bản (Phần 1)
 
 Bài viết có tham khảo và bổ sung, chỉnh sửa từ [TopCoder](https://www.topcoder.com/thrive/articles/Dynamic%20Programming:%20From%20Novice%20to%20Advanced) và một số nguồn khác.
 
@@ -17,7 +16,7 @@ __Quy hoạch động (QHĐ) (Dynamic Programming)__ là một trong những kĩ
 
 Để mở đầu, ta xét ví dụ sau:
 
-### Ví dụ 1
+## Ví dụ 1
 
 > *Bạn An có $n$ chiếc ghế màu trắng, $n$ chiếc ghế màu đen và $n$ chiếc ghế màu đỏ. An muốn chọn ra $n$ chiếc ghế để xếp thành một hàng ngang. Do An không thích màu đỏ nên An không muốn xếp hai chiếc ghế đỏ cạnh nhau. Tính số cách xếp ghế thỏa mãn điều kiện đó.*
 > **Điều kiện:** $1\le n\le 10^5$.
@@ -28,7 +27,7 @@ __Quy hoạch động (QHĐ) (Dynamic Programming)__ là một trong những kĩ
 
 Bây giờ ta sẽ xây dựng thuật giải:
 
-#### Thuật toán đệ quy
+### Thuật toán đệ quy
 
 Gọi số cách xếp $i$ cái ghế là $f[i]$. Ta xét chiếc ghế thứ $n$. 
 * Nếu nó có màu đen hoặc trắng thì chiếc ghế cạnh nó có thể có một trong ba màu. Do đó ta chỉ cần bố trí $n-1$ chiếc ghế còn lại thỏa mãn yêu cầu. Do có 2 cách chọn màu cho ghế thứ $n$ và $f[n-1]$ cách chọn màu cho các ghế còn lại nên số cách xếp trong trường hợp này là $2 * f[n-1]$.
@@ -56,7 +55,7 @@ int solve(int n)
 ```
 Thuật toán trên có độ phức tạp lũy thừa nên chỉ áp dụng được với $n$ nhỏ $(n < 45)$, không đủ nhanh so với yêu cầu bài toán.
 
-#### Tối ưu thuật toán đệ quy
+### Tối ưu thuật toán đệ quy
 
 Thuật toán trên chạy chậm vì một số hàm ```solve(i)``` được gọi rất nhiều lần. Ta lấy ví dụ sau:
 
@@ -102,19 +101,19 @@ Với cách tiếp cận trên, ta quan tâm đến giá trị cuối cùng $f[n
 
 Nhưng với phương pháp quy hoạch động, ta sẽ quan tâm đến các bài toán với tham số nhỏ hơn trước tiên.
 
-### Phương pháp tiếp cận
+## Phương pháp tiếp cận
 
-#### Khi nào có thể áp dụng QHĐ
+### Khi nào có thể áp dụng QHĐ
 
 Quy hoạch động được sử dụng khi ta tìm được công thức liên hệ giữa kết quả bài toán có đầu vào cho trước với một (hoặc một số) bài toán con tương tự nhưng có đầu vào nhỏ hơn. Khi ta biết được một số trạng thái bắt đầu của bài toán, nói cách khác - bài toán con với những đầu vào rất nhỏ, ta có thể sử dụng QHĐ để tính ra kết quả cuối cùng.
 
-#### Trạng thái của bài toán là gì?
+### Trạng thái của bài toán là gì?
 
 Trạng thái là một trường hợp, một bài toán con của bài toán lớn với tham số cho trước.
 
 Ví dụ, trạng thái trong bài này là số cách sắp xếp $n$ chiếc ghế thỏa mãn không có hai ghế đỏ cạnh nhau.
 
-#### Liên hệ giữa các trạng thái
+### Liên hệ giữa các trạng thái
 
 Để giải bài toán quy hoạch động, điều quan trọng nhất là tìm ra mối liên hệ giữa một trạng thái và các trạng thái có tham số nhỏ hơn.
 
@@ -127,11 +126,11 @@ f[i] = 2f[i - 1] + 2f[i - 2], \forall i=3;4;\ldots;n(*)
 
 Công thức $(*)$ được gọi là **công thức truy hồi**.
 
-#### Tìm kết quả cuối cùng
+### Tìm kết quả cuối cùng
 
 Sau khi đã biết công thức truy hồi và tính được $f[1]$, $f[2]$, ta có thể tìm $f[n]$.
 
-#### Code mẫu:
+### Code mẫu:
 ```cpp
 ## include <iostream>
 using namespace std;
@@ -158,7 +157,7 @@ int main()
 
 Ta tiếp tục với ví dụ tiếp theo:
 
-### Ví dụ 2
+## Ví dụ 2
 
 > *Cho $N$ loại đồng xu và giá tiền của mỗi loại là các số nguyên $v_1,v_2,\ldots,v_n$, và số nguyên dương $S$. Tìm số đồng xu nhỏ nhất để tổng giá trị của chúng bằng $S$ (số lượng đồng xu không giới hạn), nếu không tồn tại một số đồng xu có tổng là $S$ thì in ra $-1$.*
 > **Điều kiện:** $1\le S,N\le1000$ và $1\le v_1,v_2,\dots,v_n\le S$.
@@ -200,7 +199,7 @@ $9$|$3$|$1 (8)$
 $10$|$2$|$5 (5)$
 $11$|$3$|$1 (10)$
 
-#### Code tham khảo:
+### Code tham khảo:
 ```cpp
 ## include <iostream>
 using namespace std;
@@ -232,7 +231,7 @@ int main()
 ```
 **Nhận xét:** Đôi khi, trạng thái trong bài QHĐ chính là yêu cầu của bài toán.
 
-### Tìm độ dài dãy con không giảm dài nhất
+## Tìm độ dài dãy con không giảm dài nhất
 
 Phần này giới thiệu một lớp bài toán QHĐ điển hình. Ta bắt đầu bằng bài toán sau:
 
@@ -248,7 +247,7 @@ Với $j<i$ mà $a_j \ge a_i$ thì ta có thể thêm $a_i$ vào dãy không gi�
 
 Cuối cùng để tìm được độ dài dãy con không giảm dài nhất ta tính $\max  (f[1],f[2],\ldots,f[n])$.
 
-#### Code tham khảo
+### Code tham khảo
 
 ``` cpp
 ## include <iostream>
@@ -290,7 +289,7 @@ Bài toán tìm dãy con không giảm dài nhất là một ví dụ điển h�
 * Thứ tự của các phần tử được chọn phải được giữ nguyên so với dãy ban đầu.
 
 Một số biến thể:
-#### Tìm dãy con không giảm dài nhất
+### Tìm dãy con không giảm dài nhất
 
 Bài toán giống ví dụ 3, nhưng yêu cầu in ra dãy con đó. Ta có thể làm tương tự như trên, nhưng thêm mảng truy vết $d[i]$ lưu vị trí $j<i$ mà $f[i]=f[j]+1$. Ta có thể cài đặt như sau: 
 
@@ -334,7 +333,7 @@ int main()
         cout << (*i) << ' ';
 }
 ```
-#### Bố trí phòng họp (mất tính thứ tự so với dãy ban đầu)
+### Bố trí phòng họp (mất tính thứ tự so với dãy ban đầu)
 
 > *Có $n$ cuộc họp, cuộc họp thứ $i$ bắt đầu vào thời điểm $A_i$ và kết thúc ở thời điểm $B_i$. Do chỉ có một phòng hội thảo nên 2 cuộc họp bất kì sẽ được cùng bố trí phục vụ nếu khoảng thời gian làm việc của chúng chỉ giao nhau tại đầu mút hoặc không giao nhau. Hãy bố trí phòng họp để phục vụ được nhiều cuộc họp nhất.*
 > **Điều kiện:** $1\le n\le1000$ và $1\le A_i\le B_i\le10^9$ với mọi $i=1;2;\dots;n$.
@@ -411,7 +410,7 @@ int main()
 ```
 
 
-#### Cho thuê máy
+### Cho thuê máy
 
 > *Trung tâm tính toán hiệu năng cao nhận được đơn đặt hàng của $n$ khách hàng. Khách hàng $i$ muốn sử dụng máy trong khoảng thời gian từ $a_i$ đến $b_i$ và trả tiền thuê là $c_i$. Hãy bố trí lịch thuê máy để tổng số tiền thu được là lớn nhất mà thời gian sử dụng máy của 2 khách hàng bất kì được phục vụ đều không giao nhau (cả trung tâm chỉ có một máy cho thuê).*
 > **Điều kiện:** $1\le n\le1000$ và $1\le A_i\le B_i\le10^9, 1\le c_i\le10^6$ với mọi $i=1;2;\dots;n$.
@@ -459,7 +458,7 @@ int main()
 }
 ```
 
-#### Dãy tam giác bao nhau
+### Dãy tam giác bao nhau
 
 > *Cho $n$ tam giác trên mặt phẳng. Tam giác $i$ bao tam giác $j$ nếu 3 đỉnh của tam giác $j$ đều nằm trong tam giác $i$ (có thể nằm trên cạnh). Hãy tìm dãy tam giác bao nhau có nhiều tam giác nhất.*
 > **Điều kiện:** $1\le n\le 1000$ và tọa độ các đỉnh của các tam giác thuộc đoạn ${-10}^6$ đến $10^6$.
@@ -479,7 +478,7 @@ Việc kiểm tra điểm $M$ có nằm trong tam giác $ABC$ không có thể d
 
 ![/uploads/basic-dynamic-programming-1_img8.png](/uploads/basic-dynamic-programming-1_img8.png)
 
-#### Dãy đổi dấu
+### Dãy đổi dấu
 
 > *Cho dãy số nguyên gồm $n$ phần tử $a_1, a_2,\ldots, a_n$ và các số nguyên dương $L,U$. Hãy tìm dãy con đổi dấu dài nhất của dãy đó.*
 > Dãy con của dãy $a$ là dãy thu được bằng cách xóa đi một số phần tử của $a$.
@@ -529,7 +528,7 @@ int main()
 }
 ```
 
-#### Dãy số WAVIO
+### Dãy số WAVIO
 
 > *Dãy số nguyên $a_1,a_2,a_3,\ldots,a_k$ được gọi là dãy số WAVIO nếu tồn tại số tự nhiên $1\le m\le k$ sao cho:*
 > * $a_1\le a_2 \le \ldots \le a_m$
@@ -591,22 +590,22 @@ int main()
 }
 ```
 
-#### Ví dụ khác
+### Ví dụ khác
 
 [AvoidRoads](https://community.topcoder.com/tc?module=ProblemDetail&rd=4709&pm=1889) - 2003 TCO Semifinals 4
 [ChessMetrics](https://community.topcoder.com/tc?module=ProblemDetail&rd=4482&pm=1592) - 2003 TCCC Round 4
 
 QHĐ hai chiều được áp dụng nhiều trong những bài toán phức tạp hơn. Tiêu biểu là lớp bài toán xếp đồ.
 
-### Xếp vali (Knapsack)
+## Xếp vali (Knapsack)
 
-### Mô hình
+## Mô hình
 
 Có $n$ đồ vật, vật thứ $i$ có trọng lượng $A_i$ và giá trị $B_i$. Hãy chọn ra một số các đồ vật, mỗi vật một cái để xếp vào 1 vali có trọng lượng tối đa $W$ sao cho tổng giá trị của vali là lớn nhất.
 
 ![/uploads/basic-dynamic-programming-1_img11.png](/uploads/basic-dynamic-programming-1_img11.png)
 
-### Công thức
+## Công thức
 
 Trạng thái bài toán: tổng giá trị lớn nhất của vali nếu khối lượng không vượt quá $i$.
 
@@ -621,7 +620,7 @@ Tính $L[i,j]$: vật đang xét là $A_i$ với trọng lượng của vali kh�
 
 Tóm lại ta có $L[i,j] = \max(L[i-1, j - A_i] + B_i, L[i-1, j])$.
 
-### 2.3. Cài đặt
+## 2.3. Cài đặt
 
 ``` cpp
 long long L[1010];
@@ -634,9 +633,9 @@ for (int i = 1; i <= n; i++)
             L[i][j] = L[i - 1][j];
 ```
 
-### 2.4. Một số bài toán khác
+## 2.4. Một số bài toán khác
 
-#### Dãy con có tổng bằng S
+### Dãy con có tổng bằng S
 
 > *Cho dãy $A_1,A_2,\ldots, A_N$. Tìm một dãy con của dãy đó có tổng bằng $S$.*
 > **Điều kiện:** $1\le n\le 1000$ và $1\le A_1,A_2,\ldots,A_n\le10^9$.
@@ -666,7 +665,7 @@ Dễ thấy độ phức tạp bộ nhớ của cách cài đặt trên là $O(m
 
 **Bonus:** Hãy thử kiểm tra xem vì sao trong vòng ```for``` thứ hai, $t$ được duyệt từ $S$ về $a[i]$ chứ không phải từ $a[i]$ lên $S$.
 
-#### Chia kẹo
+### Chia kẹo
 
 > *Cho $n$ gói kẹo, gói thứ $i$ có $a_i$ viên. Hãy chia các gói thành 2 phần sao cho chênh lệch giữa 2 phần là ít nhất.*
 > **Điều kiện:** $1\le n\le 300$ và $1\le a_1,a_2,\ldots,a_n\le1000$.
@@ -717,7 +716,7 @@ int main()
 }
 ```
 
-#### Market (Olympic Balkan 2000)
+### Market (Olympic Balkan 2000)
 
 > *Người đánh cá Clement bắt được $n$ con cá, khối lượng con cá thứ $i$ là $a_i$, đem bán ngoài chợ. Ở chợ cá, người ta không mua cá theo từng con mà mua theo một lượng nào đó. Chẳng hạn $3 kg$, $5kg$...*
 >
@@ -730,7 +729,7 @@ Thực chất bài toán là tìm các số $S$ mà có một dãy con của dã
 
 Ta có thể dùng phương pháp đánh dấu của bài chia kẹo ở trên rồi đếm các giá trị $t$ mà $L[n, t]=true$.
 
-#### Điền dấu
+### Điền dấu
 
 > *Cho $n$ số tự nhiên $A_1,A_2, \ldots,A_n$. Ban đầu các số được đặt liên tiếp theo đúng thứ tự cách nhau bởi dấu "?": `A1 ? A2 ? ... ? AN`. Cho trước số nguyên $S$, có cách nào thay các dấu `?` bằng dấu `+` hay dấu `−` để được một biểu thức số học cho giá trị là $S$ không?*
 
@@ -746,7 +745,7 @@ Khi cài đặt, có thể dùng một mảng 2 chiều (lưu toàn bộ bảng 
 
 Bài này có một biến thể là đặt dấu sao cho kết quả là một số chia hết cho $k$. Ta có thuật giải tương tự bài toán trên bằng cách thay các phép cộng, trừ bằng các phép cộng và trừ theo modulo $k$ và dùng mảng đánh dấu với các giá trị từ 0 đến $k-1$ (là các số dư có thể có khi chia cho $k$). Đáp số của bài toán là $L[n,0]$.
 
-#### Expression
+### Expression
 
 > *Cho $n$ số nguyên dương. Hãy chia chúng thành 2 nhóm sao cho tích của tổng 2 nhóm là lớn nhất.*
 
@@ -755,7 +754,7 @@ Bài này có một biến thể là đặt dấu sao cho kết quả là một 
 * Gọi $T$ là tổng $n$ số nguyên đó. Giả sử ta chia dãy thành 2 nhóm, gọi $S$ là tổng của một nhóm, tổng nhóm còn lại là $T-S$ và tích của tổng 2 nhóm là $S(T-S)$. Bằng phương pháp đánh dấu ta xác định được mọi số $S$ là tổng của một nhóm (như bài Market) và tìm số $S$ sao cho $S(T-S)$ đạt $\max$.
 * Bài toán trên có thể đưa về bài chia kẹo. Không mất tính tổng quát, giả sử $S\le \frac{T}{2}$. Để ý rằng $S+(T-S)=T$, là một số cố định. Có thể chứng minh $S(T-S)$ đạt max khi và chỉ khi $S$ lớn nhất có thể. Khi đó chỉ cần chia các số thành hai nhóm sao cho chênh lệch giữa hai nhóm là ít nhất.
 
-#### Farmer (IOI 2004)
+### Farmer (IOI 2004)
 
 > *Một người có $N$ mảnh đất và $M$ dải đất. Các mảnh đất có thể coi là một tứ giác và các dải đất thì coi như một đường thẳng. Dọc theo các dải đất ông ta trồng các cây bách, dải đất thứ $i$ có $A_i$ cây bách. Ông ta cũng trồng các cây bách trên viền của các mảnh đất, mảnh đất thứ $j$ có $B_j$ cây bách. Cả ở trên các mảnh đất và dải đất, xen giữa 2 cây bách ông ta trồng một cây ôliu. Ông ta cho con trai được chọn các mảnh đất và dải đất tuỳ ý với điều kiện tổng số cây bách không vượt quá $Q$. Người con trai phải chọn thế nào để có nhiều cây ôliu (loài cây mà anh ta thích) nhất.*
 

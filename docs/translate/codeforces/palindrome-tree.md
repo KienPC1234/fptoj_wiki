@@ -1,4 +1,3 @@
-## Palindrome tree
 **Nguồn:** [http://adilet.org/blog/25-09-14/](http://adilet.org/blog/25-09-14/)
 
 Cây Palindrome (hay còn được gọi là Eertree), được phát minh bởi [Mikhail Rubinchik](http://codeforces.com/profile/MikhailRubinchik), là một loại cấu trúc dữ liệu được sử dụng để giải một số bài toán liên quan đến Palindrome.
@@ -60,22 +59,22 @@ Xét quá trình xây dựng cây Palindrome cho một xâu độ dài $n$. Ta t
 
 ## Ứng dụng
 
-### Đếm số lượng palindrome xuất hiện thêm
+## Đếm số lượng palindrome xuất hiện thêm
 Bài toán: Cho thêm chữ cái $x$ vào cuối xâu $S$, đếm số lượng palindrome xuất hiện thêm trong xâu $S$. Ví dụ khi ta cho thêm chữ cái a vào cuối xâu aba, ta có thêm một palindrome nữa là aa.
 
 Lời giải khá là rõ ràng: Ta xây dựng cây Palindrome cho xâu $S$ ban đầu, và với mỗi chữ cái mới thêm vào, ta biết được số palindrome mới xuất hiện thêm bằng cách đếm số nút vừa được tạo ra trên cây Palindrome. Lưu ý: số palindrome xuất hiện thêm sau khi thêm một chữ cái vào một xâu bằng 1 hoặc bằng 0.
 
-### Đếm số lượng xâu con liên tiếp là palindrome
+## Đếm số lượng xâu con liên tiếp là palindrome
 
 Code giải bài này bằng cây Palindrome đã có ở trên. Bài toán này còn có thể giải bằng thuật toán Manachar, tuy vậy ta nên giải bằng cây Palindrome vì cây Palindrome còn có thể ứng dụng cho nhiều bài toán khác.
 
-### Số lần xuất hiện của palindrome trong xâu
+## Số lần xuất hiện của palindrome trong xâu
 
 Ngoài sử dụng cây Palindrome bạn có thể sử dụng [Hash](http://vnoi.info/wiki/algo/string/hash) để giải bài này.
 
 ## Bài tập
 
-### Các bài trên Timus
+## Các bài trên Timus
 [Timus - Palindromes and Super Abilities](http://acm.timus.ru/problem.aspx?num=1960)
 
 [Timus - 31 Palindromes](http://acm.timus.ru/problem.aspx?space=1&num=2044)
@@ -84,17 +83,17 @@ Ngoài sử dụng cây Palindrome bạn có thể sử dụng [Hash](http://vno
 
 [Timus - Richness of binary words](http://acm.timus.ru/problem.aspx?space=1&num=2037)
 
-### Các bài trên Codeforces
+## Các bài trên Codeforces
 
 [CERC 14 - Bài G - Virus synthesis](http://codeforces.com/gym/100543/attachments/download/2854/20142015-acmicpc-central-europe-regional-contest-cerc-14-en.pdf)
 
 [Codeforces Beta Round #17 - Bài E - Palisection](http://codeforces.com/problemset/problem/17/E)
 
-### Các bài trên SPOJ
+## Các bài trên SPOJ
 
 [SPOJ - Number of Palindromes](http://www.spoj.com/problems/NUMOFPAL/)
 
-### Các bài trên các trang khác
+## Các bài trên các trang khác
 
 [Đếm số lượng xâu con liên tiếp là palindrome](http://informatics.mccme.ru/moodle/mod/statements/view.php?chapterid=1750)
 

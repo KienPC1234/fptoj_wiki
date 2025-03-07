@@ -1,4 +1,3 @@
-## Những cách tiếp cận bài toán: Phần 2
 
 Bài viết bởi [leadhyena_inran](https://www.topcoder.com/members/leadhyena_inran/).
 

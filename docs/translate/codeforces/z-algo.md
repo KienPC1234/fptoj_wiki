@@ -1,4 +1,3 @@
-## Z Algorithm
 
 **Nguồn bài**: [Codeforces](http://codeforces.com/blog/entry/3107)
 

@@ -1,4 +1,3 @@
-## **Stack (ngăn xếp)**
 
 **Tác giả:** Nguyễn Hà Duy - THPT Chuyên Hà Nội - Amsterdam
 
@@ -21,7 +20,7 @@ Stack có khá nhiều ứng dụng trong lập trình thi đấu. Bài viết n
 
 ## Cài đặt
 
-### Cài đặt thủ công
+## Cài đặt thủ công
 
 Ta có thể biểu diễn Stack bằng một mảng, cùng với biến `top` biểu diễn vị trí của phần tử nằm ở đỉnh Stack. Dưới đây là một cách cài đặt Stack chứa các phần tử thuộc kiểu `int`:
 ```cpp
@@ -48,7 +47,7 @@ int peek() // trả về giá trị của phần tử ở đỉnh Stack
 }
 ```
 
-### Sử dụng thư viện chuẩn
+## Sử dụng thư viện chuẩn
 
 Thư viện chuẩn của C++ cho phép ta sử dụng Stack qua kiểu dữ liệu `stack` trong header cùng tên. Các thao tác chính trên `stack` là:
 
@@ -82,29 +81,29 @@ int main()
 
 Ngoài ra, ta có thể dùng `vector` để biểu diễn một Stack. Các hàm `push`, `top` và `pop` sẽ được thay bằng `push_back`, `pop_back` và `back` khi sử dụng `vector`.
 
-### Phân tích
+## Phân tích
 
 Do Stack có thể được cài đặt bằng `vector` nên các thao tác trên Stack cũng có cùng độ phức tạp với `vector`.
 
-#### Độ phức tạp thời gian
+### Độ phức tạp thời gian
 
 Các hàm `push`, `pop`, `top`, `size` và `empty` của Stack đều hoạt động trong \\(O(1)\\). Hơn nữa, như ta đã thấy ở cách cài đặt thủ công, bản chất của Stack chính là mảng, nên tất cả các thao tác trên Stack đều hoạt động trong \\(O(1)\\).
 
-#### Độ phức tạp bộ nhớ
+### Độ phức tạp bộ nhớ
 
 Độ phức tạp bộ nhớ của Stack là \\(O(N)\\), với \\(N\\) là số phần tử được đưa vào Stack.
 
 ## Ứng dụng
 
-### Sử dụng Stack để xử lý xâu
+## Sử dụng Stack để xử lý xâu
 
-#### Bài toán 1
+### Bài toán 1
 
 Cho xâu \\(S\\) chỉ gồm các số nguyên dương và các dấu \\(+\\), \\(-\\), \\(\times\\), \\(\div\\), trong \\(S\\) không có dấu khoảng trống. Bạn cần tính giá trị của biểu thức được biểu diễn bởi xâu đó.
 
 Đây là bài toán dễ hơn của [**Expression Parsing**](https://cp-algorithms.com/string/expression_parsing.html).
 
-##### Cách giải
+#### Cách giải
 
 Vấn đề chính của bài toán là các toán tử \\(+\\), \\(-\\), \\(\times\\) và \\(\div\\) không có cùng độ ưu tiên. Cụ thể, ta cần tính kết quả của các cụm dấu \\(\times\\) và \\(\div\\) trước, do nhân và chia có độ ưu tiên cao hơn cộng và trừ.
 
@@ -238,7 +237,7 @@ Giá trị của \\(val\\) và \\(op\\) sau khi xử lý xâu \\(S\\):
 Quá trình xử lý danh sách toán tử \\(op\\):
 ![img](../../uploads/UAV9GBN.png)
 
-#### Bài toán 2
+### Bài toán 2
 
 Cho xâu \\(S\\) chỉ gồm ký tự \\((\\) và \\()\\). Bạn cần kiểm tra xem \\(S\\) có phải là dãy ngoặc đúng không.
 
@@ -252,7 +251,7 @@ Nếu \\(S\\) là dãy ngoặc đúng, với mỗi vị trí trong \\(S\\) bạn
 Hình ảnh minh họa cho một dãy ngoặc đúng. Các cặp dấu ngoặc tương ứng được tô cùng màu:
 ![img](../../uploads/K1Obiw8.png)
 
-##### Nhận xét
+#### Nhận xét
 
 Ta định nghĩa thêm: dãy ngoặc đúng cơ bản là dãy ngoặc đúng không thể tách được thành tổng của các dãy ngoặc đúng nhỏ hơn. Ví dụ, \\((()())\\) là dãy ngoặc đúng cơ bản, và \\((())()\\) không phải là dãy ngoặc đúng cơ bản, do nó có thể tách được thành \\((()) + ()\\).
 
@@ -266,11 +265,11 @@ Từ các định nghĩa, có thể rút ra các tính chất của dãy ngoặc
 
 Ta có các bổ đề và hệ quả sau:
 
-##### Bổ đề 1
+#### Bổ đề 1
 
 Trong dãy ngoặc đúng, mỗi dấu ngoặc tương ứng với một và chỉ một dấu ngoặc khác.
 
-##### Chứng minh
+#### Chứng minh
 
 Giả sử tồn tại một dấu ngoặc có thể tương ứng với nhiều hơn một dấu ngoặc khác. Khi đó, sẽ có nhiều hơn một cách chia dãy ngoặc thành các cặp dấu ngoặc tương ứng. Do đó, tồn tại một dấu ngoặc đóng trong dãy tương ứng với nhiều hơn một dấu ngoặc khác.
 
@@ -287,21 +286,21 @@ Theo **tính chất 3**, dãy ngoặc từ vị trí \\(i + 1\\) đến \\(j\\) 
 
 Vậy ta có điều phải chứng minh.
 
-##### Bổ đề 2
+#### Bổ đề 2
 
 Dãy ngoặc đúng khi và chỉ khi số dấu ngoặc mở bằng số dấu ngoặc đóng, và trong mọi tiền tố của dãy, số dấu ngoặc mở không nhỏ hơn số dấu ngoặc đóng.
 
-##### Chứng minh
+#### Chứng minh
 
 * **Chiều thuận**: dãy ngoặc đúng có số dấu ngoặc mở bằng số dấu ngoặc đóng, và trong mọi tiền tố của dãy, số dấu ngoặc mở không nhỏ hơn số dấu ngoặc đóng. Theo **tính chất 2**, dãy ngoặc mở có số dấu đóng ngoặc bằng số dấu mở ngoặc. Mặt khác, nếu tồn tại một tiền tố của dãy ngoặc đúng có số dấu mở ngoặc nhỏ hơn số dấu đóng ngoặc thì rõ ràng tồn tại ít nhất 1 dấu đóng ngoặc không tương ứng với dấu mở ngoặc nào, trái với **bổ đề 1**. Vậy ta chứng minh được chiều thuận.
 
 * **Chiều đảo**: trong mọi tiền tố của dãy, số dấu ngoặc mở không nhỏ hơn số dấu ngoặc đóng đảm bảo rằng mỗi dấu ngoặc đóng đều có dấu ngoặc mở tương ứng với nó. Hơn nữa, số dấu ngoặc mở bằng số dấu ngoặc đóng đảm bảo không có dấu ngoặc mở bị thừa ra (hay không tương ứng với dấu ngoặc nào) trong dãy ngoặc. Do đó, dãy có số dấu ngoặc mở bằng số dấu ngoặc đóng và trong mọi tiền tố của dãy, số dấu ngoặc mở không nhỏ hơn số dấu ngoặc đóng là dãy ngoặc đúng.
 
-##### Hệ quả 1
+#### Hệ quả 1
 
 Dãy ngoặc không đúng sẽ có số dấu ngoặc mở lớn hơn số ngoặc đóng, hoặc có một tiền tố mà số dấu ngoặc mở nhỏ hơn số dấu ngoặc đóng. 
 
-##### Cách giải
+#### Cách giải
 
 Cho một Stack chứa các phần tử kiểu `char`, đang ở trạng thái rỗng. Xét quá trình sau:
 * Duyệt xâu \\(S\\) từ trái qua phải
@@ -328,7 +327,7 @@ Theo **tính chất 4**, \\(S\\) có thể được tách thành tổng của c�
 
 Như vậy, quá trình sẽ xác định tất cả các cặp dấu ngoặc tương ứng.
 
-##### Cài đặt
+#### Cài đặt
 
 Ta có thể cài đặt bài toán đúng như mô tả của quá trình nêu trên:
 
@@ -355,14 +354,14 @@ bool solve(string s)
 }
 ```
 
-#### Mở rộng
+### Mở rộng
 Bài toán 2 có thể được mở rộng thêm: dãy có thể có cả ngoặc vuông và ngoặc nhọn. Rõ ràng, ta có thể xử lý các loại ngoặc như cách ta làm với bài toán 2. Lưu ý duy nhất là ta cần phải kiểm soát thêm cả kiểu loại của dấu.
 
 Minh họa cho quá trình với \\(S = \\) "\\(([\{\}])()\\)":
 
 ![img](../../uploads/p3JM7FF.png)
 
-### Sử dụng Stack để khử đệ quy
+## Sử dụng Stack để khử đệ quy
 
 Vì tính chất **LIFO** của Stack, nó có thể được sử dụng để khử các hàm đệ quy. Trên thực tế, khi ta dùng hàm đệ quy, hệ thống sẽ tự động tạo một cấu trúc **LIFO** như Stack để chứa và thực hiện các lời gọi hàm.
 
@@ -411,7 +410,7 @@ Việc dùng Stack để khử đệ quy có thể áp dụng với mọi hàm c
 
 Trong lập trình thi đấu, ta có thể sử dụng đệ quy thông thường trong hầu hết các trường hợp. Ta chỉ cần dùng Stack khi hàm đệ quy quá sâu và có nguy cơ bị [tràn bộ nhớ](https://vi.wikipedia.org/wiki/L%E1%BB%97i_tr%C3%A0n_b%E1%BB%99_nh%E1%BB%9B_%C4%91%E1%BB%87m). Theo kinh nghiệm của người viết, ta cần khử đệ quy khi hàm có thể đạt độ sâu khoảng \\(10^7\\).
 
-### Stack đơn điệu
+## Stack đơn điệu
 
 Stack đơn điệu là ngăn xếp mà các phần tử của nó xét từ đáy của Stack đến đỉnh Stack tạo thành một dãy số đơn điệu.
 
@@ -419,17 +418,17 @@ Hình ảnh minh họa cho một Stack đơn điệu giảm:
 
 ![img](../../uploads/bzwD9F1.png)
 
-#### Bài toán
+### Bài toán
 
 Cho mảng \\(A\\) có \\(n\\) phần tử \\(a_1, a_2, \dots, a_n\\), \\(n \leq 10^6\\). Với mỗi \\(i\\) từ \\(1\\) đến \\(n\\) ta cần tìm \\(j\\) sao cho \\(a_j > a_i\\), và \\(\lvert i - j \rvert\\) nhỏ nhất. Nếu không tồn tại \\(j\\), in ra \\(-1\\).
 
-##### Nhận xét
+#### Nhận xét
 
 Ta sẽ bài toán đơn giản hơn: với mỗi \\(i\\) ta chỉ cần tìm \\(j\\) thỏa mãn điều kiện gốc, *mà \\(j < i\\)*. Rõ ràng, nếu ta giải được bài toán này thì bài toán gốc cũng có thể dễ dàng giải được, vì nếu \\(j > i\\) thì ta có thể duyệt ngược lại mảng \\(A\\), đưa bài toán về dạng đơn giản như đã nói.
 
 Do \\(n \leq 10^6\\) nên cách giải hồn nhiên: với mỗi \\(i\\) ta lại xét \\(j\\) từ \\(1\\) đến \\(n\\) là chưa đủ để giải quyết bài toán, do độ phức tạp thời gian lên tới \\(O(n^2)\\).
 
-##### Mô hình lại bài toán
+#### Mô hình lại bài toán
 
 Xét mô hình sau:
 * Phần tử thứ \\(i\\) của mảng \\(A\\) tượng trưng cho một người có chiều cao \\(a_i\\).
@@ -459,7 +458,7 @@ Giả sử mảng \\(A = [1, 2, 7, 4, 3, 6]\\). Các bước diễn ra như sau:
 
 Dễ thấy chiều cao của người trong hàng luôn tạo thành một dãy đơn điệu.
 
-##### Cài đặt
+#### Cài đặt
 
 Ta có thể biểu diễn mô hình nêu trên dưới dạng một Stack đơn điệu như sau:
 * Người xếp vào hàng là phép \\(push\\)
@@ -481,17 +480,17 @@ for (int i = 1; i <= n; ++i)
 }
 ```
 
-##### Đánh giá độ phức tạp
+#### Đánh giá độ phức tạp
 
 Độ phức tạp bộ nhớ của lời giải là \\(O(n)\\) do sử dụng Stack và một mảng chứa \\(n\\) phần tử.
 
 Thoạt nhìn, độ phức tạp tính toán của lời giải có vẻ là \\(O(n^2)\\) do có vòng lặp \\(while\\) lồng trong vòng \\(for\\). Tuy nhiên, để ý rằng mỗi phần tử \\(a_i\\) đều được \\(push()\\) vào Stack đúng một lần, và bị \\(pop()\\) khỏi Stack tối đa 1 lần, nên độ phức tạp tính toán vẫn là \\(O(n)\\)
 
-#### Mở rộng
+### Mở rộng
 
 Bài toán gốc nêu trên có nhiều ứng dụng và mở rộng. Sau đây là một vài ví dụ.
 
-##### Hình chữ nhật lớn nhất
+#### Hình chữ nhật lớn nhất
 
 [Link SPOJ](https://www.spoj.com/PTIT/problems/SSAM219G/).
 
@@ -504,7 +503,7 @@ Hình chữ nhật lớn nhất có diện tích \\(10\\)
 
 ![img](../../uploads/wm76udO.png)
 
-###### Cách giải
+##### Cách giải
 
 Để ý rằng hình chữ nhật lớn nhất luôn có chiều cao bằng với chiều cao của một cột đã có.
 
@@ -516,13 +515,13 @@ Vậy diện tích hình chữ nhật lớn nhất chính là giá trị \\((R_i
 
 Độ phức tạp thời gian và bộ nhớ của lời giải là \\(O(n)\\).
 
-##### Hình chữ nhật lớn nhất trong lưới ô vuông
+#### Hình chữ nhật lớn nhất trong lưới ô vuông
 
 [Link SPOJ](https://oj.vnoi.info/problem/qbrect/)
 
 Đây là một mở rộng của bài toán trước. Cho lưới ô vuông \\(n \times m\\), các ô có giá trị \\(0\\) hoặc \\(1\\). Ta cần tìm hình chữ nhật có diện tích lớn nhất có tất cả ô vuông có cùng giá trị.
 
-###### Cách giải
+##### Cách giải
 
 Ta có thể chia bài toán thành 2 trường hợp riêng biệt: tìm hình chữ nhật chỉ gồm các ô giá trị \\(0\\) và chỉ gồm các ô giá trị \\(1\\). Nếu giải được một trường hợp, ta cũng có thể dễ dàng giải trường hợp còn lại. Từ giờ, ta sẽ giải bài toán tìm hình chữ nhật lớn nhất *chỉ chứa giá trị \\(1\\)*.
 

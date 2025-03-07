@@ -1,4 +1,3 @@
-## Bài toán luồng cực đại
 
 **Nguồn:** [WCIPEG](http://wcipeg.com/wiki/Maximum_flow)
 
@@ -66,7 +65,7 @@ Vậy: $\sum_{v \in V}f(s,v)=\sum_{v \in V}f(v,t)$
 
 ## Thuật toán
 
-### Phương pháp của Ford–Fulkerson
+## Phương pháp của Ford–Fulkerson
 
 Ý tưởng chính của phương pháp của Ford-Fulkerson là tăng dần giá trị của luồng trên mạng cho đến khi nó đạt cực đại.
 
@@ -84,7 +83,7 @@ while exist(augmenting_path):
 
 Có nhiều cách tìm đường tăng luồng. Cách đơn giản nhất là chọn đường đi có ít cạnh nhất, cách này cho ta thuật toán của Edmond-Karp. Một cách hiệu quả hơn là phân tầng đồ thị theo khoảng cách tới đỉnh phát và chỉ quan tâm đến những đường đi mà các đỉnh thuộc các tâng khác nhau, đây gọi là thuật toán Dinic.
 
-### Các thuật toán preflow-push
+## Các thuật toán preflow-push
 
 Lớp thuật toán **Preflow-push** khác với thuật toán sử dụng đường tăng luồng ở chỗ nó không duy trì luồng hợp lệ ở mỗi bước, mà thay vào đó duy trì một **preflow**, mà trong đó tổng luồng vào một đỉnh có thể lớn hơn tổng luồng ra từ đỉnh đó ($\sum_{u \in V}f(u,v) \geq \sum_{w \in V}f(v,w)$).
 
@@ -113,7 +112,7 @@ relabel(v):
     h[v]<-min(h[w])+1 for all w in E
 ```
 
-### Các hướng tiếp cận khác
+## Các hướng tiếp cận khác
 
 Một số phương pháp tinh vi hơn đã được giới thiệu bởi King, Rao và Tarjan (1994) và Orlin (2012). Kết hợp hai phương pháp cho ta một thuật toán tổng quát có độ phức tạp $O(VE)$, tối ưu nhất cho đến giờ phút này.
 

@@ -1,4 +1,3 @@
-## Public Key Cryptography
 
 **Tác giả**: Hoàng Gia Minh
 
@@ -16,7 +15,7 @@ Bài viết này nhằm giúp bạn đọc nắm được ý tưởng cơ bản 
 
 ## 2. Lịch sử
 
-### 2.1. Mã hóa khóa đối xứng (_Symmetric-key cryptography_)
+## 2.1. Mã hóa khóa đối xứng (_Symmetric-key cryptography_)
 
 Cho đến trước năm 1976, các phương pháp mã hóa đều là mã hóa đối xứng. 
 
@@ -31,7 +30,7 @@ Các hệ mã hóa đối xứng sử dụng **cùng một khóa** cho cả bên
 - Để đảm bảo trong 1 nhóm $n$ người cần phải có 1 số lượng khóa khá lớn - $\frac{n(n-1)}{2}$ khóa. Điều này dẫn đến một bài toán về việc lưu trữ, phân phối một số lượng lớn khóa mà vẫn phải đảm bảo sự an toàn của chúng.
 - Do bên gửi và nhận sử dụng chung khóa, chúng ta không thể xác định được nguồn gốc của một thông điệp (message).
 
-### 2.2. Mã hóa khóa công khai (_Public-key cryptography_)
+## 2.2. Mã hóa khóa công khai (_Public-key cryptography_)
 
 Vào năm 1874, William Stanley Jevons viết trong quyển _The Principles of Science_ về mối liên hệ giữa các hàm một chiều và mật mã học. Đặc biệt, ông đã đi sâu vào bài toán phân tích ra thừa số nguyên tố (sau này được sử dụng trong thuật toán RSA). 
 
@@ -47,11 +46,11 @@ Khác với mã đối xứng, mã hóa khóa bất đối xứng sử dụng m�
 
 Mật mã hóa khóa công khai hay còn gọi là mã hóa bất đối xứng có 2 ứng dụng phổ biến sau:
 
-### 3.1. Mã hóa công khai (_Public-key encryption_): 
+## 3.1. Mã hóa công khai (_Public-key encryption_): 
 
 Một thông điệp được mã hóa bằng khóa công khai của người nhận. Thông điệp này chỉ có thể giải mã được bằng khóa bí mật mà chỉ người nhận có. 
 
-### 3.2. Chữ ký điện tử (_Digital signatures_): 
+## 3.2. Chữ ký điện tử (_Digital signatures_): 
 
 Chữ ký điện tử là thông tin đi kèm với dữ liệu nhằm mục đích xác định chủ sở hữu của dữ liệu đó.
 
@@ -75,7 +74,7 @@ và dù cho có biết cả $e$, $n$ hay cả $m$ thì cũng rất khó để t�
 
 Tiếp theo chúng ta sẽ đi sâu vào từng công đoạn của 1 hệ mã, bao gồm việc mã hóa, giải mã và sinh khóa.
 
-### 4.1 Mã hóa
+## 4.1 Mã hóa
 
 Giả sử rằng Bob muốn gửi mẫu tin $M$ cho Alice.
 
@@ -87,7 +86,7 @@ Bob gửi $c$ cho Alice.
 
 Lưu ý rằng sao khi mã hóa, chính Bob cũng không thể giải mã được từ $c$ thành $m$.
 
-### 4.2. Giải mã
+## 4.2. Giải mã
 
 Alice tính lại ra $m$ từ $c$ dựa vào khóa bí mật $d$:
 
@@ -95,7 +94,7 @@ $ c^d \equiv (m^e)^d \equiv m \pmod n $
 
 Dựa vào $m$, Alice có thể khôi phục lại mẫu tin ban đầu $M$.
 
-### 4.3. Sinh khóa (Key generation)
+## 4.3. Sinh khóa (Key generation)
 
 - Chọn 2 số nguyên tố khác nhau $p$ và $q$.
 
@@ -142,7 +141,7 @@ Không mất tính tổng quát, giả sử $gcd(m, n) = p$. Ta có:
 (chứng mình tương tự trong trường hợp 1)
 
 
-### 4.4. Sample code
+## 4.4. Sample code
 
 ```python
 ## !/usr/bin/env python

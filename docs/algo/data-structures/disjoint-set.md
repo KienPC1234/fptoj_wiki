@@ -1,4 +1,3 @@
-## Disjoints Sets
 
 **Disjoint Sets** là 1 CTDL rất hữu dụng, sử dụng rất nhanh, gọn và dễ dàng. Nó được dùng làm nền tảng cho một số thuật toán, như **Kruskal’s** và **Prim’s**, 2 thuật toán tìm **cây khung** nhỏ nhất trên đồ thị.
 
@@ -13,7 +12,7 @@ Giả sử, chỉ có duy nhất 1 bộ dụng cụ trong 1 hộp. Ta có $n$ b�
 
 Với những yêu cầu trên, ta có thể sử dụng nhiều cấu trúc, như:
 
-### Cài đặt Disjoint Set với Cây
+## Cài đặt Disjoint Set với Cây
 
 Cây là cấu trúc hữu hiệu nhất dùng cho DSU. Với mỗi đỉnh, ta lưu lại đỉnh cha của nó (đỉnh cha của đỉnh gốc là -1). Ban đầu, mọi đỉnh cha được set là -1. Có các truy vấn **tìm đỉnh gốc** của mỗi hộp (có được gốc, ta có thể truy ra vị trí của hộp) và các truy vấn yêu cầu **hợp** 2 cây lại. Để thuật toán nhanh hơn, mỗi lần tìm gốc của mỗi đỉnh, ta đặt đỉnh cha của nó là gốc cho truy vấn tiếp theo. Luôn muốn độ cao của cây là nhỏ nhất có thể, vì vậy, mỗi khi nhập các hộp lại với nhau, ta bỏ các bộ dụng cụ trong hộp có ít bộ hơn vào hộp còn lại.
 
@@ -55,7 +54,7 @@ void merge(int x, int y) {
 }
 ```
 
-### Cài đặt Disjoint set với Mảng & Vector
+## Cài đặt Disjoint set với Mảng & Vector
 
 Ta lưu vị trí các viên sỏi trong một **vector** (hoặc **mảng**) và mỗi khi có truy vấn yêu cầu **nhập** hai hộp, ta bỏ các viên sỏi ở hộp có ít viên sỏi hơn vào hộp còn lại.
 
@@ -66,7 +65,7 @@ Ta lưu vị trí các viên sỏi trong một **vector** (hoặc **mảng**) v�
 Khi cài đặt DSU, cách này không được sử dụng (do phức tạp hơn cách trên), tuy nhiên ý tưởng này có thể được áp dụng cho nhiều bài khác.
 
 
-### Cài đặt Disjoint Set với Sets (Cây Đỏ Đen; Red-Black Trees)
+## Cài đặt Disjoint Set với Sets (Cây Đỏ Đen; Red-Black Trees)
 
 Một cách khác là lưu chúng trong một cây đỏ đen (trong C++ là **set** thư viện **STL**). Ta làm y như đã làm với vectors, độ phức tạp sẽ là $O(nlog^2n)$. (1 log cho việc nhập vào).
 

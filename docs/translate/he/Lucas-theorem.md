@@ -1,4 +1,3 @@
-## Định lý Lucas
 
 
 
@@ -76,7 +75,7 @@ $\Leftrightarrow C_N^K \equiv \prod_{i=0}^{p}C_{n_i}^{k_i} \ (mod \ M)$
 
 ## Cài đặt
 
-### Biểu diễn một số $N$ ở dạng cơ số $M$
+## Biểu diễn một số $N$ ở dạng cơ số $M$
 
 ```cpp
 vector<int> getRepresentation(int N) {
@@ -92,9 +91,9 @@ vector<int> getRepresentation(int N) {
 
 Đoạn code trên chạy trong thời gian $O(log_M N)$
 
-### Tính $C_{n_i}^{k_i}$
+## Tính $C_{n_i}^{k_i}$
 
-#### Thuật toán $< O(n^2),O(1) >$
+### Thuật toán $< O(n^2),O(1) >$
 
 Với $N$ nhỏ ta có thể sử dụng công thức tam giác Pascal để tính trước trong $O(n^2)$ và truy vấn trong $O(1)$:
 
@@ -112,11 +111,11 @@ for (int i = 0; i < M; ++i) {
 
 ```
 
-#### Thuật toán $< O(M),O(logM) >$
+### Thuật toán $< O(M),O(logM) >$
 
 Với $M$ nhỏ các bạn có thể tiền xử lý trong $O(M)$ và truy vấn trong $O(logM)$ bằng trick #3 ở [đây](https://www.hackerearth.com/notes/powerful-tricks-with-calculation-modulo/).
 
-##### Tiền xử lý
+#### Tiền xử lý
 
 ```cpp
 long long fact[M];
@@ -127,7 +126,7 @@ for (int i = 1; i < M; ++i) {
 
 ```
 
-##### Truy vấn
+#### Truy vấn
 
 ```cpp
 int C(int N, int K) {
@@ -162,7 +161,7 @@ int binpow(int a, int n) {
 
 ```
 
-### Tính $C_N^K$
+## Tính $C_N^K$
 
 ```cpp
 vector<int> n = getRepresentation(N);

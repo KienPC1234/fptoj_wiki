@@ -1,4 +1,3 @@
-## Thuật toán Manacher
 
 **Người viết:** Phạm Hoàng Hiệp - University of Georgia
 
@@ -11,11 +10,11 @@
 
 ## Giới thiệu
 
-### Bài toán 
+## Bài toán 
 Cho xâu $S$ có độ dài $n$. Hãy tìm tất cả các xâu con đối xứng (palindrome) trong xâu $S$. 
 Thuật toán Manacher sẽ xử lý bài toán trên với độ phức tạp thời gian $O(n)$.
 
-### Một số khái niệm và ký hiệu trong bài
+## Một số khái niệm và ký hiệu trong bài
 - Xâu đối xứng (palindrome) là xâu mà khi đọc ngược lại thì vẫn là chính nó, ví dụ như $tacocat$, $aaaaaaa$, $2002$ 
 - Điểm chính giữa của xâu đối xứng là vị trí mà khi lật ngược xâu đối xứng đó thì vị trí của điểm đó trong xâu đó không thay đổi. 
     - Trong xâu đối xứng có độ dài lẻ, điểm chính giữa là một chữ cái trong xâu. Ví dụ xâu $aabaa$ có điểm chính giữa là chữ $b$
@@ -26,7 +25,7 @@ Thuật toán Manacher sẽ xử lý bài toán trên với độ phức tạp t
 ![](https://i.imgur.com/bSE3TvQ.jpg)
 
 ## Thuật toán ngây thơ
-### Sai lầm thường gặp
+## Sai lầm thường gặp
 Lưu ý, vì có thể có $O(n^2)$ xâu con đối xứng trong một xâu nên có thể dễ dàng lầm tưởng rằng không thể tạo ra thuật toán có độ phức tạp tốt hơn $O(n^2)$ cho bài toán này. Tuy nhiên, với một xâu đối xứng, chúng ta có các xâu con ở phía trong cũng là đối xứng.
 
 Cụ thể, giả sử xâu con $S_{i...j}$ là một xâu đối xứng. Nếu $i+1 \leq j-1$ thì ta có $S_{(i+1)...(j-1)}$ cũng là một xâu đối xứng. Ví dụ, xâu $abcdcba$ đối xứng thì có thể dễ dàng thấy được rằng các xâu $bcdcb$, $cdc$ hay $d$ đều đối xứng.
@@ -35,7 +34,7 @@ Như vậy, với mỗi điểm chính giữa của một xâu con đối xứng
 
 Điểm chính giữa là điểm mà khi đảo ngược trật tự của xâu thì vị trí của điểm này trong xâu không thay đổi. Điểm chính giữa này có thể là một chữ cái hoặc một khoảng trống, tương ứng với xâu đối xứng có độ dài lẻ hoặc chẵn. 
 
-### Thuật toán ngây thơ
+## Thuật toán ngây thơ
 Như vậy, từ quan sát trên, chúng ta có thể ngay lập tức đưa ra thuật toán có độ phức tạp $O(n^2)$. Xét tất cả các vị trí trong xâu (một chữ cái hoặc một khoảng trống), và chạy về hai phía đến khi nào xâu không còn đối xứng nữa.
 
 Cũng như rất nhiều thuật toán liên quan đến xâu khác như *Z* hay *KMP*, khi xử lý ở từng vị trí trên xâu, kết quả ở những vị trí trước cho ta rất nhiều dữ liệu để xử lý ở vị trí tiếp theo. Trong bài toán này, chúng ta có thể tận dụng dữ kiện xâu đối xứng như hình vẽ dưới đây.
@@ -61,7 +60,7 @@ Giả sử chúng ta có một xâu đối xứng qua $mid$ kéo từ $l$ đến
 
 Do $l+i$ và $r-i$ đối xứng qua $mid$ nên có thể tận dụng kết quả đã tính với vị trí $l+i$ để tính toán $r-i$ một cách tiết kiệm hơn. Trên đây là ý tưởng chính của thuật toán Manacher. Tiếp theo chúng ta sẽ đi vào chi tiết về thuật toán cũng như cách cài đặt.
 
-#### Code mẫu
+### Code mẫu
 ```cpp
 ## include<bits/stdc++.h>
 using namespace std;
@@ -110,7 +109,7 @@ signed main() {
 
 ## Thuật toán Manacher
 
-### Tìm các xâu đối xứng có độ dài lẻ
+## Tìm các xâu đối xứng có độ dài lẻ
 
 Do xâu đối xứng độ dài lẻ có điểm chính giữa là một chữ cái, việc xử lý và tính toán sẽ dễ dàng hơn so với trường hợp xâu đối xứng có độ dài chẵn (điểm chính giữa là khoảng trống giữa hai chữ cái). Vì vậy, chúng ta sẽ giải quyết trường hợp này trước.
 
@@ -146,7 +145,7 @@ $$
 - Tại thời điểm này, chúng ta chạy trâu tiếp từ vị trí $r$ để tìm được $d[i]$.  
 - Cập nhật lại $l$ và $r$ nếu cần thiết.
 
-### Tìm các xâu đối xứng có độ dài chẵn
+## Tìm các xâu đối xứng có độ dài chẵn
 Hoàn toàn tương tự với việc tìm xâu có độ dài lẻ, chúng ta xét các khoảng ở giữa hai ký tự (có thể coi khoảng này là một ký tự).  Tuy nhiên, chi tiết cài đặt cần cẩn thận để có được kết quả chính xác. 
 
 Để tránh phải xử lý cẩn thận trong trường hợp xâu đối xứng độ dài chẵn, bạn đọc có thể cân nhắc sử dụng cách làm như sau. 
@@ -156,12 +155,12 @@ Thêm các ký tự đặc biệt giữa hai ký tự liên tiếp trong xâu, k
 Ký tự đặc biệt được thêm cần phải giống nhau (để đảm bảo tính đối xứng) và khác với tất cả các ký tự được dùng trong xâu. Ví dụ, $mike4235$ có thể chuyển thành $m.i.k.e.4.2.3.5$
 
 
-### Độ phức tạp
+## Độ phức tạp
 Ở mỗi lần tính $d[i]$, nếu $d[i] + i < r$ thì chúng ta chỉ mất $O(1)$. Tuy nhiên, nếu $d[i] + i > r$ thì chúng ta sẽ đặt lại giá trị của $r$ thành $d[i] + i$. Do $r$ không giảm và  $r \leq n$ nên tổng độ phức tạp không vượt quá $O(n)$.
 
-### Cài đặt
+## Cài đặt
 Dưới đây là code mẫu của thuật toán Manacher cho bài toán được nêu trong phần **Giới thiệu**. Các bạn có thể tự cài đặt và nộp ở link sau: [Library checker - Enumerate Palindromes](https://judge.yosupo.jp/problem/enumerate_palindromes)
-#### Code mẫu
+### Code mẫu
 ```cpp
 ## include<bits/stdc++.h>
 using namespace std;
@@ -224,7 +223,7 @@ signed main() {
 ## Ví dụ
 [CF Sonya and Matrix Beauty](https://codeforces.com/contest/1080/problem/E)
 
-### Tóm tắt đề bài
+## Tóm tắt đề bài
 
 Cho hai số nguyên dương $n, m \leq 250$ và một ma trận kích thước $n * m$ gồm các chữ cái thường trong bảng chữ cái tiếng Anh.
 
@@ -234,12 +233,12 @@ Một ma trận con được định nghĩa là **đẹp** nếu có cách để
 
 Xác định số ma trận con **đẹp** trong ma trận đã cho.
 
-### Gợi ý
+## Gợi ý
 
 - Từ điều kiện đề bài, thử tìm cách sắp xếp một ma trận con và xác định điều kiện để tạo ra xâu đối xứng trên hàng và cột. 
 - Do các chữ cái trên một hàng chỉ thay đổi thứ tự, khi nào thì hai hàng được coi là "bằng nhau"?
 
-### Lời giải
+## Lời giải
 
 - Trước hết, chúng ta có nhận xét rằng để ma trận con thỏa mãn điều kiện thì các hàng phải sắp xếp lại được thành xâu đối xứng (có $0$ hoặc $1$ chữ cái có số lần xuất hiện lẻ).
 - Để cả ma trận con đối xứng thì hai hàng đối xứng qua điểm đối xứng $mid$ phải có số lần xuất hiện bằng nhau với tất cả các chữ cái.
@@ -248,7 +247,7 @@ Xác định số ma trận con **đẹp** trong ma trận đã cho.
 - Lưu ý, cần đảm bảo các điều kiện về hàng có thể đối xứng.
 - Như vậy độ phức tạp là $O(n^3 * 26)$, trong đó $O(n^2)$ là số cặp cột, $O(n)$ cho thuật toán Manacher và $O(26)$ để so sánh giữa 2 hàng (26 là kích thước bảng chữ cái).
 
-### Code mẫu
+## Code mẫu
 ```cpp
 ## include<bits/stdc++.h>
 using namespace std;

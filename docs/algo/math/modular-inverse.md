@@ -1,4 +1,3 @@
-## Số học 4.5 - Nghịch đảo modulo
 
 Nguồn: [e-maxx](https://e-maxx-eng.appspot.com/algebra/module-inverse.html)
 

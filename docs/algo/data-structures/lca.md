@@ -1,4 +1,3 @@
-## Các phương pháp giải bài toán LCA
 
 **Tác giả**: Khúc Anh Tuấn
 

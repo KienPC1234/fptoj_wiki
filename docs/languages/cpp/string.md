@@ -1,4 +1,3 @@
-## Xâu trong C++
 
 Bài viết sưu tầm trên mạng.
 
@@ -42,7 +41,7 @@ Nếu bạn muốn tận dụng các hàm của C-String, cần chuyển đổi 
 
 Kiểu `string` của STL hỗ trợ các nhóm phương thức và phép toán tiện ích sau đây.
 
-### a) Các phép toán và phương thức cơ bản
+## a) Các phép toán và phương thức cơ bản
 
 - Các toán tử `+`, `+=` dùng để ghép hai chuỗi và cũng để ghép một ký tự vào chuỗi;
 - Các phép so sánh theo thứ tự từ điển: `==` (bằng nhau), `!=` (khác nhau), `>` (lớn hơn), `>=` (lớn hơn hay bằng), `<` (nhỏ hơn), `<=` (nhỏ hơn hay bằng);
@@ -131,7 +130,7 @@ String thực chất là một `vector<char>` có bổ sung thêm một số hà
   }
   ```
 
-### b) Các phương thức chèn, xóa, lấy chuỗi con:
+## b) Các phương thức chèn, xóa, lấy chuỗi con:
 
 - Phương thức `substr(int pos, int nchar)` trích ra chuỗi con của một chuỗi cho trước, ví dụ `str.substr(2,4)` trả về chuỗi con gồm 4 ký tự của chuỗi `str` kể từ ký tự ở vị trí thứ 2 (ký tự đầu tiên của chuỗi ở vị trí 0).
 
@@ -193,7 +192,7 @@ String thực chất là một `vector<char>` có bổ sung thêm một số hà
   }
   ```
 
-### c) So sánh
+## c) So sánh
 
 Bạn có thể đơn giản là sử dụng những toán tử quan hệ (`==`, `!=`, `<`, `<=`, `>=`) được định nghĩa sẵn. Tuy nhiên, nếu muốn so sánh một phần của một chuỗi thì sẽ cần sử dụng phương thức `compare()`:
 
@@ -230,7 +229,7 @@ int main ()
 }
 ```
 
-### d) Các phương thức tìm kiếm và thay thế
+## d) Các phương thức tìm kiếm và thay thế
 
 - Phương thức `find()` tìm kiếm xem một ký tự hay một chuỗi nào đó có xuất hiện trong một chuỗi `str` cho trước hay không. Có nhiều cách dùng phương thức này:
 
@@ -289,7 +288,7 @@ int main ()
   getchar();
   ```
 
-### e) Tách xâu
+## e) Tách xâu
 
 Trong việc xử lý xâu ký tự, không thể thiếu được các thao tác tách xâu ký tự thành nhiều xâu ký tự con thông qua các ký tự ngăn cách. Các hàm này có sẵn trong các ngôn ngữ khác như Visual Basic, Java, hay thậm chí là trong `<string.h>`. Với STL, các bạn có thể dễ dàng làm điều này với `stringstream`:
 
@@ -401,7 +400,7 @@ cac
 ban
 ```
 
-### f) Chuyển đổi hàng loạt với transform
+## f) Chuyển đổi hàng loạt với transform
 
 ```cpp
 OutputIterator transform( InputIterator first,
@@ -429,6 +428,6 @@ int main()
 }
 ```
 
-### g) Một số phương thức khác
+## g) Một số phương thức khác
 
 Còn nhiều phương thức tiện ích khác như: `append()`, `rfind()`, `find_first_not_of()`, `find_last_not_of()`, `swap()`. Cách dùng các hàm này đều được trình bày trong hệ thống hướng dẫn (help) của các môi trường có hỗ trợ STL (trong VC++ là MSDN). Ngoài ra các phương thức như `find_first_of()` tương tự như `find()`, `find_last_of()` tương tự như `rfind()`

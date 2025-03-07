@@ -1,4 +1,3 @@
-## Mảng cộng dồn và mảng hiệu
 
 **Tác giả:** 
 - Bùi Nguyễn Đức Tân - VNU-HCM, High School for the Gifted
@@ -12,9 +11,9 @@
 
 
 
-### Khái niệm
+## Khái niệm
 
-#### Mảng cộng dồn (prefix sum)
+### Mảng cộng dồn (prefix sum)
 
 Cho một mảng $A$ có $n$ phần tử được đánh số từ $0$ đến $n - 1$, ta dựng mảng $S(A)$ theo quy tắc sau:
 
@@ -25,7 +24,7 @@ Mảng $S(A)$ được gọi là **mảng cộng dồn (tiền tố)** theo $c$ 
 
 ![img](../../uploads/lzBYJ89.gif)
 
-#### Mảng hiệu (difference array)
+### Mảng hiệu (difference array)
 
 Cũng với mảng $A$, ta có thể dựng mảng $D(A)$ theo quy tắc: $D_i = A_{i + 1} - A_i\;(0 \le i < n - 1)$.
 
@@ -33,9 +32,9 @@ Mảng $D(A)$ được gọi là **mảng hiệu** của $A$, có tên tiếng A
 
 ![img](../../uploads/3IQ1YlB.gif)
 
-### Cài đặt
+## Cài đặt
 
-#### Mảng cộng dồn
+### Mảng cộng dồn
 
 Để dựng mảng cộng dồn, ta có thể áp dụng định nghĩa ở trên để dựng trực tiếp mảng:
 
@@ -93,7 +92,7 @@ printArray(prefTwo); // 3 2 -2 -1 4 13 11 5
 
 Trong cả hai cách trên, độ phức tạp của quá trình dựng là $\mathcal{O}(n)$.
 
-#### Mảng hiệu
+### Mảng hiệu
 
 Tương tự, ta cũng có thể áp dụng định nghĩa để dựng trực tiếp mảng hiệu:
 
@@ -138,19 +137,19 @@ printArray(diffTwo);
 
 Trong cả hai cách trên, độ phức tạp của quá trình dựng là $\mathcal{O}(n)$.
 
-### Tính chất
+## Tính chất
 
-#### Độ dài mảng
+### Độ dài mảng
 
 - Đối với **mảng cộng dồn**, do ta cần thêm một hằng số $c$ ở đầu mảng, độ dài của mảng $S(c, A)$ là $n + 1$, nhiều hơn 1 phần tử so với mảng $A$ gốc.
 - Ngược lại, **mảng hiệu** được dựng dựa trên hiệu của hai phần tử liền kề nhau. Tuy nhiên, trong mảng $A$ chỉ có $n - 1$ cặp như vậy, vì thế độ dài của $D(A)$ là $n - 1$, ít hơn 1 phần tử so với mảng $A$ gốc.
 
-#### Tính riêng biệt
+### Tính riêng biệt
 
 - Từ một mảng $A$ bất kỳ, ta sinh được vô hạn mảng cộng dồn $S(c, A)$ từ $A$. Tuy nhiên, các mảng cộng dồn này chỉ khác nhau ở giá trị $c$ được chọn.
 - Cũng với mảng $A$ đó, ta sinh được **một và chỉ một** mảng hiệu $D(A)$ từ $A$.
 
-#### Liên hệ giữa mảng cộng dồn và mảng hiệu
+### Liên hệ giữa mảng cộng dồn và mảng hiệu
 
 Cho mảng cộng dồn $S(c, A)$ và mảng hiệu $D(A)$, ta có thể dễ dàng khôi phục nội dung của mảng $A$ thông qua các phép sau:
 
@@ -162,7 +161,7 @@ Hình dưới đây mô tả rõ hơn mối liên hệ giữa mảng gốc, mả
 
 Hàm `partial_sum` và `adjacent_difference` trong C++ STL cũng tuân theo quy tắc này trên. Tuy nhiên, các thao tác trên hai hàm này có phần phức tạp hơn so với thao tác trên mảng mà ta cài đặt thủ công.
 
-### Ứng dụng của mảng cộng dồn
+## Ứng dụng của mảng cộng dồn
 
 Mảng cộng dồn có một tính chất quan trọng: các phần tử được cộng lại chồng chất lên nhau một cách liên tiếp, vì thế, với mọi nửa khoảng $[l, r)$ $(0 \le l < r \le n)$, ta chỉ cần tính $S_r - S_l$ để tính tổng của các phần tử $A_l, A_{l + 1},\dots, A_{r - 2}, A_{r - 1}$. Việc trừ này cũng sẽ khử đi hằng số $c$ của $S$, vì thế ta có thể dùng bất kỳ mảng $S$ nào được sinh từ $A$ để tính tổng.
 
@@ -184,7 +183,7 @@ $$
 
 Trong đa số trường hợp, mảng cộng dồn thường được sử dụng nếu bài toán yêu cầu tính tổng một đoạn con nhiều lần liên tiếp. Dưới đây, ta sẽ đề cập một số bài toán có điều kiện trên.
 
-#### Bài toán minh họa
+### Bài toán minh họa
 
 Nguồn: [CSES - Maximum Subarray Sum](https://cses.fi/problemset/task/1643)
 
@@ -230,7 +229,7 @@ int main() {
 Lưu ý, ta có thể thu gọn `prefSum` và `prefMin` thành một biến duy nhất để tối ưu bộ nhớ sử dụng.
 Bên cạnh cách giải đã đề cập, bài toán này cũng có thể giải bằng phương pháp quy hoạch động hoặc chia để trị.
 
-### Ứng dụng của mảng hiệu
+## Ứng dụng của mảng hiệu
 
 Giả sử, ta cần cộng thêm một lượng $k$ vào một đoạn con $[l, r]$ của mảng $A$. Thay vì cộng lần lượt từng phần tử với độ phức tạp $\mathcal{O}(n)$, ta có thể dựng mảng hiệu $D(A)$ và cập nhật trên đó với độ phức tạp $\mathcal{O}(1)$. Dựng mảng hiệu $D$ từ $A$ lưu trữ chênh lệch của các cặp phần tử liền kề nhau, ta chia các trường hợp sau để nhận xét:
 
@@ -240,7 +239,7 @@ Giả sử, ta cần cộng thêm một lượng $k$ vào một đoạn con $[l,
 
 Chỉ duy nhất trường hợp cuối cùng ta cần tác động trực tiếp lên $D$. Nhận thấy, trường hợp cuối chỉ thỏa khi $i = l - 1$ hoặc $i = r$, ta chỉ cần tác động trực tiếp lên $D_{l - 1}$ và $D_{r}$ để cập nhật đoạn. Sau khi cập nhật hoàn tất, ta áp dụng tính chất $S(D, A_0) = A$ để lấy giá trị cuối cùng của $A$.
 
-#### Bài toán minh họa
+### Bài toán minh họa
 
 Nguồn: [Codeforces - Karen and Coffee](https://codeforces.com/contest/816/problem/B)
 
@@ -297,11 +296,11 @@ int main() {
 }
 ```
 
-### Mở rộng sang mảng nhiều chiều
+## Mở rộng sang mảng nhiều chiều
 
 Ta có thể mở rộng mảng cộng dồn và mảng hiệu để thao tác trên mảng nhiều chiều.
 
-#### Mảng cộng dồn hai chiều
+### Mảng cộng dồn hai chiều
 
 Cho mảng hai chiều $A$ có kích thước $m \times n$ (chỉ số hàng và cột đầu tiên đều là 1), mảng cộng dồn $S(A)$ được dựng theo công thức sau: $$S_{i,j}=\displaystyle \sum_{t_i\,=\,1}^{i} \sum_{t_j\,=\,1}^{j} A_{t_i,t_j}$$
 
@@ -360,7 +359,7 @@ Phần chứng minh công thức trên xin được nhường lại cho bạn đ
 |                   ![img](../../uploads/3qzbjwL.png)                    |
 | Các phần tử $A_i$ tô màu đỏ bị trừ tới 2 lần, vì thế cần phải cộng bù lại |
 
-#### Mảng cộng dồn ba chiều
+### Mảng cộng dồn ba chiều
 
 Giả sử ta có mảng $A$ trong không gian 3 chiều với kích thước $m \times n \times p$, ta dựng mảng $S(A)$ theo quy tắc sau: $$S_{i, j, k}=\displaystyle \sum_{t_i\,=\,1}^{i} \sum_{t_j\,=\,1}^{j} \sum_{t_k\,=\,1}^{k} A_{t_i,t_j,t_k}$$
 
@@ -389,7 +388,7 @@ Hai công thức trên được xây dựng thông qua phương pháp bao hàm -
 
 Ta cũng có thể áp dụng phương pháp này để mở rộng cho các mảng $n$-chiều. Tuy nhiên, do số lượng bài toán liên quan đến mảng trong không gian từ 4 chiều trở lên là cực hiếm, mảng cộng dồn trong không gian này gần như không có ứng dụng thực tiễn. Vì thế, bài viết xin giới hạn lại tại mảng cộng dồn trong không gian 3 chiều trở xuống.
 
-#### Mảng hiệu hai chiều
+### Mảng hiệu hai chiều
 
 Trước khi bắt đầu xây dựng mảng hiệu 2 chiều, ta cần định nghĩa thêm 2 khái niệm sau cho một mảng $A$ hai chiều có kích thước $m \times n$:
 
@@ -457,7 +456,7 @@ Quay lại bài toán cũ trong không gian 1 chiều: làm thế nào để ta 
 
 Từ nhận xét trên, ta thấy chỉ có 4 phần tử của $D(A)$ sẽ bị tác động bởi thao tác này là tọa độ $(r_1, c_1)$, $(r_1, c_2 + 1)$, $(r_2 + 1, c_1)$ và $(r_2 + 1, c_2 + 1)$ - trong đó, phần tử tại $(r_1, c_1)$ và $(r_2 + 1, c_2 + 1)$ tăng thêm lượng $k$, phần tử tại $(r_1, c_2 + 1)$ và $(r_2 + 1, c_1)$ trừ đi lượng $k$. Ta dễ dàng cập nhật đoạn trên mảng hai chiều với độ phức tạp $\mathcal{O}(1)$.
 
-#### Mảng hiệu ba chiều
+### Mảng hiệu ba chiều
 
 Cũng như mảng cộng dồn, ta cũng có thể dựng mảng hiệu của các mảng trong không gian 3 chiều. Tương tự, nếu ta coi $D$ là mảng sinh ra mảng cộng dồn $A$, ta có công thức dựng $D$ sau:
 
@@ -474,7 +473,7 @@ $$
 
 Hình trên minh họa những vị trí mà ta cần cập nhật trên mảng hiệu. Tương tự mảng cộng dồn, phương pháp [bao hàm - loại trừ](https://vnoi.info/wiki/translate/he/Number-Theory-7.md) được áp dụng để đưa đến kết luận này.
 
-### Mở rộng sang mảng động
+## Mở rộng sang mảng động
 
 Trong các ví dụ đã đề cập, các bài toán chúng ta phải giải đều không có truy vấn cập nhật hoặc toàn bộ truy vấn cập nhật được thực hiện trước truy vấn hỏi. Tuy nhiên, trong một số bài toán yêu cầu phải thực hiện xen kẽ hai loại truy vấn này, ta cần sử dụng các cấu trúc dữ liệu để giải quyết hiệu quả các truy vấn này.
 
@@ -487,9 +486,9 @@ Nếu bài toán chỉ xử lý một trong hai dạng nói trên, ta có thể 
 
 Trong một số bài toán yêu cầu xử lý kết hợp 2 dạng (cập nhật đoạn và tính tổng đoạn), ta thường áp dụng [Segment Tree](https://vnoi.info/wiki/algo/data-structures/segment-tree-extend.md) có lazy propagation (cập nhật lười). Mặc dù có chung độ phức tạp, cách cài đặt này thường khó hơn, có thời gian chạy lâu hơn và dùng nhiều bộ nhớ hơn so với cài đặt Binary Indexed Tree. Nếu ta làm việc trên mảng 1 chiều, ta cũng có thể biến đổi hệ thức giữa mảng hiệu và mảng cộng dồn để cài đặt trực tiếp BIT làm việc trên các truy vấn này. Bạn đọc có thể tham khảo thêm cách cài đặt này tại [đây](https://vnoi.info/wiki/algo/data-structures/fenwick.md#truy-v%E1%BA%A5n-tr%C3%AAn-%C4%91o%E1%BA%A1n).
 
-### Bài tập
+## Bài tập
 
-#### Mảng cộng dồn 1 chiều
+### Mảng cộng dồn 1 chiều
 
 [VNOJ - NKSEQ](https://oj.vnoi.info/problem/nkseq)
 
@@ -501,7 +500,7 @@ Trong một số bài toán yêu cầu xử lý kết hợp 2 dạng (cập nh�
 
 [Codechef - XXOR](https://www.codechef.com/problems/XXOR)
 
-#### Mảng hiệu 1 chiều
+### Mảng hiệu 1 chiều
 
 [Codeforces - Little Girl and Maximum Sum](https://codeforces.com/problemset/problem/276/C)
 
@@ -509,7 +508,7 @@ Trong một số bài toán yêu cầu xử lý kết hợp 2 dạng (cập nh�
 
 [Codeforces Gym - 319055E](https://codeforces.com/group/1rv4rhCsHp/contest/319055/problem/E) (lưu ý: để xem nội dung bài tập cần tham gia nhóm tại [link đây](https://codeforces.com/group/1rv4rhCsHp))
 
-#### Mảng cộng dồn nhiều chiều
+### Mảng cộng dồn nhiều chiều
 
 [CSES - Forest Queries](https://cses.fi/problemset/task/1652)
 
@@ -519,7 +518,7 @@ Trong một số bài toán yêu cầu xử lý kết hợp 2 dạng (cập nh�
 
 [VNOJ - MAXCUB](https://oj.vnoi.info/problem/maxcub)
 
-#### Mảng hiệu nhiều chiều
+### Mảng hiệu nhiều chiều
 
 [Codechef - COW3E](https://www.codechef.com/COW42020/problems/COW3E)
 
@@ -527,7 +526,7 @@ Trong một số bài toán yêu cầu xử lý kết hợp 2 dạng (cập nh�
 
 VNOJ có phân loại riêng các bài tập về mảng cộng dồn, bạn đọc có thể tham khảo tại [đây](https://oj.vnoi.info/tags/?tag_id=prefix_sum).
 
-### References
+## References
 
 [WCIPEG - Prefix sum array and difference array](http://wcipeg.com/wiki/Prefix_sum_array_and_difference_array)
 

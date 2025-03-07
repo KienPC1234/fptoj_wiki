@@ -1,4 +1,3 @@
-## Range Minimum Query (RMQ) - Sparse Table
 
 **Tác giả:** 
 - Lê Minh Hoàng - Đại học Khoa học Tự nhiên, ĐHQG-HCM
@@ -40,11 +39,11 @@ void BuildLog2Array() {
 ## Sparse Table
 Đầu tiên, ta sẽ tìm hiểu về ý tưởng để tối ưu thời gian truy vấn từ $\mathcal{O}(N)$ đến $\mathcal{O}(1)$ của Sparse Table qua bài toán Range Minimum Query (RMQ), và cách để truy vấn trong $\mathcal{O}(\log{N})$ nếu phép toán không thoả mãn tính chất Idempotence qua bài toán Range Sum Query (RSQ).
 
-### Range Minimum Query (RMQ)
+## Range Minimum Query (RMQ)
 Cho mảng $A$ gồm $N$ phần tử và $Q$ truy vấn có dạng $(l, r)$. Với mỗi truy vấn, in ra giá trị nhỏ nhất trong mảng $A$ từ $l$ đến $r$.
 Giới hạn: $N, Q \le 10^5$
 
-#### Thuật toán ngây thơ
+### Thuật toán ngây thơ
 Ta duyệt qua tất cả phần tử.
 ![img](../../uploads/x2DCggl.gif)
 ```cpp
@@ -58,14 +57,14 @@ int queryMin(int l, int r) {
 }
 ```
 
-##### Phân tích
+#### Phân tích
 - Độ phức tạp truy vấn: $\mathcal{O}(r - l + 1) = \mathcal{O}(N)$
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp là $\mathcal{O}(Q \cdot N)$
 
 Câu hỏi đặt ra là ta còn có thể tối ưu thời gian truy vấn được hay không?
 - Nhận xét: Thay vì duyệt qua từng phần tử, ta có thể duyệt qua từng nhóm $2$ phần tử. Từ đó, ta có thể giảm thời gian truy vấn xuống còn $\mathcal{O}(\frac{N}2)$
 
-#### Thuật toán tối ưu 1.1
+### Thuật toán tối ưu 1.1
 - Ta xây dựng mảng $a2$ với công thức $$a2_i = min(a_i, a_{i+1})$$.
 ![img](../../uploads/ORCwi7l.gif)
 - Khi truy vấn, nếu độ dài đoạn cần truy vấn $len = 1$ thì ta in ra $a[l]$, nếu $len > 1$ thì ra dùng mảng $a2$:
@@ -96,13 +95,13 @@ int queryMin(int l, int r) {
 }
 ```
 
-##### Phân tích:
+#### Phân tích:
 - Độ phức tạp tiền xử lý: $\mathcal{O}(N)$ (tạo mảng $a2$)
 - Độ phức tạp truy vấn: $\mathcal{O}(\frac{N}2 + 1)$ ($1$ vòng for và $1$ lệnh if cho biến $len$)
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp thời gian là $\mathcal{O}(N + Q \cdot (\frac{N}2 + 1))$
 - Độ phức tạp bộ nhớ: $\mathcal{O}(2N)$ ($2$ mảng $a$ và $a2$)
 
-#### Thuật toán tối ưu 1.2
+### Thuật toán tối ưu 1.2
 Tương tự 1.1, ta có nhận xét: Thay vì duyệt qua từng nhóm $2$ phần tử, ta có thể duyệt qua từng nhóm $4$ phần tử.
 ![img](../../uploads/dUAc0gY.gif)
 
@@ -140,13 +139,13 @@ int queryMin(int l, int r) {
 }
 ```
 
-##### Phân tích:
+#### Phân tích:
 - Độ phức tạp tiền xử lý: $\mathcal{O}(2N)$ (tạo mảng $a2$ và $a4$)
 - Độ phức tạp truy vấn: $\mathcal{O}(\frac{N}4 + 2)$ ($1$ vòng for và $2$ lệnh if cho biến $len$)
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp thời gian là $\mathcal{O}(2N + Q \cdot (\frac{N}4 + 2))$
 - Độ phức tạp bộ nhớ: $\mathcal{O}(3N)$ ($3$ mảng $a$, $a2$ và $a4$)
 
-#### Thuật toán tối ưu 1.3
+### Thuật toán tối ưu 1.3
 Ta vẫn có thể tối ưu thời gian truy vấn bằng cách duyệt qua các nhóm lớn hơn (nhóm độ lớn $8$ phần tử).
 ![img](../../uploads/8SxlpId.gif)
 
@@ -178,20 +177,20 @@ int queryMin(int l, int r) {
 }
 ```
 
-##### Phân tích:
+#### Phân tích:
 - Độ phức tạp tiền xử lý: $\mathcal{O}(3N)$ (tạo mảng $a2$, $a4$ và $a8$)
 - Độ phức tạp truy vấn: $\mathcal{O}(\frac{N}8 + 3)$ ($1$ vòng for và $3$ lệnh if cho biến $len$)
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp thời gian là $\mathcal{O}(3N + Q \cdot (\frac{N}8 + 3))$
 - Độ phức tạp bộ nhớ: $\mathcal{O}(4N)$ ($4$ mảng $a$, $a2$, $a4$ và $a8$)
 
-#### Thuật toán tối ưu 1.n
+### Thuật toán tối ưu 1.n
 Nếu ta làm tiếp như thuật toán tối ưu $1.3$ (tiếp tục tạo các mảng $a16, a32, \dots, a65536$) ta sẽ có $\log_2(N)$ mảng $a$, độ phức tạp bài toán lúc này như sau:
 - Độ phức tạp tiền xử lý: $\mathcal{O}(N \log N)$ ($\log_2$ mảng $a$)
 - Độ phức tạp truy vấn: $\mathcal{O}\left(\dfrac{N}{2^{\log N}} + \log N\right) = \mathcal{O}(\log N)$ ($1$ vòng for và $log_2$ lệnh if cho biến $len$)
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp thời gian là $\mathcal{O}(N\log N + Q\log N)$
 - Độ phức tạp bộ nhớ: $\mathcal{O}(N\log N)$ (mảng $a$ ban đầu và $\log_2$ mảng $a$ tiền xử lý)
 
-#### Thuật toán tối ưu 2
+### Thuật toán tối ưu 2
 Nhưng nếu dùng $\log_2$ mảng $a$ sẽ mang đến cho ta nhiều bất tiện (code dài, dễ sai, ...). Do đó, ta có thể đặt:
 - $st[j][i]$ là giá trị nhỏ nhất của $2^j$ phần tử tính từ $i$ (min của $a[i\ldots i + 2^j - 1]$), tương ứng với $a(2^j)[i]$) ($st$ ở đây là viết tắt của $S$(parse)$T$(able)).
 - Ta có công thức truy hồi sau:
@@ -231,12 +230,12 @@ int queryMin(int l, int r) {
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp thời gian là $\mathcal{O}(N\log N + Q)$
 - Độ phức tạp bộ nhớ: $\mathcal{O}(N\log N)$
 
-### Range Sum Queries (RSQ)
-#### Bài toán
+## Range Sum Queries (RSQ)
+### Bài toán
 Cho mảng $A$ gồm $N$ phần tử và $Q$ truy vấn có dạng $(l, r)$. Với mỗi truy vấn, in ra **tổng** các phần tử trong mảng $A$ từ $l$ đến $r$.
 Giới hạn: $N, Q \le 10^5$
 
-#### Ý tưởng
+### Ý tưởng
 Giống như RMQ, ta vẫn sẽ dựng mảng $st[LG+1][N]$.
 
 Nhưng lúc này, ta không thể lấy $$k = \_\_lg(len)$$ rồi $res = sum[l\ldots l+2^k-1] + sum[r-2^k+1\ldots r]$ như RMQ được nữa (vì $2$ đoạn chắc chắn giao nhau).
@@ -249,7 +248,7 @@ Từ nhận xét trên, ta có thể tách $[l\ldots r]$ thành $\log_2$ đoạn
     - Ta tách $[l\ldots r]$ thành $[l\ldots l+2^j-1]$ và $[l+2^j\ldots r]$
     - $l = l + 2^j$ (tiếp tục tách $[l+2^j\ldots r]$ như $[l\ldots r]$)
 
-#### Cài đặt
+### Cài đặt
 ```cpp
 // LG là số lớn nhất thoả 2^LG < N
 // ví dụ: N = 10^5 thì LG = 16 vì 2^16 = 65536
@@ -277,7 +276,7 @@ int querySum(int l, int r) {
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp thời gian là $\mathcal{O}(N\log N + Q\log N)$
 - Độ phức tạp bộ nhớ: $\mathcal{O}(N\log N)$
 
-#### Lưu ý
+### Lưu ý
 Mình biết rằng bài này có cách dễ hơn là dùng [Mảng Cộng Dồn](algo/data-structures/prefix-sum-and-difference-array), nhưng lý do mảng cộng dồn sử dụng được là vì phép cộng có "phép đảo ngược" là phép trừ.
 
 Nếu xét phép toán nhân $2$ ma trận **không** vuông:
@@ -286,7 +285,7 @@ Nếu xét phép toán nhân $2$ ma trận **không** vuông:
 
 Vậy bài toán lúc này không thể dùng mảng cộng dồn, cũng không thể dùng Sparse Table truy vấn $\mathcal{O}(1)$. Do đó, Sparse Table truy vấn $\mathcal{O}(\log N)$ là một giải pháp hợp lý (dù khá tốn bộ nhớ so với Segment Tree).
 
-### Bài tập áp dụng
+## Bài tập áp dụng
 - [**Library Checker - Static RMQ**](https://judge.yosupo.jp/problem/staticrmq)
 - [**VNOJ - AVLBIT (Dãy cấp số cộng)**](https://oj.vnoi.info/problem/avlbit)
 - [**Codechef - FRMQ (Chef and Array)**](https://www.codechef.com/problems/FRMQ)
@@ -392,7 +391,7 @@ int getMin(int x, int y, int a, int b) {
                  st[k][a - (1 << k) + 1][l][b - (1 << l) + 1] });
 ```
 
-### Bài toán: [Codechef - Chef and Rectangle Array](https://www.codechef.com/problems/CHSQARR)
+## Bài toán: [Codechef - Chef and Rectangle Array](https://www.codechef.com/problems/CHSQARR)
 
 [Link đề bài tiếng Việt](https://s3.amazonaws.com/codechef_shared/download/translated/JUNE16/vietnamese/CHSQARR.pdf)
 
@@ -408,16 +407,16 @@ Giới hạn:
 - $1 \le a \le M$
 - $1 \le b \le N$
 
-### Ý tưởng
+## Ý tưởng
 - Duyệt qua tất cả các ma trận con $a \times b$, số thao tác tối thiểu để các phần tử của ma trận con $a \times b$ bằng nhau là $maxValue \times a \times b - sumValue$.
 
-#### Phân tích độ phức tạp
+### Phân tích độ phức tạp
 - Độ phức tạp tiền xử lý: $\mathcal{O}(MN\log M\log N)$
 - Độ phức tạp truy vấn: $\mathcal{O}(1)$
 - Có $Q$ truy vấn, vì thế tổng độ phức tạp thời gian là $\mathcal{O}(MN\log M\log N + Q)$
 - Độ phức tạp bộ nhớ: $\mathcal{O}(MN\log M\log N)$
 
-### Cài đặt
+## Cài đặt
 ```cpp
 ## include <bits/stdc++.h>
 using namespace std;
@@ -494,5 +493,5 @@ int main() {
 }
 ```
 
-### Bài tập áp dụng
+## Bài tập áp dụng
 - [**Codechef - Chef and Rectangle Array**](https://www.codechef.com/problems/CHSQARR)

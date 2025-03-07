@@ -1,13 +1,12 @@
-## Meet In The Middle (MITM)
 
 
 
 ## Giới thiệu
 MITM là một kỹ thuật tìm kiếm được sử dụng khi đầu vào nhỏ nhưng không đủ nhỏ để có thể quay lui (backtracking). Trước khi tiếp tục về kỹ thuật MITM, chúng ta cần xem xét bài toán đơn giản sau:
 
-### [CSES - Meet in the Middle](https://cses.fi/problemset/task/1628)
+## [CSES - Meet in the Middle](https://cses.fi/problemset/task/1628)
 
-#### Đề bài
+### Đề bài
 Cho mảng $t$ có $N$ phần tử. Hỏi có bao nhiêu cách chọn tập con sao cho tổng bằng $x$.
 
 Giới hạn:
@@ -15,11 +14,11 @@ Giới hạn:
 - $1\le x\le10^9$
 - $1\le t_i\le10^9$
 
-#### Thuật toán ngây thơ: Quay lui (Backtracking)
-##### Ý tưởng
+### Thuật toán ngây thơ: Quay lui (Backtracking)
+#### Ý tưởng
 Ta duyệt qua tất cả các tập con có thể có rồi cập nhật kết quả bằng đệ quy (một cách khác để duyệt qua các tập con là sử dụng bitmask <insert bài bitmask>).
 
-##### Cài đặt
+#### Cài đặt
 ```cpp
 long long cnt;
 // quay lui đến phần tử thứ i
@@ -47,7 +46,7 @@ long long solve() {
 
 Thuật toán trên có độ phức tạp thời gian là $\mathcal{O}(2^N)$, không đủ nhanh để giải bài toán bởi vì $2^{40}$ khá lớn. Do đó, ta cần tìm một phương án tối ưu hơn.
 
-#### Thuật toán tối ưu: kỹ thuật MITM
+### Thuật toán tối ưu: kỹ thuật MITM
 Kỹ thuật MITM được mô tả như sau:
 - Đặt $K=N/2$
 - Chia $N$ phần tử thành $2$ tập:
@@ -62,7 +61,7 @@ Kỹ thuật MITM được mô tả như sau:
 	- Một cách tối ưu khác là ta sắp xếp cả $2$ mảng $A$ và $B$ trước, sau đó sử dụng [kỹ thuật hai con trỏ](https://vnoi.info/wiki/algo/basic/two-pointers.md).
 Độ phức tạp là $\mathcal{O}(\text{sort algorithm})+\mathcal{O}(2^K)$
 
-##### Cài đặt (sử dụng tìm kiếm nhị phân)
+#### Cài đặt (sử dụng tìm kiếm nhị phân)
 ```cpp
 ## include <bits/stdc++.h>
 using namespace std;
@@ -112,7 +111,7 @@ int main() {
 }
 ```
 
-##### Cài đặt (sử dụng kỹ thuật hai con trỏ)
+#### Cài đặt (sử dụng kỹ thuật hai con trỏ)
 ```cpp
     // Quay lui 2 tập X và Y
     TryX(1, 0);
@@ -135,7 +134,7 @@ int main() {
 
 ## Ứng dụng
 
-### Bài toán 1: [VNOJ - Cái túi 1](https://oj.vnoi.info/problem/dttui1)
+## Bài toán 1: [VNOJ - Cái túi 1](https://oj.vnoi.info/problem/dttui1)
 
 Có $N$ cục vàng, mỗi cục vàng có trọng lượng $W_i$ và giá trị $V_i$. Bạn có một cái túi có tải trọng tối đa là $M$. Hỏi tổng giá trị vàng lớn nhất có thể thu được mà không làm rách túi.
 
@@ -144,7 +143,7 @@ Giới hạn:
 - $1\le M\le10^9$
 - $1\le W_i, V_i\le10^8$
 
-#### Ý tưởng
+### Ý tưởng
 Áp dụng MITM, ta tách $N$ cục vàng thành $2$ tập $X$ và $Y$, tập $X$ chứa $N/2$ cục vàng đầu tiên và tập $Y$ chứa phần còn lại.
 
 Bây giờ, quay lui cho với mỗi tập $X$ và $Y$, ta được $2$ tập $A$ và $B$ chứa các cặp (tổng trọng lượng $sumW$, tổng giá trị $sumV$) của các tập con.
@@ -153,7 +152,7 @@ Bây giờ, quay lui cho với mỗi tập $X$ và $Y$, ta được $2$ tập $A
 
 Để giải bài toán con này, gợi ý là sắp xếp lại mảng $B$ theo thứ tự tăng dần của $sumW_j$ và đặt $maxSumV_j=max(sumV_1, \ldots,sumV_j)$ (phần này có thể tính nhanh bằng [mảng cộng dồn](https://vnoi.info/wiki/algo/data-structures/prefix-sum-and-difference-array.md)).
 
-#### Cài đặt
+### Cài đặt
 ```cpp
 ## include <bits/stdc++.h>
 using namespace std;
@@ -215,14 +214,14 @@ int main() {
 }
 ```
 
-### Bài toán 2
+## Bài toán 2
 Cho mảng $a$ gồm $n$ số nguyên, đếm số lượng dãy con tăng có độ dài $3$.
 
 Giới hạn:
 - $1\le n\le2000$
 - $1\le a_i\le10^9$
 
-### Ý tưởng
+## Ý tưởng
 Đặt $a_i, a_j, a_k (i<j<k)$ ứng với một dãy con tăng có độ dài $3$.
 
 Theo cách làm ngây thơ, với mỗi $i$, ta đếm số cặp $(j,k)$ thoả mãn trong $\mathcal{O}(n^2)$, tổng độ phức tạp thời gian sẽ là $\mathcal{O}(n^3)$.
@@ -230,7 +229,7 @@ Theo cách làm ngây thơ, với mỗi $i$, ta đếm số cặp $(j,k)$ thoả
 Ta có thể ứng dụng "middle" như sau: thay vì xét $i$ đầu tiên, ta xét $j$ đầu tiên.
 Với mỗi $j$, ta đếm số lượng $i<j$ thoả $a_i < a_j$ và $k>j$ thoả $a_k>a_j$ trong $\mathcal{O}(n)$, tổng độ phức tạp thời gian lúc này sẽ là $\mathcal{O}(n^2)$.
 
-### Cài đặt
+## Cài đặt
 ```cpp
 for (int j = 0; j < n; ++j) {
     int smaller = 0, bigger = 0;
@@ -244,7 +243,7 @@ for (int j = 0; j < n; ++j) {
 }
 ```
 
-### Bài toán 3: [CSES - Sum of Four Values](https://cses.fi/problemset/task/1642/)
+## Bài toán 3: [CSES - Sum of Four Values](https://cses.fi/problemset/task/1642/)
 <!-- (MITM kiểu prep) -->
 Cho mảng $a$ gồm $n$ số nguyên và số nguyên $x$. Ta cần tìm $4$ vị trí **phân biệt** sao cho tổng giá trị ở $4$ vị trí đó bằng $x$.
 
@@ -252,7 +251,7 @@ Giới hạn:
 - $1\le n\le1000$
 - $1\le x,a_i\le10^9$
 
-#### Ý tưởng
+### Ý tưởng
 Đặt $i,j,k,l$ $(i<j<k<l)$ là $4$ vị trí thoả mãn $a_i+a_j+a_k+a_l=x$.
 
 Thuật toán ngây thơ của bài toán này là sử dụng $4$ vòng lặp lồng nhau với độ phức tạp $\mathcal{O}(n^4)$.
@@ -269,7 +268,7 @@ Ta có thể giải bài toán này trước bằng cách:
 - Duyệt qua tất cả cặp $2$ vị trí (đặt $2$ vị trí này là $k$ và $l$, $k < l$), với mỗi cặp vị trí, ta có một tổng $a_k+a_l$.
 - Với mỗi giá trị tổng, có thể có nhiều cặp vị trí khác nhau thoả mãn, ta chỉ cần lưu lại cặp có $k$ lớn nhất (vì $k$ càng lớn thì càng có nhiều $j$ thoả mãn).
 
-#### Cài đặt
+### Cài đặt
 Sử dụng `std::map` để lưu cặp vị trí của mỗi giá trị tổng.
 
 ```cpp
@@ -308,18 +307,18 @@ int main() {
 }
 ```
 
-##### Phân tích
+#### Phân tích
 Độ phức tạp tiền xử lý: $\mathcal{O}(n^2\log(n^2))$
 Độ phức tạp truy vấn: $\mathcal{O}(\log(n^2))$
 Có $\mathcal{O}(n^2)$ truy vấn, vì thế, tổng độ phức tạp thời gian là: $\mathcal{O}(n^2\log(n^2))$
 
-### Bài toán 4: [Kattis - Playlist](https://open.kattis.com/problems/playlist)
+## Bài toán 4: [Kattis - Playlist](https://open.kattis.com/problems/playlist)
 
 Cho đồ thị có hướng $n$ đỉnh ($n\le100$) và **bậc ngoài** của mỗi đỉnh không quá $40$. Tất cả đỉnh đều được tô màu. Tìm một đường đi độ dài $9$ sao cho $9$ đỉnh trong đường đi có màu phân biệt. Nếu có nhiều cách chọn, in ra bất kỳ, ngược lại, in ra "fail".
 
 Giới hạn thời gian là rất lớn (12 giây).
 
-#### Ý tưởng
+### Ý tưởng
 Tương tự [Bài toán 2](#Bài-toán-2), ta có thể ứng dụng "middle" như sau:
 - Đặt đỉnh thứ $5$ trong đường đi là $u$.
 - Với mỗi $u$:
@@ -333,7 +332,7 @@ Số đường đi độ dài $4$ trong $B$ có màu phân biệt với $X$ = $|
 	- Độ phức tạp thời gian: $\mathcal{O}(2^4\times40^4)$
 - Độ phức tạp thời gian của thuật toán là $\mathcal{O}(N\times2^4\times40^4)$
 
-#### Cài đặt
+### Cài đặt
 ```cpp
 ## include <bits/stdc++.h>
 using namespace std;

@@ -1,4 +1,3 @@
-## Kĩ thuật hai con trỏ
 
 **Tác giả:** Phan Đình Khôi - Đại học Bách Khoa Đà Nẵng
 
@@ -16,7 +15,7 @@ Cho hai dãy số nguyên đã được **sắp xếp không giảm** $a$ và $b
 
 Giới hạn: $n, m \leq 10^5$ và $0 \leq a_i, b_i \leq 10^{9}$.
 
-### Phân tích
+## Phân tích
 
 Hãy cùng xem ví dụ sau đây. 
 
@@ -92,7 +91,7 @@ Ta nhận thấy rằng
 * Khi đưa phần tử $b[j]$ vào dãy $c$ thì phần tử nhỏ nhất chưa được chọn trong dãy $b$ sẽ là $b[j+1]$.
 
 
-### Giải pháp
+## Giải pháp
 
 Dựa vào những phân tích ta có giải pháp sử dụng **hai con trỏ** như sau:
 
@@ -228,7 +227,7 @@ Vị trí con trỏ $i$ luôn tăng và tăng quá không quá $n$ lần, vị t
 
 Vì thế độ phức tạp của giải pháp là $O(n+m)$.
 
-### Luyện tập
+## Luyện tập
 
 [VNOJ - NKSGAME](https://oj.vnoi.info/problem/nksgame)
 
@@ -243,7 +242,7 @@ Cho một mảng số nguyên $a$ có $n$ phần tử, mảng này đã được
 
 Giới hạn: $2 \leq n \leq 10^6$ và $0 \leq a_i, x \leq 10^9$
 
-### Phân tích
+## Phân tích
 
 Hãy cùng xem ví dụ sau đây. 
 
@@ -302,7 +301,7 @@ Ta có một số nhận xét sau:
 
 * Nếu $a[i]+a[j]>X$, không quan tâm đến $a[j]$ nữa và các phần tử chúng ta cần quan tâm đó là các phần tử trong đoạn $[i,j-1]$.
 
-### Giải pháp
+## Giải pháp
 
 Từ những phân tích vừa rồi ta có giải pháp sử dụng hai con trỏ như sau:
 
@@ -438,7 +437,7 @@ Hơn nữa, sự thay đổi vị trí hai con trỏ này sẽ dừng lại khi 
 
 Vì thế, việc thay đổi vị trí hai con trỏ sẽ không quá $n$ lần, độ phức tạp của giải pháp là $O(n)$.
 
-### Luyện tập
+## Luyện tập
 [LQDOJ - FINDPAIR](https://lqdoj.edu.vn/problem/findpair) 
 
 [LQDOJ - CNTPAIR02](https://lqdoj.edu.vn/problem/cntpair02) 
@@ -454,7 +453,7 @@ Dữ liệu đảm bảo các phần tử trong dãy $a$ đều có giá trị k
 
 Giới hạn: $1\leq n \leq 10^6$, $1 \leq a_i \leq 10^9$ và $s \leq 10^{18}$.
 
-### Phân tích
+## Phân tích
 
 Để dễ dàng phân tích, ta tạm gọi 
 
@@ -577,7 +576,7 @@ Qua ví dụ vừa rồi, ta thấy rằng, vị trí $l$ đối với các giá
 Thật vậy, với mọi $x<l$ thì $sum(x,r)>s \Rightarrow sum(x,r+1)>s$, vì thế giá trị $l$ đối với $r+1$ phải không quá giá trị $l$ đối với $r$.
 
 Hơn nữa vì các phần tử trong dãy $a$ đều có giá trị không quá $s$ cho nên luôn tồn tại vị trí $l \leq r$ sao cho đoạn $[l,r]$ là một đoạn "tốt". 
-### Giải pháp
+## Giải pháp
 
 Với những phân tích như trên, ta có giải quyết bài toán với phương pháp hai con trỏ như sau:
 
@@ -784,7 +783,7 @@ Hơn nữa, mỗi vị trí $l$ và $r$ tăng không quá $n$ lần.
 
 Vì thế độ phức tạp của giải pháp là $O(n)$.
 
-### Luyện tập
+## Luyện tập
 [VNOJ - SOPENP](https://oj.vnoi.info/problem/sopenp)
 
 [VNOJ - PRODUCT](https://oj.vnoi.info/problem/product)
@@ -807,7 +806,7 @@ Tìm $n$ nhỏ nhất sao cho tồn tại $m < n$ và $x_m = x_n$. Dữ liệu �
 
 Giới hạn: $1 \leq a \leq 10^4$ và $1 \leq b,c \leq 10^{14}$.
 
-### Phân tích
+## Phân tích
 
 Để dễ dàng phân tích ta định nghĩa hàm $f$ như sau:
 
@@ -859,11 +858,11 @@ Ta có thể tính được giá trị này bằng cách xác định
 
 Giá trị $n = \mu + \lambda = 5 + 4 = 9$.
 
-### Giải pháp
+## Giải pháp
 
 Để xác định giá trị $\mu$ và $\lambda$, ta sử dụng thuật toán [Floyd's tortoise and hare](https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_tortoise_and_hare)
 
-#### Rùa và Thỏ
+### Rùa và Thỏ
 
 Khởi tạo hai con trỏ, $toroise$ (rùa) và $hare$ (thỏ).
 
@@ -957,7 +956,7 @@ while (true) {
       break;
 }
 ```
-#### Tìm $\mu$
+### Tìm $\mu$
 
 Khởi tạo một con trỏ mới $p=x_0$, con trỏ này được tịnh tiến giống như con trỏ $tortoise$.
 
@@ -990,7 +989,7 @@ while (p != tortoise) {
     mu++;
 }
 ```
-#### Tìm $\lambda$
+### Tìm $\lambda$
 
 Bây giờ cả hai con trỏ $tortoise$ và $p$ đang có giá trị là $x_{\mu}$.
 
@@ -1041,7 +1040,7 @@ Vì thế việc xác định được vị trí $tortoise$ và $hare$ gặp nha
 
 Kết luận: độ phức tạp của bài toán là $O(\mu + \lambda)$. (trong đó $\mu + \lambda \leq 2 \cdot 10^7$)
 
-### Luyện tập
+## Luyện tập
 
 [LODOJ - TORHAR](https://lqdoj.edu.vn/problem/torhar)
 

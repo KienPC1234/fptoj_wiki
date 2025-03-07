@@ -1,4 +1,3 @@
-## Rời rạc hoá và ứng dụng
 
 **Tác giả**: Lê Hùng Sơn - Đại học FPT
 
@@ -26,7 +25,7 @@ Kết thúc quá trình trên, ta nhận được mảng `b[]` là nén từ m�
  
 ## Ví dụ 1: Dãy số (C11SEQ)
 
-### Đề bài
+## Đề bài
 
 Cho n số nguyên $(n \le 10^5)$ số nguyên $a_1, a_2, \dots, a_n$ với $(\|a_i\| \le 10^9)$ và 2 số $L$, $R$ $(L \le R)$. Hãy đếm xem có bao nhiêu cặp $(i, j)$ thỏa $L \le a_i + a_{i+1} +... + a_j \le R$.
 
@@ -51,7 +50,7 @@ C11SEQ.OUT
 4
 ```
 
-### Hướng giải quyết:
+## Hướng giải quyết:
 
 *   Hướng đơn giản nhất là duyệt mọi cặp đoạn $(i,j)$ và kiểm tra xem tổng nó có thỏa không và ta tăng biến đếm lên. Tuy nhiên cách này mất chi phí thời gian $O(n^2)$ với $n \le 10^5$ thì không được khả thi.
 *   Bây giờ ta thử gọi như sau: $S_i = a_1 + a_2 + \dots + a_i$.
@@ -137,7 +136,7 @@ QBSEGPAR.OUT
 ```
  
 
-### Hướng giải quyết
+## Hướng giải quyết
 
 **Nhận xét 1:** Bài toán yêu cầu tìm m nhỏ nhất, theo kinh nghiệm thì khi bài toán bảo tìm giá trị nhỏ nhất hay lớn nhất nhưng không xác định được từ dữ liệu bài thì ta nên nghĩ đến _chặt nhị phân_. Vùng giá trị chặt có thể chọn từ $[-10^9, 10^9]$ là vừa hợp, cái này là tùy chọn, còn tối ưu nhất chỉ cần chặt trong khoảng $[-max(a_i)* n, max(a_i)*n]$.
 

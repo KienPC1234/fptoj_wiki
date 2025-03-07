@@ -109,7 +109,6 @@ tensor([[4., 4., 4.],
 Phép cộng tại chỗ (lưu ý việc tiết kiệm bộ nhớ là khá quan trọng để tăng hiệu quả tính toán)
 
 In [23]:
-## Cộng x vào y
 y.add_(x)
 print(y)
 tensor([[4., 4., 4.],

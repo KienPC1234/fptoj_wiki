@@ -1,4 +1,3 @@
-## Mảng hậu tố (Suffix Array)
 
 **Mảng Hậu Tố** là một CTDL giúp **sort** các **hậu tố** theo **thứ tự từ điển**.
 

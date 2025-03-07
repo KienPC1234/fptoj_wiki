@@ -1,4 +1,3 @@
-## Interval Tree trên tập đoạn thẳng
 
 **Tác giả**: Vũ *chipchip* Phúc Hoàng
 
@@ -13,13 +12,13 @@ Cho một tập hợp chứa các đường thẳng có dạng $ax + b$, mỗi �
 
 Để giải bài toán này, hai cách phổ biến là ứng dụng [bao lồi](translate/wcipeg/Convex-Hull-Trick) và sử dụng cây Interval Tree lưu đoạn thẳng. Sau đây là những ưu điểm và nhược điểm của IT đoạn thẳng so với bao lồi.
 
-### Ưu điểm
+## Ưu điểm
 
 1. Ứng dụng được với đoạn thẳng chứ không chỉ đường thẳng. Đây là ưu điểm lớn nhất của IT đoạn thẳng so với bao lồi, khi tập hợp cần xử lí là tập đoạn thẳng chứ không phải đường thẳng (tức là đường thẳng $ax + b$ chỉ tồn tại khi $x$ thuộc một khoảng $(l, h)$ nhất định), bao lồi sẽ không thể làm được.
 2. Thực hiện thao tác thêm đường thẳng (đoạn thẳng) một cách dễ dàng. Bao lồi gặp nhược điểm lớn khi thêm đường thẳng mà hệ số góc $a$ không tăng dần hoặc giảm dần. Mặc dù không phải là không thể làm được, nhưng bao lồi khi đó phải biểu diễn bằng cấu trúc khác không phải stack, gây khó khăn lớn khi code.
 3. Dễ code. Chính vì hai ưu điểm ở trên, IT đoạn thẳng rất tổng quát và không cần phải xét trường hợp phụ thuộc vào bài toán như bao lồi. Đa số các bài toán, phần [Update](#update) và [Query](#query) của IT đoạn thẳng gần như giống hệt nhau. Phần thân chương trình cũng rất ngắn gọn.
 
-### Nhược điểm
+## Nhược điểm
 
 1. Phụ thuộc vào kích thước hoành độ $x$. Vì IT đoạn thẳng xử lí trên khoảng của hoành độ, với bài toán mà query $x$ lớn hoặc $x$ không phải số nguyên không thể biểu diễn bằng IT bình thường. Có thể thay thế bằng rời rạc hóa các tọa độ hoặc IT động, nhưng so với bao lồi đây là một nhược điểm đáng kể khi bao lồi hoàn toàn không phụ thuộc vào $x$.
 2. Bộ nhớ và thời gian lớn. Lưu một cây IT chứa hai số nguyên $a$, $b$ tốn bộ nhớ hơn nhiều so với stack bao lồi. Xử lí trên cây IT cũng chậm hơn chặt nhị phân trên bao lồi. Về độ phức tạp, có thể so sánh qua bảng sau
@@ -189,7 +188,7 @@ Ngoài ra, có một số bài toán yêu cầu tìm max, min trên tập đoạ
 
 ## Bài tập áp dụng
 
-### Một số bài tập "quy hoạch động bao lồi" truyền thống
+## Một số bài tập "quy hoạch động bao lồi" truyền thống
 
 - [VNOJ - VMPIZZA](https://oj.vnoi.info/problem/vmpizza/)
 - [CF 189 - Div 1 - C](http://codeforces.com/contest/319/problem/C)
@@ -198,7 +197,7 @@ Ngoài ra, có một số bài toán yêu cầu tìm max, min trên tập đoạ
 
 Để làm những bài tập này, đầu tiên ta sẽ giải bằng cách quy hoạch động với độ phức tạp $O(N^2)$. Công thức quy hoạnh động sẽ có dạng là $f[i] = max/min(a[j] * x[i] + b[j] + c)$, với mọi $j$ từ 1 đến $i - 1$. Để giảm độ phức tạp xuống $O(N \log{N})$, ta sẽ sử dụng bao lồi hoặc IT đoạn thẳng. Lưu ý là với cách bao lồi, stack bao lồi phải đảm bảo $a[j]$ tăng dần hoặc giảm dần, nếu không phải lọc ra sao cho tính chất này thỏa mãn. Lưu ý rằng bao lồi chỉ có thể làm được khi hệ số góc tăng dần hoặc giảm dần.
 
-### [USACO - Fencing the Herd](http://usaco.org/index.php?page=viewproblem2&cpid=534)
+## [USACO - Fencing the Herd](http://usaco.org/index.php?page=viewproblem2&cpid=534)
 
 Bài này yêu cầu tìm $(Ax + By)$ max và min khi cho điểm $(x, y)$ bất kì, hay là $(Ax/y + B)$ max và min.
 
@@ -206,13 +205,13 @@ Bài này yêu cầu tìm $(Ax + By)$ max và min khi cho điểm $(x, y)$ bất
 
 Còn với IT đoạn thẳng, ta cũng gặp khó khăn vì query không phải là số nguyên, và $x/y$ cũng rất lớn. Tuy nhiên ta có thể xử lí offline đơn giản bằng cách đọc hết tất cả các query, lưu lại các điểm $(x/y)$, rời rạc hóa lại, và xây dựng cây IT đoạn thẳng trên tập điểm đã rời rạc hóa đấy. Trong bài này, cách IT đoạn thẳng đơn giản hơn nhiều so với cách bao lồi.
 
-### [VNOJ - VOMARIO](https://oj.vnoi.info/problem/vomario/)
+## [VNOJ - VOMARIO](https://oj.vnoi.info/problem/vomario/)
 
 Bài "độc quyền" của IT đoạn thẳng. Trong bài này, ta cũng tìm công thức quy hoạch động $O(N^2)%: $f[i] = max(a[j] * x[i] + b[j] + c)$.
 
 Tuy nhiên, đáng lưu ý là mỗi cặp $(a[j], b[j])$ chỉ được tính trong một khoảng $x[i]$ nào đó, còn $x[i]$ nằm ngoài khoảng đó thì cặp $(a[j], b[j])$ này không được phép chọn để lấy max. Đây chính là tính chất "đoạn thẳng" thay vì "đường thẳng". Bài này không thể sử dụng bao lồi để giải được.
 
-### Bài khác
+## Bài khác
 
 - [VNOJ - JEWELNB](https://oj.vnoi.info/problem/jewelnb/)
 - [SPOJ - PTIT133B](http://www.spoj.com/PTIT/problems/PTIT133B/)

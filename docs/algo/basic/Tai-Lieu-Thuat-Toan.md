@@ -1,4 +1,3 @@
-## Một số Tài liệu hay về Thuật Toán
 
 **1. Giải thuật và lập trình (DSAP) - thầy Lê Minh Hoàng**
 

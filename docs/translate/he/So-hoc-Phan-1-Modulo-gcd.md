@@ -1,4 +1,3 @@
-## Số học 1 - Modulo & gcd
 
 Nguồn: [HackerEarth](https://www.hackerearth.com/practice/notes/number-theory-1/) và 1 số bài viết trên Wikipedia
 
@@ -48,7 +47,7 @@ và cũng bằng $((5\%2).(3\%2))\%2=(1.1)\%2=1$.
 Ví dụ: GCD của 6 và 10 là 2 vì 2 là số nguyên dương lớn nhất mà là ước chung của 6 và 10.
 
 
-### Thuật toán "ngây thơ" (Naive Approach)
+## Thuật toán "ngây thơ" (Naive Approach)
 
 Ta có thể duyệt tất cả các số từ $min(A,B)$ đến 1 và kiểm tra xem số đang xét có phải là ước của của $A$ và $B$ hay không. Nếu đúng như vậy thì số đang xét sẽ là GCD của $A$ và $B$.
 
@@ -64,7 +63,7 @@ int gcd(int A, int B) {
 
 **Độ phức tạp của thuật toán:** $O(min(A,B))$.
 
-### Thuật toán Euclid
+## Thuật toán Euclid
 
 Thuật toán Euclid dựa trên tính chất sau của ước chung lớn nhất $GCD(A,B)=GCD(B,A\%B)$. Thuật toán sẽ quy nạp cho đến khi $A\%B=0$.
 
@@ -91,7 +90,7 @@ Vì $B=0$ nên $GCD(2,0)$ sẽ trả về giá trị 2.
 
 **Độ phức tạp của thuật toán:** $O(\log{max(A,B)})$.
 
-### Thuật toán Euclid mở rộng (Extended Euclid Algorithm)
+## Thuật toán Euclid mở rộng (Extended Euclid Algorithm)
 
 Đây là một thuật toán mở rộng của thuật toán Euclid ở trên. $GCD(A,B)$ có một tính chất rất đặc biệt: Nó luôn có thể được biểu diễn dưới dạng phương trình $Ax+By=GCD(A,B)$.
 

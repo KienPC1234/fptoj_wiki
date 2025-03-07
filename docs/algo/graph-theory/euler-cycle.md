@@ -1,4 +1,3 @@
-## Đường đi - Chu trình Euler
 
 **Nguồn:** [Eulerian path - Wikipedia](https://en.wikipedia.org/wiki/Eulerian_path) và một số nguồn khác
 
@@ -46,13 +45,13 @@ Những kí hiệu sau sẽ được dùng xuyên suốt bài viết:
 
 ## Chu trình Euler trên đồ thị có hướng
 
-### Định lý 1
+## Định lý 1
 
 Một đồ thị có hướng là đồ thị Euler nếu và chỉ nếu:
 - Với mọi đỉnh $u$ thuộc đồ thị, $deg^+(u) = deg^-(u)$
 - Tất cả đỉnh có bậc lớn hơn $0$ thuộc cùng một thành phần liên thông
 
-#### Ví dụ
+### Ví dụ
 
 Đồ thị 1 (hình dưới) là một đồ thị Euler.
 
@@ -72,16 +71,16 @@ Do đó ta kết luận đồ thị 1 là đồ thị Euler. Thật vậy, $2 \t
 |:--:|
 |Đồ thị 2|
 
-### Chứng minh
+## Chứng minh
 
-#### Chiều thuận
+### Chiều thuận
 
 Giả sử đồ thị có hướng tồn tại chu trình Euler.
 
 - Vì chu trình Euler đi qua tất cả các cạnh nên cũng đi qua tất cả các đỉnh có bậc lớn hơn $0$. Vì thế tất cả các đỉnh có bậc lớn hơn $0$ thuộc cùng một thành phần liên thông.
 - Dễ thấy trong chu trình số lần ta đi vào một đỉnh bất kì bằng đúng số lần ta đi ra khỏi đỉnh đó nên với mỗi đỉnh $u$, $deg^+(u) = deg^-(u)$.
 
-#### Chiều đảo
+### Chiều đảo
 
 Ta sẽ sử dụng phương pháp quy nạp để chứng minh.
 
@@ -134,7 +133,7 @@ Theo giả sử thì với mọi $G_i$ ta tìm được một chu trình Euler $
 
 ## Đường đi Euler trên đồ thị có hướng
 
-### Định lý 2
+## Định lý 2
 
 Đồ thị có hướng là đồ thị nửa Euler nếu và chỉ nếu đồ thị thoả **một trong hai** điều kiện sau:
 1. Tồn tại chu trình Euler
@@ -145,7 +144,7 @@ Theo giả sử thì với mọi $G_i$ ta tìm được một chu trình Euler $
 
 Đỉnh $s$ và đỉnh $t$ cũng chính là đỉnh xuất phát và kết thúc của đường đi Euler trong đồ thị.
 
-#### Ví dụ
+### Ví dụ
 
 Đồ thị 3 dưới đây là một đồ thị nửa Euler.
 
@@ -167,9 +166,9 @@ Do đó, ta kết luận tồn tại đường đi Euler trên đồ thị 3. Th
 |:--:|
 | Đồ thị 4 |
 
-### Chứng minh
+## Chứng minh
 
-#### Chiều thuận
+### Chiều thuận
 
 Giả sử tồn tại đường đi Euler bắt đầu từ $s$ và kết thúc tại $t$ trên đồ thị có hướng.
 - Nếu $s = t$, đồ thị có chu trình Euler. Dựa vào định lý 1, ta chứng minh được định lý đúng trong trường hợp này.
@@ -179,7 +178,7 @@ Giả sử tồn tại đường đi Euler bắt đầu từ $s$ và kết thúc
     - $deg^-(u) = deg^+(u)$ với mọi $u$ khác $s$ và $t$
     - Tất cả các đỉnh có bậc lớn hơn $0$ trong đồ thị thuộc cùng một thành phần liên thông
 
-#### Chiều đảo
+### Chiều đảo
 
 Trong trường hợp đồ thị có hướng tồn tại chu trình Euler, hiển nhiên đồ thị tồn tại đường đi Euler.
 
@@ -191,24 +190,24 @@ Do đó đồ thị ban đầu tồn tại một đường đi Euler.
 
 ## Chu trình Euler trên đồ thị vô hướng
 
-### Định lý 3
+## Định lý 3
 
 Đồ thị vô hướng là đồ thị Euler nếu và chỉ nếu:
 - Bậc của mọi đỉnh là chẵn
 - Tất cả các đỉnh có bậc lớn hơn $0$ thuộc cùng một thành phần liên thông
 
-### Chứng minh
+## Chứng minh
 
 Cách chứng minh định lý cho đồ thị vô hướng khá tương tự như cho đồ thị có hướng.
 
-#### Chiều thuận
+### Chiều thuận
 
 Giả sử đồ thị vô hướng tồn tại chu trình Euler.
 
 - Vì chu trình Euler đi qua tất cả các cạnh nên dễ thấy tất cả các đỉnh có bậc lớn hơn $0$ thuộc cùng một thành phần liên thông.
 - Vì chu trình Euler đi qua mỗi cạnh đúng một lần và với mỗi đỉnh, số lần ta đi vào bằng đúng số lần ta đi ra khỏi đỉnh ấy nên bậc của mỗi đỉnh là chẵn.
 
-#### Chiều đảo
+### Chiều đảo
 
 Ta cũng sử dụng phương pháp quy nạp để chứng minh.
 
@@ -237,21 +236,21 @@ Xét một đồ thị vô hướng $G$ có $n$ đỉnh thoả $\forall u \in G$
 
 ## Đường đi Euler trên đồ thị vô hướng
 
-### Định lý 4
+## Định lý 4
 
 Tồn tại đường đi Euler trên một đồ thị vô hướng nếu và chỉ nếu:
 - Đồ thị có **đúng** $0$ hoặc $2$ đỉnh bậc lẻ
 - Tất cả các đỉnh có bậc lớn hơn $0$ thuộc cũng một thành phần liên thông
 
-### Chứng minh
+## Chứng minh
 
-#### Chiều thuận
+### Chiều thuận
 
 Giả sử đồ thị vô hướng tồn tại đường đi Euler xuất phát tại $s$ và kết thúc tại $t$.
 - Nếu $s = t$, dựa vào định lý 3, đồ thị có chu trình Euler nên tất cả đỉnh trong đồ thị có bậc chẵn và mọi đỉnh có bậc lớn hơn $0$ thuộc cùng một thành phần liên thông.
 - Nếu $s \neq t$, do đường đi Euler đi qua tất cả các cạnh nên dễ thấy đồ thị có đúng 2 đỉnh bậc lẻ là $s$ và $t$ và các đỉnh có bậc lớn hơn $0$ thuộc cùng một thành phần liên thông.
 
-#### Chiều đảo
+### Chiều đảo
 
 - Nếu tất cả các đỉnh trong đồ thị có bậc lớn hơn $0$ thuộc cùng một thành phần liên thông và không có đỉnh bậc lẻ thì tồn tại chu trình Euler.
 - Nếu tất cả các đỉnh trong đồ thị có bậc lớn hơn $0$ thuộc cũng một thành phần liên thông và có đúng $2$ đỉnh lẻ, ta thêm một cạnh ảo giữa $2$ đỉnh lẻ. Khi này đồ thị tồn tại chu trình Euler. Xoá cạnh ảo khỏi chu trình Euler, ta thu được đường đi Euler của đồ thị.
@@ -262,7 +261,7 @@ Qua phần chứng minh trên, ta có thể thấy nếu có thuật toán tìm 
 
 Hai thuật toán tìm chu trình Euler được biết đến rộng rãi là thuật toán Fluery và thuật toán Hierholzer. Bài viết sẽ tập trung vào thuật toán Hierholzer do tính phổ biến và độ hiệu quả của thuật toán này so với thuật toán Fluery.
 
-### Thuật toán Hierholzer cho đồ thị có hướng
+## Thuật toán Hierholzer cho đồ thị có hướng
 
 Thuật toán Hierholzer tìm chu trình Euler dựa trên các bước đã nêu trong phần chứng minh định lý cho đồ thị có hướng.
 
@@ -277,7 +276,7 @@ Giả sử đồ thị thoả định lý 1. Các bước trong thuật toán c�
 4. Gọi đệ quy thủ tục tìm chu trình Euler với tham số là đỉnh $v$. Sau khi hoàn thành ta thu được một chu trình Euler $D$ đi qua tất cả các cạnh trong đồ thị con chứa $v$.
 5. Nối hai chu trình $C$ và $D$ tại đỉnh chung $v$. Lặp lại bước 2.
 
-### Cài đặt mẫu
+## Cài đặt mẫu
 
 Trong phần cài đặt mẫu, đồ thị có hướng được biểu diễn dưới dạng danh sách kề. Trong trường hợp đồ thị vô hướng, cài đặt tương tự nhưng khi đánh dấu cạnh đã thăm lưu ý đánh dấu cả hai chiều.
 
@@ -353,19 +352,19 @@ list<int> euler_walk(int u) {
 
 ## Ứng dụng
 
-### [CSES - Teleporters Path](https://cses.fi/problemset/task/1693)
+## [CSES - Teleporters Path](https://cses.fi/problemset/task/1693)
 
-#### Tóm tắt đề
+### Tóm tắt đề
 
 Tìm một đường đi Euler trên đồ thị có hướng $N \leq 10^5$ đỉnh, $M \leq 2 \cdot 10^5$ cạnh. In `IMPOSSIBLE` nếu không thể tìm được.
 
-#### Lời giải
+### Lời giải
 
 Như đã đề cập, để tìm đường đi Euler, ta thêm một cạnh ảo từ giữa $2$ đỉnh lẻ, tìm chu trình Euler, rồi xoá cạnh ảo đã thêm.
 
 Một cách khác để tìm đường đi Euler là ta chỉ cần gọi thủ tục tìm chu trình Euler như trên với tham số là đỉnh $1$. Kết quả nhận được là đường đi Euler trên đồ thị. Lý giải là khi gọi thủ tục tìm chu trình Euler trong trường hợp này, ở lần lặp đầu tiên, chúng ta sẽ tìm được một đường đi từ $1$ tới $n$. Những cạnh chưa thăm còn lại trong đồ thị tạo thành những thành phần liên thông thoả điều kiện tồn tại chu trình Euler. Khi này thuật toán sẽ gọi đệ quy tìm chu trình Euler trên từng đồ thị con và nối các chu trình con lại để dựng đường đi cần tìm.
 
-#### Cài đặt
+### Cài đặt
 
 ```cpp
 ## include <bits/stdc++.h>
@@ -439,13 +438,13 @@ int main() {
 }
 ```
 
-### [VNOI Marathon 08 - Mê cung](https://oj.vnoi.info/problem/pcycle)
+## [VNOI Marathon 08 - Mê cung](https://oj.vnoi.info/problem/pcycle)
 
-#### Tóm tắt đề
+### Tóm tắt đề
 
 Cho đơn đồ thị vô hướng $N \leq 200$ đỉnh, $M$ cạnh. Mỗi cạnh $(u, v)$ có trọng số là $W_{u, v} \leq 10000$. Tìm một chu trình đi qua tất cả các cạnh của đồ thị, sao cho tại mỗi thời điểm, tổng trọng số các cạnh đi qua không âm.
 
-#### Lời giải
+### Lời giải
 
 Nếu đồ thị không liên thông, có đỉnh bậc lẻ, hay tổng trọng số tất cả các cạnh âm thì hiển nhiên không thể tìm được chu trình thoả yêu cầu.
 
@@ -470,7 +469,7 @@ Nhận thấy khi này nếu ta dịch chu trình $C$ ban đầu sao cho $u_k$ l
 - Với mọi $k < k_1 \leq m$, $W_{u_k,u_{k + 1}} + \ldots + W_{u_{k_1 - 1},u_{k_1}} = S_{k_1} - S_k \geq 0$.
 - Với mọi $0 \leq k_2 < k$, $W_{u_k,u_{k + 1}} + \ldots + W_{u_{m - 1},u_{m}} + W_{0,1} + \ldots + W_{k_2 - 1,k_2} = (S_{m} - S_k) + S_{k_2} = S_{m} + (S_{k_2} - S_k) \geq 0$
 
-#### Cài đặt
+### Cài đặt
 
 ```cpp
 ## include <bits/stdc++.h>
@@ -558,16 +557,16 @@ int main() {
 }
 ```
 
-### [10040 - Ouroboros Snake](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=12&page=show_problem&problem=981)
+## [10040 - Ouroboros Snake](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=12&page=show_problem&problem=981)
 
-#### Tóm tắt đề
+### Tóm tắt đề
 
 Số Ouroboros "bậc" $n$ là số nhị phân được định nghĩa như sau:
 - Đặt $2^n$ bit nhị phân thành một vòng tròn. Nếu ta có thể thu được $2^n$ dãy nhị phân độ dài $n$ khác nhau thì số đó là số Ouroboros.
 
 Hãy trả lời các truy vấn với hai tham số $n$ và $k$. Với mỗi truy vấn, cho biết bit thứ $k$ (đánh số bắt đầu từ $0$) trong số Ouroboros độ dài $n$ nhỏ nhất theo thứ tự từ điển ($0 < n < 22$, $0 \leq k < 2^n$).
 
-#### Lời giải
+### Lời giải
 
 Bài toán này đề cập đến khái niệm về dãy de Bruijn. Độc giả có thể tìm hiểu kĩ hơn tại đây [de Bruijn sequence - Wikipedia](https://en.wikipedia.org/wiki/De_Bruijn_sequence). Bài viết chỉ đề cập đến những ý cần biết để giải quyết bài toán.
 
@@ -593,7 +592,7 @@ Ta dùng phương pháp tham lam để giải quyết yêu cầu tìm thứ tự
 
 Với mỗi bậc $n$, độ phức tạp thời gian sẽ là $O(2^n)$. Như vậy độ phức tạp thời gian để tiền xử lí cho toàn bộ bậc sẽ là khoảng $1 + 2 + \ldots + 2^{21} \approx 2^{22}$ phép tính, đủ trong giới hạn cho phép.
 
-#### Cài đặt
+### Cài đặt
 
 ```cpp
 ## include <bits/stdc++.h>
@@ -674,17 +673,17 @@ int main() {
 }
 ```
 
-### [Vietnam TST 2017 - Problem 2 - Day 2](https://oj.vnoi.info/problem/draw)
+## [Vietnam TST 2017 - Problem 2 - Day 2](https://oj.vnoi.info/problem/draw)
 
-#### Tóm tắt đề
+### Tóm tắt đề
 
 Có $N \leq 1000$ đoạn thẳng song song với trục tọa độ trên mặt phẳng. Mỗi đoạn được biểu diễn bởi hai điểm $(x, y)$ ($x, y \in \mathbb{Z}$, $-1000 \leq x, y \leq 1000$). In ra cách vẽ sao cho có thể tô màu tất cả các đoạn thẳng và số lần phải nhấc bút là ít nhất.
 
-#### Lời giải
+### Lời giải
 
 Ta xem mỗi điểm trên mặt phẳng như một cạnh trên đồ thị vô hướng. Thêm $1$ đỉnh ảo vào đồ thị. Với mỗi đỉnh bậc lẻ trong đồ thị ban đầu, nối đỉnh đó với đỉnh ảo vừa thêm. Khi này đồ thị ta đang có gồm nhiều thành phần liên thông, mỗi thành phân liên thông là một đồ thị Euler. Tìm chu trình Euler trên tửng thành phần liên thông rồi xoá đỉnh ảo và các cạnh ảo đã thêm khỏi chu trình tìm được, ta thu được cách vẽ sao cho số lần nhấc bút là ít nhất.
 
-#### Cài đặt mẫu
+### Cài đặt mẫu
 
 ```cpp
 ## include <bits/stdc++.h>

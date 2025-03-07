@@ -1,4 +1,3 @@
-## Hình học tính toán phần 2: Sự giao nhau của đường thẳng và các ứng dụng
 
 **Tác giả:** 
 - Lê Minh Hoàng - Phổ thông Năng khiếu, ĐHQG-HCM
@@ -89,8 +88,8 @@ Ta cũng nên cẩn thận với vấn đề về độ chính xác của số t
 
 Ngoài ra, ta còn có thể sử dụng tích có hướng để kiểm tra hai đoạn thẳng giao nhau với ưu điểm là không phụ thuộc vào sai số khi tọa độ các đỉnh đều là số nguyên.
 
-### Kiểm tra giao điểm của 2 đoạn thẳng (sử dụng tích có hướng)
-#### **CW và CCW**
+## Kiểm tra giao điểm của 2 đoạn thẳng (sử dụng tích có hướng)
+### **CW và CCW**
 
 **Nhắc lại phần 1**: Với góc $\alpha$ thỏa mãn $0° < \alpha < 180°$ thì $\sin(\alpha) > 0$ nên nếu góc ngược chiều kim đồng hồ $\theta < 180°$ thì tích có hướng **dương**, ngược lại tích có hướng **âm**.
 
@@ -101,8 +100,8 @@ Ngoài ra, ta còn có thể sử dụng tích có hướng để kiểm tra hai
 
 |![img](../../uploads/Qz3w0Wg.png)|
 
-#### **Kiểm tra giao điểm của 2 đoạn thẳng**
-##### Tồn tại 3 điểm thẳng hàng
+### **Kiểm tra giao điểm của 2 đoạn thẳng**
+#### Tồn tại 3 điểm thẳng hàng
 Nếu tồn tại 3 trong 4 điểm đầu mút thẳng hàng, ta kiểm tra xem có tồn tại đầu mút của đoạn thẳng này thuộc đoạn thẳng kia hay không:
 - Nếu có thì rõ ràng là 2 đoạn thẳng giao nhau tại ít nhất 1 điểm (tại đầu mút vừa xét).
 
@@ -112,7 +111,7 @@ Nếu tồn tại 3 trong 4 điểm đầu mút thẳng hàng, ta kiểm tra xem
 
 |![img](../../uploads/wc6dups.png)|
 
-##### Không tồn tại 3 điểm thẳng hàng
+#### Không tồn tại 3 điểm thẳng hàng
 Nếu không tồn tại 3 trong 4 điểm đầu mút thẳng hàng thì 2 đoạn thẳng $AB$ và $CD$ giao nhau khi:
 - $C$ và $D$ nằm khác phía đối với đường thẳng $AB$ và
 - $A$ và $B$ nằm khác phía đối với đường thẳng $CD$.
@@ -186,7 +185,7 @@ Nhấn vào [**đây**][pendicular] để tương tác với hình trên Desmos.
 
 - **Bước 4:** ta thay tọa độ của trung điểm $M$ vào phương trình đường thẳng ở bước $3$ để tìm $D$ và xác định đường trung trực.
 
-### Ví dụ
+## Ví dụ
 Cho $2$ điểm $X(2,-3)$ và $Y(1,0)$, để tìm đường trung trực của đoạn $XY$, ta thực hiện như sau:
 - **Bước 1:** Tìm phương trình đường thẳng $XY$, ta đặt:
 
@@ -251,7 +250,7 @@ Line Perpendicular_Bisector(Point A, Point B) {
 ## Phép đối xứng
 Để lấy đối xứng một điểm $X$ qua một đường thẳng (trục đối xứng), ta tìm giao điểm $Y$ của trục đối xứng và đường thẳng vuông góc với trục đối xứng đi qua $X$, sau đó lấy $X'$ đối xứng với $X$ qua $Y$.
 
-### Ví dụ
+## Ví dụ
 Cho điểm $X(1,-3)$ và đường thẳng $(d):4x-3y=-5$, để tìm điểm $X'$ đối xứng với $X$ qua $(d)$, ta thực hiện như sau:
 
 - **Bước 1**: Gọi đường thẳng đi qua $X$ và vuông góc với trục đối xứng có dạng: $(d'):3x + 4y = D$.
@@ -334,7 +333,7 @@ Nhấn vào [**đây**][rotation1] để tương tác với hình trên Desmos.
 
 Để quay điểm $A$ quanh một điểm $C$ khác không phải gốc tọa độ, ta tịnh tiến hệ tọa độ sao cho $C$ trùng với gốc tọa độ, quay bằng công thức trên rồi tịnh tiến hệ tọa độ về vị trí ban đầu.
 
-### Ví dụ
+## Ví dụ
 Cho $2$ điểm $A(1,4)$ và $C(2,2)$, để quay $A$ ngược chiều kim đồng hồ 1 góc $45°$ quanh $C$, ta thực hiện như sau:
 - **Bước 1:** tịnh tiến hệ tọa độ sao cho $C$ trùng với gốc tọa độ. Lúc này, điểm $A$ có tọa độ mới là $A'=(1-2,4-2)=(-1,2)$.
 

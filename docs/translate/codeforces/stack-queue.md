@@ -1,4 +1,3 @@
-## Queue & Stack
 
 ## Hàng đợi (Queues)
 

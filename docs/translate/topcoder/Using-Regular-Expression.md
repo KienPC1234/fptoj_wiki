@@ -1,4 +1,3 @@
-## Sử dụng Regex
 
 
 
@@ -114,11 +113,11 @@ Mô tả trên là mô tả sơ qua về regex cơ bản. Một regex được v
 
 ## Sử dụng regex
 
-### Debug regex
+## Debug regex
 
 Trong các ngôn ngữ lập trình khác nhau, thường regex có thể khác nhau đôi chút. Để kiểm tra 1 đoạn regex trong 1 ngôn ngữ có ý nghĩa gì, các bạn có thể lên search "debug regex online", có khá nhiều trang phù hợp.
 
-### Trong Java
+## Trong Java
 
 Trong Java (từ 1.4 trở lên) có một *package* tên là `java.util.regex` cho phép sử dụng regex.  
 
@@ -155,14 +154,14 @@ Java cũng cung cấp các method sau trong class String:
 - `String[] split(String regex)`: Chia xâu hiện tại thành nhiều xâu sử dụng các xâu con khớp với `regex` làm phân cách.
 
 
-### Trong C++
+## Trong C++
 
 Nhiều topcoders cho rằng regex là một trong những điểm mạnh của Java so với C++. Tuy nhiên các coders sử dụng C++ cũng không hề nản chí vì regex cũng có thể được sử dụng trong C++.
 
 Có nhiều thư viện hỗ trợ regex cho C++, tuy nhiên chúng không tương thích với nhau tốt cho lắm.  Một điều may mắn đó là bạn có thể chọn lựa một trong các thư viện này để sử dụng và không phải lo là nó không tương thích với nhau. Nếu bạn muốn dùng regex ở arena bạn phải lựa chọn giữa 2 APIs: POSIX_regex và GNU_regex. Để sử dụng 2 APIs này bạn phải thêm header "regex.h". Cả 2 APIs đều được thực hiện qua 2 bước. Đầu tiên sẽ có một hàm biên dịch regex, sau đó sẽ có một hàm khớp/tìm regex đã được biên dịch với xâu cần khớp. 
 Sau đây sẽ là mô tả ngắn gọn về 2 APIs này để cho các bạn có thể chọn lựa bạn thích cái nào hơn.
 
-#### POSIX_regex
+### POSIX_regex
 
 POSIX_regex hỗ trợ 2 kiểu regex khác nhau: cơ bản và mở rộng. Regex cơ bản tương tự như trong ed, trong khi regex mở rộng tương tự như trong egrep, thêm vào các phép toán `|`, `+`, `?` và không yêu cầu `\` ở các biểu thức con viết trong ngoặc đơn `()` hoặc các biên được viết trong ngoặc nhọn `{}`. Kiểu cơ bản là mặc định, nhưng kiểu mở rộng được ưa thích hơn.
 
@@ -170,7 +169,7 @@ Với POSIX, bạn chỉ có thể tìm kiếm regex mà không thể khớp đ�
 
 Để biết cách sử dụng chi tiết mời các bạn xem mục [2] và [3] ở phần tham khảo. 
 
-##### Ví dụ
+#### Ví dụ
 
 Sau đây là một ví dụ về cách sử dụng các hàm này:
 
@@ -200,14 +199,14 @@ regfree(&reg);
 ```
 
 
-#### GNU_regex
+### GNU_regex
 
 GNU_regex API có nhiều hàm hơn. Với các hàm của GNU_regex các bạn có thể khớp một xâu với mẫu và cũng có thể tìm kiếm mẫu ở trong xâu. Việc sử dụng các hàm này cũng tương tự như việc sử dụng các hàm của POSIX: đầu tiên một mẫu cần phải được biên dịch sử dụng `re_compile_pattern`, sau đó nhận được pattern buffer và nó được dùng để tìm và khớp. Các hàm sử dụng cho tìm kiếm và khớp là `re_search` và `re_match`. Trong trường hợp tìm kiếm thì `fastmap` có thể được sử dụng để tối ưu việc tìm kiếm. Nếu không có `fastmap` thuật toán tìm kiếm sẽ khớp các mẫu ở các vị trí liên tiếp nhau trong xâu. Fastmap sẽ chỉ ra vị trí của ký tự bắt đầu tìm kiếm. Fastmap được tạo bằng cách gọi `re_compile_fastmap`. GNU_regex còn có hàm `re_search2` và `re_match2` cho việc tìm kiếm và khớp với những data tách rời.  Để giải phóng bộ nhớ của pattern buffer bạn dùng `regfree`.   
 
 Để biết cách sử dụng chi tiết mời các bạn xem mục [3] ở phần tham khảo. 
 
 
-##### Ví dụ
+#### Ví dụ
 
 ```cpp
 string pattern = "([a-z]+).\\1";
@@ -245,7 +244,7 @@ if (re_search(&buffer,str.c_str(),str.size(),0,str.size(),&regs)!=-1) {
 regfree(&buffer);
 ```
 
-### Ví dụ trong các cuộc thi SRMs
+## Ví dụ trong các cuộc thi SRMs
 
 Các ví dụ phía dưới được viết bằng Java. Bạn nào dùng C++ có thể dùng POSIX hoặc GNU regex APIs  để viết các hàm tương đương trong Java (replace_all, split, matches).  
 **[CyberLine](http://community.topcoder.com/stat?c=problem_statement&pm=2396&rd=4755) (SRM 187 div 1, level 1)**  

@@ -1,4 +1,3 @@
-## Chia căn (sqrt decomposition) và ứng dụng: Phần 2
 
 **Tác giả**: Nguyễn *RR* Thành Trung
 

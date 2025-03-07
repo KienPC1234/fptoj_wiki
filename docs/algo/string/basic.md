@@ -1,4 +1,3 @@
-## Xử lý xâu
 
 **Xâu** (**string**) xuất hiện rất nhiều trong các bài toán. Bài viết này giới thiệu sơ qua một số thuật ngữ cũng như thuật toán về xâu.
 
@@ -12,7 +11,7 @@
 
 ## Các dạng bài
 
-### So khớp chuỗi (string matching)
+## So khớp chuỗi (string matching)
 
 Cho một xâu $T$ và xâu $S$. Tìm tất cả các lần xuất hiện của xâu $S$ trong xâu $T$.
 
@@ -34,7 +33,7 @@ Có 3 thuật toán chính để giải quyết bài này, đó là:
 - [Z Algorithm](translate/codeforces/z-algo)
 
 
-### Xâu đối xứng (Palindrome)
+## Xâu đối xứng (Palindrome)
 
 Palindrome hay còn gọi là xâu đối xứng, xâu đối gương là tên gọi của những xâu kí tự mà khi viết từ phải qua trái hay từ trái qua phải thì xâu đó không thay đổi. VD: MADAM, IOI,...
 
@@ -44,7 +43,7 @@ Có rất nhiều bài tập liên quan đến xâu đối xứng. Các bạn c�
 - [Hash](algo/string/hash)
 - [Palindrome Tree](translate/codeforces/palindrome-tree)
 
-### Cấu trúc dữ liệu
+## Cấu trúc dữ liệu
 
 - [Trie](algo/data-structures/trie) là CTDL cơ bản nhất trong xử lý xâu. Nó giúp giải quyết các bài toán về tìm kiếm xâu.
 - Lớp CTDL được gọi chung là Suffix Structures gồm:
@@ -55,11 +54,11 @@ Có rất nhiều bài tập liên quan đến xâu đối xứng. Các bạn c�
 
     Gọi chung như vậy vì các CTDL này có thể dùng thay thế nhau để giải quyết cùng một lớp bài toán liên quan đến các suffix của cây.
 
-### Các bài Ad-hoc
+## Các bài Ad-hoc
 
 Trong xử lý xâu còn một vài thuật toán chỉ áp dụng được cho 1 bài toán (ad-hoc).
 
-#### Thuật toán Manacher
+### Thuật toán Manacher
 
 **Bài toán**
 
@@ -117,7 +116,7 @@ int manacher(string s) {
 }
 ```
 
-#### Minimal string rotation
+### Minimal string rotation
 
 **Bài toán**
 
@@ -160,7 +159,7 @@ int minmove(string s) {
 }
 ```
 
-#### Lyndon Decomposition
+### Lyndon Decomposition
 
 **Bài toán**
 

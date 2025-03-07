@@ -1,4 +1,3 @@
-## **Kĩ thuật bao lồi (Convex Hull Trick)**
 
 **Nguồn**: [P3G](http://wcipeg.com/wiki/Convex_hull_trick)
 
@@ -44,10 +43,10 @@ Xét hình vẽ ở trên. Đường thẳng $y=4$ sẽ không bao giờ là gi�
 
 - Dùng thuật toán tìm kiếm nhị phân cơ bản để có thể tìm kiếm đáp án cho từng truy vấn.
 
-### Ý nghĩa của tên kĩ thuật
+## Ý nghĩa của tên kĩ thuật
 Cụm từ *bao lồi* được sử dụng để chỉ *hình bao trên/dưới* (upper / lower envelope). Trong ví dụ, nếu chúng ta coi mỗi phần đoạn thẳng tối ưu của đường thẳng (bỏ qua đường $y=4$), chúng ta sẽ thấy những đoạn đó tạo thành một *hình bao dưới* (lower envelope), một tập các đoạn thẳng chứa tất cả điểm cực tiểu cho mọi giá trị của $x$ (hình bao dưới được tô bằng màu xanh trong hình. Cái tên *kĩ thuật bao lồi* xuất phát từ việc đường bao trên tạo thành một đường lồi, từ đó thành bao lồi của một tập điểm.
 
-### Thêm một đường vào tập
+## Thêm một đường vào tập
 
 Ta có thể thấy nếu ta có một tập đường thẳng đã được xác định sắp xếp, ta có thể dễ dàng trả lời bất kì truy vấn nào với độ phức tạp là $\mathcal{O}(\log{} M)$ với tìm kiếm nhị phân. Vậy nếu chúng ta tìm ra cách thêm một đường thẳng vào tính toán lại một cách hiệu quả là chúng ta đã có một thuật toán hoạt động ngon lành.
 
@@ -55,7 +54,7 @@ Giả sử chúng ta được xử lý tất cả đường thẳng trước khi
 
 Vậy làm sao để có thể xác định đường thẳng nào sẽ bị bỏ khỏi stack? Giả sử $l_1$, $l_2$ và $l_3$ là đường thẳng áp chót (gần cuối ) trên stack, đường thẳng cuối cùng trong stack và đường thẳng được thêm vào stack. Đoạn $l_2$ không quan trọng(không có giá trị cực tiểu ở điểm nào) khi và chỉ khi giao điểm của $l_1$ và $l_3$ nằm bên trái giao điểm của $l_1$ và $l_2$ (Đoạn mà $l_3$ nhận giá trị cực tiểu đã nằm đè lên đoạn của $l_2$). Giả sử rằng không có ba đường nào trùng hay song song với nhau (có thể giải quyết một cách đơn giản).
 
-### Phân tích thuật toán
+## Phân tích thuật toán
 
 Độ phức tạp bộ nhớ sẽ là $\mathcal{O}(M)$: chúng ta cần một danh sách lưu lại các đoạn thẳng, biểu diễn bởi hai số thực. 
 
@@ -69,17 +68,17 @@ Vậy thời gian cho việc xây dựng sẽ là $\mathcal{O}(M\log{M})$. Với
 
 ## Ví dụ 1: USACO Tháng 3 năm 2008 "Acquire"
 
-### Bài toán
+## Bài toán
 Cho $N(N \le 50000)$ hình chữ nhật khác nhau về hình dạng, mục tiêu của bài toán là phải lấy được tất cả hình chữ nhật. Một tập hình chữ nhật có thể thu được với chi phí bằng tích của chiều dài dài nhất và chiều rộng dài nhất. Chúng ta cần phân hoạch tập các hình chữ nhật này một cách khôn khéo sao cho tổng chi phí có thể được tối thiểu hóa và tính chi phí này. Hình chữ nhật không thể được xoay (đổi chiều dài và chiều rộng).
 
-### Nhận xét 1: Tồn tại các hình chữ nhật không quan trọng
+## Nhận xét 1: Tồn tại các hình chữ nhật không quan trọng
 
 Giả sử tồn tại hai hình chữ nhật A và B mà mà cả chiều dài và chiều rộng của hình B đều bé hơn hình A thì ta có thể nói hình B là không quan trọng vì ta có thể để hình B chung với hình A từ đó chi phí của hình B không còn quan trọng. Sau khi đã loại hết tất cả hình không quan trọng đi và sắp xếp lại các hình theo chiều dài giảm dần thì chiều rộng các hình đã sắp xếp sẽ theo chiều tăng.
 
-### Nhận xét 2: Đoạn liên tiếp
+## Nhận xét 2: Đoạn liên tiếp
 Sau khi sắp xếp, ta có thể hình dung được rằng nếu chúng ta chọn hai hình chữ nhật ở vị trí $i$ và ở vị trí $j$ thì ta có thể chọn tất cả hình chữ nhật từ $i+1$ đến $j-1$ mà không tốn chi phí nào cả. Vậy ta có thể thấy rằng cách phân hoạch tối ưu là một cách phân dãy thành các đoạn liên tiếp và chi phí của một đoạn là bằng tích của chiều dài của hình chữ nhật đầu tiên và chiều rộng của hình chữ nhật cuối cùng.  
 
-### Lời giải Quy Hoạch Động
+## Lời giải Quy Hoạch Động
 
 Vậy bài toán trờ về bài toán phân dãy sao cho tổng chi phí của các dãy là tối ưu. Đây là một dạng bài quy hoạch động hay gặp và chúng ta có thể dễ dàng nghĩ ra thuật toán $\mathcal{O}(N^2)$ như mã giả phía dưới. (Giả sử các hình đã được sắp xếp và bỏ đi những hình chữ nhật không quan trọng)
 
@@ -99,7 +98,7 @@ print cost[N]
 
 Ở trên `cost[k]` lưu lại chi phí cực tiểu để lấy được `k` hình chữ nhật đầu tiên. Hiển nhiên, `cost[0]=0`. Để tính toán được `cost[i]` với `i` khác 0, ta có tính tổng chi phí để lấy được các tập trước và cộng nó với chi phí của tập cuối cùng(có chứa `i`). Chi phí của một tập có thể dễ dàng tính bằng cách lấy tích của chiều dài hình chữ nhật đầu tiên và chiều rộng của hình chữ nhật cuối cùng. Vậy ta có `min(cost[i],cost[j]+rect[i].h*rect[j+1].w)` với j là hình chữ nhật đầu tiên của tập cuối cùng. Với $N=50000$ thì thuật toán $\mathcal{O}(N^2)$ này là quá chậm.
  
-### Nhận xét 3: Sử dụng bao lồi
+## Nhận xét 3: Sử dụng bao lồi
 
 Với $m_j=rect[j+1].w, b_j=cost[j], x=rect[i].h$ với $rect[x].h$ là chiều rộng của hình chữ nhật $x$ và $rect[x].w$ là chiều dài của hình chữ nhật $x$. Vậy thì bài toán trờ về tìm hàm cực tiểu của $y=m_jx+b_j$ bằng cách tìm $j$ tối ưu. Nó giống hoàn toàn bài toán chúng ta đã đề cập ở trên. Giả sử ta đã hoàn thành việc cài đặt cấu trúc đã đề cập ở trên chúng ta có thể có mã giả ở dưới đây:
 
@@ -122,7 +121,7 @@ Rõ ràng các đường thẳng đã được sắp xếp giảm dần về đ�
 
 ## Ví dụ 2: APIO 2010 Commando
 
-### Bài toán
+## Bài toán
 
 Bạn được cho:
 - Một dãy có **$N$ số nguyên dương** ($1\le N \le 10^6$)
@@ -169,7 +168,7 @@ Do dễ thấy $\delta(n)>\delta(n-1)$, giống như bài "acquire" các truy v�
 
 ## Ví dụ 3: HARBINGERS ([CEOI 2009](https://oj.vnoi.info/problem/harbinge))
 
-### Bài toán
+## Bài toán
 
 Ngày xửa ngày xưa, có $N$ trị trấn kiểu trung cỏ trong khu tự trị Moldavian. Các trhị trấn này được đánh số từ $1$ đến $N$. Thị trấn $1$ là thủ đô. Các thị trấn được nối với nhau bằng $N-1$ con đường hai chiểu, mỗi con đường có độ dài được đo bằng km. Có duy nhất một tuyến đường nối giữa hai điểm bất kỳ (đồ thị các con đường là hình cây). Mỗi thị trấn không phải trung tâm có một người truyền tin.
 
@@ -209,7 +208,7 @@ Output
  - $0 \le S_i, V_i \le 10^9$
  - Độ dài mỗi con đường không vượt quá $10000$
 
-### Lời giải
+## Lời giải
 
 **Thuật toán QHĐ**
 

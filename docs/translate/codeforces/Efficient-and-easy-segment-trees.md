@@ -1,4 +1,3 @@
-## Cài đặt cây phân đoạn hiệu quả (Efficient and easy segment trees)
 
 **Nguồn**: [Codeforces - Efficient and Easy Segment Tree](http://codeforces.com/blog/entry/18051)
 
@@ -13,7 +12,7 @@ Cây phân đoạn được sử dụng khi chúng ta có một mảng $A$, th�
 1. Thay đổi giá trị của một phần tử: Gán $A_i = v$.
 2. Tính tổng các phần tử trên đoạn bất kì: Tính $A_l + A_{l+1} + ... + A_r$.
 
-### Cây nhị phân hoàn chỉnh (Perfect binary tree)
+## Cây nhị phân hoàn chỉnh (Perfect binary tree)
 
 Ta cài đặt Segment Tree bằng một cây nhị phân hoàn chỉnh có dạng như sau:
 
@@ -75,7 +74,7 @@ Cùng tìm hiểu cách chương trình hoạt động một cách rất hiệu 
 
 Đoạn code hoạt động hiệu quả mà không cần đệ quy hay các phép tính khác như tìm điểm chính giữa của đoạn. Ta chỉ cần duyệt qua và tính tổng các nút trong đoạn truy vấn.
 
-### Mảng kích thước bất kì (Arbitrary sized array)
+## Mảng kích thước bất kì (Arbitrary sized array)
 
 Chúng ta đã đề cập đến các mảng có kích thước là luỹ thừa của 2, nên cây là cây nhị phân hoàn chỉnh. Phần tiếp theo có thể sẽ làm bạn hoang mang, chuẩn bị sẵn sàng nhé!
 
@@ -117,7 +116,7 @@ Chúng ta thử xét với đoạn $[0,7)$: Ta có $l=13$, $r=20$
   - `r&1` => cộng `t[4]` (`--r = 4`)
   - Gán $l=2$, $r=2$ và dừng lại.
 
-### Chỉnh sửa trên đoạn, truy cập từng các phần tử lẻ (Modification on interval, single element access)
+## Chỉnh sửa trên đoạn, truy cập từng các phần tử lẻ (Modification on interval, single element access)
 
 Một số người gặp khó khăn và nghĩ một cách phức tạp khi đảo các thao tác, ví dụ như:
 
@@ -156,7 +155,7 @@ void push() {
 
 **Chú ý**: Đoạn code trên không thể dùng được trong trường hợp thứ tự các thao tác chỉnh sửa trên 1 phần tử ảnh hưởng đến kết quả. Ví dụ: phép gán giá trị cho 1 đoạn phần tử. Phần này sẽ được trình bày ở phần lazy propagation.
 
-### Hàm kết hợp không có tính giao hoán (Non-commutative combiner functions)
+## Hàm kết hợp không có tính giao hoán (Non-commutative combiner functions)
 
 Chúng ta thử xét phép kết hợp đơn giản nhất là phép cộng. Phép cộng có tính giao hoán nghĩa là thứ tự thực hiện các phép tính không quan trọng, ta có $a+b=b+a$. Hàm lấy *max* và *min* cũng có tính chất tương tự, chỉ thay thế các phép `+` bằng một trong hai hàm trên và ta sẽ có kết quả. Nhưng chú ý phải khởi tạo các giá trị ban đầu thành vô cực thay vì 0.
 
@@ -207,7 +206,7 @@ Sau đó, khi cần tìm giá trị ở một nút, ví dụ như nút 22, ta c�
 
 Mời các bạn cùng xem qua những ví dụ cụ thể.
 
-### Tăng giá trị phần tử, truy vấn tìm giá trị max (Increment modifications, queries for maximum)
+## Tăng giá trị phần tử, truy vấn tìm giá trị max (Increment modifications, queries for maximum)
 
 Đây có lẽ là trường hợp đơn giản nhất. Code dưới đây không phổ biến và không phải là cách tối ưu nhất, nhưng là một cách tốt để bắt đầu.
 
@@ -280,7 +279,7 @@ Dễ dàng nhận thấy tất cả các thao tác trên tốn độ phức tạ
 
 Tiếp theo ta sẽ ứng dụng các phương pháp trong một ví dụ tiếp theo.
 
-### Gán giá trị mới cho phần tử, truy vấn tổng (Assignment modifications, sum queries)
+## Gán giá trị mới cho phần tử, truy vấn tổng (Assignment modifications, sum queries)
 
 Ví dụ này dựa trên [Timus 2042](http://acm.timus.ru/problem.aspx?space=1&num=2042)
 

@@ -1,4 +1,3 @@
-## Skip Lists
 
 **Tác giả**: Vũ *chipchip* Phúc Hoàng
 

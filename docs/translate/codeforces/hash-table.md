@@ -1,4 +1,3 @@
-## Bảng băm (Hash Tables)
 
 Bảng băm là một cấu trúc dữ liệu đặc biệt thường được sử dụng như một từ điển. Trong đó, mỗi khóa mang theo một giá trị tương ứng. Khóa được xem như chỉ số của giá trị tương ứng. Bảng băm không như các loại từ điển cổ điển – mọi người có thể tìm được khóa thông qua giá trị của nó.
 

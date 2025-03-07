@@ -1,4 +1,3 @@
-## Hàm Mobius
 
 **Tác giả**: RR
 

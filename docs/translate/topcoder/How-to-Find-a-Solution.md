@@ -1,12 +1,11 @@
-## Nghệ thuật giải bài
 
 Bài viết gốc: [How to Find a Solution - đăng bởi Dumitru trên Topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/how-to-find-a-solution/)
 
-### Giới thiệu
+## Giới thiệu
 
 Với nhiều bài toán trên topcoder (TC), lời giải có thể được tìm ra ngay sau một nốt nhạc. Điều này có được là do những nét tương đồng giữa những bài toán có lời giải giống nhau. Những nét tương đồng này chính là những gợi ý tuyệt vời cho những coder kinh nghiệm để có thể nhận định được lời giải bài toán. Mục tiêu chính của bài viết này là hướng dẫn để các bạn cũng có thể nhận định được chúng.
 
-#### Những bài toán không yêu cầu kĩ năng đặc biệt (mô phỏng, tìm kiếm, sắp xếp, ...)
+### Những bài toán không yêu cầu kĩ năng đặc biệt (mô phỏng, tìm kiếm, sắp xếp, ...)
 
 Hầu hết các trường hợp, những bài toán này thường chỉ yêu cầu bạn thực hiện từng bước một với những công việc rất đơn giản. Giới hạn thì không quá lớn cũng không quá nhỏ. Và những bài này thường là bài đầu tiên (bài dễ nhất) trong TC SRM. Chúng thường để kiểm tra xem bạn code nhanh và chính xác như nào, và không yêu cầu kiến thức về thuật toán.
 
@@ -28,7 +27,7 @@ Như bạn có thể thấy, đây là một bài toán tìm kiếm rất đơn 
 
 **[MedalTable](http://community.topcoder.com/stat?c=problem_statement&pm=2922&rd=5855) - SRM 209 Div 1**
 
-#### Tìm kiếm theo chiều rộng (Breadth First Search - BFS)
+### Tìm kiếm theo chiều rộng (Breadth First Search - BFS)
 
 Những bài sử dụng BFS thường yêu cầu tìm số bước ít nhất (hoặc đường đi ngắn nhất) từ điểm đầu đến điểm cuối. Bên cạnh đó, đường đi giữa 2 điểm bất kì thường có chung trọng số (và thường là 1). Phổ biến nhất là dạng bài cho bảng $N \* M$, có những ô đi qua được và những ô không đi qua được. Bảng này có thể là mê cung, sơ đồ, các thành phố hoặc các thứ các thứ tương đương. Có thể nói đây là những bài toàn BFS kinh điển (classic). Bởi vì độ phức tạp của BFS là tuyến tính trong hầu hết các trường hợp ($N^2$ hoặc $NlogN$), giới hạn của $N$ (hoặc $M$) có thể lớn, lên tới 1 triệu.
 
@@ -72,7 +71,7 @@ Bạn có thể luyện tập thêm về BFS bằng những ví dụ sau:
 
 **[TurntableService](http://community.topcoder.com/stat?c=problem_statement&pm=3117&rd=5865) - SRM 219 Div 1**
 
-#### Loang (Flood Fill) ###
+### Loang (Flood Fill) ###
 
 Thỉnh thoảng bạn sẽ gặp phải bài toán cần tới Loang, một kĩ thuật sử dụng BFS để tìm tất cả các điểm có thể đi tới. Điểm khác biệt giữa Loang so với những bài BFS ở trên là bạn không phải tìm chi phí nhỏ nhất.
 
@@ -89,11 +88,11 @@ Cho một bitmap $400 * 600$. Có một tập hình chữ nhật bao phủ bitma
 
 Những dấu hiệu trên cho thấy bài này cần phải sử dụng Loang
 
-#### Duyệt trâu và quay lui (Brute Force and Backtracking)
+### Duyệt trâu và quay lui (Brute Force and Backtracking)
 
 Hai kĩ thuật này được gộp chung vào một loại vì chúng khá giống nhau. Quay lui là kĩ thuật nâng cao và tối ưu hơn so với duyệt trâu. Nó thường sử dụng đệ quy và áp dụng cho những bài có giới hạn nhỏ $(N \le 20)$
 
-##### Duyệt trâu (Brute Force)
+#### Duyệt trâu (Brute Force)
 
 Đối với những bài duyệt trâu thì giới hạn thường bé. Duyệt trâu bản chất đúng như cái tên của nó, là duyệt hết tất cả các trường hợp và chọn ra cái tốt nhất. Nó rất dễ xây dựng và cài đặt.
 
@@ -123,7 +122,7 @@ Phân tích độ phức tạp: Có nhiều nhất là $50 * 50$ ô, bán kính 
 
 **[WordFind](http://community.topcoder.com/stat?c=problem_statement&pm=3972&rd=6521) – SRM 232 Div 1**
 
-##### Quay lui (Backtracking)
+#### Quay lui (Backtracking)
 
 Kĩ thuật này thường được sử dụng với những bài có giới hạn nhỏ. Các dạng quay lui mà bạn có thể gặp phải là tìm:
 
@@ -150,7 +149,7 @@ Ta sẽ bắt đầu bằng việc đưa 2 người bất kì qua cầu rồi ti
 **Ví dụ khác:**
 **[WeirdRooks](http://community.topcoder.com/stat?c=problem_statement&pm=3998&rd=6533) – SRM 234 Div 1**
 
-#### Quy hoạch động (Dynamic Programming)
+### Quy hoạch động (Dynamic Programming)
 
 Để giải quyết cũng như nhìn ra dạng bài này thì chủ yếu dựa vào kinh nghiệm. Thường thì giới hạn trong các bài QHĐ không lớn cũng không nhỏ, độ phức tạp thường là $N^2$ , $N^3$ , ... Nếu như giới hạn quá nhỏ (với TC thì thường $N \le 30$) thì thường không phải là DP. Trong QHĐ thì các bài toán lớn sẽ được chia thành các bài toán nhỏ hơn và tính dựa vào chúng. Để hiểu hơn về QHĐ, bạn có thể tham khảo [bài này](http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=dynProg).
 
@@ -189,9 +188,9 @@ Như vậy, bài này cũng có những dâu hiệu giống với bài trên và
 
 **[BadNeighbors](http://community.topcoder.com/stat?c=problem_statement&pm=2402&rd=5009) – 2004 TCCC Round 4**
 
-#### Nâng cao (Hard Drills):
+### Nâng cao (Hard Drills):
 
-##### Luồng cực đại (Maximum Flow)
+#### Luồng cực đại (Maximum Flow)
 
 Cũng không dễ để có thể xác định được một bài toán sử dụng Luồng. Tuy nhiên, một số dấu hiệu sau có thể giúp bạn:
 
@@ -208,7 +207,7 @@ Cũng không dễ để có thể xác định được một bài toán sử d�
 
 Dễ dàng thấy được lượng nước ở mỗi ống là trọng số các cạnh, khớp nối các ống là các đỉnh trong đồ thị. Bạn phải tìm lượng nước lớn nhất chảy từ đỉnh bắt đầu đến đỉnh kết thúc.
 
-##### Cặp ghép (Optimal Pair Matching)
+#### Cặp ghép (Optimal Pair Matching)
 
 Dạng bài này thường cho 2 tập và các quy tắc, bạn phải sử dụng các quy tắc này để ghép càng nhiều càng tốt các phần tử ở tập $A$ với các phần tử ở tập $B$.
 
@@ -217,7 +216,7 @@ Dạng bài này thường cho 2 tập và các quy tắc, bạn phải sử d�
 
 **Hints:**  Nhận xét bài này, ta thấy có 2 tập: xe và điểm đỗ xe, chúng ta cần thực hiện ghép mỗi xe với một điểm đỗ tương ứng. Tồn tại một cạnh giữa 1 xe và 1 điểm đỗ nếu có đường đi giữa chúng và trọng số của cạnh này là đường đi ngắn nhất giữa 2 điểm này. Bước tiếp theo là chia nhị phân khoảng cách dài nhất: ở mỗi bước, xóa đi các cạnh có độ dài lớn hơn $C$; nếu vẫn có thể ghép tất cả các xe vào điểm đỗ thì chọn một giá trị $C$ nhỏ hơn; ngược lại thì chọn một giá trị $C$ lớn hơn. Khi đã chia nhị phân xong, giá trị $C$ nhỏ nhất sẽ là kết quả cần tìm.
 
-##### Quy hoạch tuyến tính (Linear Programming) & Thuật toán Simplex 
+#### Quy hoạch tuyến tính (Linear Programming) & Thuật toán Simplex 
 
 Dấu hiệu nhận biết:
 - Cho một tập các vật với khối lượng hoặc số lượng cần đạt được của mỗi vật.
@@ -242,6 +241,6 @@ Những tính chất trên giống hệt với dấu hiệu nhận biết của 
 - [Wikipedia - Linear Programming](https://en.wikipedia.org/wiki/Linear_programming)
 - [Simplex algorithm](https://en.wikipedia.org/wiki/Simplex_algorithm)
 
-#### Kết luận
+### Kết luận
 
 Để có thể tìm ra được lời giải cho một bài toán bạn cần phải làm nhiều bài tập để luyện khả năng nhận định bài toán cũng như tăng thêm kinh nghiệm. Ngoài ra, còn rất nhiều dạng bài khác mà trong phạm vi bài viết này không thể bao phủ hết được.

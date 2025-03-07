@@ -1,4 +1,3 @@
-## Mảng và danh sách liên kết
 
 ## Biến, con trỏ
 
@@ -24,13 +23,13 @@ Một trong những sức mạnh khác của mảng chính là ta có thể truy
 
 Mảng có số lượng phần tử cố định, mỗi phần tử giữ của mảng một thông tin và ở một vị trí không đổi đã được định nghĩa trước đó.
 
-### Tổng kết
+## Tổng kết
 
 - Bộ nhớ cố định, cần biết trước số phần tử
 - Truy cập một vị trí bất kỳ: $\mathcal{O}(1)$.
 - Thêm / xóa một phần tử: $\mathcal{O}(N)$.
 
-### Mở rộng
+## Mở rộng
 
 Trong C++ STL, có CTDL `vector`, được gọi là mảng động. CTDL này cho phép thực hiện các thao tác:
 
@@ -95,7 +94,7 @@ while (curNode != NULL) {
 
 Ngoài ra, ta cũng có thể lưu thêm con trỏ trỏ vào phần tử cuối của danh sách. Khi đó độ phức tạp để thêm 1 phần tử vào cuối danh sách là $\mathcal{O}(1)$.
 
-### Tổng kết
+## Tổng kết
 
 - Thêm / xóa 1 phần tử mới vào đầu / cuối: $\mathcal{O}(1)$
 - Truy cập 1 phần tử ở vị trí bất kỳ: $\mathcal{O}(N)$.

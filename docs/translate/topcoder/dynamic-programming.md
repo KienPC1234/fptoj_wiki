@@ -1,4 +1,3 @@
-## Nhập môn Quy hoạch động
 
 Nguồn: [Topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/).
 
@@ -9,7 +8,7 @@ Note: Trong bài này có thể có nhiều phần bạn đã biết, bạn hoà
 
 ## Beginner
 
-### QHĐ là gì ?
+## QHĐ là gì ?
 
 **QHĐ** là kĩ thuật được được dùng khi có một công thức và một (hoặc một vài) trạng thái bắt đầu. Một bài toán được tính bởi các bài toán nhỏ hơn đã tìm ra trước đó. **QHĐ** có độ phức tạp đa thức nên sẽ chạy nhanh hơn quay lui và duyệt trâu.
 
@@ -21,13 +20,13 @@ Bây giờ chúng ta sẽ xây dựng thuật giải:
 
 Đầu tiên, cần tìm một trạng thái của bài toán.
 
-### Trạng thái là gì ?
+## Trạng thái là gì ?
 
 Trạng thái là một trường hợp, một bài toán con của bài toán lớn.
 
 Ví dụ, trạng thái trong bài này là số lượng xu nhỏ nhất để tổng bằng $i$, với $i \le S$. Để tìm ra trạng thái $i$, cần phải tìm tất cả các trạng thái $j$ mà $(j < i)$. Một khi đã tìm ra trạng thái $i$, ta có thể dễ dàng tìm ra trạng thái của $i+1$.
 
-### Làm thế nào để tìm được ?
+## Làm thế nào để tìm được ?
 
 Với mỗi $j$, $V_j \le i$, tìm số đồng xu nhỏ nhất để tổng bằng $i-V_j$. Giả sử nó bằng $m$. Nếu $m+1$ nhỏ hơn số lượng đồng xu hiện tại cho tổng $i$ thì ta cập nhập nó bằng $m+1$.
 

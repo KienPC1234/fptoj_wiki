@@ -1,4 +1,3 @@
-## Machine Learning - Classification - phần 3
 
 **Nguồn:** [Achoum's blog](http://blog.mathieu.guillame-bert.com/2015/07/23/machine-learning-for-dummies-part-3/)
 

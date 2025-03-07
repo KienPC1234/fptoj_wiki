@@ -1,4 +1,3 @@
-## Thuật toán phân tách trọng tâm - Centroid decomposition
 
 **Tác giả:**
 * Cao Thanh Hậu - Trường đại học Khoa học Tự Nhiên - ĐHQG-HCM
@@ -16,7 +15,7 @@ Thuật toán phân tách trọng tâm có thể hiểu là thuật toán "chia 
 
 ## Trọng tâm của cây
 
-### Định nghĩa
+## Định nghĩa
 
 Trọng tâm của cây - centroid - là một đỉnh trên cây mà khi bỏ nó ra khỏi cây, mỗi thành phần liên thông còn lại có số đỉnh không quá một nửa số đỉnh của cây ban đầu.
 
@@ -29,11 +28,11 @@ Trọng tâm của cây - centroid - là một đỉnh trên cây mà khi bỏ n
 
 Cây trong hình trên có trọng tâm là đỉnh $5$.
 
-### Trọng tâm của cây có thể không độc nhất
+## Trọng tâm của cây có thể không độc nhất
 
 Trong một số trường hợp, cây có thể có $2$ trọng tâm, và khi đó $2$ trọng tâm của cây sẽ kề nhau. Tuy nhiên, điều này không làm ảnh hưởng đến các thuật toán được nêu trong bài.
 
-### Tìm trọng tâm của cây
+## Tìm trọng tâm của cây
 
 Từ định nghĩa, ta có ý tưởng cơ bản để tìm trọng tâm của cây như sau: giả sử trọng tâm của cây chắc chắn thuộc cây con gốc $u$, với mọi đỉnh $v$ là con trực tiếp của $u$, nếu cây con gốc $v$ có nhiều hơn $n/2$ đỉnh thì trọng tâm của cây chắc chắn thuộc cây con gốc $v$. Nếu không tìm được đỉnh $v$ nào thỏa mãn thì $u$ chính là trọng tâm của cây. Trong đó, $n$ là số đỉnh của cây.
 
@@ -73,11 +72,11 @@ Từ định nghĩa hàm $findCentroid(u)$ cũng có thể chứng minh trọng 
 
 ## Thuật toán phân tách trọng tâm - Centroid decomposition
 
-### Bài toán
+## Bài toán
 
 Ta sẽ cùng giải quyết một bài toán điển hình như sau: Cho một cây có $n$ đỉnh, đếm số đường đi trên cây có độ dài $k$.
 
-### Phân tích
+## Phân tích
 
 Nếu thêm điều kiện để bài toán trở thành "Đếm số đường đi trên cây độ dài $k$ đi qua một đỉnh cho trước" thì vấn đề đơn giản hơn khá nhiều.
 
@@ -91,7 +90,7 @@ Cách làm trên cho kết quả chính xác, vì mọi đường đi trên cây
 
 Tuy nhiên, cách này có độ phức tạp khá lớn trong một số trường hợp. Ví dụ cây là đường thẳng, ta lại liên tục chọn một đầu mút của cây để làm đỉnh cố định, vậy sau mỗi lần xóa, số đỉnh trên cây chỉ giảm đi $1$, độ phức tạp tổng sẽ là $O(n + (n-1) + (n-2) + (n-3)+...) \approx O(n^2)$.
 
-### Thuật toán
+## Thuật toán
 
 Cũng theo ý tưởng trên, nhưng thuật toán phân tách trọng tâm cho cách chọn đỉnh tối ưu hơn, làm giảm độ phức tạp của thuật toán. Cụ thể, thuật toán hoạt động như sau:
 
@@ -101,7 +100,7 @@ Cũng theo ý tưởng trên, nhưng thuật toán phân tách trọng tâm cho 
 
 Độ phức tạp của thuật toán bằng $\log(n)$ nhân cho độ phức tạp của bước $2$. Nếu bước $2$ được thực hiện trong $O(m)$, với $m$ là số đỉnh của cây đang xét lúc đó, thì độ phức tạp tổng sẽ là $O(n \times \log(n))$. Nếu bước $2$ được thực hiện trong $O(m\log(m))$, thì độ phức tạp tổng là $O(n \times \log(n)^2)$.
 
-### Giải thích
+## Giải thích
 
 Giả sử ta xếp các cây được xét thành nhiều hàng, bắt đầu từ hàng $0$, mỗi hàng gồm một số cây theo quy luật: hàng $0$ chứa cây ban đầu, hàng thứ $i$ ($i$ từ $1$ trở đi) chứa các cây tạo được từ việc phân tách một cây nào đó ở hàng $i - 1$.
 
@@ -109,7 +108,7 @@ Xếp theo quy luật trên thì tổng kích thước (số đỉnh) của tấ
 
 Vậy tổng số đỉnh của tất cả các cây tạo thành từ thuật toán trên không vượt quá $n \times \log(n)$, đây cũng chính là độ phức tạp của thuật toán.
 
-### Cài đặt
+## Cài đặt
 
 ```cpp
 ## include<bits/stdc++.h>
@@ -169,7 +168,7 @@ int main() {
 }
 ```
 
-### Mở rộng
+## Mở rộng
 
 Bước $2$ là bước quan trọng của thuật toán, có thể kiểm tra xem thuật toán có áp dụng được vào bài toán hay không bằng cách kiểm tra xem bước thứ $2$ có khả thi hay không. Bài toán ở bước $2$ thường đơn giản hơn nhiều so với bài toán ban đầu.
 
@@ -202,13 +201,13 @@ Nói đơn giản, vì độ cao của cây trọng tâm chỉ là $\log(n)$, v�
 
 ## Áp dụng
 
-### [Lampice - COCI 2019/2020](https://oj.vnoi.info/problem/coci1920_r3_lampice)
+## [Lampice - COCI 2019/2020](https://oj.vnoi.info/problem/coci1920_r3_lampice)
 
-#### Tóm tắt đề bài
+### Tóm tắt đề bài
 
 Cho một cây có $n$ đỉnh, mỗi đỉnh trên cây mang một kí tự. Tìm độ dài của đường đi dài nhất trên cây mà các kí tự trên đường đi đó tạo thành xâu đối xứng (gọi tắt là đường đi đối xứng).
 
-#### Phân tích
+### Phân tích
 
 Thoạt nhìn bài toán giống với các dạng bài dùng thuật phân tách trọng tâm (tìm đường đi thỏa điều kiện...), tuy nhiên bài toán ở bước $2$ là "tìm đường đi đối xứng dài nhất chứa đỉnh gốc" vẫn quá khó để giải quyết.
 
@@ -232,7 +231,7 @@ Gọi $s(u, v)$ là xâu tạo bởi đường đi từ $u$ đến $v$.
 
 Áp dụng thuật toán $hash$ để kiểm tra, ta cần tìm trước các giá trị $hshdown[u]$, $hshup[u]$ với ý nghĩa lần lượt là hash của $s(root, u)$ và hash của $s(u, root_u)$. Từ các giá trị $hshdown, hshup$ của $u, v$ và các giá trị $k, h$, ta có thể áp dụng và biến đổi phương trình $s(u, root_u) + s(root, v) = s(v, root_v) + s(root, u)$ sao cho mỗi vế độc lập về $u$ hoặc $v$, từ đó giải quyết tương tự như bài tập trước.
 
-#### Cài đặt
+### Cài đặt
 
 Dưới đây là một code đã ac bài Lampice, bạn đọc có thể tham khảo.
 
@@ -377,15 +376,15 @@ int main()
 }
 ```
 
-### [QTREE5](https://www.spoj.com/problems/QTREE5)
+## [QTREE5](https://www.spoj.com/problems/QTREE5)
 
-#### Tóm tắt đề bài
+### Tóm tắt đề bài
 Cho một cây có $n$ đỉnh, ban đầu mỗi đỉnh đều có màu đen.
 Thực hiện $q$ truy vấn, mỗi truy vấn thuộc một trong hai loại sau đây:
 * $0$ $u$: đổi màu đỉnh $u$ (nếu $u$ đang có màu đen thì đổi thành trắng, nếu $u$ có màu trắng thì đổi thành đen).
 * $1$ $u$: tìm khoảng cách từ đỉnh $u$ đến đỉnh màu trắng gần nhất. Nếu không có đỉnh nào màu trắng, in $-1$.
 
-#### Phân tích
+### Phân tích
 
 Xây dựng cây trọng tâm của cây được cho, gọi $LCA_{ct}(u, v)$ là tổ tiên chung gần nhất của $u$ và $v$ **trên cây trọng tâm**. Gọi $dist(u, v)$ là khoảng cách giữa đỉnh $u$ và đỉnh $v$ **trên cây ban đầu**.
 
@@ -401,7 +400,7 @@ Về truy vấn tìm khoảng cách, ta cũng lại duyệt qua các đỉnh t�
 
 Lưu ý, giá trị $dist(u, p) + s_p$ đề cập ở trên có thể là giá trị của một đường đi "không chuẩn" - đường đi đi qua một cạnh nhiều lần. Tuy nhiên đường đi này chắc chắn có độ dài lớn hơn đường đi tối ưu, vì vậy ta chỉ cần quan tâm rằng đường đi tối ưu có được xét qua hay không, nếu có, kết quả tìm được là chính xác.
 
-#### Cài đặt
+### Cài đặt
 
 ```cpp
 ## include <bits/stdc++.h>

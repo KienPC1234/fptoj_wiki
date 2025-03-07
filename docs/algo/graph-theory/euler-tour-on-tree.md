@@ -1,4 +1,3 @@
-## Đường đi Euler trên cây
 
 **Người viết:**
 * Cao Thanh Hậu - Đại học Khoa học Tự nhiên - ĐHQG-HCM
@@ -20,7 +19,7 @@
 ## Bài toán 
 Trước khi tìm hiểu sâu hơn về đường đi Euler trên cây, mời bạn đọc xem qua bài toán sau đây.
 
-### Truy vấn trên cây
+## Truy vấn trên cây
 Cho một cây có $n$ đỉnh đánh số từ $1$ đến $n$, đỉnh $1$ là đỉnh gốc của cây. Ban đầu, mỗi đỉnh của cây có giá trị $0$.
 
 Thực hiện các truy vấn thuộc một trong hai loại sau:
@@ -49,7 +48,7 @@ Hình $1$
 
 (*): Cây con gốc $u$ là cây tạo bởi tất cả những đỉnh mà đường đi từ đỉnh đó đến đỉnh gốc của cây có chứa $u$, và tất cả những cạnh nối 2 đỉnh mà đường đi từ $2$ đỉnh đó đến đỉnh gốc có chứa đỉnh $u$. Ví dụ, cây trong hình $1$ có gốc cây là đỉnh $1$, với $u = 2$ thì cây con gốc $u$ bao gồm các phần màu xanh lá (cả cạnh và đỉnh).
 
-### Thuật toán ngây thơ
+## Thuật toán ngây thơ
 Ý tưởng khá đơn giản: duyệt qua tất cả các đỉnh con để tìm đáp án cho truy vấn loại $2$.
 
 ```cpp
@@ -84,7 +83,7 @@ Phần sau đây sẽ giới thiệu về một phương pháp rất đặc bi�
 ## Đường đi Euler trên cây
 
 
-### Định nghĩa
+## Định nghĩa
 
 Từ đồ thị cây $T(V, E)$ tạo đồ thị có hướng $T'(V, E')$ theo cách sau: với mỗi cạnh $(u, v) \in E$, thêm vào $E'$ hai cạnh có hướng $(u, v)$ và $(v, u)$.
 
@@ -126,17 +125,17 @@ Với đồ thị cây hình $2a$, đường đi Euler biểu diễn bằng dãy
 </p>
 
 
-### Sự tồn tại của đường đi Euler
+## Sự tồn tại của đường đi Euler
 Có thể chứng minh rằng, chu trình Euler luôn tồn tại trong đồ thị $T'$, hay $T'$ là **đồ thị Euler**.
 
-#### Định lý
+### Định lý
 
 Một đồ thị có hướng là đồ thị Euler nếu và chỉ nếu:
 
 + Với mọi đỉnh $u$ thuộc đồ thị, bậc vào của $u$ bằng bậc ra của $u$.
 + Mọi đỉnh có bậc khác $0$ thuộc cùng thành phần liên thông.
 
-#### Chứng minh
+### Chứng minh
 
 Dễ thấy, $T'$ là đồ thị liên thông $(1)$ vì được xây dựng từ một cây.
 
@@ -206,9 +205,9 @@ Mỗi khi truy cập một đỉnh bất kỳ, ta thêm đỉnh đó vào đư�
 
 Như đã giới thiệu, ứng dụng chính của Euler tour là trải phẳng cây, từ đó bài toán trên cây chuyển về bài toán với dãy số. Vậy cụ thể mối liên hệ giữa cây với dãy số là như thế nào, mời bạn đọc cùng tìm hiểu.
 
-### Các mối quan hệ về vị trí
+## Các mối quan hệ về vị trí
 
-#### Cơ sở
+### Cơ sở
 
 Sau đây là một số tính chất cơ bản nhất của đường đi Euler.
 
@@ -230,7 +229,7 @@ Hình $3$
 
 </center>
 
-#### Giải thích
+### Giải thích
 
 Từ khi thăm đỉnh $u$ lần đầu tiên đến khi thăm đỉnh $u$ lần cuối cùng, đường đi Euler đi qua và chỉ đi qua các đỉnh thuộc cây con gốc $u$. Vậy với mọi đỉnh $v$ thuộc cây con gốc $u$, mọi vị trí của $v$ đều thuộc  đoạn $st[u]..en[u]$ (tính chất thứ nhất).
 
@@ -238,7 +237,7 @@ Với hai đỉnh $u$ và $v$ không có quan hệ tổ tiên thì đỉnh $u$ �
 
 ## Ứng dụng
 
-### Cập nhật, truy vấn đối với đỉnh và cây con
+## Cập nhật, truy vấn đối với đỉnh và cây con
 
 Đây là ứng dụng phổ biến nhất của đường đi Euler trên cây. 
 
@@ -275,13 +274,13 @@ void dfs(int u, int parent_of_u) {
 ```
 Trong đó, $en[u]$ là vị trí **cuối cùng nhất** của một đỉnh thuộc cây con gốc $u$.
 
-#### Cơ sở
+### Cơ sở
 
 Trong dãy $tour$, tất cả các đỉnh thuộc cây con gốc $u$ nằm liên tiếp từ vị trí $st[u]$ đến vị trí $en[u]$. Tất cả các đỉnh có vị trí thuộc đoạn $st[u]..en[u]$ đều thuộc cây con gốc $u$.
 
 Lưu ý rằng sau khi thay đổi như trên, mỗi đỉnh chỉ xuất hiện trong $tour$ đúng $1$ lần, và ý nghĩa mảng $en$ cũng đã được thay đổi.
 
-#### Giải thích
+### Giải thích
 
 Đây thực chất là một cách phát biểu khác của tính chất đầu tiên được nêu ở phần trước: Đỉnh $v$ thuộc cây con gốc $u$ nếu và chỉ nếu $st[u] \leq st[v] \leq en[v] \leq en[u]$.
 
@@ -289,7 +288,7 @@ Và nhận xét rằng tính chất này giữ nguyên tính đúng đắn với
 
 Vậy về cơ bản, mục đích của việc biến đổi dãy $tour$ nêu trên là để mỗi đỉnh chỉ xuất hiện đúng $1$ lần, sẽ tiện hơn trong xử lý.
 
-#### Thuật toán
+### Thuật toán
 
 Từ tính chất đó, dễ thấy rằng các thao tác với cây con có thể chuyển thành thao tác với đoạn.
 
@@ -326,7 +325,7 @@ long long sumSubtree(int u) {
 }
 ```
 
-#### Cập nhật đường đi - truy vấn đỉnh
+### Cập nhật đường đi - truy vấn đỉnh
 
 Trong một bài toán cần các thao tác thay đổi giá trị các đỉnh trên đường đi và tính giá trị của đỉnh, ta cũng có thể áp dụng ứng dụng trên để giải quyết.
 
@@ -356,7 +355,7 @@ Lưu ý rằng, giá trị đỉnh $u$ bị thay đổi khi một giá trị $b[
 
 Các thao tác đối với $b$ là các thao tác dạng "cập nhật đỉnh, truy vấn cây con", vì vậy có thể dễ dàng giải quyết bằng thuật toán đã nêu trước đó.
 
-### Cập nhật đỉnh - truy vấn đường đi
+## Cập nhật đỉnh - truy vấn đường đi
 
 Ứng dụng cho phép thay đổi giá trị đỉnh và tính tổng giá trị các đỉnh thuộc đường đi (ngắn nhất) giữa hai đỉnh bất kì trên cây.
 
@@ -395,7 +394,7 @@ void dfs(int u, int parent_of_u) {
 
 $st[u]$ là vị trí đầu tiên của đỉnh $u$, $en[u]$ là vị trí thứ hai của đỉnh $u$. Mỗi đỉnh xuất hiện đúng $2$ lần.
 
-#### Cơ sở
+### Cơ sở
 
 Với hai đỉnh $u$, $v$ bất kì mà $u$ là **tổ tiên** của $v$, xét đoạn các giá trị từ vị trí $st[u]$ đến vị trí $st[v]$ của dãy $tour$, ta có:
 
@@ -420,7 +419,7 @@ Hình $4$
 
 Các đỉnh được tô màu khác màu đen là các đỉnh xuất hiện trong đoạn $st[1]..st[4]$ của dãy.
 
-#### Giải thích
+### Giải thích
 
 Do $u$ là **tổ tiên** của $v$ ta có $st[u] \leq st[v] \leq en[v] \leq en[u]$.
 
@@ -431,7 +430,7 @@ Xét đỉnh $p$ xuất hiện trong đoạn $st[u]..st[v]$ của dãy $d$:
 + Nếu $p$ thuộc đường đi từ $u$ đến $v$ trên cây, nghĩa là $v$ thuộc cây con gốc $p$ và $p$ thuộc cây con gốc $u$, vậy $st[u] \leq st[p] \leq st[v] < en[p]$, $p$ xuất hiện đúng $1$ lần trên đoạn $st[u]..st[v]$, cũng là lần thứ nhất đỉnh $p$ xuất hiện trong dãy $d$.
 + Nếu $p$ không thuộc đường đi từ $u$ đến $v$ trên cây, nghĩa là $p$ không có quan hệ tổ tiên với $v$, ta có $st[u] < st[p] < en[p] < st[v]$, vậy $p$ xuất hiện đủ $2$ lần trên đoạn.
 
-#### Thuật toán
+### Thuật toán
 
 Ý tưởng của thuật toán này là tạo mảng $f$ với $f[st[u]]$ là giá trị của đỉnh $u$, và $f[en[u]] = -f[st[u]]$. Vì vậy khi tính tổng giá trị đoạn $st[u]..st[v]$ của mảng $f$, các đỉnh $p$ xuất hiện $2$ lần sẽ tự "triệt tiêu" do $f[st[p]] + f[en[p]] = 0$, chỉ còn lại tổng các đỉnh xuất hiện một lần - các đỉnh thuộc đường đi từ $u$ đến $v$.
 
@@ -445,7 +444,7 @@ Thuật toán chỉ áp dụng đối với đường đi từ một tổ tiên 
 
 Thuật toán này dựa trên sự tự triệt tiêu của các đỉnh xuất hiện hai lần, do đó có sự hạn chế đối với các thao tác phức tạp hơn. Tuy nhiên trong những trường hợp áp dụng được, thuật này thể hiện ưu thế lớn do cách cài đặt đơn giản hơn so với các thuật toán về đường đi trên cây khác. -->
 
-### Tổ tiên chung gần nhất - Lowest Common Ancestor
+## Tổ tiên chung gần nhất - Lowest Common Ancestor
 
 Đường đi Euler trên cây cũng có thể được dùng để tìm tổ tiên chung gần nhất, kết hợp với cấu trúc dữ liệu [RMQ](https://vnoi.info/wiki/translate/topcoder/Range-Minimum-Query-and-Lowest-Common-Ancestor.md).
 
@@ -457,7 +456,7 @@ Thuật toán này dựa trên sự tự triệt tiêu của các đỉnh xuất
 </p>
 
 
-#### Cơ sở
+### Cơ sở
 
 Gọi:
 + $tour$ là dãy đỉnh biểu diễn đường đi Euler.
@@ -467,7 +466,7 @@ Ta có tính chất sau:
 
 Đối với hai đỉnh $u$, $v$ phân biệt mà $st[u] \leq st[v]$, tổ tiên chung gần nhất của hai đỉnh này là giá trị $p$ thuộc đoạn $st[u]..st[v]$ của dãy $tour$ sao cho khoảng cách từ $p$ đến gốc là nhỏ nhất có thể.
 
-#### Giải thích 
+### Giải thích 
 
 Gọi $p$ là cha chung gần nhất của $u$ và $v$.
 
@@ -477,7 +476,7 @@ Xét các đỉnh xuất hiện trên đoạn $st[u]..st[v]$ của dãy $tour$:
 
 Vậy đỉnh gần gốc nhất trên đoạn $st[u]..st[v]$ chính là đỉnh $p$ - tổ tiên chung gần nhất của $u$ và $v$.
 
-#### Thuật toán
+### Thuật toán
 
 Gọi $h[u]$ là khoảng cách của đỉnh $u$ đến gốc của cây. Khi tìm $LCA(u, v)$, ta cần tìm đỉnh $p$ thuộc đoạn $st[u]..st[v]$ mà $h[p]$ là nhỏ nhất. 
 

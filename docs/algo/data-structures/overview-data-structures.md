@@ -1,4 +1,3 @@
-## Cấu trúc dữ liệu
 
 **Nguồn:** [Topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/data-structures/) 
 

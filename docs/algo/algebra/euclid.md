@@ -1,4 +1,3 @@
-## Thuật toán Euclid
 
 **Tác giả:** 
 - Nguyễn Đức Kiên, Trường Đại học Công nghệ, ĐHQGHN.
@@ -11,14 +10,14 @@
 ---
 
 
-### Mở đầu
+## Mở đầu
 
-#### Một số ký hiệu toán học sử dụng trong bài viết
+### Một số ký hiệu toán học sử dụng trong bài viết
 - Cho hai số nguyên $a$ và $b$ $(b \neq 0)$. Nếu tồn tại số nguyên $q$ sao cho $a = bq$ thì ta nói $a$ chia hết cho $b$ (ký hiệu $a\ \vdots\ b$) hoặc $b$ là ước của $a$ (ký hiệu $b\mid a$).
 - Cho ba số nguyên $a$, $b$ và $m$ $(m \neq 0)$. Nếu tồn tại một số nguyên $r$ sao cho $a = mq_1 + r$ và $b = mq_2 + r$ với $q_1, q_2$ là các số nguyên thì ta nói $a$ đồng dư với $b$ theo modulo $m$. Ký hiệu là $a \equiv b \pmod m$.
 - Ký hiệu $\text{log}_a(b)$ được hiểu là logarit cơ số $a$ của $b$. Bài viết này sẽ sử dụng $\text{log}(x)$ để thay cho $\text{log}_2(x)$.
 
-#### Ước chung lớn nhất
+### Ước chung lớn nhất
 Đây là khái niệm tương đối quen thuộc với chúng ta.
 
 Cho hai số tự nhiên $a$ và $b$. Số nguyên dương $d$ lớn nhất thoả mãn $d\mid a$ và $d\mid b$ gọi là **ước chung lớn nhất (greatest common divisor - GCD)** của $a$ và $b$. Kí hiệu là $\gcd(a, b)$ (`ƯCLN(a, b)` trong tiếng Việt) hoặc đơn giản hơn $(a, b)$.
@@ -31,7 +30,7 @@ Về mặt toán học, với $k \neq 0$ thì $\gcd(0, k) = k$, và $\gcd(0, 0)$
 
 Có một vài cách để tìm ƯCLN của hai số $a$ và $b$. Cách đơn giản nhất là ... duyệt từng số tự nhiên $d$ một đến $\min\{a, b\}$ để kiểm tra điều kiện $d\mid a$ và $d\mid b$. Ngoài ra, trong toán học, ta cũng sử dụng phương pháp phân tích thành thừa số nguyên tố để tìm ƯCLN. Phương pháp này không hiệu quả lắm khi lập trình. Thay vào đó, chúng ta sẽ sử dụng thuật toán Euclid.
 
-### Thuật toán Euclid
+## Thuật toán Euclid
 Thuật toán này được trình bày trong tác phẩm "Cơ sở" (Elements) của Euclid vào khoảng năm 300 TCN, nhưng cũng có thể đã từng xuất hiện trước đó.
 
 Thuật toán được thực hiện bằng cách liên tục áp dụng công thức sau cho tới khi ra kết quả:
@@ -44,7 +43,7 @@ $$
 \end{cases}
 $$
 
-#### Chứng minh
+### Chứng minh
 Nếu $d$ là ước của $a$ và $b$, hiển nhiên nó cũng là ước của $a - b$.
 
 Nếu $d'$ là ước của $b$ và $b - a$, hiển nhiên nó cũng là ước của $b + (a - b) = a$.
@@ -55,7 +54,7 @@ Phép tính $a - b$ sau khi thực hiện $\lfloor \frac{a}{b} \rfloor$ lần th
 
 Vậy $\gcd(a, b) = \gcd(b, a \text{ mod } b)$ (đpcm).
 
-#### Cài đặt
+### Cài đặt
 ```cpp
 int gcd(int a, int b)
 {
@@ -72,12 +71,12 @@ int gcd(int a, int b)
 }
 ```
 
-#### Độ phức tạp
+### Độ phức tạp
 **Định lý Lamé**: Thuật toán Euclid cần thực hiện ít hơn $5\log_{10}(\min(u, v))$ lần chia lấy dư.
 
 Thuật toán chạy chậm nhất khi $a = F_n$, $b = F_{n - 1}$, với $F_i$ là số Fibonacci thứ $i$. Khi đó thuật toán cần thực hiện $n - 2$ lần đệ quy.
 
-#### Cải tiến
+### Cải tiến
 So với các phép toán khác, phép lấy phần dư (`%`) chậm hơn một chút dù vẫn có độ phức tạp là $O(1)$. Chúng ta có thể xây dựng một cách cài đặt khác không sử dụng phép toán này.
 
 Ta có một số tính chất sau: 
@@ -109,7 +108,7 @@ int gcd(int a, int b)
 
 Thuật toán cải tiến trên sẽ thực hiện chia $\text{log}(a) + \text{log}(b)$ lần trong trường hợp tệ nhất. Do vậy, độ phức tạp của thuật vẫn không đổi và là $O(\text{log}(a, b))$. 
 
-#### Vài chú ý
+### Vài chú ý
 - Thư viện `algorithm` của C++ có hỗ trợ hàm `__gcd(a, b)` để tìm ước chung lớn nhất của hai số $a$ và $b$, cũng sử dụng thuật Euclid. Kể từ phiên bản `C++17`, thư viện `numeric` hỗ trợ thêm hàm `gcd(a, b)` với mục đích tương tự. Các hàm có sẵn này có thể được sử dụng để code ngắn gọn.
 - Để tính bội chung nhỏ nhất (BCNN) của hai số, ta dùng công thức:
  
@@ -121,7 +120,7 @@ $$\text{lcm}(a, b)=\frac{a}{\gcd(a, b)}\times b$$
 
 Kể từ `C++17`, thư viện `numeric` cũng hỗ trợ cả hàm `lcm(a, b)` cho phép tính BCNN của hai số.
 
-### Thuật toán Euclid mở rộng
+## Thuật toán Euclid mở rộng
 Với hai số tự nhiên $a$ và $b$, thuật toán này được sử dụng để viết $d = \gcd(a, b)$ dưới dạng **tổ hợp tuyến tính**. Nói cách khác, thuật toán này sẽ tìm một bộ giá trị nguyên $(x, y)$ thoả mãn:
 
 $$ax + by = d$$
@@ -168,7 +167,7 @@ Vậy $d'$ là ƯCLN của $a$ và $b$. Bổ đề được chứng minh.
 
 Ứng dụng trực tiếp của thuật toán này là các phương trình Diophantus, sẽ được thảo luận ở phần sau.
 
-#### Mô tả thuật toán
+### Mô tả thuật toán
 Xét bài toán với hai số ban đầu là $a = A$ và $b = B$. Gọi $d$ là ƯCLN của $A$ và $B$.
 
 Khi thực hiện thuật toán Euclid (không mở rộng) để tìm $d$, sau khi biến đổi hoàn tất ta thu được $a = d, b = 0$. Lúc này ta có $d = d \times 1 + 0 \times 0$, tức là $a = d, b = 0, x = 1, y = 0$.
@@ -189,7 +188,7 @@ Ta cần tìm các hệ số $x_0, y_0$ để: $a_0x_0 + b_0y_0 = d$.
 
 Liên tục cập nhật các hệ số $x, y$ theo công thức trên tới khi thu được $a = A, b = B$ như ban đầu, ta sẽ thu được kết quả.
 
-#### Cài đặt
+### Cài đặt
 ```cpp
 // Hàm trả về ƯCLN của a và b đồng thời thay đổi giá trị của x, y
 int extEuclid(int a, int b, int& x, int& y)
@@ -210,10 +209,10 @@ int extEuclid(int a, int b, int& x, int& y)
 }
 ```
 
-#### Độ phức tạp
+### Độ phức tạp
 Thuật toán Euclid mở rộng thực tế chỉ là thêm một vài bước tính toán vào thuật toán Euclid thường nên độ phức tạp vẫn là $O(\text{log}(\text{min}\{a, b\}))$.
 
-### Phương trình Diophantus tuyến tính hai ẩn
+## Phương trình Diophantus tuyến tính hai ẩn
 Phương trình Diophantus (Diophantine function) tuyến tính hai ẩn có dạng như sau:
 
 $$ax + by = c \  (a, b, c \in \mathbb{Z})$$
@@ -224,14 +223,14 @@ Phương trình trên có vô số nghiệm $(x, y)$ thực (trừ khi $a = b = 
 
 *Bài tập áp dụng trực tiếp*: [CEQU](https://www.spoj.com/problems/CEQU/)
 
-#### Thuật toán tìm nghiệm
+### Thuật toán tìm nghiệm
 Khi $a = b = 0$, phương trình có nghiệm $x = k, y = h \ (k, h \in \mathbb{Z})$ nếu $c = 0$ và vô nghiệm nếu $c = 0$
 
 Khi $a \neq 0, b = 0$ phương trình có nghiệm $x = \frac{c}{a}, y = k \ (k \in \mathbb{Z})$ nếu $a\mid  c$ và vô nghiệm nếu $a \nmid c$. Tương tự khi $a = 0, b \neq 0$.
 
 Bây giờ ta chỉ xét các trường hợp $a \neq 0, b \neq 0$.
 
-##### Tìm nghiệm tổng quát bằng phương pháp số học
+#### Tìm nghiệm tổng quát bằng phương pháp số học
 **Lưu ý**: Phần dưới đây không thực sự liên quan tới thuật toán để giải bài này, đồng thời kết quả cũng khá phức tạp và không phải thứ chúng ta cần lúc này. Bạn đọc cân nhắc trước khi xem.
 <details>
 <summary> Tìm nghiệm tổng quát bằng phương pháp số học </summary>
@@ -259,7 +258,7 @@ $$\begin{cases}
 </p>
 </details>
 
-##### Tìm nghiệm bằng thuật toán
+#### Tìm nghiệm bằng thuật toán
 Ta đã biết phương trình chỉ có nghiệm nếu $\gcd(a, b)\mid  c$. Nếu điều kiện này không thoả mãn, ta kết luận phương trình vô nghiệm.
 
 Giả sử $a, b$ là các số dương. Đặt $d = \gcd(a, b)$. 
@@ -295,7 +294,7 @@ $$\begin{cases}
 
 Chốt lại, để tìm nghiệm của một phương trình Diophantus, ta tìm các hệ số $x', y'$ từ thuật toán Euclid mở rộng, rồi từ các hệ số này áp dụng vào các công thức trên để tính ra kết quả.
 
-#### Cài đặt
+### Cài đặt
 Đoạn chương trình sau tìm **một** nghiệm nguyên của phương trình $ax + by = c$, với $a, b \neq 0$:
 
 ```cpp
@@ -333,8 +332,8 @@ pair <int, int> diophantineSolve(int a, int b, int c)
 }
 ```
 
-#### Một số bài toán liên quan
-##### Đếm số nghiệm của phương trình Diophantus trong một khoảng cho trước
+### Một số bài toán liên quan
+#### Đếm số nghiệm của phương trình Diophantus trong một khoảng cho trước
 *Bài tập áp dụng trực tiếp*: [SGU 106](https://codeforces.com/problemsets/acmsguru/problem/99999/106)
 
 **Tóm tắt đề bài**: Đếm số cặp số nguyên $x, y$ thoả mãn:
@@ -357,7 +356,7 @@ Dễ thấy các nghiệm của bài toán lúc này chỉ phụ thuộc vào $k
 
 Nếu bài toán yêu cầu liệt kê chi tiết các nghiệm này, ta cũng chỉ cần tăng $k$ lên dần dần trong khoảng thoả mãn.
 
-##### Tìm nghiệm có tổng dương nhỏ nhất
+#### Tìm nghiệm có tổng dương nhỏ nhất
 Bài toán này yêu cầu chúng ta tìm nghiệm $x, y$ có $x + y$ dương nhỏ nhất.
 
 Cộng từng vế của biểu thức nghiệm $x$ và $y$ theo $k$ được:
@@ -368,7 +367,7 @@ Dễ thấy nghiệm nhỏ nhất khi $k\times\frac{b - a}{d}$ nhỏ nhất. Tu�
 
 *Bài tập áp dụng*: [Euclid Problem](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1045). Ở bài này $c = d$.
 
-### Nghịch đảo modulo
+## Nghịch đảo modulo
 Số tự nhiên $\gamma$ được gọi là **nghịch đảo modulo** theo modulo $m$ của một số tự nhiên $a$ nếu $a\gamma \equiv 1 \ (\text{mod } m)$. Ký hiệu là $a^{-1} \ (\text{mod } m)$.
 
 Ví dụ: $3 \equiv 7^{-1} \ (\text{mod } 10)$
@@ -392,14 +391,14 @@ $$\text{C}^k_n = \frac{n!}{k!\times (n - k)!} \equiv n!\times (k!\times (n - k)!
 
 Khi modulo $M$ là số nguyên tố, để tiện lợi ta thường dùng định lý Fermat nhỏ để suy ra $x^{-1} \equiv x^{M - 2} \ (\text{mod } M)$ rồi dùng luỹ thừa nhanh để tính. Còn nếu $M$ không nguyên tố, ta lại áp dụng thuật toán Euclid mở rộng để tìm nghịch đảo modulo qua phương trình $a\gamma + My = 1$.
 
-### Bài tập áp dụng
+## Bài tập áp dụng
 - [UVA - Gift Dilemma](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=4628)
 - [Codeforces - Ebony and Ivory](https://codeforces.com/contest/633/problem/A)
 - [Codeforces - Beautiful Numbers](https://codeforces.com/problemset/problem/300/C)
 - [Codechef - Get AC in one go](https://www.codechef.com/problems/COPR16G)
 - [VNOJ - VM 08 Bài 05 - Số nguyên](https://oj.vnoi.info/problem/integer7)
 
-### Tài liệu tham khảo
+## Tài liệu tham khảo
 - Một loạt các bài viết trong mục Fundamentals, [CP Algorithms](https://cp-algorithms.com/algebra/euclid-algorithm.html)
 - Wikipedia (phần chứng minh định lý Lamé và bổ đề Bézout)
 - VNOI Wiki, [Nghịch đảo Modulo](https://vnoi.info/wiki/algo/math/modular-inverse.md) (bài viết cũ)

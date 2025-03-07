@@ -4,10 +4,7 @@ import re
 # Đường dẫn tới thư mục chứa các file Markdown
 docs_directory = r'C:\Users\kienp\Downloads\vnoi_wiki-master\fptoj_wiki'
 
-# Biểu thức chính quy để nhận diện các dòng tiêu đề trong Markdown
-# Nhóm 1: dãy dấu '#' liên tục
-# Nhóm 2: khoảng trắng (nếu có)
-# Nhóm 3: phần nội dung tiêu đề
+# Biểu thức chính quy nhận diện các dòng tiêu đề trong Markdown
 header_pattern = re.compile(r'^(#{1,})(\s*)(.*)$')
 
 for root, dirs, files in os.walk(docs_directory):
@@ -19,25 +16,15 @@ for root, dirs, files in os.walk(docs_directory):
 
             changed = False
             new_lines = []
+            first_header_removed = False  # Cờ đánh dấu đã xóa header đầu tiên hay chưa
+
             for line in lines:
                 match = header_pattern.match(line)
-                if match:
-                    hashes = match.group(1)
-                    space = match.group(2)
-                    content = match.group(3)
-                    
-                    # Đảm bảo có ít nhất một khoảng trắng sau dấu #
-                    if space == '':
-                        space = ' '
-                        changed = True
-                        
-                    # Nếu cấp độ tiêu đề (số lượng dấu '#') ít hơn 6, tăng cấp độ bằng cách thêm thêm một dấu '#'
-                    if len(hashes) < 6:
-                        hashes = '#' + hashes
-                        changed = True
-
-                    new_line = f"{hashes}{space}{content}\n"
-                    new_lines.append(new_line)
+                if match and not first_header_removed:
+                    # Nếu dòng này là header và chưa xóa header đầu tiên thì bỏ qua dòng này
+                    first_header_removed = True
+                    changed = True
+                    continue  # Bỏ qua dòng header đầu tiên
                 else:
                     new_lines.append(line)
 

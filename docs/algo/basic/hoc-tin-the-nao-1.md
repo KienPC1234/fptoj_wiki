@@ -1,4 +1,3 @@
-## Tôi đã học tin học như thế nào? Phần 1: vòng lặp
 
 Tác giả: Nguyễn Xuân Khánh
 

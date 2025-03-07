@@ -1,4 +1,3 @@
-## Biến đổi Fourier nhanh - Fast Fourier transform
 
 **Người viết:**
 - Nguyễn Hoàng Vũ - Trường Đại học Công nghệ, ĐHQGHN
@@ -9,11 +8,11 @@
 
 Các bài toán tổ hợp ngày càng xuất hiện nhiều trong các cuộc thi lập trình thi đấu và thường xuyên nắm giữ các vị trí khó nhất. Bài viết này sẽ giới thiệu về một công cụ quan trọng để giải các bài toán tổ hợp, đó là **Biến đổi Fourier nhanh - Fast Fourier transform**, hay còn được viết tắt là **FFT**.
 
-### 1. Các kiến thức cần biết
+## 1. Các kiến thức cần biết
 
-#### 1.1. Số phức (Complex number)
+### 1.1. Số phức (Complex number)
 
-##### Định nghĩa
+#### Định nghĩa
 
 Số phức là các số có dạng $z=a+bi$ trong đó $a,b\in \mathbb{R}$ và $i^2=-1$. Số $i$ được gọi là đơn vị ảo. Tập hợp tất cả các số phức được kí hiệu là $\mathbb{C}$.
 
@@ -35,7 +34,7 @@ Về biểu diễn $z=r\exp(i\varphi)$, các bạn có thể tìm hiểu ở [C�
 
 </figure>
 
-##### Các phép toán
+#### Các phép toán
 
 Xét hai số phức $z_1=a_1+b_1i=r_1\exp(i\varphi_1)$ và $z_2=a_2+b_2i=r_2\exp(i\varphi_2)$:
 
@@ -46,7 +45,7 @@ Xét hai số phức $z_1=a_1+b_1i=r_1\exp(i\varphi_1)$ và $z_2=a_2+b_2i=r_2\ex
 
 Phép cộng (trừ) hai số phức tương đương với phép cộng (trừ) hai vectơ biểu diễn chúng. Khi nhân hai số phức, ta nhân môđun của chúng và cộng acgumen của chúng.
 
-##### Căn đơn vị (Root of unity)
+#### Căn đơn vị (Root of unity)
 
 Xét một số nguyên dương $n$:
 
@@ -67,24 +66,24 @@ Xét một số nguyên dương $n$:
 
 
 
-##### Một số tính chất của căn đơn vị
+#### Một số tính chất của căn đơn vị
 - $\omega_n^j=\omega_n^{j\bmod n}$.
 - Với $n$ chẵn, $\omega_n^{n/2}=-1$, từ đây suy ra $\omega_n^{j+n/2}=-\omega_n^j$.
 - Với $n$ chẵn, $\omega_n^2=\omega_{n/2}$.
 
-#### 1.2. Ma trận
+### 1.2. Ma trận
 
 Các bạn có thể tham khảo bài viết [Nhân ma trận (VNOI)](https://vnoi.info/wiki/algo/trick/matrix-multiplication.md).
 
-### 2. Thuật toán FFT
+## 2. Thuật toán FFT
 
-#### 2.1. Bài toán
+### 2.1. Bài toán
 
 Cho hai dãy $a=(a_0,a_1,\ldots,a_{n-1})$ và $b=(b_0,b_1,\ldots,b_{n-1})$. Tính dãy $c=(c_0,c_1,\ldots,c_{2n-2})$ được cho bởi công thức: $c_k=\displaystyle\sum a_jb_{k-j}$ với $k$ từ $0$ đến $2n-2$.
 
 Dãy $c$ được định nghĩa như trên được gọi là tích chập (convolution) của hai dãy $a$ và $b$.
 
-#### 2.2. Ý tưởng
+### 2.2. Ý tưởng
 
 Biểu thức của dãy $c$ phía trên gợi lại cho chúng ta về phép nhân đa thức. Cụ thể, định nghĩa:
 
@@ -115,9 +114,9 @@ Ví dụ:
 
 Ý tưởng của thuật toán FFT là chọn ra một tập điểm $z_0,z_1,\ldots,z_{m-1}$ sao cho ta có thể tính nhanh giá trị của đa thức $A$ và $B$ trên đó, đồng thời có thể khôi phục được đa thức $C$ dựa trên $C(z_0),C(z_1),\ldots,C(z_{m-1})$.
 
-#### 2.3. Thuật toán
+### 2.3. Thuật toán
 
-##### Biến đổi xuôi
+#### Biến đổi xuôi
 
 Ta có một đa thức $A(z)=a_0z^0 + a_1z^1+\ldots+a_{n-1}z^{n-1}$. Không mất tính tổng quát, giả sử $n$ là một luỹ thừa của $2$ hay $n=2^k$ với $k\in \mathbb{N}$. Nếu $n$ không phải là một lũy thừa của $2$, ta thêm các số hạng $a_i z^i$ bị thiếu và cho các hệ số $a_i$ bằng $0$. 
 
@@ -289,7 +288,7 @@ Vậy ta cần tính $A_0$ và $A_1$ là hai bài toán với kích thước gi�
 
 **Độ phức tạp.** Thuật toán FFT là một thuật toán chia để trị nên ta dễ thấy nó có độ phức tạp $O(n\log_2n)$.
 
-##### Biến đổi ngược
+#### Biến đổi ngược
 
 **Bổ đề.** $\text{DFT}(\text{DFT}(a_0,a_1,\ldots,a_{n-2},a_{n-1}))=(na_0,na_{n-1},na_{n-2}\ldots,na_1)$.
 
@@ -360,7 +359,7 @@ vector<int> conv(const vector<int> &a, const vector<int> &b) {
 }
 ```
 
-##### Cài đặt khử đệ quy
+#### Cài đặt khử đệ quy
 
 Ta xét các tầng đệ quy với $n=8$:
 - Tầng $3$: $(a_0,a_1,a_2,a_3,a_4,a_5,a_6,a_7)$
@@ -404,7 +403,7 @@ void fft(vector<cd> &a, bool invert) {
 }
 ```
 
-##### Vấn đề về độ chính xác
+#### Vấn đề về độ chính xác
 Ở cài đặt phía trên ta có viết ```w *= wlen``` để tính luỹ thừa của căn đơn vị. Việc nhân nhiều lần sẽ ảnh hưởng rất lớn đến độ chính xác của thuật toán vì ta đang thực hiện tính toán trên số thực.
 
 Nhận xét rằng với mỗi $len$ ta chỉ cần tính $\omega_{len}^0,\omega_{len}^1,\ldots,\omega_{len}^{len/2-1}$.
@@ -437,7 +436,7 @@ for (int k = 1; k < n; k *= 2)
 
 Thử nghiệm với $n=2^{20}$, sai số chỉ rơi vào khoảng $5.5511\cdot 10^{-16}$. 
 
-##### FFT hai dãy cùng một lúc
+#### FFT hai dãy cùng một lúc
 
 Ta có thể tính $\text{DFT}$ của hai dãy $a$ và $b$ cùng một lúc bằng cách tính $\text{DFT}$ của dãy $c$ với $c_j=a_j+b_j\cdot i$.
 
@@ -479,7 +478,7 @@ vector<int> conv(const vector<int> &a, const vector<int> &b) {
 }
 ```
 
-### 3. Thuật toán NTT
+## 3. Thuật toán NTT
 
 Xét bài toán nhân đa thức nhưng lần này ta muốn các hệ số của đa thức chia lấy dư cho một số nguyên tố $p$. Nếu ta sử dụng thuật toán FFT thông thường có thể gây ra sai số lớn vì hệ số của đa thức kết quả có thể rất lớn. Thuật toán NTT cho phép ta tính toán chỉ dùng số nguyên, từ đó kết quả luôn đảm bảo chính xác.
 
@@ -546,15 +545,15 @@ void fft(vector<int> & a, bool invert) {
 }
 ```
 
-#### Nhân đa thức với modulo bất kì
+### Nhân đa thức với modulo bất kì
 
 Có thể thấy rằng thuật toán NTT chỉ hoạt động với nếu căn đơn vị tồn tại. Với các modulo không thoả mãn ta có hai cách sau:
 
-##### Sử dụng định lý thặng dư Trung Hoa
+#### Sử dụng định lý thặng dư Trung Hoa
 
 Nếu kết quả của phép nhân đa thức có hệ số nhỏ hơn $M_1\cdot M_2$, với $M_1,M_2$ là hai số nguyên tố có dạng $c2^k+1$, ta có thể thực hiện NTT trên hai modulo này và dùng [định lý thặng dư Trung Hoa](https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Bnh_l%C3%BD_s%E1%BB%91_d%C6%B0_Trung_Qu%E1%BB%91c) để khôi phục kết quả.
 
-##### Chia nhỏ đa thức
+#### Chia nhỏ đa thức
 
 Ta cần tính $A(x)\cdot B(x)$ với hệ số modulo $M$, thực hiện tách hai đa thức như sau:
 $$
@@ -605,7 +604,7 @@ vector<int> convMod(const vector<int> &a, const vector<int> &b, int M) {
 }
 ```
 
-### 4. Bài tập tham khảo
+## 4. Bài tập tham khảo
 - [Codeforces - Nikita and Order Statistics](https://codeforces.com/problemset/problem/993/E)
 - [AtCoder - Product Modulo](https://atcoder.jp/contests/agc047/tasks/agc047_c)
 - [CodeChef - Power Sum](https://www.codechef.com/SEPT19A/problems/PSUM)

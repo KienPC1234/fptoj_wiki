@@ -1,4 +1,3 @@
-## Con trỏ trong C/C++
 
 **Tác giả**: [Phạm Văn Hạnh](https://github.com/skyvn97/resume/blob/master/PhamVanHanh.pdf) (*skyvn97, prof.PVH, I_love_tigersugar*)
 
@@ -11,14 +10,14 @@ Bởi thế, bạn có thể yên tâm rằng bài viết dưới đây không k
 
 
 ## 1. Con trỏ là gì?
-### a. Biến "thông thường"
+## a. Biến "thông thường"
 Chúng ta đã quá quen thuộc với các biến (*variables*) trong C++. Một biến có thể mang một giá trị, ví dụ như biến dạng `bool`, `int` hay `double`. Mỗi biến thuộc các kiểu này dùng để lưu một **giá trị** nào đó. Các biến còn có thể là một đối tượng phức tạp hơn, ví dụ như các cấu trúc dữ liệu `vector<int>`, `queue<string>` hay `map<int, string>`. Các biến thuộc loại này có thể chứa một tập hợp nhiều giá trị nào đó. Dù đơn giản hay phức tạp, các biến thuộc một trong các dạng kể trên luôn giúp chúng ta lưu trữ dữ liệu. Tác giả tạm gọi những kiểu biến này là biến "thông thường".
 
 Như vậy, các biến "thông thường" là các biến **có thể lưu trữ dữ liệu**. Chúng có hai tính chất cơ bản sau: 
 - Dữ liệu của các biến này **hoàn toàn độc lập** với nhau: Giá trị của biến `a` không phụ thuộc vào giá trị của biến `b` và **ngược lại**. 
 - Mỗi khi ta khai báo một biến "thông thường" `int x; string s; vector<double> v;...` ta có thêm một biến mới, và biến đó cho ta **thêm không gian lưu trữ dữ liệu**.
 
-### b. Biến tham chiếu (*reference*)
+## b. Biến tham chiếu (*reference*)
 Giờ chúng ta sang tới một loại biến khác, có tên chính thức là *biếu tham chiến* (*reference*). Có thể các bạn đã biết, đã sử dụng nhưng không để ý, hoặc chưa từng sử dụng biến tham chiếu. Đầu tiên, ta hãy cùng chạy thử một đoạn code đơn giản sau:
 
 ```cpp
@@ -76,7 +75,7 @@ Biếu tham chiến này cho ta ý tưởng về một dạng biến đặc bi�
 
 Những thông tin trên cho chúng ta ý tưởng về **con trỏ**.
 
-### c. Con trỏ (*pointer*)
+## c. Con trỏ (*pointer*)
 Con trỏ sử dụng ý tưởng của biến tham chiếu: Biến con trỏ được tạo ra *thường* không để có thêm không gian lưu trữ dữ liệu, mà là để tạo ra "tên khác" hoặc "nhãn mác mới" cho một biến đã có từ trước. Điều này giải thích tên gọi "con trỏ": "trỏ" trong từ "chỉ trỏ" có nghĩa là chỉ vào, hướng vào một cái gì đó. Nhưng khác với biến tham chiếu, một con trỏ ở những thời điểm khác nhau có thể *trỏ vào* (hay "là tên biến khác" hoặc "đại diện cho") các biến khác nhau. Biến con trỏ có thể không trỏ vào cái gì (gọi là con trỏ rỗng - *NULL* mà ta sẽ nghiên cứu ở phần sau) và không cần thiết phải được khởi tạo lúc khai báo.
 
 Tóm lại, sau phần này, bạn cần nắm được sự khác biệt của con trỏ với những loại biến mà các bạn hay sử dụng: Các biến "thông thường" dùng để **lưu trữ thông tin** và **có tính độc lập**. Các biến tham chiếu và con trỏ dùng để "đặt lại tên" hoặc "tạo một tên mới" cho các biến đã có từ trước.
@@ -84,10 +83,10 @@ Tóm lại, sau phần này, bạn cần nắm được sự khác biệt của 
 *Ghi chú: Ý tưởng phân tích ở phần này có thể KHÔNG phải là ý tưởng để người sáng lập ngôn ngữ lập trình C/C++ đưa con trỏ vào ngôn ngữ; nhưng theo quan điểm của tác giả, góc nhìn này giúp các bạn học lập trình ở phổ thông hiểu được khái niệm của con trỏ.*
 
 ## 2. Cách sử dụng con trỏ
-### a. Các cú pháp cơ bản
+## a. Các cú pháp cơ bản
 Phần này chủ yếu giới thiệu cho các bạn các cú pháp cơ bản để sử dụng con trỏ một cách chính xác. Bạn có thể coi những đoạn code dưới đây như là cú pháp, chỉ học thuộc lòng mà không cần quan tâm quá nhiều về ý nghĩa.
 
-#### Khai báo con trỏ
+### Khai báo con trỏ
 Dù con trỏ có thể *trỏ vào* (đại diện cho/là một tên khác của) **nhiều biến khác nhau** trong những thời điểm khác nhau, các đối tượng được trỏ vào phải có **cùng một kiểu dữ liệu**. Kiểu dữ liệu chung này cần được xác định khi khai báo.
 
 Để khai báo một con trỏ *trỏ vào* các biến có kiểu dữ liệu `int`, ta khai báo `int *p` hoặc `int* p` (hai cách này như nhau về mặt cú pháp). Tương tự, nếu bạn muốn con trỏ của bạn trỏ vào các biến có kiểu `string` hoặc `queue<char>`, ta khai báo `string *s` hoặc `queue<char> *q`.
@@ -96,7 +95,7 @@ Tổng quát, nếu `T` là một kiểu dữ liệu nào đó (có thể là ki
 
 Theo kinh nghiệm của mình, *con trỏ trỏ vào một con trỏ* là thứ rất ít khi sử dụng trong lập trình thi đấu. Vì vậy, để đơn giản, trong phần lớn thời lượng còn lại của bài viết, mình chỉ xét trường hợp con trỏ trỏ vào một biến "thông thường".
 
-#### Thay đổi (gán) biến được con trỏ trỏ vào
+### Thay đổi (gán) biến được con trỏ trỏ vào
 Bạn có thể cho một con trỏ trỏ vào một biến "thông thường" hoặc trỏ vào nơi mà *một con trỏ khác đang trỏ tới*. Ví dụ
 
 ```cpp
@@ -124,7 +123,7 @@ pointer_2 = pointer_string // ERROR!!! type mismatches: string* vs int*
 
 Tới đây các bạn sẽ thắc mắc: Dấu `&` xuất hiện trong `&normal` có mối quan hệ biện chứng nào với dấu `&` ở phần biến tham chiếu hay không. Câu trả lời là có, nhưng nó hơi phức tạp với các bạn. Nhắc lại lần nữa, mình khuyên các bạn coi các đoạn code ở phần này là những **cú pháp cố định** và **phải học thuộc lòng** thay vì cố phân tích các quy tắc.
 
-#### Truy cập vào biến được con trỏ trỏ tới
+### Truy cập vào biến được con trỏ trỏ tới
 Như đã nói ở trên, ngoại trừ trường hợp con trỏ trỏ vào một con trỏ, các con trỏ được dùng để "đặt tên khác" cho một biến "thông thường" nào đó. Để truy cập vào một biến được con trỏ `p` trỏ tới, bạn dùng `*p`. Các bạn hãy coi `*p` ở đây **như một biến "thông thường"**, nghĩa là nếu các biến "thông thường" cùng kiểu có thể xuất hiện thế nào, `*p` có thể sử dụng hoàn toàn tương tự như vậy:
 
 ```cpp
@@ -165,7 +164,7 @@ Trong ví dụ trên:
 
 **Chú ý**: Các lệnh gán các biến "thông thường" `normal_1` và `normal_2` ở trên kia làm thay đổi `*pointer`, **nhưng không thay đổi** `pointer`. Các bạn cần **phân biệt rất cẩn thận** hai lệnh `*another_pointer = *pointer` và `another_pointer = pointer`. Lệnh thứ nhất chỉ là phép gán giá trị giữa hai biến "thông thường", trong khi lệnh thứ hai làm thay đổi đối tượng mà `another_pointer` đại diện cho.
 
-#### Con trỏ *NULL* - con trỏ không trỏ vào một đối tượng nào.
+### Con trỏ *NULL* - con trỏ không trỏ vào một đối tượng nào.
 **Chú thích: Nếu bạn dùng C++11 hoặc các phiên bản mới hơn, bạn được khuyến khích sử dụng từ khóa** ***nullptr*** **thay cho từ** ***NULL*** **được nêu ở đây. Tuy việc dùng từ** ***NULL*** **là tương đối an toàn,** ***nullptr*** **vẫn thích hợp hơn trong trường hợp này. Chi tiết các bạn có thể xem tại [đây](https://embeddedartistry.com/blog/2017/03/08/migrating-from-c-to-c-null-vs-nullptr). Phần còn lại vẫn sẽ sử dụng** ***NULL*** **bởi chỉ từ khóa này tương thích với C và các bản C++ trước 11.**
 
 Một con trỏ có thể không trỏ vào một đối tượng nào, khi đó con trỏ mang một giá trị mặc định *NULL*. Khi bạn cố gắng truy cập vào đối tượng của một con trỏ mang gía trị *NULL*, chương trình bạn **bị crash ngay lập tức** (bị *crash* chứ không bị *crush*) và bạn sẽ gặp phải lỗi *run-time error* (hoặc *non-zero exit code*, *segmentation fault*):
@@ -185,7 +184,7 @@ printf("%d\n", p != NULL ? *p : 0); // SAFE :)
 
 ```
 
-#### Lệnh *new* tạo biến "thông thường":
+### Lệnh *new* tạo biến "thông thường":
 Dù một con trỏ thường được dùng để trỏ vào ("tạo tên biến khác") cho một biến đã có trước đó, có những trường hợp chúng ta muốn con trỏ trỏ vào một biến hoàn toàn mới. Khi đó lệnh `new` (từ khóa của C/C++) giúp chúng tạo ra một biến mới:
 
 ```cpp
@@ -207,7 +206,7 @@ cerr << (*vec_pointer).size() << " " << (*vec_pointer)[0] << endl; // 10 1
 
 ```
 
-#### Truy cập các trường của một con trỏ trỏ vào đối tượng.
+### Truy cập các trường của một con trỏ trỏ vào đối tượng.
 Nếu một con trỏ trỏ vào một đối tượng (struct/class) hoặc các biến có kiểu là các kiểu dữ liệu trong STL, ta có thể dùng mũi tên `->` để truy cập vào các trường và hàm của chúng. Về mặt ý nghĩa, `(*p).x` và `p->x` **hoàn toàn giống nhau**, nhưng cách viết sau ngắn gọn và dễ nhìn hơn.
 
 ```cpp
@@ -217,10 +216,10 @@ cerr << p->size() << " " << p->front() << "\n"; // 1 2
 
 ```
 
-### b. Các cú pháp nâng cao
+## b. Các cú pháp nâng cao
 Phần này nói về các kiến thức nâng cao hơn về con trỏ, dù khó hiểu hơn nhưng vẫn nói đến cú pháp là chính. Đây là các tình huống sử dụng con trỏ ít khi gặp trong lập trình thi đấu. Nếu các bạn cảm thấy phần trên khó hiểu với bạn, có thể cân nhắc bỏ qua phần này. Thành thật xin lỗi các bạn :(
 
-#### Lấy con trỏ làm tham số của hàm
+### Lấy con trỏ làm tham số của hàm
 Trước tiên, ta nhắc lại 3 loại tham số đối với các biến "thông thường": *tham trị*, *tham biến* và *hằng tham biến*:
 
 <table>
@@ -322,7 +321,7 @@ int main(void) {
 ```
 Đoạn code này chỉ khác ở đoạn code trên ở chỗ tham số `pointer` của hàm `update` là **tham biến** thay vì **tham trị**.  Gía trị của hai biến `normal_1` và `normal_2` giống hệt đoạn code trên, nhưng `pointer` lúc này trỏ vào `normal_2`. Sở dĩ có điều này là vì trong hàm `update`, `pointer` bị gán lại thành `&normal_2`, và vì `pointer` là tham biến, lệnh gán này giữ nguyên giá trị khi ra khỏi hàm.
 
-#### Tạo mảng động
+### Tạo mảng động
 Các bạn đã biết, trong một số trường hợp bạn không thể khai báo mảng tĩnh vì như vậy kích thước mảng cần thiết sẽ quá lớn, vượt quá giới hạn bộ nhớ cho phép và thực tế không cần thiết tới vậy.
 
 Ví dụ, khi bạn cần nhập vào một bảng hai chiều kích thước $m \cdot n$ với $1 \leq m \cdot n \leq 10^5$, ta biết rằng cả $m$ và $n$ đều có thể lên tới $10^5$. Tuy nhiên, khai báo mảng tĩnh `int a[1e5][1e5]` là không khả thi vì kích thước mảng $10^{10}$ là quá to. 
@@ -409,13 +408,13 @@ int main(void) {
 
 ```
 
-#### Lệnh *delete* để giải phóng bộ nhớ
+### Lệnh *delete* để giải phóng bộ nhớ
 `delete` là lệnh trái ngược với `new`. Nếu như `new` là lệnh dùng để "xin" bộ nhớ máy tính cho một biến mới, thì `delete` dùng để trả lại bộ nhớ biến này. Khi bạn gọi lệnh `new`: `int *p = new int` hay `int *arr = new int[100]`, bạn tiêu tốn một phần tài nguyên của máy tính để lưu các biến `int` được tạo thêm này. Đến lúc bạn không cần chúng nữa, bạn không muốn tiêu tốn tài nguyên, bạn gọi lệnh `delete p` hoặc `delete[] arr`. Khi đó, các biến bạn vừa "xin" thêm sẽ biến mất.
 
 Lệnh `delete` này rất thiết thực trong lập trình thực tế, do bạn không muốn sử dụng tài nguyên khi không cần thiết. Nhưng nhìn chung, bạn không cần `delete` trong lập trình thi đấu, do một khi đã `new` được thì nghĩa là bạn không bị quá giới hạn bộ nhớ cho phép.
 
-### c. Các lỗi thường gặp về con trỏ
-#### Sai cú pháp
+## c. Các lỗi thường gặp về con trỏ
+### Sai cú pháp
 Lỗi này bao gồm việc gõ thiếu hoặc thừa các dấu `*` hoặc các dấu `&`. Trong một phép gán hoặc phép tính, nếu bạn chỉ gõ sai ở một trong hai vế, bạn sẽ có một phép gán **không hợp lệ** và trình biên dịch sẽ **báo lỗi**. Khi đó bạn biết mình mắc lỗi và phải sửa, nhưng việc sửa là không dễ dàng do các thông điệp báo lỗi của C++ trong trường hợp này thường khó hiểu. Lời khuyên khi gặp phải trường hợp này đó là bạn hãy nhìn kỹ lại hai vế xem kiểu dữ liệu ở hai vế có tương ứng nhau hay không:
 - Nếu `a` là một biến "thông thường" kiểu `int`, `&a` là một con trỏ kiểu `int*` và `*a` là một biểu thức vô nghĩa.
 - Nếu `a` là một con trỏ kiểu `int*`, `*a` là một biến "thông thường" kiểu `int` và `&a` là một con trỏ kiểu `int**`.
@@ -427,12 +426,12 @@ Tuy nhiên, có những trường hợp khó phát hiện hơn do lỗi sai **kh
 - `p < q` thay vì `*p < *q`: Lệnh không gây ra lỗi biên dịch hay cảnh báo.
 - `p = q` thay vì `*p = *q` hoặc ngược lại: Lệnh không gây ra lỗi biên dịch hay cảnh báo.
 
-#### Khai báo sai cách
+### Khai báo sai cách
 Để khai báo các biến "thông thường" cùng một kiểu, thay vì bạn khai báo `int a; int b; int c` bạn sẽ gộp lại thành `int a, b, c;`. Với con trỏ, để có 3 con trỏ trỏ vào các biến kiểu `int`, bạn cần khai báo là `int *a, *b, *c` (có dấu `*` trước **mỗi** biến), thay vì `int* a, b, c` hoặc `int *a, b, c`. Nếu bạn chỉ có một dấu `*`, chỉ biến `a` là con trỏ (kiểu `int*`), còn các biến `b` và `c` vẫn là biến "thông thường" kiểu `int`. Tất nhiên, bạn sẽ phát hiện lỗi này dễ dàng do trình biên dịch sẽ báo lỗi. Nhưng trình biên dịch chỉ báo lỗi ở dòng bạn gán/sử dụng con trỏ, còn dòng khai báo là chỗ bạn phải sửa thì trình biên dịch không bao giờ báo lỗi ở đây.
 
 Bởi thế, khi cần khai báo nhiều con trỏ cùng một lúc, bạn phải khai báo là `int *a, *b, *c`. Còn khi chỉ có một con trỏ (lúc khai báo biến hoặc khai báo tham số của hàm), bạn nên viết là `int *a` thay vì `int* a`. Thực lòng thì mình thích cách `int* a` hơn, và khi đi làm ở Google mình nhớ là mọi người cũng viết thế, bởi vì khi xét `int*` là một kiểu dữ liệu thì `int* a` là một cách viết rất trong sáng. Tuy nhiên mình không hiểu sao C++ lại không hiểu `int* a, b, c` là 3 con trỏ, mình thật sự thấy hơi vô lý ở đây.
 
-#### Con trỏ trỏ lung tung
+### Con trỏ trỏ lung tung
 Lỗi này có triệu chứng là việc bạn bị *run-time-error*, do bạn truy cập vào vùng nhớ (biến "thông thường" được trỏ tới) của một con trỏ trỏ vào nơi "lung tung", không xác định.
 
 Đây là lỗi hay gặp nhất, có ba lý do chính dẫn đến lỗi này:
@@ -440,7 +439,7 @@ Lỗi này có triệu chứng là việc bạn bị *run-time-error*, do bạn 
 - Chưa khởi tạo con trỏ trước khi truy cập. Chú ý, các con trỏ nếu được khai báo là **biến cục bộ** (khai báo trong hàm), nó **không tự động khởi tạo là NULL**. Do đó, nếu bạn kiểm tra điều kiện `p == NULL`, nó sai, nhưng khi truy cập vào `*p`, bạn vẫn bị chạy sinh lỗi như khi truy cập vào con trỏ NULL. Lời khuyên đưa ra: Giống như bất kỳ biến cục bộ nào khác, bạn phải khởi tạo trước khi sử dụng.
 - Truy cập sau khi `delete`: Khi bạn xóa vùng nhớ của một con trỏ bằng `delete p` hoặc `delete[] arr`, các vùng nhớ tương ứng với các con trỏ bị xóa, nhưng con trỏ **không được gán lại thành NULL**. Khi đó, nếu bạn vô tình truy cập vào `*p` bạn vẫn bị chạy sinh lỗi, và kiểm tra `p == NULL` không giúp bạn tránh được lỗi này.
 
-#### *sizeof* không hoạt động với con trỏ và mảng động.
+### *sizeof* không hoạt động với con trỏ và mảng động.
 Các bạn đã biết, ta có thể dùng `memset` để khởi tạo một mảng với cú pháp thông thường: `memset(arr, ..., sizeof arr)`. Điều này đúng với mảng tĩnh các bạn hay dùng, nhưng với mảng động được tạo ra bởi thao tác `new`, bạn không thể dùng `sizeof` mà phải tự truyền kích cỡ thực của chúng.
 
 ```cpp
@@ -478,7 +477,7 @@ void do_something_funny(int arr[MAX]) {
 ```
 Dù cách thứ hai trong phần trên là chính xác, mình khuyên các bạn không nên dùng. Tốt nhất là nếu `memset` thì không nên truyền mảng vào hàm
 
-#### Các con trỏ trỏ không đúng thứ cần trỏ.
+### Các con trỏ trỏ không đúng thứ cần trỏ.
 Các bạn thử nghĩ xem hai đoạn code dưới đây khác nhau như thế nào. Sau khi nhận ra được sự khác biệt, bạn sẽ có cách khác phục cho riêng mình.
 ```cpp
 vector<int*> v(10);
@@ -494,7 +493,7 @@ vector<int*> v(10, new int);
 ## 3. Một số ứng dụng của con trỏ trong lập trình thi đấu
 Phần này điểm qua một số cấu trúc dữ liệu và thuật toán mà việc dùng con trỏ cài đặt sẽ hữu ích. Tất nhiên, các bạn có thể "né tránh" con trỏ bằng nhiều cách cài đặt khác; nhưng bạn sẽ phải trả giá bằng một đoạn code rất xấu và lằng nhằng.
 
-### a. Cây tiền tố (*trie*)
+## a. Cây tiền tố (*trie*)
 Ứng dụng phổ biến nhất của con trỏ là để biểu diễn các cấu trúc dữ liệu dạng cây. Ý tưởng chung là ta sẽ viết một `struct Node` để mô tả một nút trên cây. Khi ta vẽ một cây lên giấy, ta thường mô tả các quan hệ cha con bằng cách vẽ một đường có mũi tên nối từ cha xuống con. Nói cách khác, mũi tên này chỉ việc chả "trỏ" vào con. Việc biểu diễn các cấu trúc dữ liệu cây bằng con trỏ dựa trên ý tưởng này: Trong `struct Node`, ta có các trường để lưu các con trỏ `Node*` trỏ vào các con.
 
 Giả sử ta chỉ làm việc trên các xâu ký tự gồm các chữ cái latin in thường. Khi đó, trong `struct Node` cần có một mảng gồm $26$ phần tử có kiểu `Node *`, để lưu lại $26$ con trỏ trỏ đến $26$ con của một nút ứng với $26$ ký tự 'a' - 'z'.
@@ -578,12 +577,12 @@ Một số bài tập dùng trie cho các bạn luyện tập:
 - [Short Code, CF 476 div.2, problem E](https://codeforces.com/contest/965/problem/E). Xem code tại [đây](https://codeforces.com/contest/965/submission/37609430)
 - [Lexicographical Disorder, AtCoder - CODE FESTIVAL 2016 round B, problem E](https://atcoder.jp/contests/code-festival-2016-qualb/tasks/codefestival_2016_qualB_e). Xem code tại [đây](https://ideone.com/46ONEE)
 
-### b. Kỹ thuật gộp set trên cây
-### c. Persistent Segment Tree
+## b. Kỹ thuật gộp set trên cây
+## c. Persistent Segment Tree
 Sử dụng con trỏ để cài đặt Persistent Segment Tree khá phổ biến, do đây là một loại cây nhị phân mà bạn cần cài đặt nhiều "phiên bản" khác nhau. Do việc cài đặt rất phức tạp, mình chỉ cho các bạn xem code chứ không thể phân tích chi tiết được. Khi đọc code của mình, bạn chỉ cần đọc phần `class PersistentSegmentTree`. Các phần còn lại không liên quan trực tiếp đến CTDL, chỉ là để giải bài toán.
 
 Bài tập liên quan:
 - [Persistent Bookcase, CF 368 Div.2, problem D](https://codeforces.com/contest/707/problem/D). Xem code tại [đây](https://codeforces.com/contest/707/submission/19992150)
 - [Lazy Learner, The 2018 ICPC Hanoi Regional Contest, problem L](https://hanoi18.kattis.com/problems/lazylearner).
 
-### d. Balanced Binary Search Tree (Red-black Tree, AVL, Splay Tree...)
+## d. Balanced Binary Search Tree (Red-black Tree, AVL, Splay Tree...)

@@ -1,6 +1,7 @@
+
 ## Test Markdown Syntax
 
-### Bullet
+## Bullet
 
 - Bullet 1
 - Bullet 2
@@ -8,7 +9,7 @@
     - Nested bullet 1
     - Nested bullet 2
 
-### Numbering
+## Numbering
 
 1. Number 1
 2. Number 2

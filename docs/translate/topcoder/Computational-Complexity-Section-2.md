@@ -1,4 +1,3 @@
-## Độ phức tạp tính toán - phần 2
 
 
 
@@ -19,7 +18,7 @@ Trong phần này của bài viết chúng ta sẽ tập trung vào việc ướ
 - Nếu các vòng lặp nối tiếp nhau thì **cộng** các cận đó với nhau
 - Nếu các vòng lặp lồng nhau thì **nhân** các cận với nhau
 
-### Ví dụ 1
+## Ví dụ 1
 
 Ước lượng độ phức tạp của đoạn mã sau:
 ```cpp
@@ -56,7 +55,7 @@ Cách tiếp cận này không phải lúc nào cũng áp dụng được, có n
 
 Lưu ý là ta luôn luôn có thể sinh ra tất cả các chuỗi của 0 và 1, kiểm tra từng chuỗi một (kiểm tra xem chuỗi đó có tương ứng với một nghiệm hợp lệ hay không) và lưu lại nghiệm tốt nhất. Nếu ta có thể tìm một cận trên của kích cỡ nghiệm tốt nhất, số nghiệm phải kiểm tra là hữu hạn. Tuy nhiên cách làm này không đủ nhanh và không nên dùng nó nếu có cách làm khác.
 
-### Ví dụ 2
+## Ví dụ 2
 
 Một thuật toán quay lui đơn giản để sinh ra tất cả các hoán vị của các số tự nhiên từ 0 tới $N-1$
 
@@ -95,7 +94,7 @@ Tuy vậy cách làm này thường là không khả thi do nó phải khảo s�
 
 Từ ví dụ 2 chúng ta có thể nhầm tưởng rằng đệ quy chạy không hiệu quả và làm cho tốc độ thực thi rất chậm. Không phải lúc nào điều này cũng đúng. Ngược lại, đệ quy có thể là một công cụ rất mạnh để thiết kế những thuật toán hiệu quả. Cách thông thường để thiết kệ một giải thuật đệ quy hiệu quả là áp dụng tư tưởng **Chia để Trị** - chia bài toán thành nhiều phần, xử lý các phần nhỏ tách biệt nhau và cuối cùng ghép các kết quả con lại để được kết quả cho bài toán lớn. Dễ thấy rằng, phần "xử lý các phần nhỏ tách biệt nhau" thường được cài đặt bằng đệ quy - tiếp tục chia phần nhỏ thành phần nhỏ hơn cho tới khi đủ nhỏ để giải trực tiếp bằng các thuật toán đơn giản.
 
-### Ví dụ 3
+## Ví dụ 3
 
 Mã giả mô tả thuật toán sắp xếp trộn *MergeSort*
 
@@ -208,7 +207,7 @@ Giả sử ta đánh dấu mỗi đỉnh bằng một nhãn biểu thị độ p
 
 Tương tự như các phần trên, ta chỉ quan tâm tới cận trên tiệm cận. Để tìm giá trị này ta có thể "làm tròn" mỗi nhãn để việc tính tổng dễ dàng hơn. Ta minh họa cách làm trên bằng một vài ví dụ sau:
 
-### Ví dụ 4
+## Ví dụ 4
 
 Cây đệ quy cho thuật toán *MergeSort* ở Ví dụ 3 với 5 phần tử.
 ![/uploads/topcoder_translate_tree1.png](/uploads/topcoder_translate_tree1.png)
@@ -217,7 +216,7 @@ Cây đệ quy cho công thức truy hồi tương ứng của *MergeSort*. Số
 
 ![/uploads/topcoder_translate_tree2.png](/uploads/topcoder_translate_tree2.png)
 
-### Ví dụ 5
+## Ví dụ 5
 
 Cây đệ quy trong trường hợp xấu nhất của phương trình (1):
 
@@ -239,7 +238,7 @@ Ví dụ 5 ở trên cho ta một câu hỏi: việc tổng độ phức tạp �
 
 Trả lời: Không và Có. Không, vì một lý do đơn giản mà ta sẽ xem ở phần sau. Có, vì không phải lúc nào tổng các mức cũng bằng nhau như vậy - hai ví dụ sau đây sẽ minh họa cho điều đó.
 
-### Ví dụ 6
+## Ví dụ 6
 
 Ta thử áp dụng phương pháp Cây Đệ Quy để giải cho phương trình sau:
 $$
@@ -286,7 +285,7 @@ Một nguyên lý tổng quát quan trọng ta có thể rút ra từ ví dụ n
 
 Từ kết quả trên ta có một nhận xét quan trọng về thuật toán đệ quy biểu diễn bằng công thức truy hồi có tính chất trên: lệnh gọi đệ quy giải bài toán con không tốn thời gian thực thi bằng việc chuẩn bị lời gọi và xử lý sau lời gọi đệ quy. (Nói cách khác, nếu ta cần cải tiến thuật toán thì phải tập trung tối hưu hóa hai việc đó).
 
-### Ví dụ 7
+## Ví dụ 7
 Giờ chúng ta cùng thử áp dụng phương pháp Cây Đệ Quy để giải phương trình sau:
 $$
 f(N) = 5f(N/3) + \Theta(N)
@@ -360,7 +359,7 @@ Trường hợp $3$ tương ứng với **Ví dụ 6**. Hầu hết thời gian 
 Lưu ý điều kiện thêm vào ở trường hợp $3$. Để trường hợp $3$ đúng ta cần có điều kiện của hàm $p$ phải thỏa mãn thời gian thực thi hàm $p$ lớn hơn tổng thời gian thực thi ở các đỉnh con cháu. Thật ra đây không phải là một vấn đề cần phải chú tâm quá nhiều bởi trong các kỳ thi các hàm $p$ mà bạn có thể gặp hầu như sẽ thỏa mãn điều kiện trên (nếu rơi vào trườn hợp $3$).
 
 
-### Ví dụ 8
+## Ví dụ 8
 
 Gọi $f(N)$ là thời gian mà thuật toán nhân ma trận **Strassen** cần để nhân hai ma trận vuông kích cỡ $N$ x $N$. Đây là một thuật toán đệ quy, thực hiện $7$ lời gọi hàm đệ quy, mỗi hàm nhân hai ma trận có kích cỡ $N/2$ x $N/2$ và sau đó tổng hợp kết quả trong $\Theta(N^2)$.
 
@@ -373,7 +372,7 @@ $$
 
 Sử dụng định lý Tổng Quát, ta thấy Trường hợp $1$ có thể áp dụng được. Vì vậy độ phức tạp của thuật toán Strassen là $\Theta(N^{log_27}) \approx \Theta({N^{2.807}})$. Lưu ý là thuật toán cổ điển nhân ma trận theo định nghĩa có độ phức tạp $ \Theta(N^3)$.
 
-### Ví dụ 9
+## Ví dụ 9
 Thỉnh thoảng ta có thể gặp trường hợp mà kích cỡ các bài toán con không bằng nhau. Một ví dụ là thuật toán **Trung vị của 5** để tìm phần tử lớn thứ *k* của một mảng số. Thuật toán trên được chứng minh là có độ phức tạp thỏa mãn công thức
 
 $$

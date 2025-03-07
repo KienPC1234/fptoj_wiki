@@ -1,4 +1,3 @@
-## Một vài bài tập về Palindrome
 
 **Tác giả**: Nguyễn Hoành Tiến
 
@@ -53,7 +52,7 @@ end;
 
 Đây cũng là một bài cơ bản với nhiều cách làm.
 
-### Cách 1: QHĐ
+## Cách 1: QHĐ
 
 Dùng mảng `F[i, j]` có ý nghĩa: `F[i, j] = true/false` nếu đoạn gồm các kí tự từ $i$ đến $j$ của $S$ có/không là palindrome.
 
@@ -89,7 +88,7 @@ Kết quả là: $Max(j-i+1) \le j$ thỏa $F[i,j] = True$.
 
 Chú ý: Với $N$ lớn, ta phải thay mảng 2 chiều $F$ bằng 3 mảng 1 chiều và dùng thêm biến max lưu giá trị tối ưu.
 
-### Cách 2: Duyệt có cận
+## Cách 2: Duyệt có cận
 
 Ta xét từng vị trí $i$:
 

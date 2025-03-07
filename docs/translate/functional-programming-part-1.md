@@ -1,4 +1,3 @@
-## Functional Programming - Phần 1
 
 **Nguồn**: [Medium - So you want to be a functional programmer (part 1)](https://medium.com/@cscalfani/so-you-want-to-be-a-functional-programmer-part-1-1f15e387e536#.70yyalovu)
 
@@ -6,7 +5,7 @@
 
 Nếu bạn muốn trở thành một **functional programmer**, bước đầu tiên để hiểu thế nào là **Functional Programming** là bước quan trọng nhất, và đôi khi cũng là bước khó khăn nhất. Nhưng mọi chuyện sẽ dễ dàng hơn nếu bạn có một góc nhìn đúng đắn. Chuỗi bài viết này hi vọng có thể mang lại cho bạn điều đó.
 
-#### Forget everything you know - Học lại từ đầu
+### Forget everything you know - Học lại từ đầu
 
 Học *functional programming* giống như bắt đầu từ con số không. Tất nhiên không hoàn toàn như vậy, sẽ có rất nhiều khái niệm tương tự như những gì bạn đã biết, nhưng bạn phải chuẩn bị sẵn tinh thần để *học lại* mọi thứ.
 
@@ -22,7 +21,7 @@ Trong chuỗi bài viết này, tác giả sẽ trình bày những khái niệm
 
 Bạn không nên vội vàng. Hãy dành thời gian đọc thật kĩ từng khái niệm và đọc hiểu phần mã nguồn. Thậm chí bạn có thể dừng đọc sau mỗi phần để hiểu thật kĩ càng trước khi sang phần mới. Điều quan trọng nhất là bạn phải hiểu (**understand**).
 
-#### Purity (tính thuần khiết)
+### Purity (tính thuần khiết)
 
 Khi một functional programmer nói về **Purity (tính thuần khiết)**, họ đang nói về những **Pure Function** (hàm thuần khiết).
 
@@ -92,7 +91,7 @@ Tới đây, có thể bạn sẽ thắc mắc: "Làm thế quái nào để là
 
 Trong Functional Programming, bạn không chỉ viết các hàm thuần khiết. Functional Programming không thể loại trừ hết các side effects mà chỉ có thể cô lập chúng. Vì chương trình phải tương tác với thế giới bên ngoài, nên một phần nào đó của chương trình phải là không thuần khiết (impure). Mục tiêu của Functional Programming là giảm thiểu tối đa lượng mã nguồn không thuần khiết và tách biệt chúng ra khỏi phần còn lại của chương trình.
 
-#### Immutability (tính bất biến)
+### Immutability (tính bất biến)
 ![translate_fp_immutability](https://cdn-images-1.medium.com/max/1600/1*wKAhKZPXmcSwnq2AcLN-9Q.jpeg)
 
 Bạn có nhớ khi lần đầu nhìn thấy những dòng code như thế này:

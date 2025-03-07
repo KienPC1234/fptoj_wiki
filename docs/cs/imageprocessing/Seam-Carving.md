@@ -1,8 +1,7 @@
-## Seam Carving Algorithm
 
 Bài viết gốc: [Seam Carving Algorithm - K. Lykov Blog](http://kirilllykov.github.io/blog/2013/06/06/seam-carving-algorithm/)
 
-### Giới thiệu
+## Giới thiệu
 
 **Seam carving** là một thuật toán dùng để thay đổi kích thước hình ảnh, nó được giới thiệu trong bài báo cáo khoa học của [S. Avidan & A. Shamir](http://www.win.tue.nl/~wstahw/edu/2IV05/seamcarving.pdf). Trong bài báo, việc thay đổi kích thước ảnh được thực hiện bằng cách loại bỏ đi các điểm ảnh ít quan trọng và giữ lại các điểm ảnh quan trọng. Bức ảnh dưới đây là minh họa điều này (ảnh bên trên là ảnh gốc với kích thước 332x480 và ảnh bên dưới là ảnh sau khi áp dụng thuật toán seam carving đẻ thu nhỏ còn lại kích thước là 272x400).
 
@@ -12,7 +11,7 @@ Bài viết gốc: [Seam Carving Algorithm - K. Lykov Blog](http://kirilllykov.g
 
 Thuật toán này khá phổ biến nên có thể dễ dàng tìm thấy rất nhiều bài viết nói về nó. Tuy nhiên hầu hết đa số các tác giả đã không đọc bài báo cáo ban đầu và chỉ cung cấp cách cài đặt thuật toán khá cơ bản. Trong bài viết này tôi sẽ mô tả thuật toán đầy đủ các chi tiết như trong bài viết của Avidan & Shamir, dưới góc nhìn của một lập trình viên. Ở đây ta sẽ sử dụng matlab để cài đặt thuật toán. Phần chứng minh cụ thể các bạn xem ở phần tham khảo.
 
-### Năng lượng (Energy)
+## Năng lượng (Energy)
 
 Để đơn giản, bài viết này chỉ tập trung nói về việc làm giảm kích thước hình ảnh. Tuy nhiên việc làm tăng kích thước hình ảnh cũng có thể làm tương tự, và sẽ được mô tả sơ qua ở phần sau. Ý tưởng chính của thuật toán là việc loại bỏ các nội dung có ít ý nghĩa đối với người sử dụng (chứa ít thông tin). Ta gọi thông tin này là **Năng lượng** (Energy). Vì vậy ta cần định nghĩa hàm năng lượng để tính năng lượng điểm ảnh từ các điểm ảnh của ảnh gốc. Ví dụ, ở đây ta có thể tính năng lượng của ảnh thông qua đạo hàm của từng điểm ảnh theo các hướng:
 
@@ -47,7 +46,7 @@ Năng lượng thu được:
 ![](http://kirilllykov.github.io/images/seamcarving/sea-thai-energy.jpg)
 
 
-### Seam
+## Seam
 
 Nếu chúng ta xóa đi các điểm ảnh có nặng lượng thấp nhất ở các vị trí ngẫu nhiên, ta sẽ ra một hình ảnh méo mó. Nếu chúng ta xóa theo cột hoặc hàng với năng lượng tối thiểu, ta sẽ nhận được một bức ảnh hoàn chỉnh được thu nhỏ kích thước lại. Ở đây cột j nghĩa là tập hợp *{(i, j) với j cố định}* và một hàng i nghĩa là tập hợp *{(i, j) với i cố định}*.
 
@@ -107,7 +106,7 @@ function [optSeamMask, seamEnergy] = findOptSeam(energy)
 end
 ```
 
-### Tìm phương án tối ưu để xóa đường seam
+## Tìm phương án tối ưu để xóa đường seam
 
 Bây giờ ta có thể tính toán ra được đường seam và sử dụng đoạn code dưới đây, ta có thể loại bỏ đường seam ra khỏi bức ảnh.
 
@@ -259,7 +258,7 @@ function [T, transBitMask] = findTransportMatrix(sizeReduction, image)
 end
 ```
 
-### Phóng to hình ảnh
+## Phóng to hình ảnh
 
 Để phóng to hình ảnh, thay vì ta loại bỏ đường seam ra khỏi ảnh, thì ta thêm một đường seam mới vào với giá trị trung bình của các điểm ảnh lận cận.
 
@@ -296,7 +295,7 @@ end
 ```
 
 
-### Source code
+## Source code
 
 Dưới đây là toàn bộ code của tác giả (giữ nguyên lại comment gốc bằng tiếng Anh)
 
@@ -547,7 +546,7 @@ function res = energyGrey(I)
 end
 ```
 
-### Tham khảo
+## Tham khảo
 
 [Wikipedia](https://en.wikipedia.org/wiki/Seam_carving)
 

@@ -1,10 +1,9 @@
-## Aho Corasick
 
 
 
 **Nguồn**: [emaxx](https://cp-algorithms.com/string/aho_corasick.html#toc-tgt-3)
 
-### Lưu ý
+## Lưu ý
 
 Trước khi đọc bài viết này bạn cần nắm được các kiến thức sau:
 
@@ -12,7 +11,7 @@ Trước khi đọc bài viết này bạn cần nắm được các kiến th�
 - [KMP](translate/wcipeg/kmp)
 - [Trie](algo/data-structures/trie)
 
-### Giới thiệu
+## Giới thiệu
 
 Như các bạn đã biết:
 

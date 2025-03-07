@@ -1,4 +1,3 @@
-## Tự code, tự chấm, tự sướng - Bí kíp thi offline
 
 **Tác giả**: Vũ *chipchip* Phúc Hoàng
 
@@ -30,21 +29,21 @@ Lời khuyên của tác giả là: Hãy viết trình chấm bất cứ lúc n�
 
 Một bộ trình chấm gồm có 4 thành phần: Lời giải 1, lời giải 2, trình sinh test, trình so test.
 
-### Lời giải 1:
+## Lời giải 1:
 
 Thường là code chuẩn của bạn. Dù viết trình chấm hay không thì phần này bắt buộc phải có nên cũng không cần phải nói nhiều. Trong bài viết này, ta sẽ giả sử input của trình lời giải 1 là `*.inp`, output là `*.out`.
 
-### Lời giải 2:
+## Lời giải 2:
 
 Thường là code trâu, hoặc là một cách giải khác, miễn là ra đúng đáp số. Hãy chọn cách dễ code nhất, dễ đúng nhất có thể, vì thời gian chạy thực ra không quan trọng lắm khi bạn chỉ cần sinh test nhỏ để kiểm tra. Trong bài viết này, ta sẽ giả sử input của trình lời giải 2 là `*.inp`, output là `*.ans`.
 
-### Trình sinh test:
+## Trình sinh test:
 
 Chương trình này có nhiệm vụ sinh input ngẫu nhiên vào file `*.inp`. Để cho hàm ngẫu nhiên được thay đổi khi chương trình khởi động, sử dụng lệnh `randomize` trong Pascal và `srand(time(NULL))` trong C++.
 
 **Lưu ý:** Lệnh `srand(time(NULL))` trong C++ tính random theo giây, tức là sau 1 giây nó mới thay đổi random seed. Vì vậy nhiều khả năng các test random sinh ra liên tục sẽ bị giống nhau. Để khắc phục điều này, ta có thể lồng trình sinh test vào trình so test chứ không tách ra cho chạy riêng nữa. Với Pascal thì không phải lo về điều này, vì `randomize` thay đổi random seed theo mili giây.
 
-### Trình so test:
+## Trình so test:
 
 Chương trình này có nhiệm vụ duyệt N lần, với N là số test cần so, mỗi lần thì chạy trình sinh test trước, xong đến lần lượt lời giải 1 và lời giải 2. Sau khi chạy xong, ta có được file `*.out` và `*.ans` tương ứng là kết quả của hai chương trình lời giải, và việc còn lại là so sánh 2 file này với nhau. Nếu kết quả trùng nhau (hoặc thỏa mãn điều kiện đề bài với những bài có nhiều đáp số), ta coi như test đó đúng và chuyển đến test sau. Nếu khác nhau, ta in ra sai và dừng chương trình lại luôn, và ta có 3 file `*.inp`, `*.out`, `*.ans` là dữ liệu của test sai.
 
@@ -54,19 +53,19 @@ Chương trình này có nhiệm vụ duyệt N lần, với N là số test c�
 
 Đây là một bài cấu trúc dữ liệu rất khó, thuộc đề thi VNOI Marathon 2015. Bài viết xin được lấy code của tanphatls987 được 90 điểm làm ví dụ.
 
-### Lời giải 1:
+## Lời giải 1:
 
 [Link code](http://ideone.com/jd2XXQ/)
 
 Đây là code của tanphatls987, được thêm 2 dòng `freopen` vào để mở file. Code gốc không có 2 dòng này vì nộp trên SPOJ sử dụng Standard Input / Output.
 
-### Lời giải 2:
+## Lời giải 2:
 
 [Link code](http://ideone.com/4cIx5a/)
 
 Đây là code trâu với độ phức tạp O(N * M), làm y như những gì đề bài bảo.
 
-### Trình sinh test + Trình so test:
+## Trình sinh test + Trình so test:
 
 [Link code](http://ideone.com/PGDQEN/)
 
@@ -105,7 +104,7 @@ Qua ví dụ trên, bạn có thể cảm thấy khá ngại khi code trình so 
 
 Tác giả xin được chia sẻ với các bạn các template trình chấm do chính mình sử dụng.
 
-### Template dành cho C++:
+## Template dành cho C++:
 
 ```cpp
 ## include <bits/stdc++.h>
@@ -147,7 +146,7 @@ int main()
 }
 ```
 
-### Template dành cho Pascal:
+## Template dành cho Pascal:
 
 ```pascal
 {$mode objfpc}
@@ -179,7 +178,7 @@ begin
 end.
 ```
 
-### Template dùng Shell script
+## Template dùng Shell script
 
 Giả sử bạn có 2 code khác nhau, đã dịch ra 2 file executable là `prog1` và `prog2`. Bạn viết thêm 1 trình sinh test và dịch ra file `gen`, `gen` nhận 1 argument là randomized seed (VD với C++ bạn dùng `srand(atoi(argv[1]))`):
 

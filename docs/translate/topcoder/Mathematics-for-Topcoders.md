@@ -1,8 +1,7 @@
-## Toán học trong Tin học
 
 Bài viết gốc: [Mathematics for Topcoders - đăng bởi dimkadimon trên Topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/mathematics-for-topcoders/)
 
-### Giới thiệu:
+## Giới thiệu:
 
 Nhiều người thi Topcoder phàn nàn khi trong đề có quá nhiều Toán – điểm yếu của họ. Cá nhân tôi là một người rất yêu Toán, vì vậy có lẽ tôi sẽ có chút thiên vị trong vấn đề này. Nhưng tôi hoàn toàn tin tưởng rằng, các bài tập nên có ít nhất một chút Toán học và Khoa học máy tính phải đi liền với Toán học. Thật khó có thể tưởng tượng khi mà cả hai lĩnh vực này cũng tồn tại mà không hề có bất kỳ sự tương tác nào lẫn nhau. Ngày nay, Toán học được áp dụng rất nhiều trong Tin học để  giải những hệ phương trình hàng nghìn ẩn hay tìm nghiệm xấp xỉ đối với những phương trình mà không có công thức nghiệm tổng quát. Toán học còn được sử dụng rộng rãi trong việc nghiên cứu về Khoa học máy tính, cũng như là áp dụng cho các thuật toán về đồ thị (**graph algorithms**) và lĩnh vực thị giác máy tính (**Computer Vision**).
 
@@ -15,7 +14,7 @@ Bài viết này sẽ phân tích về lý thuyết và ứng dụng của một
 5. Phân số và số phức.
 
 
-### Số nguyên tố:
+## Số nguyên tố:
 
 Một số tự nhiên là số nguyên tố  khi và chỉ khi nó chỉ chia hết cho 1 và chính nó. Ví dụ như 2, 3, 5, 79, 311 và 1931 đều là số nguyên tố, trong khi 21 thì không phải, bởi nó chia hết cho 3 và 7. Để xác định xem một số tự nhiên $n$ có phải là số nguyên tố hay không, ta chỉ cần đơn giản kiểm tra xem nó có chia hết cho bất kỳ số nào nhỏ hơn nó và lớn 1 hay không. Chúng ta có thể sử dụng phép chia có dư (toán tử %) để kiểm tra khả năng chia hết của nó: 
 
@@ -145,7 +144,7 @@ Và giờ thì tất cả những số còn sót lại chính là các số nguy
 Ở đoạn mã trên, ta sẽ tạo một mảng prime, nơi sẽ chứa các giá trị nguyên trong khoảng $[0, n]$. `Prime[i]` là true nếu $i$ là số nguyên tố và ngược lại. Vòng lặp bên ngoài sẽ tìm kiếm số nguyên tố tiếp theo, trong khi vòng lặp bên trong sẽ loại bỏ đi tất cả những bội nhỏ hơn bằng $n$ của số nguyên tố đó.
 
 
-### Ước chung lớn nhất
+## Ước chung lớn nhất
 
 **Ước chung lớn nhất** (Greatest Common Divisor) của hai số  tự nhiên $a$ và $b$ là số lớn nhất mà cả $a$ và $b$ đều chia hết. Để tìm được $GCD(a, b)$, một cách đơn giản, ta có thể lấy số nhỏ hơn trong hai số $a$ và $b$ rồi giảm dần cho đến khi nào có được một số mà cả $a$ và $b$ đều cùng chia hết cho số đó.
 
@@ -237,7 +236,7 @@ Một chú ý cuối cùng đó là việc thuật toán Euclid còn có thể d
 Xem thêm: [Thuật toán Euclid mở rộng](http://vnoi.info/library/82/419/)
 
 
-### Hình học
+## Hình học
 
 Đôi khi, bài toán yêu cầu ta tìm phần giao của các hình chữ nhật với các cạnh song song trục tọa độ. Có rất nhiều cách để biểu diễn một hình chữ nhật. Đối với hệ trục tọa độ Cartesian, thì cách biểu diễn phổ biến nhất chính là lưu giữ giá trị tọa độ của góc trái - dưới và góc phải - trên của hình chữ nhật.
 
@@ -285,7 +284,7 @@ Ta có thể sử dụng quy nạp để chứng minh nó như sau: Ta sẽ bắ
 
 Vậy với $V = n+1$, ta cũng vẫn thu được kết quả là $V - E + F = 2$. Vậy là với phương pháp quy nạp toán học, ta đã chứng minh được định lý Euler.
 
-### Hệ cơ số:
+## Hệ cơ số:
 
 Một trong những bài toán mà người thi Topcoder đối mặt nhiều nhất đó chính là việc chuyển đổi số từ hệ cơ số nhị phân sang hệ cơ số thập phân và ngược lại (cùng với nhiều hệ cơ số khác).
 
@@ -430,7 +429,7 @@ Trong Java, ta có thể sử dụng những cách tắt sau để chuẩn từ 
     Integer.toHexString(n);
 ```
 
-### Phân số và số phức
+## Phân số và số phức
 
 Phân số thường được gặp rất nhiều trong các bài tập. Thường thì vấn đề khó khăn nhất mà ta cần phải đối mặt đó chính là việc biểu diễn các phân số đó. Mặc dù nó hoàn toàn khả thi trong việc tạo ra một lớp (class) khác để lưu trữ một cách đầy đủ các thông tin về phần số, nhưng trong nhiều trường hợp thì cách thường dùng nhất là sử dụng mảng lưu 2 giá trị bằng cách ghép cặp (pair). Ý tưởng là ta sẽ lưu số đầu tiên là tử số, số thứ hai là mẫu số. Ta sẽ bắt đầu bằng việc nhân hai phân số a và b:
 
@@ -564,6 +563,6 @@ Bằng việc lưu trữ phần số thực ở phần tử thứ nhất và ph�
     end;
 ```
 
-###  Tổng kết:
+##  Tổng kết:
 
 Tổng kết lại, tôi chỉ muốn nói rằng bạn không thể đạt rating cao ở Topcoder mà không nắm rõ Toán học và những thuật toán nêu trên. Thường thì một trong những chủ đề Toán học thường gặp nhất trong các bài tập đó là số nguyên tố. Tiếp đó là những bài về hệ cơ số, mà nguyên nhân chủ yếu là vì máy tính hoạt động dựa trên hệ nhị phân, nên ta cần phải biết cách chuyển từ hệ nhị phân về hệ thập phân. Còn công thức tính ước chung lớn nhất (GCD) và bội chung nhỏ nhất (LCM) thì được dùng nhiều trong cả những bài tập "thuần toán" và cả hình học. Cuối cùng, tôi viết chủ đề Phân số và số phức là việc nó không chỉ cần thiết cho việc thi Topcoder, mà bởi nó còn vô cùng quan trọng khi làm việc với những con số.

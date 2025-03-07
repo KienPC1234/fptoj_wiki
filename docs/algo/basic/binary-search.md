@@ -1,4 +1,3 @@
-## Thuật toán tìm kiếm nhị phân
 
 **Nguồn**: [Topcoder](https://www.topcoder.com/thrive/articles/Binary%20Search)
 
@@ -9,12 +8,12 @@
 
 Tìm kiếm nhị phân (hay còn gọi là chặt nhị phân) là một trong số các thuật toán cơ bản của khoa học máy tính. Trong bài viết này, chúng ta sẽ xây dựng một nền tảng lý thuyết, sau đó đưa ra cách cài đặt thuật toán này một cách chuẩn xác.
 
-### Bài toán mở đầu: Tìm giá trị cho trước trong một dãy đã sắp xếp
+## Bài toán mở đầu: Tìm giá trị cho trước trong một dãy đã sắp xếp
 
 Mở đầu, ta sẽ đến với bài toán sử dụng tìm kiếm nhị phân đơn giản nhất. Đề bài như sau:
 > Cho trước một dãy $A$ *được sắp tăng dần*, trả về vị trí của phần tử có giá trị $x$ trong $A$. Lưu ý: để đơn giản, ta giả sử các phần tử trong mảng $A$ có giá trị phân biệt.
 
-#### Ví dụ
+### Ví dụ
 Đầu tiên, ta sẽ xét một ví dụ để thấy được tư tưởng của thuật toán.
 Cho $A = [0, 5, 13, 19, 2, 41, 55, 68, 72, 81, 98]$ và $x = 55$, thuật toán sẽ diễn ra như hình dưới:
 ![/uploads/binary_search_first_example.png](/uploads/binary_search_first_example.png)
@@ -25,7 +24,7 @@ Tương tự, ở lượt tìm thứ hai, ta xét phần tử trung vị của k
 
 Ở lượt tìm cuối cùng, ta cũng xét phần tử trung vị của không gian tìm kiếm hiện tại ở vị trí $7$ (ở đây số lượng phần tử của không gian tìm kiếm là chẵn, do đó có hai phần tử trung vị, ta có thể chọn một trong hai đều được, ở ví dụ này ta chọn phần tử trung vị đầu tiên), Nhận thấy $A[7] = 55 = x$, ta kết luận $5$ chính là vị trí của phần tử cần tìm và dừng thuật toán.
 
-#### Tổng quát hóa bài toán
+### Tổng quát hóa bài toán
 
 Từ ví dụ trên, ta có thể dễ dàng hiểu được ý tưởng của thuật toán tìm kiếm nhị phân. Đúng như tên gọi, thuật toán sẽ liên tục chia không gian tìm kiếm thành hai nửa và loại một nửa đi. Thuật toán có thể trình bày như sau: 
 1. Ta duy trì một không gian tìm kiếm $S$ là một dãy con các giá trị có thể là kết quả (ở đây là chỉ số các phần tử trong $A$). Ban đầu, không gian tìm kiếm là toàn bộ các chỉ số của mảng $S=\{1,\ldots,n\}$ với $n$ là chỉ số phần tử cuối cùng của $A$. 
@@ -54,18 +53,18 @@ int binary_search(int A[], int sizeA, int target) {
     return -1;
 }    	
 ```
-#### Độ phức tạp thuật toán
+### Độ phức tạp thuật toán
 Ở mỗi bước, kích thước không gian tìm kiếm bị giảm đi một nửa. Ta dễ thấy rằng độ phức tạp của thuật toán là $O(\log(N))$ với $N$ là số phần tử ban đầu của không gian tìm kiếm.
 
 Hàm $\log$ là một hàm tăng rất chậm. Ví dụ như nếu phải tìm kiếm giá trị trong 1 triệu phần tử, với tìm kiếm nhị phân chỉ cần tối đa là 21 bước.
  
-#### Tìm kiếm nhị phân trong thư viện chuẩn STL
+### Tìm kiếm nhị phân trong thư viện chuẩn STL
 C++ Standard Template Library đã cài đặt sẵn tìm kiếm nhị phân bằng các hàm [lower_bound](https://www.cplusplus.com/reference/algorithm/lower_bound/), [upper_bound](https://www.cplusplus.com/reference/algorithm/upper_bound/), [binary_search](https://www.cplusplus.com/reference/algorithm/binary_search/), [equal_range](https://www.cplusplus.com/reference/algorithm/equal_range/), bạn đọc có thể tham khảo tùy thuộc vào mục đích sử dụng.
 
-### Tìm kiếm nhị phân tổng quát
+## Tìm kiếm nhị phân tổng quát
 Ở phần trước, ta đã xét dạng đơn giản nhất của tìm kiếm nhị phân. Trong phần này, chúng ta sẽ tổng quát hóa thuật tìm kiếm nhị phân cho một lớp bài toán rộng hơn. Ta sẽ thấy tìm kiếm nhị phân có thể mở rộng để áp dụng cho **bất kỳ loại [hàm số đơn điệu](https://vi.wikipedia.org/wiki/H%C3%A0m_s%E1%BB%91_%C4%91%C6%A1n_%C4%91i%E1%BB%87u) nào nhận tham số đầu vào là số nguyên**. Nói một cách đơn giản, một hàm số đơn điệu là *một hàm tăng hoặc một hàm giảm*. Trong ví dụ đầu bài, hiển nhiên mảng sắp xếp tăng có thể xem như một "hàm tăng".
 
-#### Cơ sở lý thuyết: Định lý chính của tìm kiếm nhị phân
+### Cơ sở lý thuyết: Định lý chính của tìm kiếm nhị phân
 
 Khi gặp một bài toán mà ta đoán được có thể dùng tìm kiếm nhị phân để giải, thì ta phải chứng minh tính đúng đắn suy luận của chúng ta. Do đó, xây dựng một cơ sở lý thuyết vững chắc là vô cùng cần thiết. Sau đây, tôi sẽ trình bày một lớp tổng quát hóa nữa cho các bài toán có thể áp dụng tìm kiếm nhị phân, song song đó là ví dụ thực tế với bài toán mở đầu.
  
@@ -106,7 +105,7 @@ Cuối cùng, tại sao ta phải tốn công tổng quát hóa thuật toán n�
 
 Ví dụ điển hình cho việc áp dụng định lý là với bài toán *Tìm căn bậc hai*, thay vì hỏi *"Số $x$ nào bình phương lên thì bằng $a$?"* và tìm kiếm tuần tự tất cả các trường hợp, ta có thể định nghĩa hàm $P(x)$ trả lời cho câu hỏi *"$x^2$ có lớn hơn hoặc bằng $a$ hay không?"* sau đó dùng tìm kiếm nhị phân để tìm $x$ nhỏ nhất thỏa mãn. Với cách làm này ta có thể đơn giản hóa bài toán thành một bài toán yes/no, hơn thế còn giảm độ phức tạp của bài toán từ $O(n)$ xuống chỉ còn $O(\log(n))$.
 
-#### Cài đặt thuật toán tổng quát
+### Cài đặt thuật toán tổng quát
 
 Trước khi cài đặt thuật toán, ta phải trả lời những câu hỏi sau:
 1. Dãy $P(S)$ của bạn có dạng $\texttt{false}-\texttt{true}$ ($\texttt{false}$ liên tiếp rồi $\texttt{true}$ liên tiếp) hay $\texttt{true}-\texttt{false}$ (ngược lại)? Ở cài đặt phía dưới sẽ **mặc định dãy $P(S)$ có dạng $\texttt{false}-\texttt{true}$**, vì vậy nếu dãy $P(S)$ của bạn có dạng $\texttt{true}-\texttt{false}$, hãy đảo hàm $P(x)$ của bạn ngược lại.
@@ -177,7 +176,7 @@ Nếu ta tính $mid = lo + (hi-lo)/2$, đoạn code sẽ lặp vô hạn. Nó s�
 
 Một điều có thể bạn đang thắc mắc nữa là tại sao để tìm trung vị ta tính $mid = lo + (hi-lo)/2$ chứ không phải $mid = (hi+lo)/2$. Sở dĩ phải làm như vậy là để tránh khả năng xảy ra lỗi làm tròn số nguyên, ta muốn phép chia được làm tròn xuống, về gần với cận dưới, tuy nhiên phép chia làm tròn khác khi có số âm, nên nếu $(lo+hi)$ là số âm thì kết quả sẽ bị làm tròn lên. Code như trong mẫu kia giúp quá trình tính toán đều được làm tròn đúng theo logic. Đối với các bài toán mà chỉ cần xử lý giá trị dương thì lỗi này không xảy ra.
 
-#### Cài đặt thuật toán với nửa khoảng
+### Cài đặt thuật toán với nửa khoảng
 Cài đặt với đoạn đóng $[lo, hi]$ như trên có ưu điểm là dễ hiểu. Tuy nhiên, quay lại một chút với cơ sở lý thuyết: với dãy $P(S)$ có dạng $\texttt{false}-\texttt{true}$, thực tế ta nên chọn giá trị $lo$ và $hi$ mà $P(lo) = \texttt{false}$ và $P(hi) = \texttt{true}$ để đảm bảo luôn tìm được nghiệm. Do đó sẽ không ổn nếu như dãy $P(S)$ của ta đều toàn giá trị $\texttt{false}$ (tức vô nghiệm). Trong trường hợp này, cài đặt với đoạn đóng có thêm đoạn kiểm tra để `return - 1`.
 
 Giải pháp cho trường hợp này chính là **cài đặt với nửa khoảng**. Để ý rằng trong trường hợp vô nghiệm, cách cài đặt với khoảng đóng sẽ *trả về cận trên $hi$ của đoạn tìm kiếm ban đầu* (do chỉ có cận dưới $lo$ liên tục dịch chuyển lên và chạm tới $hi$). Hơn nữa, *thuật toán của ta không bao giờ gọi $P(hi)$* vì để có $mid = hi$, ta đã phải có $lo = hi$, nhưng lúc đó thuật toán chắc chắn đã dừng do điều kiện `while (lo < hi)` trong cài đặt.
@@ -209,7 +208,7 @@ Cách cài đặt này còn có một ưu điểm khác, đó là trong C++ và 
 
 **Lưu ý**: Với trường hợp ta muốn tìm vị trí phần tử $\texttt{false}$ cuối cùng thì nửa khoảng cần tìm sẽ là `(lo, hi]` và hàm sẽ tự động trả về `lo` nếu mọi giá trị trong khoảng là $\texttt{true}$.
 
-### Ví dụ
+## Ví dụ
 Đến đây ta sẽ áp dụng những điều vừa học vào một bài cụ thể [Leetcode 1011](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/).
  
 Trong bài này, một băng chuyền phải vận chuyển các gói hàng theo thứ tự cho trước trong $days$ ngày. Gói hàng thứ $i$ có trọng lượng $weights[i]$. Biết mỗi ngày băng chuyền chỉ có thể vận chuyển tổng khối lượng tối đa là $MAX$. Đề bài yêu cầu tìm $MAX$ nhỏ nhất để băng chuyền có thể hoàn thành nhiệm vụ được giao.
@@ -262,7 +261,7 @@ Có một lưu ý về việc chọn cận dưới và cận trên. Cận trên 
 
 Độ phức tạp thuật toán là $O(n \cdot \log(SIZE))$ với $SIZE = hi -lo + 1$ là kích thước của không gian tìm kiếm và $n$ là số lượng gói hàng, do đó thuật toán chạy rất nhanh.
 
-### Tìm kiếm nhị phân trên số thực
+## Tìm kiếm nhị phân trên số thực
 
 Tìm kiếm nhị phân cũng có thể được áp dụng khi không gian tìm kiếm là một đoạn số thực. Thường thì việc xử lý sẽ đơn giản hơn với số nguyên do ta không phải bận tâm về việc dịch chuyển cận:
 ```cpp
@@ -295,13 +294,13 @@ Ta thường không tìm được giá trị mục tiêu một cách chính xác
 2. **Sai số tuyệt đối (absolute error)**: dừng khi $hi - lo \leq \epsilon$ ($\epsilon$ thường rất nhỏ, khoảng $10^{-8}$). Cách này được sử dụng nếu thời gian chặt và bạn phải tiết kiệm số lần lặp. 
 
 
-### Một số bài toán về tìm kiếm nhị phân
+## Một số bài toán về tìm kiếm nhị phân
 
-#### Đơn giản
+### Đơn giản
 - [Power](https://oj.vnoi.info/problem/power)
 - [Sushi for Two](https://codeforces.com/problemset/problem/1138/A)
 
-#### Nâng cao
+### Nâng cao
 - [ACOW - USACO21 Open Silver](https://oj.vnoi.info/problem/usaco21os_acow)
 - [Wooden Sticks](https://oj.vnoi.info/problem/mstick)
 - [c11cave](https://oj.vnoi.info/problem/c11cave)

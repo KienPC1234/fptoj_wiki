@@ -1,4 +1,3 @@
-## Một số kĩ thuật tối ưu hoá thuật toán Quy Hoạch Động
 
 Tác giả: **Lê Anh Đức** - A2K42-PBC
 
@@ -10,10 +9,10 @@ Quy hoạch động (QHĐ) là một lớp thuật toán rất quan trọng và 
 
 Nhiều khi trong trạng thái QHĐ có một thành phần nào đấy với khoảng giá trị quá lớn, trong khi kết quả của hàm lại có khoảng giá trị nhỏ. Trong một vài trường hợp, ta có thể đảo nhãn để giảm số trạng thái.
 
-### Bài tập ví dụ
-#### Longest Common Subsequence (LCS)
+## Bài tập ví dụ
+### Longest Common Subsequence (LCS)
 
-##### Đề bài
+#### Đề bài
 Cho xâu A độ dài m, xâu B độ dài n. Hãy tìm độ dài xâu con chung dài nhất của hai xâu, chú ý là xâu con chung có thể không liên tiếp.
 
 **Giới hạn**
@@ -32,7 +31,7 @@ LCS = ABC
 Kết quả = 3
 ```
 
-##### Lời giải
+#### Lời giải
 
 **Thuật toán đơn giản**
 
@@ -116,11 +115,11 @@ int main() {
 }
 ```
 
-#### Computer (VNOI Marathon 2010)
+### Computer (VNOI Marathon 2010)
 
 Problem Link: [COMPUTER - VNOJ](https://oj.vnoi.info/problem/computer/).
 
-##### Đề bài
+#### Đề bài
 
 Công ty phần mềm XYZ mới mua x máy tính để bàn và y máy tính xách tay. Giá một máy tính để bàn là a đồng còn giá một máy tính xách tay là b đồng. Để tránh sự thắc mắc giữa các phòng bàn, Tổng giám đốc đã đưa ra cách phân bố các máy tính này về n phòng ban như sau:
 
@@ -154,7 +153,7 @@ Output
 1300
 ```
 
-##### Lời giải
+#### Lời giải
 
 Trước hết ta sẽ chặt nhị phân kết quả bài toán. Với mỗi giá trị chặt nhị phân, ta cần kiểm tra xem có tồn tại phương án thỏa mãn hay không.
 
@@ -240,7 +239,7 @@ int main() {
 
 ```
 
-### Bài luyện tập
+## Bài luyện tập
 
 - [VNOJ - BINPACK](https://oj.vnoi.info/problem/binpack/)
 
@@ -249,10 +248,10 @@ int main() {
 
 Đây là kỹ thuật khá hiếm gặp, tuy nhiên lại cực kỳ mạnh.
 
-### Bài tập ví dụ
-#### Hai nhà máy [CEOI 2004](http://www.oi.edu.pl/old/ceoi2004/)
+## Bài tập ví dụ
+### Hai nhà máy [CEOI 2004](http://www.oi.edu.pl/old/ceoi2004/)
 
-##### Đề bài
+#### Đề bài
 
 Có $n$ cây cổ thụ được trồng trên một con đường từ đỉnh đổi đến chân đồi. Chính phủ địa phương quyết định cắt bỏ chúng. Để tránh hoang phí, mỗi cái cây cần được chuyển đến một nhà máy cưa.
 	
@@ -304,7 +303,7 @@ Hình vẽ trên minh họa cho test ví dụ. Các hình tròn được tô đe
 
 $1 * (2+1) + 2 * 1 + 1 * (1 + 2) + 3 * 2 + 2 * (1 + 2 + 1) + 1 * (2 + 1) + 1 * 1 = 26$.
 
-##### Lời giải
+#### Lời giải
 
 Trước hết ta sẽ giải quyết vấn đề tính chi phí vận chuyển nếu biết vị trí của hai nhà máy đặt thêm.
 
@@ -350,8 +349,8 @@ void solve(int L, int R, int from, int to) {
 
 Đánh giá độ phức tạp thuật toán: vì mỗi lần gọi để quy khoảng $[L,R]$ được chia đôi, nên sẽ có $O(logN)$ tầng, mỗi tầng vòng for chỉ chạy qua $O(N)$ phần tử, vì vậy độ phức tạp của thuật toán là $O(NlogN)$.
 
-#### SEQPART - [Hackerrank](https://www.hackerrank.com/contests/ioi-2014-practice-contest-2/challenges/guardians-lunatics-ioi14)
-##### Đề bài
+### SEQPART - [Hackerrank](https://www.hackerrank.com/contests/ioi-2014-practice-contest-2/challenges/guardians-lunatics-ioi14)
+#### Đề bài
 Cho dãy $L$ số $C[1..L]$, cần chia dãy này thành $G$ đoạn liên tiếp. Với phần tử thứ $i$, ta định nghĩa chi phí của nó là tích của $C[i]$ và số lượng số nằm cùng đoạn liên tiếp với nó. Chi phí của dãy số ứng với một cách phân hoạch là tổng các chi phí của các phần tử.
 
 Hãy xác định cách phân hoạch dãy số để chi phí là nhỏ nhất.
@@ -391,7 +390,7 @@ Output
 
 Chi phí là $11 * 3 + 11 * 3 + 11 * 3 + 24 * 2 + 26 * 2 + 100 * 1 = 299$.
 
-##### Lời giải
+#### Lời giải
 
 Đây là dạng bài toán phân hoạch dãy số có thể dễ dàng giải bài QHĐ. Gọi $F(g, i)$ là chi phí nhỏ nhất nếu ta phân hoạch $i$ phần tử đầu tiên thành $g$ nhóm, khi đó kết quả bài toán sẽ là $F(G, L)$.
 
@@ -522,15 +521,15 @@ Tuy nhiên ta có thể chứng minh được, xét về tổng thế thuật to
 
 ![/uploads/dp_optimization_img2.png](/uploads/dp_optimization_img2.png)
 
-#### Điều kiện để Chia để trị đúng
+### Điều kiện để Chia để trị đúng
 
-##### Điều kiện theo best
+#### Điều kiện theo best
 
 Như ở bài Hai nhà máy CEOI 2004:
 
 Nếu $best(i) \le best(i+1)$, ta có thể sử dụng chia để trị.
 
-##### Điều kiện theo cost
+#### Điều kiện theo cost
 
 Nếu hàm cost thoả mãn quadrangle inequalities:
 
@@ -538,7 +537,7 @@ $cost(a, d) + cost(b, c) \ge cost(a, c) + cost(b, d)$ với mọi $a < b < c < d
 
 ta cũng có thể sử dụng QHĐ chia để trị.
 
-### Bài luyện tập
+## Bài luyện tập
 
 - [F - ACM ICPC Vietnam Regional 2017](https://open.kattis.com/problems/famouspagoda)
 - [Hackerrank - Mining](https://www.hackerrank.com/contests/world-codesprint-5/challenges/mining)
@@ -551,10 +550,10 @@ Các bạn có thể đọc thêm về kỹ thuật bao lồi ở link [này](ht
 
 Các tính chất của stack cho phép ta xây dựng một số kỹ thuật để tối ưu thuật toán.
 
-### Bài tập ví dụ
+## Bài tập ví dụ
 
-#### [BLOCKS - IZHO 2014](https://oj.uz/problem/view/IZhO14_blocks)
-##### Đề bài
+### [BLOCKS - IZHO 2014](https://oj.uz/problem/view/IZhO14_blocks)
+#### Đề bài
 Cho dãy số nguyên dương $a[1], a[2], …, a[N]$.
 Xét các chia dãy số $a$ thành $K$ nhóm sao cho mỗi nhóm chứa một đoạn liên tiếp các phần tử của $a$. Gọi trọng số của một cách chia là tổng các phần tử lớn nhất của mỗi nhóm.
 
@@ -589,7 +588,7 @@ Output
  - $1 \le K \le 100$
  - $a[i] \le 1000000$
 
-##### Lời giải
+#### Lời giải
 
 **Thuật toán QHĐ cơ sở**
 
@@ -682,8 +681,8 @@ int main() {
 }
 ```
 
-#### [Đốn cây](https://oj.vnoi.info/problem/vodoncay/) (Đề thi HSG quốc gia năm 2016)
-##### Đề bài
+### [Đốn cây](https://oj.vnoi.info/problem/vodoncay/) (Đề thi HSG quốc gia năm 2016)
+#### Đề bài
 Hùng đang làm việc trong Công ty cao su X. Công ty có rừng cao su rất rộng, với những hàng cây cao su trồng cách đều thẳng tắp. Theo định kỳ, người ta thường phải chặt hạ cả hàng cây cao su đã hết hạn khai thác để trồng thay thế bằng hàng cây mới. Hùng phát hiện ra một bài toán tin học liên quan đến vấn đề này: Một nhóm công nhân được giao nhiệm vụ chặt hạ hàng cây gồm $N$ cây được trồng dọc theo một đường thẳng với khoảng cách cố định giữa hai cây liên tiếp. Nếu các công nhân cưa đổ một cây, họ có thể cho nó đổ về phía bên trái hoặc bên phải dọc theo hàng cây. Một cây khi đổ có thể lật đổ cây khác bị nó rơi vào và có thể làm đổ nhiều cây khác, theo hiệu ứng lan truyền domino. Sau khi khảo sát kỹ, Hùng đã mô tả được hiệu ứng lan truyền domino như sau: Giả sử các cây trên hàng cây được đánh số từ $1$ đến $N$, từ trái qua phải và chiều cao của cây $i$ là $h_i$ ($1 \le i \le N$)
  - Nếu cây $i$ đổ về bên trái thì tất cả các cây $j$ với $i - h_i < j < i$ cũng sẽ đổ;
  - Nếu cây $i$ đổ về bên phải thì tất cả các cây $j$ với $i < j < i + h_i$ cũng sẽ đổ;
@@ -722,7 +721,7 @@ OUTPUT
  - Có 40% số test khác ứng với 40% số điểm của bài có $1 \le N \le 100000$.
  - Có 20% số test còn lại ứng với 20% số điểm của bài có $1 \le N \le 4000000$.
 
-##### Lời giải
+#### Lời giải
 
 **Bước 1**: Chuẩn bị
 
@@ -811,12 +810,12 @@ int main() {
 ## 5. Quản lí đồ thị hàm quy hoạch động (Slope Trick)
 Ở phần này ta hãy xem xét một bài toán cụ thể về ý tưởng quan sát đồ thị của hàm QHĐ để tối ưu độ phức tạp.
 
-### Bài tập ví dụ
+## Bài tập ví dụ
 
-#### Biến đổi dãy số
+### Biến đổi dãy số
 Link: [Codeforces](https://codeforces.com/contest/713/problem/C)
 
-##### Đề bài
+#### Đề bài
 Cho dãy số $N$ phần tử. Mỗi phép biến đổi có thể tăng/giảm một phần tử bất kỳ của dãy 1 đơn vị. Hãy tìm số phép biến đổi ít nhất để dãy trở thành dãy tăng.
 
 **Input**
@@ -829,7 +828,7 @@ Cho dãy số $N$ phần tử. Mỗi phép biến đổi có thể tăng/giảm 
  - $N \le 100 000$
  - $1 \le A[i] \le 1 000 000 000$
 
-##### Lời giải
+#### Lời giải
 
 Trước hết ta gán $A[i] = A[i] - i$ với mọi $i$. Bài toán trở thành biến đổi để dãy trở thành dãy không giảm.
 
@@ -882,10 +881,10 @@ int main() {
     return 0;
 }
 ```
-#### Đào vàng
+### Đào vàng
 Link: [Topcoder SRM 610 Div1.Level3](http://community.topcoder.com/stat?c=problem_statement&pm=12930)
 
-##### Đề bài
+#### Đề bài
 Mỏ vàng là có thể được coi là một lưới gồm $(M+1)*(N+1)$ ô vuông. Các hàng được đánh số từ $0$ đến $N$, các cột được đánh số từ $0$ đến $M$.
 
 Bạn có thể làm việc ở mỏ vàng một vài ngày. Bạn có thể chọn vị trí để đào trong ngày đầu tiên (ngày $0$). Trong những ngày tiếp theo, bạn có thể giữ nguyên vị trí, hoặc di chuyển đến một ô vuông khác nằm trong giới hạn được mô tả sau đây.
@@ -964,7 +963,7 @@ Output
 63
 ```
 
-##### Lời giải
+#### Lời giải
 Trước hết ta tóm tắt lại đề bài. Có $K$ ngày ứng với $K$ sự kiện. Mỗi ngày vàng được tìm thấy ở các ô được mô tả qua hai mảng $event_i[]$ và $event_j[]$. Ngày đầu tiên bạn có thể đứng ở vị trí bất kỳ, nhưng từ ngày thứ hai chỉ có thể di chuyển đến một số ô trong khoảng xác định qua hai mảng $event_{di}[]$ và $event_{dj}[]$.
 
 Hàm mục tiêu là $N+M-\|e_i-x\|-\|e_j-y\|$, trong đó $(e_i, e_j)$ là vị trí xuất hiện vàng, còn giới hạn di chuyển là $d_i$ theo chiều dọc và $d_j$ theo chiều ngang. Như vậy lời giải của bài toán là độc lập đối với chiều tọa độ. Chỉ cần xem $N-\|e_i-x\|$ và $M-\|e_j-y\|$ là các thành phần độc lập của hàm mục tiêu.

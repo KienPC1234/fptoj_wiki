@@ -1,4 +1,3 @@
-## Tất tần tật về Cây Phân Đoạn (Segment Tree)
 
 
 
@@ -14,17 +13,17 @@ Segment Tree là một cấu trúc dữ liệu được sử dụng rất nhiề
 
 Segment Tree là một [cây](translate/wcipeg/tree). Cụ thể hơn, nó là một cây nhị phân đầy đủ (mỗi nút là lá hoặc có đúng 2 nút con), với mỗi nút quản lý một đoạn trên dãy số. Với một dãy số gồm $N$ phần tử, nút gốc sẽ lưu thông tin về đoạn $[1, N]$, nút con trái của nó sẽ lưu thông tin về đoạn $[1, ⌊N/2⌋]$ và nút con phải sẽ lưu thông tin về đoạn $[⌊N/2⌋+1, N]$. Tổng quát hơn: nếu nút $A$ lưu thông tin đoạn $[i, j]$, thì 2 con của nó: $A1$ và $A2$ sẽ lưu thông tin của các đoạn $[i, ⌊(i+j)/2⌋]$ và đoạn $[⌊(i+j)/2⌋ + 1, j]$.
 
-### Ví dụ
+## Ví dụ
 
 Xét một dãy gồm 7 phần tử, Segment Tree sẽ quản lý các đoạn như sau:
 
 ![/uploads/segment_tree_structure_example.png](/uploads/segment_tree_structure_example.png)
 
-### Cài đặt
+## Cài đặt
 
 Để cài đặt, ta có thể dùng một mảng 1 chiều, phần tử thứ nhất của mảng thể hiện nút gốc. Phần tử thứ $id$ sẽ có 2 con là $2 \* id$ (con trái) và $2 \* id+1$ (con phải). Với cách cài đặt này, người ta đã chứng minh được bộ nhớ cần dùng cho ST không quá $4 \* N$ phần tử.
 
-### Áp dụng
+## Áp dụng
 
 Để dễ hình dung, ta lấy 1 ví dụ cụ thể:
 
@@ -83,7 +82,7 @@ int get(int id, int l, int r, int u, int v) {
 }
 ```
 
-### Phân tích thời gian chạy
+## Phân tích thời gian chạy
 
 Mỗi thao tác truy vấn trên cây ST có độ phức tạp $O(\log{N})$. Để chứng minh điều này, ta xét 2 loại thao tác trên cây ST:
 
@@ -95,7 +94,7 @@ Mỗi thao tác truy vấn trên cây ST có độ phức tạp $O(\log{N})$. Đ
 - Độ cao của cây ST không quá $O(\log{N})$.
 - Tại mỗi độ sâu của cây, không có phần tử nào nằm trong 2 nút khác nhau của cây.
 
-#### Thao tác loại 1
+### Thao tác loại 1
 
 Với thao tác này, ở mỗi độ sâu của cây, ta chỉ gọi đệ quy các con của không quá 1 nút. Phân tích đoạn code trên, ta xét các trường hợp:
 
@@ -105,7 +104,7 @@ Với thao tác này, ở mỗi độ sâu của cây, ta chỉ gọi đệ quy 
 Do đó độ phức tạp của thao tác này không quá $O(\log{N})$.
 
 
-#### Thao tác loại 2
+### Thao tác loại 2
 
 Với thao này, ta cũng chứng minh tương tự, nhưng ở mỗi độ sâu của cây, ta chỉ gọi hàm đệ quy với các con của không quá 2 nút.
 
@@ -115,7 +114,7 @@ Ta chứng minh bằng phản chứng, giả sử ta gọi đệ quy với 3 nú
 
 Trong trường hợp này, rõ ràng toàn bộ đoạn của nút ở giữa quản lý nằm trong đoạn đang truy vấn. Do đó ta không cần phải gọi đệ quy các con của nút ở giữa. Từ đó suy ra vô lý, nghĩa là ở mỗi độ sâu ta chỉ gọi đệ quy với không quá 2 nút.
 
-### Phân tích bộ nhớ
+## Phân tích bộ nhớ
 
 Ta xét 2 trường hợp:
 
@@ -132,15 +131,15 @@ Do đó, số nút của cây cho dãy $N$ phần tử, với $N \le 2^k$ là kh
 
 Tại sao lại gọi là cổ điển? Đây là dạng ST đơn giản nhất, chúng ta chỉ giải quyết truy vấn update một phần tử và truy vấn đoạn, mỗi nút lưu một loại dữ liệu cơ bản như số nguyên, boolean, ...
 
-### Ví dụ 1
+## Ví dụ 1
 
 **Bài toán**: [380C-Codeforces](http://codeforces.com/contest/380/problem/C)
 
-#### Tóm tắt đề
+### Tóm tắt đề
 
 Cho một dãy ngoặc độ dài $N$ $(N\le10^6)$, cho $M$ truy vấn có dạng $l_i, r_i (1\le l_i\le r_i \le N)$. Yêu cầu của bài toán là với mỗi truy vấn tìm một chuỗi con (không cần liên tiếp) của chuỗi từ $l_i$ đến $r_i$ dài nhất mà tạo thành dãy ngoặc đúng.
 
-#### Lời giải
+### Lời giải
 
 Với mỗi nút(ví dụ như nút $id$, quản lý đoạn $[l, r]$) chúng ta lưu ba biến nguyên:
 
@@ -170,7 +169,7 @@ Và ta khai báo cây ST như sau:
 Node st[MAXN * 4];
 ```
 
-#### Định lý
+### Định lý
 
 Để tính thông tin ở nút $id$ quản lý đoạn $[l, r]$, dựa trên 2 nút con $2\*id$ và $2\*id+1$, ta định nghĩa 1 thao tác kết hợp 2 nút của cây ST:
 
@@ -227,7 +226,7 @@ Node query(int id, int l, int r, int u, int v) {
 }
 ```
 
-### Ví dụ 2
+## Ví dụ 2
 
 **Bài toán**: [SPOJ-KQUERY](http://www.spoj.com/problems/KQUERY/)
 
@@ -342,7 +341,7 @@ int get(int id, int l, int r, int u, int v) {
 
 Đây là kĩ thuật được sử dụng trong ST để giảm độ phức tạp của ST với các truy vấn cập nhật đoạn.
 
-### Tư tưởng
+## Tư tưởng
 
 Giả sử ta cần cập nhật đoạn $[u, v]$. Dễ thấy ta không thể nào cập nhật tất cả các nút trên Segment Tree (do tổng số nút nằm trong đoạn $[u, v]$ có thể lên đến $O(N)$). Do đó, trong quá trình cập nhật, ta chỉ thay đổi giá trị ở các nút quản lý các đoạn to nhất nằm trong $[u, v]$. Ví dụ với $N = 7$, cây Segment tree như hình minh hoạ ở đầu bài. Giả sử bạn cần cập nhật $[1, 6]$:
 
@@ -351,18 +350,18 @@ Giả sử ta cần cập nhật đoạn $[u, v]$. Dễ thấy ta không thể n
 
 Cụ thể, chúng ta cùng xem bài toán sau:
 
-### Bài Toán
+## Bài Toán
 
 [VNOJ - QMAX2](https://oj.vnoi.info/problem/qmax2)
 
-### Tóm tắt đề
+## Tóm tắt đề
 
 Cho dãy số $A$ với $N$ phần tử $(N \le 50,000)$. Bạn cần thực hiện 2 loại truy vấn:
 
 1. Cộng tất cả các số trong đoạn $[l, r]$ lên giá trị $val$.
 2. In ra giá trị lớn nhất của các số trong đoạn $[l, r]$.
 
-### Phân tích
+## Phân tích
 
 Thao tác 2 là thao tác cơ bản trên Segment Tree, đã được ta phân tích ở bài toán đầu tiên.
 
@@ -376,7 +375,7 @@ Với thao tác 1, truy vấn đoạn $[u, v]$. Giả sử ta gọi $F(id)$ là 
 
 **Chú ý**: Bài QMAX2 này có cách cài đặt khác không sử dụng Lazy Propagation, tuy nhiên sẽ không được trình bày ở đây.
 
-### Cài đặt
+## Cài đặt
 
 Ta có kiểu dữ liệu cho 1 nút của ST như sau:
 
@@ -454,11 +453,11 @@ int get(int id, int l, int r, int u, int v) {
 
 Trong loại bài toán này với mỗi nút của cây ta lưu lại một `vector` và một số biến khác.
 
-### Ví dụ
+## Ví dụ
 
 Cách làm online cho bài [KQUERY](https://oj.vnoi.info/problem/kquery).
 
-### Tóm tắt đề
+## Tóm tắt đề
 
 - Cho dãy $A$ với $N$ phần tử. Cần trả lời $Q$ truy vấn.
 - Truy vấn: đếm số phần tử lớn hơn $k$ trong đoạn $[l, r]$.
@@ -467,7 +466,7 @@ Cách làm online cho bài [KQUERY](https://oj.vnoi.info/problem/kquery).
     - $A_i \le 10^9$
     - $Q \le 200,000$
 
-### Phân tích
+## Phân tích
 
 - Có $\log{N}$ nút mà ta cần xét khi trả lời truy vấn của đoạn $[u, v]$.
 - Nếu trên mỗi nút chúng ta có thể lưu lại danh sách các phần tử đó theo thứ tự tăng dần, ta có thể tìm ra kết quả ở mỗi nút bằng tìm kiếm nhị phân.
@@ -705,12 +704,12 @@ Cho một tập hợp chứa các đường thẳng có dạng $ax + b$, mỗi �
 
 Trước hết, ta cần phải nắm được kiến thức cơ bản về Segment tree và chặt nhị phân. Bạn có thể tìm hiểu thuật toán **chặt nhị phân** ở [đây](algo/basic/binary-search).
 
-### Bài toán 1
+## Bài toán 1
 
 Cho một mảng các số nguyên $a$ có $n$ phần tử. Có $q$ truy vấn có dạng: 
 - $k$ : tìm $i$ nhỏ nhất sao cho $a[i] \le k$.
 
-#### Cách giải
+### Cách giải
 
 Ta nhận thấy do $a[i] \le k$ và $i$ nhỏ nhất, cho nên $a[j] > k$ với mọi $1 \le j < i$. 
 
@@ -743,7 +742,7 @@ int query(int k) {
 }
 ```
 
-### Bài toán 2
+## Bài toán 2
 
 Cho một mảng các số nguyên $a$ có $n$ phần tử. Có $q$ truy vấn có dạng: 
 - $i$ $x$ : gán $a[i] = x$.
@@ -807,7 +806,7 @@ Tới đây ta đã xong **bài toán 2**.
 
 Lưu ý là, với các bài toán mà truy vấn cập nhật là một đoạn (thay vì một phần tử như **bài toán 2**), thì việc cài đặt hàm $query$ ở trên vẫn không đổi, chỉ có thêm vào *lazy* trước khi xét $2$ cây con trái phải, mình xin giành cho bạn đọc vậy. 
 
-### Bài toán 3: 
+## Bài toán 3: 
 Cho một mảng các số nguyên $a$ có $n$ phần tử. Có $q$ truy vấn có dạng: 
 - $i$ $x$ : gán $a[i] = x$.
 - $L$ $k$ : tìm $i$ nhỏ nhất sao cho $L \le i$ và $a[i] \le k$

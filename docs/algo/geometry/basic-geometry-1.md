@@ -1,4 +1,3 @@
-## Hình học tính toán phần 1: Những khái niệm cơ bản
 
 **Tác giả:** 
 - Lê Minh Hoàng - Phổ thông Năng khiếu, ĐHQG-HCM
@@ -36,7 +35,7 @@ y = y_B - y_A
 
 ![dđ](../../uploads/5ddR4P4.gif)
 
-### Độ lớn của vector
+## Độ lớn của vector
 Độ lớn của $1$ vector được xác định bằng khoảng cách giữa điểm đầu và điểm cuối của nó.
 **Ví dụ:** Độ lớn của $\overrightarrow{\rm AB}(x,y)$ kí hiệu là $|\overrightarrow{\rm AB}|$ và được xác định bằng:
 
@@ -47,7 +46,7 @@ Có một số phép toán có thể thực hiện trên vector, đơn giản nh
 
 Xuyên suốt bài viết, chúng ta sẽ dùng dấu cộng (**+**) và trừ (**-**) để biểu diễn cho phép cộng và trừ vector.
 
-### Phép cộng 2 vector
+## Phép cộng 2 vector
 
 ![dd](../../uploads/Lblu42q.png)
 
@@ -59,16 +58,16 @@ Giả sử ta có $2$ vector $\overrightarrow{\rm u}(x_1, y_1)$ và $\overrighta
 
 ![dd](../../uploads/sKDldWR.png)
 
-### Phép trừ 2 vector
+## Phép trừ 2 vector
 ![dd](../../uploads/p1QmwFb.png)
 
-#### Vector đối
+### Vector đối
 Cho vector $\overrightarrow{\rm a}$, vector có cùng độ lớn và ngược hướng với vector $\overrightarrow{\rm a}$ được gọi là vector đối của vector $\overrightarrow{\rm a}$, kí hiệu là $-\overrightarrow{\rm a}$.
 Mỗi vector đều có vector đối, chẳng hạn vector đối của $\overrightarrow{\rm AB}$ là $\overrightarrow{\rm BA}$, nghĩa là $-\overrightarrow{\rm AB} = \overrightarrow{\rm BA}$.
 
 ![dd](../../uploads/SY5FFFo.png)
 
-#### Định nghĩa hiệu của 2 vector
+### Định nghĩa hiệu của 2 vector
 Hiệu của vector $\overrightarrow{\rm u}$ với vector $\overrightarrow{\rm v}$ chính là tổng của $\overrightarrow{\rm u}$ và $-\overrightarrow{\rm v}$.
 
 ![image](../../uploads/z9pRvDQ.png)
@@ -91,7 +90,7 @@ $$\overrightarrow{\rm u} \cdot \overrightarrow{\rm v} = | \overrightarrow{\rm u}
 
 ![image](../../uploads/iHks23u.png)
 
-### Ví dụ
+## Ví dụ
 Tính tích vô hướng của 2 vector $\overrightarrow{\rm u}(5,12)$ và $\overrightarrow{\rm v}(-6,8)$
 
 ![image](../../uploads/Qm8P625.png)
@@ -117,7 +116,7 @@ $$\cos(\theta) = \dfrac{\overrightarrow{\rm u} \cdot \overrightarrow{\rm v}}{|\o
 **Lưu ý:** tích vô hướng không chỉ giới hạn trong hình học phẳng, nghĩa là ta có thể sử dụng tích vô hướng cho các vector có số chiều tuỳ ý, và đẳng thức trên vẫn đúng.
 
 ## Tích có hướng (Cross product)
-### Trong không gian 3 chiều
+## Trong không gian 3 chiều
 Tích có hướng là một phép nhân vector trong không gian ba chiều. Nó khác tích vô hướng ở chỗ kết quả thu được là một vector thay cho một vô hướng. Vector này **vuông góc** với mặt phẳng chứa 2 vector đầu vào của phép nhân.
 
 Tích có hướng được định nghĩa bằng công thức: $\overrightarrow{\rm a} \times \overrightarrow{\rm b} = \overrightarrow{n} \cdot |\overrightarrow{\rm a}| \cdot |\overrightarrow{\rm b}| \cdot \sin(\theta)$ với:
@@ -126,7 +125,7 @@ Tích có hướng được định nghĩa bằng công thức: $\overrightarrow
 
 |![image](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Cross_product_vector.svg/220px-Cross_product_vector.svg.png)|![image](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Right_hand_rule_cross_product.svg/330px-Right_hand_rule_cross_product.svg.png)|
 
-### Trong không gian 2 chiều (mặt phẳng)
+## Trong không gian 2 chiều (mặt phẳng)
 Nếu xét trong hình học phẳng thì vector kết quả lúc này vuông góc và có hướng đi vào/ra mặt phẳng đang xét, do đó ta có thể bỏ qua đặc điểm về hướng, và sử dụng tích có hướng như là một đại lượng vô hướng.
 
 Tương tự tích vô hướng, tích có hướng trong không gian 2 chiều cũng có thể được định nghĩa bằng 2 cách:
@@ -141,7 +140,7 @@ Với góc $\alpha$ thỏa mãn $0° < \alpha < 180°$ thì $\sin(\alpha) > 0$ n
 
 Ta cũng có thể xác định dấu của tích có hướng bằng quy tắc bàn tay phải nhưng về bản chất thì cũng giống với việc xét góc theo chiều ngược kim đồng hồ.
 
-### Ví dụ
+## Ví dụ
 Tính tích có hướng của 2 vector $\overrightarrow{\rm u}(5,12)$ và $\overrightarrow{\rm v}(-6,8)$
 
 ![image](../../uploads/Qm8P625.png)

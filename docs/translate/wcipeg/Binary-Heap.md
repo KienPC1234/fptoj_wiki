@@ -1,4 +1,3 @@
-## Binary Heap
 
 **Biên soạn:** Đỗ Việt Anh (lion_it)
 
@@ -15,7 +14,7 @@
 
 ## 1. Giới thiệu chung
 
-### 1.0. Tính chất
+## 1.0. Tính chất
 
 Một cấu trúc Binary Heap thỏa mãn 2 điều kiện sau:
 
@@ -26,18 +25,18 @@ Một cấu trúc Binary Heap thỏa mãn 2 điều kiện sau:
 Một cấu trúc như trên được gọi là max binary heap vì nhãn ở gốc (root), tương tự ta có thể thay đổi TC 2 để có được min binary heap với nhãn ở gốc là nhỏ nhất trong cây.
 
 
-### 1.1. Ứng dụng
+## 1.1. Ứng dụng
 
 Binary Heap được dùng để cài đặt [priority queue](https://en.wikipedia.org/wiki/Priority_queue) (trong C++, java...) hay dùng để tăng tốc các thuật toán như [Dijkstra](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm), [Prim](https://en.wikipedia.org/wiki/Prim%27s_algorithm)..
 
-### 1.2. Cài đặt
+## 1.2. Cài đặt
 
 - Trong C++, bạn có thể sử dụng CTDL `priority_queue` hoặc `set`, vì vậy việc tự cài đặt lại là không cần thiết.
 - Với Pascal, bạn có thể tìm hiểu cách cài đặt trong [quyển sách của thầy Lê Minh Hoàng](algo/basic/Tai-Lieu-Thuat-Toan)
 
 ## 2. Các thao tác trên Binary Heap
 
-### 2.0. Các thao tác thường dùng với Binary Heap là 
+## 2.0. Các thao tác thường dùng với Binary Heap là 
 
 * Tìm nhãn lớn nhất trên Binary Heap (nút gốc)
 * Thêm một nút vào Binary Heap
@@ -48,14 +47,14 @@ Binary Heap được dùng để cài đặt [priority queue](https://en.wikiped
 
 Đặt $h$ là độ cao của cây. Nút gốc ở độ sâu 0, 2 nút con của gốc ở độ sâu 1, và nút sâu nhất có độ sâu là $h$. Ở độ sâu $k$, cây có tối đa $2^k$ nút, do đó tổng số nút trên cây $N \le 2^{h+1}$.
 
-### 2.1. Tìm phần tử lớn nhất
+## 2.1. Tìm phần tử lớn nhất
 
 * Rõ ràng gốc (root) luôn chứa nhãn lớn nhất theo **TC2** (các nút con luôn không nhỏ hơn nút cha) 
 * **Độ phức tạp thuật toán:** $O(1)$.
     * Thông thường thao tác này sẽ đi kèm với thao tác xóa nút gốc để tìm nhãn tiếp theo (như khi sort). Thao tác xóa sẽ được miêu tả ở mục **2.3**
 
 
-### 2.2. Thêm một nút (node) trên cây
+## 2.2. Thêm một nút (node) trên cây
 
 * Chọn vị trí để thêm nút:
     * Nếu Binary Heap là rỗng ta chỉ cần cho nút cần thêm làm gốc.
@@ -71,7 +70,7 @@ Binary Heap được dùng để cài đặt [priority queue](https://en.wikiped
    * Quá trình vun đống từ dưới lên (bottom-up heapify): ta có thể thấy số lần so sánh và đổi chỗ 2 phần tử không quá độ sâu $h$ của cây nhị phân hay ($\le log(N+1)$ với $N$ là số nút hiện có trên cây). 
    * Độ phức tạp của cả quá trình này là $O(logN)$
 
-### 2.3. Xóa nút gốc khỏi cây
+## 2.3. Xóa nút gốc khỏi cây
 
 * Ta chỉ có thể xóa phần tử lớn nhất hay góc của Binary Heap ra khỏi cây. 
     * Nếu cây chỉ có nút gốc ta xóa nó khỏi cây, nếu không
@@ -88,7 +87,7 @@ Binary Heap được dùng để cài đặt [priority queue](https://en.wikiped
         * Vun đống từ trên xuống (top-down heapify) cũng như bottom-up heapify không vượt quá độ sâu $h$ của cây nên có độ phức tạp là $O(logN)$
 
 
-### 2.4. Tăng, giảm nhãn của một nút
+## 2.4. Tăng, giảm nhãn của một nút
 
 * Trước tiên cần xác định vị trí của nút ta cần thay đổi nhãn
 * Thay đổi nhãn
@@ -99,7 +98,7 @@ Binary Heap được dùng để cài đặt [priority queue](https://en.wikiped
 * **Độ phức tạp:** độ thức tạp của thao tác này bằng độ phức tạp của top-down heapify hoặc bottom-up heapify hay bằng $O(logN)$
 
 
-### 2.5. Xây đựng Binary Heap từ tập $N$ phần tử
+## 2.5. Xây đựng Binary Heap từ tập $N$ phần tử
 
 * Một cách đơn giản ta có thể thực hiện $N$ phép thêm nút. Nhưng có một kĩ thuật hiệu quả hơn để xây dựng binary heap được gọi là **bottom-up construction**.
 * **Bottom-up construction:** Kỹ thuật này yêu cầu xây dựng một cây nhị phân đầy đủ trước và thực hiện top-down heapify các nút trên cây theo tứ tự giảm dần độ cao của cây (từ các nút lá lên các nút cha và tiếp tục cho đến gốc). Chứng minh kết quả của cách xây dựng là một Binary Heap không phải là khó.

@@ -1,4 +1,3 @@
-## Định lý Wilson
 
 
 

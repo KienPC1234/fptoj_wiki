@@ -1,4 +1,3 @@
-## Cây chỉ số nhị phân 2 chiều (BIT 2 chiều)
 
 **Tác giả:** 
 - Phạm Công Minh - THPT chuyên Khoa học Tự Nhiên, ĐHQGHN 
@@ -38,7 +37,7 @@ Cho mảng 2 chiều $A$ có $N$ hàng $M$ cột (đánh số từ 1). Có $Q$ t
 
 Giới hạn: $1 \leq N, M \leq 10^3$, $1 \leq Q \leq 2 \times 10^5$ 
 
-### Thuật toán ngây thơ 1
+## Thuật toán ngây thơ 1
 
 Với truy vấn 1, ta cộng trực tiếp vào mảng. Với truy vấn 2, ta duyệt qua từng phần tử của $A[1:u][1:v]$ và cộng giá trị vào kết quả.
 
@@ -61,13 +60,13 @@ int query(int u, int v){
 
 ```
 
-#### Phân tích
+### Phân tích
 
 * Độ phức tạp khi cập nhật: $O(1)$
 * Độ phức tạp khi truy vấn: $O(u \times v) = O(N \times M)$
 * Có $Q$ truy vấn, nên độ phức tạp là $O(Q + Q \times N \times M) = O(Q \times N \times M)$
 
-### Thuật toán ngây thơ 2
+## Thuật toán ngây thơ 2
 
 Ta định nghĩa $lsb(x)$ là giá trị của bit $1$ nhỏ nhất trong biểu diễn nhị phân của $x$. Ví dụ:
 
@@ -105,7 +104,7 @@ void preprocess(){
 
 ```
 
-#### Phân tích
+### Phân tích
 
 * Độ phức tạp tiền xử lý: $O(N \times M \times \log M)$
 * Độ phức tạp khi cập nhật: $O(\log M)$
@@ -144,7 +143,7 @@ Dưới đây là hình minh họa cho trường hợp $N = 3, M = 4$.
 
 
 
-### Cài đặt
+## Cài đặt
 
 Ta khai báo BIT 2 chiều dưới dạng một mảng $N \times M$ , trong đó `BIT[u][v]` lưu giá trị của phần tử thứ $v$ trong BIT thứ $u$;
 
@@ -182,14 +181,14 @@ $$
 \end{align}
 $$
 
-### Phân tích
+## Phân tích
 
 
 * Độ phức tạp khi cập nhật: $O(\log N \times \log M)$
 * Độ phức tạp khi truy vấn: $O(\log N \times \log M)$
 * Có Q truy vấn, nên độ phức tạp là $O(Q \times \log N \times \log M)$
 
-### Cập nhật hình chữ nhật con, truy vấn phần tử
+## Cập nhật hình chữ nhật con, truy vấn phần tử
 
 Ta thay đổi bài toán ban đầu như sau:
 
@@ -221,7 +220,7 @@ Nếu vẫn chưa rõ, bạn đọc có thể tham khảo hình minh họa sau:
 
 ![img](../../uploads/r1_4NmvPh.png)
 
-#### Cài đặt
+### Cài đặt
 
 Hàm cập nhật:
 
@@ -237,7 +236,7 @@ void rectAdd(int a, int b, int u, int v, int x){
 
 Hàm truy vấn tương tự như phần trước.
 
-### Cập nhật hình chữ nhật con, truy vấn hình chữ nhật con
+## Cập nhật hình chữ nhật con, truy vấn hình chữ nhật con
 
 Ta thay đổi bài toán ban đầu:
 

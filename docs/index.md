@@ -18,7 +18,7 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 
 ## Thuật toán
 
-### Nhập môn
+## Nhập môn
 
 - [Tầm quan trọng của Thuật Toán](translate/topcoder/The-Importance-of-Algorithm)
 - [Một số tài liệu hay về Thuật Toán](algo/basic/Tai-Lieu-Thuat-Toan)
@@ -32,7 +32,7 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 - [Đệ quy và quay lui](algo/basic/backtracking.md)
 - [Chia đôi tập](algo/basic/meet-in-the-middle.md)
 
-### Cấu trúc dữ liệu
+## Cấu trúc dữ liệu
 
 - [Tổng quan về cấu trúc dữ liệu (⭐⭐)](algo/data-structures/data-structures-overview)
 - [Mảng và danh sách liên kết (⭐)](algo/data-structures/array-vs-linked-lists)
@@ -60,7 +60,7 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 - [Skip List (⭐⭐⭐)](algo/data-structures/Skip-Lists)
 - [Range Tree - thầy Lê Minh Hoàng (⭐⭐⭐)](https://drive.google.com/file/d/0BwcTB8a10LBwbjB2elVmdzg1XzQ/view?usp=sharing&resourcekey=0-JxqVgB488l3bVgUXg4VU2Q)
 
-### Xử lý xâu
+## Xử lý xâu
 
 - [Tổng quan (⭐⭐)](algo/string/basic)
 - [KMP (⭐⭐)](algo/string/kmp)
@@ -72,7 +72,7 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 - [Z Algorithm (⭐⭐⭐)](translate/codeforces/z-algo)
 - [Suffix Tree - thầy Lê Minh Hoàng(⭐⭐⭐⭐)](https://drive.google.com/file/d/0BwcTB8a10LBwYUwwNVYzbmZiZnM/view?usp=sharing&resourcekey=0-TyQK7KSoZJW-fVpHquw6NQ)
 
-### Quy hoạch động
+## Quy hoạch động
 - [Nhập môn Quy hoạch động (⭐⭐)](translate/topcoder/dynamic-programming)
 - [Quy hoạch động cơ bản (Phần 1)](algo/dp/basic-dynamic-programming-1.md)
 - [Quy hoạch động cơ bản (Phần 2)](algo/dp/basic-dynamic-programming-2.md)
@@ -82,7 +82,7 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 - [Một số kĩ thuật tối ưu hoá QHĐ (⭐⭐⭐)](algo/dp/Mot-so-ky-thuat-toi-uu-hoa-thuat-toan-Quy-Hoach-Dong)
 - [Kĩ thuật bao lồi (⭐⭐⭐)](translate/wcipeg/Convex-Hull-Trick)
 
-### Đồ thị
+## Đồ thị
 - [Các chủ đề cơ bản về đồ thị (⭐⭐)](algo/graph-theory/everything)
 - [Thuật toán duyệt đồ thị theo chiều rộng](algo/graph-theory/breadth-first-search.md) (BFS)
 - [Bài toán khớp cầu, thành phần liên thông mạnh](algo/graph-theory/Depth-First-Search-Tree.md) (Cây DFS và ứng dụng)
@@ -95,18 +95,18 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 - [Bài toán 2-SAT (⭐⭐⭐)](https://drive.google.com/file/d/15UbO4GWo1G6cUBDnV6uWk0KxjuEdurCG/view?usp=sharing)
 - [Luồng cực đại trên mạng (⭐⭐⭐)](translate/topcoder/max-flow-1-luong-cuc-dai-tren-mang-1.md)
 
-### Tham lam
+## Tham lam
 
 - [Tham lam (⭐⭐)](translate/topcoder/Greedy-is-Good)
 - [Sum-constrained convex optimization](algo/trick/convex_greedy)
 
-### Số học
+## Số học
 
 - [Kiểm tra số nguyên tố](algo/algebra/primality_check.md)
 - [Sàng nguyên tố](algo/algebra/prime_sieve.md)
 - [Lũy thừa nhị phân](algo/algebra/binary_exponentation.md)
 
-#### Series số học của HackerEarth
+### Series số học của HackerEarth
 - [Số học 1 - Modulo và gcd (⭐)](translate/he/So-hoc-Phan-1-Modulo-gcd).
 - [Số học 2 - Số nguyên tố, Sàng Eratosthenes (⭐)](translate/he/Number-Theory-2).
 - [Số học 3 - Tính (a^b) % c (⭐)](translate/he/Number-Theory-3).
@@ -116,14 +116,14 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 - [Số học 6 - Xác suất (Probabilities) (⭐⭐)](translate/he/Number-Theory-6).
 - [Số học 7 - Bao hàm - Loại trừ (Inclusion-Exclusion) (⭐⭐)](translate/he/Number-Theory-7).
 
-### Hình học
+## Hình học
 
 - [Hình học tính toán phần 1](algo/geometry/basic-geometry-1)
 - [Hình học tính toán phần 2](algo/geometry/basic-geometry-2)
 - [Thuật toán đường quét (⭐⭐)](algo/geometry/Sweep-Line.md)
 - [Bao lồi (⭐⭐⭐)](translate/wcipeg/Convex-Hull)
 
-### Toán học
+## Toán học
 
 - [Toán học trong Tin học (⭐⭐)](translate/topcoder/Mathematics-for-Topcoders)
 - [Xác suất (⭐⭐)](translate/topcoder/Hieu-ve-xac-suat)
@@ -133,13 +133,13 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 - [Nhân nhanh đa thức - FFT (⭐⭐⭐⭐)](algo/trick/FFT)
 - [Lý thuyết trò chơi](algo/math/game-theory.md)
 
-### Tối ưu hoá
+## Tối ưu hoá
 
 - [Tìm kiếm tam phân - Ternary Search (⭐⭐⭐)](translate/emaxx/Tim-kiem-tam-phan-Ternary-Search)
 - [Local Search (⭐⭐⭐)](algo/search/Local-Search)
 
 
-### Kỹ năng khác
+## Kỹ năng khác
 
 - [Rời rạc hoá (nén số) (⭐)](algo/trick/Roi-rac-hoa-va-ung-dung)
 - [Nhân ma trận (⭐⭐⭐)](algo/trick/matrix-multiplication)
@@ -151,31 +151,31 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 
 ## Chia sẻ
 
-### Về cách học Tin học
+## Về cách học Tin học
 
 - [Tôi đã học Tin như thế nào - phần 1](algo/basic/hoc-tin-the-nao-1)
 - [Tôi đã học Tin như thế nào - phần 2](algo/basic/hoc-tin-the-nao-2)
 
-### Kĩ năng thi cử
+## Kĩ năng thi cử
 
 - [Viết trình chấm](algo/skill/viet-trinh-cham)
 - [Tổng hợp lời khuyên cho các kỳ thi](algo/skill/Ki-nang-thi-cu)
 - [Kinh nghiệm thi VOI](algo/skill/Kinh-nghiem-thi-VOI)
 
-### Kinh nghiệm phỏng vấn
+## Kinh nghiệm phỏng vấn
 
 - [Những kinh nghiệm chung khi phỏng vấn](interview/general-experience)
 - [Kinh nghiệm phỏng vấn - Góc nhìn từ người phỏng vấn](interview/experience-from-interviewer)
 - [Những lần phỏng vấn và những kinh nghiệm rút ra](interview/Nhung-lan-phong-van-trong-thuc-te-va-bai-hoc-rut-ra)
 
-### FPTOJ Interview
+## FPTOJ Interview
 
 - [Phỏng vấn Lê Yên Thanh](FPTOJ-interview/yen-thanh)
 - [Phỏng vấn Nguyễn Xuân Khánh](FPTOJ-interview/xuan-khanh)
 - [Phỏng vấn Team IOI Việt Nam 2017](FPTOJ-interview/Phong-van-team-IOI-VN-2017)
 - [Phỏng vấn Team IOI Việt Nam 2018](FPTOJ-interview/Phong-van-team-IOI-Viet-Nam-2018)
 
-### Khác
+## Khác
 
 - [Hoài niệm về Pascal - thầy Lê Minh Hoàng](others/Pascal-Vi-sao)
 
@@ -189,14 +189,14 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 
 ## Các chủ đề trong Khoa học máy tính
 
-### Ngôn ngữ lập trình
+## Ngôn ngữ lập trình
 
 - [Xử lý xâu trong C++](languages/cpp/string)
 - [Sử dụng regex](translate/topcoder/Using-Regular-Expression)
 - [C++ STL](https://drive.google.com/file/d/1iqlQ1TmgGy_CKwZ0_9KPfu_ZHsnrT3Tu/view?usp=sharing)
 - [Con trỏ trong C++](languages/cpp/pointers)
 
-### Machine Learning
+## Machine Learning
 
 - [Machine Learning 101: Làm quen](cs/ml/machine-learning-101)
 - [Classification - Phần 1](translate/ml/Machine-Learning-Classification-phan-1)
@@ -205,7 +205,7 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 - [Classification - Phần 3](translate/ml/Machine-Learning-Classification-phan-3)
 - [PyTorch là gì?](translate/PyTorch-la-gi)
 
-### Các chủ đề khác:
+## Các chủ đề khác:
 
 - Xử lý ảnh
     - [Seam Carving](cs/imageprocessing/Seam-Carving)
@@ -214,7 +214,7 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 - [Trang Web FPTOJ phiên bản đầu tiên](https://v0.FPTOJ.info)
 - [Trang Web IOICAMP phiên bản đầu tiên](https://v0.FPTOJ.info/ioicamp)
 
-### [Trò chơi giải trí với AI hay](https://play.google.com/store/apps/dev?id=8454869713871668206)
+## [Trò chơi giải trí với AI hay](https://play.google.com/store/apps/dev?id=8454869713871668206)
 
 -   [Cờ Carô với AI hay](http://play.google.com/store/apps/details?id=com.popoko.gomokuvn)
 -   [Cờ Vua với AI hay](http://play.google.com/store/apps/details?id=com.popoko.chessru)

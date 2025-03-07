@@ -1,4 +1,3 @@
-## BFS (Breadth-first search)
 
 **Nguồn:** [CP-Algorithms](https://cp-algorithms.com/graph/breadth-first-search.html), [Giải thuật và lập trình - Lê Minh Hoàng](algo/basic/Tai-Lieu-Thuat-Toan)
 
@@ -20,7 +19,7 @@ Thuật toán **duyệt đồ thị ưu tiên chiều rộng** *(Breadth-first s
 
 ![/uploads/breadth-first-search_img1.png](/uploads/breadth-first-search_img1.png)
 
-### Ý tưởng
+## Ý tưởng
 
 Với đồ thị không trọng số và đỉnh nguồn $s$. Đồ thị này có thể là đồ thị có hướng hoặc vô hướng, điều đó **không quan trọng** đối với thuật toán.
 
@@ -40,7 +39,7 @@ Chính xác hơn, thuật toán có thể được mô tả như sau:
 
 Thuật toán tìm kiếm theo chiều rộng sử dụng một danh sách để chứa những đỉnh đang “chờ” thăm. Tại mỗi bước, ta thăm một đỉnh đầu danh sách, loại nó ra khỏi danh sách và cho những đỉnh kề với nó chưa được thăm xếp hàng vào cuối danh sách. Thuật toán sẽ kết thúc khi danh sách rỗng.
 
-### Thuật toán
+## Thuật toán
 
 Thuật toán sử dụng một cấu trúc dữ liệu hàng đợi *(queue)* để chứa các đỉnh sẽ được duyệt theo thứ tự ưu tiên chiều rộng.
 
@@ -57,7 +56,7 @@ Thuật toán sử dụng một cấu trúc dữ liệu hàng đợi *(queue)* �
         
 **Bước 3:** Truy vết tìm đường đi.
 
-### Mô tả
+## Mô tả
 
 - Xét đồ thị sau đây, với đỉnh nguồn $s=1$ :
 
@@ -68,7 +67,7 @@ Thuật toán sử dụng một cấu trúc dữ liệu hàng đợi *(queue)* �
 
 [/uploads/breadth-first-search_gif1.gif](/uploads/breadth-first-search_gif1.gif)
 
-### Cài đặt
+## Cài đặt
 
 **Cấu trúc dữ liệu:**
 
@@ -108,7 +107,7 @@ void bfs(int s) { // Với s là đỉnh xuất phát (đỉnh nguồn)
 }
 ```
 
-#### **Truy vết**
+### **Truy vết**
 
 - Cài đặt truy vết đường đi từ đỉnh nguồn $s$ đến đỉnh $u$ :
 
@@ -125,7 +124,7 @@ else {
 }
 ```
 
-### Các đặc tính của thuật toán
+## Các đặc tính của thuật toán
 
 Nếu sử dụng một ngăn xếp *(stack)* thay vì hàng đợi *(queue)* thì ta sẽ thu được **thứ tự duyệt đỉnh** của thuật toán **tìm kiếm theo chiều sâu** *(Depth First Search – DFS)*. Đây chính là **phương pháp khử đệ quy** của $DFS$ để cài đặt thuật toán trên các ngôn ngữ không cho phép đệ quy.
 
@@ -134,7 +133,7 @@ Trong thuật toán $BFS$, nếu đỉnh $u$ xa đỉnh nguồn hơn đỉnh $v$
 
 - **Chứng minh:** Trong $BFS$, từ một đỉnh hiện tại, ta luôn đi thăm tất cả các đỉnh kề với nó trước, sau đó thăm tất cả các đỉnh cách nó một đỉnh, rồi các đỉnh cách nó hai đỉnh, v.v... Như vậy, nếu từ một đỉnh $u$ khi ta chạy $BFS$, quãng đường đến đỉnh $v$ luôn là quãng đường đi qua ít cạnh nhất.
 
-### Định lý Bắt tay (Handshaking lemma)
+## Định lý Bắt tay (Handshaking lemma)
 
 **Định lý:** Trong một đồ thị bất kỳ, tổng số [bậc](https://vi.wikipedia.org/wiki/B%E1%BA%ADc_(l%C3%BD_thuy%E1%BA%BFt_%C4%91%E1%BB%93_th%E1%BB%8B)) của tất cả các đỉnh bằng **gấp đôi** số cạnh của đồ thị.
 
@@ -162,9 +161,9 @@ Trong thuật toán $BFS$, nếu đỉnh $u$ xa đỉnh nguồn hơn đỉnh $v$
 
 **Tham khảo:** [Handshaking_lemma](https://en.wikipedia.org/wiki/Handshaking_lemma)
 
-### Độ phức tạp thuật toán
+## Độ phức tạp thuật toán
 
-#### **Độ phức tạp thời gian**
+### **Độ phức tạp thời gian**
 
 Gọi $\|V\|$ là số lượng đỉnh và $\|E\|$ là số lượng cạnh của đồ thị.
 
@@ -178,25 +177,25 @@ Trong quá trình $BFS$, cách biểu diễn đồ thị có ảnh hưởng lớ
     - Ta cũng sẽ mất độ phức tạp thời gian $O(\|V\|)$ dành cho việc thăm các đỉnh *(giải thích tương tự như trên)*.
     - Với mỗi đỉnh được thăm, ta sẽ phải duyệt qua toàn bộ các đỉnh của đồ thị để kiểm tra đỉnh kề với nó. Do đó, thuật toán sẽ mất độ phức tạp $O(\|V\|^2)$.
 
-#### **Độ phức tạp không gian**
+### **Độ phức tạp không gian**
 
 Tại mọi thời điểm, trong hàng đợi (queue `q`) có không quá $\|V\|$ phần tử. Do đó, độ phức tạp bộ nhớ là $O(\|V\|)$.
 
 ## Ứng dụng BFS để xác định thành phần liên thông
 
-### **Bài toán 1**
+## **Bài toán 1**
 
 [BDFS - Đếm số thành phần liên thông](http://lequydon.ntucoder.net/Problem/Details/4601)
 
-#### **Đề bài**
+### **Đề bài**
 
 Cho đơn đồ thị vô hướng gồm $n$ đỉnh và $m$ cạnh $(1 \le n, m \le 10^5)$, các đỉnh được đánh số từ $1$ tới $n$. Tìm số [thành phần liên thông](https://vi.wikipedia.org/wiki/Th%C3%A0nh_ph%E1%BA%A7n_li%C3%AAn_th%C3%B4ng) của đồ thị.
 
-#### **Ý tưởng**
+### **Ý tưởng**
 
 Một đồ thị có thể liên thông hoặc không liên thông. Nếu đồ thị liên thông thì số thành phần liên thông của nó là $1$. Điều này tương đương với phép duyệt theo thủ tục $BFS$ được gọi đến **đúng một lần**. Nếu đồ thị không liên thông (số thành phần liên thông lớn hơn $1$) ta có thể tách chúng thành những **đồ thị con liên thông**. Điều này cũng có nghĩa là trong phép duyệt đồ thị, số thành phần liên thông của nó bằng số lần gọi tới thủ tục $BFS$.
 
-#### **Thuật toán**
+### **Thuật toán**
 
 Thuật toán ứng dụng $BFS$ để xác định thành phần liên thông:
 - **Bước 0:** Khởi tạo số lượng thành phần liên thông bằng $0$.
@@ -205,11 +204,11 @@ Thuật toán ứng dụng $BFS$ để xác định thành phần liên thông:
 - **Bước 3:** Thực hiện bước $2$ cho đến khi không còn thực hiện được nữa.
 - **Bước 4:** Nếu số số đỉnh đánh dấu bằng $n$ (mọi đỉnh đều được đánh dấu) kết thúc thuật toán và trả về số thành phần liên thông, ngược lại quay về bước $1$.
 
-#### **Mô tả**
+### **Mô tả**
 
 [/uploads/breadth-first-search_gif2.gif](/uploads/breadth-first-search_gif2.gif)
 
-#### **Cài đặt**
+### **Cài đặt**
 
 **Cấu trúc dữ liệu:**
 
@@ -263,7 +262,7 @@ int main() {
 }
 ```
 
-#### **Đánh giá**
+### **Đánh giá**
 
 Ta cũng có thể sử dụng  thuật toán tìm kiếm theo chiều sâu *(Depth First Search – DFS)* để xác định thành phần liên thông.
 
@@ -271,7 +270,7 @@ Ta cũng có thể sử dụng  thuật toán tìm kiếm theo chiều sâu *(De
 
 Độ phức tạp của thuật toán là $O(n + m)$.
 
-### Thuật toán loang (Flood Fill)
+## Thuật toán loang (Flood Fill)
 
 **Thuật toán loang *(thuật toán vết dầu loang)*** là một kĩ thuật sử dụng $BFS$ để tìm tất cả các điểm có thể đi tới. Điểm khác biệt giữa **Loang** so với đa số những bài $BFS$ là ta không phải tìm chi phí nhỏ nhất.
 
@@ -279,11 +278,11 @@ Thuật toán loang được dùng khá nhiều trong tin học, điển hình l
 
 Gọi là thuật toán loang vì nguyên lí của thuật toán này rất giống với hiện tượng loang của chất lỏng. Khi ta nhỏ dầu xuống một mặt phẳng, vết dầu có thể loang ra những khu vực xung quanh. Tương tự, thuật toán loang trên ma trận cũng vậy, ta sẽ duyệt một ô trên ma trận và sau đó duyệt các điểm xung quanh nó và loang dần ra để giải quyết bài toán.
 
-### **Bài toán 2**
+## **Bài toán 2**
 
 [UCV2013H - Slick](https://www.spoj.com/problems/UCV2013H/)
 
-#### **Đề bài**
+### **Đề bài**
 
 Một tai nạn hàng hải đã khiến dầu tràn ra biển. Để có được thông tin về mức độ nghiêm trọng của thảm họa này, người ta phải phân tích các hình ảnh chụp từ vệ tinh, từ đó tính toán chi phí khắc phục cho phù hợp. Đối với điều này, số lượng vết dầu loang trên biển và kích thước của mỗi vết loang phải được xác định. Vết loang là một mảng dầu nổi trên mặt nước. 
 
@@ -291,7 +290,7 @@ Một tai nạn hàng hải đã khiến dầu tràn ra biển. Để có đư�
 
 Họ đã thuê bạn để giúp họ xử lí hình ảnh. Công việc của bạn là đếm số lượng vết loang trên biển và kích thước tương ứng của từng vết.
 
-#### **Ý tưởng**
+### **Ý tưởng**
 
 Ta xây dựng một **mô hình đồ thị** của bài toán như sau:
 - Gọi mỗi đỉnh của đồ thị tương ứng với mỗi ô $1$ *(ô bị nhiễm dầu)* của ma trận.
@@ -301,7 +300,7 @@ Khi đó, bài toán quy về thành bài toán **xác định thành phần li�
 
 Nghĩa là, số lượng thành phần liên thông của đồ thị chính là số lượng vết dầu loang. Và số lượng đỉnh nằm trong cùng một thành phần liên thông là kích thước của vết loang tương ứng.
 
-#### **Thuật toán**
+### **Thuật toán**
 
 Áp dụng **thuật toán loang trên ma trận** để xác định thành phần liên thông:
 - Khởi tạo số lượng vết dầu bằng $0$.
@@ -314,11 +313,11 @@ Nghĩa là, số lượng thành phần liên thông của đồ thị chính l�
         * Sử dụng $1$ mảng để lưu lại kích thước của từng vết loang.
 - Nếu tất cả các ô bị nhiễm dầu đều đã được đánh dấu, trả ra kết quả và kết thúc thuật toán.
 
-#### **Mô tả**
+### **Mô tả**
 
 [/uploads/breadth-first-search_gif3.gif](/uploads/breadth-first-search_gif3.gif)
 
-#### **Cài đặt**
+### **Cài đặt**
 
 **Cấu trúc dữ liệu:**
 
@@ -404,7 +403,7 @@ int main() {
 }
 ```
 
-#### **Đánh giá**
+### **Đánh giá**
 
 Ta sử dụng $2$ mảng `moveX[]` và `moveY[]` để có thể dễ dàng duyệt qua tất cả các ô kề cạnh với ô đang xét.
 
@@ -416,7 +415,7 @@ Với mỗi bộ test:
 
 Nhìn chung, độ phức tạp của thuật toán là $O(t \times (N \times M + 4 \times N \times M))$. Với $t$ là số lượng bộ test.
 
-### **Bài tập áp dụng**
+## **Bài tập áp dụng**
 
 [BCDAISY - Chú bò hư hỏng](https://www.spoj.com/PTIT/problems/BCDAISY/)
 
@@ -440,17 +439,17 @@ Những bài sử dụng $BFS$ thường yêu cầu tìm số bước ít nhất
 
 Hãy xem xét bài toán sau đây:
 
-### **Bài toán 3**
+## **Bài toán 3**
 
 [Vmunch - Gặm cỏ](https://oj.vnoi.info/problem/vmunch)
 
-#### **Đề bài**
+### **Đề bài**
 
 Cho một bảng hình chữ nhật chia thành lưới ô vuông kích thước $R \times C$ ($1 \le R, C \le 100$). Mỗi ô mang $1$ trong $4$ giá trị sau : `.` , `*` , `B` , `C`. Cô bò Bessie đang đứng ở ô `C` và cần đi đến ô `B`. Mỗi bước đi Bessie có thể đi từ $1$ ô vuông sang $4$ ô vuông khác kề cạnh nhưng không được đi vào ô `*` hay đi ra khỏi bảng. Hãy tìm số bước đi ít nhất để Bessie đến được ô `B`. 
 
 Đảm bảo chỉ có duy nhất $1$ ô `B` và $1$ ô `C` trong bảng, và luôn tồn tại đường đi từ `C` đến `B`.
 
-#### **Phân tích**
+### **Phân tích**
 
 Theo mối quan hệ được xây dựng trong đề bài, Bessie có thể di chuyển từ $1$ ô vuông sang $4$ ô vuông khác kề cạnh. Từ đó, ta có thể xây dựng một **mô hình đồ thị** của bài toán:
 - Gọi mỗi đỉnh của đồ thị tương ứng với mỗi ô trong lưới ô vuông.
@@ -460,7 +459,7 @@ Sau khi xây dựng được đồ thị, bài toán quy về như sau: Tìm đ�
 
 Vậy để tìm được kết quả bài toán, ta sẽ áp dụng thuật toán $BFS$.
 
-#### **Cài đặt**
+### **Cài đặt**
 
 **Cấu trúc dữ liệu:**
 
@@ -532,7 +531,7 @@ int main() {
 }
 ```
 
-#### **Đánh giá**
+### **Đánh giá**
 
 Ta sử dụng $2$ mảng `moveX[]` và `moveY[]` để có thể dễ dàng duyệt qua tất cả các ô kề cạnh với ô đang xét.
 
@@ -542,11 +541,11 @@ Giống như $BFS$ thông thường, độ phức tạp của bài toán là $O(
 
 Mặc dù trong quá trình $BFS$, khi gặp được ô `B` thì thủ tục $BFS$ kết thúc luôn nên độ phức tạp thực tế có thể ít hơn so với tính toán. Nhưng trong **trường hợp tệ nhất** là ta phải đi hết tất cả các ô khác xong mới đến được ô `B`. Nên nhìn chung, độ phức tạp của thuật toán là $O(R \times C + 4 \times R \times C)$.
 
-### **Bài toán 4**
+## **Bài toán 4**
 
 [ELEVTRBL - Elevator Trouble](https://www.spoj.com/problems/ELEVTRBL/)
 
-#### **Đề bài**
+### **Đề bài**
 
 Trong một tòa nhà có $f$ tầng, các tầng được đánh số từ $1$ đến $f$, hiện tại bạn đang đứng tại tầng $s$ và cần đi đến tầng $g$. Tại mỗi tầng, thang máy chỉ có $2$ nút là "UP u" và "DOWN d" :
 - Nút "UP u" có thể đưa bạn lên đúng $u$ tầng nếu như có đủ số tầng phía trên.
@@ -556,7 +555,7 @@ Trường hợp không có đủ số tầng thì thang máy sẽ không lên ho
 
 $1 \le s, g \le f \le 10^6; 0 \le u, d \le 10^6$. 
 
-#### **Phân tích**
+### **Phân tích**
 
 **Ghi chú:** Từ ứng dụng **tìm đường đi ngắn nhất trong đồ thị không trọng số**, ta có thể áp dụng để giải quyết các vấn đề hoặc trò chơi có số lần di chuyển ít nhất, nếu mỗi trạng thái của nó có thể được biểu diễn bằng một đỉnh của đồ thị và việc chuyển đổi từ trạng thái này sang trạng thái khác là các cạnh của đồ thị.
 
@@ -572,7 +571,7 @@ Sau khi xây dựng được đồ thị, đường đi ngắn nhất từ đỉ
 
 Vậy để tìm được kết quả bài toán, ta sẽ áp dụng thuật toán $BFS$.
 
-#### **Cài đặt**
+### **Cài đặt**
 
 **Cấu trúc dữ liệu:**
 
@@ -628,7 +627,7 @@ int main() {
 }
 ```
 
-#### **Đánh giá**
+### **Đánh giá**
 
 **Độ phức tạp**
 
@@ -636,17 +635,17 @@ int main() {
 
 Nhìn chung, độ phức tạp của thuật toán là $O(f + 2 \times f)$.
 
-### Bài toán 5
+## Bài toán 5
 
 [cjpaysballas - CJ thanh toán BALLAS](https://lqdoj.edu.vn/problem/cjpaysballas)
 
-#### **Đề bài**
+### **Đề bài**
 
 Cho một đồ thị có hướng gồm $N$ đỉnh và $M$ cạnh $(1 \le N \le 10^5; 1 \le M \le 10^6)$. Các đỉnh được đánh số từ $1$ đến $N$. Hãy tìm đường đi ngắn nhất xuất phát tại đỉnh $s$ và kết thúc tại đỉnh $t$. Nếu có nhiều đường đi ngắn nhất thỏa mãn, thì chỉ ra đường đi có **thứ tự từ điển nhỏ nhất** trong số đó.
 
 Đảm bảo luôn tồn tại ít nhất một đường đi từ $s$ đến $t$.
 
-#### **Phân tích** 
+### **Phân tích** 
 
 **Định lí:** Nếu ta sắp xếp các **danh sách kề** của mỗi đỉnh theo **thứ tự tăng dần** thì thuật toán $BFS$ luôn trả về đường đi có **thứ tự từ điển nhỏ nhất** trong số những đường đi ngắn nhất.
 
@@ -654,7 +653,7 @@ Cho một đồ thị có hướng gồm $N$ đỉnh và $M$ cạnh $(1 \le N \l
 
 Từ **định lí** trên, ta sẽ sắp xếp lại thứ tự đỉnh kề theo thứ tự tăng dần để đảm bảo đường đi được in ra theo thứ tự từ điển. Sau đó sử dụng $BFS$ kết hợp với truy vết để giải quyết bài toán.
 
-#### **Cài đặt**
+### **Cài đặt**
 
 **Cấu trúc dữ liệu:**
 
@@ -719,12 +718,12 @@ int main() {
 }
 ```
 
-#### **Đánh giá**
+### **Đánh giá**
 
 **Độ phức tạp**
 - Độ phức tạp của thuật toán là $O(N + M)$.
 
-### **Bài tập áp dụng**
+## **Bài tập áp dụng**
 
 [BFS - BFS Cơ bản](https://lqdoj.edu.vn/problem/bfs)
 
@@ -760,11 +759,11 @@ int main() {
 
 ## Ứng dụng BFS để tìm chu trình ngắn nhất trong đồ thị có hướng không trọng số 
 
-### **Bài toán 6**
+## **Bài toán 6**
 
 <!-- [ADACYCLE - Ada and Cycle](https://www.spoj.com/problems/ADACYCLE/) -->
 
-#### **Đề bài**
+### **Đề bài**
 
 Ada đang có một chuyến đi ở Bugindia. Ở đó có nhiều thành phố và những con đường một chiều nối giữa chúng. Ada rất băn khoăn về việc tìm con đường ngắn nhất bắt đầu tại một thành phố và kết thúc ở cùng một thành phố. Vì Ada thích những chuyến đi ngắn, cô ấy đã nhờ bạn tìm độ dài của con đường như vậy cho mỗi thành phố ở Bugindia.
 
@@ -777,7 +776,7 @@ Ada đang có một chuyến đi ở Bugindia. Ở đó có nhiều thành phố
 
 - Gồm $N$ dòng: Dòng thứ $i$ in ra độ dài của con đường ngắn nhất bắt đầu từ thành phố $i$ và kết thúc ở thành phố $i$. Nếu không tồn tại con đường nào như vậy, hãy in ra "**NO WAY**" để thay thế.
 
-#### **Phân tích**
+### **Phân tích**
 
 Theo yêu cầu đề bài, với mỗi thành phố, ta phải tìm độ dài con đường ngắn nhất bắt đầu và kết thúc ở cùng một thành phố đó.
 
@@ -787,19 +786,19 @@ Ta coi các thành phố là các đỉnh của đồ thị và các con đườ
 
 Đường đi ngắn nhất từ đỉnh nguồn đến đỉnh $u$, rồi từ $u$ trở lại đỉnh nguồn bằng $1$ cạnh có hướng, chính là **chu trình ngắn nhất** chứa đỉnh nguồn.
 
-#### **Mô tả** 
+### **Mô tả** 
 
 - Thực hiện $BFS$ bắt đầu tại đỉnh $S$ :
 
 [/uploads/breadth-first-search_gif4.gif](/uploads/breadth-first-search_gif4.gif)
 
-#### **Thuật toán**
+### **Thuật toán**
 
 Với mỗi đỉnh của đồ thị, ta thực hiện $BFS$ bắt đầu từ đỉnh đó. 
 
 Trong quá trình $BFS$, ghi nhận khoảng cách từ đỉnh nguồn đến đỉnh đang duyệt, nếu gặp lại đỉnh nguồn thì đó là **chu trình ngắn nhất** chứa đỉnh nguồn. Lúc này, ta in ra độ dài chu trình và kết thúc $BFS$, rồi bắt đầu thực hiện một $BFS$ mới từ đỉnh tiếp theo.
 
-#### **Cài đặt**
+### **Cài đặt**
 
 **Cấu trúc dữ liệu:**
 
@@ -862,7 +861,7 @@ int main() {
 } 
 ```
 
-#### **Đánh giá**
+### **Đánh giá**
 
 Từ bài toán này, ta có thể áp dụng để **tìm chu trình ngắn nhất trong đồ thị có hướng không trọng số** bằng cách lấy ra chu trình ngắn nhất trong tất cả các chu trình chứa mỗi đỉnh (nhiều nhất một chu trình từ mỗi $BFS$ bắt đầu từ $1$ đỉnh).
 
@@ -876,17 +875,17 @@ Vì với mỗi đỉnh của đồ thị, ta phải gọi lại hàm $BFS$. Nê
 
 ## Ứng dụng BFS để tìm đường đi ngắn nhất trong đồ thị có trọng số 0 hoặc 1
 
-### **Bài toán 7**
+## **Bài toán 7**
 
 [REVERSE - Chef and Reversing](https://www.codechef.com/problems/REVERSE)
 
-#### **Đề bài**
+### **Đề bài**
 
 Cho một đồ thị có hướng $N$ đỉnh và $M$ cạnh $(1 \le N, M \le 10^5)$. Tìm số cạnh ít nhất cần phải đảo chiều để tồn tại đường đi từ đỉnh $1$ cho đến đỉnh $N$.
 
 Các đỉnh được đánh số từ $1$ đến $N$. Đồ thị có thể có nhiều cạnh nối giữa một cặp đỉnh. Và có thể tồn tại cạnh nối từ một đỉnh đến chính nó *(đồ thị có thể có khuyên)*.
 
-#### **Phân tích**
+### **Phân tích**
 
 Gọi đồ thị ban đầu là $G$.
 
@@ -907,7 +906,7 @@ Ta có thể chỉnh sửa một chút từ thuật toán $BFS$ để có đư�
 
 Cách tiếp cận của **kĩ thuật 0-1 BFS** khá giống với thuật toán $BFS$ + [Dijkstra](shortest-path.md#2-thu%E1%BA%ADt-to%C3%A1n-dijkstra).
 
-#### **Cài đặt**
+### **Cài đặt**
 
 **Cấu trúc dữ liệu:**
 
@@ -967,13 +966,13 @@ int main() {
 }
 ```
 
-#### **Đánh giá**
+### **Đánh giá**
 
 Ta cũng có thể giải quyết bài toán này bằng thuật toán $Dijkstra$ với độ phức tạp $O(M \times logN)$. 
 
 Trong khi sử dụng $BFS$, độ phức tạp sẽ là $O(N + M)$. Nó tuyến tính và hiệu quả hơn thuật toán $Dijkstra$.
 
-### **Bài tập áp dụng**
+## **Bài tập áp dụng**
 
 [KATHTHI - KATHTHI](https://www.spoj.com/problems/KATHTHI/)
 
@@ -995,7 +994,7 @@ Trong khi sử dụng $BFS$, độ phức tạp sẽ là $O(N + M)$. Nó tuyến
 
 ## Ứng dụng BFS để kiểm tra đồ thị hai phía (Bipartite graph)
 
-### **Định nghĩa**
+## **Định nghĩa**
 
 Trong *Lý thuyết đồ thị*, **đồ thị hai phía** (**đồ thị lưỡng phân** hay **đồ thị hai phần** - *Bipartite graph*) là một đồ thị đặc biệt, trong đó tập hợp các đỉnh của đồ thị có thể được chia làm hai tập hợp **không** giao nhau thỏa mãn điều kiện **không** có cạnh nối hai đỉnh bất kỳ thuộc cùng một tập. 
 
@@ -1008,17 +1007,17 @@ Một tính chất thú vị của đồ thị hai phía là ta có thể tô m�
 
 Bạn có thể tìm hiểu thêm về **đồ thị hai phía** tại [**đây**](https://vi.wikipedia.org/wiki/%C4%90%E1%BB%93_th%E1%BB%8B_hai_ph%C3%ADa).
 
-### **Bài toán 8**
+## **Bài toán 8**
 
 [Bicoloring - UVA 10004](https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem=945)
 
-#### **Đề bài**
+### **Đề bài**
 
 Cho một đồ thị vô hướng liên thông gồm $n$ đỉnh $(0 < n < 200)$. Các đỉnh được đánh số từ $0$ đến $n-1$. Và không tồn tại cạnh nối từ một đỉnh đến chính nó *(đồ thị không có khuyên)*.
 
 Bạn hãy kiểm tra xem đồ thị có thể được tô bằng $2$ màu hay không. Nghĩa là ta có thể gán màu (từ một bảng gồm $2$ màu) cho mỗi đỉnh của đồ thị theo cách sao cho không có $2$ đỉnh nào kề cạnh nhau có cùng màu.
 
-#### **Phân tích**
+### **Phân tích**
 
 Theo đề bài, ta phải kiểm tra xem $1$ đồ thị có thể được tô bằng $2$ màu sao cho không có $2$ đỉnh nào kề cạnh nhau có cùng màu hay không. Điều đó tương đương với việc kiểm tra xem đồ thị đã cho có phải là **đồ thị hai phía** hay không.
 
@@ -1026,7 +1025,7 @@ Ta có thể dùng thuật toán $BFS$ để kiểm tra xem một đồ thị c�
 
 Thuật toán này đúng với đồ thị liên thông. Với đồ thị gồm nhiều thành phần liên thông thì ta phải duyệt từng thành phần liên thông một như thuật toán tìm số thành phần liên thông và áp dụng thủ tục $BFS$ tương ứng.
 
-#### **Mô tả**
+### **Mô tả**
 
 - Ví dụ mô tả đồ thị **không phải** là đồ thị hai phía:
 
@@ -1036,7 +1035,7 @@ Thuật toán này đúng với đồ thị liên thông. Với đồ thị gồ
 
 [/uploads/breadth-first-search_gif6.gif](/uploads/breadth-first-search_gif6.gif)
 
-#### **Thuật toán**
+### **Thuật toán**
 
 Để tô màu đồ thị, ta sẽ sử dụng $1$ mảng để lưu trạng thái của mỗi đỉnh. Có $3$ trạng thái:
 - **Trạng thái -1:** Đỉnh vẫn chưa được tô màu *(đỉnh chưa được duyệt)*.
@@ -1052,7 +1051,7 @@ Ta sử dụng $BFS$ để tô màu đồ thị:
 
 Cuối cùng, nếu ta có thể tô màu tất cả các đỉnh mà **không** vi phạm quy tắc tô màu, ta có thể kết luận đồ thị là hai phía.
 
-#### **Cài đặt**
+### **Cài đặt**
 
 **Cấu trúc dữ liệu:**
 
@@ -1111,7 +1110,7 @@ int main() {
 }
 ```
 
-#### **Đánh giá**
+### **Đánh giá**
 
 Ta cũng có thể sử dụng  thuật toán tìm kiếm theo chiều sâu *(Depth First Search – DFS)* để kiểm tra đồ thị hai phía.
 

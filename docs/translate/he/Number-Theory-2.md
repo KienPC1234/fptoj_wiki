@@ -1,4 +1,3 @@
-## Số học 2 - Số nguyên tố, Sàng Eratosthenes
 
 Nguồn: [HackerEarth](https://www.hackerearth.com/practice/notes/number-theory-1/) và 1 số bài viết trên Wikipedia
 
@@ -19,7 +18,7 @@ Ví dụ, 5 là số nguyên tố vì 5 chỉ chia hết cho 1 và 5. Tuy nhiên
 
 Có rất nhiều phương pháp để kiểm tra một số nguyên có phải là số nguyên tố hay không.
 
-### Thuật toán "ngây thơ"
+## Thuật toán "ngây thơ"
 
 Ta sẽ duyệt hết tất cả các số từ 1 đến $N$ và đếm số ước của $N$. Nếu số ước của $N$ là 2 thì $N$ là số nguyên tố, nếu không thì $N$ không là số nguyên tố.
 
@@ -36,7 +35,7 @@ bool isPrime(int n) {
 
 **Độ phức tạp của thuật toán:** Độ phức tạp của thuật toán là $O(N)$ do ta phải duyệt hết các số từ 1 đến $N$.
 
-### Một thuật toán tốt hơn
+## Một thuật toán tốt hơn
 
 Xét hai số nguyên dương $N$ và $D$ thỏa mãn $N$ chia hết cho $D$ và $D$ nhỏ hơn $\sqrt{N}$. Khi đó $\frac{N}{D}$ phải lớn hơn $\sqrt{N}$. $N$ cũng chia hết cho $\frac{N}{D}$. Vì thế, nếu $N$ có ước nhỏ hơn $\sqrt{N}$ thì $N$ cũng có ước lớn hơn $\sqrt{N}$. Do đó, ta chỉ cần duyệt đến $\sqrt{N}$.
 

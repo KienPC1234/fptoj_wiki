@@ -1,4 +1,3 @@
-## Hàm Mobius
 
 Nguồn: [Quora](https://www.quora.com/profile/Surya-Kiran/Posts/A-Dance-with-Mobius-Function)
 
@@ -91,7 +90,7 @@ $f(n)=\sum_{d\|n}{S_f(d)\*\mu (n/d)}$ - đây gọi là [Công thức nghịch �
 
 ## Ứng dụng
 
-### GCDEX
+## GCDEX
 
 [Đề bài](http://www.spoj.com/problems/GCDEX/)
 
@@ -146,13 +145,13 @@ for (int i = 1,j; i <= n; i = j + 1) {
 
 Như vậy thuật toán trên có độ phức tạp $O(NlogN+\sqrt N \*T)$ với $T$ là số test.
 
-### Bài toán tổng quát
+## Bài toán tổng quát
 
 Bài toán tổng quát hơn của bài toán trên là tính $G=\sum_{i=1}^{n} \sum_{j=i+1}^{n}h(gcd(i,j))$ với $h$ (nên) là một hàm nhân tính. Ví dụ muốn tính $G=\sum_{i=1}^{n} \sum_{j=i+1}^{n}gcd^3(i,j)$ thì $h(n)=n^3$.
 
 Các bước tính toán gần như giống với bài toán trên.
 
-### Coprime Triples
+## Coprime Triples
 
 [Đề bài](https://www.codechef.com/problems/COPRIME3)
 

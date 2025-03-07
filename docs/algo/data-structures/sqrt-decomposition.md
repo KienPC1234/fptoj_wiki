@@ -1,4 +1,3 @@
-## Chia căn (sqrt decomposition) và ứng dụng: Phần 1
 
 **Tác giả**: Hoàng Xuân Nhật & Vương Hoàng Long
 
@@ -34,7 +33,7 @@ Với những đoạn đầy đủ, ta cộng $cnt[0]$ của chúng vào kết q
 Cấu trúc trên vẫn có thể giải bài toán này khi có thêm truy vấn **chỉnh sửa một phần tử** của $A$, bạn chỉ cần thay đổi giá trị $cnt$ của một đoạn duy nhất chứa phần tử cần cập nhật.
 
 
-### Phân tích
+## Phân tích
 
 Đầu tiên, ta phải trả lời được câu hỏi: tại sao lại chia thành $\sqrt{N}$ đoạn, mà không phải $1, 2, 10, N/2, ... $ ? 
 
@@ -48,7 +47,7 @@ Với đoạn dư ra ở hai đầu, ta xét riêng từng phần tử mất $O(
 
 Mỗi truy vấn ta mất thời gian là $O(S + N/S)$. Ta cần tìm giá trị $S$ sao cho $S + N/S$ đạt giá trị nhỏ nhất. Áp dụng [bất đẳng thức AM-GM](https://vi.wikipedia.org/wiki/B%E1%BA%A5t_%C4%91%E1%BA%B3ng_th%E1%BB%A9c_trung_b%C3%ACnh_c%E1%BB%99ng_v%C3%A0_trung_b%C3%ACnh_nh%C3%A2n), giá trị này là nhỏ nhất khi $S = N/S \iff S = \sqrt{N}$. Thời gian để thực hiện $Q$ truy vấn sẽ là $O(Q\sqrt{N})$.
 
-### Cài đặt
+## Cài đặt
 
 Ta cần phải lưu những cấu trúc sau: 
 * $\sqrt{N}$ mảng $cnt$, mỗi mảng có độ dài $max(A_i)$, tốn $O(\sqrt{N} * max(A_i)$) bộ nhớ.
@@ -113,7 +112,7 @@ Tiếp nối bài toán đầu tiên, chúng ta hãy cùng đi sâu hơn vào c�
 **Lưu ý:** Bài tập có cách giải tối ưu nhất sử dụng Segment Tree, tuy nhiên vì mục đích của bài viết này nên bài tập sẽ được giải bằng chia căn. 
 
 
-### Đề bài 
+## Đề bài 
 
 Các bạn có thể nộp bài ở [đây](http://codeforces.com/group/FLVn1Sc504/contest/315912/problem/A)
 
@@ -121,8 +120,8 @@ Cho một mảng $A$ gồm $N$ phần tử là các số nguyên. Bạn cần th
 
 Ghi chú: $oval,nval$ là viết tắt cho _old value_ và _new value_.
 
-### Cách giải
-#### Giả sử các truy vấn đều có $l = 1, r=N$
+## Cách giải
+### Giả sử các truy vấn đều có $l = 1, r=N$
 Với giả sử trên, ta sẽ giải bài toán với đpt $O(Q*100 + N)$. Ta sẽ tạo mảng $lazy[oval]$ với ý nghĩa là các số ban đầu là $oval$ thì hiện tại đã được đổi giá trị sang $lazy[oval]$. Ban đầu $lazy[oval] = oval$ với $1 \le oval \le 100$. Với mỗi truy vấn $(l,r,oval,nval)$, ta sẽ làm như sau: 
 
 ```cpp
@@ -140,7 +139,7 @@ for (int i = 1; i <= n; ++i) {
 ```
 Vậy là chúng ta đã giải xong bài toán với độ phức tạp $O(Q*100 + N)$.
 
-#### Giải bài toán gốc 
+### Giải bài toán gốc 
 Ta sẽ áp dụng ý tưởng trên vào để giải bài toán gốc. Ta cũng chia mảng thành $\sqrt{N}$ đoạn. Xét một truy vấn $(l,r,oval,nval)$ ta có:
 * $blockL$ là block đầu tiên ở bên phải $l$
 * $blockR$ là block chứa $r$
@@ -151,7 +150,7 @@ Vậy truy vấn của chúng ta sẽ được chia làm 3 phần (có thể r�
 * Phần dư bên phải: $[ blockR * BLOCK\\_SIZE ... r ]$
 * Phần đầy đủ các block: $[ blockL * BLOCK\\_SIZE ... blockR * BLOCK\\_SIZE - 1 ]$
 
-##### Đầu tiên, chúng ta cập nhật *phần đầy đủ các block*:
+#### Đầu tiên, chúng ta cập nhật *phần đầy đủ các block*:
 
 Ta sẽ cập nhật lần lượt cho từng block đơn lẻ. Gọi block hiện tại là $id$, ta sẽ làm tương tự như khi giải bài toán $l = 1, r=N$:
 
@@ -167,7 +166,7 @@ void blockUpdate(int id, int oval, int nval) {
 
 Vậy là chúng ta đã cập nhật xong cho tất cả các block thuộc *phần đầy đủ các block*. *Chú ý*, việc cập nhật này chúng ta chỉ đánh dấu là các phần tử đang có giá trị là $oval$ *sẽ được thay đổi* thành $nval$. Giá trị của các phần tử trong đoạn này sau cập nhật *không có sự thay đổi nào* (ý tưởng giống như [Lazy Propagation](segment-tree-extend.md#2-lazy-propagation).
 
-##### Tiếp theo, chúng ta cập nhật *phần dư bên trái*:
+#### Tiếp theo, chúng ta cập nhật *phần dư bên trái*:
 
 Gọi block của *phần dư bên trái* là $id$.
 
@@ -217,7 +216,7 @@ manualUpdate(l, blockL * BLOCK_SIZE - 1, oval, nval);
 manualUpdate(blockR * BLOCK_SIZE, r, oval, nval);
 ```
 
-### Phân tích
+## Phân tích
 
 *Ghi chú*: Vì hằng số của lời giải này tương đối lớn nên tác giả sẽ giữ hằng số trong độ phức tạp khi cần thiết
 

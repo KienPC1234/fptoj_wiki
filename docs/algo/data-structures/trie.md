@@ -1,4 +1,3 @@
-## Trie
 
 **Nguời viết:** 
 - Ngô Nhật Quang - HUS High School for Gifted Students
@@ -54,7 +53,7 @@ Với hàm thêm xâu vào trie, ta bắt đầu tại nút gốc. Ta duyệt qu
 
 Hàm tìm xâu được cài đặt khá giống hàm thêm xâu. Chỉ khác là nếu không có cạnh tương ứng với kí tự đang duyệt, ta dừng ngay lập tức vì xâu đó sẽ không thể xuất hiện trong trie. Sau khi duyệt xong ta kiểm tra ở đỉnh đó có xâu nào kết thúc hay không, hay `exist != 0`.
 
-### Cài đặt bằng mảng
+## Cài đặt bằng mảng
 
 ```cpp
 const int NUMBEROFNODES = ...;
@@ -134,7 +133,7 @@ struct Trie{
 };
 ```
 
-### Cài đặt bằng con trỏ
+## Cài đặt bằng con trỏ
 
 Gần như mọi phần trong đoạn code dưới hoạt động giống phần cài đặt bằng mảng nên sẽ không chú thích lại.
 
@@ -205,7 +204,7 @@ struct Trie{
 };
 ```
 
-### Ưu và nhược điểm của cài đặt bằng con trỏ
+## Ưu và nhược điểm của cài đặt bằng con trỏ
 
 Ưu điểm:
 - Không cần phải tính toán trước độ dài mảng cần dùng. Tuy có thể cài đặt trie bằng vector nhưng sẽ tốn thời gian truy cập hơn và đôi khi tốn nhiều bộ nhớ hơn.
@@ -300,13 +299,13 @@ Trie tuy trông đơn giản nhưng nó có rất nhiều ứng dụng khác nha
 
 Trong đời sống, trie là nền tảng cho một số thứ chúng ta rất thân thuộc như các công cụ tìm kiếm(Google, Bing, ...), tính năng tự động hoàn thành từ (autocomplete), ... nhưng trong bài viết này sẽ tập trung vào các ứng dụng trong lập trình thi đấu.
 
-### Sắp xếp một danh sách các xâu
+## Sắp xếp một danh sách các xâu
 
-#### Bài toán
+### Bài toán
 
 Cho một danh sách các xâu, hãy in ra các xâu đó theo thứ tự từ điển tăng dần.
 
-#### Lời giải
+### Lời giải
 
 Sau khi xây dựng trie gồm các xâu trong danh sách, ta dfs một lượt qua trie đó, đi lần lượt các cạnh theo thứ tự chữ cái tăng dần. Duyệt tới một đỉnh tới bất kì, ta sẽ in ra các xâu được thể hiện bởi đỉnh đó nếu có. Dễ thấy ta sẽ lần lượt thu được các xâu trong danh sách theo thứ tự từ điển tăng dần.
 
@@ -335,13 +334,13 @@ vector<string> sort_strings() {
 }
 ```
 
-### Xử lí truy vấn tiền tố chung dài nhất của hai xâu
+## Xử lí truy vấn tiền tố chung dài nhất của hai xâu
 
-#### Bài toán
+### Bài toán
 
 Cho một danh sách các xâu. Hãy trả lời các truy vấn tìm độ dài của tiền tố chung dài nhất của hai xâu bất kì trong danh sách đó.
 
-#### Lời giải
+### Lời giải
 
 Đầu tiên, ta dựng một trie của danh sách các xâu đã cho.
 
@@ -349,13 +348,13 @@ Với hai xâu bất kì trong danh sách, ta có thể thấy tiền tố chung
 
 Do vậy bài toán quy về xử lí truy vấn tìm tổ tiên chung thấp nhất của hai đỉnh bất kì trên cây, bạn đọc có thể tham khảo lời giải ở blog [này](https://vnoi.info/wiki/algo/data-structures/lca-binlift.md).
 
-### Xử lí truy vấn tìm xâu có thứ tự từ điển thứ k
+## Xử lí truy vấn tìm xâu có thứ tự từ điển thứ k
 
-#### Bài toán
+### Bài toán
 
 Cho một danh sách các xâu. Xử lí các truy vấn tìm xâu có thứ tự từ điển lớn thứ $k$.
 
-#### Lời giải
+### Lời giải
 
 Tương tự như bài toán trước, ta xây dựng một trie cho các xâu trong danh sách đã cho.
 
@@ -387,15 +386,15 @@ string find_kth_string(int k) {
 
 Trong đoạn code, dễ thấy rằng ta xây dựng đáp án từ trái qua phải. Ở đỉnh hiện tại đang xét, ta sử dụng biến đếm $cnt$ ở mỗi đỉnh con để xác định kí tự tiếp theo của xâu đáp án là gì. Sau đó di chuyển xuống đỉnh con đó để tiếp tục tìm kí tự tiếp theo.
 
-### Xử lí truy vấn tìm XOR lớn nhất với giá trị được cho
+## Xử lí truy vấn tìm XOR lớn nhất với giá trị được cho
 
 Đây là một bài toán điển hình sử dụng trie nhị phân. Đa số các bài toán liên quan tới thao tác bit sử dụng trie đều là biến thể của bài toán này.
 
-#### Bài toán
+### Bài toán
 
 Cho danh sách các số nguyên không âm $a_1, a_2, \ldots, a_n$. Xử lí các truy vấn cho số nguyên không âm $x$, tìm $\max_{i = 1}^{n} a_i \oplus x$ với $\oplus$ là [phép XOR](https://en.wikipedia.org/wiki/Exclusive_or) hai số nguyên không âm.
 
-#### Lời giải
+### Lời giải
 
 Đầu tiên xây dựng một trie nhị phân với các số nguyên đã cho.
 
@@ -430,9 +429,9 @@ int query(int x) {
 
 Dưới đây sẽ là một số bài toán hay (theo góc nhìn của người viết) và lời giải dễ hiểu sử dụng cấu trúc dữ liệu trie.
 
-### Codeforces - [Kuro and GCD and XOR and SUM](https://codeforces.com/problemset/problem/979/D)
+## Codeforces - [Kuro and GCD and XOR and SUM](https://codeforces.com/problemset/problem/979/D)
 
-#### Đề bài
+### Đề bài
 
 Cho mảng số $a$ ban đầu rỗng. Xử lí $q$ truy vấn thuộc hai loại sau:
 - $1\,u_i$: Thêm số $u_i$ vào mảng $a$.
@@ -442,7 +441,7 @@ Giới hạn:
 - $2 \le q \le 10^5$
 - $1 \le u_i, x_i, k_i, s_i \le 10^5$
 
-#### Lời giải
+### Lời giải
 
 Nhìn thấy bài toán tìm $x_i \oplus v$ lớn nhất ngay lập tức gợi cho chúng ta lời giải sử dụng trie để giải. Vì vậy ta sẽ cố gắng thiết kế trie để truy vấn trên tập các số thỏa mãn hai điều kiện còn lại.
 
@@ -542,9 +541,9 @@ signed main() {
 ```
 </details>
 
-### Codeforces - [Vitya and Strange Lesson](https://codeforces.com/problemset/problem/842/D)
+## Codeforces - [Vitya and Strange Lesson](https://codeforces.com/problemset/problem/842/D)
 
-#### Đề bài
+### Đề bài
 
 Cho dãy số nguyên không âm $a_1, a_2, \ldots, a_n$ và $m$ truy vấn thuộc hai loại:
 - Cho $x$, XOR tất cả các số trong dãy với $x$.
@@ -554,7 +553,7 @@ Giới hạn:
 - $1 \le n, m \le 3 \times 10^5$
 - $0 \le a_i, x \le 3 \times 10^5$
 
-#### Lời giải
+### Lời giải
 
 Với các truy vấn loại $1$, thay vì thay đổi cả dãy, ta nhận thấy rằng $(a \oplus b) \oplus c = a \oplus (b \oplus c)$. Tức là nếu áp dụng hai truy vấn loại $1$ với hai số nguyên $b, c$ thì cũng tương tự như áp dụng một truy vấn với số nguyên $b \oplus c$. Do vậy, ta chỉ cần duy trì cả dãy đang bị XOR bởi số nguyên nào. Gọi số đó là $z$.
 
@@ -652,9 +651,9 @@ signed main() {
 ```
 </details>
 
-### Codechef - [English](https://www.codechef.com/problems-old/ENGLISH)
+## Codechef - [English](https://www.codechef.com/problems-old/ENGLISH)
 
-#### Đề bài
+### Đề bài
 
 Cho $N$ xâu $W_1, W_2, \ldots, W_N$. Một cặp xâu có độ dài tiền tố chung dài nhất là $l_p$, độ dài hậu tố chung dài nhất là $l_s$, thì vẻ đẹp của cặp xâu đó là là $\min(l_p, l_s)^2$. Hãy ghép cặp các xâu, mỗi xâu nằm trong tối đa một cặp sao cho tổng vẻ đẹp các cặp xâu là lớn nhất.
 
@@ -663,7 +662,7 @@ Giới hạn:
 - $1 \le \lvert W_i \rvert \le 10^5$
 - $1 \le \sum^N_{i = 1} \lvert W_i \rvert \le 10^5$
 
-#### Lời giải
+### Lời giải
 
 Giả sử bài toán định nghĩa vẻ đẹp một cặp xâu là $l_p^2$, thì bài toán có thể dễ dàng được giải quyết bằng cách dfs trên trie các xâu đã cho.
 
@@ -750,9 +749,9 @@ signed main() {
 ```
 </details>
 
-### JOI Open Contest 2016 - [Selling RNA Strands](https://oj.uz/problem/view/JOI16_selling_rna)
+## JOI Open Contest 2016 - [Selling RNA Strands](https://oj.uz/problem/view/JOI16_selling_rna)
 
-#### Đề bài
+### Đề bài
 
 Cho danh sách $N$ xâu $S_1, S_2, \ldots, S_N$ và $M$ truy vấn. Truy vấn thứ $j$ gồm hai xâu $P_j$ và $Q_j$, hãy tìm số lượng xâu trong danh sách ban đầu có tiền tố là $P_j$ và hậu tố là $Q_j$.
 
@@ -763,7 +762,7 @@ Giới hạn:
 - $1 \le \sum^{N}_{i = 1} \lvert Q_j \rvert \le 2 \times 10^6$.
 - Các xâu chỉ gồm các kí tự `A`, `G`, `C`, `U`.
 
-#### Lời giải
+### Lời giải
 
 Đầu tiên, ta sắp xếp và đánh số lại các xâu theo thứ tự từ điển tăng dần.
 
@@ -947,9 +946,9 @@ signed main() {
 ```
 </details>
 
-### XX Open Cup, Grand Prix of Kazan - [Bitwise Xor](https://codeforces.com/gym/102331/problem/B)
+## XX Open Cup, Grand Prix of Kazan - [Bitwise Xor](https://codeforces.com/gym/102331/problem/B)
 
-#### Đề bài
+### Đề bài
 
 Cho dãy số nguyên $a_1, a_2, \ldots, a_N$ và số nguyên $x$. Đếm số dãy con $1 \le b_1 < b_2 < \ldots < b_k \le n$ mà $a_{b_i} \oplus a_{b_j} \ge x$ với mọi cặp $(i, j)$ thỏa mãn $1 \le i < j \le k$.
 
@@ -957,7 +956,7 @@ Giới hạn:
 - $1 \le N \le 3 \times 10^5$
 - $0 \le a_i, x < 2^{60}$
 
-#### Lời giải
+### Lời giải
 
 Với một dãy số ${x_1, x_2, \ldots, x_k}$ thỏa mãn điều kiện đề bài, nhận thấy rằng nếu ta sắp xếp lại các giá trị đó từ bé đến lớn, thì giá trị bé nhất của $x_i \oplus x_j$ sẽ có $\lvert i - j \rvert = 1$. Phần chứng minh xin dành cho bạn đọc.
 
@@ -1070,7 +1069,7 @@ signed main() {
 
 [VNOJ Tag Problem List](https://oj.vnoi.info/tags/?tag_id=trie)
 
-### Trie xâu
+## Trie xâu
 
 [SPOJ - Ada and Indexing](https://www.spoj.com/problems/ADAINDEX/) (Dễ)
 
@@ -1090,7 +1089,7 @@ signed main() {
 
 [PVHOI 2.2 - Tiền tố chung dài nhất](https://oj.vnoi.info/problem/pvhoi22_5_lcp) (Khó)
 
-### Trie nhị phân
+## Trie nhị phân
 
 [Hackerrank - XOR Key](https://www.hackerrank.com/challenges/xor-key/problem) (Dễ)
 

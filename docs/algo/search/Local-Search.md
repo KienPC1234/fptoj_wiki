@@ -1,4 +1,3 @@
-## Local Search
 
 Tác giả: Nguyễn Thành Trung (RR)
 

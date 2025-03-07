@@ -1,4 +1,3 @@
-## Cây (Tree)
 
 Nguồn: [wcipeg](http://wcipeg.com/wiki/Tree)
 
@@ -68,7 +67,7 @@ _Một vài chú ý:_
 
 **Duyệt cây** là việc thăm tất cả đỉnh của cây. Liệt kê các đỉnh được thăm theo thứ tự, ta thu được một thứ tự duyệt cây. Nếu một cây có $N$ đỉnh thì sẽ có $N!$ thứ tự duyệt cây. Có 2 cách duyệt quan trọng là duyệt theo **thứ tự trước** (**preoder**) và duyệt theo **thứ tự sau** (**postorder**). 
 
-### Duyệt theo thứ tự trước (preorder)
+## Duyệt theo thứ tự trước (preorder)
 
 Trong cách duyệt theo thứ tự trước, chúng ta sẽ thực hiện một phép tìm kiếm theo chiều sâu (**DFS**) bắt đầu từ đỉnh gốc, mỗi đỉnh sẽ được đánh dấu đã đi qua ngay khi nó được đưa vào stack lần đầu.
 
@@ -79,7 +78,7 @@ DFS(u):
     DFS(v)
 ```
 
-### Duyệt theo thứ tự sau (postorder)
+## Duyệt theo thứ tự sau (postorder)
 
 Phép duyệt theo thứ tự sau cũng tương tự, nhưng khác ở chỗ là một đỉnh được coi là đã thăm ngay khi *tất cả* các con của nó đã được thăm (các đỉnh lá được đánh dấu đã thăm khi chúng vừa được đưa vào stack vì chúng không có con). 
 
@@ -92,7 +91,7 @@ DFS(u):
 
 Ta có thể định nghĩa thứ tự cho các con của 1 đỉnh: "con thứ nhất", "con thứ hai",... Khi đó, phép duyệt theo thứ tự trước hay sau đều chỉ sinh ra một thứ tự duy nhất.
 
-### Duyệt theo thứ tự giữa (inorder)
+## Duyệt theo thứ tự giữa (inorder)
 
 Ngoài duyệt theo thứ tự trước và sau, cây **nhị phân** còn có cách duyệt theo **thứ tự giữa** (**inorder traversal**). Một đỉnh được coi là đã thăm sau khi tất cả đỉnh thuộc cây con trái của nó được thăm và trước khi bất kì đỉnh nào thuộc cây con phải của nó được thăm. Trình tự duyệt theo thứ tự giữa là duy nhất đối với mỗi cây nhị phân, và duyệt cây nhị phân tìm kiếm theo thứ tự giữa luôn trả về một danh sách đã sắp xếp.
 

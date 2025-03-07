@@ -1,4 +1,3 @@
-## Bảng băm (Hash Table)
 
 ## Tư tưởng
 
@@ -30,7 +29,7 @@ Giá trị $n/k$ được gọi là **load factor**. Khi load factor nhỏ (xấ
 
 ## Hash collision
 
-### Separate chaining
+## Separate chaining
 
 Trường hợp một hash bucket chứa nhiều hơn một giá trị ta gọi đó là **Hash collision** (va chạm). Việc xử lý hash collision rất quan trọng đối với độ hiệu quả của bảng băm. Một trong những phương pháp đơn giản nhất là cài đặt các [danh sách liên kết](algo/data-structures/array-vs-linked-lists) ở các bucket. Kĩ thuật này được gọi là **Separate chaining**:
 
@@ -41,7 +40,7 @@ Giải thích hình minh họa:
 - Mỗi bucket là 1 danh sách liên kết
 - John Smith và Sandra Dee cùng có giá trị hàm hash là 152, nên ở bucket 152, ta có 1 danh sách liên kết chứa 2 phần tử.
 
-### Open Addressing
+## Open Addressing
 
 Tư tưởng của **Open Addressing** là, khi xảy ra Hash collision, ta lưu vào một vị trí tiếp theo trong bảng băm. Ví dụ:
 

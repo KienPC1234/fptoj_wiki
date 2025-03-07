@@ -1,4 +1,3 @@
-## Bao lồi (Convex Hull)
 
 Nguồn: [wcipeg](http://wcipeg.com/wiki/Convex_hull)
 
@@ -27,7 +26,7 @@ Bài toán tìm bao lồi của một tập điểm trên mặt phẳng là mộ
 
 **Chú ý 2:** Bạn đọc nên hiểu phần thuật toán trước khi đọc phần cài đặt để dễ hiểu hơn.
 
-### Thuật toán bọc gói quà (Gift wrapping algorithm)
+## Thuật toán bọc gói quà (Gift wrapping algorithm)
 
 **Thuật toán bọc gói quà**, hay còn gọi là thuật toán **Jarvis march**, là một trong những thuật toán tìm bao lồi đơn giản và dễ hiểu nhất. Tên thuật toán xuất phát từ sự tương tự của thuật toán với việc đi bộ xung quanh các điểm và cầm theo một dải băng gói quà.
 
@@ -53,7 +52,7 @@ Với mỗi lần tìm $Q$, ta duyệt qua tất cả các điểm $R$ trong t�
 |-|
 |Minh hoạ của thuật toán bọc gói quà<br> source: [wikipedia - Gift wrapping algorithm](https://en.wikipedia.org/wiki/Gift_wrapping_algorithm)|
 
-#### Cài đặt
+### Cài đặt
 Nhược điểm của cách cài đặt này là sai số của số thực khi tính góc.
 
 ```cpp
@@ -149,7 +148,7 @@ vector<Point> convexHull(vector<Point> p, int n) {
 }
 ```
 
-### Thuật toán Graham (Graham scan)
+## Thuật toán Graham (Graham scan)
 Thuật toán Graham có độ phức tạp trong trường hợp xấu nhất nhỏ hơn thuật toán bọc gói, song thuật toán Graham lại phức tạp hơn.
 - Đầu tiên, ta xác định một điểm mà chắc chắn thuộc bao lồi. Thông thường, khi cài đặt người ta chọn điểm có tung độ nhỏ nhất (nếu có nhiều điểm như vậy thì chọn điểm trái nhất). Gọi điểm này là điểm $O$.
 - Chọn hệ trục tọa độ có gốc là điểm $O$ vừa chọn, sắp xếp các điểm còn lại theo thứ tự tăng dần của góc tạo bởi trục hoành theo chiều dương và $\overrightarrow{OI}$ với $I$ là một trong các điểm còn lại.
@@ -167,7 +166,7 @@ Về độ phức tạp thuật toán, ta thấy bước sắp xếp các điể
 |-|
 |Minh hoạ của thuật toán Graham<br> source: [wikipedia - Graham scan](https://en.wikipedia.org/wiki/Graham_scan)|
 
-#### Cài đặt
+### Cài đặt
 ```cpp
 ## include <bits/stdc++.h>
 using namespace std;
@@ -222,7 +221,7 @@ vector<Point> convexHull(vector<Point> p, int n) {
 }
 ```
 
-### Thuật toán chuỗi đơn điệu (Monotone chain algorithm)
+## Thuật toán chuỗi đơn điệu (Monotone chain algorithm)
 Thuật toán chuỗi đơn điệu vừa dễ cài đặt, vừa là thuật toán nhanh nhất trong $3$ thuật toán được giới thiệu trong bài này. Thuật toán dựa trên việc tìm hai chuỗi đơn điệu của bao lồi: bao trên (hay chuỗi trên) và bao dưới (hay chuỗi dưới).
 
 |![/uploads/algo_geometry_convex_hull_UpperAndLowerConvexHulls.png](/uploads/algo_geometry_convex_hull_UpperAndLowerConvexHulls.png)|
@@ -246,7 +245,7 @@ Thuật toán này cũng có độ phức tạp $\mathcal{O}(n\log{n})$. Thuật
 |-|
 |Minh hoạ của thuật toán chuỗi đơn điệu<br> source: [wikibooks - Monotone chain](https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain)|
 
-#### Cài đặt
+### Cài đặt
 Link bài tập: [**CSES - Convex Hull**](https://cses.fi/problemset/task/2195/)
 ```cpp
 ## include <bits/stdc++.h>
@@ -340,14 +339,14 @@ Tìm bao lồi trong 3D thực sự là một bài toán khó. Bài toán này c
 Ta có thể tìm bao lồi trong không gian với độ phức tạp $\mathcal{O}(n\log{n})$ bằng phương pháp chia để trị, tuy nhiên việc cài đặt thuật toán này là vô cùng khó.
 
 ## Ứng dụng
-### [**VNOJ - KMIX**](https://oj.vnoi.info/problem/kmix)
+## [**VNOJ - KMIX**](https://oj.vnoi.info/problem/kmix)
 
-#### Tóm tắt
+### Tóm tắt
 Có $N$ loại cocktail khác nhau, mỗi loại có nồng độ cam và dâu lần lượt là $x$ và $y$ (tính theo đơn vị phần tỉ).
 Có $M$ vị khách, vị khách thứ $i$ yêu cầu loại cocktail có nồng độ cam và dâu lần lượt là $x$ và $y$.
 Hỏi có thể đáp ứng yêu cầu của từng vị khách hay không?
 
-#### Ý tưởng
+### Ý tưởng
 Nếu xem mỗi loại cocktail là một điểm toạ độ $(x, y)$ trên mặt phẳng, vậy các loại cocktail có thể pha chế từ $2$ loại cocktail $i$ và $j$ khác nhau sẽ nằm trên đoạn thẳng nối $2$ điểm $(x_i, y_i)$ và $(x_j, y_j)$.
 Mở rộng, các loại cocktail có thể pha chế từ $N$ loại cocktail ban đầu sẽ nằm trong bao lồi của $N$ điểm $(x, y)$.
 
@@ -362,7 +361,7 @@ Mở rộng, các loại cocktail có thể pha chế từ $N$ loại cocktail b
     ![/uploads/algo_geometry_convex_hull_kmix3.png](/uploads/algo_geometry_convex_hull_kmix3.png)
 - Đến đây, ta kiểm tra $(H_{x-1}, H_x, P)$ có cùng chiều kim đồng hồ hay không (tức $P$ có thuộc tam giác $(H_0,H_{x-1},H_x)$ hay không).
 
-#### Cài đặt
+### Cài đặt
 ```cpp
 ## include <bits/stdc++.h>
 using namespace std;

@@ -1,4 +1,3 @@
-## Cách tính số tổ hợp
 
 **Người viết:**
 - Nguyễn Minh Hiển - Trường Đại học Công nghệ, ĐHQGHN
@@ -9,8 +8,8 @@
 - Nguyễn Minh Nhật - Trường THPT chuyên Khoa học Tự nhiên, ĐHQGHN
 
 
-### Tổ hợp (Combination)
-#### Giới thiệu về tổ hợp
+## Tổ hợp (Combination)
+### Giới thiệu về tổ hợp
 Trong toán học, tổ hợp là cách chọn các phần tử từ một nhóm mà không phân biệt thứ tự chọn. Mỗi tập con gồm $k$ phần tử khác nhau (không phân biệt thứ tự) của tập hợp $n$ phần tử đã cho ($0 ≤ k ≤ n$) được gọi là một tổ hợp chập $k$ của $n$ phần tử.
 Số các tổ hợp chập $k$ của $n$ phần tử khác nhau được kí hiệu là $C_n^k$ hoặc $\dbinom{n}{k}$:
 
@@ -22,7 +21,7 @@ Ta quy ước:
 - Nếu $k > n$ thì $C_n^k  = 0$
 
 
-#### Một số tính chất của tổ hợp
+### Một số tính chất của tổ hợp
 - Với mọi $n ≥ 1$ và $0 ≤ k ≤ n$, ta có:
     - $C_n^k = C_n^{n - k}$
     - $C_n^k = C_{n - 1}^{k - 1} + C_{n - 1}^{k}$
@@ -31,8 +30,8 @@ Ta quy ước:
 - $C_n^k$ còn được gọi là hệ số nhị thức (binomial coefficients) do $C_n^k$ là hệ số trong khai triển:
 $$(x + y)^n= \sum\limits_{k = 0}^{n} C_n^k \cdot x^k \cdot y ^ {n - k}$$
 
-### Tính số tổ hợp
-#### Sử dụng định nghĩa
+## Tính số tổ hợp
+### Sử dụng định nghĩa
 $$C_n^k = \dfrac{n!}{k! (n - k)!}$$
 - Với công thức này, ta nghĩ ngay đến một thuật toán "ngây thơ": Tính $n!$, $k!$ và  $(n - k)!$. Từ đó tính được $C_n^k$.
 
@@ -57,7 +56,7 @@ for (int i = 1; i <= k; i++)
 
 - Hai cách tiếp cận trên rất tự nhiên, dễ nghĩ, dễ thực hiện nhưng lại có một trở ngại: giá trị của $n!$ có thể rất lớn (khi $n = 20$ thì $n! \approx 2.42\times10^{18}$)
 
-#### Sử dụng công thức truy hồi
+### Sử dụng công thức truy hồi
 
 $$\begin{align*}
 C_n^k=\begin{cases}
@@ -84,7 +83,7 @@ for (int i = 0; i <= n; i++){
 - Tiền xử lý: $O(n^2)$
 - Truy vấn: $O(1)$
 
-### Tính số tổ hợp theo modulo M
+## Tính số tổ hợp theo modulo M
 Vì kết quả của $C_n^k$ có thể rất lớn nên trong lập trình thi đấu, thí sinh thường được yêu cầu tính $C_n^k$ theo một modulo $M$ nào đó (phần dư của phép chia $C_n^k$ cho $M$).
 Dưới đây là một số cách sử dụng để tính $C_n^k$ theo modulo $M$.
 *Chú ý rằng độ phức tạp dưới đây được tính toán khi sử dụng một modulo $M$ cho toàn bài!*
@@ -106,7 +105,7 @@ Ngoài ra còn có hai cách tính dựa trên cách tính giai thừa modulo $M
 | Biến đổi FFT |            không            | $O\left(\sqrt M\log M\right)$ |   $O\left(\sqrt M\right)$   |  Khó   | $M$ nguyên tố, $n < M \le 10^{12}$ |
 
 ---
-#### Sử dụng công thức truy hồi
+### Sử dụng công thức truy hồi
 Ở đây, ta sẽ sử dụng công thức truy hồi ở trên và thay đổi một chút:
 $$C_n^k = (C_{n - 1}^{k - 1} + C_{n - 1}^{k}) \mod M$$
 
@@ -128,7 +127,7 @@ for (int i = 0; i <= n; i++){
 >Nhận xét: Đây là cách đơn giản, dễ nghĩ, dễ code đúng, nên sử dụng trong trường hợp $n$ nhỏ để tiết kiệm thời gian.
 
 ---
-#### Sử dụng định nghĩa
+### Sử dụng định nghĩa
 Rào cản lớn nhất cho việc sử dụng định nghĩa $C_n^k = \dfrac{n!}{k! (n - k)!}$ là $n!$ quá lớn. Tuy nhiên khi ta cần lấy kết quả theo modulo $M$, đó lại là vấn đề khác.
 
 - **Điều kiện sử dụng:** $M$ nguyên tố và $n < M$
@@ -224,7 +223,7 @@ int main(){
 - Tiền xử lý: $O(n + \log M)$
 - Truy vấn: $O(1)$
 
-#### Sử dụng định lý Lucas
+### Sử dụng định lý Lucas
 Đây là cải tiến của cách sử dụng định nghĩa để có thể sử dụng cho $n > M$
 - **Điều kiện sử dụng:** $M$ nguyên tố
 - **Ý tưởng:** Các bạn có thể tham khảo tại bài viết [Định lý Lucas của VNOI](https://vnoi.info/wiki/translate/he/Lucas-theorem.md)
@@ -308,7 +307,7 @@ int main(){
 - Tiền xử lý: $O(M)$
 - Truy vấn: $O\big(\log_M(n)\big)$
 
-#### Sử dụng định lý Lucas mở rộng
+### Sử dụng định lý Lucas mở rộng
 - **Điều kiện sử dụng:** $M$ lũy thừa của số nguyên tố
 - **Kiến thức sử dụng:**
     - *Nghịch đảo modulo, lũy thừa nhanh*
@@ -401,7 +400,7 @@ long long calc(long long N, long long K, long long R) {
 - Tiền xử lý: $O(M)$
 - Truy vấn: $O\big(\log_p(n)\big)$
 
-#### Sử dụng định lý thặng dư Trung Hoa
+### Sử dụng định lý thặng dư Trung Hoa
 Định lý thặng dư Trung Hoa là cầu nối giúp ta tính toán được khi $M$ không phải là số nguyên tố.
 - **Kiến thức sử dụng:**
     - *Định lý Thặng dư trung hoa - Chinese remainder theorem (CRT)*
@@ -606,7 +605,7 @@ int main()
 ```
 </details>
 
-### Bài tập luyện tập
+## Bài tập luyện tập
 * [SPOJ - Marbles](https://www.spoj.com/problems/MARBLES/)
 * [Codeforces 181C Div.2](https://codeforces.com/contest/300/problem/C)
 * [Codechef - Long Sandwich](https://www.codechef.com/MAY17/problems/SANDWICH)
@@ -623,7 +622,7 @@ int main()
 * [Libary Checker - Binomial Coefficient (Prime Mod)](https://judge.yosupo.jp/problem/binomial_coefficient_prime_mod)
 
 
-### Tài liệu tham khảo
+## Tài liệu tham khảo
 * [Codeforces - Binomial Coefficients with Large Mod](https://codeforces.com/blog/entry/111246)
 * [Codeforces - nCk for small k](https://codeforces.com/blog/entry/67890)
 * [Mở rộng định lý Lucas của Andrew Granville](https://math.stackexchange.com/questions/95491/n-choose-k-bmod-m-using-chinese-remainder-theorem)

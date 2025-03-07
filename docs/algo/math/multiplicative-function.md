@@ -1,4 +1,3 @@
-## Hàm nhân tính
 
 **Tác giả**: RR
 
@@ -59,17 +58,17 @@ Giờ ta xét bài toán sau:
 Nếu bạn chưa biết sàng có thể đọc [ở đây](translate/topcoder/Mathematics-for-Topcoders).
 
 
-### 2.1. Bước 1
+## 2.1. Bước 1
 
 Như đã chứng minh ở phần trước, $f$ là hàm nhân tính.
 
 
-### 2.2. Bước 2
+## 2.2. Bước 2
 
 Với một số nguyên tố $p$, ta có $f(p^k) = k + 1$, do các ước của $p^k$ là $1, p, p^2, ..., p^k$.
 
 
-### 2.2. Bước 3
+## 2.2. Bước 3
 
 Đầu tiên, ta dùng sàng để:
 
@@ -209,7 +208,7 @@ Như vậy, $(f \times g)$ cũng là hàm nhân tính.
 
 Để hiểu thêm về Dirichlet Convolution, ta xét vài ví dụ:
 
-### 4.1. Ví dụ 1
+## 4.1. Ví dụ 1
 
 Xét hàm $f(n) = 1$ và $g(n) = 1$. Rõ ràng $f$ và $g$ đều là hàm nhân tính.
 
@@ -219,7 +218,7 @@ $$
 
 Như vậy $(f \* g)(n)$ là số ước của số $n$ và là hàm nhân tính.
 
-### 4.2. Ví dụ 2
+## 4.2. Ví dụ 2
 
 Xét hàm $f(n) = n$ và $g(n) = 1$. Rõ ràng $f$ và $g$ đều là hàm nhân tính.
 
@@ -231,7 +230,7 @@ Như vậy $(f \times g)(n)$ là tổng các ước của $n$ và là hàm nhân
 
 Tổng quát hơn, với hằng số $k$ bất kỳ, hàm $f(n) = \sum_{d \| n}{d^k}$ là hàm nhân tính.
 
-### 4.3. Các hàm nhân tính thường gặp
+## 4.3. Các hàm nhân tính thường gặp
 
 Sau đây là các hàm nhân tính thường gặp. Bạn có thể thử chứng minh những hàm này là hàm nhân tính dựa theo định nghĩa hoặc Dirichlet Convolution. Việc nắm được những hàm này sẽ giúp thuận lợi hơn trong việc gỉai những bài liên quan đến hàm nhân tính.
 
@@ -256,7 +255,7 @@ Như vậy, nếu bạn chứng minh được một hàm $f$ là hàm nhân tín
 Bạn cũng nên nắm được những hàm nhân tính thường gặp, từ đó giúp nhận dạng bài toán dễ dàng hơn.
 
 
-### Bài luyện tập
+## Bài luyện tập
 
 - [VNOJ - GCDSUM](https://oj.vnoi.info/problem/gcdsum/)
 

@@ -1,4 +1,3 @@
-## Thuật toán sắp xếp
 
 ## Giới thiệu
 
@@ -40,21 +39,21 @@ Trong bài viết này, ta giả sử cần sắp xếp tăng dần các phần 
 
 Đây là thuật toán cơ bản nhất cho việc sắp xếp.
 
-### Ý tưởng
+## Ý tưởng
 
 - Xét lần lượt các cặp 2 phần tử liên tiếp. Nếu phần tử đứng sau nhỏ hơn phần tử đứng trước, ta đổi chỗ 2 phần tử. Nói cách khác, phần tử nhỏ nhất sẽ **nổi** lên trên.
 - Lặp lại đến khi không còn 2 phần tử nào thỏa mãn. Có thể chứng minh được số lần lặp không quá $N - 1$, do một phần tử chỉ có thể **nổi** lên trên không quá $N-1$ lần.
 
-### Ưu điểm
+## Ưu điểm
 
 - Code đơn giản, dễ hiểu
 - Không tốn thêm bộ nhớ
 
-### Nhược điểm
+## Nhược điểm
 
 - Độ phức tạp $\mathcal{O}(N^2)$, không đủ nhanh với dữ liệu lớn.
 
-### Code
+## Code
 
 ```cpp
 for (int i = 0; i < n; i++)
@@ -64,7 +63,7 @@ for (int i = 0; i < n; i++)
 		}
 ```
 
-### Minh họa
+## Minh họa
 
 Bạn có thể vào [VisuAlgo](http://visualgo.net/sorting).
 
@@ -74,21 +73,21 @@ Bạn có thể vào [VisuAlgo](http://visualgo.net/sorting).
 
 ## Sắp xếp chèn (Insertion Sort)
 
-### Ý tưởng
+## Ý tưởng
 
 Ý tưởng chính của thuật toán là ta sẽ sắp xếp lần lượt từng đoạn gồm 1 phần tử đầu tiên, 2 phần tử đầu tiên, ..., $N$ phần tử.
 
 Giả sử ta đã sắp xếp xong $i$ phần tử của mảng. Để sắp xếp $i+1$ phần tử đầu tiên, ta tìm vị trí phù hợp của phần tử thứ $i+1$ và "chèn" nó vào đó.
 
-### Ưu điểm
+## Ưu điểm
 
 - Nếu danh sách đã gần đúng thứ tự, Insertion Sort sẽ chạy rất nhanh. Ví dụ bạn cần sắp xếp Highscore trong game.
 
-### Nhược điểm
+## Nhược điểm
 
 - Độ phức tạp $\mathcal{O}(N^2)$, không đủ nhanh với dữ liệu lớn.
 
-### Code
+## Code
 
 ```cpp
 for (int i = 1; i < n; i++) {
@@ -104,7 +103,7 @@ for (int i = 1; i < n; i++) {
 }
 ```
 
-### Minh họa
+## Minh họa
 
 Bạn có thể vào [VisuAlgo](http://visualgo.net/sorting).
 
@@ -114,7 +113,7 @@ Bạn có thể vào [VisuAlgo](http://visualgo.net/sorting).
 
 ## Sắp xếp trộn (Merge sort)
 
-### Ý tưởng
+## Ý tưởng
 
 Sắp xếp trộn hoạt động kiểu đệ quy:
 
@@ -124,16 +123,16 @@ Sắp xếp trộn hoạt động kiểu đệ quy:
 	- So sánh 2 phần tử đầu tiên của 2 phần. Phần tử nhỏ hơn ta cho vào $A$ và xóa khỏi phần tương ứng.
 	- Tiếp tục như vậy đến khi ta cho hết các phần tử vào dãy $A$.
 
-### Ưu điểm
+## Ưu điểm
 
 - Chạy nhanh, độ phức tạp $\mathcal{O}(N*logN)$.
 - Ổn định
 
-### Nhược điểm
+## Nhược điểm
 
 - Cần dùng thêm bộ nhớ để lưu mảng A.
 
-### Code
+## Code
 
 ```cpp
 int a[MAXN]; // mảng trung gian cho việc sắp xếp
@@ -174,7 +173,7 @@ void mergeSort(int data[MAXN], int left, int right) {
 }
 ```
 
-### Minh họa
+## Minh họa
 
 Bạn có thể vào [VisuAlgo](http://visualgo.net/sorting).
 
@@ -185,22 +184,22 @@ Bạn có thể vào [VisuAlgo](http://visualgo.net/sorting).
 
 ## Sắp xếp vun đống (HeapSort)
 
-### Ý tưởng
+## Ý tưởng
 
 Ta lưu mảng vào CTDL [Heap](translate/wcipeg/Binary-Heap).
 
 Ở mỗi bước, ta lấy ra phần tử nhỏ nhất trong heap, cho vào mảng đã sắp xếp.
 
-### Ưu điểm
+## Ưu điểm
 
 - Cài đặt đơn giản nếu đã có sẵn thư viện Heap.
 - Chạy nhanh, độ phức tạp $\mathcal{O}(N*logN)$.
 
-### Nhược điểm
+## Nhược điểm
 
 - Không ổn định
 
-### Code
+## Code
 
 ```cpp
 Heap h = Heap();
@@ -217,7 +216,7 @@ for (int i = 0; i < n; i++) {
 
 ## Sắp xếp nhanh (QuickSort)
 
-### Ý tưởng
+## Ý tưởng
 
 - Chia dãy thành 2 phần, một phần "lớn" và một phần "nhỏ".
 	- Chọn một khóa **pivot**
@@ -225,16 +224,16 @@ for (int i = 0; i < n; i++) {
 	- Những phần tử nhỏ hơn hoặc bằng **pivot** chia vào phần nhỏ.
 - Gọi đệ quy để sắp xếp 2 phần.
 
-### Ưu điểm
+## Ưu điểm
 
 - Chạy nhanh (nhanh nhất trong các thuật toán sắp xếp dựa trên việc só sánh các phần tử). Do đó quicksort được sử dụng trong nhiều thư viện của các ngôn ngữ như Java, C++ (hàm `sort` của C++ dùng Intro sort, là kết hợp của Quicksort và Insertion Sort).
 
-### Nhược điểm
+## Nhược điểm
 
 - Tùy thuộc vào cách chia thành 2 phần, nếu chia không tốt, độ phức tạp trong trường hợp xấu nhất có thể là $\mathcal{O}(N^2)$. Nếu ta chọn pivot ngẫu nhiên, thuật toán chạy với độ phức tạp trung bình là $\mathcal{O}(N*logN)$ (trong trường hợp xấu nhất vẫn là $\mathcal{O}(N^2)$, nhưng ta sẽ không bao giờ gặp phải trường hợp đó).
 - Không ổn định.
 
-### Code
+## Code
 
 ```cpp
 void quickSort(int a[], int left, int right) {
@@ -257,7 +256,7 @@ void quickSort(int a[], int left, int right) {
 }
 ```
 
-### Minh họa
+## Minh họa
 
 Bạn có thể vào [VisuAlgo](http://visualgo.net/sorting).
 
@@ -268,22 +267,22 @@ Bạn có thể vào [VisuAlgo](http://visualgo.net/sorting).
 
 ## Sắp xếp cơ số (RadixSort)
 
-### Ý tưởng
+## Ý tưởng
 
 Khác với tất cả các thuật toán nêu trên, RadixSort không sử dụng việc so sánh 2 phần tử.
 
 - Đầu tiên, thuật toán sẽ chia các phần tử thành các nhóm, dựa trên chữ số cuối cùng (hoặc dựa theo bit cuối cùng, hoặc vài bit cuối cùng).
 - Sau đó ta đưa các nhóm lại với nhau, và được danh sách sắp xếp theo chữ số cuối của các phần tử. Quá trình này lặp đi lặp lại với chữ số át cuối cho tới khi tất cả vị trí chữ số đã sắp xếp.
 
-### Ưu điểm
+## Ưu điểm
 
 - Có thể chạy nhanh hơn các thuật toán sắp xếp sử dụng so sánh. Ví dụ nếu ta sắp xếp các số nguyên 32 bit, và chia nhóm theo 1 bit, thì độ phức tạp là $\mathcal{O}(N)$. Trong trường hợp tổng quát, độ phức tạp là $\mathcal{O}(N*log(max(a_i)))$
 
-### Nhược điểm
+## Nhược điểm
 
 - Không thể sắp xếp số thực.
 
-### Minh họa
+## Minh họa
 
 Bạn có thể vào [VisuAlgo](http://visualgo.net/sorting).
 

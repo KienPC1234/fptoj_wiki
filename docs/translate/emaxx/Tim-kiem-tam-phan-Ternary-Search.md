@@ -1,4 +1,3 @@
-## Tìm kiếm tam phân - Ternary Search
 
 
 
@@ -70,7 +69,7 @@ Nếu ta lặp đi lặp lại K lần, thì độ lớn của [l, r] sẽ chỉ
 Độ phức tạp thuật toán là $O(logT)$ với T là độ chính xác mà ta cần thực hiện.
 
 
-### Cài đặt
+## Cài đặt
 
 ```cpp
 

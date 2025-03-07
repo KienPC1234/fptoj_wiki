@@ -1,4 +1,3 @@
-## Xác suất
 
 Nguồn: [Understanding Probabilities - Topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials/understanding-probabilities/)
  
@@ -54,7 +53,7 @@ Xác suất:
 
 Bước đầu tiên khi giải một bài toán về xác suất là xác định được không gian mẫu. Tiếp theo, bạn sẽ phải xác định số lượng phần tử của biến cố thỏa mãn. Đây là cách tiếp cận cơ bản, nhưng khi áp dụng, nó có thể thay đổi tùy vào từng bài tập.
 
-### Ví dụ
+## Ví dụ
 
 [QuizShow (SRM 223, Div 1 – Easy)](https://community.topcoder.com/stat?c=problem_statement&pm=2989&rd=5869).
 
@@ -112,7 +111,7 @@ int wager (vector  scores, int wager1, int wager2)
 Một bài thú vị khác là [PipeCuts (SRM 233, Div 1 – Easy)](http://community.topcoder.com/stat?c=problem_statement&pm=3994&rd=6532), bài này có thể giải bằng cách tương tự như trên.
 
 
-### Biến cố độc lập
+## Biến cố độc lập
 
 Xét $n$ biến cố độc lập (*independent events*): $ E_1, E_2, ..., E_n$ . Hai câu hỏi thường gặp là:
 
@@ -135,7 +134,7 @@ Cách tốt nhất để trả lời câu hỏi thứ hai là tìm xác suất �
 
 Những công thức trên được ứng dụng rất nhiều, cần nắm chắc để đi đền phần tiếp theo.
 
-### [BirthdayOdds](http://community.topcoder.com/stat?c=problem_statement&pm=1848&rd=4675)
+## [BirthdayOdds](http://community.topcoder.com/stat?c=problem_statement&pm=1848&rd=4675)
 
 Một ví dụ điển hình để mô tả nội dung xác suất được bàn luận ở phần trên là  **Nghịch lí về ngày sinh** ([**Birthday Paradox**](https://en.wikipedia.org/wiki/Birthday_problem)): Nếu có ít nhất 23 người trong một căn phòng, xác suất để 2 người bất kì trong số họ có cùng ngày sinh là lớn hơn 0.5. Thoạt nhìn, kết quả này có vẻ trái ngược với trực giác thông thường nhưng nó hoàn toàn có thể được chứng minh bằng toán học.
 
@@ -163,7 +162,7 @@ Các bài toán về xác suất có thể rất phức tạp và nhiều khi k�
 
 ## Các kiến thức nâng cao
 
-### Biến ngẫu nhiên (Random variable)
+## Biến ngẫu nhiên (Random variable)
 
 **Random Variable** là một biến mà giá trị của nó là kết quả của một lần thí nghiệm. Ví dụ:
 
@@ -172,7 +171,7 @@ Các bài toán về xác suất có thể rất phức tạp và nhiều khi k�
 - $X3$ là bình phương giá trị xúc sắc
 - ...
 
-### Giá trị kỳ vọng (Expected value):
+## Giá trị kỳ vọng (Expected value):
 
 Với $X$ là 1 random variable, $E(X)$ là giá trị trung bình của X, nếu ta thực hiện thí nghiệm vô số lần. Ta cũng có thể hình dung như giá trị trung bình có trọng số.
 
@@ -193,7 +192,7 @@ Công thức tổng quát:
 
 `E(X) = prob(X = 1) * 1 + prob(X = 2) * 2 + ...`
 
-### Linearity of Expectation
+## Linearity of Expectation
 
 Linearity of Expectation là 1 kĩ năng rất quan trọng nhất khi làm các bài về Expected value.
 
@@ -233,7 +232,7 @@ Chúng ta có thể hình dung nó như một đồ thị mà trong đó:
 
 So sánh này hơi gượng ép, nhưng cách chúng ta tính toán xác suất cho các biến cố rất giống cách chúng ta duyệt qua các đỉnh của đồ thị: Ta bắt đầu ở gốc - là trạng thái ban đầu và có xác suất là 1. Sau đó, ta xem xét các cạnh kề để đến các khả năng khác nhau kèm theo các xác suất tương ứng.
 
-### [Nested Randomness](http://community.topcoder.com/stat?c=problem_statement&pm=3510&rd=6527)
+## [Nested Randomness](http://community.topcoder.com/stat?c=problem_statement&pm=3510&rd=6527)
 
 **Tóm tắt đề bài**:
 
@@ -293,9 +292,9 @@ Bài tập tương tự:
 - [PointSystem](http://community.topcoder.com/stat?c=problem_statement&pm=1849&rd=4675),
 - [VolleyBall](http://community.topcoder.com/stat?c=problem_statement&pm=2959&rd=5880)
 
-### [GeneticCrossover](https://community.topcoder.com/stat?c=problem_statement&pm=2974&rd=5875)
+## [GeneticCrossover](https://community.topcoder.com/stat?c=problem_statement&pm=2974&rd=5875)
 
-#### Khái niệm
+### Khái niệm
 
 Ở bài này có khái niệm về **xác suất có điều kiện** (*conditional probability*):
 
@@ -309,7 +308,7 @@ Tương đương, ta có
 
 $P(A \cap B) = P(A\|B) P(B)$
 
-#### Tóm tắt đề bài
+### Tóm tắt đề bài
 
 Theo di truyền học ở động vật, mỗi cặp gen sẽ biểu thị một tính trạng. Mỗi gen có hai dạng cơ bản là trội hoặc lặn. Nếu trong cặp gen có gen trội thì tính trạng của gen trội này sẽ được thể hiện ra ngoài, ngược lại, trường hợp cả hai đều là gen lặn thì tính trạng của gen lặn này sẽ được thể hiện ra ngoài.
 
@@ -333,7 +332,7 @@ Từ những dữ liệu trên, bạn cần xuất ra giá trị kì vọng cầ
 
 Vậy giá trị kì vọng của chất lượng con giống sẽ là $17 \* 0.5625 + 13 \* 0.1875 + 9 \* 0.25 = 14.25$)
 
-#### Phân tích
+### Phân tích
 
 Dựa vào mô tả đề bài, có hai trường hợp có thể xảy ra: một gen không phụ thuộc vào gen khác, hoặc gen này có phụ thuộc.
 

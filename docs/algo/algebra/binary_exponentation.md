@@ -1,4 +1,3 @@
-## Lũy thừa nhị phân
 
 **Tác giả:**
 * Cao Thanh Hậu - Trường Đại học Khoa học Tự Nhiên, ĐHQG-HCM
@@ -72,7 +71,7 @@ Thuật toán có độ phức tạp là $\log(b)$.
 
 ## Ứng dụng
 
-### Tính lũy thừa chia lấy dư
+## Tính lũy thừa chia lấy dư
 
 Khi $a > 1$ và $b$ lớn thì $a^b$ rất lớn, vì vậy người ta thường yêu cầu tính $a^b$ chia lấy dư cho một số tự nhiên $M$ nào đó.
 
@@ -101,7 +100,7 @@ Trong các trường hợp $b$ rất lớn so với $m$, có thể áp dụng t�
 
 Một ví dụ điển hình ứng dụng tính chất bên trên là tính $a^{b^c} \mod M$ với $M$ là một số nguyên tố. Khi đó, ta cần tính $a^{b^c \mod (M - 1)} \mod M$
 
-### Nhân lấy dư
+## Nhân lấy dư
 
 Cần tính $a \times b \text{ mod } m$.
 
@@ -130,7 +129,7 @@ long long Mul(long long a, long long b) {
 }
 ```
 
-### Tính số Fibonacci lớn - Phép nhân ma trận
+## Tính số Fibonacci lớn - Phép nhân ma trận
 
 Để hiểu rõ phần này, bạn đọc cần nắm các kiến thức cơ bản về [nhân ma trận](https://vnoi.info/wiki/algo/trick/matrix-multiplication.md)
 

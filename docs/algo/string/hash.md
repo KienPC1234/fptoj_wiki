@@ -1,4 +1,3 @@
-## Hash: A String Matching Algorithm
 
 **Tác giả**: Lê Khắc Minh Tuệ
 
@@ -8,24 +7,24 @@
 
 ## Giới thiệu
 
-### Hoàn cảnh
+## Hoàn cảnh
 
 Một lớp những bài toán rất được quan tâm trong khoa học máy tính nói chung và lập trình thi cử nói riêng, đó là [xử lý xâu chuỗi](algo/string/basic). Trong lớp bài toán này, người ta thường rất hay phải đối mặt với một bài toán: tìm kiếm xâu chuỗi.
 
-### Phát biểu bài toán
+## Phát biểu bài toán
 
 - Cho một đoạn văn bản, gồm $m$ ký tự.
 - Cho một đoạn mẫu, gồm $n$ ký tự.
 - Máy tính cần trả lời câu hỏi: đoạn mẫu xuất hiện bao nhiêu lần trong đoạn văn bản và chỉ ra các vị trí xuất hiện đó.
 
-### Thuật toán:
+## Thuật toán:
 
 Có rất nhiều thuật toán có thể giải quyết bài toán này. Người viết xin tóm tắt 2 thuật toán phổ biến được dùng trong các kì thi lập trình:
 
 - **Brute-force**: Với một cách tiếp cận trực tiếp, chúng ta có thể thu được thuật toán để giải. Tuy nhiên độ phực tạp của nó là rất lớn trong trường hợp xấu nhất. Thuật toán brute-force so khớp tất cả các vị trí xuất hiện của đoạn mẫu trong đoạn văn bản. Cụ thể độ phức tạp cho thuật toán này là $O(mn)$.
 -  **[Knuth-Morris-Pratt](translate/wcipeg/kmp)**: Hay còn được viết tắt là KMP, được phát minh vào năm 1974, bởi Donald Knuth, Vaughan Pratt và James H. Morris.  Thuật toán này sử dụng một correction-array, là một thuật toán rất hiệu quả, có độ phức tạp là $O(m + n)$.
 
-### Mục đích bài viết
+## Mục đích bài viết
 
 Trong bài viết này, người viết chỉ tập trung vào thuật toán Hash (Tên chuẩn của thuật toán này là [Rabin–Karp](https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm) hoặc [Rolling Hash](https://en.wikipedia.org/wiki/Rolling_hash), tuy nhiên ở Việt Nam thường được gọi là Hash). Theo như bản thân người viết đánh giá, đây là thuật toán rất hiệu quả đặc biệt là trong thi cử. Nó hiệu quả bởi 3 yếu tố: tốc độ thực thi, linh động trong việc sử dụng (ứng dụng hiệu quả) và sự đơn giản trong cài đặt.
 
@@ -33,7 +32,7 @@ Trong bài viết này, người viết chỉ tập trung vào thuật toán Has
 
 ## Thuật toán Hash
 
-### Ký hiệu
+## Ký hiệu
 
 - Tập hợp các chữ cái được sử dụng: $\Sigma$
 - Đoạn con từ $i$ đến $j$ của một xâu $s$: $s[i..j]$
@@ -42,7 +41,7 @@ Trong bài viết này, người viết chỉ tập trung vào thuật toán Has
 
 Chúng ta cần tìm ra tất cả các vị trí $i (1 \le i \le m − n + 1)$ thỏa  mãn: $T[i..i+n−1] = P$.
 
-### Mô tả thuật toán
+## Mô tả thuật toán
 
 Để đơn giản, giả sử rằng $\Sigma = {a, b, ..., z}$ (nói cách khác, $\Sigma$ chỉ gồm các chữ cái in thường). Để biểu diễn một xâu, thay vì dùng chữ cái, chúng ta sẽ chuyển sang biểu diễn dạng số. Ví dụ: xâu `aczd` được viết dưới dạng số là một dãy gồm 4 số: `(1,3,26,4)`. Như vậy, một xâu được biểu diễn dưới dạng một số ở hệ cơ số $base$ với $base > 26$. Từ đây suy ra, 2 xâu bằng nhau khi và chỉ khi biểu diễn của 2 xâu ở hệ cơ số 10 giống nhau.
 
@@ -109,7 +108,7 @@ for (i : 1 .. m - n +1)
               print("Match position: ", i)
 ```
 
-### Mã chương trình
+## Mã chương trình
 
 Chương trình sau, tôi viết bằng ngôn ngữ C++, là lời giải cho bài [SUBSTR](https://oj.vnoi.info/problem/substr):
 
@@ -161,7 +160,7 @@ int main() {
 }
 ```
 
-### Đánh giá
+## Đánh giá
 
 Độ phức tạp của thuật toán là $O(m + n)$. Nhưng điều quan trọng là: chúng ta có thể kiểm tra 2 xâu có giống nhau hay không trong $O(1)$. Đây là điều tạo nên sự linh động cho thuật toán Hash. Ngoài sự linh động và tốc độ thực thi, chúng ta có thể thấy cài đặt thuật toán này thực sự rất đơn giản nếu so với các thuật toán xử lý xâu khác.
 
@@ -169,7 +168,7 @@ int main() {
 
 Trong thuật toán hash, có hai yếu tố cần quan tâm là hệ cơ số (base) và modulo (mod).
 
-### 1. Chọn số nguyên tố cho hệ cơ số và modulo
+## 1. Chọn số nguyên tố cho hệ cơ số và modulo
 
 Ý tưởng của thuật toán Hash là dựa trên một ngộ nhận sai lầm nhưng xảy ra sai sót với xác suất vô cùng nhỏ: $a \bmod M = b \bmod M <=> a = b$. Để xác suất xảy ra sai là $1/M$ cho một truy vấn, các bạn cần chọn hệ cơ số và modulo thỏa mãn đồng thời:
 
@@ -178,7 +177,7 @@ Trong thuật toán hash, có hai yếu tố cần quan tâm là hệ cơ số (
 
 Phần chứng minh sai số bạn có thể đọc thêm trong [blog rng_58](http://rng-58.blogspot.sg/2017/02/hashing-and-probability-of-collision.html), tuy nhiên phần chứng minh rất phức tạp nên mình sẽ không trình bày ở đây.
 
-### 2. Chọn hệ cơ số
+## 2. Chọn hệ cơ số
 
 Mình khuyến khích các bạn chọn hệ cơ số > 256 (Mình thường chọn là số nguyên tố 311). Nếu bạn chọn hệ cơ số là 31, bạn chỉ làm việc với xâu gồm toàn các kí tự in thường, và phải "mã hóa" các kí tự từ `a` đến `z` thành các số từ 1 đến 26. Điều này khiến code của bạn bị dài. Nếu bài toán cho xâu có các kí tự 'A'...'Z', 'a'..'z' và '0'...'9', việc bạn mã hóa chúng thành các số từ 1 đến 64 là phức tạp và không cần thiết.
 
@@ -186,18 +185,18 @@ Chưa kể, nếu bạn quên mất không `+1` và mã hoá `a` thành `0` là 
 
 Nếu bạn chọn hệ cơ số > 256, bạn chỉ cần dùng mã ASCII của các kí tự là xong, và lại tránh bị hack.
 
-### 3. Chọn modulo
+## 3. Chọn modulo
 
 Nếu bạn không hiểu rõ về cách đánh giá độ chính xác của thuật Hash (trình bày ở mục [Đánh giá độ chính xác](#đánh-giá-độ-chính-xác)), bạn chỉ cần chọn 3-4 số nguyên tố khác nhau làm $MOD$. Bạn có thể tham khảo [code của Phạm Văn Hạnh](http://codeforces.com/contest/727/submission/21451704). Tuy nhiên các bạn cũng nên lưu ý là dùng nhiều $MOD$ quá cũng làm chương trình chạy chậm đi.
 
-### 4. Hash tràn số và Hash có MOD
+## 4. Hash tràn số và Hash có MOD
 
 Trên thực tế, khi cài đặt Hash sử dụng nhiều phép `mod` sẽ làm chương trình chạy chậm. Vì vậy, để tăng tốc độ, người ta thường cài đặt với $MOD = 2^{64}$. Do đó, nếu sử dụng kiểu dữ liệu số 64-bit, ta không cần dùng phép `mod` mà cứ để các phép tính tràn số. Kĩ thuật này được gọi là Hash tràn số. Tuy nhiên khi cài đặt như vậy có một vài chú ý:
 
 - Việc sử dụng $MOD$ không phải là số nguyên tố (và hơn nữa lại là 1 số cố định) khiến cho hàm Hash không đủ tốt. Nếu test được sinh ngẫu nhiên, thì nó không có vấn đề gì cả. Nhưng ở trên Codeforces, vì những người thi cùng có thể "hack" code của bạn bằng test tự sinh, nên bạn hầu như không thể AC các bài Hash với Hash tràn số. Bạn có thể đọc thêm về cách sinh test giết Hash tràn số [ở đây](http://codeforces.com/blog/entry/4898). Cách giải quyết là dùng hash tràn số kết hợp với một $MOD$ khác.
 - Nếu dùng Pascal, cần tắt báo tràn số (`$Q-`), nếu không chương trình sẽ chạy bị lỗi.
 
-### 5. Một số lời khuyên nho nhỏ
+## 5. Một số lời khuyên nho nhỏ
 
 Chỉ so sánh mã hash của hai xâu có cùng độ dài. Hiển nhiên, hai xâu kí tự không cùng độ dài thì không bằng nhau. Điều này có thể giảm xác suất rủi ro khi hash một modulo đáng kể.
 
@@ -208,7 +207,7 @@ Như đã đề cập ở trên, thuật toán này sẽ có trường hợp ch�
 
 Sử dụng Hash không chỉ giúp người làm bài dễ dàng cài đặt hơn mà quan trọng ở chỗ: Hash có thể làm được những việc mà _‘thuật toán chuẩn’_ không làm được. Sau đây, tôi sẽ xét một vài ví dụ để chứng minh điều này.
 
-### [Longest palindrome substring](https://oj.vnoi.info/problem/paliny)
+## [Longest palindrome substring](https://oj.vnoi.info/problem/paliny)
 
 Bài toán đặt ra như sau: Bạn được cho một xâu $s$ độ dài $n (n \le 50,000)$. Bạn cần tìm độ dài của xâu đối xứng dài nhất gồm các kí tự liên tiếp trong $s$. (Xâu đối xứng là xâu đọc từ 2 chiều giống nhau).
 
@@ -218,7 +217,7 @@ Bài toán đặt ra như sau: Bạn được cho một xâu $s$ độ dài $n (
 - Bài toán còn lại là: kiểm tra xem $s[i..j]$ với $(1 \le i \le j \le m; (j−i+1) \bmod 2 = 1)$ có phải là xâu đối xứng hay không.
 - Cách làm như sau. Gọi $t$ là xâu $s$ viết theo thứ tự ngược lại. Bằng thuật toán Hash, chúng ta có thể kiểm tra được một xâu con nào đó của $t$ có bằng một xâu con nào đó của $s$ hay không. Như vậy, chúng ta cần kiểm tra $s[i..k]$ có bằng $t[n−j+1..n−k+1]$ hay không với $k$ là tâm đối xứng, nói cách khác $k = (i+j)/2$. Như vậy bài toán đã được giải. Độ phức tạp cho cách làm này là $O(n log(n))$.
 
-### k-th alphabetical cyclic
+## k-th alphabetical cyclic
 
 Bài toán đặt ra như sau: Bạn được cho một dãy $a_1, a_2,... , a_n (n \le 50,000)$. Sắp xếp $n$ hoán vị vòng tròn của dãy này theo thứ tự từ điển. Cụ thể, các hoán vị vòng quanh của dãy này là $(a_1, a_2,... , a_n)$, $(a_2, a_3, ..., a_n, a_1)$, $(a_3, a_4, ..., a_n, a_1, a_2)$,... Dãy này có thứ tự từ điển nhỏ hơn dãy kia nếu số đầu tiên khác nhau của dãy này nhỏ hơn dãy kia. Yêu cầu bài toán là: In ra dãy có thứ tự từ điển lớn thứ $k$.
 
@@ -230,7 +229,7 @@ Bài toán đặt ra như sau: Bạn được cho một dãy $a_1, a_2,... , a_n
 
 Từ đó ta thu được thuật toán với độ phức tạp $O(n*log^2(n))$
 
-### Longest substring and appear at least k times
+## Longest substring and appear at least k times
 
 Bài toán đặt ra như sau: Bạn được cho xâu $s$ độ dài $n (n \le 50,000)$, bạn cần tìm ra xâu con của $s$ có độ dài lớn nhất, và xâu con này xuất hiện ít nhất $k$ lần.
 
@@ -249,7 +248,7 @@ Thông thường, khi sử dụng Hash, ta thường gặp phải 2 trường h�
 
 Giả sử ta chọn $MOD$ là một số nguyên tố khoảng $10^9$, và giả sử dữ liệu được sinh ngẫu nhiên và hàm hash của chúng ta đủ tốt để Hash của các xâu được phân bố đều và ngẫu nhiên.
 
-### Trường hợp 1
+## Trường hợp 1
 
 Giả sử $Q$ khoảng $10^5$, và bộ test có $T = 100$ test.
 
@@ -259,7 +258,7 @@ Giả sử $Q$ khoảng $10^5$, và bộ test có $T = 100$ test.
 
 Thay số vào, xác suất để trả lời đúng tất cả các truy vấn là $0.9900$, đủ lớn để ta yên tâm qua tất cả các test, với điều kiện test không được sinh dựa trên $P$. (Chú ý nếu bạn đang thi những contest như Topcoder/Codeforces, người khác có thể đọc được $P$ của bạn và sinh test để challenge code của bạn).
 
-### Trường hợp 2
+## Trường hợp 2
 
 Theo [Birthday Paradox](https://en.wikipedia.org/wiki/Birthday_problem), ta dễ dàng thấy rằng, nếu có $\sqrt{P} = 3*10^4$ xâu, xác suất để 2 xâu bằng nhau là rất lớn. Thật vậy, xác suất để tất cả các xâu khác nhau là:
 
@@ -270,11 +269,11 @@ Với $N = 30,000$, tích trên là $0.6376$, nghĩa là bạn có gần $0.40$ 
 
 ## Tổng kết
 
-### Thuật toán
+## Thuật toán
 
 Ý tưởng thuật toán Hash dựa trên việc đổi từ hệ cơ số lớn sang hệ thập phân, so sánh hai số thập phân lớn bằng cách so sánh phần dư của chúng với một số đủ lớn.
 
-### Cài đặt
+## Cài đặt
 
 Khi cài đặt Hash, ta cần chọn:
 
@@ -288,11 +287,11 @@ Với những trang web mà người khác có thể đọc code bạn rồi tì
 - Nếu là Topcoder hoặc Codeforces, dùng kết hợp Hash tràn số và 1 $MOD$ đủ lớn.
 - Nếu không phải Topcoder hay Codeforces, có thể dùng Hash tràn số. Nếu $MOD = 2^{64}$ chưa đủ lớn thì dùng thêm 1 $MOD$ nữa.
 
-### Ưu điểm
+## Ưu điểm
 
 Ưu điểm của thuật toán Hash là cài đặt rất dễ dàng. Linh động trong ứng dụng và có thể thay thế các thuật toán chuẩn ‘hầm hố’ khác.
 
-### Nhược điểm
+## Nhược điểm
 
 Nhược điểm của thuật toán Hash là tính chính xác. Mặc dù rất khó sinh test để có thể làm cho thuật toán chạy sai, nhưng không phải là không thể. Vì vậy, để nâng cao tính chính xác của thuật toán, người ta thường dùng nhiều modulo khác nhau để so sánh mã Hash (ví dụ như dùng 3 modulo một lúc).
 

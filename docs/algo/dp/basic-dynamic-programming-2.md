@@ -1,4 +1,3 @@
-## Quy hoạch động cơ bản (Phần 2)
 
 Bài viết được sưu tầm và bổ sung từ bài viết *"Một số bài toán quy hoạch động kinh điển"* của thầy Nguyễn Thanh Tùng, *Tạp chí Tin học và Nhà trường* số $1$, năm $2005$.
 
@@ -17,7 +16,7 @@ Bài viết được sưu tầm và bổ sung từ bài viết *"Một số bài
 
 Để thuận tiện cho việc trình bày và tính toán, trong mục $(1)$ ta sẽ quy ước các xâu đều bắt đầu từ chỉ số $1$.
 
-### 1.1. Mô hình
+## 1.1. Mô hình
 
 > *Cho hai xâu $A$, $B$ có độ dài lần lượt là $m$ và $n$, bắt đầu từ chỉ số $1$. Ta muốn biến đổi xâu $A$ về xâu $B$ qua một số phép biến đổi thuộc các loại sau:*
 > * *Chèn kí tự $C$ vào sau kí tự thứ $i$: `I i C`, `i` có thể bằng $0$*
@@ -54,7 +53,7 @@ Bài viết được sưu tầm và bổ sung từ bài viết *"Một số bài
 |$2$          |`R 10 3`|`D1M12Y2023`|
 |$3$          |`D 5`|`D1M1Y2023`|
 
-### 1.2. Lời giải
+## 1.2. Lời giải
 
 **Chú ý: Chỉ số bắt đầu của $A$ và $B$ là $1$, không phải $0$.**
 
@@ -85,7 +84,7 @@ Tổng kết lại, ta có công thức QHĐ sau:
 
 Bài này ta có thể tiết kiệm biến hơn bằng cách dùng 2 mảng 1 chiều tính lẫn nhau và một mảng đánh dấu 2 chiều để truy vết.
 
-### 1.3. Code tham khảo
+## 1.3. Code tham khảo
 
 Cần lưu ý thứ tự tính. Để tính $L[i][j]$ cần biết $L[i - 1][j -1],L[i-1][j]$ và $L[i][j-1]$. Hơn nữa, $L[i][0]$ và $L[0][j]$ có thể tính trực tiếp nên ta có thể tính theo trình tự sau:
 
@@ -131,9 +130,9 @@ int main()
 }
 ```
 
-### 1.4. Một số bài toán khác
+## 1.4. Một số bài toán khác
 
-#### 1.4.1. Xâu con chung dài nhất
+### 1.4.1. Xâu con chung dài nhất
 **Link nộp bài:** [**VNOJ-LCS**](https://oj.vnoi.info/problem/atcoder_dp_f)
 
 > *Cho $2$ xâu A và B. Tìm xâu con chung dài nhất của $A$ và $B$.
@@ -262,7 +261,7 @@ for (int i = 1; i <= m; i++)
 ```
 
 
-#### 1.4.2. Bắc cầu
+### 1.4.2. Bắc cầu
 
 > *Hai nước Alpha và Beta nằm ở hai bên bờ sông Omega, Alpha nằm ở bờ bắc và có $m$ thành phố được đánh số từ $1$ đến $m$, Beta nằm ở bờ nam và có $n$ thành phố được đánh số từ $1$ đến $n$ (theo vị trí từ tây sang đông). 
 > Mỗi thành phố của nước này thường có quan hệ kết nghĩa với một số thành phố của nước kia. Để tăng cường tình hữu nghị, hai nước muốn xây các cây cầu bắc qua sông, mỗi cây cầu sẽ là nhịp cầu nối 2 thành phố kết nghĩa. Với yêu cầu là các cây cầu không được cắt nhau và mỗi thành phố chỉ là đầu cầu cho nhiều nhất là một cây cầu, hãy đếm số cây cầu nhiều nhất có thể xây dựng.*
@@ -283,7 +282,7 @@ Khi đó công thức QHĐ sẽ là:
 
 **Nhận xét:** Không mất tổng quát, giả sử thứ tự xây các cây cầu là tăng dần theo mút ở thành phố $A$. Khi đó, nếu ta đã chọn xây cầu giữa hai thành phố $a_i$ và $b_j$ thì cây cầu tiếp theo, giả sử là cây cầu nối $a_u$ và $b_v$ sẽ phải thỏa mãn $u>i,v>j$. Do đó, bài toán có thể giải như bài toán tìm xâu con dài nhất, với $a_i$ và $b_j$ được xem là "bằng nhau" khi và chỉ khi chúng là hai thành phố kết nghĩa.
 
-#### 1.4.3. Palindrome (IOI 2000)
+### 1.4.3. Palindrome (IOI 2000)
 
 **Link nộp bài:** [**SPOJ - IOIPALIN**](https://www.spoj.com/problems/IOIPALIN/)
 
@@ -360,7 +359,7 @@ Từ ý tưởng của bài xâu con chung dài nhất, ta có thuật toán sau
 Ví dụ: $S=edbabcd$, xâu đảo của $S$ là $P=dcbabde$. Xâu con chung dài nhất của $S$ và $P$ là $T=dbabd$. Như vậy cần thêm $\|S\|-\|T\|=7-5=2$ kí tự vào $S$ để $S$ trở thành xâu đối xứng. Ví dụ, ta có thể thêm kí tự `e` và `c` vào $S$ và thu được xâu $S=edcbabcde$.
 
 ## 2. Xếp vali không giới hạn (Unbounded Knapsack)
-### 2.1. Mô hình
+## 2.1. Mô hình
 > *Có $n$ đồ vật, vật thứ $i$ có trọng lượng $A_i$ và giá trị $B_i$. Hãy chọn ra một số các đồ vật để xếp vào vali có trọng lượng tối đa $W$ sao cho tổng giá trị của vali là lớn nhất (Chú ý mỗi vật có thể chọn nhiều lần).*
 > **Điều kiện:** $1\le n\times W\le 10^6,1\le A_i,B_i\le 10^9$.
 
@@ -368,7 +367,7 @@ Ví dụ: $S=edbabcd$, xâu đảo của $S$ là $P=dcbabde$. Xâu con chung dà
 
 **Chú ý:** Bài toán này khác với bài toán **Xếp Vali** ở phần trước ở chỗ mỗi vật không phải là duy nhất và có thể được chọn vào vali nhiều lần.
 
-### 2.2. Lời giải
+## 2.2. Lời giải
 
 Trạng thái của bài toán phụ thuộc vào hai yếu tố: số vật đang được chọn và tổng khối lượng của chúng. Ta có thể gọi $L[i][ j]$ là giá trị lớn nhất có thể có khi ta chọn các vật từ $1$ đến $i$ sao cho khối lượng của chúng không vượt quá $j$. Khi đó, đáp số bài toán sẽ là $L[n][W]$.
 
@@ -380,7 +379,7 @@ Ta đi tìm công thức truy hồi của $L[i][j]$:
 
 Trong đó, $L[i-1][j]$ là giá trị có được nếu không được đưa vật $i$ vào balô, $L[i][j-A_i] + B_i$  là giá trị có được nếu được phép đưa vật $i$ vào balô.
 
-### 2.3. Code tham khảo
+## 2.3. Code tham khảo
 
 Tương tự như các ví dụ trước, ta có thể dùng mảng hai chiều $L[i][j]$ để lưu kết quả bài toán. Khi tính, ta có thể tính theo từng hàng hoặc đệ quy có nhớ. Cả hai cách đểu có độ phức tạp thời gian và bộ nhớ $\mathcal{O}(nW)$.
 
@@ -419,9 +418,9 @@ int main()
 
 Lưu ý rằng đoạn chương trình trên mới chỉ cài đặt y nguyên công thức QHĐ chứ chưa tối ưu. Ví dụ với các $j<A_i$, ta gán $L[j]=P[j]$ nhưng sau đó lại gán $P=L$. Bạn đọc có thể rút gọn đoạn code lại để chương trình tối ưu hơn.
 
-### 2.4. Một số bài toán khác
+## 2.4. Một số bài toán khác
 
-#### 2.4.1. Đổi tiền
+### 2.4.1. Đổi tiền
 
 > *Ở đất nước Omega người ta chỉ tiêu tiền xu. Có $n$ loại tiền xu, loại thứ $i$ có mệnh giá là $A_i$ đồng. Một người khách du lịch đến Omega du lịch với số tiền $m$ đồng. Ông ta muốn đổi số tiền đó ra tiền xu Omega để tiện tiêu dùng. Ông ta cũng muốn số đồng tiền sau khi đổi là ít nhất (cho túi tiền đỡ nặng khi đi đây đi đó). Bạn hãy giúp ông ta tìm cách đổi tiền.*
 > **Điều kiện:** $1\le n \times m\le 10^6,1\le A_i\le 10^9$.
@@ -541,7 +540,7 @@ int main()
 
 ## 3. Nhân ma trận
 
-### 3.1. Mô hình
+## 3.1. Mô hình
 
 > *Khi nhân một ma trận kích thước $m \times n$ với một ma trận $n \times p$, số phép nhân phải thực hiện là $m \times n \times p$. Mặt khác phép nhân các ma trận có tính kết hợp, tức là: $(A \times B) \times C = A \times (B \times C).$
 > Do đó khi tính tích nhiều ma trận, ta có thể thực hiện theo các trình tự khác nhau, mỗi trình tự tính sẽ quyết định số phép nhân cần thực hiện.
@@ -551,7 +550,7 @@ int main()
 > **Output:** Số nguyên duy nhất là số phép nhân ít nhất.
 
 ![/uploads/basic-dynamic-programming-2_img4.png](/uploads/basic-dynamic-programming-2_img4.png)
-### 3.2. Lời giải
+## 3.2. Lời giải
 
 Gọi $L[i][j]$ là số phép nhân nhỏ nhất cần dùng để tính tích các ma trận từ $A_i$ đến $A_j$ $(A_i \times A_{i+1} \times \ldots \times A_j)$.
 
@@ -565,7 +564,7 @@ Nói cách khác, tích $A_{k+1}\times A_{k+1}\times\ldots\times A_j$ được t
 * $L[i][i]=0$
 * $L[i][j] = \min(L[i][k] + L[k+1][j] + d_{i-1}\times d_{k}\times d_j)$, trong đó $i\le k < j,$ nếu $i<j$
 
-### 3.3. Code tham khảo
+## 3.3. Code tham khảo
 
 Để tính các giá trị $L[i][j]$, ta có thể dùng hai cách: đệ quy có nhớ và tính theo thứ tự.
 
@@ -633,9 +632,9 @@ int main()
 ```
 Với hai cách cài đặt trên, độ phức tạp bộ nhớ là $\mathcal{O}(n^2)$, độ phức tạp thời gian là $\mathcal{O}(n^3)$.
 
-### 3.4. Một số bài toán khác
+## 3.4. Một số bài toán khác
 
-#### 3.4.1. Chia đa giác
+### 3.4.1. Chia đa giác
 
 > *Cho một đa giác lồi $n$ đỉnh được đánh số từ $1$ đến $n$ theo chiều kim đồng hồ. Bằng các đường chéo không cắt nhau, ta có thể chia đa giác thành $n-2$ tam giác. Hãy xác định cách chia có tổng các đường chéo ngắn nhất.*
 > **Điều kiện:** $4\le n\le 300,-10^6\le x_i,y_i\le 10^6$ (với $(x_i,y_i)$ là tọa độ của đỉnh thứ $i$).
@@ -699,7 +698,7 @@ int main()
 }
 ```
 
-#### 3.4.2. Biểu thức số học 
+### 3.4.2. Biểu thức số học 
 > *Cho $n$ số thực không âm $A_1,A_2,\ldots,A_n$ được viết thành một hàng ngang theo thứ tự đó. Giữa hai số liên tiếp có một dấu `+` hoặc `*` cho trước. Hãy đặt các dấu ngoặc vào biểu thức để giá trị thu được là lớn nhất.*
 > **Điều kiện:** $1\le n \le 300$.
 
@@ -716,12 +715,12 @@ Vậy ta có công thức truy hồi như sau:
 
 ## 4. Ghép cặp
 
-### 4.1. Mô hình
+## 4.1. Mô hình
 
 > *Có $n$ lọ hoa sắp thành một hàng ngang và $k$ bó hoa được đánh số thứ tự từ $1$ đến $k$. Cần cắm $k$ bó hoa trên vào $n$ lọ sao cho hoa có số thứ tự nhỏ phải đứng trước hoa có số thứ tự lớn. Giá trị thẩm mỹ tương ứng khi cắm hoa $i$ vào lọ thứ $j$ là $v_{i,j}\ge0$. Hãy tìm một cách cắm sao cho tổng giá trị thẫm mỹ là lớn nhất. Chú ý rằng mỗi bó hoa phải được cắm vào một lọ và mỗi lọ cũng chỉ cắm tối đa một bó hoa.*
 > **Điều kiện:** $1\le n \times k\le10^6,1\le v_{i,j}\le10^9$.
 
-### 4.2. Lời giải
+## 4.2. Lời giải
 
 Nhận xét rằng bài toán nêu trên là một bài toán ghép cặp có yêu cầu về thứ tự nên ta có thể giải quyết bằng phương pháp QHĐ.
 
@@ -744,7 +743,7 @@ Tóm lại, công thức truy hồi của bài toán là:
 * Ta chỉ cần điều kiện $1$ và $3$ vì điều kiện $2$ có thể được suy ra trực tiếp từ hai điều kiện trên.
 * Công thức QHĐ của bài này không có gì đặc biệt một khi ta tìm ra trạng thái của bài toán.
 
-### 4.3. Code tham khảo
+## 4.3. Code tham khảo
 Tương tự các bài toán trước, có hai phương pháp cài đặt QHĐ, với phương pháp tính từng hàng cài đặt nhanh và tiết kiệm hơn:
 
 ```cpp
@@ -760,9 +759,9 @@ for (int i = 1; i <= n; i++)
 cout << L[k];
 ```
 
-### 4.4. Một số bài toán khác
+## 4.4. Một số bài toán khác
 
-#### 4.4.1. Xếp phòng học
+### 4.4.1. Xếp phòng học
 
 > *Một trường học có $n$ phòng học đánh số từ $1$ đến $n$ và $k$ nhóm học sinh đánh số từ $1$ đến $k$. Cần xếp $k$ nhóm học sinh vào các phòng học khác nhau sao cho với hai nhóm $i<j$ có $a, b$ lần lượt là phòng học của hai nhóm thì $a<b$. Nói cách khác, nhóm có số hiệu lớn hơn sẽ được ưu tiên phòng có số hiệu lớn hơn. 
 > Nếu phòng học nào đó có chứa học sinh thì số ghế thừa phải được chuyển ra ngoài, nếu thiếu ghế thì phải lấy thêm. Biết số ghế có sẵn trong phòng thứ $i$ là $A_i$ và số học sinh nhóm thứ $j$ là $B_j(1\le i \le n,1\le j \le k).$ Tính số lần chuyển ghế ra vào ít nhất có thể.*
@@ -772,7 +771,7 @@ cout << L[k];
 
 Khi xếp nhóm $i$ vào phòng $j$ thì số lần chuyển ghế chính là độ chênh lệch giữa số ghế trong phòng $i$ và số học sinh trong nhóm. Khi đó, "giá trị thẩm mỹ" nếu lớp $j$ học ở phòng $i$ là $v_{i,j}=\lvert A_i - B_j \rvert$. Ta cần tìm cách ghép $k$ nhóm học sinh với $n$ lớp học sao cho nhóm có số hiệu nhỏ hơn thì học lớp có số hiệu nhỏ hơn. Để ý trong bài toán này, tổng giá trị thẩm mỹ của cách ghép phải là **nhỏ nhất**.
 
-#### 4.4.2. Mua giày (Đề QG bảng B năm 2003)
+### 4.4.2. Mua giày (Đề QG bảng B năm 2003)
 
 > *Có $n$ đôi giày, đôi giày thứ $i$ có kích thước $H_i$. Có $k$ người cần mua giày, người thứ $j$ cần mua đôi giày kích thước $S_j$. Khi người $i$ chọn mua đôi giày $j$ thì độ lệch sẽ là $|H_i-S_j|$. Hãy tìm cách chọn mua giày cho $k$ người trên sao cho tổng độ lệch là ít nhất. Biết rằng mỗi người chỉ mua 1 đôi giày và 1 đôi giày cũng chỉ có tối đa một người mua.*
 > **Điều kiện:** $1\le n\times k\le10^6, 1\le H_i,S_j\le10^9$.

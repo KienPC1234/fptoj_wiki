@@ -1,4 +1,3 @@
-## Bài toán tìm cây khung nhỏ nhất trong đồ thị
 
 **Tác giả**: 
 * Hoàng Việt Cường - Đại học Bách Khoa Hà Nội
@@ -7,16 +6,16 @@
 **Reviewer**:
 Vương Hoàng Long - Đại học Quốc Gia Singapore 
 
-### Một số kiến thức cần biết
+## Một số kiến thức cần biết
 Vì bài viết nói về cây khung nhỏ nhất, các bạn nên đọc một số kiến thức liên quan đến cây trước mà mình liệt kê dưới đây vì đây là những kiến thức rất thường gặp trong những bài tập về cây khung, trong khuôn khổ bài viết mình sẽ không giải thích lại về những kiến thức này nữa:
 * [Lowest Common Accessor](https://vnoi.info/wiki/translate/topcoder/Range-Minimum-Query-and-Lowest-Common-Ancestor.md#b%C3%A0i-to%C3%A1n-lowest-common-ancestor-lca)
 * [Disjoin Set Union](https://vnoi.info/wiki/algo/data-structures/disjoint-set.md)
 
 **Lưu ý:** Toàn bộ phần code phía dưới sử dụng cho `C++11` trở lên, các bạn lưu ý kiểm tra trình biên dịch của mình.
 
-### Cây khung nhỏ nhất là gì
+## Cây khung nhỏ nhất là gì
 
-#### Định nghĩa
+### Định nghĩa
 
 Theo lý thuyết đồ thị, chúng ta đều biết rằng 1 đồ thị được biểu diễn bằng công thức $G = (V, E)$, trong đó đồ thị $G$ của chúng ta bao gồm tập các đỉnh $V$ và tập các cạnh $E$.
 
@@ -35,7 +34,7 @@ Theo lý thuyết đồ thị, chúng ta đều biết rằng 1 đồ thị đư
 
 Trong khuôn khổ bài viết, chúng ta sẽ làm việc với **đồ thị vô hướng có trọng số**.
 
-#### Tính chất
+### Tính chất
 
 Một vài tính chất của cây khung nhỏ nhất trong đồ thị vô hướng có trọng số:
 * **1. Tính chất chu trình**: Trong một chu trình $C$ bất kỳ, nếu $e$ là cạnh có trọng số lớn nhất **tuyệt đối** (không có cạnh nào có trọng số bằng $e$) thì $e$ không thể nằm trên bất kỳ cây khung nhỏ nhất nào.
@@ -46,7 +45,7 @@ Một vài tính chất của cây khung nhỏ nhất trong đồ thị vô hư�
 
 * **4. Tính chất cạnh nhỏ nhất**: Nếu $e$ là cạnh có trọng số nhỏ nhất của đồ thị, và không có cạnh nào có trọng số bằng $e$ thì $e$ nằm trong mọi cây khung nhỏ nhất của đồ thị.
    
-##### Chứng minh
+#### Chứng minh
 > **Lưu ý :** các bạn mới học cây khung lần đầu cân nhắc việc đọc chứng minh, tác giả khuyên các bạn nên tạm thời bỏ qua phần này
 
 Xuyên suốt cả bốn tính chất, ta đều sử dụng phép phản chứng để chứng minh
@@ -80,8 +79,8 @@ Xuyên suốt cả bốn tính chất, ta đều sử dụng phép phản chứn
     
 
 
-### Các thuật toán tìm cây khung nhỏ nhất
-#### 1. Thuật toán Kruskal
+## Các thuật toán tìm cây khung nhỏ nhất
+### 1. Thuật toán Kruskal
 **Ý tưởng thuật toán**: Ban đầu mỗi đỉnh là một cây riêng biệt, ta tìm cây khung nhỏ nhất bằng cách duyệt các cạnh theo trọng số từ nhỏ đến lớn, rồi hợp nhất các cây lại với nhau.
 
 Cụ thể hơn, giả sử cạnh đang xét nối 2 đỉnh $u$ và $v$, nếu 2 đỉnh này nằm ở 2 cây khác nhau thì ta thêm cạnh này vào cây khung, đồng thời hợp nhất 2 cây chứa $u$ và $v$.
@@ -183,7 +182,7 @@ int main() {
     cout << totalWeight << '\n';
 }
 ```
-##### Chứng minh tính đúng đắn của thuật toán:
+#### Chứng minh tính đúng đắn của thuật toán:
 Ta phải chứng minh hai điều: 
 1. đầu ra của thuật toán là một cây khung
 2. cây đó có trọng số nhỏ nhất trong số tất cả các cây khung của đồ thị.
@@ -230,7 +229,7 @@ Thuật toán gồm 2 phần:
 $\Rightarrow$ độ phức tạp của thuật toán Kruskal là $O(m\log{m} +m\log{n})$
 
 
-#### 2. Thuật toán Prim
+### 2. Thuật toán Prim
 **Ý tưởng thuật toán**: Ý tưởng của thuật toán Prim rất giống với ý tưởng của thuật toán Dijkstra (tìm đường đi ngắn nhất trên đồ thị). 
 Nếu như thuật toán **Kruskal** xây dựng cây khung nhỏ nhất bằng cách kết nạp từng **cạnh** vào đồ thị thì thuật toán **Prim** lại kết nạp từng **đỉnh** vào đồ thị theo tiêu chí: đỉnh được nạp vào tiếp theo phải **chưa được nạp** và **gần nhất** với các đỉnh đã được nạp vào đồ thị.
 
@@ -331,16 +330,16 @@ int main() {
 > **Bonus :** Các bạn có thể sử dụng [Visualgo](https://visualgo.net/en/mst) để  mô phỏng thuật toán Kruskal và Prim thông qua hoạt ảnh, qua đó hiểu thêm về các thuật toán trên
 
 
-### Một số bài toán áp dụng
-#### 1. Bài toán [NKCITY](https://oj.vnoi.info/problem/nkcity)
-##### Tóm tắt đề bài
+## Một số bài toán áp dụng
+### 1. Bài toán [NKCITY](https://oj.vnoi.info/problem/nkcity)
+#### Tóm tắt đề bài
 1 thành phố gồm $N$ trọng điểm, $M$ tuyến đường có thể được xây dựng với chi phí xây dựng khác nhau. Yêu cầu chọn ra một số tuyến đường sao cho $N$ trọng điểm phải được liên thông với nhau và chi phí xây dựng tuyến đường lớn nhất là nhỏ nhất có thể.
-##### Thuật toán
+#### Thuật toán
 Dựa vào tính chất **đường đi hẹp nhất** của cây khung mà ta đã trình bày ở trên, đường đi giữa 2 đỉnh $u$, $v$ bất kỳ trên cây khung nhỏ nhất là đường đi có cạnh lớn nhất là nhỏ nhất của đồ thị. 
 Như vậy việc chọn ra các tuyến đường để xây dựng chỉ đơn giản là chọn các cạnh trên cây khung nhỏ nhất của đồ thị.
-##### Độ phức tạp
+#### Độ phức tạp
 Chính là độ phức tạp của thuật toán tìm cây khung nhỏ nhất mà các bạn sẽ cài đặt. 
-##### Cài đặt
+#### Cài đặt
 Ở đây ta sẽ dùng Kruskal để tìm cây khung nhỏ nhất
 ```cpp
 /*input
@@ -408,18 +407,18 @@ int main() {
 }
 ```
 
-#### 2. Bài toán [tìm cây khung nhỏ nhất cho mỗi cạnh - Codeforces 609E](https://codeforces.com/contest/609/problem/E)
-##### Tóm tắt đề bài
+### 2. Bài toán [tìm cây khung nhỏ nhất cho mỗi cạnh - Codeforces 609E](https://codeforces.com/contest/609/problem/E)
+#### Tóm tắt đề bài
 Cho đồ thị vô hướng $G$ gồm $n$ đỉnh và $m$ cạnh. Yêu cầu với mỗi cạnh trong đồ thị, tìm cây khung nhỏ nhất **chứa cạnh đó** của đồ thị và in ra trọng số của cây khung đó.
 
 Đây là 1 bài tập khá kinh điển về cây khung nhỏ nhất. Để giải được bài tập này, chúng ta cần giải bài LUBENICA trước. Các bạn có thể đọc thêm về bài ở [đây](lubenica-vnoj)
-##### Thuật toán: 
+#### Thuật toán: 
 * Đầu tiên, ta dựng cây khung nhỏ nhất $S$ của đồ thị ban đầu:
 * Sau đó, ta lần lượt đi tìm cây khung nhỏ nhất chứa mỗi cạnh của đồ thị. Với 1 cạnh i nối 2 đỉnh $u$, $v$ với trọng số $w$, có 2 trường hợp xảy ra:
     * Cạnh $u-v$ đã thuộc cây khung nhỏ nhất $S$ ban đầu, cây khung cần tìm chính là $S$.
     * Cạnh $u-v$ không thuộc cây khung nhỏ nhất $S$. Như vậy nếu thêm cạnh $u-v$ vào cây khung sẽ tạo thành chu trình từ $u\rightarrow v$. Do đó ta phải xóa đi 1 cạnh trên chu trình này để đảm bảo tính chất của cây khung. Và đương nhiên để tối ưu thì ta sẽ chọn xóa đi cạnh có **trọng số lớn nhất** trên đường đi từ $u \rightarrow v$ (đã được trình bày trong bài LUBENICA ở trên) và thêm cạnh $u-v$ vào cây khung sau khi đã xóa cạnh đó.
 
-##### Code mẫu:
+#### Code mẫu:
 ```cpp
 /*input
 8 10
@@ -568,11 +567,11 @@ int main() {
 ```
 
 
-#### 3. Bài toán [160D - Edges in MST](https://codeforces.com/problemset/problem/160/D)
-##### Tóm tắt đề bài
+### 3. Bài toán [160D - Edges in MST](https://codeforces.com/problemset/problem/160/D)
+#### Tóm tắt đề bài
 Cho đồ thị vô hướng có trọng số $G$ gồm $n$ đỉnh và $m$ cạnh. Yêu cầu với mỗi cạnh trong đồ thị, kiểm tra xem cạnh đó **không thuộc** bất kỳ cây khung nhỏ nhất nào, thuộc **một số** cây khung nhỏ nhất hay nằm trong **mọi** cây khung nhỏ nhất của đồ thị.
 
-##### Thuật toán
+#### Thuật toán
 - Ban đầu, khởi tạo đồ thị $G'$ rỗng. Ta sẽ xét lần lượt từng nhóm các cạnh có cùng trọng số và thêm chúng vào đồ thị $G'$. Đồng thời, với mỗi cạnh ta không quan tâm nó nối 2 đỉnh nào mà chỉ quan tâm nó nối 2 **TPLT** nào trong đồ thị hiện tại. 
 - Nhận xét rằng nếu có cạnh kết nối 2 **TPLT khác nhau**, các cạnh này sẽ xuất hiện trong **ít nhất** 1 cây khung nhỏ nhất. Ngược lại, nếu 1 cạnh nối 2 đỉnh **đã liên thông** từ trước thì cạnh này sẽ **không thuộc** bất kỳ cây khung nhỏ nhất nào.
 - Xét các nhóm cạnh có **cùng trọng số** mà thuộc **2 thành phần liên thông khác nhau**, ta dựng đồ thị $G$ mới từ các nhóm cạnh đó với các đỉnh là các thành phần liên thông.
@@ -586,12 +585,12 @@ Cho đồ thị vô hướng có trọng số $G$ gồm $n$ đỉnh và $m$ cạ
     -  Các cạnh còn lại **không phải cạnh cầu** sẽ thuộc **một số** cây khung nhỏ nhất
     - **Xem thêm** : [Tìm cạnh cầu](https://vnoi.info/wiki/algo/graph-theory/Depth-First-Search-Tree.md#tìm-cạnh-cầu)
 
-##### Độ phức tạp
+#### Độ phức tạp
 - Đầu tiên, ta phải sắp xếp lại các cạnh theo trọng số tăng dần mất đpt $O(m\log{m})$. Sau đó, ta phải duy trì 1 đồ thị hiện tại trong quá trình lần lượt thêm các nhóm cạnh vào đồ thị, ở đây ta sử dụng **Disjoint Set** để kiểm tra 2 đỉnh nối 2 TPLT nào cũng như thêm các cạnh vào đồ thị hiện tại.
 - Thuật toán **Tarjan** để tìm **cầu** có độ phức tạp $O(m + n)$ cho toàn đồ thị 
 ⇒ Như vậy, độ phức tạp tổng của bài toán là $O(m\log{m} + m\log{n} + n)$.
 
-##### Cài đặt
+#### Cài đặt
 ```cpp
 /*input
 4 5
@@ -734,7 +733,7 @@ int main() {
 ```
 
 
-### Luyện tập
+## Luyện tập
 Các bạn có thể thử sức với một số bài tập sau:
 * [P186SUMF](https://www.spoj.com/PTIT/problems/P186SUMF/) - [959E](https://codeforces.com/problemset/problem/959/E)
 * [VMST](https://vn.spoj.com/problems/VMST/)

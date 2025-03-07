@@ -1,4 +1,3 @@
-## FFT
 
 
 
@@ -119,7 +118,7 @@ $$
 
 Dễ thấy là nghiệm nguyên thủy thứ $k$ có thể được tính trong $O(1)$ với $n$ đã biết.
 
-### Một số tính chất đặc biệt của ma trận Vandermonde nghiệm nguyên thủy
+## Một số tính chất đặc biệt của ma trận Vandermonde nghiệm nguyên thủy
 
 **Tính chất 1:** Ma trận nghịch đảo $V^{-1}$ được tính theo công thức: $V^{-1}[i,j] = {V[i,j]^{-1} \over n}$ với $i, j = 0, 1,...n-1$ là chỉ số hàng và cột của ma trận.
 
@@ -201,7 +200,7 @@ $$
 FFT(x_{i=n/2, n/2+1, n/2+2,...n-1}) = FFT(x_{i=0, 2, 4, ...x_{n-2}}) - w_n^i FFT(x_{i=1, 3, 5...n-1})
 $$
 
-### Thuật toán nhân hai đa thức
+## Thuật toán nhân hai đa thức
 
 Đến đây ta đã có thể hoàn thiện chương trình nhân 2 đa thức $p(x), q(x)$ và lưu kết quả thành $h(x)$:
 ```
@@ -225,7 +224,7 @@ end function
 
 Vì FFT đòi hỏi phải sử dụng số phức và (trong nhiều trường hợp) khử đệ quy nên có thể gây khó khăn cho các bạn chưa quen, phần này sẽ hướng dẫn sơ lược về cách cài đặt sử dụng `C++`.
 
-### Khai báo
+## Khai báo
 
 Để sử dụng số phức trong `C++` ta cần khai báo thư viện `complex`:
 
@@ -243,11 +242,11 @@ Sau khi được định nghĩa bằng lệnh `typedef` thì để khai báo bi�
 
 Một số phiên bản cài đặt tự định nghĩa lớp số ảo bằng một `struct` hoặc `class`. Nếu lớp tự viết này không có chức năng đặc biệt nào thì việc này là không cần thiết vì bản thân `<complex>` đã là một lớp rồi. Bạn có thể xem qua file thư viện trong thư mục cài đặt trình biên dịch, ví dụ với CodeBlocks thì đường dẫn có dạng `CodeBlocks\MinGW\lib\gcc\mingw32\4.7.1\include\c++\complex` (file ko có phần mở rộng).
 
-### Chuẩn hóa bậc đa thức
+## Chuẩn hóa bậc đa thức
 
 Trong các phần trên ta đã giả sử rằng $n$ là lũy thừa của $2$. Để đảm bảo tính đối xứng và thuận tiện khi cài đặt, nếu đề bài không cho trước $n$ bậc của đa thức là lũy thừa của $2$ thì ta cần chuẩn hóa thành số lũy thừa nhỏ nhất mà lớn hơn $n$. Chẳng hạn với $n = 10^5$ thì giá trị chuẩn hóa là $2^{17} = 131072$ vì $2^{16} = 65536 < 10^5$. Các hệ số của bậc cao hơn giá trị $n$ ban đầu gán bằng $0$.
 
-### Đệ quy và Khử đệ quy
+## Đệ quy và Khử đệ quy
 
 **Đệ quy:**
 
