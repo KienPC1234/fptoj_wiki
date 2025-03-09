@@ -13,7 +13,7 @@ Trong bài viết này mình sẽ tiếp tục giới thiệu về hàm Mobius. 
 
 - $\mu(n)=0$ nếu tồn tại $a_i>1$
 
-- $\mu(n)=(-1)^r$ nếu $n={p_1}\*{p_2}\*{p_3}\*...\*{p_r}$, hay $a_i = 1$ với mọi $i$
+- $\mu(n)=(-1)^r$ nếu $n={p_1} \times {p_2} \times {p_3} \times ... \times {p_r}$, hay $a_i = 1$ với mọi $i$
 
 - Có thể chứng minh được rằng $\mu(n)=\sum_{d\|n,d < n}\mu(d)$ với $n>1$ và tính được $\mu(n)$ bằng cách sử dụng Sàng:
 
@@ -63,7 +63,7 @@ Gọi $cnt(k)$ là số lượng số trong tập $S$ mà là bội của $k$.
 
 Theo phân tích ở trên,
 
-$res = f(1) - f(2) - f(3) - f(5) - ... + f(2\*3) + f(2\*5) + f(2\*7) + ... - f(2\*3\*5) - f(2\*3\*7) - ...$
+$res = f(1) - f(2) - f(3) - f(5) - ... + f(2 \times 3) + f(2 \times 5) + f(2 \times 7) + ... - f(2 \times 3 \times 5) - f(2 \times 3 \times 7) - ...$
 
 $res = sum(f(i) * mu(i))$
 

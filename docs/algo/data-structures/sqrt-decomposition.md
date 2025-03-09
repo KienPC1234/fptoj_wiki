@@ -222,13 +222,13 @@ manualUpdate(blockR * BLOCK_SIZE, r, oval, nval);
 
 Ta sẽ cùng xem xét độ phức tạp của lời giải này:
 
-Dễ thấy hàm $blockUpdate$ có độ phức tạp là $O(100)$. Hàm này mỗi truy vấn có thể được gọi không quá $\sqrt{N}$ lần, và có $Q$ truy vấn nên tổng độ phức tạp của các lần gọi hàm này là $O(Q\*\sqrt{N}\*100)$. **(1)**
+Dễ thấy hàm $blockUpdate$ có độ phức tạp là $O(100)$. Hàm này mỗi truy vấn có thể được gọi không quá $\sqrt{N}$ lần, và có $Q$ truy vấn nên tổng độ phức tạp của các lần gọi hàm này là $O(Q \times \sqrt{N} \times 100)$. **(1)**
 
 Hàm $doLazy$ có độ phức tạp là $O(\sqrt{N} + 100)$ do các *phần dư* có độ lớn $\leq \sqrt{N}$. Cộng với phần `for (int i = L; i <= R; ++i)` có độ phức tạp $O(\sqrt{N})$, hàm $manualUpdate$ có độ phức tạp là $O(\sqrt{N} + \sqrt{N} + 100) = O(\sqrt{N})$.
 
-Dễ thấy hàm $manualUpdate$ sẽ được gọi đúng $2$ lần trong mỗi truy vấn. Vậy tổng độ phức tạp của việc gọi hàm này là $O(Q\*\sqrt{N})$. **(2)**
+Dễ thấy hàm $manualUpdate$ sẽ được gọi đúng $2$ lần trong mỗi truy vấn. Vậy tổng độ phức tạp của việc gọi hàm này là $O(Q \times \sqrt{N})$. **(2)**
 
-Vậy độ phức tạp của lời giải chia căn này sẽ là **(1)** + **(2)** = $O(Q\*\sqrt{N}\*100) + O(Q\*\sqrt{N})$.
+Vậy độ phức tạp của lời giải chia căn này sẽ là **(1)** + **(2)** = $O(Q \times \sqrt{N} \times 100) + O(Q \times \sqrt{N})$.
 
 Các bạn có thể xem code mẫu ở [đây](https://ideone.com/TA4XqI)
 

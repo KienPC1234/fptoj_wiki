@@ -49,13 +49,13 @@ int phi(int n) {
 
 Một công thức thường gặp để tính phi:
 
-$\phi(N) = n \* \prod_{p\|n}(1 - 1/p) $
+$\phi(N) = n  \times  \prod_{p\|n}(1 - 1/p) $
 
 (p là các ước nguyên tố của n).
 
 Ví dụ:
 
-$\phi(6) = 6 \* (1 - 1/2) \* (1 - 1/3) = 2$
+$\phi(6) = 6  \times  (1 - 1/2)  \times  (1 - 1/3) = 2$
 
 Cài đặt:
 
@@ -74,7 +74,7 @@ int eulerPhi(int n) { // = n (1-1/p1) ... (1-1/pn)
 }
 ```
 
-Trong trường hợp đặc biệt, $N = p^{k}, \phi(N) = p^{k-1} \* (p-1)$.
+Trong trường hợp đặc biệt, $N = p^{k}, \phi(N) = p^{k-1}  \times  (p-1)$.
 
 ## Hàm Nhân tính
 

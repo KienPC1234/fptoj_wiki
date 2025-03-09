@@ -161,19 +161,7 @@ Tài liệu giáo khoa chuyên tin (download ở [Một số tài liệu hay v�
 - [Viết trình chấm](algo/skill/viet-trinh-cham)
 - [Tổng hợp lời khuyên cho các kỳ thi](algo/skill/Ki-nang-thi-cu)
 - [Kinh nghiệm thi VOI](algo/skill/Kinh-nghiem-thi-VOI)
-
-## Kinh nghiệm phỏng vấn
-
-- [Những kinh nghiệm chung khi phỏng vấn](interview/general-experience)
-- [Kinh nghiệm phỏng vấn - Góc nhìn từ người phỏng vấn](interview/experience-from-interviewer)
-- [Những lần phỏng vấn và những kinh nghiệm rút ra](interview/Nhung-lan-phong-van-trong-thuc-te-va-bai-hoc-rut-ra)
-
-## FPTOJ Interview
-
-- [Phỏng vấn Lê Yên Thanh](FPTOJ-interview/yen-thanh)
-- [Phỏng vấn Nguyễn Xuân Khánh](FPTOJ-interview/xuan-khanh)
-- [Phỏng vấn Team IOI Việt Nam 2017](FPTOJ-interview/Phong-van-team-IOI-VN-2017)
-- [Phỏng vấn Team IOI Việt Nam 2018](FPTOJ-interview/Phong-van-team-IOI-Viet-Nam-2018)
+- [Phỏng vấn Team IOI Việt Nam 2017](Phỏng-vấn-team-IOI-VN-2017.md)
 
 ## Khác
 

@@ -141,8 +141,8 @@ Ta sẽ giải quyết từ dễ đến khó trước.
 Sau khi biên dịch xong thư viện ta mở Command Line và trỏ đến thư mục sources\build\lib
 
 Gõ lệnh sau:
->dir Debug\*d.lib /B >..\DependenciesDebug.txt
->dir Release\*.lib /B >..\DependenciesRelease.txt
+>dir Debug \times d.lib /B >..\DependenciesDebug.txt
+>dir Release \times .lib /B >..\DependenciesRelease.txt
 
 Sau khi gõ xong thì trong thư mục build sẽ xuất hiện 2 file text là DependenciesDebug và DependenciesRelease chứa danh sách tât cả các file libs. Mỗi lần sử dụng chỉ cần mở file lên và chép vào.
 

@@ -126,11 +126,11 @@ Xét $n$ biến cố độc lập (*independent events*): $ E_1, E_2, ..., E_n$ 
 
 Vì xác suất được định nghĩa là một số thực nằm trong khoảng từ 0 đến 1, ta tổng hợp được xác suất để tất cả các biến cố xảy ra bằng công thức dưới đây:
 
-  $P(all) = P(E_1) \* P(E_2) \* ... \* P(En) $
+  $P(all) = P(E_1)  \times  P(E_2)  \times  ...  \times  P(En) $
 
 Cách tốt nhất để trả lời câu hỏi thứ hai là tìm xác suất để không có biến cố nào diễn ra và lấy phần bù.
 
-  $P(any) = 1 - P(E_1') \* P(E_2') \* ... \* P(E_n') $
+  $P(any) = 1 - P(E_1')  \times  P(E_2')  \times  ...  \times  P(E_n') $
 
 Những công thức trên được ứng dụng rất nhiều, cần nắm chắc để đi đền phần tiếp theo.
 
@@ -206,7 +206,7 @@ Xét riêng từng xúc sắc:
 - Đặt $E(X1)$ là expected value của giá trị xúc sắc 1
 - Đặt $E(X2)$ là expected value của giá trị xúc sắc 2
 
-$E(X1) = E(X2) = (1/6) \* 1 + (1/6) \* 2 + ... + (1/6) \* 6 = 3.5$.
+$E(X1) = E(X2) = (1/6)  \times  1 + (1/6)  \times  2 + ... + (1/6)  \times  6 = 3.5$.
 
 Linearity of Expectation cho ta công thức sau:
 
@@ -216,7 +216,7 @@ Phát biểu chính xác:
 
 Nếu $X1$, $X2$, ..., $Xk$ là các random variable có cùng không gian mẫu:
 
-$E(X1 \* a1 + X2 \* a2 + ... + Xk \* ak) = a1 \* E(X1) + a2 \* E(X2) + ... + ak \* E(Xk)$.
+$E(X1  \times  a1 + X2  \times  a2 + ... + Xk  \times  ak) = a1  \times  E(X1) + a2  \times  E(X2) + ... + ak  \times  E(Xk)$.
 
 Chú ý rằng các biến không cần độc lập.
 
@@ -330,7 +330,7 @@ Từ những dữ liệu trên, bạn cần xuất ra giá trị kì vọng cầ
    - 13 : 0.1875
    - 9   : 0.25
 
-Vậy giá trị kì vọng của chất lượng con giống sẽ là $17 \* 0.5625 + 13 \* 0.1875 + 9 \* 0.25 = 14.25$)
+Vậy giá trị kì vọng của chất lượng con giống sẽ là $17  \times  0.5625 + 13  \times  0.1875 + 9  \times  0.25 = 14.25$)
 
 ### Phân tích
 

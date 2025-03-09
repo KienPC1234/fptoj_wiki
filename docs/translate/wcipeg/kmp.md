@@ -28,7 +28,7 @@ T = aaaaaaaaa
 
 Ở ví dụ này, ta cần các lần xuất hiện của xâu $S$ trong xâu $T$ ($S$ xuất hiện 7 lần).
 
-Ta có thể duyệt bình thường với độ phức tạp $O(\|S\| \* \|T\|)$ như sau:
+Ta có thể duyệt bình thường với độ phức tạp $O(\|S\|  \times  \|T\|)$ như sau:
 
 - So $S_1$ với $T_1$, $S_2$ với $T_2$, $S_3$ với $T_3$, do đó vị trí số 1 là vị trí khớp của $S$ trong $T$.
 - So $S_1$ với $T_2$, $S_2$ với $T_3$, $S_3$ với $T_4$, tìm được vị trí số 2 là vị trí khớp của $S$ trong $T$.
@@ -162,17 +162,17 @@ Tổng quát, bảng $\pi$ cho ta biết, sau một lần khớp hoặc không k
 
 Để tính độ phức tạp cho hàm tiền xử lí, trước tiên ta có quan sát:
 
-- Dãy $\pi_i^{\*} = i, \pi_i, \pi_{\pi_i}, \pi_{\pi_{\pi_i}}, ... ,0$ chứa toàn bộ những giá trị $j$ thỏa mãn $S^j \sqsupset S^i$.
+- Dãy $\pi_i^{ \times } = i, \pi_i, \pi_{\pi_i}, \pi_{\pi_{\pi_i}}, ... ,0$ chứa toàn bộ những giá trị $j$ thỏa mãn $S^j \sqsupset S^i$.
 
 Vậy, ta có thể đếm toàn bộ những hậu tố của $S^i$ đồng thời là tiền tố của $S$ bằng cách bắt đầu với $i$, dò nó trong bảng $\pi$, dùng kết quả đó dò tiếp tục và tiếp tục, đến khi kết thúc bằng $0$. 
 
 *Chứng minh:*
 
-- Đầu tiên ta chứng minh chiều xuôi: nếu $j$ xuất hiện trong $\pi_i^{\*}$ thì $S^j \sqsupset S^i$.
-    - Nếu $j$ là phần tử đầu trong $\pi_i^{\*}$. Vậy $j = i$ và hẳn nhiên $S^j \sqsupset S^i$.
+- Đầu tiên ta chứng minh chiều xuôi: nếu $j$ xuất hiện trong $\pi_i^{ \times }$ thì $S^j \sqsupset S^i$.
+    - Nếu $j$ là phần tử đầu trong $\pi_i^{ \times }$. Vậy $j = i$ và hẳn nhiên $S^j \sqsupset S^i$.
     - Nếu $j$ không là phần tử đầu: Gọi phần tử trước nó là $k$. Vậy $\pi_k = j$. Theo định nghĩa, $S^j \sqsupset S^k$. Nhưng $S^k \sqsupset S^i$. Do quan hệ này có tính chất bắc cầu, $S^j \sqsupset S^i$.
 
-- Giờ ta chứng minh chiều ngược: nếu $S^j \sqsupset S^i$, $j$ thuộc $\pi_i^{\*}$. Giả sử $j$ không xuất hiện trong dãy. Rõ ràng $0 < j < i$ do $i$ và $0$ đều có trong dãy. Do $\pi_i^{\*}$ luôn giảm, ta có thể tìm được một và chỉ một $k$ thuộc $\pi_i^{\*}$ sao cho $k>j$ và $\pi_k<j$. Nói cách khác, ta có thể tìm được một và chỉ một $k$ mà sau nó $j$ "có lẽ" sẽ xuất hiện (để giữ cho dãy luôn giảm). Ở phần đầu chứng minh ta đã biết $S^k \sqsupset S^i$. Do hậu tố độ dài $j$ của $S^i$ là một hậu tố của hậu tố độ dài $k$ của $S^i$, hậu tố độ dài $j$ của $S^i$ phải khớp với hậu tố độ dài $j$ của $S^k$. Nhưng hậu tố độ dài $j$ của $S^i$ cũng khớp với $S^j$, nên $S^j$ khớp với hậu tố độ dài $j$ của $S^k$. Vậy ta kết luận $\pi_k \ge j$. Thế nhưng $j \ge \pi_k$, mâu thuẫn.
+- Giờ ta chứng minh chiều ngược: nếu $S^j \sqsupset S^i$, $j$ thuộc $\pi_i^{ \times }$. Giả sử $j$ không xuất hiện trong dãy. Rõ ràng $0 < j < i$ do $i$ và $0$ đều có trong dãy. Do $\pi_i^{ \times }$ luôn giảm, ta có thể tìm được một và chỉ một $k$ thuộc $\pi_i^{ \times }$ sao cho $k>j$ và $\pi_k<j$. Nói cách khác, ta có thể tìm được một và chỉ một $k$ mà sau nó $j$ "có lẽ" sẽ xuất hiện (để giữ cho dãy luôn giảm). Ở phần đầu chứng minh ta đã biết $S^k \sqsupset S^i$. Do hậu tố độ dài $j$ của $S^i$ là một hậu tố của hậu tố độ dài $k$ của $S^i$, hậu tố độ dài $j$ của $S^i$ phải khớp với hậu tố độ dài $j$ của $S^k$. Nhưng hậu tố độ dài $j$ của $S^i$ cũng khớp với $S^j$, nên $S^j$ khớp với hậu tố độ dài $j$ của $S^k$. Vậy ta kết luận $\pi_k \ge j$. Thế nhưng $j \ge \pi_k$, mâu thuẫn.
 
 Cũng chính nhờ việc chứng minh này, ta có thể xây dựng một thuật toán để tính bảng $\pi$. Với mỗi $i$:
 

@@ -1,33 +1,33 @@
 import os
-import re
-import requests
 
-def check_md_image_links(directory, log_file):
-    img_url_pattern = re.compile(r'!\[.*?\]\((https://.*?)\)')
-    
-    with open(log_file, 'w', encoding='utf-8') as log:
-        for root, _, files in os.walk(directory):
-            for file in files:
-                if file.endswith(".md"):  # Chỉ kiểm tra file .md
-                    file_path = os.path.join(root, file)
-                    
-                    with open(file_path, 'r', encoding='utf-8') as f:
-                        content = f.read()
-                    
-                    img_urls = img_url_pattern.findall(content)
-                    for url in img_urls:
-                        try:
-                            response = requests.head(url, timeout=5)
-                            if response.status_code != 200:
-                                log.write(f"Lỗi ảnh ({response.status_code}): {url} trong file {file_path}\n")
-                        except requests.RequestException as e:
-                            log.write(f"Không thể truy cập ảnh: {url} trong file {file_path} - Lỗi: {e}\n")
+# Đường dẫn thư mục chứa các file Markdown
+docs_directory = r'C:\Users\kienp\Downloads\vnoi_wiki-master\fptoj_wiki'
 
+# Đường dẫn file log để ghi lại các thay đổi
+log_file = 'log.txt'
 
-# Thư mục chứa các file Markdown
-docs_directory = 'C:\\Users\\kienp\\Downloads\\vnoi_wiki-master\\fptoj_wiki'
-log_file_path = 'log_image_errors.txt'
+# Chuỗi cần thay thế và chuỗi thay thế
+target_str = r"\*"
+replacement = " \\times "  # Thêm khoảng trắng ở đầu và cuối
 
-# Gọi hàm kiểm tra và lưu log
-check_md_image_links(docs_directory, log_file_path)
-print(f"Log lỗi ảnh đã được lưu vào {log_file_path}")
+with open(log_file, 'w', encoding='utf-8') as log:
+    # Duyệt qua tất cả các thư mục và file trong docs_directory
+    for root, _, files in os.walk(docs_directory):
+        for file in files:
+            if file.endswith(".md"):  # Chỉ xử lý các file .md
+                file_path = os.path.join(root, file)
+                
+                # Đọc nội dung file
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                
+                # Thực hiện thay thế
+                new_content = content.replace(target_str, replacement)
+                
+                # Nếu nội dung đã được thay đổi, ghi đè file và ghi log
+                if new_content != content:
+                    with open(file_path, 'w', encoding='utf-8') as f:
+                        f.write(new_content)
+                    log.write(f"Đã cập nhật file: {file_path}\n")
+
+print("Quá trình thay thế hoàn tất.")

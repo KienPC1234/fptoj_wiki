@@ -21,7 +21,7 @@ Xét một dãy gồm 7 phần tử, Segment Tree sẽ quản lý các đoạn n
 
 ## Cài đặt
 
-Để cài đặt, ta có thể dùng một mảng 1 chiều, phần tử thứ nhất của mảng thể hiện nút gốc. Phần tử thứ $id$ sẽ có 2 con là $2 \* id$ (con trái) và $2 \* id+1$ (con phải). Với cách cài đặt này, người ta đã chứng minh được bộ nhớ cần dùng cho ST không quá $4 \* N$ phần tử.
+Để cài đặt, ta có thể dùng một mảng 1 chiều, phần tử thứ nhất của mảng thể hiện nút gốc. Phần tử thứ $id$ sẽ có 2 con là $2  \times  id$ (con trái) và $2  \times  id+1$ (con phải). Với cách cài đặt này, người ta đã chứng minh được bộ nhớ cần dùng cho ST không quá $4  \times  N$ phần tử.
 
 ## Áp dụng
 
@@ -125,7 +125,7 @@ Ta xét 2 trường hợp:
     Tổng số nút không quá $2^{k+1}$.
 - Với $N > 2^k$ và $N < 2^{k+1}$. Số nút của cây ST không quá số nút của cây ST với $N = 2^{k+1}$.
 
-Do đó, số nút của cây cho dãy $N$ phần tử, với $N \le 2^k$ là không quá $2^{k+1}$, giá trị này xấp xỉ $4 \* N$. Bằng thực nghiệm, ta thấy dùng $4 \* N$ là đủ.
+Do đó, số nút của cây cho dãy $N$ phần tử, với $N \le 2^k$ là không quá $2^{k+1}$, giá trị này xấp xỉ $4  \times  N$. Bằng thực nghiệm, ta thấy dùng $4  \times  N$ là đủ.
 
 ## 1. Segment Tree cổ điển
 
@@ -171,7 +171,7 @@ Node st[MAXN * 4];
 
 ### Định lý
 
-Để tính thông tin ở nút $id$ quản lý đoạn $[l, r]$, dựa trên 2 nút con $2\*id$ và $2\*id+1$, ta định nghĩa 1 thao tác kết hợp 2 nút của cây ST:
+Để tính thông tin ở nút $id$ quản lý đoạn $[l, r]$, dựa trên 2 nút con $2 \times id$ và $2 \times id+1$, ta định nghĩa 1 thao tác kết hợp 2 nút của cây ST:
 
 ```cpp
 Node operator + (const Node& left, const Node& right) {
@@ -368,7 +368,7 @@ Thao tác 2 là thao tác cơ bản trên Segment Tree, đã được ta phân t
 Với thao tác 1, truy vấn đoạn $[u, v]$. Giả sử ta gọi $F(id)$ là giá trị lớn nhất trong đoạn mà nút $id$ quản lý. Trong lúc cập nhật, muốn hàm này thực hiện với độ phức tạp không quá $O(\log{N})$, thì khi đến 1 nút $id$ quản lý đoạn $[l, r]$ với đoạn $[l, r]$ nằm hoàn toàn trong đoạn $[u, v]$, thì ta không được đi vào các nút con của nó nữa (nếu không độ phức tạp sẽ là $O(N)$ do ta đi vào tất cả các nút nằm trong đoạn $[u, v]$). Để giải quyết, ta dùng kĩ thuật Lazy Propagation như sau:
 
 - Lưu $T(id)$ với ý nghĩa, tất cả các phần tử trong đoạn $[l, r]$ mà nút $id$ quản lý đều được cộng thêm $T(id)$.
-- Trước khi ta cập nhật hoặc lấy 1 giá trị của 1 nút $id'$ nào đó, ta phải đảm bảo ta đã "đẩy" giá trị của mảng $T$ ở tất cả các nút tổ tiên của $id'$ xuống $id'$. Để làm được điều này, ở các hàm `get` và `update`, trước khi gọi đệ quy xuống các con $2 \* id$ và $2 \* id+1$, ta phải gán:
+- Trước khi ta cập nhật hoặc lấy 1 giá trị của 1 nút $id'$ nào đó, ta phải đảm bảo ta đã "đẩy" giá trị của mảng $T$ ở tất cả các nút tổ tiên của $id'$ xuống $id'$. Để làm được điều này, ở các hàm `get` và `update`, trước khi gọi đệ quy xuống các con $2  \times  id$ và $2  \times  id+1$, ta phải gán:
     - `T[id*2] += T[id]`
     - `T[id*2+1] += T[id]`
     - `T[id] = 0` chú ý ta cần phải thực hiện thao tác này, nếu không mỗi phần tử của dãy sẽ bị cộng nhiều lần, do ta đẩy xuống nhiều lần.
@@ -644,7 +644,7 @@ Ta có thể thấy cây phân đoạn là một ứng dụng trong mảng, vì 
 
 Gọi $h_v$ là độ cao tương ứng của nút $v$.
 
-Ta có với mỗi nút $u$ trong cây con gốc $v$ sau truy vấn một giá trị của nó sẽ tăng một lượng là $x+(h_u-h_v)\*-k=x+k\* h_v-k\* h$. Kết quả của truy vấn 2 sẽ là $\sum_{i\in s}(k_i\*h_{v_i}+x_i)-h_u\*\sum_{i\in s}k_i$. Vì vậy ta chỉ cần tính hai giá trị là $\sum_{i\in s}(k_i\* h_{v_i}+x_i)$ và $\sum_{i\in s}k_i$. Vậy với mỗi nút ta có thể lưu lại hai giá trị là $hkx=\sum x +h*k$ và $sk=\sum k$ (không cần lazy propagation do chúng ta chỉ update nút đầu tiên thỏa việc nằm trong đoạn.
+Ta có với mỗi nút $u$ trong cây con gốc $v$ sau truy vấn một giá trị của nó sẽ tăng một lượng là $x+(h_u-h_v) \times -k=x+k \times  h_v-k \times  h$. Kết quả của truy vấn 2 sẽ là $\sum_{i\in s}(k_i \times h_{v_i}+x_i)-h_u \times \sum_{i\in s}k_i$. Vì vậy ta chỉ cần tính hai giá trị là $\sum_{i\in s}(k_i \times  h_{v_i}+x_i)$ và $\sum_{i\in s}k_i$. Vậy với mỗi nút ta có thể lưu lại hai giá trị là $hkx=\sum x +h*k$ và $sk=\sum k$ (không cần lazy propagation do chúng ta chỉ update nút đầu tiên thỏa việc nằm trong đoạn.
 
 Với truy vấn cập nhật:
 

@@ -222,7 +222,7 @@ Bài toán đặt ra như sau: Bạn được cho một xâu $s$ độ dài $n (
 Bài toán đặt ra như sau: Bạn được cho một dãy $a_1, a_2,... , a_n (n \le 50,000)$. Sắp xếp $n$ hoán vị vòng tròn của dãy này theo thứ tự từ điển. Cụ thể, các hoán vị vòng quanh của dãy này là $(a_1, a_2,... , a_n)$, $(a_2, a_3, ..., a_n, a_1)$, $(a_3, a_4, ..., a_n, a_1, a_2)$,... Dãy này có thứ tự từ điển nhỏ hơn dãy kia nếu số đầu tiên khác nhau của dãy này nhỏ hơn dãy kia. Yêu cầu bài toán là: In ra dãy có thứ tự từ điển lớn thứ $k$.
 
 - Bài toán này có thể được giải bằng Suffix Array, tuy nhiên cách cài đặt phức tạp và không phải trọng tâm của bài viết nên tôi sẽ không nêu ra ở đây.
-- Nếu tiếp cận một cách trực tiếp, chúng ta sẽ sinh ra tất cả các dãy hoán vị vòng quanh, rồi sau đó dùng một thuật toán sắp xếp để sắp xếp lại chúng theo thứ tự từ điển, cuối cùng chỉ việc in ra dãy thứ $k$ sau khi sắp xếp. Tuy nhiên độ phức tạp của thuật toán này là rất lớn và không thể đáp ứng được yêu cầu về thời gian. Cụ thể, cách này có độ phức tạp là $O(n^2 \* log(n))$, đây là tích của độ phức tạp của sắp xếp và độ phức tạp của mỗi phép so sánh dãy.
+- Nếu tiếp cận một cách trực tiếp, chúng ta sẽ sinh ra tất cả các dãy hoán vị vòng quanh, rồi sau đó dùng một thuật toán sắp xếp để sắp xếp lại chúng theo thứ tự từ điển, cuối cùng chỉ việc in ra dãy thứ $k$ sau khi sắp xếp. Tuy nhiên độ phức tạp của thuật toán này là rất lớn và không thể đáp ứng được yêu cầu về thời gian. Cụ thể, cách này có độ phức tạp là $O(n^2  \times  log(n))$, đây là tích của độ phức tạp của sắp xếp và độ phức tạp của mỗi phép so sánh dãy.
 - Vẫn giữ tư tưởng là sắp xếp lại tất cả các dãy hoán vị vòng quanh rồi in ra dãy đứng ở vị trí thứ $k$, chúng ta cố gắng cải tiến độ phức tạp của việc so sánh thứ tự từ điển của 2 dãy.
 - Nhắc lại định nghĩa về thứ tự từ điển của 2 dãy: Xét 2 dãy $a$ và $b$ có cùng số phần tử. Gọi ví trí thứ $i$ là vị trí đầu tiên từ trái sang mà $a_i \ne b_i$. $a < b \Leftrightarrow a_i < b_i$. Như vậy, ta phải tìm đoạn tiền tố giống nhau dài nhất của $a$ và $b$, rồi so sánh kí tự tiếp theo. Để tìm được đoạn tiền tố giống nhau dài nhất, ta có thể sử dụng Hash kết hợp với chia nhị phân.
 - Để giải được bài này, cần sử dụng thêm một kỹ thuật nhỏ nữa: Thay vì sinh ra tất cả các hoán vị vòng quanh, chúng ta chỉ cần nhân đôi dãy $a$ lên, dãy mới sẽ có $2n$ phần tử: $(a_1, a_2, ..., a_n, a_1, a_2, ..., a_n)$. Một hoán vị vòng quanh sẽ là một dãy con liên tiếp độ dài $n$ của dãy nhân đôi này.
@@ -254,7 +254,7 @@ Giả sử $Q$ khoảng $10^5$, và bộ test có $T = 100$ test.
 
 - Với 2 xâu khác nhau, xác suất để nó có cùng Hash là xấp xỉ $1 / 10^9$. Như vậy, xác suất để trả lời đúng 1 truy vấn là: $1 - 1 / 10^9$.
 - Ở trường hợp xấu nhất, ta có $Q$ truy vấn mà mỗi truy vấn là một cặp xâu khác nhau. Xác suất để ta trả lời đúng tất cả các truy vấn là: $(1 - 1 / 10^9)^Q$.
-- Xác suất để ta trả lời đúng tất cả các truy vấn của tất cả các test là: $(1 - 1 / 10^9)^{Q \* T}$.
+- Xác suất để ta trả lời đúng tất cả các truy vấn của tất cả các test là: $(1 - 1 / 10^9)^{Q  \times  T}$.
 
 Thay số vào, xác suất để trả lời đúng tất cả các truy vấn là $0.9900$, đủ lớn để ta yên tâm qua tất cả các test, với điều kiện test không được sinh dựa trên $P$. (Chú ý nếu bạn đang thi những contest như Topcoder/Codeforces, người khác có thể đọc được $P$ của bạn và sinh test để challenge code của bạn).
 
@@ -262,7 +262,7 @@ Thay số vào, xác suất để trả lời đúng tất cả các truy vấn 
 
 Theo [Birthday Paradox](https://en.wikipedia.org/wiki/Birthday_problem), ta dễ dàng thấy rằng, nếu có $\sqrt{P} = 3*10^4$ xâu, xác suất để 2 xâu bằng nhau là rất lớn. Thật vậy, xác suất để tất cả các xâu khác nhau là:
 
-$(1 - 1 / 10^9) \* (1 - 2 / 10^9) \* (1 - 3 / 10^9) \* ... (1 - N / 10^9)$.
+$(1 - 1 / 10^9)  \times  (1 - 2 / 10^9)  \times  (1 - 3 / 10^9)  \times  ... (1 - N / 10^9)$.
 
 Với $N = 30,000$, tích trên là $0.6376$, nghĩa là bạn có gần $0.40$ xác suất trả lời sai. Do vậy, bạn bắt buộc phải dùng nhiều $MOD$ khác nhau.
 

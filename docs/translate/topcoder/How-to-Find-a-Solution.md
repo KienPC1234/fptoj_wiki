@@ -29,7 +29,7 @@ Như bạn có thể thấy, đây là một bài toán tìm kiếm rất đơn 
 
 ### Tìm kiếm theo chiều rộng (Breadth First Search - BFS)
 
-Những bài sử dụng BFS thường yêu cầu tìm số bước ít nhất (hoặc đường đi ngắn nhất) từ điểm đầu đến điểm cuối. Bên cạnh đó, đường đi giữa 2 điểm bất kì thường có chung trọng số (và thường là 1). Phổ biến nhất là dạng bài cho bảng $N \* M$, có những ô đi qua được và những ô không đi qua được. Bảng này có thể là mê cung, sơ đồ, các thành phố hoặc các thứ các thứ tương đương. Có thể nói đây là những bài toàn BFS kinh điển (classic). Bởi vì độ phức tạp của BFS là tuyến tính trong hầu hết các trường hợp ($N^2$ hoặc $NlogN$), giới hạn của $N$ (hoặc $M$) có thể lớn, lên tới 1 triệu.
+Những bài sử dụng BFS thường yêu cầu tìm số bước ít nhất (hoặc đường đi ngắn nhất) từ điểm đầu đến điểm cuối. Bên cạnh đó, đường đi giữa 2 điểm bất kì thường có chung trọng số (và thường là 1). Phổ biến nhất là dạng bài cho bảng $N  \times  M$, có những ô đi qua được và những ô không đi qua được. Bảng này có thể là mê cung, sơ đồ, các thành phố hoặc các thứ các thứ tương đương. Có thể nói đây là những bài toàn BFS kinh điển (classic). Bởi vì độ phức tạp của BFS là tuyến tính trong hầu hết các trường hợp ($N^2$ hoặc $NlogN$), giới hạn của $N$ (hoặc $M$) có thể lớn, lên tới 1 triệu.
 
 > **[SmartWordToy](http://community.topcoder.com/stat?c=problem_statement&pm=3935&rd=6532) - SRM 233 Div 1:**
 > Cho một từ gồm 4 chữ cái Latin in thường. Với một lần click bạn có thể đổi bất kì chữ nào thành chữ cái trước hoặc sau nó trong bảng chữ cái (ví dụ 'c' có thể thành 'b' hoặc 'd'). Bảng chữ cái sẽ theo chu kì vòng lặp, tức là 'a' có thể thành 'z' và 'z' có thể thành 'a'.

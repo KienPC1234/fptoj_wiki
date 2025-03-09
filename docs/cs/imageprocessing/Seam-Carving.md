@@ -50,7 +50,7 @@ Năng lượng thu được:
 
 Nếu chúng ta xóa đi các điểm ảnh có nặng lượng thấp nhất ở các vị trí ngẫu nhiên, ta sẽ ra một hình ảnh méo mó. Nếu chúng ta xóa theo cột hoặc hàng với năng lượng tối thiểu, ta sẽ nhận được một bức ảnh hoàn chỉnh được thu nhỏ kích thước lại. Ở đây cột j nghĩa là tập hợp *{(i, j) với j cố định}* và một hàng i nghĩa là tập hợp *{(i, j) với i cố định}*.
 
-Thuật toán Seam Carving xóa các hàng và cột tổng quát (được gọi là đường seam). Cụ thể hơn, gọi $I$ là một bức ảnh có kích thước $n \* m$, một đường seam dọc là $(s^x)i = (i, x(i))s.t.\forall i, \|x(i) - x(i - 1)\| \leq 1$ trong đó $x[1..n] \to [1..m]$. Nói một cách dễ hiểu hơn, một đường seam dọc (**vertical seam**) là một đường đi từ biên trên của bức ảnh xuống biên dưới của bức ảnh với độ dài đường đi bằng chiều cao của bức ảnh, và với mỗi phần vị trí $(i, j)$ của đường seam, ta có thể đi tiếp đến các phần tử $(i + 1, j - 1)$, $(i + 1, j)$, $(i + 1, j + 1)$. Tương tự ta cũng có thể định nghĩa cho đường seam ngang (**horizontal seam**). Ví dụ về các đường màu đen là các đường seam trong hình dưới đây.
+Thuật toán Seam Carving xóa các hàng và cột tổng quát (được gọi là đường seam). Cụ thể hơn, gọi $I$ là một bức ảnh có kích thước $n  \times  m$, một đường seam dọc là $(s^x)i = (i, x(i))s.t.\forall i, \|x(i) - x(i - 1)\| \leq 1$ trong đó $x[1..n] \to [1..m]$. Nói một cách dễ hiểu hơn, một đường seam dọc (**vertical seam**) là một đường đi từ biên trên của bức ảnh xuống biên dưới của bức ảnh với độ dài đường đi bằng chiều cao của bức ảnh, và với mỗi phần vị trí $(i, j)$ của đường seam, ta có thể đi tiếp đến các phần tử $(i + 1, j - 1)$, $(i + 1, j)$, $(i + 1, j + 1)$. Tương tự ta cũng có thể định nghĩa cho đường seam ngang (**horizontal seam**). Ví dụ về các đường màu đen là các đường seam trong hình dưới đây.
 
 ![](http://kirilllykov.github.io/images/seamcarving/sea-thai-seams.jpg)
 
@@ -63,7 +63,7 @@ Chúng ta sẽ tìm kiếm một đường seam sao cho có tổng giá trị n�
 
 2. Ở biên dưới của ảnh, ta tìm điểm đường seam tối ưu (tổng giá trị năng lượng thấp nhất thông qua bảng phương án $M$) và đi ngược về để tìm đường đi tối ưu.
 
-**Lưu ý**: trong đoạn code dưới đây trả về một ma trận $n \* m$ chỉ gồm 0 và 1 với các điểm ảnh trên đường đi seam sẽ có giá trị là 0 và ngược lại. Để tìm đường seam ngang, ta chỉ cần chuyển vị ma trận năng lượng lại.
+**Lưu ý**: trong đoạn code dưới đây trả về một ma trận $n  \times  m$ chỉ gồm 0 và 1 với các điểm ảnh trên đường đi seam sẽ có giá trị là 0 và ngược lại. Để tìm đường seam ngang, ta chỉ cần chuyển vị ma trận năng lượng lại.
 
 ```matlab
 function [optSeamMask, seamEnergy] = findOptSeam(energy)

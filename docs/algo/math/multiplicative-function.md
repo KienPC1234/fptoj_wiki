@@ -34,13 +34,13 @@ f(18) = 6 = f(2) * f(9)
 Ta có thể chứng minh hàm $f$ là hàm nhân tính như sau:
 
 - Xét $m$ và $n$ nguyên tố cùng nhau.
-- Để chứng minh $f(m \* n) = f(m) \* f(n)$, ta cần chứng minh 2 chiều:
+- Để chứng minh $f(m  \times  n) = f(m)  \times  f(n)$, ta cần chứng minh 2 chiều:
     1. Mỗi ước của $m * n$ ứng với 1 cặp $(a, b)$ với $a$ là ước của $m$ và $b$ là ước của $n$.
-        - Điều này đúng do mỗi ước của $m \* n$ ta luôn tách được thành tích của 2 số $a \* b$ với $a$ là ước của $m$ và $b$ là ước của $n$.
-    2. Mỗi cặp $(a, b)$ với $a$ là ước của $m$ và $b$ là ước của $n$ ứng với 1 ước của $m \* n$.
-        - Điều này đúng do với mỗi cặp $(a, b)$ thì $a \* b$ là ước của $m \* n$.
+        - Điều này đúng do mỗi ước của $m  \times  n$ ta luôn tách được thành tích của 2 số $a  \times  b$ với $a$ là ước của $m$ và $b$ là ước của $n$.
+    2. Mỗi cặp $(a, b)$ với $a$ là ước của $m$ và $b$ là ước của $n$ ứng với 1 ước của $m  \times  n$.
+        - Điều này đúng do với mỗi cặp $(a, b)$ thì $a  \times  b$ là ước của $m  \times  n$.
 
-Như vậy, $f(m \* n) = f(m) \* f(n)$.
+Như vậy, $f(m  \times  n) = f(m)  \times  f(n)$.
 
 
 ## 2. Ứng dụng 1
@@ -216,7 +216,7 @@ $$
 (f \times g)(n) = \sum_{d | n}{f(d) * g(n/d)} = \sum_{d | n}{1}
 $$
 
-Như vậy $(f \* g)(n)$ là số ước của số $n$ và là hàm nhân tính.
+Như vậy $(f  \times  g)(n)$ là số ước của số $n$ và là hàm nhân tính.
 
 ## 4.2. Ví dụ 2
 

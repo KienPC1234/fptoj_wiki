@@ -11,7 +11,7 @@ Xét số nguyên dương $m$. Xét các số nguyên trên modulo $m$ (từ 0 �
 
 Với một số nguyên $a$, ta gọi nghịch đảo modulo $m$ (modular multiplicative inverse) của $a$ là $a^{-1}$ là số nguyên thoả mãn:
 
-$a \* a^{-1} \equiv 1 \; \pmod{m}$
+$a  \times  a^{-1} \equiv 1 \; \pmod{m}$
 
 Ta cần chú ý rằng không phải lúc nào $a^{-1}$ cũng tồn tại. Ví dụ, với $m = 4, a = 2$, ta không thể tìm được $a^{-1}$ thoả mãn đẳng thức trên.
 
@@ -27,11 +27,11 @@ Trong bài viết này, mình sẽ trình bày 2 cách khác nhau để tìm ngh
 
 Như đã trình bày trong bài viết [Số học 1](translate/he/So-hoc-Phan-1-Modulo-gcd), nếu $gcd(a, m) = 1$, ta luôn luôn tìm được 2 số nguyên x và y thoả mãn:
 
-$a \*x + m \* y = 1$.
+$a  \times x + m  \times  y = 1$.
 
-Vì ta đang làm việc trên modulo $m$, ta có thể bỏ $m \* y$ và viết lại đẳng thức trên như sau:
+Vì ta đang làm việc trên modulo $m$, ta có thể bỏ $m  \times  y$ và viết lại đẳng thức trên như sau:
 
-$a \* x \equiv 1 \pmod{m}$.
+$a  \times  x \equiv 1 \pmod{m}$.
 
 Do đó, $x$ chính là $a^{-1}$.
 
@@ -78,13 +78,13 @@ for(int i = 2; i < m; ++i)
 
 **Chứng minh:**
 
-$m \% i = m - floor(m/i) \* i$
+$m \% i = m - floor(m/i)  \times  i$
 
-$m \% i \equiv -floor(m/i) \* i \pmod{m}$
+$m \% i \equiv -floor(m/i)  \times  i \pmod{m}$
 
 Nhân cả 2 vế với nghịch đảo modulo của $i$ và nghịch đảo modulo của $m \% i$:
 
-$r[i] \equiv -floor(m/i) \* r[m \% i] \pmod{m}$
+$r[i] \equiv -floor(m/i)  \times  r[m \% i] \pmod{m}$
 
 ## Các bài luyện tập
 

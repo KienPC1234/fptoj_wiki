@@ -159,7 +159,7 @@ Ví dụ, hãy xét bộ `{"ACTAGAGAC", "AAAAAAAAA", "TAGTCATAC", "GCAGCATTC"}` 
 
 ![Ví dụ](http://community.topcoder.com/i/education/greedyAlg3.gif)
 
-Ở góc phải - dưới của hình minh họa trên, ta có thể thấy kết quả của ma trận tần số đối với bộ đã cho. Tạm gọi nó là $F$. Giờ việc mà ta cần làm là tìm ra một ma trận $S$ sao cho tổng của các tích: $F[i, j] \* S[i, j]$ với $(1 \le i, j \le 4)$ là lớn nhất.
+Ở góc phải - dưới của hình minh họa trên, ta có thể thấy kết quả của ma trận tần số đối với bộ đã cho. Tạm gọi nó là $F$. Giờ việc mà ta cần làm là tìm ra một ma trận $S$ sao cho tổng của các tích: $F[i, j]  \times  S[i, j]$ với $(1 \le i, j \le 4)$ là lớn nhất.
 
 Giờ ta xét từng điều kiện cho ma trận cần tìm:
 
@@ -216,10 +216,10 @@ Giờ ta cần chứng minh rằng phương pháp của mình là đúng.
 - Vì ta xét hết tất cả các trường hợp của nhóm 1, nên ta chỉ cần chứng minh cách chọn các phần tử của nhóm 2 là tối ưu.
 - Vì tổng các phần tử của nhóm 2 cố định, nên nếu ta tăng 1 phần tử, thì phải giảm 1 phần tử khác.
 - Gọi $f_1$ và $f_2$ là số lần xuất hiện của 2 số bất kỳ của nhóm 2. Ta có:
-  - $f_1 \* s_1 + f_2 \* s_2 = X$.
+  - $f_1  \times  s_1 + f_2  \times  s_2 = X$.
 - Không làm mất tính tổng quát, giả sử $f_1 \ge f_2$. Do cách tham, ta có $s_1 \ge s_2$. Ta cũng có $s_1$ là lớn nhất có thể, nên ta không thể tăng $s_1$.
 - Giả sử cách làm của ta không tối ưu, nghĩa là ta có một cách chọn 1 số $a$ sao cho:
-  - $f_1 \* (s_1 - a) + f_2 \* (s_2 + a) = Y$ với $a$ là số dương.
+  - $f_1  \times  (s_1 - a) + f_2  \times  (s_2 + a) = Y$ với $a$ là số dương.
   - Ta có $Y-X = a * (f2-f1)$. Bởi vì $f1 \ge f2$ nên $Y-X$ luôn âm.
 
 Do vậy, cách làm của ta là tối ưu.
@@ -249,7 +249,7 @@ Endfor
 Return Best
 ```
 
-Đối với mảng lưu điểm đã cho (trong trường hợp của chúng ta là mảng $S$), ta sẽ tính kết quả cuối cùng bằng việc chỉ tính tổng của tích $F[I] \* S[I] (1 \le I \le 10)$.
+Đối với mảng lưu điểm đã cho (trong trường hợp của chúng ta là mảng $S$), ta sẽ tính kết quả cuối cùng bằng việc chỉ tính tổng của tích $F[I]  \times  S[I] (1 \le I \le 10)$.
 
 
 ## [**GoldMine**](https://community.topcoder.com/stat?c=problem_statement&pm=1957&rd=4650)

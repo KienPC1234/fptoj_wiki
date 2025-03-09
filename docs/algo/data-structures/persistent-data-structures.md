@@ -28,7 +28,7 @@ Cần hiểu rằng Persistent Data Structures không phải là một loại CT
 - IT + Persistent --> Persistent IT
 - BIT + Persistent --> Persistent BIT
 
-Tại sao lại là **một cách hiệu quả**? Bởi vì ta hoàn toàn có thể có một Persistent Data Structures bằng cách trâu bò: khi cập nhật, ta tạo một bản sao hoàn toàn mới của CTDL, thay đổi một số dữ liệu trên nó và lưu lại. Như vậy ta luôn có được một thuật toán với độ phức tạp $O(Q \* N \* T)$ và bộ nhớ $O(Q \* N)$, với $Q$ là số thao tác cần thực hiện, và $N$ là độ lớn của CTDL, và $T$ là thời gian để thực hiện thao tác trên CTDL.
+Tại sao lại là **một cách hiệu quả**? Bởi vì ta hoàn toàn có thể có một Persistent Data Structures bằng cách trâu bò: khi cập nhật, ta tạo một bản sao hoàn toàn mới của CTDL, thay đổi một số dữ liệu trên nó và lưu lại. Như vậy ta luôn có được một thuật toán với độ phức tạp $O(Q  \times  N  \times  T)$ và bộ nhớ $O(Q  \times  N)$, với $Q$ là số thao tác cần thực hiện, và $N$ là độ lớn của CTDL, và $T$ là thời gian để thực hiện thao tác trên CTDL.
 
 Trong các phần dưới đây, mình sẽ trình bày về 2 kĩ thuật thông thường của Persistent Data Structures.
 
@@ -124,7 +124,7 @@ Giải thích:
 
 ## Phân tích
 
-- Cách cài đặt Persistent Data Structures trong mục này rất hiệu quả. Nó hoàn toàn không làm tăng thêm độ phức tạp (persistent IT có độ phức tạp mỗi thao tác là $O(logN)$), và bộ nhớ cần thêm là tối ưu: $O(Q \* logN)$.
+- Cách cài đặt Persistent Data Structures trong mục này rất hiệu quả. Nó hoàn toàn không làm tăng thêm độ phức tạp (persistent IT có độ phức tạp mỗi thao tác là $O(logN)$), và bộ nhớ cần thêm là tối ưu: $O(Q  \times  logN)$.
 - Tuy nhiên, cách cài đặt này không dễ áp dụng với những CTDL khác. Chẳng hạn sẽ rất khó để cài đúng BIT với phương pháp này. Ở mục tiếp theo, mình sẽ trình bày một phương pháp cài đặt khác có thể dùng cho BIT, tuy nhiên có độ phức tạp lớn hơn.
 
 

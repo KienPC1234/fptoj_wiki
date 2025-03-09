@@ -194,7 +194,7 @@ for i := 1 to n do
           if (L[t]=0) and (L[t-a[i]]=1) then L[t]:=1;
 ```
 
-Dễ thấy độ phức tạp bộ nhớ của cách cài đặt trên là $O(m)$, độ phức tạp thời gian là $O(n \* m)$, với $m$ là tổng của $n$ số. Hãy tự kiểm tra xem tại sao vòng for thứ 2 lại là `for downto` chứ không phải là `for to`.
+Dễ thấy độ phức tạp bộ nhớ của cách cài đặt trên là $O(m)$, độ phức tạp thời gian là $O(n  \times  m)$, với $m$ là tổng của $n$ số. Hãy tự kiểm tra xem tại sao vòng for thứ 2 lại là `for downto` chứ không phải là `for to`.
 
 ### Chia kẹo
 
@@ -249,7 +249,7 @@ Cho $n$ số nguyên. Hãy chia chúng thành 2 nhóm sao cho tích của tổng
 
 **Hướng dẫn**:
 
-Gọi $T$ là tổng $n$ số nguyên đó. Giả sử ta chia dãy thành 2 nhóm, gọi $S$ là tổng của một nhóm, tổng nhóm còn lại là $T-S$ và tích của tổng 2 nhóm là $S\*(T-S)$. Bằng phương pháp đánh dấu ta xác định được mọi số $S$ là tổng của một nhóm (như bài Market) và tìm số $S$ sao cho $S\*(T-S)$ đạt max.
+Gọi $T$ là tổng $n$ số nguyên đó. Giả sử ta chia dãy thành 2 nhóm, gọi $S$ là tổng của một nhóm, tổng nhóm còn lại là $T-S$ và tích của tổng 2 nhóm là $S \times (T-S)$. Bằng phương pháp đánh dấu ta xác định được mọi số $S$ là tổng của một nhóm (như bài Market) và tìm số $S$ sao cho $S \times (T-S)$ đạt max.
 
 ### Farmer (IOI 2004)
 
@@ -433,7 +433,7 @@ for i := 1 to n do
 ```
 
 Nếu để ý kĩ bạn sẽ thấy rằng đoạn trình trên chỉ viết giống công thức QHĐ chứ chưa tối ưu. Chẳng hạn đã có lệnh gán `P:=L`, sau đó lại có gán `L[t]:=P[t]` với các giá trị `t<a[i]` là không cần thiết. Bạn đọc có thể tự cải tiến để chương trình tối ưu hơn.
-Độ phức tạp bộ nhớ là $O(m)$ và độ phức tạp thời gian là $O(m \* n)$.
+Độ phức tạp bộ nhớ là $O(m)$ và độ phức tạp thời gian là $O(m  \times  n)$.
 
 ## 4.4. Một số bài toán khác
 
@@ -460,27 +460,27 @@ Công thức này khác công thức của bài xếp balô ở chỗ: dùng hà
 
 ## 5.1. Mô hình
 
-Nhân một ma trận kích thước $m \* n$ với một ma trận $n \* p$, số phép nhân phải thực hiện là $m \* n \* p$. Mặt khác phép nhân các ma trận có tính kết hợp, tức là: $(A \* B) \* C = A \* (B \* C)$
+Nhân một ma trận kích thước $m  \times  n$ với một ma trận $n  \times  p$, số phép nhân phải thực hiện là $m  \times  n  \times  p$. Mặt khác phép nhân các ma trận có tính kết hợp, tức là: $(A  \times  B)  \times  C = A  \times  (B  \times  C)$
 
 Do đó khi tính tích nhiều ma trận, ta có thể thực hiện theo các trình tự khác nhau, mỗi trình tự tính sẽ quyết định số phép nhân cần thực hiện.
 
-Cho $N$ ma trận $A_1, A_2, ..., A_N$, ma trận $A$ có kích thước là $d_{i-1} \* d_i$. Hãy xác định trình tự nhân ma trận $A_1 \* A_2 \* ... \* A_N$ sao cho số phép nhân cần thực hiện là ít nhất.
+Cho $N$ ma trận $A_1, A_2, ..., A_N$, ma trận $A$ có kích thước là $d_{i-1}  \times  d_i$. Hãy xác định trình tự nhân ma trận $A_1  \times  A_2  \times  ...  \times  A_N$ sao cho số phép nhân cần thực hiện là ít nhất.
 
 ## 5.2. Công thức
 
-Gọi $F(i,j)$ là số phép nhân để tính tích các ma trận từ $A_i$ đến $A_j$ $(A_i \* A_{i+1} \* ... \* A_j)$.
+Gọi $F(i,j)$ là số phép nhân để tính tích các ma trận từ $A_i$ đến $A_j$ $(A_i  \times  A_{i+1}  \times  ...  \times  A_j)$.
 
 - $F[i,i]=0$.
-- $F[i,i+1]=d_{i-1} \* d_i \* d_{i+1}$
-- $F[i,j] = min(F[i,k]+F[k+1,j] + d_{i-1} \* d_k \* d_{j}$ với $k=i+1,i+2,...,j-1$
+- $F[i,i+1]=d_{i-1}  \times  d_i  \times  d_{i+1}$
+- $F[i,j] = min(F[i,k]+F[k+1,j] + d_{i-1}  \times  d_k  \times  d_{j}$ với $k=i+1,i+2,...,j-1$
 
 Công thức hơi phức tạp nên tôi xin giải thích như sau:
 
 - $F[i,i]=0$ là hiển nhiên.
-- $F[i,i+1]$ là số phép nhân khi nhân $A_i$ và $A_{i+1}$. $A_i$ có kích thước $d_{i-1} \* d_i$, $A_{i+1}$ có kích thước $d_i \* d_{i+1}$, do đó $F[i,i+1]=d_{i-1} \* d_i \* d_{i+1}$
-- Với $j>i+1$ thì ta thấy có thể tính $A_i \* A_{i+1} \* ... \* A_j$ bằng cách chọn một vị trí $k$ nào đó để đặt ngoặc theo trình tự: $A_i \* A_{i+1} \* ... \* A_j = (A_i..A_k) \* (A_{k+1}..A_j)$
+- $F[i,i+1]$ là số phép nhân khi nhân $A_i$ và $A_{i+1}$. $A_i$ có kích thước $d_{i-1}  \times  d_i$, $A_{i+1}$ có kích thước $d_i  \times  d_{i+1}$, do đó $F[i,i+1]=d_{i-1}  \times  d_i  \times  d_{i+1}$
+- Với $j>i+1$ thì ta thấy có thể tính $A_i  \times  A_{i+1}  \times  ...  \times  A_j$ bằng cách chọn một vị trí $k$ nào đó để đặt ngoặc theo trình tự: $A_i  \times  A_{i+1}  \times  ...  \times  A_j = (A_i..A_k)  \times  (A_{k+1}..A_j)$
 
-Ma trận kết quả của phép nhân $(A_i..A_k)$ có kích thước $d_{i-1} \* d_k$, ma trận kết quả của phép nhân $(A_{k+1}..A_j)$ có kích thước $d_k \* d_j$. Với cách đặt đó ta sẽ mất $F[i,k]$ phép nhân để có kết quả trong dấu ngoặc thứ nhất, mất thêm $F[k+1,j]$ phép nhân để có kết quả trong dấu ngoặc thứ hai, và cuối cùng mất $d_{i-1} \* d_k \* d_j$ để nhân 2 ma trận kết quả đó. Từ đó tổng số phép nhân của cách đặt đó là: $F[i,k] + F[k+1,j] + d_{i-1} \* d_k \* d_j$.
+Ma trận kết quả của phép nhân $(A_i..A_k)$ có kích thước $d_{i-1}  \times  d_k$, ma trận kết quả của phép nhân $(A_{k+1}..A_j)$ có kích thước $d_k  \times  d_j$. Với cách đặt đó ta sẽ mất $F[i,k]$ phép nhân để có kết quả trong dấu ngoặc thứ nhất, mất thêm $F[k+1,j]$ phép nhân để có kết quả trong dấu ngoặc thứ hai, và cuối cùng mất $d_{i-1}  \times  d_k  \times  d_j$ để nhân 2 ma trận kết quả đó. Từ đó tổng số phép nhân của cách đặt đó là: $F[i,k] + F[k+1,j] + d_{i-1}  \times  d_k  \times  d_j$.
 
 Ta chọn vị trí $k$ cho số phép nhân ít nhất.
 
@@ -609,7 +609,7 @@ Lập công thức giải như bài Câu lạc bộ. Chú ý chứng minh tính 
 
 ## 7.1. Mô hình
 
-Cho bảng $A$ gồm $M \* N$ ô. Từ ô $(i,j)$ có thể di chuyển sang 3 ô $(i+1,j)$, $(i+1,j-1)$ và $(i+1,j+1)$. Hãy xác định một lộ trình đi từ hàng 1 đến hàng $M$ sao cho tổng các ô đi qua là lớn nhất.
+Cho bảng $A$ gồm $M  \times  N$ ô. Từ ô $(i,j)$ có thể di chuyển sang 3 ô $(i+1,j)$, $(i+1,j-1)$ và $(i+1,j+1)$. Hãy xác định một lộ trình đi từ hàng 1 đến hàng $M$ sao cho tổng các ô đi qua là lớn nhất.
 
 ## 7.2. Công thức
 
