@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="FPTOJ được xây dựng với mục đích chia sẻ kiến thức Tin học đến với tất cả mọi người">
+      
       
       
         <link rel="canonical" href="https://wiki.fptoj.com/algo/basic/bitwise-operators/">
@@ -17,7 +19,7 @@
         <link rel="next" href="../computational-complexity/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../uploads/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#phep-toan-bit" class="md-skip">
+        <a href="#gioi-thieu" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +92,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="FPTOJ WIKI" class="md-header__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -172,6 +174,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -187,15 +191,148 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+      </div>
+    
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Trang chủ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../backtracking/" class="md-tabs__link">
+          
+  
+  Thuật Toán
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cs/crypto/Cipher-Tools/" class="md-tabs__link">
+          
+  
+  Computer Science (Khoa học máy tính)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../languages/cpp/pointers/" class="md-tabs__link">
+          
+  
+  Ngôn Ngữ Lập Trình
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../translate/functional-programming-part-1/" class="md-tabs__link">
+          
+  
+  Dịch Thuật
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -209,8 +346,12 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="FPTOJ WIKI" class="md-nav__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -220,10 +361,61 @@
     FPTOJ WIKI
   </label>
   
+    <div class="md-nav__source">
+      <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
     
       
       
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Trang chủ
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Trang chủ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -233,7 +425,7 @@
         
   
   <span class="md-ellipsis">
-    Trang chủ
+    Home
     
   </span>
   
@@ -242,9 +434,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -263,9 +456,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -284,6 +478,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -296,15 +498,21 @@
     
     
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -316,8 +524,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Thuật Toán
           </label>
@@ -334,15 +542,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -354,8 +565,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Cơ Bản
           </label>
@@ -418,8 +629,18 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Phép toán bit
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -431,6 +652,401 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gioi-thieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giới thiệu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luu-y-truoc-khi-oc-bai-viet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lưu ý trước khi đọc bài viết
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cac-toan-tu-thao-tac-bit-bitwise-operators-co-ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      Các toán tử thao tác bit (Bitwise Operators) cơ bản
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toan-tu-bitwise-and-or-va-xor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toán tử Bitwise AND (&amp;), OR (|) và XOR (^)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toan-tu-bitwise-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toán tử Bitwise NOT (~)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toan-tu-bitshift-left" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toán tử BITSHIFT LEFT (&lt;&lt;)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Toán tử BITSHIFT LEFT (&lt;&lt;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chu-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chú ý
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toan-tu-bitshift-right" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toán tử BITSHIFT RIGHT (&gt;&gt;)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cac-ham-thao-tac-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Các hàm thao tác Bit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ham-population-count-va-parity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hàm Population Count và Parity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ham-count-leading-zeroes-va-log2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hàm Count Leading Zeroes và Log2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ham-count-trailing-zeroes-va-find-first-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hàm Count Trailing Zeroes và Find First Set
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ung-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ứng dụng
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truy-cap-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Truy cập Bit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chinh-sua-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chỉnh sửa Bit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tat-cac-bit-cao-nhat-cua-mot-bitmask" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tắt các bit cao nhất của một bitmask
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bieu-dien-tap-hop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Biểu diễn tập hợp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lap-qua-moi-tap-con-cua-tap-cho-truoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lặp qua mọi tập con của tập cho trước
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cai-at-cau-truc-du-lieu-fenwick-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt cấu trúc dữ liệu Fenwick Tree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giai-cac-bai-toan-bao-ham-loai-tru" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giải các bài toán bao hàm loại trừ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Giải các bài toán bao hàm loại trừ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e-bai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đề bài
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thuat-toan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thuật toán
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cai-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tong-hop-mot-so-ieu-can-chu-y-trong-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tổng hợp một số điều cần chú ý trong C++
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thu-tu-tinh-toan-operator-precendence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thứ tự tính toán (Operator Precendence)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toan-tu-bitshift" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toán tử Bitshift
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tran-so-khi-truy-cap-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tràn số khi truy cập bit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mo-rong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mở rộng
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lap-qua-moi-tap-con-cua-mot-bitmask" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lặp qua mọi tập con của một bitmask
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lap-qua-moi-bo-x-tap-con-phan-biet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lặp qua mọi bộ \(x\) tập con phân biệt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lặp qua mọi bộ \(x\) tập con phân biệt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bai-toan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nhan-xet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nhận xét
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truong-hop-x-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trường hợp \(x = 2\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truong-hop-x-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trường hợp \(x = 3\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truong-hop-tong-quat-x-in-z" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trường hợp tổng quát \(x \in Z^+\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tang-toc-cho-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tăng tốc cho code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-biet-logical-right-shift-va-arithmetic-right-shift" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân biệt Logical Right Shift và Arithmetic Right Shift
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#su-dung-pragma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sử dụng Pragma
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ieu-gi-xay-ra-neu-phep-left-shift-tran-so" class="md-nav__link">
+    <span class="md-ellipsis">
+      Điều gì xảy ra nếu phép Left Shift tràn số?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thu-vien-bit-cua-c20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thư viện &lt;bit&gt; của C++20
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -608,15 +1224,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -628,8 +1247,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Đại Số
           </label>
@@ -784,15 +1403,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -804,8 +1426,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Cấu trúc dữ liệu
           </label>
@@ -1422,15 +2044,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1442,8 +2067,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             Quy hoạch động
           </label>
@@ -1598,15 +2223,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1618,8 +2246,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Games
           </label>
@@ -1664,15 +2292,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1684,8 +2315,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Hình học
           </label>
@@ -1774,15 +2405,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1794,8 +2428,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             Lý thuyết Đồ Thị
           </label>
@@ -2060,15 +2694,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2080,8 +2717,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             Toán
           </label>
@@ -2192,15 +2829,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2212,8 +2852,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             Tìm Kiếm
           </label>
@@ -2258,15 +2898,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
         
           
-          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2278,8 +2921,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             Kỹ Năng Thi
           </label>
@@ -2368,15 +3011,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
         
           
-          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2388,8 +3034,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_11">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
             <span class="md-nav__icon md-icon"></span>
             Xâu kí tự
           </label>
@@ -2522,15 +3168,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
         
           
-          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2542,8 +3191,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
             <span class="md-nav__icon md-icon"></span>
             Mẹo
           </label>
@@ -2749,15 +3398,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2769,8 +3421,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Computer Science (Khoa học máy tính)
           </label>
@@ -2785,15 +3437,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2805,8 +3460,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Crypto
           </label>
@@ -2865,15 +3520,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2885,8 +3543,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             Cipher
           </label>
@@ -2939,15 +3597,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2959,8 +3620,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Xử lý ảnh
           </label>
@@ -3034,15 +3695,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3054,8 +3718,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Ngôn Ngữ Lập Trình
           </label>
@@ -3143,15 +3807,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3163,8 +3830,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Dịch Thuật
           </label>
@@ -3201,15 +3868,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3221,8 +3891,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             Codeforces
           </label>
@@ -3355,15 +4025,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3375,8 +4048,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             E-Maxx
           </label>
@@ -3443,15 +4116,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3463,8 +4139,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             Nâng Cao
           </label>
@@ -3685,15 +4361,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3705,8 +4384,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
             Máy học (Machine Learning - ML)
           </label>
@@ -3839,15 +4518,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3859,8 +4541,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
             Quora
           </label>
@@ -3905,15 +4587,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
-          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3925,8 +4610,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             Topcoder
           </label>
@@ -4279,15 +4964,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
         
           
-          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4299,8 +4987,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
             USACO
           </label>
@@ -4345,15 +5033,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
         
           
-          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4365,8 +5056,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
             Wcipeg
           </label>
@@ -4548,24 +5239,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -4574,16 +5247,20 @@
                   
 
 
+  
+  
 
-<h1 id="phep-toan-bit">Phép toán bit</h1>
+
+  <h1>Phép toán bit</h1>
+
 <p>Người viết: Nguyễn Minh Nhật - HUS High School for Gifted Students</p>
 <p>Reviewer:
 - Hồ Ngọc Vĩnh Phát - VNUHCM - University of Science
 - Nguyễn Đức Kiên - VNU - University of Engineering and Technology
 - Lê Minh Hoàng - VNUHCM - University of Science</p>
-<h1 id="gioi-thieu">Giới thiệu</h1>
+<h2 id="gioi-thieu">Giới thiệu<a class="headerlink" href="#gioi-thieu" title="Permanent link">&para;</a></h2>
 <p>Các phép toán với bit (Bitwise Operators) là một tập hợp các toán tử và hàm dành riêng cho việc thực hiện các thao tác biến đổi và tính toán trên các bit của một số nguyên (ví dụ như <code>int</code> hay <code>long long</code> trong C++).</p>
-<h1 id="luu-y-truoc-khi-oc-bai-viet">Lưu ý trước khi đọc bài viết</h1>
+<h2 id="luu-y-truoc-khi-oc-bai-viet">Lưu ý trước khi đọc bài viết<a class="headerlink" href="#luu-y-truoc-khi-oc-bai-viet" title="Permanent link">&para;</a></h2>
 <p>Trước khi đọc bài viết này, bạn cần trang bị kiến thức về các chủ đề sau:</p>
 <ul>
 <li>Biểu diễn nhị phân của số nguyên.</li>
@@ -4613,8 +5290,8 @@
 <p><strong>Ký hiệu <span class="arithmatex">\(L\)</span></strong> được dùng để chỉ số lượng Bit của kiểu số hiện tại đang sử dụng (<span class="arithmatex">\(32\)</span> với <code>int</code> và <span class="arithmatex">\(64\)</span> với <code>long long</code>).</p>
 </li>
 </ul>
-<h1 id="cac-toan-tu-thao-tac-bit-bitwise-operators-co-ban">Các toán tử thao tác bit (Bitwise Operators) cơ bản</h1>
-<h2 id="toan-tu-bitwise-and-or-va-xor">Toán tử Bitwise AND (&amp;), OR (|) và XOR (^)</h2>
+<h2 id="cac-toan-tu-thao-tac-bit-bitwise-operators-co-ban">Các toán tử thao tác bit (Bitwise Operators) cơ bản<a class="headerlink" href="#cac-toan-tu-thao-tac-bit-bitwise-operators-co-ban" title="Permanent link">&para;</a></h2>
+<h2 id="toan-tu-bitwise-and-or-va-xor">Toán tử Bitwise AND (&amp;), OR (|) và XOR (^)<a class="headerlink" href="#toan-tu-bitwise-and-or-va-xor" title="Permanent link">&para;</a></h2>
 <p>Các toán tử này thuộc loại "Toán tử Bit Logic". Việc sử dụng các toán tử loại này có thể được hiểu nôm na là thực hiện các thao tác tương ứng trên từng bit của các toán hạng (operands). Nói cách khác, nếu ký hiệu <span class="arithmatex">\(a_i\)</span> là bit thứ <span class="arithmatex">\(i\)</span> của bitmask <span class="arithmatex">\(a\)</span>, việc thực hiện phép toán <span class="arithmatex">\(c := a \oplus b\)</span> trong đó <span class="arithmatex">\(a, b, c\)</span> là các bitmask và <span class="arithmatex">\(\oplus\)</span> là một phép toán nào đó sẽ tương đương với việc thực hiện <span class="arithmatex">\(c_i := a_i \oplus b_i \forall 0 \leq i\)</span>.</p>
 <p>Định nghĩa của các phép toán này như sau:</p>
 <ol>
@@ -4685,7 +5362,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="toan-tu-bitwise-not">Toán tử Bitwise NOT (~)</h2>
+<h2 id="toan-tu-bitwise-not">Toán tử Bitwise NOT (~)<a class="headerlink" href="#toan-tu-bitwise-not" title="Permanent link">&para;</a></h2>
 <p>Toán tử Bitwise NOT có lẽ là toán tử đơn giản nhất. Toán tử này nhận vào một toán hạng <span class="arithmatex">\(A\)</span> và trả về phần bù của toán hạng này. Nói cách khác, định nghĩa của NOT là trả về False khi và chỉ khi toán hạng là True.</p>
 <p>Ví dụ, ta có:</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="o">~</span><span class="mb">0b10100100</span>
@@ -4693,18 +5370,18 @@
 </code></pre></div>
 <p>Chú ý rằng biểu thức trên chỉ đúng trong trường hợp đầu vào là kiểu số có 8 bit. Cụ thể hơn, cần chú ý:</p>
 <p>Khi sử dụng phép NOT, những bit không sử dụng ở bên trái cũng sẽ được bật lên. Chẳng hạn, khi thực hiện phép <code>0b10</code> với kiểu số <code>char</code> (8 bit), ta nhận được <code>0b11111101</code> thay vì <code>0b01</code>. Trong đa số trường hợp, ta sẽ cần phải tắt các bit được bật thừa này đi.</p>
-<h2 id="toan-tu-bitshift-left">Toán tử BITSHIFT LEFT (&lt;&lt;)</h2>
+<h2 id="toan-tu-bitshift-left">Toán tử BITSHIFT LEFT (&lt;&lt;)<a class="headerlink" href="#toan-tu-bitshift-left" title="Permanent link">&para;</a></h2>
 <p>Định nghĩa của toán tử Bitshift Left là dịch tất cả các bit trong một số nguyên sang trái một lượng nào đó. Nói cách khác, trong phép toán <code>a &lt;&lt; b</code>, các bit của <code>a</code> được dịch sang trái <code>b</code> lần.</p>
 <p>Ví dụ, xét số <code>5 = 0b101</code>, nếu thực hiện phép toán <code>0b101&lt;&lt;2</code>, ta nhận được <code>0b10100 = 20</code>.</p>
 <p>Nếu quan sát kỹ, bạn sẽ nhận thấy một tính chất thú vị sau của phép toán Bitshift Left: <code>a &lt;&lt; b</code> <span class="arithmatex">\(= a * 2^b\)</span>. Ta có tính chất này do phép toán Bitshift Left <code>a &lt;&lt; b</code> có thể hiểu là thêm <code>b</code> chữ số <span class="arithmatex">\(0\)</span> vào cuối biểu diễn nhị phân của số <code>a</code>. Điều này tương tự như việc thêm một chữ số <span class="arithmatex">\(0\)</span> vào cuối biểu diễn thập phân của một số sẽ nhân số đó thêm 10 lần.</p>
-<h3 id="chu-y">Chú ý</h3>
+<h3 id="chu-y">Chú ý<a class="headerlink" href="#chu-y" title="Permanent link">&para;</a></h3>
 <p>Với C++, không nên để phép toán <code>a &lt;&lt; b</code> của bạn bị tràn số (bit <span class="arithmatex">\(1\)</span> được left shift đến quá giới hạn của kiểu số đang sử dụng) vì sẽ có trường hợp code của bạn bị UB. Để biết cụ thể về các trường hợp này, bạn có thể tham khảo phần <a href="#điều-gì-xảy-ra-nếu-phép-left-shift-tràn-số">Phép Left Shift tràn số</a>.</p>
 <p>Ngoài ra, nếu <span class="arithmatex">\(b &lt; 0\)</span> hoặc <span class="arithmatex">\(b \geq L\)</span>, kết quả trả về của phép toán là không xác định.</p>
-<h2 id="toan-tu-bitshift-right">Toán tử BITSHIFT RIGHT (&gt;&gt;)</h2>
+<h2 id="toan-tu-bitshift-right">Toán tử BITSHIFT RIGHT (&gt;&gt;)<a class="headerlink" href="#toan-tu-bitshift-right" title="Permanent link">&para;</a></h2>
 <p>Nếu như Left Shift là thêm chữ số <span class="arithmatex">\(0\)</span> vào bên phải của một số nguyên ở dạng nhị phân, ta có thể hiểu Right Shift là xóa các chữ số ở bên phải.</p>
 <p>Ví dụ, xét số <code>13 = 0b1101</code>, ta có <code>0b1101 &gt;&gt; 2 = 0b11</code>.</p>
 <p>Tương tự với Bitshift Left, ta cũng có tính chất <code>a &gt;&gt; b</code> <span class="arithmatex">\(= \lfloor \frac{a}{2^b} \rfloor\)</span> với <span class="arithmatex">\(a\)</span> nguyên không âm. Nếu <span class="arithmatex">\(b &lt; 0\)</span> hoặc <span class="arithmatex">\(b \geq L\)</span>, kết quả trả về của phép toán là không xác định. Dù trên thực tế không sử dụng nhiều, nhưng nếu bạn đọc cảm thấy tò mò về trường hợp <span class="arithmatex">\(a &lt; 0\)</span> thì có thể tham khảo phần <a href="#phân-biệt-logical-right-shift-và-arithmetic-right-shift">Phân biệt LRS và ARS</a>.</p>
-<h1 id="cac-ham-thao-tac-bit">Các hàm thao tác Bit</h1>
+<h2 id="cac-ham-thao-tac-bit">Các hàm thao tác Bit<a class="headerlink" href="#cac-ham-thao-tac-bit" title="Permanent link">&para;</a></h2>
 <p>Compiler GCC (là Compiler đi kèm với Codeforces, Dev-C++, và được sử dụng trên các OJ phổ biến) hiện nay hỗ trợ một số các hàm liên quan tới xử lý bit giúp ta thực hiện một số các phép tính thông dụng với độ phức tạp thời gian <span class="arithmatex">\(O(1)\)</span>.</p>
 <p>Nếu bạn tới đây để đọc lại tên hàm, đây là bảng TL;DR:</p>
 <table>
@@ -4756,19 +5433,19 @@
 </tbody>
 </table>
 <p>Chú ý: Đối với các hàm có dạng <code>std::__builtin</code>, thêm đuôi <code>ll</code> sẽ gọi hàm đó với kiểu đầu vào là <code>unsigned long long</code>. Để thuận tiện, người viết sẽ bỏ qua đuôi này trong phần tiếp theo.</p>
-<h2 id="ham-population-count-va-parity">Hàm Population Count và Parity</h2>
+<h2 id="ham-population-count-va-parity">Hàm Population Count và Parity<a class="headerlink" href="#ham-population-count-va-parity" title="Permanent link">&para;</a></h2>
 <p>GCC cung cấp hàm <code>std::__builtin_popcount(x)</code> (population count) trả về số lượng bit bật trong bitmask <span class="arithmatex">\(x\)</span>. Chẳng hạn, <code>std::__builtin_popcount(0b100101) = 3</code>.</p>
 <p>Ngoài ra, cũng có hàm <code>std::__builtin_parity(x)</code> trả về <code>std::__builtin_popcount(x) % 2</code>. Hàm này thường được sử dụng trong các bài toán liên quan tới bao hàm loại trừ.</p>
-<h2 id="ham-count-leading-zeroes-va-log2">Hàm Count Leading Zeroes và Log2</h2>
+<h2 id="ham-count-leading-zeroes-va-log2">Hàm Count Leading Zeroes và Log2<a class="headerlink" href="#ham-count-leading-zeroes-va-log2" title="Permanent link">&para;</a></h2>
 <p>GCC cung cấp hàm <code>std::__builtin_clz(x)</code>Trả về số lượng bit <span class="arithmatex">\(0\)</span> ở bên trái bit <span class="arithmatex">\(1\)</span> cao nhất của biến đầu vào. Chú ý, hàm này trả về kết quả không xác định đối với <code>x == 0</code>.</p>
 <p>Chẳng hạn, <code>std::__builtin_clz(0b10) == 30</code>. Kết quả này là do kiểu <code>int</code> có 32 bit. Cụ thể, số <code>0b10</code> khi lưu dưới dạng <code>int</code> sẽ có thể được biểu diễn là:</p>
 <p><code>0b 0000 0000 0000 0000 0000 0000 0000 0010</code></p>
 <p>Ngoài ra cũng có hàm <code>std::__lg(x) == 31 - std::__builtin_clz(x) == 63 - std::__builtin_clzll(x)</code>. Hàm này trả về <span class="arithmatex">\(\lfloor \log_2(x) \rfloor\)</span>, thường được sử dụng trong cài đặt của Bảng thưa (Sparse Table).</p>
-<h2 id="ham-count-trailing-zeroes-va-find-first-set">Hàm Count Trailing Zeroes và Find First Set</h2>
+<h2 id="ham-count-trailing-zeroes-va-find-first-set">Hàm Count Trailing Zeroes và Find First Set<a class="headerlink" href="#ham-count-trailing-zeroes-va-find-first-set" title="Permanent link">&para;</a></h2>
 <p>GCC cung cấp hàm <code>std::__builtin_ctz(x)</code> trả về số lượng bit <span class="arithmatex">\(0\)</span> ở bên phải bit <span class="arithmatex">\(1\)</span> thấp nhất của biến đầu vào. Chú ý, hàm này cũng trả về kết quả không xác định đối với <code>x == 0</code>. Chẳng hạn, <code>std::__builtin_ctz(0b100100) = 2</code>.</p>
 <p>GCC cũng cung cấp một hàm khác là <code>std::__builtin_ffs(x) == std::__builtin_ctz(x) + 1</code>. Trong trường hợp <code>x == 0</code>, hàm này trả về <span class="arithmatex">\(0\)</span>.</p>
-<h1 id="ung-dung">Ứng dụng</h1>
-<h2 id="truy-cap-bit">Truy cập Bit</h2>
+<h2 id="ung-dung">Ứng dụng<a class="headerlink" href="#ung-dung" title="Permanent link">&para;</a></h2>
+<h2 id="truy-cap-bit">Truy cập Bit<a class="headerlink" href="#truy-cap-bit" title="Permanent link">&para;</a></h2>
 <p>Một ứng dụng thường thấy của các phép toán bit là đọc và sửa từng bit trong một bitmask.</p>
 <p>Chẳng hạn, để truy cập bit thứ <span class="arithmatex">\(i\)</span> trong bitmask <span class="arithmatex">\(A\)</span>, ta có thể sử dụng phép toán <code>A &amp; (1LL&lt;&lt;i)</code>. Trước khi đọc giải thích của phép toán này, hãy tự mình chạy thử một số ví dụ.</p>
 <p>Xét <code>A = 0b1010010</code>. Để truy cập bit thứ <span class="arithmatex">\(4\)</span>, ta thực hiện phép toán <code>0b1010010 &amp; (1&lt;&lt;4)</code> như sau:</p>
@@ -4789,17 +5466,17 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Hậu tố <code>ULL</code> đánh dấu cho compiler biết rằng <code>1ULL</code> cần được coi là một số <code>unsigned long long</code>. Như vậy, phép <code>1ULL &lt;&lt; pos</code> sẽ không còn bị tràn số. Một số các hậu tố thường dùng bao gồm: <code>ULL</code> cho <code>unsigned long long</code>, <code>LL</code> cho <code>long long</code>, <code>L</code> cho <code>long</code>,...</p>
-<h2 id="chinh-sua-bit">Chỉnh sửa Bit</h2>
+<h2 id="chinh-sua-bit">Chỉnh sửa Bit<a class="headerlink" href="#chinh-sua-bit" title="Permanent link">&para;</a></h2>
 <p>Sử dụng phương pháp tương tự như phần trên, ta có một số phép sửa bit như sau:</p>
 <ol>
 <li>Gán một bit bằng <span class="arithmatex">\(0\)</span> với <code>A &amp; ~(1&lt;&lt;i)</code>.</li>
 <li>Gán một bit bằng <span class="arithmatex">\(1\)</span> với <code>A | (1&lt;&lt;i)</code>.</li>
 <li>Lật (flip) một bit (từ <span class="arithmatex">\(0\)</span> sang <span class="arithmatex">\(1\)</span> hoặc từ <span class="arithmatex">\(1\)</span> sang <span class="arithmatex">\(0\)</span>) với <code>A ^ (1&lt;&lt;i)</code>.</li>
 </ol>
-<h2 id="tat-cac-bit-cao-nhat-cua-mot-bitmask">Tắt các bit cao nhất của một bitmask</h2>
+<h2 id="tat-cac-bit-cao-nhat-cua-mot-bitmask">Tắt các bit cao nhất của một bitmask<a class="headerlink" href="#tat-cac-bit-cao-nhat-cua-mot-bitmask" title="Permanent link">&para;</a></h2>
 <p>Phép toán <code>((1&lt;&lt;i) - 1)</code> tạo ra bitmask mà trong đó chỉ các bit từ <span class="arithmatex">\(0\)</span> tới <span class="arithmatex">\(i-1\)</span> được bật lên.</p>
 <p>Như vậy, để tắt tất cả các bit từ vị trí <span class="arithmatex">\(i\)</span> trở đi, ta có thể sử dụng <code>A &amp; ((1&lt;&lt;i)-1)</code>. Đây là cách ta loại bỏ các bit thừa sau khi thực hiện phép bitwise NOT.</p>
-<h2 id="bieu-dien-tap-hop">Biểu diễn tập hợp</h2>
+<h2 id="bieu-dien-tap-hop">Biểu diễn tập hợp<a class="headerlink" href="#bieu-dien-tap-hop" title="Permanent link">&para;</a></h2>
 <p>Ứng dụng cơ bản nhất của bitmask là biểu diễn một tập con của một tập <span class="arithmatex">\(A\)</span> cho trước nào đó. Từ ứng dụng này, ta có một dạng bài tên là quy hoạch động trạng thái (dp bitmask).</p>
 <p>Từ các phần <a href="#truy-cập-bit">Truy cập Bit</a>, <a href="#chỉnh-sửa-bit">Chỉnh sửa Bit</a> và <a href="#tắt-các-bit-cao-nhất-của-một-bitmask">Tắt các Bit cao nhất</a>, ta có một số phép toán cơ bản trên tập hợp như sau:</p>
 <table>
@@ -4857,7 +5534,7 @@
 7. Hiệu của hai tập hợp $A$ và $B$ bằng ```(A ^ B) & A```.
 8. Phần bù của tập hợp $B$ trong $A$ bằng ```A & ~B```. -->
 
-<h2 id="lap-qua-moi-tap-con-cua-tap-cho-truoc">Lặp qua mọi tập con của tập cho trước</h2>
+<h2 id="lap-qua-moi-tap-con-cua-tap-cho-truoc">Lặp qua mọi tập con của tập cho trước<a class="headerlink" href="#lap-qua-moi-tap-con-cua-tap-cho-truoc" title="Permanent link">&para;</a></h2>
 <p>Để lặp qua mọi tập con <span class="arithmatex">\(A\)</span> của một tập <span class="arithmatex">\(S\)</span> cho trước, ta viết vòng <code>for</code> như sau:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">loop_subset</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">){</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mask</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">mask</span><span class="o">&lt;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">());</span><span class="w"> </span><span class="n">mask</span><span class="o">++</span><span class="p">){</span>
@@ -4870,15 +5547,15 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="cai-at-cau-truc-du-lieu-fenwick-tree">Cài đặt cấu trúc dữ liệu Fenwick Tree</h2>
+<h2 id="cai-at-cau-truc-du-lieu-fenwick-tree">Cài đặt cấu trúc dữ liệu Fenwick Tree<a class="headerlink" href="#cai-at-cau-truc-du-lieu-fenwick-tree" title="Permanent link">&para;</a></h2>
 <p>Cách cài đặt <a href="https://vnoi.info/wiki/algo/data-structures/fenwick.md">Fenwick Tree</a> tối ưu cũng là một trong những ứng dụng thú vị của các toán tử Bit.</p>
-<h2 id="giai-cac-bai-toan-bao-ham-loai-tru">Giải các bài toán bao hàm loại trừ</h2>
-<h3 id="e-bai">Đề bài</h3>
+<h2 id="giai-cac-bai-toan-bao-ham-loai-tru">Giải các bài toán bao hàm loại trừ<a class="headerlink" href="#giai-cac-bai-toan-bao-ham-loai-tru" title="Permanent link">&para;</a></h2>
+<h3 id="e-bai">Đề bài<a class="headerlink" href="#e-bai" title="Permanent link">&para;</a></h3>
 <p>Cho một tập <span class="arithmatex">\(S\)</span> gồm các số nguyên tố phân biệt. Gọi <span class="arithmatex">\(a\)</span> là tích các số trong tập <span class="arithmatex">\(S\)</span>. Trong các số thuộc khoảng <span class="arithmatex">\([0, n]\)</span>, đếm số số nguyên tố cùng nhau với <span class="arithmatex">\(a\)</span>.</p>
-<h3 id="thuat-toan">Thuật toán</h3>
+<h3 id="thuat-toan">Thuật toán<a class="headerlink" href="#thuat-toan" title="Permanent link">&para;</a></h3>
 <p>Ta lặp qua mọi tập con <span class="arithmatex">\(T\)</span> của <span class="arithmatex">\(S\)</span>. Gọi <span class="arithmatex">\(b\)</span> là tích các số trong tập <span class="arithmatex">\(T\)</span>, và <span class="arithmatex">\(x\)</span> là số số trong khoảng <span class="arithmatex">\([0, n]\)</span> chia hết cho <span class="arithmatex">\(b\)</span>. Nếu <span class="arithmatex">\(T\)</span> có chẵn phần tử, ta cộng <span class="arithmatex">\(x\)</span> vào đáp án. Ngược lại, ta trừ <span class="arithmatex">\(x\)</span> vào đáp án.</p>
 <p>Phần chứng minh cho bài toán này bạn đọc có thể tham khảo ở bài viết về <a href="https://vnoi.info/wiki/translate/he/Number-Theory-7.md">bao hàm loại trừ</a>.</p>
-<h3 id="cai-at">Cài đặt</h3>
+<h3 id="cai-at">Cài đặt<a class="headerlink" href="#cai-at" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
@@ -4894,9 +5571,9 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Chú ý: Đoạn code này chỉ mang tính chất minh họa, do trên thực tế kết quả có thể tràn <code>unsigned long long</code>. Tuy nhiên, kết quả của các thao tác tính toán tràn số trên các kiểu <code>unsigned</code> được xác định, nên nếu tích các số trong tập <span class="arithmatex">\(A\)</span> không tràn số, code này sẽ trả về kết quả theo mod <span class="arithmatex">\(2^{64}\)</span>.</p>
-<h1 id="tong-hop-mot-so-ieu-can-chu-y-trong-c">Tổng hợp một số điều cần chú ý trong C++</h1>
+<h2 id="tong-hop-mot-so-ieu-can-chu-y-trong-c">Tổng hợp một số điều cần chú ý trong C++<a class="headerlink" href="#tong-hop-mot-so-ieu-can-chu-y-trong-c" title="Permanent link">&para;</a></h2>
 <p>Các thao tác bit trong C++ là một bộ công cụ rất mạnh và có hiệu suất cực đỉnh. Tất nhiên, "with great power comes great responsibility". Khi sử dụng bộ công cụ này, rất nhiều những bug thú vị đang chờ đợi bạn.</p>
-<h2 id="thu-tu-tinh-toan-operator-precendence">Thứ tự tính toán (Operator Precendence)</h2>
+<h2 id="thu-tu-tinh-toan-operator-precendence">Thứ tự tính toán (Operator Precendence)<a class="headerlink" href="#thu-tu-tinh-toan-operator-precendence" title="Permanent link">&para;</a></h2>
 <p>Thứ tự tính toán có thể được hiểu là thứ tự mà C++ sẽ tính toán các biểu thức của bạn, ví dụ như nhân chia trước, cộng trừ sau. Trang cppreference.com có dành hẳn một <a href="https://en.cppreference.com/w/cpp/language/operator_precedence">bài viết</a> để nói về thứ tự này.</p>
 <p>Một số điểm cần chú ý trong thứ tự tính toán của C++ bao gồm:</p>
 <ul>
@@ -4904,13 +5581,13 @@
 <li>Phép <code>&amp;, ^, |</code> đứng sau phép <code>==</code> và các phép <code>+, -, *, /, &lt;&lt;, &gt;&gt;</code>.</li>
 </ul>
 <p>Trong mọi trường hợp, kể cả khi đã nhớ kỹ thứ tự tính toán của các toán tử, bạn vẫn nên sử dụng dấu <code>()</code> khi làm việc với các toán tử bit để giúp code dễ đọc hơn và hạn chế bug.</p>
-<h2 id="toan-tu-bitshift">Toán tử Bitshift</h2>
+<h2 id="toan-tu-bitshift">Toán tử Bitshift<a class="headerlink" href="#toan-tu-bitshift" title="Permanent link">&para;</a></h2>
 <p>Trong phép Bitshift Left, nếu toán tử đầu tiên của bạn là một số âm, hoặc kết quả tính toán của bạn tràn số, thì code của bạn sẽ bị UB.</p>
 <p>Đối với tất cả mọi phép bitshift, nếu toán tử thứ hai của bạn là một số âm, hoặc có giá trị lớn hơn hoặc bằng số lượng bit có trong kiểu số của kết quả, thì code của bạn bị UB. Trong gần như hầu hết trường hợp, chỉ có <span class="arithmatex">\(5\)</span> hoặc <span class="arithmatex">\(6\)</span> bit cuối cùng (lần lượt với hai trường hợp <code>int</code> và <code>long long</code>) trong toán tử thứ hai được sử dụng, nên chúng ta có thể đoán trước được code sẽ làm gì. Tuy nhiên, không nên dựa vào tính chất này để viết code.</p>
-<h2 id="tran-so-khi-truy-cap-bit">Tràn số khi truy cập bit</h2>
+<h2 id="tran-so-khi-truy-cap-bit">Tràn số khi truy cập bit<a class="headerlink" href="#tran-so-khi-truy-cap-bit" title="Permanent link">&para;</a></h2>
 <p>Một lỗi thường gặp của những bạn mới làm quen với các toán tử bit là tràn số khi thực hiện phép <code>1 &lt;&lt; pos</code> để truy cập bit. Bạn đọc có thể xem phần <a href="#truy-cập-bit">Truy cập bit</a> để rõ hơn.</p>
-<h1 id="mo-rong">Mở rộng</h1>
-<h2 id="lap-qua-moi-tap-con-cua-mot-bitmask">Lặp qua mọi tập con của một bitmask</h2>
+<h2 id="mo-rong">Mở rộng<a class="headerlink" href="#mo-rong" title="Permanent link">&para;</a></h2>
+<h2 id="lap-qua-moi-tap-con-cua-mot-bitmask">Lặp qua mọi tập con của một bitmask<a class="headerlink" href="#lap-qua-moi-tap-con-cua-mot-bitmask" title="Permanent link">&para;</a></h2>
 <p>Để lặp qua mọi tập con của <span class="arithmatex">\(S\)</span>, ta viết vòng lặp <code>for</code> như sau:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">loop_mask_subset</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">S</span><span class="p">){</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">mask</span><span class="o">=</span><span class="n">S</span><span class="p">;</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">mask</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">S</span><span class="p">){</span>
@@ -4941,14 +5618,14 @@ $$
 \end{align}
 $$</p>
 <p>Nếu bạn thấy chứng minh trên khó hiểu, hãy xem chứng minh của Ứng dụng tiếp theo.</p>
-<h2 id="lap-qua-moi-bo-x-tap-con-phan-biet">Lặp qua mọi bộ <span class="arithmatex">\(x\)</span> tập con phân biệt</h2>
-<h3 id="bai-toan">Bài toán</h3>
+<h2 id="lap-qua-moi-bo-x-tap-con-phan-biet">Lặp qua mọi bộ <span class="arithmatex">\(x\)</span> tập con phân biệt<a class="headerlink" href="#lap-qua-moi-bo-x-tap-con-phan-biet" title="Permanent link">&para;</a></h2>
+<h3 id="bai-toan">Bài toán<a class="headerlink" href="#bai-toan" title="Permanent link">&para;</a></h3>
 <p>Cho một tập <span class="arithmatex">\(S\)</span> độ dài <span class="arithmatex">\(n\)</span> và một số <span class="arithmatex">\(x\)</span>. Hãy in ra tất cả các cách chia các phần tử trong <span class="arithmatex">\(S\)</span> vào <span class="arithmatex">\(x\)</span> tập hợp không giao nhau, sao cho mỗi phần tử nằm trong đúng một tập hợp.</p>
-<h3 id="nhan-xet">Nhận xét</h3>
+<h3 id="nhan-xet">Nhận xét<a class="headerlink" href="#nhan-xet" title="Permanent link">&para;</a></h3>
 <p>Rõ ràng, có <span class="arithmatex">\(O(x^n)\)</span> tập hợp thỏa mãn. Như vậy, độ phức tạp tốt nhất của bài toán này là <span class="arithmatex">\(O(x^n)\)</span>.</p>
-<h3 id="truong-hop-x-2">Trường hợp <span class="arithmatex">\(x = 2\)</span></h3>
+<h3 id="truong-hop-x-2">Trường hợp <span class="arithmatex">\(x = 2\)</span><a class="headerlink" href="#truong-hop-x-2" title="Permanent link">&para;</a></h3>
 <p>Rõ ràng, trong trường hợp này, ta chỉ cần lặp qua mọi tập con <span class="arithmatex">\(S\)</span> của <span class="arithmatex">\(A\)</span>. Với mỗi lần lặp này, ta nhận được cặp tập hợp <span class="arithmatex">\((S, A \backslash S)\)</span>.</p>
-<h3 id="truong-hop-x-3">Trường hợp <span class="arithmatex">\(x = 3\)</span></h3>
+<h3 id="truong-hop-x-3">Trường hợp <span class="arithmatex">\(x = 3\)</span><a class="headerlink" href="#truong-hop-x-3" title="Permanent link">&para;</a></h3>
 <p>Ta sẽ cố gắng mở rộng từ trường hợp <span class="arithmatex">\(x = 2\)</span> để có được thuật toán cho trường hợp này.</p>
 <p>Bước đầu tiên, ta sẽ lặp như trường hợp <span class="arithmatex">\(x = 2\)</span> để có được cặp tập hợp <span class="arithmatex">\((A, B)\)</span>.</p>
 <p>Bước thứ hai, ta sẽ lặp mọi tập con <span class="arithmatex">\(C\)</span> của tập <span class="arithmatex">\(A\)</span> để nhận được hai tập <span class="arithmatex">\((C, A \backslash C)\)</span>. Như vậy, bộ tập hợp thỏa mãn đề bài mà ta nhận được sẽ là <span class="arithmatex">\((B, A \backslash C, C)\)</span>. Chú ý, ở bước này, ta sử dụng kỹ thuật ở <a href="#lặp-qua-mọi-tập-con-của-một-bitmask">Ứng dụng trước</a>.</p>
@@ -4966,7 +5643,7 @@ $$</p>
 <span class="p">}</span>
 </code></pre></div>
 <p>Để ý rằng vòng lặp đầu tiên tương đương với việc lặp <span class="arithmatex">\(A\)</span> trong khoảng <span class="arithmatex">\([0, 2^n)\)</span>. Nếu thực hiện thay đổi này, ta sẽ nhận được cài đặt tương đương với hàm <code>void loop_subset_of_all_masks(int n)</code> ở trên. Đây cũng là một cách hiểu cho độ phức tạp <span class="arithmatex">\(O(3^n)\)</span> của hàm này.</p>
-<h3 id="truong-hop-tong-quat-x-in-z">Trường hợp tổng quát <span class="arithmatex">\(x \in Z^+\)</span></h3>
+<h3 id="truong-hop-tong-quat-x-in-z">Trường hợp tổng quát <span class="arithmatex">\(x \in Z^+\)</span><a class="headerlink" href="#truong-hop-tong-quat-x-in-z" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">generate_partitions</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">sets</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mask</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">){</span>
 <span class="w">        </span><span class="n">sets</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">mask</span><span class="p">);</span>
@@ -4988,28 +5665,28 @@ $$</p>
 <span class="w">    </span><span class="n">generate_partitions</span><span class="p">(</span><span class="n">sets</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">)</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">parts</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="tang-toc-cho-code">Tăng tốc cho code</h2>
+<h2 id="tang-toc-cho-code">Tăng tốc cho code<a class="headerlink" href="#tang-toc-cho-code" title="Permanent link">&para;</a></h2>
 <p>Nếu sử dụng kiểu dữ liệu <code>unsigned long long</code>, ta có thể thực hiện 64 phép AND, OR, XOR, hoặc NOT trong một thao tác. Trên thực tế, khi dịch, một số các compiler có thể giúp bạn thực hiện <span class="arithmatex">\(256\)</span> hay thậm chí <span class="arithmatex">\(512\)</span> phép toán như vậy cùng một lúc. Như vậy, một số bài toán với giới hạn như <span class="arithmatex">\(n \leq 5*10^4\)</span> hay thậm chí <span class="arithmatex">\(n \leq 10^5\)</span> có thể chạy qua được với độ phức tạp <span class="arithmatex">\(O(n^2)\)</span>. Tuy nhiên, do giới hạn của bài viết, chủ đề này sẽ không được bàn đến ở đây.</p>
-<h2 id="phan-biet-logical-right-shift-va-arithmetic-right-shift">Phân biệt Logical Right Shift và Arithmetic Right Shift</h2>
+<h2 id="phan-biet-logical-right-shift-va-arithmetic-right-shift">Phân biệt Logical Right Shift và Arithmetic Right Shift<a class="headerlink" href="#phan-biet-logical-right-shift-va-arithmetic-right-shift" title="Permanent link">&para;</a></h2>
 <p>Riêng đối với Right Shift, hầu hết các cấu trúc máy tính cung cấp hai loại phép toán khác nhau là Logical Right Shift và Arithmetic Right Shift.</p>
 <p>Khác biệt duy nhất giữa hai loại phép toán này là Logical Right Shift điền các bit bên trái mới được thêm bằng <span class="arithmatex">\(0\)</span>, trong khi Arithmetic Right Shift điền các bit này là giá trị của bit trái cùng trong số ban đầu (bit thứ <span class="arithmatex">\(31\)</span> đối với kiểu <code>int</code>, và bit thứ <span class="arithmatex">\(63\)</span> đối với kiểu <code>long long</code>).</p>
 <p>Chẳng hạn, ta sử dụng kiểu số <code>char</code> có 8 bit, và thực hiện phép toán <code>0b</code><strong><code>101</code></strong><code>01101 &gt;&gt; 5</code>. Logical Right Shift sẽ trả về kết quả <code>0b00000</code><strong><code>101</code></strong>, nhưng Arithmetic Right Shift sẽ trả về <code>0b11111</code><strong><code>101</code></strong>.</p>
 <p>Chắc chắn khi đọc đến đây, các bạn sẽ tự hỏi về ý nghĩa của phép Arithmetic Right Shift. Trong trường hợp toán hạng <code>a</code> là số không âm, hai phép toán hoạt động tương đương. Tuy nhiên, trong trường hợp <code>a</code> âm, phép Logical Right Shift không có ý nghĩa về mặt toán học, mà đơn giản chỉ là đẩy các bit sang phải. Trong khi đó, phép Arithmetic Right Shift sẽ vẫn đảm bảo tính chất <code>a &gt;&gt; b</code> <span class="arithmatex">\(= \lfloor \frac{a}{2^b} \rfloor\)</span>. Chú ý rằng kết quả của phép toán sẽ được làm tròn xuống, chẳng hạn như <code>-7 &gt;&gt; 2</code> <span class="arithmatex">\(= \frac{-7}{2^2} = -1.75\)</span> được làm tròn xuống <span class="arithmatex">\(-2\)</span>.</p>
 <p>Lý do phép toán trên hoạt động là vì các số nguyên âm được biểu diễn dưới dạng two's complement. Do giới hạn của bài viết, người viết sẽ không đi sâu hơn vào loại biểu diễn này.</p>
 <p>Trong C++, phép Logical Right Shift sẽ được sử dụng nếu toán tử đầu tiên là một số thuộc loại <code>unsigned</code>, còn nếu không thì phép Arithmetic Right Shift sẽ được sử dụng.</p>
-<h2 id="su-dung-pragma">Sử dụng Pragma</h2>
+<h2 id="su-dung-pragma">Sử dụng Pragma<a class="headerlink" href="#su-dung-pragma" title="Permanent link">&para;</a></h2>
 <p>Đối với gần như tất cả (<span class="arithmatex">\(&gt;99\%\)</span>) những máy tính mà bạn sẽ gặp trong đời, các hàm phía trên có thể được thực hiện với chỉ <span class="arithmatex">\(1\)</span> instruction, hay nói cách khác là trong <span class="arithmatex">\(O(1)\)</span>. Tuy nhiên, để hỗ trợ những máy tính rất cũ hoặc rất low-end, compiler GCC mặc định cài đặt các hàm trên bằng toán tử bit, chạy trong <span class="arithmatex">\(O(\log_2 \log_2 n)\)</span>, với <span class="arithmatex">\(n\)</span> là số lượng bit trong kiểu số của bạn.</p>
 <p>Để mở khóa các instruction mới, các bạn cần phải sử dụng định hướng biên dịch <code>#pragma GCC target</code>.</p>
 <p>Hầu hết mỗi hàm đều có một "flag" riêng biệt mà khi bật lên sẽ mở khóa instruction cho hàm đó. Tuy nhiên, nếu bạn mở khóa thừa thì code bạn vẫn chạy. Vì vậy, để code chạy nhanh hơn, bạn chỉ cần paste dòng sau vào đầu code (trước dòng <code>#include</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#pragma GCC target(&quot;popcnt,lzcnt,bmi,bmi2,abm&quot;)</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## pragma GCC target(&quot;popcnt,lzcnt,bmi,bmi2,abm&quot;)</span>
 </code></pre></div>
-<h2 id="ieu-gi-xay-ra-neu-phep-left-shift-tran-so">Điều gì xảy ra nếu phép Left Shift tràn số?</h2>
+<h2 id="ieu-gi-xay-ra-neu-phep-left-shift-tran-so">Điều gì xảy ra nếu phép Left Shift tràn số?<a class="headerlink" href="#ieu-gi-xay-ra-neu-phep-left-shift-tran-so" title="Permanent link">&para;</a></h2>
 <p>Với C++, nếu phép toán <code>a &lt;&lt; b</code> của bạn bị tràn số (bit <span class="arithmatex">\(1\)</span> được left shift đến quá giới hạn của kiểu số đang sử dụng), sẽ có 2 trường hợp xảy ra:</p>
 <ol>
 <li>Nếu kiểu số của kết quả là một số <code>unsigned</code>, các bit bị tràn sẽ được coi như là <span class="arithmatex">\(0\)</span>, và biến mất. Nói cách khác, gọi số bit của kiểu số kết quả là <span class="arithmatex">\(c\)</span> (<span class="arithmatex">\(c\)</span> là <span class="arithmatex">\(32\)</span> với <code>unsigned int</code>, và <span class="arithmatex">\(64\)</span> với <code>unsigned long long</code>), kết quả trả về sẽ được tính theo modulo <code>2^c</code>.</li>
 <li>Nếu kiểu số của kết quả là một số <code>signed</code>, chương trình của bạn sẽ bị UB. Tuy nhiên, trong hầu hết trường hợp, code của bạn sẽ không bị lỗi, mà chỉ trả về một kết quả không xác định nào đó. Điều tương tự xảy ra nếu toán hạng <code>a</code> của bạn là một số âm.</li>
 </ol>
-<h2 id="thu-vien-bit-cua-c20">Thư viện <code>&lt;bit&gt;</code> của <code>C++20</code></h2>
+<h2 id="thu-vien-bit-cua-c20">Thư viện <code>&lt;bit&gt;</code> của <code>C++20</code><a class="headerlink" href="#thu-vien-bit-cua-c20" title="Permanent link">&para;</a></h2>
 <p><strong>Chú ý:</strong> Tại thời điểm viết bài, hầu hết các kỳ thi chính thức chưa cho phép sử dụng chuẩn <code>C++20</code>. Nếu không chắc chắn, các bạn vui lòng chỉ sử dụng những biến thể không thuộc <code>C++20</code> của các hàm này.</p>
 <p>Một trong những điểm mới của phiên bản <code>C++20</code> là thư viện <code>&lt;bit&gt;</code>. Thư viện này chứa các hàm tương tự như <a href="#các-hàm-thao-tác-bit">Các hàm thao tác Bit</a>. Điểm lợi của các hàm trong thư viện <code>&lt;bit&gt;</code> là có khả năng chạy trên tất cả các Compiler C++ khác nhau, nhưng điểm trừ là chỉ chạy được với chuẩn <code>C++20</code> trở lên.</p>
 
@@ -5029,6 +5706,8 @@ $$</p>
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -5036,14 +5715,61 @@ $$</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../binary-search/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Thuật toán tìm kiếm nhị phân">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Thuật toán tìm kiếm nhị phân
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../computational-complexity/" class="md-footer__link md-footer__link--next" aria-label="Next: Độ phức tạp thời gian">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Độ phức tạp thời gian
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/KienPC1234/fptoj_wiki" target="_blank" rel="noopener" title="GitHub: KienPC1234/fptoj_wiki" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -5058,7 +5784,7 @@ $$</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "toc.integrate", "toc.sticky", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "header.autohide"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>

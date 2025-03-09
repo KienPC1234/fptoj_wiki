@@ -6,7 +6,6 @@ $(document).ready(function () {
   $("head").append(`<link rel="icon" type="image/svg+xml" href="${favicon}">`);
 });
   
-
 $(document).ready(function() {
   $('a.md-header__button.md-logo').attr('href', 'https://fptoj.com/');
   $("details p").each(function() {
@@ -22,16 +21,4 @@ $(document).ready(function() {
   });
 });
 
-$(document).on("toggle", "details", function() {
-  $(this).find("p").each(function() {
-      console.log("🔄 Mở <details> - Trước khi render:", $(this).html());
-      renderMathInElement(this, {
-          delimiters: [
-              {left: "$$", right: "$$", display: true},
-              {left: "\\(", right: "\\)", display: false},
-              {left: "$", right: "$", display: false}
-          ]
-      });
-      console.log("✅ Sau khi render lại:", $(this).html());
-  });
-});
+

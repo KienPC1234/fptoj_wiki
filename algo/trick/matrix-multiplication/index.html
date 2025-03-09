@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="FPTOJ được xây dựng với mục đích chia sẻ kiến thức Tin học đến với tất cả mọi người">
+      
       
       
         <link rel="canonical" href="https://wiki.fptoj.com/algo/trick/matrix-multiplication/">
@@ -17,7 +19,7 @@
         <link rel="next" href="../mitm/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../uploads/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nhan-ma-tran-matrix-multiplication" class="md-skip">
+        <a href="#mo-au" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +92,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="FPTOJ WIKI" class="md-header__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -172,6 +174,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -187,15 +191,148 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+      </div>
+    
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Trang chủ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../basic/backtracking/" class="md-tabs__link">
+          
+  
+  Thuật Toán
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cs/crypto/Cipher-Tools/" class="md-tabs__link">
+          
+  
+  Computer Science (Khoa học máy tính)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../languages/cpp/pointers/" class="md-tabs__link">
+          
+  
+  Ngôn Ngữ Lập Trình
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../translate/functional-programming-part-1/" class="md-tabs__link">
+          
+  
+  Dịch Thuật
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -209,8 +346,12 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="FPTOJ WIKI" class="md-nav__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -220,10 +361,61 @@
     FPTOJ WIKI
   </label>
   
+    <div class="md-nav__source">
+      <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
     
       
       
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Trang chủ
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Trang chủ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -233,7 +425,7 @@
         
   
   <span class="md-ellipsis">
-    Trang chủ
+    Home
     
   </span>
   
@@ -242,9 +434,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -263,9 +456,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -284,6 +478,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -296,15 +498,21 @@
     
     
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -316,8 +524,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Thuật Toán
           </label>
@@ -332,15 +540,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -352,8 +563,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Cơ Bản
           </label>
@@ -596,15 +807,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -616,8 +830,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Đại Số
           </label>
@@ -772,15 +986,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -792,8 +1009,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Cấu trúc dữ liệu
           </label>
@@ -1410,15 +1627,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1430,8 +1650,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             Quy hoạch động
           </label>
@@ -1586,15 +1806,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1606,8 +1829,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Games
           </label>
@@ -1652,15 +1875,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1672,8 +1898,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Hình học
           </label>
@@ -1762,15 +1988,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1782,8 +2011,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             Lý thuyết Đồ Thị
           </label>
@@ -2048,15 +2277,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2068,8 +2300,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             Toán
           </label>
@@ -2180,15 +2412,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2200,8 +2435,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             Tìm Kiếm
           </label>
@@ -2246,15 +2481,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
         
           
-          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2266,8 +2504,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             Kỹ Năng Thi
           </label>
@@ -2356,15 +2594,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
         
           
-          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2376,8 +2617,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_11">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
             <span class="md-nav__icon md-icon"></span>
             Xâu kí tự
           </label>
@@ -2512,15 +2753,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2532,8 +2776,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_12">
             <span class="md-nav__icon md-icon"></span>
             Mẹo
           </label>
@@ -2662,8 +2906,18 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Nhân ma trận (Matrix multiplication)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2675,6 +2929,461 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mo-au" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mở đầu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inh-nghia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định nghĩa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ma-tran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ma trận
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ma trận">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ma-tran-vuong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ma trận vuông
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ma-tran-on-vi-identity-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ma trận đơn vị (Identity Matrix)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-hang-va-vector-cot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector hàng và vector cột
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phep-nhan-ma-tran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phép nhân ma trận
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phép nhân ma trận">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tinh-chat-cua-phep-nhan-ma-tran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tính chất của phép nhân ma trận
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luy-thua-ma-tran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lũy thừa ma trận
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cai-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anh-gia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Đánh giá">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-phuc-tap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Độ phức tạp
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-tich" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cai-at_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anh-gia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-tich_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cai-at_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anh-gia_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-tich_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-tich_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cai-at_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anh-gia_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-tich_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cai-at_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anh-gia_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phep-nhan-ma-tran-cong-toi-thieu-min-plus-matrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phép nhân ma trận cộng tối thiểu (Min-plus matrix multiplication)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-tich_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phep-toan-ket-hop-va-o-phuc-tap-tinh-toan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phép toán kết hợp và độ phức tạp tính toán
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nhan-to-hop-day-ma-tran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nhân tổ hợp dãy ma trận
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giai-thuat-freivalds-kiem-tra-tich-hai-ma-tran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giải thuật Freivalds kiểm tra tích hai ma trận
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Giải thuật Freivalds kiểm tra tích hai ma trận">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phan-tich_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cai-at_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anh-gia_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-tap-ap-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài tập áp dụng
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2749,15 +3458,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2769,8 +3481,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Computer Science (Khoa học máy tính)
           </label>
@@ -2785,15 +3497,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2805,8 +3520,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Crypto
           </label>
@@ -2865,15 +3580,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2885,8 +3603,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             Cipher
           </label>
@@ -2939,15 +3657,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2959,8 +3680,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Xử lý ảnh
           </label>
@@ -3034,15 +3755,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3054,8 +3778,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Ngôn Ngữ Lập Trình
           </label>
@@ -3143,15 +3867,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3163,8 +3890,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Dịch Thuật
           </label>
@@ -3201,15 +3928,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3221,8 +3951,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             Codeforces
           </label>
@@ -3355,15 +4085,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3375,8 +4108,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             E-Maxx
           </label>
@@ -3443,15 +4176,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3463,8 +4199,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             Nâng Cao
           </label>
@@ -3685,15 +4421,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3705,8 +4444,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
             Máy học (Machine Learning - ML)
           </label>
@@ -3839,15 +4578,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3859,8 +4601,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
             Quora
           </label>
@@ -3905,15 +4647,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
-          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3925,8 +4670,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             Topcoder
           </label>
@@ -4279,15 +5024,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
         
           
-          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4299,8 +5047,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
             USACO
           </label>
@@ -4345,15 +5093,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
         
           
-          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4365,8 +5116,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
             Wcipeg
           </label>
@@ -4548,24 +5299,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -4574,8 +5307,12 @@
                   
 
 
+  
+  
 
-<h1 id="nhan-ma-tran-matrix-multiplication">Nhân ma trận (Matrix multiplication)</h1>
+
+  <h1>Nhân ma trận (Matrix multiplication)</h1>
+
 <p><strong>Nguồn</strong>: Biên soạn lại từ bài viết của Nguyễn <em>RR</em> Thành Trung, Nguyễn Mạnh Quân.</p>
 <p><strong>Tác giả</strong>: </p>
 <ul>
@@ -4589,11 +5326,11 @@
 <li>Trần Xuân Bách - HUS High School for Gifted Students</li>
 <li>Nguyễn Phú Bình - Hung Vuong High School for the Gifted, Binh Duong Province</li>
 </ul>
-<h1 id="mo-au">Mở đầu</h1>
+<h2 id="mo-au">Mở đầu<a class="headerlink" href="#mo-au" title="Permanent link">&para;</a></h2>
 <p>Thông thường, để đạt được độ phức tạp thuật toán như mong muốn, cách làm thường là tìm ra một thuật toán ban đầu làm cơ sở, rồi từ đó dùng các kỹ năng để giảm độ phức tạp của thuật toán. Trong bài viết này, tôi xin giới thiệu với bạn đọc một kỹ năng khá thông dụng: <strong>Nhân ma trận</strong>.</p>
-<h1 id="inh-nghia">Định nghĩa</h1>
+<h2 id="inh-nghia">Định nghĩa<a class="headerlink" href="#inh-nghia" title="Permanent link">&para;</a></h2>
 <p><strong>Tham khảo:</strong> <a href="https://vi.wikipedia.org/wiki/Ma_tr%E1%BA%ADn_(to%C3%A1n_h%E1%BB%8Dc)">Ma trận_wikipedia</a></p>
-<h2 id="ma-tran">Ma trận</h2>
+<h2 id="ma-tran">Ma trận<a class="headerlink" href="#ma-tran" title="Permanent link">&para;</a></h2>
 <p><strong>Ma trận</strong> là một mảng chữ nhật gồm các số, ký hiệu, hoặc biểu thức, sắp xếp theo hàng và cột mà mỗi ma trận tuân theo những quy tắc định trước. 
 Các ô trong ma trận được gọi là các phần tử của ma trận. Các phần tử được xác định bằng <span class="arithmatex">\(2\)</span> địa chỉ hàng <span class="arithmatex">\(i\)</span> và cột <span class="arithmatex">\(j\)</span> tương ứng (Kí hiệu là <span class="arithmatex">\(a_{ij}\)</span>).</p>
 <p>Ma trận thường được viết trong dấu ngoặc vuông: </p>
@@ -4605,7 +5342,7 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <p><span class="arithmatex">\(A = \begin{bmatrix} 1 &amp; 2 \newline 5 &amp; 7 \newline 6 &amp; 3 \end{bmatrix}\)</span></p>
 </li>
 </ul>
-<h3 id="ma-tran-vuong">Ma trận vuông</h3>
+<h3 id="ma-tran-vuong">Ma trận vuông<a class="headerlink" href="#ma-tran-vuong" title="Permanent link">&para;</a></h3>
 <p>Ma trận vuông là ma trận có số hàng và số cột bằng nhau. Ma trận <span class="arithmatex">\((n \times n)\)</span> còn gọi là ma trận vuông cấp <span class="arithmatex">\(n\)</span>. Các phần tử <span class="arithmatex">\(a_{ii}\)</span> tạo thành <strong>đường chéo chính</strong> của ma trận vuông.</p>
 <ul>
 <li>
@@ -4613,7 +5350,7 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <div class="arithmatex">\[\begin{bmatrix} 1 &amp; 2 &amp; 0 \newline 3 &amp; 0 &amp; 1 \newline 2 &amp; 3 &amp; 1 \end{bmatrix}\]</div>
 </li>
 </ul>
-<h3 id="ma-tran-on-vi-identity-matrix">Ma trận đơn vị (Identity Matrix)</h3>
+<h3 id="ma-tran-on-vi-identity-matrix">Ma trận đơn vị (Identity Matrix)<a class="headerlink" href="#ma-tran-on-vi-identity-matrix" title="Permanent link">&para;</a></h3>
 <p>Ma trận đơn vị <span class="arithmatex">\(I_n\)</span> cấp <span class="arithmatex">\(n\)</span> là một ma trận <span class="arithmatex">\((n \times n)\)</span> trong đó mọi phần tử trên <a href="https://vi.wikipedia.org/wiki/%C4%90%C6%B0%E1%BB%9Dng_ch%C3%A9o_ch%C3%ADnh">đường chéo chính</a> bằng <span class="arithmatex">\(1\)</span> và tất cả những phần tử khác đều bằng <span class="arithmatex">\(0\)</span>. Ma trận đơn vị cấp <span class="arithmatex">\(n\)</span> cũng chính là ma trận vuông cấp <span class="arithmatex">\(n\)</span>.</p>
 <ul>
 <li>
@@ -4624,7 +5361,7 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <p><span class="arithmatex">\(I_n = \begin{bmatrix} 1 &amp; 0 &amp; ... &amp; 0 \newline 0 &amp; 1 &amp; ... &amp; 0 \newline \vdots &amp; \vdots &amp; \ddots &amp; \vdots \newline 0 &amp; 0 &amp; ... &amp; 1 \end{bmatrix}\)</span></p>
 </li>
 </ul>
-<h3 id="vector-hang-va-vector-cot">Vector hàng và vector cột</h3>
+<h3 id="vector-hang-va-vector-cot">Vector hàng và vector cột<a class="headerlink" href="#vector-hang-va-vector-cot" title="Permanent link">&para;</a></h3>
 <p><strong>Vector hàng</strong> hay <strong>ma trận hàng</strong> là một ma trận <span class="arithmatex">\((1 \times n)\)</span>, tức là ma trận chỉ gồm một một hàng đơn gồm <span class="arithmatex">\(n\)</span> phần tử.</p>
 <p><span class="arithmatex">\(\mathbf{a} = \begin{bmatrix} a_1 &amp; a_2 &amp; ... &amp; a_n \end{bmatrix}\)</span></p>
 <p><strong>Vector cột</strong> hay <strong>ma trận cột</strong> là một ma trận <span class="arithmatex">\((m \times 1)\)</span>, tức là ma trận chỉ gồm một cột đơn gồm <span class="arithmatex">\(m\)</span> phần tử.</p>
@@ -4632,7 +5369,7 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <p>Ta định nghĩa tích của vector hàng <span class="arithmatex">\(\mathbf{a}\)</span> <span class="arithmatex">\((1 \times n)\)</span> với vector cột <span class="arithmatex">\(\mathbf{b}\)</span> <span class="arithmatex">\((n \times 1)\)</span> tương đương với <a href="https://vi.wikipedia.org/wiki/T%C3%ADch_v%C3%B4_h%C6%B0%E1%BB%9Bng">tích vô hướng</a> của hai vector <span class="arithmatex">\(\mathbf{a}\)</span> và <span class="arithmatex">\(\mathbf{b}\)</span>.</p>
 <p><span class="arithmatex">\(\mathbf{a} \cdot \mathbf{b} = \begin{bmatrix} a_1 &amp; a_2 &amp; ... &amp; a_n \end{bmatrix} \begin{bmatrix} b_1 \newline b_2 \newline \vdots \newline b_n \end{bmatrix} = \displaystyle\sum_{i = 1}^{n} a_{i} b_{i} = a_1b_1+a_2b_2+...+a_nb_n\)</span></p>
 <p><strong>Tham khảo:</strong> <a href="https://vi.wikipedia.org/wiki/Vect%C6%A1_h%C3%A0ng_v%C3%A0_c%E1%BB%99t">Vector hàng và cột</a></p>
-<h2 id="phep-nhan-ma-tran">Phép nhân ma trận</h2>
+<h2 id="phep-nhan-ma-tran">Phép nhân ma trận<a class="headerlink" href="#phep-nhan-ma-tran" title="Permanent link">&para;</a></h2>
 <p>Phép nhân hai ma trận chỉ thực hiện được khi số lượng cột trong ma trận thứ nhất phải bằng số lượng hàng trong ma trận thứ hai. Ma trận kết quả, được gọi là <strong>tích ma trận</strong>, có số lượng hàng của ma trận đầu tiên và số cột của ma trận thứ hai. </p>
 <p>Nếu ma trận <span class="arithmatex">\(A\)</span> có kích thước <span class="arithmatex">\((m \times n)\)</span> và ma trận <span class="arithmatex">\(B\)</span> có kích thước <span class="arithmatex">\((n \times p)\)</span>, thì ma trận tích <span class="arithmatex">\(C = A \times B\)</span> có kích thước <span class="arithmatex">\((m \times p)\)</span>, phần tử đứng ở hàng thứ <span class="arithmatex">\(i\)</span>, cột thứ <span class="arithmatex">\(j\)</span> xác định bởi công thức:</p>
 <p><span class="arithmatex">\(C_{ij} = A_{i1} B_{1j} + A_{i2} B_{2j} + ... + A_{in} B_{nj} = \displaystyle\sum_{k = 1}^{n} A_{ik} B_{kj}\)</span> (Với <span class="arithmatex">\(1 \le i \le m; 1 \le j \le p\)</span>)</p>
@@ -4652,8 +5389,8 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <p>Mô tả quá trình nhân ma trận:</p>
 </li>
 </ul>
-<p><img alt="" src="https://i.imgur.com/k2XpJwF.gif" /></p>
-<h3 id="tinh-chat-cua-phep-nhan-ma-tran">Tính chất của phép nhân ma trận</h3>
+<p><img alt="" src="../../../uploads/k2XpJwF.gif" /></p>
+<h3 id="tinh-chat-cua-phep-nhan-ma-tran">Tính chất của phép nhân ma trận<a class="headerlink" href="#tinh-chat-cua-phep-nhan-ma-tran" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Tính chất kết hợp: <span class="arithmatex">\((AB)C = A(BC)\)</span>.</li>
 <li>Tính chất phân phối: <span class="arithmatex">\((A+B)C = AC+BC\)</span>, cũng như <span class="arithmatex">\(C(A+B) = CA+CB\)</span>. </li>
@@ -4668,7 +5405,7 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 </li>
 </ul>
 <p>Bạn có thể tìm hiểu thêm về <strong>phép cộng trừ ma trận</strong> tại <a href="https://vi.wikipedia.org/wiki/Ph%C3%A9p_c%E1%BB%99ng_ma_tr%E1%BA%ADn">đây</a>.</p>
-<h2 id="luy-thua-ma-tran">Lũy thừa ma trận</h2>
+<h2 id="luy-thua-ma-tran">Lũy thừa ma trận<a class="headerlink" href="#luy-thua-ma-tran" title="Permanent link">&para;</a></h2>
 <p>Cho ma trận vuông <span class="arithmatex">\(A\)</span> cấp <span class="arithmatex">\(n\)</span>. Khi đó ta có phép tính ma trận <span class="arithmatex">\(A\)</span> lũy thừa <span class="arithmatex">\(k\)</span> (kí hiệu: <span class="arithmatex">\(A^k\)</span>), với <span class="arithmatex">\(k\)</span> là một số nguyên không âm.</p>
 <p><span class="arithmatex">\(A^k = \underbrace{A \times A \times A \times ... \times A}_\text{k}\)</span></p>
 <p><strong>Trường hợp đặc biệt</strong>: Với <span class="arithmatex">\(k = 0\)</span>, ma trận <span class="arithmatex">\(A^0\)</span> được xác định là <strong>ma trận đơn vị</strong> có cùng kích thước, tức là <span class="arithmatex">\(A^0 = I_n\)</span>.</p>
@@ -4682,9 +5419,9 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 </li>
 </ul>
 <p>Nhờ <strong>tính chất kết hợp</strong> của phép nhân ma trận nên ta có thể tính nhanh lũy thừa của ma trận tương tự như cách tính hàm mũ thông thường  bằng phương pháp <strong>chia để trị</strong>  (tính <span class="arithmatex">\(a^k\)</span> với <span class="arithmatex">\(a\)</span> là số nguyên). Bạn có thể tìm hiểu về cách tính hàm mũ tại <a href="/translate/he/Number-Theory-3">đây</a>.</p>
-<h1 id="cai-at">Cài đặt</h1>
+<h2 id="cai-at">Cài đặt<a class="headerlink" href="#cai-at" title="Permanent link">&para;</a></h2>
 <p><strong>Lưu ý:</strong> Khác với định nghĩa bên trên, trong cách cài đặt sau, các hàng và cột của ma trận được đánh số bắt đầu từ <span class="arithmatex">\(0\)</span> để thuận tiện cho việc xử lí.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -4804,7 +5541,7 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <span class="p">}</span>
 </code></pre></div>
 <p>Bạn có thể tham khảo thêm cách cài đặt khác tại <a href="https://isocpp.org/wiki/faq/operator-overloading#matrix-subscript-op">đây</a>.</p>
-<h2 id="anh-gia">Đánh giá</h2>
+<h2 id="anh-gia">Đánh giá<a class="headerlink" href="#anh-gia" title="Permanent link">&para;</a></h2>
 <p>Ngoài cách cài đặt tính <strong>lũy thừa ma trên</strong> như trên thì ta còn có thể cài đặt theo một cách khác bằng đệ quy như sau:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Matrix</span><span class="w"> </span><span class="nf">pow</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">exp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">Matrix</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span>
@@ -4816,18 +5553,18 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="o-phuc-tap"><strong>Độ phức tạp</strong></h3>
+<h3 id="o-phuc-tap"><strong>Độ phức tạp</strong><a class="headerlink" href="#o-phuc-tap" title="Permanent link">&para;</a></h3>
 <p><strong>Nhân ma trận:</strong> Với ma trận <span class="arithmatex">\(A\)</span> kích thước <span class="arithmatex">\((m \times n)\)</span> và ma trận <span class="arithmatex">\(B\)</span> kích thước <span class="arithmatex">\((n \times p)\)</span>. Độ phức tạp của thuật toán để tính <span class="arithmatex">\(A \times B\)</span> là <span class="arithmatex">\(\mathcal{O}(m \times n \times p)\)</span>.</p>
 <ul>
 <li><strong>Ghi chú:</strong> Đối với phép nhân các ma trận vuông kích thước <span class="arithmatex">\((n \times n)\)</span>, có thuật toán nhân ma trận <a href="https://en.wikipedia.org/wiki/Strassen_algorithm">Strassen</a> với độ phức tạp <span class="arithmatex">\(\mathcal{O}(n^{\log_2{7}}) \approx \mathcal{O}(n^{2.807})\)</span> theo tư tưởng chia nhỏ ma trận (tương tự cách nhân nhanh <span class="arithmatex">\(2\)</span> số lớn). Tuy nhiên cài đặt rất phức tạp và trên thực tế với giá trị <span class="arithmatex">\(n\)</span> thường gặp, cách này không chạy nhanh hơn nhân ma trận thông thường <span class="arithmatex">\(\mathcal{O}(n^3)\)</span>.</li>
 </ul>
 <p><strong>Lũy thừa ma trận:</strong> Với ma trận vuông <span class="arithmatex">\(A\)</span> cấp <span class="arithmatex">\(n\)</span>, thuật toán tính <span class="arithmatex">\(A^k\)</span> có độ phức tạp <span class="arithmatex">\(\mathcal{O}(n^3 \times \log{k})\)</span>.</p>
-<h1 id="vi-du-1">Ví dụ 1</h1>
+<h2 id="vi-du-1">Ví dụ 1<a class="headerlink" href="#vi-du-1" title="Permanent link">&para;</a></h2>
 <p>Chúng ta hãy cùng xem xét một ví dụ kinh điển nhất trong ứng dụng của phép nhân ma trận.</p>
-<h2 id="bai-toan">Bài toán</h2>
+<h2 id="bai-toan">Bài toán<a class="headerlink" href="#bai-toan" title="Permanent link">&para;</a></h2>
 <p><a href="https://oj.vnoi.info/problem/latgach4">LATGACH4 - Lát gạch 4</a></p>
 <p>Cho một hình chữ nhật kích thước <span class="arithmatex">\(2 \times N\)</span> <span class="arithmatex">\((1 \le N \le 10^9)\)</span>. Hãy đếm số cách lát các viên gạch nhỏ kích thước <span class="arithmatex">\(1 \times 2\)</span> và <span class="arithmatex">\(2 \times 1\)</span> vào hình trên sao cho không có phần nào của các viên gạch nhỏ thừa ra ngoài, cũng không có vùng diện tích nào của hình chữ nhật không được lát.</p>
-<h2 id="phan-tich">Phân tích</h2>
+<h2 id="phan-tich">Phân tích<a class="headerlink" href="#phan-tich" title="Permanent link">&para;</a></h2>
 <p>Gọi <span class="arithmatex">\(F_i\)</span> là số cách lát các viên gạch nhỏ vào hình chữ nhật kích thước <span class="arithmatex">\(2 \times i\)</span>. Ta có:</p>
 <ul>
 <li>Nếu sử dụng viên gạch kích thước <span class="arithmatex">\(1 \times 2\)</span> thì <span class="arithmatex">\(F_i = F_{i - 2}\)</span>.</li>
@@ -4869,9 +5606,9 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <p><span class="arithmatex">\(\Rightarrow \begin{bmatrix} F_N \newline F_{N-1} \end{bmatrix} = A^{N-1} \times \begin{bmatrix} F_1 \newline F_0 \end{bmatrix} = \begin{bmatrix} 1 &amp; 1 \newline 1 &amp; 0 \end{bmatrix} ^{N-1} \times \begin{bmatrix} 1 \newline 1 \end{bmatrix}\)</span> (vì <span class="arithmatex">\(F_0 = 1\)</span> và <span class="arithmatex">\(F_1 = 1\)</span>)</p>
 <p>Ma trận <span class="arithmatex">\(A\)</span> còn được gọi là <strong>ma trận hệ số</strong> và ma trận <span class="arithmatex">\(\begin{bmatrix} F_1 \newline F_0 \end{bmatrix}\)</span> được gọi là <strong>ma trận cơ sở</strong>.</p>
 <p>Vậy bài toán trên được đưa về dạng <strong>nhân ma trận</strong>. <span class="arithmatex">\(F_N\)</span> được tính dựa vào phép lũy thừa của ma trận <span class="arithmatex">\(A\)</span>    .</p>
-<h2 id="cai-at_1">Cài đặt</h2>
+<h2 id="cai-at_1">Cài đặt<a class="headerlink" href="#cai-at_1" title="Permanent link">&para;</a></h2>
 <p><strong>Lưu ý:</strong> Khác với định nghĩa bên trên. Trong cách cài đặt sau, các hàng và cột của ma trận được đánh số bắt đầu từ <span class="arithmatex">\(0\)</span> để thuận tiện cho việc xử lí.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -4948,12 +5685,12 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="anh-gia_1">Đánh giá</h2>
+<h2 id="anh-gia_1">Đánh giá<a class="headerlink" href="#anh-gia_1" title="Permanent link">&para;</a></h2>
 <p><strong>Độ phức tạp</strong></p>
 <p>Độ phức tạp của thuật toán là <span class="arithmatex">\(\mathcal{O}(T \times 2^3 \times \log{N})\)</span>. Với <span class="arithmatex">\(T\)</span> là số lượng bộ test.</p>
-<h1 id="vi-du-2">Ví dụ 2</h1>
+<h2 id="vi-du-2">Ví dụ 2<a class="headerlink" href="#vi-du-2" title="Permanent link">&para;</a></h2>
 <p>Bây giờ chúng ta sẽ cùng xem xét một ví dụ tổng quát hơn của <strong>ví dụ 1</strong>.</p>
-<h2 id="bai-toan_1">Bài toán</h2>
+<h2 id="bai-toan_1">Bài toán<a class="headerlink" href="#bai-toan_1" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.spoj.com/problems/SEQ">SEQ - Recursive Sequence</a></p>
 <p>Cho <span class="arithmatex">\(2\)</span> dãy số nguyên độ dài <span class="arithmatex">\(k\)</span> (<span class="arithmatex">\(1 \le k \le 10\)</span>) là <span class="arithmatex">\(b_1, b_2, ..., b_k\)</span> và <span class="arithmatex">\(c_1, c_2, ..., c_k\)</span> <span class="arithmatex">\((0 \le b_i, c_i \le 10^9\)</span> với <span class="arithmatex">\(1 \le i \le k)\)</span>. Dãy số <span class="arithmatex">\(a\)</span> được xác định như sau:</p>
 <ul>
@@ -4961,7 +5698,7 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <li><span class="arithmatex">\(a_i = c_1 \times a_{i-1} + c_2 \times a_{i-2} + ... + c_k \times a_{i-k}\)</span> (với <span class="arithmatex">\(i &gt; k\)</span>)</li>
 </ul>
 <p><strong>Yêu cầu:</strong> Tính <span class="arithmatex">\(a_n\)</span> với <span class="arithmatex">\(n \le 10^9\)</span>. Đáp án in ra theo <em>modulo</em> <span class="arithmatex">\(10^9\)</span>.</p>
-<h2 id="phan-tich_1">Phân tích</h2>
+<h2 id="phan-tich_1">Phân tích<a class="headerlink" href="#phan-tich_1" title="Permanent link">&para;</a></h2>
 <p>Cũng như trong <strong>ví dụ 1</strong>, ta xét các lớp số:</p>
 <ul>
 <li>Lớp <span class="arithmatex">\(1\)</span>: <span class="arithmatex">\(a_1, a_2, ..., a_k\)</span></li>
@@ -4983,9 +5720,9 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <p><span class="arithmatex">\(\Rightarrow D = \begin{bmatrix} 0 &amp; 1 &amp; 0 &amp; ... &amp; 0 \newline 0 &amp; 0 &amp; 1 &amp; ... &amp; 0 \newline \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \newline 0 &amp; 0 &amp; 0 &amp; ... &amp; 1 \newline c_k &amp; c_{k-1} &amp; c_{k-2} &amp; ... &amp; c_1 \end{bmatrix}\)</span></p>
 <p>Từ đó, ta thu được cách làm như trong <strong>ví dụ 1</strong>. Vì ta cần tính <span class="arithmatex">\(a_n\)</span> nên chỉ cần xác định đến lớp <span class="arithmatex">\(n - k + 1\)</span>.</p>
 <p><span class="arithmatex">\(\Rightarrow \begin{bmatrix} a_{n - k + 1} \newline a_{n - k + 2} \newline \vdots \newline a_{n-1} \newline a_{n} \end{bmatrix} = D^{n - k} \times \begin{bmatrix} a_1 \newline a_2 \newline \vdots \newline a_{k-1} \newline a_k \end{bmatrix} = D^{n - k} \times \begin{bmatrix} b_1 \newline b_2 \newline \vdots \newline b_{k-1} \newline b_k \end{bmatrix}\)</span> (vì <span class="arithmatex">\(a_i = b_i\)</span> với <span class="arithmatex">\(1 \le i \le k\)</span>)</p>
-<h2 id="cai-at_2">Cài đặt</h2>
+<h2 id="cai-at_2">Cài đặt<a class="headerlink" href="#cai-at_2" title="Permanent link">&para;</a></h2>
 <p><strong>Lưu ý:</strong> Khác với định nghĩa bên trên. Trong cách cài đặt sau, các hàng và cột của ma trận được đánh số bắt đầu từ <span class="arithmatex">\(0\)</span> để thuận tiện cho việc xử lí.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -5074,11 +5811,11 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="anh-gia_2">Đánh giá</h2>
+<h2 id="anh-gia_2">Đánh giá<a class="headerlink" href="#anh-gia_2" title="Permanent link">&para;</a></h2>
 <p><strong>Độ phức tạp</strong></p>
 <p>Độ phức tạp của thuật toán là <span class="arithmatex">\(\mathcal{O}(t \times k ^ 3 \times \log{(n - k)})\)</span>. Với <span class="arithmatex">\(t\)</span> là số lượng bộ test.</p>
-<h1 id="vi-du-3">Ví dụ 3</h1>
-<h2 id="bai-toan_2">Bài toán</h2>
+<h2 id="vi-du-3">Ví dụ 3<a class="headerlink" href="#vi-du-3" title="Permanent link">&para;</a></h2>
+<h2 id="bai-toan_2">Bài toán<a class="headerlink" href="#bai-toan_2" title="Permanent link">&para;</a></h2>
 <p><a href="https://oj.vnoi.info/problem/thbac/">VNOJ - THBAC</a></p>
 <p>Người ta mới tìm ra một loại vi khuẩn mới. Chúng sống thành <span class="arithmatex">\(N\)</span> bầy <span class="arithmatex">\((N \le 100)\)</span>, đánh số từ <span class="arithmatex">\(0\)</span> đến <span class="arithmatex">\(N-1\)</span>. Ban đầu, mỗi bầy này chỉ có một con vi khuẩn. Tuy nhiên, mỗi giây, số lượng vi khuẩn trong các bầy lại có sự thay đổi: Một số vi khuẩn có thể chết đi, sinh sản thêm, hoặc di chuyển sang bầy khác. Những thay đổi này luôn tuân theo một quy luật có sẵn. Tại mỗi giây chỉ xảy ra đúng một quy luật. Các quy luật này được thực hiện nối tiếp nhau và theo chu kỳ. Có nghĩa là, nếu đánh số các quy luật từ <span class="arithmatex">\(0\)</span> đến <span class="arithmatex">\(M-1\)</span>, tại giây thứ <span class="arithmatex">\(S\)</span> thì quy luật được áp dụng sẽ là <span class="arithmatex">\((S-1) \bmod M\)</span> <span class="arithmatex">\((M \le 1000)\)</span>.</p>
 <p>Nhiệm vụ của bạn là tìm xem, với một bộ các quy luật cho trước, sau <span class="arithmatex">\(T\)</span> đơn vị thời gian <span class="arithmatex">\((T \le 10^{18})\)</span>, mỗi bầy có bao nhiêu vi khuẩn.</p>
@@ -5091,7 +5828,7 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <li><code>E i j</code> : Các vi khuẩn thuộc bầy <span class="arithmatex">\(i\)</span> và bầy <span class="arithmatex">\(j\)</span> đổi vị trí cho nhau.</li>
 <li><code>F 0 0</code> : Vị trí các vi khuẩn di chuyển trên vòng tròn. Nghĩa là các vi khuẩn ở bầy <span class="arithmatex">\(i\)</span> di chuyển sang bầy <span class="arithmatex">\((i +1) \space mod \space N\)</span>. Các di chuyển xảy ra đồng thời.</li>
 </ul>
-<h2 id="phan-tich_2">Phân tích</h2>
+<h2 id="phan-tich_2">Phân tích<a class="headerlink" href="#phan-tich_2" title="Permanent link">&para;</a></h2>
 <p>Cách làm đơn giản nhất là chúng ta mô phỏng lại số lượng vi khuẩn trong mỗi bầy qua từng đơn vị thời gian. Cách làm này có độ phức tạp <span class="arithmatex">\(\mathcal{O}(T \times N \times k)\)</span> với <span class="arithmatex">\(\mathcal{O}(k)\)</span> là độ phức tạp cho xử lý số lớn. Cách này không thể chạy được với <span class="arithmatex">\(T\)</span> lớn.</p>
 <p>Ta hình dung số lượng vi khuẩn trong mỗi bầy trong một đơn vị thời gian là một dãy số. Như vậy, mỗi quy luật cho trước thực chất là một phép biến đổi từ một dãy số thành một dãy số mới, và ta hoàn toàn có thể thực hiện biến đổi này bằng một phép nhân ma trận.</p>
 <p>Cụ thể hơn, ta coi số lượng vi khuẩn trong <span class="arithmatex">\(N\)</span> bầy tại một thời điểm xác định là một ma trận <span class="arithmatex">\(1 \times N\)</span>, và mỗi phép biến đổi là một ma trận <span class="arithmatex">\(N \times N\)</span>. Khi áp dụng mỗi phép biến đổi, ta nhân hai ma trận nói trên với nhau.</p>
@@ -5152,11 +5889,11 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <p>Đặt <span class="arithmatex">\(S = [1, 1, ..., 1]\)</span> (dãy số lượng vi khuẩn tại thời điểm đầu tiên).</p>
 <p>Như vậy, <span class="arithmatex">\(Y = S \times X^t \times X_1 \times X_2 \times ... \times X_r\)</span> là ma trận thể hiện số lượng vi khuẩn tại thời điểm <span class="arithmatex">\(M \times t + r\)</span>.</p>
 <p>Như vậy, thuật toán đến đây đã rõ. Ta phân tích <span class="arithmatex">\(T = M \times t + r\)</span>, nhờ đó, ta có thể giải quyết bài toán trong <span class="arithmatex">\(\mathcal{O}(N^3 \times M)\)</span> cho bước tính ma trận <span class="arithmatex">\(X\)</span> và <span class="arithmatex">\(\mathcal{O}(N^3 \times (\log{T/M} + M))\)</span> cho bước tính <span class="arithmatex">\(Y\)</span>. Bài toán được giải quyết.</p>
-<h1 id="vi-du-4">Ví dụ 4</h1>
-<h2 id="bai-toan_3">Bài toán</h2>
+<h2 id="vi-du-4">Ví dụ 4<a class="headerlink" href="#vi-du-4" title="Permanent link">&para;</a></h2>
+<h2 id="bai-toan_3">Bài toán<a class="headerlink" href="#bai-toan_3" title="Permanent link">&para;</a></h2>
 <p><a href="https://oj.vnoi.info/problem/beautynumbers">beautynumbers - Số đẹp</a></p>
 <p>Số đẹp là một số nguyên dương với bất kỳ chữ số lẻ nào <span class="arithmatex">\((1, 3, 5, 7, 9)\)</span> đều xuất hiện lẻ lần nếu nó xuất hiện và bất kỳ chữ số chẵn nào <span class="arithmatex">\((0, 2, 4, 6, 8)\)</span> cũng xuấn hiện chẵn lần nếu nó xuất hiện. Ví dụ số <span class="arithmatex">\(141222124\)</span> là một số đẹp. Gọi <span class="arithmatex">\(f_n\)</span> là số lượng số đẹp có không quá <span class="arithmatex">\(n\)</span> chữ số. Yêu cầu với một số <span class="arithmatex">\(n\)</span> <span class="arithmatex">\((1 \le n \le 10^{18})\)</span> tính <span class="arithmatex">\(f_n \bmod 1000000123\)</span>.</p>
-<h2 id="phan-tich_3">Phân tích</h2>
+<h2 id="phan-tich_3">Phân tích<a class="headerlink" href="#phan-tich_3" title="Permanent link">&para;</a></h2>
 <p>Cách làm đơn giản nhất là ta sử dụng <a href="/translate/topcoder/dynamic-programming">quy hoạch động</a> với <span class="arithmatex">\(4\)</span> trạng thái: </p>
 <ul>
 <li><code>added</code> : số lượng chữ số đã thêm vào.</li>
@@ -5166,7 +5903,7 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 </ul>
 <p>Ta không phải lưu <strong>số chữ số chẵn đã xuất hiện</strong> vì nếu chữ số chẵn đó không xuất hiện thì cũng đã được tính vào trường hợp nó đã xuất hiện chẵn lần rồi.</p>
 <p>Do đó, ta có công thức quy hoạch động theo như code sau:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -5233,9 +5970,9 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <p>Tuy nhiên, với <span class="arithmatex">\(n \le 10^{18}\)</span> thì hiển nhiên thuật toán trên sẽ bị quá cả thời gian lẫn bộ nhớ.</p>
 <p>Do đó, ta cần phải cải tiến thuật toán bằng <strong>lũy thừa ma trận</strong> với số trạng thái cho <span class="arithmatex">\(1\)</span> lớp <span class="arithmatex">\(\mathrm{dp}\)</span> là <span class="arithmatex">\(6 \times 6 \times 6 \space / \space 2 = 108\)</span>.</p>
 <p>Tối ưu hóa thuật toán bằng cách tách <span class="arithmatex">\(n\)</span> thành các lũy thừa của <span class="arithmatex">\(2\)</span> sau đó sử dụng các ma trận hệ số tương ứng đã tính toán trước để tính nhanh kết quả.</p>
-<h2 id="cai-at_3">Cài đặt</h2>
+<h2 id="cai-at_3">Cài đặt<a class="headerlink" href="#cai-at_3" title="Permanent link">&para;</a></h2>
 <p><strong>Lưu ý:</strong> Trong cách cài đặt sau, các hàng và cột của ma trận được đánh số bắt đầu từ <span class="arithmatex">\(0\)</span> để thuận tiện cho việc xử lí.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -5354,13 +6091,13 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="anh-gia_3">Đánh giá</h2>
+<h2 id="anh-gia_3">Đánh giá<a class="headerlink" href="#anh-gia_3" title="Permanent link">&para;</a></h2>
 <p><strong>Độ phức tạp</strong></p>
 <p>Ta mất độ phức tạp <span class="arithmatex">\(\mathcal{O}(6 \times 6 \times 6 \space / \space 2)\)</span> cho việc xây dựng ma trận hệ số. </p>
 <p>Vì ma trận kết quả có kích thước là <span class="arithmatex">\((\)</span>(số trạng thái) <span class="arithmatex">\(\times \space 1)\)</span> chứ không phải là <span class="arithmatex">\((\)</span>(số trạng thái) <span class="arithmatex">\(\times\)</span> (số trạng thái)<span class="arithmatex">\()\)</span>, nên độ phức tạp nhân ma trận trong lúc tính kết quả là (số trạng thái)<span class="arithmatex">\(^2\)</span> chứ không phải (số trạng thái)<span class="arithmatex">\(^3\)</span>. Nên độ phức tạp của thuật toán là  <span class="arithmatex">\(\mathcal{O}(\log{10^{18}} \times 108^2)\)</span>.</p>
 <p>Ngoài ra, kể cả khi ta không giảm số trạng thái xuống còn khoảng <span class="arithmatex">\(6 \times 6 \times 6 \space / \space 2\)</span> thì thuật toán này vẫn đủ tốt.</p>
-<h1 id="vi-du-5">Ví dụ 5</h1>
-<h2 id="bai-toan_4">Bài toán</h2>
+<h2 id="vi-du-5">Ví dụ 5<a class="headerlink" href="#vi-du-5" title="Permanent link">&para;</a></h2>
+<h2 id="bai-toan_4">Bài toán<a class="headerlink" href="#bai-toan_4" title="Permanent link">&para;</a></h2>
 <p><a href="https://codeforces.com/contest/446/problem/C">Codeforces - 446C DZY Loves Fibonacci Numbers</a></p>
 <p>Dãy <span class="arithmatex">\(Fibonacci\)</span> được định nghĩa như sau:</p>
 <ul>
@@ -5375,7 +6112,7 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <li>Dạng 2: <code>2 l r</code> : In ra giá trị của <span class="arithmatex">\(\displaystyle\sum_{i = l}^{r} a_{i}\)</span> theo <em>modulo</em> <span class="arithmatex">\(10^9 + 9\)</span> .</li>
 </ul>
 <p>Hãy thực hiện tất cả các truy vấn.</p>
-<h2 id="phan-tich_4">Phân tích</h2>
+<h2 id="phan-tich_4">Phân tích<a class="headerlink" href="#phan-tich_4" title="Permanent link">&para;</a></h2>
 <p>Bằng phương pháp quy nạp, ta có thể dễ dàng chứng minh <span class="arithmatex">\(2\)</span> định lý sau:</p>
 <ul>
 <li><strong>Định lí 1:</strong> Cho dãy <span class="arithmatex">\(f_1 = a, f_2 = b, ..., f_n = f_{n-1} + f_{n-2} \space (n &gt; 2)\)</span> thì <span class="arithmatex">\(f_n = b \times F_{n-1} + a \times F_{n-2} \space (n &gt; 2)\)</span>, trong đó <span class="arithmatex">\(F_i\)</span> là số hạng thứ <span class="arithmatex">\(i\)</span> của dãy <span class="arithmatex">\(Fibonacci\)</span>.</li>
@@ -5388,9 +6125,9 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 </ul>
 <p>Sau khi sử dụng các tính chất trên, bài toán trở thành một hoạt động rất cơ bản của <a href="/algo/data-structures/segment-tree-extend.md">cây phân đoạn</a> <em>(Cây IT - Interval Tree / Segment Tree)</em>. Với mỗi nút của cây phân đoạn lưu lại hai giá trị đầu tiên của dãy. <em>Bạn có thể tham khảo code <strong>không</strong> sử dụng phương pháp nhân ma trận tại <a href="https://ideone.com/zRN7N1">đây</a> để hiểu rõ hơn về cách cập nhật cây phân đoạn</em>.</p>
 <p>Ở bài viết này, tôi sẽ sử dụng phương pháp <strong>nhân ma trận</strong> kết hợp với cây phân đoạn để giải quyết bài toán. Với mỗi nút của cây sẽ lưu lại ma trận hệ số của dãy <span class="arithmatex">\(Fibonacci\)</span>.</p>
-<h2 id="cai-at_4">Cài đặt</h2>
+<h2 id="cai-at_4">Cài đặt<a class="headerlink" href="#cai-at_4" title="Permanent link">&para;</a></h2>
 <p><strong>Lưu ý:</strong> Trong cách cài đặt sau, các hàng và cột của ma trận được đánh số bắt đầu từ <span class="arithmatex">\(0\)</span> để thuận tiện cho việc xử lí.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -5518,16 +6255,16 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="anh-gia_4">Đánh giá</h2>
+<h2 id="anh-gia_4">Đánh giá<a class="headerlink" href="#anh-gia_4" title="Permanent link">&para;</a></h2>
 <p>Ở thuật toán này, ta sử dụng mảng tĩnh để lưu ma trận thay vì sử dụng mảng động <em>(Vector)</em> như những bài toán trước. Vì số lượng ma trận phải lưu lên đến <span class="arithmatex">\(4 \times n\)</span> nên việc khai báo mảng động sẽ khiến thuật toán bị quá thời gian.</p>
 <p><strong>Độ phức tạp</strong></p>
 <p>Với mỗi truy vấn, ta sẽ mất độ phức tạp <span class="arithmatex">\(\mathcal{O}(\log{N})\)</span> cho các thao tác trên cây phân đoạn. Và ta cũng mất thêm <span class="arithmatex">\(\mathcal{O}(2^2)\)</span> và <span class="arithmatex">\(\mathcal{O}(2^3)\)</span> cho các phép cộng và phép nhân ma trận. Nhìn chung, độ phức tạp của thuật toán là <span class="arithmatex">\(\mathcal{O}(m \times \log{N} \times 2^3)\)</span>.</p>
-<h1 id="vi-du-6">Ví dụ 6</h1>
-<h2 id="phep-nhan-ma-tran-cong-toi-thieu-min-plus-matrix-multiplication">Phép nhân ma trận cộng tối thiểu (Min-plus matrix multiplication)</h2>
+<h2 id="vi-du-6">Ví dụ 6<a class="headerlink" href="#vi-du-6" title="Permanent link">&para;</a></h2>
+<h2 id="phep-nhan-ma-tran-cong-toi-thieu-min-plus-matrix-multiplication">Phép nhân ma trận cộng tối thiểu (Min-plus matrix multiplication)<a class="headerlink" href="#phep-nhan-ma-tran-cong-toi-thieu-min-plus-matrix-multiplication" title="Permanent link">&para;</a></h2>
 <p><strong>Tham khảo:</strong> <a href="https://en.wikipedia.org/wiki/Min-plus_matrix_multiplication">Min-plus matrix multiplication</a></p>
 <p>Nhận thấy rằng, ta hoàn toàn có thể thay thế phép nhân và phép cộng trong định nghĩa phép nhân ma trận, chỉ cần đảm bảo giữ nguyên tính chất kết hợp. Cụ thể hơn, với <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span> là hai ma trận vuông cấp <span class="arithmatex">\(n\)</span>, thay vì <span class="arithmatex">\(C_{ij} = \displaystyle\sum_{k = 1}^{n} A_{ik} B_{kj}\)</span> , ta có thể định nghĩa phép "nhân ma trận" mới như sau: <span class="arithmatex">\(C_{ij} = \displaystyle\min_{k = 1}^{n} (A_{ik} + B_{kj}\)</span>). Nó còn được gọi là <strong>phép nhân ma trận cộng tối thiểu</strong> hay <strong>tích ma trận khoảng cách</strong>.</p>
 <p>Từ đó, ta có thể thu được một lớp các bài toán khác. Sau đây là một ví dụ minh hoạ cho nhóm các bài toán này.</p>
-<h2 id="bai-toan_5">Bài toán</h2>
+<h2 id="bai-toan_5">Bài toán<a class="headerlink" href="#bai-toan_5" title="Permanent link">&para;</a></h2>
 <p><a href="https://cses.fi/problemset/task/1724">CSES - Graph Paths II</a></p>
 <p>Cho đồ thị có hướng có trọng số gồm <span class="arithmatex">\(N\)</span> đỉnh và <span class="arithmatex">\(M\)</span> cạnh. Hãy tìm đường đi ngắn nhất xuất phát từ đỉnh <span class="arithmatex">\(1\)</span> và kết thúc tại đỉnh <span class="arithmatex">\(N\)</span> đi qua chính xác <span class="arithmatex">\(k\)</span> cạnh.</p>
 <ul>
@@ -5535,7 +6272,7 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <li><span class="arithmatex">\(1 \le M \le N(N−1)\)</span></li>
 <li><span class="arithmatex">\(1 \le k \le 10^9\)</span></li>
 </ul>
-<h2 id="phan-tich_5">Phân tích</h2>
+<h2 id="phan-tich_5">Phân tích<a class="headerlink" href="#phan-tich_5" title="Permanent link">&para;</a></h2>
 <p>Gọi ma trận <span class="arithmatex">\(C(k)\)</span> kích thước <span class="arithmatex">\(N \times N\)</span>, với <span class="arithmatex">\(C(k) [i,j]\)</span> là độ dài đường đi ngắn nhất từ <span class="arithmatex">\(i\)</span> đến <span class="arithmatex">\(j\)</span> đi qua đúng <span class="arithmatex">\(k\)</span> cạnh.</p>
 <p>Xét ma trận <span class="arithmatex">\(A\)</span> là ma trận kề của đồ thị đã cho. Ta có:</p>
 <ul>
@@ -5554,8 +6291,8 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 </blockquote>
 <p>Do đó, <span class="arithmatex">\(C(k) = A^k\)</span></p>
 <p>Như vậy, bài toán được đưa về bài toán tính lũy thừa của một ma trận, ta hoàn toàn có thể giải tương tự các ví dụ trước. Cài đặt phép nhân ma trận mới này hoàn toàn không phức tạp hơn cài đặt phép nhân ma trận thông thường. Việc cài đặt xin nhường lại cho bạn đọc.</p>
-<h1 id="phep-toan-ket-hop-va-o-phuc-tap-tinh-toan">Phép toán kết hợp và độ phức tạp tính toán</h1>
-<h2 id="nhan-to-hop-day-ma-tran">Nhân tổ hợp dãy ma trận</h2>
+<h2 id="phep-toan-ket-hop-va-o-phuc-tap-tinh-toan">Phép toán kết hợp và độ phức tạp tính toán<a class="headerlink" href="#phep-toan-ket-hop-va-o-phuc-tap-tinh-toan" title="Permanent link">&para;</a></h2>
+<h2 id="nhan-to-hop-day-ma-tran">Nhân tổ hợp dãy ma trận<a class="headerlink" href="#nhan-to-hop-day-ma-tran" title="Permanent link">&para;</a></h2>
 <p>Trong phần <a href="algo/trick/matrix-multiplication#cài-đặt">Cài đặt</a>, ta đã có thuật toán nhân hai ma trận <span class="arithmatex">\(A\)</span> kích cỡ <span class="arithmatex">\((m \times n)\)</span> và <span class="arithmatex">\(B\)</span> kích cỡ <span class="arithmatex">\((n \times p)\)</span> cần độ phức tạp <span class="arithmatex">\(\mathcal{O}(m \times n \times p)\)</span>. Giả sử ta có thêm ma trận <span class="arithmatex">\(C\)</span> có kích cỡ <span class="arithmatex">\((p \times q)\)</span> và ta cần tính tích <span class="arithmatex">\(A \times B \times C\)</span>. Xét hai cách thực hiện phép nhân này:</p>
 <ul>
 <li><strong>Cách 1</strong>: <span class="arithmatex">\((A \times B) \times C\)</span> thực hiện nhân <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span> rồi nhân với <span class="arithmatex">\(C\)</span> cần độ phức tạp <span class="arithmatex">\(\mathcal{O}(m \times n \times p) + \mathcal{O}(m \times p \times q) = \mathcal{O}(m \times p \times (n + q))\)</span>.</li>
@@ -5567,9 +6304,9 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 </ul>
 <p>Khi độ dài của dãy ma trận tăng lên, sự khác biệt có thể còn lớn hơn nữa. Ví dụ trên đã cho thấy rằng trong một số trường hợp thứ tự thực hiện phép nhân ma trận có ý nghĩa rất lớn đối với việc tìm lời giải của các bài toán.</p>
 <p>Trong thực tế, bài toán xác định thứ tự nhân ma trận hiệu quả nhất là một bài toán rất phổ biến, bạn có thể tìm đọc chi tiết thêm tại <a href="/algo/dp/basic-problems#5-nhân-ma-trận">đây</a> hoặc ở <a href="/algo/basic/Tai-Lieu-Thuat-Toan">Phần 3 mục 3.5 Phép Nhân Tổ Hợp dãy Ma Trận trong sách Giải thuật và lập trình của thầy Lê Minh Hoàng</a>.</p>
-<h2 id="giai-thuat-freivalds-kiem-tra-tich-hai-ma-tran">Giải thuật Freivalds kiểm tra tích hai ma trận</h2>
+<h2 id="giai-thuat-freivalds-kiem-tra-tich-hai-ma-tran">Giải thuật Freivalds kiểm tra tích hai ma trận<a class="headerlink" href="#giai-thuat-freivalds-kiem-tra-tich-hai-ma-tran" title="Permanent link">&para;</a></h2>
 <p><a href="https://en.wikipedia.org/wiki/Freivalds%27_algorithm">Giải thuật Freivalds</a> là một ví dụ điển hình về việc áp dụng thứ tự thực hiện phép nhân ma trận để giảm độ phức tạp tính toán của phép nhân một dãy ma trận. Bài toán đặt ra là cho ba ma trận vuông <span class="arithmatex">\(A, B, C\)</span> có kích cỡ <span class="arithmatex">\(N \times N\)</span> với <span class="arithmatex">\(N \le 1000\)</span>. Ta cần kiểm tra xem <span class="arithmatex">\(C\)</span> có phải là tích của <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span>, nói cách khác ta cần kiểm tra <span class="arithmatex">\(A \times B = C\)</span> có phải là mệnh đề đúng hay không (đây chính là bài <a href="https://oj.vnoi.info/problem/vmatrix/">VMATRIX - VNOI Marathon 2014</a>).</p>
-<h3 id="phan-tich_6"><strong>Phân tích</strong></h3>
+<h3 id="phan-tich_6"><strong>Phân tích</strong><a class="headerlink" href="#phan-tich_6" title="Permanent link">&para;</a></h3>
 <p>Cách làm thông thường là nhân trực tiếp hai ma trận <span class="arithmatex">\(A, B\)</span> rồi so sánh kết quả với <span class="arithmatex">\(C\)</span>. Như đánh giá trong phần <a href="algo/trick/matrix-multiplication#cài-đặt">Cài đặt</a>, độ phức tạp của cách làm này là <span class="arithmatex">\(\mathcal{O}(N^3)\)</span>, với <span class="arithmatex">\(N = 1000\)</span> thì cách làm này không đủ nhanh. Giải thuật <span class="arithmatex">\(\mathrm{Freivalds}\)</span> thực hiện việc kiểm tra thông qua thuật toán xác suất kiểu <a href="https://vi.wikipedia.org/wiki/Ph%C6%B0%C6%A1ng_ph%C3%A1p_Monte_Carlo">Monte Carlo</a> với <span class="arithmatex">\(k\)</span> lần thử cho xác suất kết luận sai là xấp xỉ <span class="arithmatex">\(2^{-k}\)</span>, mỗi lần thử có độ phức tạp <span class="arithmatex">\(\mathcal{O}(N^2)\)</span>. Các bước cơ bản của một phép thử <span class="arithmatex">\(\mathrm{Freivalds}\)</span> như sau:</p>
 <ol>
 <li>Sinh ngẫu nhiên một ma trận <span class="arithmatex">\(v\)</span> kích cỡ <span class="arithmatex">\((N \times 1)\)</span> với các phần tử chỉ nhận giá trị <span class="arithmatex">\(0\)</span> hoặc <span class="arithmatex">\(1\)</span>.</li>
@@ -5579,10 +6316,10 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <p>Bạn có thể tìm hiểu thêm về <strong>phép cộng trừ ma trận</strong> tại <a href="https://vi.wikipedia.org/wiki/Ph%C3%A9p_c%E1%BB%99ng_ma_tr%E1%BA%ADn">đây</a>.</p>
 <p>Ta thực hiện <span class="arithmatex">\(k\)</span> lần thử, nếu gặp phép thử trả về <code>False</code> thì ta kết luận là <span class="arithmatex">\(A \times B \neq C\)</span>. Ngược lại nếu sau <span class="arithmatex">\(k\)</span> phép thử mà luôn thấy <code>True</code> thì ta kết luận <span class="arithmatex">\(A \times B = C\)</span>. Vì xác suất lỗi giảm theo hàm mũ của <span class="arithmatex">\(k\)</span> nên thông thường chỉ cần chọn <span class="arithmatex">\(k\)</span> vừa đủ là sẽ thu được xác suất đúng rất cao (<span class="arithmatex">\(k = 5\)</span> với bài <strong>VMATRIX</strong> ở trên). Một nhận xét quan trọng khác là cận trên của đánh giá xác suất kiểm tra lỗi không phụ thuộc vào kích cỡ <span class="arithmatex">\(N\)</span> của ma trận được cho mà chỉ phụ thuộc vào số lần thực hiện phép thử.</p>
 <p>Xét bước thứ <span class="arithmatex">\(2\)</span>, ta thấy rằng phép thử <span class="arithmatex">\(\mathrm{Freivalds}\)</span> chỉ có ý nghĩa nếu như ta có thể thực hiện phép nhân <span class="arithmatex">\(A \times B \times v\)</span> trong thời gian <span class="arithmatex">\(\mathcal{O}(N^2)\)</span> (vì phép nhân <span class="arithmatex">\(C \times v\)</span> đã đạt sẵn <span class="arithmatex">\(\mathcal{O}(N^2)\)</span> rồi). Thay vì thực hiện tuần tự từ trái qua phải sẽ cần <span class="arithmatex">\(\mathcal{O}(N^3)\)</span>, ta thực hiện theo thứ tự <span class="arithmatex">\(A \times (B \times v)\)</span>. Vì kết quả của phép nhân <span class="arithmatex">\(B\)</span> và <span class="arithmatex">\(v\)</span> là một ma trận <span class="arithmatex">\((N \times 1)\)</span> nên độ phức tạp tổng cộng sẽ là <span class="arithmatex">\(\mathcal{O}(N^2)\)</span>. Trên tất cả các phép thử, độ phức tạp là <span class="arithmatex">\(\mathcal{O}(k \times N^2)\)</span>. </p>
-<h3 id="cai-at_5"><strong>Cài đặt</strong></h3>
+<h3 id="cai-at_5"><strong>Cài đặt</strong><a class="headerlink" href="#cai-at_5" title="Permanent link">&para;</a></h3>
 <p>Bài toán <a href="https://oj.vnoi.info/problem/vmatrix">VMATRIX - VNOI Marathon 2014</a></p>
 <p><strong>Lưu ý:</strong> Trong cách cài đặt sau, các hàng và cột của ma trận được đánh số bắt đầu từ <span class="arithmatex">\(0\)</span> để thuận tiện cho việc xử lí.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -5680,9 +6417,9 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="anh-gia_5"><strong>Đánh giá</strong></h3>
+<h3 id="anh-gia_5"><strong>Đánh giá</strong><a class="headerlink" href="#anh-gia_5" title="Permanent link">&para;</a></h3>
 <p>Ngoài thuật toán trên, ta vẫn có thể nhân trực tiếp <span class="arithmatex">\(2\)</span> ma trận <span class="arithmatex">\(A, B\)</span> rồi so sánh với <span class="arithmatex">\(C\)</span> bằng cách sử dụng thuật toán nhân ma trận <span class="arithmatex">\(\mathrm{Strassen}\)</span> với độ phức tạp <span class="arithmatex">\(\mathcal{O}(N^{\log_2{7}}) = \mathcal{O}(1000^{\log_2{7}}) \approx \mathcal{O}(2.6 \times 10^8)\)</span>. Tuy nhiên, cách cài đặt này phức tạp hơn.</p>
-<h1 id="bai-tap-ap-dung">Bài tập áp dụng</h1>
+<h2 id="bai-tap-ap-dung">Bài tập áp dụng<a class="headerlink" href="#bai-tap-ap-dung" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://codeforces.com/problemset/problem/1182/E">Codeforces - 1182E Product Oriented Recurrence</a></li>
 <li><a href="https://www.hackerearth.com/problem/algorithm/pk-and-interesting-language/description/">HackerEarth - PK and interesting language</a></li>
@@ -5714,6 +6451,8 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -5721,14 +6460,61 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../FFT/" class="md-footer__link md-footer__link--prev" aria-label="Previous: FFT">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                FFT
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../mitm/" class="md-footer__link md-footer__link--next" aria-label="Next: Meet In The Middle (MITM)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Meet In The Middle (MITM)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/KienPC1234/fptoj_wiki" target="_blank" rel="noopener" title="GitHub: KienPC1234/fptoj_wiki" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -5743,7 +6529,7 @@ Các ô trong ma trận được gọi là các phần tử của ma trận. Cá
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "toc.integrate", "toc.sticky", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "header.autohide"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>

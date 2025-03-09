@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="FPTOJ được xây dựng với mục đích chia sẻ kiến thức Tin học đến với tất cả mọi người">
+      
       
       
         <link rel="canonical" href="https://wiki.fptoj.com/algo/algebra/prime_sieve/">
@@ -17,7 +19,7 @@
         <link rel="next" href="../../data-structures/array-vs-linked-lists/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../uploads/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sang-nguyen-to" class="md-skip">
+        <a href="#sang-nguyen-to-eratosthenes-sieve-of-eratosthenes" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +92,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="FPTOJ WIKI" class="md-header__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -172,6 +174,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -187,15 +191,148 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+      </div>
+    
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Trang chủ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../basic/backtracking/" class="md-tabs__link">
+          
+  
+  Thuật Toán
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cs/crypto/Cipher-Tools/" class="md-tabs__link">
+          
+  
+  Computer Science (Khoa học máy tính)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../languages/cpp/pointers/" class="md-tabs__link">
+          
+  
+  Ngôn Ngữ Lập Trình
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../translate/functional-programming-part-1/" class="md-tabs__link">
+          
+  
+  Dịch Thuật
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -209,8 +346,12 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="FPTOJ WIKI" class="md-nav__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -220,10 +361,61 @@
     FPTOJ WIKI
   </label>
   
+    <div class="md-nav__source">
+      <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
     
       
       
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Trang chủ
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Trang chủ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -233,7 +425,7 @@
         
   
   <span class="md-ellipsis">
-    Trang chủ
+    Home
     
   </span>
   
@@ -242,9 +434,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -263,9 +456,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -284,6 +478,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -296,15 +498,21 @@
     
     
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -316,8 +524,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Thuật Toán
           </label>
@@ -332,15 +540,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -352,8 +563,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Cơ Bản
           </label>
@@ -598,15 +809,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -618,8 +832,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Đại Số
           </label>
@@ -748,8 +962,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -779,8 +991,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1145,15 +1355,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1165,8 +1378,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Cấu trúc dữ liệu
           </label>
@@ -1783,15 +1996,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1803,8 +2019,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             Quy hoạch động
           </label>
@@ -1959,15 +2175,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1979,8 +2198,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Games
           </label>
@@ -2025,15 +2244,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2045,8 +2267,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Hình học
           </label>
@@ -2135,15 +2357,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2155,8 +2380,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             Lý thuyết Đồ Thị
           </label>
@@ -2421,15 +2646,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2441,8 +2669,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             Toán
           </label>
@@ -2553,15 +2781,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2573,8 +2804,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             Tìm Kiếm
           </label>
@@ -2619,15 +2850,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
         
           
-          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2639,8 +2873,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             Kỹ Năng Thi
           </label>
@@ -2729,15 +2963,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
         
           
-          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2749,8 +2986,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_11">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
             <span class="md-nav__icon md-icon"></span>
             Xâu kí tự
           </label>
@@ -2883,15 +3120,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
         
           
-          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2903,8 +3143,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
             <span class="md-nav__icon md-icon"></span>
             Mẹo
           </label>
@@ -3110,15 +3350,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3130,8 +3373,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Computer Science (Khoa học máy tính)
           </label>
@@ -3146,15 +3389,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3166,8 +3412,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Crypto
           </label>
@@ -3226,15 +3472,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3246,8 +3495,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             Cipher
           </label>
@@ -3300,15 +3549,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3320,8 +3572,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Xử lý ảnh
           </label>
@@ -3395,15 +3647,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3415,8 +3670,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Ngôn Ngữ Lập Trình
           </label>
@@ -3504,15 +3759,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3524,8 +3782,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Dịch Thuật
           </label>
@@ -3562,15 +3820,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3582,8 +3843,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             Codeforces
           </label>
@@ -3716,15 +3977,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3736,8 +4000,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             E-Maxx
           </label>
@@ -3804,15 +4068,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3824,8 +4091,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             Nâng Cao
           </label>
@@ -4046,15 +4313,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4066,8 +4336,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
             Máy học (Machine Learning - ML)
           </label>
@@ -4200,15 +4470,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4220,8 +4493,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
             Quora
           </label>
@@ -4266,15 +4539,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
-          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4286,8 +4562,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             Topcoder
           </label>
@@ -4640,15 +4916,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
         
           
-          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4660,8 +4939,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
             USACO
           </label>
@@ -4706,15 +4985,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
         
           
-          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4726,8 +5008,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
             Wcipeg
           </label>
@@ -4909,362 +5191,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sang-nguyen-to-eratosthenes-sieve-of-eratosthenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sàng nguyên tố Eratosthenes (Sieve of Eratosthenes)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sàng nguyên tố Eratosthenes (Sieve of Eratosthenes)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#huong-tiep-can" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hướng tiếp cận
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-c-minh-hoa" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code C++ minh họa
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ung-dung" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ứng dụng
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Ứng dụng">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phan-tich-thua-so-nguyen-to" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phân tích thừa số nguyên tố
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Phân tích thừa số nguyên tố">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phan-tich-so-nguyen-nho" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phân tích số nguyên nhỏ
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phan-tich-so-nguyen-lon-hon" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phân tích số nguyên lớn hơn
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tim-so-nguyen-to-trong-oan-l-r" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tìm số nguyên tố trong đoạn [L; R]
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mot-so-vi-du" class="md-nav__link">
-    <span class="md-ellipsis">
-      Một số ví dụ
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mot-so-cai-tien-cua-sang-nguyen-to-eratosthenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Một số cải tiến của sàng nguyên tố Eratosthenes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Một số cải tiến của sàng nguyên tố Eratosthenes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#so-sanh-mang-bool-va-vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      So sánh mảng bool và vector
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#chi-sang-so-le" class="md-nav__link">
-    <span class="md-ellipsis">
-      Chỉ sàng số lẻ
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Chỉ sàng số lẻ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#code-c-minh-hoa_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code C++ minh họa
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#su-dung-bitset" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sử dụng bitset
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sử dụng bitset">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#code-c-minh-hoa_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code C++ minh họa
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-c-minh-hoa_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code C++ minh họa
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sang-nguyen-to-tuyen-tinh-linear-sieve" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sàng nguyên tố tuyến tính - Linear Sieve
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sàng nguyên tố tuyến tính - Linear Sieve">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#huong-tiep-can_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hướng tiếp cận
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-c-minh-hoa_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code C++ minh họa
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sang-phan-oan-block-sieve-segmented-sieve" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sàng phân đoạn - Block Sieve / Segmented Sieve
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sàng phân đoạn - Block Sieve / Segmented Sieve">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#code-c-minh-hoa_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code C++ minh họa
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#banh-xe-phan-tich-wheel-factorization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bánh xe phân tích - Wheel Factorization
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Bánh xe phân tích - Wheel Factorization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#code-c-minh-hoa_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code C++ minh họa
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ket-hop-cac-cai-tien" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kết hợp các cải tiến
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mot-so-sang-nguyen-to-khac" class="md-nav__link">
-    <span class="md-ellipsis">
-      Một số sàng nguyên tố khác
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mo-rong" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mở rộng
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bai-tap-luyen-tap" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bài tập luyện tập
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Bài tập luyện tập">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sang-nguyen-to-co-ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sàng nguyên tố cơ bản
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sang-nguyen-to-cai-tien-thuat-toan-meissel-lehmer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sàng nguyên tố cải tiến. Thuật toán Meissel-Lehmer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nguon-tham-khao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nguồn tham khảo
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -5273,8 +5199,12 @@
                   
 
 
+  
+  
 
-<h1 id="sang-nguyen-to">Sàng nguyên tố</h1>
+
+  <h1>Sàng nguyên tố</h1>
+
 <p><strong>Người viết:</strong>
 - Nguyễn Minh Hiển - Trường Đại học Công nghệ, ĐHQGHN</p>
 <p><strong>Reviewer:</strong>
@@ -5283,8 +5213,8 @@
 - Nguyễn Minh Nhật - Trường THPT chuyên Khoa học Tự nhiên, ĐHQGHN</p>
 <p>Khi cần tìm ra các số nguyên tố từ <span class="arithmatex">\(1\)</span> đến <span class="arithmatex">\(n\)</span>, ta có thể duyệt từng số và kiểm tra tính nguyên tố của nó. Và ý tưởng đó cho ta một thuật toán <span class="arithmatex">\(\boldsymbol{O\left(n\sqrt n\right)}\)</span>.</p>
 <p>Tuy nhiên, một nhà toán học cổ Hy Lạp tên là Eratosthenes đã "phát minh" ra một "thuật toán" hiệu quả hơn. Ban đầu, Eratosthenes đã lấy lá cọ và ghi tất cả các số từ <span class="arithmatex">\(2\)</span> cho đến <span class="arithmatex">\(100\)</span>. Sau đó, ông đã chọc thủng các hợp số và giữ nguyên các số nguyên tố. Bảng số nguyên tố còn lại trông rất giống một cái sàng. Cho đến ngày nay, "thuật toán" này được phổ biến rộng rãi với cái tên <strong>sàng nguyên tố Eratosthenes</strong>.</p>
-<h2 id="sang-nguyen-to-eratosthenes-sieve-of-eratosthenes">Sàng nguyên tố Eratosthenes (Sieve of Eratosthenes)</h2>
-<h3 id="huong-tiep-can">Hướng tiếp cận</h3>
+<h2 id="sang-nguyen-to-eratosthenes-sieve-of-eratosthenes">Sàng nguyên tố Eratosthenes (Sieve of Eratosthenes)<a class="headerlink" href="#sang-nguyen-to-eratosthenes-sieve-of-eratosthenes" title="Permanent link">&para;</a></h2>
+<h3 id="huong-tiep-can">Hướng tiếp cận<a class="headerlink" href="#huong-tiep-can" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Ban đầu, ta cho tất cả các số từ <span class="arithmatex">\(2\)</span> đến <span class="arithmatex">\(n\)</span> vào sàng và đánh dấu tất cả các số. (Các số không được đánh dấu sau cùng sẽ bị loại khỏi sàng).</li>
 <li>Duyệt lần lượt các số từ <span class="arithmatex">\(2\)</span> đến <span class="arithmatex">\(n\)</span>. Nếu số đang xét:<ul>
@@ -5295,8 +5225,8 @@
 <li>Sau khi duyệt xong, các số còn lại trong sàng, hay nói cách khác các số được đánh dấu là số nguyên tố.</li>
 </ul>
 <p>Dưới đây là hình minh họa cho thuật toán trên. <em>Nguồn: <a href="https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html">CP-Algorithm</a></em>
-<img alt="" src="https://hackmd.io/_uploads/HJup_OQSn.png" /></p>
-<h3 id="code-c-minh-hoa">Code C++ minh họa</h3>
+<img alt="img" src="../../../uploads/HJup_OQSn.png" /></p>
+<h3 id="code-c-minh-hoa">Code C++ minh họa<a class="headerlink" href="#code-c-minh-hoa" title="Permanent link">&para;</a></h3>
 <p><div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">//10^6 + 5</span>
 <span class="kt">bool</span><span class="w"> </span><span class="n">is_prime</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span><span class="w"> </span><span class="c1">// mảng bool khởi tạo với các giá trị false</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">sieve</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
@@ -5349,11 +5279,11 @@ Vì thế, <span class="arithmatex">\(X = k \cdot p\)</span> đã bị sàng lo�
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">nsqrt</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 <p>Dưới đây là hình minh họa cho cải tiến trên. <em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A0ng_Eratosthenes">Wikipedia</a></em></p>
-<p><img alt="" src="https://hackmd.io/_uploads/SkCOvuXSn.gif" /></p>
+<p><img alt="img" src="../../../uploads/SkCOvuXSn.gif" /></p>
 <hr />
-<h2 id="ung-dung"><strong>Ứng dụng</strong></h2>
-<h3 id="phan-tich-thua-so-nguyen-to">Phân tích thừa số nguyên tố</h3>
-<h4 id="phan-tich-so-nguyen-nho">Phân tích số nguyên nhỏ</h4>
+<h2 id="ung-dung"><strong>Ứng dụng</strong><a class="headerlink" href="#ung-dung" title="Permanent link">&para;</a></h2>
+<h3 id="phan-tich-thua-so-nguyen-to">Phân tích thừa số nguyên tố<a class="headerlink" href="#phan-tich-thua-so-nguyen-to" title="Permanent link">&para;</a></h3>
+<h4 id="phan-tich-so-nguyen-nho">Phân tích số nguyên nhỏ<a class="headerlink" href="#phan-tich-so-nguyen-nho" title="Permanent link">&para;</a></h4>
 <p>Khi phân tích các số nhỏ <span class="arithmatex">\(i \approx 10^6\)</span>, thay vì lưu kết quả kiểm tra tính nguyên tố của <span class="arithmatex">\(i\)</span> ở mảng <code>is_prime[i]</code>, ta có thể sử dụng <code>min_prime[i]</code> lưu ước nguyên tố nhỏ nhất của số <code>i</code>.</p>
 <p><div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">//10^6 + 5</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">min_prime</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
@@ -5401,7 +5331,7 @@ $$\sum\limits_{p\text{ nguyên tố}} v_p\left(n!\right) < \sum\limits_{p\text{ 
 </p>
 </details>
 
-<h4 id="phan-tich-so-nguyen-lon-hon">Phân tích số nguyên lớn hơn</h4>
+<h4 id="phan-tich-so-nguyen-lon-hon">Phân tích số nguyên lớn hơn<a class="headerlink" href="#phan-tich-so-nguyen-lon-hon" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>Nhận xét: Nếu tất cả các số nguyên trong đoạn <span class="arithmatex">\(\left[ 2;\sqrt{n} \right]\)</span> đều không phải là ước của <span class="arithmatex">\(n\)</span> thì <span class="arithmatex">\(n\)</span> là số nguyên tố.</p>
 </blockquote>
@@ -5440,7 +5370,7 @@ $$\sum\limits_{p\text{ nguyên tố}} v_p\left(n!\right) < \sum\limits_{p\text{ 
 <p>Phân tích sẽ mất độ phức tạp cho trường hợp xấu nhất là <span class="arithmatex">\(\boldsymbol{O \left(\pi \left( \sqrt n \right)\right) \sim O \left( \dfrac{\sqrt n}{\log\log n}\right)}\)</span>.
 Trong đó <span class="arithmatex">\(\pi\left( x \right)\)</span> là số số nguyên tố trong đoạn <span class="arithmatex">\(\left[ 2;x \right]\)</span>. Bạn đọc tham khảo thêm hàm này ở phần <strong>Mở rộng</strong> của bài viết.</p>
 <hr />
-<h3 id="tim-so-nguyen-to-trong-oan-l-r">Tìm số nguyên tố trong đoạn [L; R]</h3>
+<h3 id="tim-so-nguyen-to-trong-oan-l-r">Tìm số nguyên tố trong đoạn [L; R]<a class="headerlink" href="#tim-so-nguyen-to-trong-oan-l-r" title="Permanent link">&para;</a></h3>
 <p>Đôi khi bạn phải tìm tất cả các số không phải trên đoạn <span class="arithmatex">\([1;N]\)</span> mà là trên đoạn <span class="arithmatex">\([L;R]\)</span> có kích thước nhỏ nhưng <span class="arithmatex">\(R\)</span> lớn.
 Ví dụ như <span class="arithmatex">\(R - L + 1 \approx 1e6\)</span> và <span class="arithmatex">\(R \approx 10^{12}\)</span>.</p>
 <p>Ta đặt <span class="arithmatex">\(N = R - L + 1\)</span> là độ dài đoạn <span class="arithmatex">\([L;R]\)</span> để tiện theo dõi.</p>
@@ -5499,7 +5429,7 @@ Ví dụ như <span class="arithmatex">\(R - L + 1 \approx 1e6\)</span> và <spa
 <strong>Độ phức tạp thời gian</strong> sẽ tệ hơn : <span class="arithmatex">\(\boldsymbol{O(N \log (R) + \sqrt R)}\)</span>. 
 Tuy nhiên, ta lại được lợi thế hơn về <strong>độ phức tạp không gian: <span class="arithmatex">\(\boldsymbol{O \left( N \right)}\)</span></strong>.</p>
 <p>Nguyên nhân là ta dùng tất cả các <em>số nguyên</em> trong đoạn <span class="arithmatex">\(\left[ 2;\sqrt R \right]\)</span> đó để đánh dấu trong đoạn <span class="arithmatex">\([L; R]\)</span> nên sẽ mất <span class="arithmatex">\(O \left( (R - L + 1) \cdot \left(\dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{4} + \ldots + \dfrac{1}{\left\lfloor \sqrt R \right\rfloor} \right) \right) = O \left( N \log (R) \right)\)</span>.</p>
-<h2 id="mot-so-vi-du">Một số ví dụ</h2>
+<h2 id="mot-so-vi-du">Một số ví dụ<a class="headerlink" href="#mot-so-vi-du" title="Permanent link">&para;</a></h2>
 <p><a href="https://oj.vnoi.info/problem/etf">VNOI - Phi hàm Euler</a>
 <em>Tóm tắt đề:</em> 
 Cho số nguyên dương <span class="arithmatex">\(T\)</span> và <span class="arithmatex">\(T\)</span> số nguyên dương <span class="arithmatex">\(n_i\)</span>. Hãy tính phi hàm <span class="arithmatex">\(\varphi(n_i)\)</span> của <span class="arithmatex">\(T\)</span> số nguyên dương đã cho.
@@ -5523,7 +5453,7 @@ $$
 Dựa vào công thức trên, đầu tiên ta sẽ gán <code>f[i] = i</code>. Sau đó, ta chỉ cần duyệt tất cả các số nguyên tố. Với mỗi số nguyên tố <code>p</code>, ta sẽ duyệt các bội <code>j</code> của chúng, rồi nhân <code>f[j]</code> với $\dfrac{p-1}{p}$
 </p>
 
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e6</span><span class="p">;</span>
@@ -5552,12 +5482,12 @@ Dựa vào công thức trên, đầu tiên ta sẽ gán <code>f[i] = i</code>. 
 </code></pre></div>
 </details>
 
-<h2 id="mot-so-cai-tien-cua-sang-nguyen-to-eratosthenes">Một số cải tiến của sàng nguyên tố Eratosthenes</h2>
+<h2 id="mot-so-cai-tien-cua-sang-nguyen-to-eratosthenes">Một số cải tiến của sàng nguyên tố Eratosthenes<a class="headerlink" href="#mot-so-cai-tien-cua-sang-nguyen-to-eratosthenes" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Sàng nguyên tố Eratosthenes với ĐPT thời gian <span class="arithmatex">\(\boldsymbol{O(n \log \log n)}\)</span> đã khá phù hợp với hầu hết các bài toán lập trình thi đấu. Tuy nhiên điểm yếu chí mạng của nó chính là ĐPT không gian <span class="arithmatex">\(\boldsymbol{O(n)}\)</span>.
 Một số cải tiến dưới đây có thể không phù hợp với những bạn mới chỉ biết đến sàng nguyên tố. Các bạn hãy luyện tập với các bài tập luyện tập trước khi đến với các cải tiến bên dưới nha!</p>
 </blockquote>
-<h3 id="so-sanh-mang-bool-va-vector">So sánh mảng bool và vector<bool></h3>
+<h3 id="so-sanh-mang-bool-va-vector">So sánh mảng bool và vector<bool><a class="headerlink" href="#so-sanh-mang-bool-va-vector" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Một biến <code>bool</code> chỉ có hai giá trị <code>true/false</code> nên về mặt lý thuyết chỉ cần 1 bit để lưu trữ nó. Nhưng bình thường, các máy tính hiện nay khi lưu trữ biến <code>bool</code> sẽ sử dụng <span class="arithmatex">\(1\)</span> byte (tương đương với <span class="arithmatex">\(8\)</span> bits) để truy cập nhanh chóng. Vì thế một mảng <code>bool a[n]</code> sẽ cần đến <span class="arithmatex">\(n\)</span> bytes.</li>
 <li><code>vector&lt;bool&gt;</code> được tối ưu để lưu trữ <span class="arithmatex">\(1\)</span> biến <code>bool</code> trong <span class="arithmatex">\(1\)</span> bit thay vì <span class="arithmatex">\(1\)</span> byte, ngoài ra còn có <span class="arithmatex">\(40\)</span> bytes sử dụng cho khởi tạo <code>vector&lt;bool&gt;</code> ban đầu. Tuy nhiên, việc tối ưu về bộ nhớ khiến ta phải truy cập bit một các gián tiếp: mỗi lần truy cập, đọc, ghi bit ta cần tách nhỏ từng bit của byte đó. Trong trường hợp bộ dữ liệu nhỏ (khoảng <span class="arithmatex">\(10^6\)</span>), truy cập như vậy sẽ chậm hơn so với việc truy cập trực tiếp.</li>
@@ -5584,11 +5514,11 @@ Một số cải tiến dưới đây có thể không phù hợp với những 
 </tr>
 </tbody>
 </table>
-<h3 id="chi-sang-so-le"><strong>Chỉ sàng số lẻ</strong></h3>
+<h3 id="chi-sang-so-le"><strong>Chỉ sàng số lẻ</strong><a class="headerlink" href="#chi-sang-so-le" title="Permanent link">&para;</a></h3>
 <p>Một cải tiến khác cũng có thể được sử dụng đó là chỉ tiến hành kiểm tra với số lẻ (số chẵn chỉ có <span class="arithmatex">\(2\)</span> là số nguyên tố).
 Điều này có thể giảm cả không gian để lưu trữ lẫn số bước tính toán đi một nửa.</p>
 <!-- -->
-<h4 id="code-c-minh-hoa_1">Code C++ minh họa</h4>
+<h4 id="code-c-minh-hoa_1">Code C++ minh họa<a class="headerlink" href="#code-c-minh-hoa_1" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_prime</span><span class="p">;</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">sieve_odd</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
 <span class="w">    </span><span class="n">is_prime</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
@@ -5606,10 +5536,10 @@ Một số cải tiến dưới đây có thể không phù hợp với những 
 <strong>Độ phức tạp thời gian: <span class="arithmatex">\(\boldsymbol{O\left(\dfrac{n}{2} \cdot \log \log n\right)}\)</span></strong></p>
 <p><strong>Độ phức tạp không gian: <span class="arithmatex">\(\boldsymbol{O\left(\dfrac{n}{2}\right)}\)</span></strong></p>
 <hr />
-<h3 id="su-dung-bitset"><strong>Sử dụng bitset</strong></h3>
+<h3 id="su-dung-bitset"><strong>Sử dụng bitset</strong><a class="headerlink" href="#su-dung-bitset" title="Permanent link">&para;</a></h3>
 <p>Trong C++, <code>std::bitset</code> là một công cụ hữu hiệu trong việc lưu trữ và xử lý dãy nhị phân.
 <code>std::bitset</code> sử dụng cách lưu bit tương tự <code>std::vector&lt;bool&gt;</code> và nhanh hơn <code>std::vector&lt;bool&gt;</code> một chút. Tuy nhiên kích thước <code>MAX</code> của <code>std::bitset&lt;MAX&gt;</code> phải được biết lúc biên dịch.</p>
-<h4 id="code-c-minh-hoa_2">Code C++ minh họa</h4>
+<h4 id="code-c-minh-hoa_2">Code C++ minh họa<a class="headerlink" href="#code-c-minh-hoa_2" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e6</span><span class="p">;</span>
 <span class="n">bitset</span><span class="o">&lt;</span><span class="n">maxn</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_prime</span><span class="p">;</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">sieve_bitset</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
@@ -5627,9 +5557,9 @@ Một số cải tiến dưới đây có thể không phù hợp với những 
 <strong>Độ phức tạp thời gian: <span class="arithmatex">\(\boldsymbol{O(n \log \log n)}\)</span></strong></p>
 <p><strong>Độ phức tạp không gian: <span class="arithmatex">\(\boldsymbol{O\left(\dfrac{n}{32}\right)}\)</span></strong></p>
 <p>Một cách khác, vì biến <code>bool</code> lưu trong bộ nhớ thường là <span class="arithmatex">\(1\)</span> byte (<span class="arithmatex">\(8\)</span> bits), tuy nhiên thực chất chỉ cần sử dụng <span class="arithmatex">\(1\)</span> bit. Vì thế ta có thể sử dụng một biến <code>int</code> để lưu nhiều biến <code>bool</code>. Để code được nhanh chóng, ở đây ta nên sử dụng các <a href="https://vi.wikipedia.org/wiki/Ph%C3%A9p_to%C3%A1n_thao_t%C3%A1c_bit#C%C3%A1c_to%C3%A1n_t%E1%BB%AD_thao_t%C3%A1c_bit">phép toán trên bit</a>.</p>
-<h4 id="code-c-minh-hoa_3">Code C++ minh họa</h4>
-<p><div class="highlight"><pre><span></span><code><span class="cp">#define doc(n) (prime_bits[n &gt;&gt; 3] &amp; (1 &lt;&lt; (n &amp; 7)))</span>
-<span class="cp">#define set(n) {prime_bits[n &gt;&gt; 3] |= (1 &lt;&lt; (n &amp; 7));}</span>
+<h4 id="code-c-minh-hoa_3">Code C++ minh họa<a class="headerlink" href="#code-c-minh-hoa_3" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="cp">## define doc(n) (prime_bits[n &gt;&gt; 3] &amp; (1 &lt;&lt; (n &amp; 7)))</span>
+<span class="cp">## define set(n) {prime_bits[n &gt;&gt; 3] |= (1 &lt;&lt; (n &amp; 7));}</span>
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prime_bits</span><span class="p">;</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">sieve_bits</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
 <span class="w">    </span><span class="n">prime_bits</span><span class="p">.</span><span class="n">assign</span><span class="p">((</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
@@ -5648,14 +5578,14 @@ Một số cải tiến dưới đây có thể không phù hợp với những 
 <p>Trong code bên trên, <code>int</code> được sử dụng để lưu <span class="arithmatex">\(8\)</span> giá trị <code>bool</code>.
 Trên thực tế, <code>int/unsigned int</code> chứa <span class="arithmatex">\(4\)</span> bytes hay <span class="arithmatex">\(32\)</span> bits. Nhờ đó, một số <code>int/unsigned int</code> có thể lưu trữ đến <span class="arithmatex">\(32\)</span> giá trị <code>bool</code>. Và bạn đọc có thể thử cách lưu <span class="arithmatex">\(32\)</span> giá trị thay vì <span class="arithmatex">\(8\)</span> vào code bên trên.</p>
 <hr />
-<h3 id="sang-nguyen-to-tuyen-tinh-linear-sieve"><strong>Sàng nguyên tố tuyến tính - Linear Sieve</strong></h3>
+<h3 id="sang-nguyen-to-tuyen-tinh-linear-sieve"><strong>Sàng nguyên tố tuyến tính - Linear Sieve</strong><a class="headerlink" href="#sang-nguyen-to-tuyen-tinh-linear-sieve" title="Permanent link">&para;</a></h3>
 <blockquote>
 <ul>
 <li>Sàng nguyên tố này được cải tiến từ Sàng Eratosthenes. Tuy có ĐPT thời gian là <span class="arithmatex">\(\boldsymbol{O(n)}\)</span> nhưng với những bộ dữ liệu khoảng <span class="arithmatex">\(10^6\)</span> thì không nhanh hơn Sàng Eratosthenes là mấy.</li>
 <li>Sàng <span class="arithmatex">\(O(n)\)</span> này có lưu lại các ước nguyên tố nhỏ nhất của các số không vượt quá <span class="arithmatex">\(n\)</span> nên sẽ phù hợp cho các bài toán liên quan đến phân tích thừa số nguyên tố.</li>
 </ul>
 </blockquote>
-<h4 id="huong-tiep-can_1">Hướng tiếp cận</h4>
+<h4 id="huong-tiep-can_1">Hướng tiếp cận<a class="headerlink" href="#huong-tiep-can_1" title="Permanent link">&para;</a></h4>
 <p>Xét <span class="arithmatex">\(\text{min_prime}[i]\)</span> là ước nguyên tố nhỏ nhất của <span class="arithmatex">\(i\)</span>
 Mảng <span class="arithmatex">\(\text{primes}[]\)</span> sẽ lưu tất cả các số nguyên tố đã tìm được.
 Duyệt các số từ <span class="arithmatex">\(2\)</span> đến <span class="arithmatex">\(n\)</span>. Ta có <span class="arithmatex">\(2\)</span> trường hợp:
@@ -5663,7 +5593,7 @@ Duyệt các số từ <span class="arithmatex">\(2\)</span> đến <span class=
 - Ngược lại, <span class="arithmatex">\(\text{min_prime}[i] \neq 0\)</span>, ta phải tính được <span class="arithmatex">\(\text{min_prime} [i]\)</span> trong các vòng lặp trước đó.</p>
 <p>Trong cả hai trường hợp, ta đều cần cập nhật giá trị của <span class="arithmatex">\(\text{min_prime}[]\)</span> cho các bội của <span class="arithmatex">\(i\)</span>. Và mục tiêu của ta là gán giá trị <span class="arithmatex">\(\text{min_prime}[]\)</span> tối đa một lần cho mỗi số.</p>
 <p>Chúng ta có thể làm như sau: Duyệt các số nguyên <span class="arithmatex">\(i\)</span> từ <span class="arithmatex">\(2\)</span> đến <span class="arithmatex">\(n\)</span>. Với mỗi số nguyên <span class="arithmatex">\(i\)</span>, ta sẽ gán <span class="arithmatex">\(\text{min_prime} [i * p_j] = p_j\)</span> với <span class="arithmatex">\(p_j\)</span> là các số nguyên tố <span class="arithmatex">\(\le \text{min_prime} [i]\)</span>.</p>
-<h4 id="code-c-minh-hoa_4">Code C++ minh họa</h4>
+<h4 id="code-c-minh-hoa_4">Code C++ minh họa<a class="headerlink" href="#code-c-minh-hoa_4" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">min_prime</span><span class="p">,</span><span class="w"> </span><span class="n">primes</span><span class="p">;</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">linear_sieve</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
 <span class="w">    </span><span class="n">min_prime</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
@@ -5699,7 +5629,7 @@ Vì có duy nhất một cách biểu diễn $x = \text{min_prime}[x] \cdot i$ n
 ---
 </details>
 
-<h3 id="sang-phan-oan-block-sieve-segmented-sieve">Sàng phân đoạn - Block Sieve / Segmented Sieve</h3>
+<h3 id="sang-phan-oan-block-sieve-segmented-sieve">Sàng phân đoạn - Block Sieve / Segmented Sieve<a class="headerlink" href="#sang-phan-oan-block-sieve-segmented-sieve" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>Đây là một trong số những phương pháp hữu hiệu khắc phục điểm yếu về không gian của sàng nguyên tố Eratosthenes.</p>
 </blockquote>
@@ -5717,7 +5647,7 @@ Vì có duy nhất một cách biểu diễn $x = \text{min_prime}[x] \cdot i$ n
 - Chia <span class="arithmatex">\(\left[1; n\right]\)</span> thành các đoạn con (block) và sàng riêng từng đoạn (block).</p>
 <p>Gọi <span class="arithmatex">\(S\)</span> là kích thước của mỗi đoạn. Như thế, chúng ta sẽ có <span class="arithmatex">\(\left\lceil \dfrac{n}{S} \right\rceil\)</span> đoạn. Đoạn thứ <span class="arithmatex">\(k\)</span> <span class="arithmatex">\(\left(k = 0 .. \left\lceil \dfrac{n}{S} \right\rceil - 1\right)\)</span> là <span class="arithmatex">\(\left[ kS; \min(kS + S - 1, n) \right]\)</span>. </p>
 <p>Với mỗi đoạn, vòng lặp <code>for (int j = i * i; j &lt;= n; j += i)</code> sẽ thay đổi sao cho <code>j</code> chỉ chạy trong đoạn đang xét.</p>
-<h4 id="code-c-minh-hoa_5">Code C++ minh họa</h4>
+<h4 id="code-c-minh-hoa_5">Code C++ minh họa<a class="headerlink" href="#code-c-minh-hoa_5" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">primes</span><span class="p">;</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">segmented_sieve</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span>
@@ -5758,19 +5688,19 @@ Vì có duy nhất một cách biểu diễn $x = \text{min_prime}[x] \cdot i$ n
 <p><strong>Độ phức tạp không gian: <span class="arithmatex">\(\boldsymbol{O\left(\sqrt{n} + S\right)}\)</span></strong></p>
 <p>Chú ý rằng ta phải chọn <span class="arithmatex">\(S\)</span> sao cho cân bằng giữa độ phức tạp không gian và thời gian. Thông thường thì ta hay chọn <span class="arithmatex">\(S = \sqrt n\)</span>.</p>
 <hr />
-<h3 id="banh-xe-phan-tich-wheel-factorization"><strong>Bánh xe phân tích - Wheel Factorization</strong></h3>
+<h3 id="banh-xe-phan-tich-wheel-factorization"><strong>Bánh xe phân tích - Wheel Factorization</strong><a class="headerlink" href="#banh-xe-phan-tich-wheel-factorization" title="Permanent link">&para;</a></h3>
 <p><strong>Wheel Factorization</strong> là phương pháp cải tiến có thể loại bỏ đi rất nhiều trường hợp trước khi sàng nguyên tố. Thay vì chỉ xét các số lẻ, ta có thể loại bỏ các số là bội của <span class="arithmatex">\(2, 3, 5, 7, \ldots\)</span> Việc này có thể giúp chúng ta giảm đi ĐPT cả thời gian lẫn không gian đi một chút.</p>
-<p><img alt="" src="https://hackmd.io/_uploads/HJWWXh4Sn.png" /></p>
+<p><img alt="img" src="../../../uploads/HJWWXh4Sn.png" /></p>
 <p>Ví dụ khi chọn <span class="arithmatex">\(n = 2\cdot 3 = 6\)</span> sẽ chỉ loại đi các số là bội của <span class="arithmatex">\(2\)</span> hoặc <span class="arithmatex">\(3\)</span>.
 Bản chất của bánh xe khi này là chỉ giữ lại các số <span class="arithmatex">\(2, 3\)</span> và các số có dạng <span class="arithmatex">\(6k+1\)</span> hoặc <span class="arithmatex">\(6k+5\)</span>.</p>
-<p><img alt="" src="https://hackmd.io/_uploads/r1w8o3OHn.png" /></p>
+<p><img alt="img" src="../../../uploads/r1w8o3OHn.png" /></p>
 <p>Hoặc ví dụ khi chọn loại bỏ các bội của <span class="arithmatex">\(2\)</span> hoặc <span class="arithmatex">\(3\)</span> hoặc <span class="arithmatex">\(5\)</span>, ta chọn <span class="arithmatex">\(n = 2 \cdot 3 \cdot 5 = 30\)</span>
 Bản chất là ta chỉ giữ lại các số <span class="arithmatex">\(2, 3, 5\)</span> và các số có dạng <span class="arithmatex">\(30k+i\)</span> với <span class="arithmatex">\(i &lt;30\)</span> và <span class="arithmatex">\(i\)</span> không chia hết cho <span class="arithmatex">\(2,3,5\)</span>. 
 <span class="arithmatex">\(\left(i \in \{1, 7, 11, 13, 17, 19, 23, 29 \}\right)\)</span>
 Trong trường hợp này, ta chỉ cần sử dụng mảng kiểm tra nguyên tố <code>is_prime</code> cho các số có dạng trên.
 Lý do người ta dùng bánh xe thì bạn đọc có thể xem ảnh dưới đây. <em>Nguồn: <a href="https://en.wikipedia.org/wiki/Sieve_of_Pritchard#Overview">Wikipedia</a></em>
-<img alt="" src="https://hackmd.io/_uploads/SJX9g8nr2.gif" /></p>
-<h4 id="code-c-minh-hoa_6">Code C++ minh họa</h4>
+<img alt="img" src="../../../uploads/SJX9g8nr2.gif" /></p>
+<h4 id="code-c-minh-hoa_6">Code C++ minh họa<a class="headerlink" href="#code-c-minh-hoa_6" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="c1">// Các thông số của bánh xe</span>
 <span class="c1">// Bội của các số nguyên tố bé</span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">wheel_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
@@ -5823,7 +5753,7 @@ Lý do người ta dùng bánh xe thì bạn đọc có thể xem ảnh dưới 
 <p><strong>Độ phức tạp không gian: <span class="arithmatex">\(\boldsymbol{O\left(\dfrac{4}{15} n \right)}\)</span></strong></p>
 <p>Xét kích thước "bánh xe" là <span class="arithmatex">\(mod = 2 \cdot 3 \cdot 5 \ldots\)</span> có thể chọn <span class="arithmatex">\(mod\)</span> vào khoảng <span class="arithmatex">\(\sqrt n\)</span> thì ĐPT sẽ còn là <span class="arithmatex">\(O\left( \dfrac{n}{\log \log n} \right)\)</span>. Nhìn thì ĐPT thấp hơn sàng Eratosthenes thông thường, nhưng vì phương pháp trên mỗi vòng lặp đều sử dụng phép nhân/chia nên thời gian chạy có thể chậm hơn nhiều so với sàng Eratosthenes thông thường với bộ dữ liệu nhỏ <span class="arithmatex">\(\left(n \le 10^6 \right)\)</span>.</p>
 <p>Và vì lý do bộ nhớ cache mà người ta chỉ thường chọn modulo <span class="arithmatex">\(mod \in 30; 210\)</span>. Các số lọc được tiếp tục kiểm tra bằng cách khác như bên trên.</p>
-<h3 id="ket-hop-cac-cai-tien">Kết hợp các cải tiến</h3>
+<h3 id="ket-hop-cac-cai-tien">Kết hợp các cải tiến<a class="headerlink" href="#ket-hop-cac-cai-tien" title="Permanent link">&para;</a></h3>
 <p>Bên trên là một số cách cải tiến thường được sử dụng. Tuy nhiên bạn có thể kết hợp các cải tiến một cách hợp lý để tạo ra một sàng nguyên tố mạnh mẽ. </p>
 <p>Dưới đây là một số sàng được sưu tầm bởi <a href="https://www.facebook.com/code.cung.rr"><em>Code cùng RR</em></a>.</p>
 <details>
@@ -6053,15 +5983,15 @@ Dưới đây là một phần code được tối giản cho trường hợp $n
 </details>
 
 <p>So sánh <em>độ dài code</em> và <em>thời gian chạy</em> với <span class="arithmatex">\(n = 10^9\)</span> của một số sàng nguyên tố (<em>Nguồn: <a href="https://www.facebook.com/photo/?fbid=483129447247239&amp;set=pcb.483147020578815">Code cùng RR</a></em>)</p>
-<p><img alt="" src="https://hackmd.io/_uploads/HJNmI2Br3.png" /></p>
-<h2 id="mot-so-sang-nguyen-to-khac">Một số sàng nguyên tố khác</h2>
+<p><img alt="img" src="../../../uploads/HJNmI2Br3.png" /></p>
+<h2 id="mot-so-sang-nguyen-to-khac">Một số sàng nguyên tố khác<a class="headerlink" href="#mot-so-sang-nguyen-to-khac" title="Permanent link">&para;</a></h2>
 <p>Ngoài Sàng Eratosthenes, còn có một số sàng nguyên tố khác như:
 - <a href="https://en.wikipedia.org/wiki/Sieve_of_Atkin">Sàng nguyên tố Atkin</a> với ĐPT <span class="arithmatex">\(O(n)\)</span>
 - <a href="https://en.wikipedia.org/wiki/Sieve_of_Sundaram">Sàng nguyên tố Sundaram</a> với ĐPT <span class="arithmatex">\(O(n\log n)\)</span>
 - <a href="https://en.wikipedia.org/wiki/Sieve_of_Pritchard">Sàng Pritchard</a> với ĐPT <span class="arithmatex">\(O\left( \dfrac{n}{\log \log n} \right)\)</span>
 - ...
 Tuy nhiên, khi gặp các bộ dữ liệu <span class="arithmatex">\(n\)</span> vào khoảng <span class="arithmatex">\(10^6\)</span> thì các sàng này hầu như chạy chậm hơn so với Sàng Eratosthenes thông thường.</p>
-<h2 id="mo-rong">Mở rộng</h2>
+<h2 id="mo-rong">Mở rộng<a class="headerlink" href="#mo-rong" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Sử dụng cách sàng như sàng nguyên tố chúng ta có thể xây dựng các sàng cho các số có tính chất đặc biệt khác, ví dụ như lưu ước chính phương lớn nhất, thay các số nguyên tố thành các số phân biệt có tính chất nào đó ... Ví dụ như <a href="https://oj.vnoi.info/problem/dhbb2020_square">VNOI - Duyên Hải 2020 - Lớp 10 - Bài 2</a></li>
 <li><strong>Hàm</strong> <span class="arithmatex">\(\boldsymbol{\pi(x)}\)</span> là hàm đếm số số nguyên tố không vượt quá số dương <span class="arithmatex">\(x\)</span>.
@@ -6073,8 +6003,8 @@ Xem code bằng C++ tại <a href="https://replit.com/@truongxuannam/Lehmer?fbcl
 <li>Để phân tích thừa số nguyên tố thì có hai sàng tốt hơn sàng nguyên tố: <a href="https://en.wikipedia.org/wiki/Quadratic_sieve">Quadratic Sieve</a> và <a href="https://en.wikipedia.org/wiki/General_number_field_sieve">General number field sieve</a></li>
 <li>Ngoài ra có thể tham khảo thêm các code sàng nguyên tố được sưu tầm bởi <a href="https://www.facebook.com/code.cung.rr"><em>Code cùng RR</em></a> tại <a href="https://github.com/ngthanhtrung23/CompetitiveProgramming/blob/master/benchmark/sieve.cpp?fbclid=IwAR0pZChhgX4-P0ud5eD_z3lgYGOPYqcdegsUYNlC3Da1wn6F4v1u8hXuf0Q">đây.</a></li>
 </ul>
-<h2 id="bai-tap-luyen-tap">Bài tập luyện tập</h2>
-<h3 id="sang-nguyen-to-co-ban">Sàng nguyên tố cơ bản</h3>
+<h2 id="bai-tap-luyen-tap">Bài tập luyện tập<a class="headerlink" href="#bai-tap-luyen-tap" title="Permanent link">&para;</a></h2>
+<h3 id="sang-nguyen-to-co-ban">Sàng nguyên tố cơ bản<a class="headerlink" href="#sang-nguyen-to-co-ban" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://oj.vnoi.info/problem/fc075_fprime">VNOI - Free Contest 75 - FPRIME</a></li>
 <li><a href="https://oj.vnoi.info/problem/fc075_fprime">VNOI - Free Contest 102 - PRIME</a></li>
@@ -6108,7 +6038,7 @@ Xem code bằng C++ tại <a href="https://replit.com/@truongxuannam/Lehmer?fbcl
 <li><a href="https://codeforces.com/problemset/problem/17/A">Codeforces - Nodbach Problem</a></li>
 <li><a href="https://codeforces.com/problemset/problem/154/B">Codefoces - Colliders</a></li>
 </ul>
-<h3 id="sang-nguyen-to-cai-tien-thuat-toan-meissel-lehmer">Sàng nguyên tố cải tiến. Thuật toán Meissel-Lehmer</h3>
+<h3 id="sang-nguyen-to-cai-tien-thuat-toan-meissel-lehmer">Sàng nguyên tố cải tiến. Thuật toán Meissel-Lehmer<a class="headerlink" href="#sang-nguyen-to-cai-tien-thuat-toan-meissel-lehmer" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://oj.vnoi.info/problem/cprime">VNOI - Prime Number Theorem</a> <!-- Sàng cải tiến --></li>
 <li><a href="https://www.spoj.com/problems/PRIMES2/">SPOJ - Primes2</a> <!-- Sàng cải tiến --></li>
@@ -6117,7 +6047,7 @@ Xem code bằng C++ tại <a href="https://replit.com/@truongxuannam/Lehmer?fbcl
 <li><strong><a href="https://oj.vnoi.info/problem/icpc22_national_c?fbclid=IwAR0GjmgiXG9uuLtDYjyhaF-oIy6YERYDfb--uYctKc-TgSTnkRTzKrSixEk">ICPC 2022 vòng Quốc gia - C: Consecutive Primes</a></strong></li>
 <li><strong><a href="https://oj.vnoi.info/problem/voi22_matrix">VOI 22 Bài 6 - Xây dựng ma trận</a></strong></li>
 </ul>
-<h2 id="nguon-tham-khao">Nguồn tham khảo</h2>
+<h2 id="nguon-tham-khao">Nguồn tham khảo<a class="headerlink" href="#nguon-tham-khao" title="Permanent link">&para;</a></h2>
 <p>Bài viết được tổng hợp từ các nguồn dưới đây:
 * CP - Algorithms: 
     - <a href="https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html">Sieve of Eratosthenes</a>
@@ -6142,6 +6072,8 @@ Xem code bằng C++ tại <a href="https://replit.com/@truongxuannam/Lehmer?fbcl
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -6149,14 +6081,61 @@ Xem code bằng C++ tại <a href="https://replit.com/@truongxuannam/Lehmer?fbcl
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../primality_check/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kiểm tra số nguyên tố">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kiểm tra số nguyên tố
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../data-structures/array-vs-linked-lists/" class="md-footer__link md-footer__link--next" aria-label="Next: Mảng và danh sách liên kết">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Mảng và danh sách liên kết
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/KienPC1234/fptoj_wiki" target="_blank" rel="noopener" title="GitHub: KienPC1234/fptoj_wiki" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -6171,7 +6150,7 @@ Xem code bằng C++ tại <a href="https://replit.com/@truongxuannam/Lehmer?fbcl
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "toc.integrate", "toc.sticky", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "header.autohide"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>

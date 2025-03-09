@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="FPTOJ được xây dựng với mục đích chia sẻ kiến thức Tin học đến với tất cả mọi người">
+      
       
       
         <link rel="canonical" href="https://wiki.fptoj.com/translate/topcoder/Computational-Complexity-Section-2/">
@@ -17,7 +19,7 @@
         <link rel="next" href="../dynamic-programming/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../uploads/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#o-phuc-tap-tinh-toan-phan-2" class="md-skip">
+        <a href="#gioi-thieu" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +92,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="FPTOJ WIKI" class="md-header__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -172,6 +174,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -187,15 +191,146 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+      </div>
+    
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Trang chủ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../algo/basic/backtracking/" class="md-tabs__link">
+          
+  
+  Thuật Toán
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cs/crypto/Cipher-Tools/" class="md-tabs__link">
+          
+  
+  Computer Science (Khoa học máy tính)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../languages/cpp/pointers/" class="md-tabs__link">
+          
+  
+  Ngôn Ngữ Lập Trình
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../functional-programming-part-1/" class="md-tabs__link">
+          
+  
+  Dịch Thuật
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -209,8 +344,12 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="FPTOJ WIKI" class="md-nav__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -220,10 +359,61 @@
     FPTOJ WIKI
   </label>
   
+    <div class="md-nav__source">
+      <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
     
       
       
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Trang chủ
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Trang chủ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -233,7 +423,7 @@
         
   
   <span class="md-ellipsis">
-    Trang chủ
+    Home
     
   </span>
   
@@ -242,9 +432,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -263,9 +454,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -284,6 +476,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -293,16 +493,19 @@
   
     
     
+    
+      
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -314,8 +517,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Thuật Toán
           </label>
@@ -330,15 +533,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -350,8 +556,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Cơ Bản
           </label>
@@ -594,15 +800,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -614,8 +823,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Đại Số
           </label>
@@ -770,15 +979,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -790,8 +1002,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Cấu trúc dữ liệu
           </label>
@@ -1408,15 +1620,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1428,8 +1643,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             Quy hoạch động
           </label>
@@ -1584,15 +1799,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1604,8 +1822,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Games
           </label>
@@ -1650,15 +1868,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1670,8 +1891,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Hình học
           </label>
@@ -1760,15 +1981,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1780,8 +2004,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             Lý thuyết Đồ Thị
           </label>
@@ -2046,15 +2270,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2066,8 +2293,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             Toán
           </label>
@@ -2178,15 +2405,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2198,8 +2428,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             Tìm Kiếm
           </label>
@@ -2244,15 +2474,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
         
           
-          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2264,8 +2497,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             Kỹ Năng Thi
           </label>
@@ -2354,15 +2587,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
         
           
-          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2374,8 +2610,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_11">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
             <span class="md-nav__icon md-icon"></span>
             Xâu kí tự
           </label>
@@ -2508,15 +2744,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
         
           
-          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2528,8 +2767,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
             <span class="md-nav__icon md-icon"></span>
             Mẹo
           </label>
@@ -2735,15 +2974,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2755,8 +2997,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Computer Science (Khoa học máy tính)
           </label>
@@ -2771,15 +3013,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2791,8 +3036,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Crypto
           </label>
@@ -2851,15 +3096,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2871,8 +3119,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             Cipher
           </label>
@@ -2925,15 +3173,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2945,8 +3196,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Xử lý ảnh
           </label>
@@ -3020,15 +3271,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3040,8 +3294,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Ngôn Ngữ Lập Trình
           </label>
@@ -3131,15 +3385,21 @@
     
     
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -3151,8 +3411,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Dịch Thuật
           </label>
@@ -3189,15 +3449,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3209,8 +3472,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             Codeforces
           </label>
@@ -3343,15 +3606,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3363,8 +3629,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             E-Maxx
           </label>
@@ -3431,15 +3697,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3451,8 +3720,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             Nâng Cao
           </label>
@@ -3673,15 +3942,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3693,8 +3965,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
             Máy học (Machine Learning - ML)
           </label>
@@ -3827,15 +4099,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3847,8 +4122,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
             Quora
           </label>
@@ -3895,15 +4170,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3915,8 +4193,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             Topcoder
           </label>
@@ -3957,8 +4235,18 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Độ phức tạp tính toán - phần 2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -3970,6 +4258,194 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gioi-thieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giới thiệu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vong-lap-long-nhau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vòng lặp lồng nhau
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#su-dung-e-quy-e-sinh-cac-cau-hinh-to-hop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sử dụng đệ quy để sinh các cấu hình tổ hợp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chia-e-tri-su-dung-e-quy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chia để trị sử dụng đệ quy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luu-y-ve-ham-logarit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lưu ý về hàm logarit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phuong-phap-thay-the" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phương pháp Thay Thế
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phuong-phap-cay-e-quy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phương pháp Cây Đệ Quy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cay-e-quy-mo-rong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cây Đệ Quy mở rộng
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 7
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inh-ly-tong-quat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định lý Tổng Quát
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 8
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-du-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ 9
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loi-nguoi-dich" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lời người dịch
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4279,15 +4755,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
         
           
-          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4299,8 +4778,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
             USACO
           </label>
@@ -4345,15 +4824,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
         
           
-          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4365,8 +4847,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
             Wcipeg
           </label>
@@ -4548,24 +5030,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -4574,20 +5038,24 @@
                   
 
 
+  
+  
 
-<h1 id="o-phuc-tap-tinh-toan-phan-2">Độ phức tạp tính toán - phần 2</h1>
+
+  <h1>Độ phức tạp tính toán - phần 2</h1>
+
 <p>Nguồn bài: <a href="https://www.topcoder.com/community/data-science/data-science-tutorials/computational-complexity-section-2/">Topcoder</a></p>
 <p><a href="http://vnoi.info/translate/topcoder/Computational-Complexity-Section-1">...đọc phần 1</a></p>
-<h1 id="gioi-thieu">Giới thiệu</h1>
+<h2 id="gioi-thieu">Giới thiệu<a class="headerlink" href="#gioi-thieu" title="Permanent link">&para;</a></h2>
 <p>Trong phần này của bài viết chúng ta sẽ tập trung vào việc ước lượng độ phức tạp cho các chương trình đệ quy. Về mặt bản chất việc này sẽ dẫn tới khảo sát độ tăng của các hàm độ phức tạp thời gian thỏa mãn các công thức truy hồi. Nếu bạn chưa hiểu chính xác thế nào là một thuật giải đệ quy thì không cần lo lắng vì nó sẽ được giải thích trong các phần sau. Trước mắt chúng ta sẽ xem xét trường hợp đơn giản hơn - các chương trình không sử dụng đệ quy.</p>
-<h1 id="vong-lap-long-nhau">Vòng lặp lồng nhau</h1>
+<h2 id="vong-lap-long-nhau">Vòng lặp lồng nhau<a class="headerlink" href="#vong-lap-long-nhau" title="Permanent link">&para;</a></h2>
 <p>Để mở đầu, ta xét các chương trình đơn giản không sử dụng các lời gọi đệ quy. Với các chương trình như vậy, ba quy tắc phổ biến dễ áp dụng để tìm cận trên của độ phức tạp là:</p>
 <ul>
 <li>Tính số lần lặp tối đa của một vòng lặp</li>
 <li>Nếu các vòng lặp nối tiếp nhau thì <strong>cộng</strong> các cận đó với nhau</li>
 <li>Nếu các vòng lặp lồng nhau thì <strong>nhân</strong> các cận với nhau</li>
 </ul>
-<h2 id="vi-du-1">Ví dụ 1</h2>
+<h2 id="vi-du-1">Ví dụ 1<a class="headerlink" href="#vi-du-1" title="Permanent link">&para;</a></h2>
 <p>Ước lượng độ phức tạp của đoạn mã sau:
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w">                           </span><span class="c1">//  1</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w">                 </span><span class="c1">//  2</span>
@@ -4606,11 +5074,11 @@
 <p>Toàn bộ phần mã bên trong này được thực thi <span class="arithmatex">\(O(N^2)\)</span> lần - mỗi lần tương ứng với một tổ hợp của biến <span class="arithmatex">\(i\)</span> và <span class="arithmatex">\(j\)</span> (dòng 2 và 3) (chú ý là chỉ có <span class="arithmatex">\(N(N + 1)/2\)</span> giá trị khác nhau cho bộ số <span class="arithmatex">\([i,j]\)</span>. Mặc dù vậy <span class="arithmatex">\(O(N^2)\)</span> vẫn là cận trên đúng).</p>
 <p>Từ nhận xét trên ta có tổng độ phức tạp của thuật toán trong Ví dụ 1 là <span class="arithmatex">\(O(N^2 MN) = O(MN^3)\)</span>.</p>
 <p>Từ ví dụ trên người đọc đã có khả năng phân tích độ phức tạp của các phần mã đơn giản sử dụng phương pháp như đã trình bày. Chúng ta sẽ đi tới xem xét các chương trình có sử dụng đệ quy (tức là một hàm số mà trong thân hàm của nó sẽ gọi tới chính nó với tham số khác) và phân tích ảnh hưởng của những lời gọi đệ quy này tới độ phức tạp của chúng.</p>
-<h1 id="su-dung-e-quy-e-sinh-cac-cau-hinh-to-hop">Sử dụng đệ quy để sinh các cấu hình tổ hợp</h1>
+<h2 id="su-dung-e-quy-e-sinh-cac-cau-hinh-to-hop">Sử dụng đệ quy để sinh các cấu hình tổ hợp<a class="headerlink" href="#su-dung-e-quy-e-sinh-cac-cau-hinh-to-hop" title="Permanent link">&para;</a></h2>
 <p>Một ứng dụng phổ biến của đệ quy là cài đặt thuật toán quay lui để sinh ra tất cả các nghiệm của một bài toán. Ý tưởng chung là đào sâu vào từng nhánh nghiệm đến khi nhánh nghiệm này được thử hết thì quay lại bước trước đó để thử các nhánh nghiệm khác.</p>
 <p>Cách tiếp cận này không phải lúc nào cũng áp dụng được, có những bài toán mà ta không thể sinh ra tất cả các nghiệm để thử từng nghiệm một như vậy. Tuy nhiên, trường hợp thường xảy ra là tập nghiệm của một bài toán trùng với một loại cấu hình tổ hợp nào đó. Thông thường đó là tập các hoán vị (với số phần tử cho trước), nhưng đôi lúc cũng có thể là các cấu hình khác (tổ hợp, số cách phân chia một tập hợp, ...)</p>
 <p>Lưu ý là ta luôn luôn có thể sinh ra tất cả các chuỗi của 0 và 1, kiểm tra từng chuỗi một (kiểm tra xem chuỗi đó có tương ứng với một nghiệm hợp lệ hay không) và lưu lại nghiệm tốt nhất. Nếu ta có thể tìm một cận trên của kích cỡ nghiệm tốt nhất, số nghiệm phải kiểm tra là hữu hạn. Tuy nhiên cách làm này không đủ nhanh và không nên dùng nó nếu có cách làm khác.</p>
-<h2 id="vi-du-2">Ví dụ 2</h2>
+<h2 id="vi-du-2">Ví dụ 2<a class="headerlink" href="#vi-du-2" title="Permanent link">&para;</a></h2>
 <p>Một thuật toán quay lui đơn giản để sinh ra tất cả các hoán vị của các số tự nhiên từ 0 tới <span class="arithmatex">\(N-1\)</span></p>
 <div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">permutation</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">used</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
@@ -4639,9 +5107,9 @@
 </code></pre></div>
 <p>Trong trường hợp này, dễ thấy cận dưới chính là số lượng nghiệm khả dĩ của bài toán. Thuật toán quay lui thường được sử dụng để giải các bài toán khó - khi ta không tìm được thuật toán nào tối ưu hơn. Thường thì không gian nghiệm khá lớn và phân bố đồng đều, thuật toán có thể được cài đặt sao cho độ phức tạp gần với đánh giá cận dưới. Để tìm cận trên ta chỉ việc cộng thêm số lượng phép tính cần thiết trong thực tế.</p>
 <p>Tuy vậy cách làm này thường là không khả thi do nó phải khảo sát một số lượng lớn các nghiệm - thường là hàm mũ hoặc lớn hơn thế.</p>
-<h1 id="chia-e-tri-su-dung-e-quy">Chia để trị sử dụng đệ quy</h1>
+<h2 id="chia-e-tri-su-dung-e-quy">Chia để trị sử dụng đệ quy<a class="headerlink" href="#chia-e-tri-su-dung-e-quy" title="Permanent link">&para;</a></h2>
 <p>Từ ví dụ 2 chúng ta có thể nhầm tưởng rằng đệ quy chạy không hiệu quả và làm cho tốc độ thực thi rất chậm. Không phải lúc nào điều này cũng đúng. Ngược lại, đệ quy có thể là một công cụ rất mạnh để thiết kế những thuật toán hiệu quả. Cách thông thường để thiết kệ một giải thuật đệ quy hiệu quả là áp dụng tư tưởng <strong>Chia để Trị</strong> - chia bài toán thành nhiều phần, xử lý các phần nhỏ tách biệt nhau và cuối cùng ghép các kết quả con lại để được kết quả cho bài toán lớn. Dễ thấy rằng, phần "xử lý các phần nhỏ tách biệt nhau" thường được cài đặt bằng đệ quy - tiếp tục chia phần nhỏ thành phần nhỏ hơn cho tới khi đủ nhỏ để giải trực tiếp bằng các thuật toán đơn giản.</p>
-<h2 id="vi-du-3">Ví dụ 3</h2>
+<h2 id="vi-du-3">Ví dụ 3<a class="headerlink" href="#vi-du-3" title="Permanent link">&para;</a></h2>
 <p>Mã giả mô tả thuật toán sắp xếp trộn <em>MergeSort</em></p>
 <div class="highlight"><pre><span></span><code>MergeSort(mảng S) {
   if (số phần tử của S &lt;= 1) return S;
@@ -4672,7 +5140,7 @@ f(N) = 2f(N/2) + \Theta(N) \space\space\space(1)
 \]</div>
 <p>Lưu ý rằng đây không phải là một "phương trình" theo nghĩa truyền thống. Ở phần 1 ta đã thấy rằng dấu bằng ở đây có nghĩa là <strong>"tiệm cận bằng"</strong>. Thông thường có rất nhiều hàm số khác nhau thỏa mãn phương trình trên. Tuy nhiên tất cả các hàm số đó sẽ có cùng độ tăng - và đây chính là điều mà ta hướng tới. Tổng quát hơn, ta muốn tìm cận trên nhỏ nhất của độ tăng của tất cả các hàm số thỏa mãn phương trình trên.</p>
 <p>Trong các phần cuối cùng của bài viết này, ta sẽ bàn luận một vài phương pháp giải các "phương trình" trên. Tuy nhiên trước đó ta sẽ tìm hiểu thêm một chút về các hàm logarit.</p>
-<h1 id="luu-y-ve-ham-logarit">Lưu ý về hàm logarit</h1>
+<h2 id="luu-y-ve-ham-logarit">Lưu ý về hàm logarit<a class="headerlink" href="#luu-y-ve-ham-logarit" title="Permanent link">&para;</a></h2>
 <p>Tới đây bạn có thể đặt câu hỏi: tác giả viết một vài thuật toán có độ phức tạp là hàm logarit ví dụ <span class="arithmatex">\(O(NlogN)\)</span>, vậy cơ số của hàm logarit này là bao nhiêu? Tại sao ta không sử dụng cơ số 2 để có <span class="arithmatex">\(O(Nlog_2N)\)</span>?</p>
 <p>Câu trả lời: cơ số của hàm logarit không quan trọng, tất cả cac hàm logarit (với cơ số lớn hơn 1) đều tiệm cận bằng nhau. Lý do là hai hàm logarit khác nhau tỷ lệ với nhau:</p>
 <div class="arithmatex">\[
@@ -4690,7 +5158,7 @@ log_ab = \frac{log_bb}{log_ba} = \frac{1}{log_ba}
 $$
 a^{log_bN} = a^{log_aN/log_ab} = (a^{log_aN})^{1/log_ab} = N^{log_ba} \space\space\space(3)
 $$</p>
-<h1 id="phuong-phap-thay-the">Phương pháp Thay Thế</h1>
+<h2 id="phuong-phap-thay-the">Phương pháp Thay Thế<a class="headerlink" href="#phuong-phap-thay-the" title="Permanent link">&para;</a></h2>
 <p>Phương pháp này có thể được tổng kết trong một câu: dự đoán cận trên (tiệm cận) của <span class="arithmatex">\(f\)</span> và (cố gắng) chứng minh bằng quy nạp.</p>
 <p>Để minh họa, ta sẽ chứng minh rằng hàm <span class="arithmatex">\(f\)</span> thỏa mãn phương trình (1) là <span class="arithmatex">\(O(NlogN)\)</span>
 Từ (1) ta có:</p>
@@ -4703,17 +5171,17 @@ Từ (1) ta có:</p>
 <p>Nói cách khác, phép quy nạp sẽ đúng nếu <span class="arithmatex">\(d&gt;c\)</span>. Ta luôn luôn có thể chọn <span class="arithmatex">\(d\)</span> lớn thỏa mãn điều kiện này.</p>
 <p>Để hoàn thiện ta cần chứng minh rằng bất đẳng thức trên đúng với một vài giá trị đầu tiên của <span class="arithmatex">\(N\)</span>. Phép chứng minh khá phức tạp. Ý tưởng chính là nếu giá trị <span class="arithmatex">\(d\)</span> ta tìm được chưa đủ lớn, ta luôn có thể tăng <span class="arithmatex">\(d\)</span> sao cho các trường hợp đầu tiên của <span class="arithmatex">\(N\)</span> thỏa mãn bất đẳng thức.</p>
 <p>Lưu ý rằng trong ví dụ trên ta không thể chứng minh khi <span class="arithmatex">\(N = 1\)</span> với vì <span class="arithmatex">\(lg1 = 0\)</span>. Tuy nhiên, điều này không ảnh hưởng tới tính đúng đắn của phép chứng minh trên. Kết luận: từ (1) ta có  <span class="arithmatex">\(f (N) = O(N lg N)\)</span>.</p>
-<h1 id="phuong-phap-cay-e-quy">Phương pháp Cây Đệ Quy</h1>
+<h2 id="phuong-phap-cay-e-quy">Phương pháp Cây Đệ Quy<a class="headerlink" href="#phuong-phap-cay-e-quy" title="Permanent link">&para;</a></h2>
 <p>Với một người mới bắt đầu thì phương pháp trên không hữu dụng lắm. Để sử dụng phương pháp Thay Thế ta cần phải có một dự đoán tốt về cận trên của độ phức tạp, và để có dự đoán tốt đó ta cần có một vài thông tin, hiểu biết về hàm độ phức tạp trước. Câu hỏi là, làm thế nào để thu thập các hiểu biết này? Trước tiên ta sẽ xem xét kỹ hơn về cơ chế chạy đệ quy của nó của hàm số trên (bằng việc chạy thử từng bước đệ quy của nó).</p>
 <p>Ta có thể biểu diễn các bước thực thi của một chương trình đệ quy trên một bộ đầu vào cho trước bằng một cây có gốc xác định. Mỗi đỉnh trên cây sẽ tương ứng với một bài toán con mà chương trình đang giải. Xét một đỉnh bất kỳ trên cây. Nếu giải bài toán thuộc đỉnh đó cần phải gọi đệ quy, đỉnh đó sẽ có các đỉnh con tương ứng với các bài toán nhỏ hơn nữa. Gốc của cây là bộ đầu vào, các lá tương ứng với các bài toán cơ bản có thể giải trực tiếp bằng các thuật toán thông thường (không đệ quy).</p>
 <p>Giả sử ta đánh dấu mỗi đỉnh bằng một nhãn biểu thị độ phức tạp nội tại cần có trên đỉnh đó (không tính tới độ phức tạp của lệnh gọi đệ quy). Rõ ràng là độ phức tạp của bài toán gốc bằng tổng tất cả các nhãn của các đỉnh.</p>
 <p>Tương tự như các phần trên, ta chỉ quan tâm tới cận trên tiệm cận. Để tìm giá trị này ta có thể "làm tròn" mỗi nhãn để việc tính tổng dễ dàng hơn. Ta minh họa cách làm trên bằng một vài ví dụ sau:</p>
-<h2 id="vi-du-4">Ví dụ 4</h2>
+<h2 id="vi-du-4">Ví dụ 4<a class="headerlink" href="#vi-du-4" title="Permanent link">&para;</a></h2>
 <p>Cây đệ quy cho thuật toán <em>MergeSort</em> ở Ví dụ 3 với 5 phần tử.
 <img alt="/uploads/topcoder_translate_tree1.png" src="/uploads/topcoder_translate_tree1.png" /></p>
 <p>Cây đệ quy cho công thức truy hồi tương ứng của <em>MergeSort</em>. Số trong mỗi đỉnh biểu thị số bước mà thuật toán thực thi tại đỉnh đó.</p>
 <p><img alt="/uploads/topcoder_translate_tree2.png" src="/uploads/topcoder_translate_tree2.png" /></p>
-<h2 id="vi-du-5">Ví dụ 5</h2>
+<h2 id="vi-du-5">Ví dụ 5<a class="headerlink" href="#vi-du-5" title="Permanent link">&para;</a></h2>
 <p>Cây đệ quy trong trường hợp xấu nhất của phương trình (1):</p>
 <p><img alt="/uploads/topcoder_translate_tree3.png" src="/uploads/topcoder_translate_tree3.png" /></p>
 <p>Một cách xử lý phổ biến trong toán tổ hợp là tính tổng các cấu hình theo thứ tự mới khác với thứ tự mà các tổ hợp được tạo ra. Trong trường hợp này ta tính tổng theo từng mức trên cây (các đỉnh có cùng độ sâu). Không khó để nhận ra rằng tổng độ phức tạp ở mỗi mức là <span class="arithmatex">\(cN\)</span>.</p>
@@ -4721,10 +5189,10 @@ Từ (1) ta có:</p>
 <p>Từ hai nhận xét trên ta thu được kết quả cuối cùng: tổng độ phức tạp cần thực hiện là
 $ \Theta(cN log N) = \Theta(N log N)$.</p>
 <p>Nếu bạn chưa hoàn toàn tin tưởng vào kết quả vừa thu được thì có thể áp dụng phương pháp Thay Thế ở trên để kiểm tra lại. Trong phần sau ta sẽ thấy là tồn tại những định lý cụ thể để có thể chứng minh chặt chẽ kết quả thu được ở trên.</p>
-<h1 id="cay-e-quy-mo-rong">Cây Đệ Quy mở rộng</h1>
+<h2 id="cay-e-quy-mo-rong">Cây Đệ Quy mở rộng<a class="headerlink" href="#cay-e-quy-mo-rong" title="Permanent link">&para;</a></h2>
 <p>Ví dụ 5 ở trên cho ta một câu hỏi: việc tổng độ phức tạp ở mỗi mức của cây bằng nhau có phải là trùng hợp hay không?</p>
 <p>Trả lời: Không và Có. Không, vì một lý do đơn giản mà ta sẽ xem ở phần sau. Có, vì không phải lúc nào tổng các mức cũng bằng nhau như vậy - hai ví dụ sau đây sẽ minh họa cho điều đó.</p>
-<h2 id="vi-du-6">Ví dụ 6</h2>
+<h2 id="vi-du-6">Ví dụ 6<a class="headerlink" href="#vi-du-6" title="Permanent link">&para;</a></h2>
 <p>Ta thử áp dụng phương pháp Cây Đệ Quy để giải cho phương trình sau:
 $$
 f(N) = 3f(N/2) + \Theta(N^3)
@@ -4759,7 +5227,7 @@ S = \frac{cN^3}{1 - \frac{3}{8}} = \frac{8}{5}cN^3 = \Theta(N^3)
 <p>Như vậy tổng độ phức tạp trên cây đệ quy là <span class="arithmatex">\(O(N^3)\)</span> (tổng tới vô cùng cho ta cận trên). Ta cũng thấy là ngay phần từ đầu tiên của dãy cấp số nhân đã là $ \Theta(N^3)$. Vậy ta kết luận tổng độ phức tạp của cây đệ quy trên là $ \Theta(N^3)$.</p>
 <p>Một nguyên lý tổng quát quan trọng ta có thể rút ra từ ví dụ này là: nếu tổng độ phức tạp của các mức của cây tạo nên một dãy cấp số nhân giảm, thì tổng độ phức tạp trên cả cây sẽ tiệm cận bằng với độ phức tạp ở gốc của cây.</p>
 <p>Từ kết quả trên ta có một nhận xét quan trọng về thuật toán đệ quy biểu diễn bằng công thức truy hồi có tính chất trên: lệnh gọi đệ quy giải bài toán con không tốn thời gian thực thi bằng việc chuẩn bị lời gọi và xử lý sau lời gọi đệ quy. (Nói cách khác, nếu ta cần cải tiến thuật toán thì phải tập trung tối hưu hóa hai việc đó).</p>
-<h2 id="vi-du-7">Ví dụ 7</h2>
+<h2 id="vi-du-7">Ví dụ 7<a class="headerlink" href="#vi-du-7" title="Permanent link">&para;</a></h2>
 <p>Giờ chúng ta cùng thử áp dụng phương pháp Cây Đệ Quy để giải phương trình sau:
 $$
 f(N) = 5f(N/3) + \Theta(N)
@@ -4794,7 +5262,7 @@ Cây đệ quy sẽ có dạng sau
 <p>Để tính tổng độ phức tạp trên toàn cây ta <strong>đảo ngược</strong> cây, tạo thành một dãy cấp số nhân <strong>giảm</strong> và như vậy ta có thể áp dụng cách tính ở trên. Xử lý tương tự ví dụ trước đó ta thu được tổng độ phức tạp là một giá trị tiệm cận bằng với phần tử lớn nhất trong dãy cấp số nhân.</p>
 <p>Ta kết luận rằng tổng độ phức tạp của thuật toán biểu diễn bởi phương trình trên là xấp xỉ $\Theta(N^{log_35}) \approx \Theta(N^{1.465}) $.</p>
 <p>Lưu ý là cơ số 3 trong hàm logarit cho ta kết quả mũ chính xác, vì vậy cơ số này rất quan trọng. Nếu là cơ số khác thì giá trị tiệm cận cũng sẽ thay đổi.</p>
-<h1 id="inh-ly-tong-quat">Định lý Tổng Quát</h1>
+<h2 id="inh-ly-tong-quat">Định lý Tổng Quát<a class="headerlink" href="#inh-ly-tong-quat" title="Permanent link">&para;</a></h2>
 <p>Từ các ví dụ trên chúng ta đã thấy một quy luật giải các công thức truy hồi. Cho một công thức truy hồi, lập cây đệ quy tương ứng và tính tổng độ phức tạp trên mỗi mức. Kết quả thu được sẽ là một dãy cấp số nhân. Nếu đó là dãy giảm, tổng độ phức tạp trên toàn cây sẽ tỷ lệ với độ phức tạp của đỉnh gốc. Nếu là dãy tăng, tổng độ phức tạp sẽ tỷ lệ với  tổng độ phức tạp ở các lá. Nếu là dãy không đổi thì tổng độ phức tạp sẽ là (độ phức tạp trên một mức) nhân với (chiều cao cây).</p>
 <p>Trong thực tế sẽ có một vài trường hợp mà quy luật trên gặp khó khăn, tuy nhiên hầu hết sẽ chỉ có một trong ba trường hợp trên xảy ra. Thêm vào đó, ta có cơ sở để chứng minh quy luật trên một cách chặt chẽ. Cơ sở chính thống của quy luật trên được biết đến với cái tên Định lý Tổng Quát.</p>
 <p>Để thuận tiện bài viết này sẽ trình bày đầy đủ về định lý này. (Lưu ý là ta không cần biết chứng minh của nó để có thể áp dụng vào giải công thức truy hồi).</p>
@@ -4812,21 +5280,21 @@ Ta có kết quả sau:</p>
 <p>Trường hợp <span class="arithmatex">\(2\)</span> tương ứng với <strong>Ví dụ 5</strong>. Thời gian dành cho việc gọi đệ quy xấp xỉ bằng thời gian để chuẩn bị cho lệnh gọi đệ quy và xử lý sau đó. Trên tất cả các mức của cây ta có độ phức tạp xấp xỉ bằng nhau, chiều cao cây luôn là một hàm logarit của kích cỡ tập đầu vào.</p>
 <p>Trường hợp <span class="arithmatex">\(3\)</span> tương ứng với <strong>Ví dụ 6</strong>. Hầu hết thời gian thực thi được dành cho việc chuẩn bị để gọi lệnh đệ quy và xử lý kết quả sau đó. Thông thường thì tổng độ phức tạp sẽ tiệm cận bằng với thời gian thực thi ở đỉnh gốc của cây.</p>
 <p>Lưu ý điều kiện thêm vào ở trường hợp <span class="arithmatex">\(3\)</span>. Để trường hợp <span class="arithmatex">\(3\)</span> đúng ta cần có điều kiện của hàm <span class="arithmatex">\(p\)</span> phải thỏa mãn thời gian thực thi hàm <span class="arithmatex">\(p\)</span> lớn hơn tổng thời gian thực thi ở các đỉnh con cháu. Thật ra đây không phải là một vấn đề cần phải chú tâm quá nhiều bởi trong các kỳ thi các hàm <span class="arithmatex">\(p\)</span> mà bạn có thể gặp hầu như sẽ thỏa mãn điều kiện trên (nếu rơi vào trườn hợp <span class="arithmatex">\(3\)</span>).</p>
-<h2 id="vi-du-8">Ví dụ 8</h2>
+<h2 id="vi-du-8">Ví dụ 8<a class="headerlink" href="#vi-du-8" title="Permanent link">&para;</a></h2>
 <p>Gọi <span class="arithmatex">\(f(N)\)</span> là thời gian mà thuật toán nhân ma trận <strong>Strassen</strong> cần để nhân hai ma trận vuông kích cỡ <span class="arithmatex">\(N\)</span> x <span class="arithmatex">\(N\)</span>. Đây là một thuật toán đệ quy, thực hiện <span class="arithmatex">\(7\)</span> lời gọi hàm đệ quy, mỗi hàm nhân hai ma trận có kích cỡ <span class="arithmatex">\(N/2\)</span> x <span class="arithmatex">\(N/2\)</span> và sau đó tổng hợp kết quả trong <span class="arithmatex">\(\Theta(N^2)\)</span>.</p>
 <p>Ta có công thức truy hồi sau:</p>
 <div class="arithmatex">\[
 f(N) = 7f(N/2) + \Theta(N^2)
 \]</div>
 <p>Sử dụng định lý Tổng Quát, ta thấy Trường hợp <span class="arithmatex">\(1\)</span> có thể áp dụng được. Vì vậy độ phức tạp của thuật toán Strassen là <span class="arithmatex">\(\Theta(N^{log_27}) \approx \Theta({N^{2.807}})\)</span>. Lưu ý là thuật toán cổ điển nhân ma trận theo định nghĩa có độ phức tạp $ \Theta(N^3)$.</p>
-<h2 id="vi-du-9">Ví dụ 9</h2>
+<h2 id="vi-du-9">Ví dụ 9<a class="headerlink" href="#vi-du-9" title="Permanent link">&para;</a></h2>
 <p>Thỉnh thoảng ta có thể gặp trường hợp mà kích cỡ các bài toán con không bằng nhau. Một ví dụ là thuật toán <strong>Trung vị của 5</strong> để tìm phần tử lớn thứ <em>k</em> của một mảng số. Thuật toán trên được chứng minh là có độ phức tạp thỏa mãn công thức</p>
 <div class="arithmatex">\[
 f(N) = f(N/5) + f(7N/10 + 6) + \Theta(N)
 \]</div>
 <p>Công thức trên giải như thế nào? Phương pháp cây Đệ Quy có thể được áp dụng trong trường hợp bất đối xứng như vậy không? Có một phiên bản tổng quát hơn của Định lý Tổng Quát áp dụng cho trường hợp như vậy hay không? Và trong các trường hợp mà định lý Tổng Quát không áp dụng được, điển hình là với công thức <span class="arithmatex">\(f (N) = 4f (N/4) + \Theta(N log N)\)</span>, ta cần xử lý thế nào?</p>
 <p>Chúng ta sẽ không trả lời các câu hỏi trên tại đây, và tài liệu này cũng không phải là tài liệu duy nhất về chủ đề độ phức tạp thuật toán. Nếu bạn đang thắc mắc về các câu hỏi trên thì bạn đã nắm được cơ bản đủ để sử dụng trong các kỳ thi thuật toán. Nếu bạn muốn trả lời các câu hỏi trên thì có thể tìm đọc trong các sách chính thống.</p>
-<h1 id="loi-nguoi-dich">Lời người dịch</h1>
+<h2 id="loi-nguoi-dich">Lời người dịch<a class="headerlink" href="#loi-nguoi-dich" title="Permanent link">&para;</a></h2>
 <p>Trong bài viết 2 phần này tác giả <strong>misof</strong> đã giới thiệu khá đầy đủ về độ phức tạp tính toán để có thể sử dụng trong các kỳ thi lập trình. Tác giả đã bỏ qua một vài điểm như xử lý phần nguyên, chứng minh độ phức tạp bằng phép tính lấy giới hạn, lời giải cho phần 1 của Ví dụ 9 (xem lời giải tại <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2012/lecture-notes/MIT6_046JS12_lec01.pdf">đây</a>), định lý Tổng Quát mở rộng (dùng để giải phần 2 của ví dụ 9) và một vài chi tiết khác. Bạn đọc quan tâm tới các phần bị bỏ qua có thể tìm đọc cuốn <strong>Introduction to Algorithm, 3rd edition</strong> <a href="http://bayanbox.ir/view/4177858657730907268/introduction-to-algorithms-3rd-edition.pdf">link</a> thường được biết đến với tên gọi <strong>CLRS</strong> (4 chữ cái đầu tên của 4 tác giả), hình như đã có bản dịch tiếng Việt. Các bạn yêu thích học trực tuyến có thể tìm khóa <strong>Analysis and Design of Algorithms</strong> trên trang web <em>mentorsnet.org</em> (bằng tiếng Anh), đây là khóa học của giảng viên Ấn Độ và họ có slides bài giảng rất chi tiết gồm cả toàn bộ chứng minh của định lý Tổng Quát cơ bản và mở rộng. Ngoài ra, sau khi đã thuần thục về độ phức tạp tính toán các bạn có thể tìm hiểu thêm về các khái niệm lớp <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(NP, NP-Hard, NP-Complete\)</span>. Hiểu biết về <span class="arithmatex">\(P\)</span> và <span class="arithmatex">\(NP\)</span> sẽ giúp các bạn tiếp cận với một dạng bài đang trở nên phổ biến gần đây là <strong>tham số cố định khả tính</strong> (<em>fixed-parameter-tractability</em> hay <em>FPT</em>). Bạn có thể tìm hiểu về <em>FPT</em> qua bài viết trên blog của <strong>Petr</strong> <a href="http://petr-mitrichev.blogspot.com/2016/07/a-fixed-parameter-tractable-week.html">ở đây</a>. Tiềm năng của <em>FPT</em> theo mình nghĩ là rất lớn với ứng dụng không chỉ trong việc thi các kỳ thi thuật toán mà còn trong giải các bài toán thực tế.</p>
 
 
@@ -4845,6 +5313,8 @@ f(N) = f(N/5) + f(7N/10 + 6) + \Theta(N)
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -4852,14 +5322,61 @@ f(N) = f(N/5) + f(7N/10 + 6) + \Theta(N)
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Computational-Complexity-Section-1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Độ phức tạp tính toán">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Độ phức tạp tính toán
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../dynamic-programming/" class="md-footer__link md-footer__link--next" aria-label="Next: Nhập môn Quy hoạch động">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Nhập môn Quy hoạch động
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/KienPC1234/fptoj_wiki" target="_blank" rel="noopener" title="GitHub: KienPC1234/fptoj_wiki" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -4874,7 +5391,7 @@ f(N) = f(N/5) + f(7N/10 + 6) + \Theta(N)
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "toc.integrate", "toc.sticky", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "header.autohide"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>

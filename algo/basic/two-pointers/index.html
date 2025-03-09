@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="FPTOJ được xây dựng với mục đích chia sẻ kiến thức Tin học đến với tất cả mọi người">
+      
       
       
         <link rel="canonical" href="https://wiki.fptoj.com/algo/basic/two-pointers/">
@@ -17,7 +19,7 @@
         <link rel="next" href="../../algebra/binary_exponentation/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../uploads/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ki-thuat-hai-con-tro" class="md-skip">
+        <a href="#loi-mo-au" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +92,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="FPTOJ WIKI" class="md-header__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -172,6 +174,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -187,15 +191,148 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+      </div>
+    
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Trang chủ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../backtracking/" class="md-tabs__link">
+          
+  
+  Thuật Toán
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cs/crypto/Cipher-Tools/" class="md-tabs__link">
+          
+  
+  Computer Science (Khoa học máy tính)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../languages/cpp/pointers/" class="md-tabs__link">
+          
+  
+  Ngôn Ngữ Lập Trình
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../translate/functional-programming-part-1/" class="md-tabs__link">
+          
+  
+  Dịch Thuật
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -209,8 +346,12 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="FPTOJ WIKI" class="md-nav__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -220,10 +361,61 @@
     FPTOJ WIKI
   </label>
   
+    <div class="md-nav__source">
+      <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
     
       
       
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Trang chủ
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Trang chủ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -233,7 +425,7 @@
         
   
   <span class="md-ellipsis">
-    Trang chủ
+    Home
     
   </span>
   
@@ -242,9 +434,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -263,9 +456,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -284,6 +478,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -296,15 +498,21 @@
     
     
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -316,8 +524,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Thuật Toán
           </label>
@@ -334,15 +542,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -354,8 +565,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Cơ Bản
           </label>
@@ -572,8 +783,18 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Kĩ thuật hai con trỏ
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -585,6 +806,209 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#loi-mo-au" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lời mở đầu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-tich" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giai-phap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giải pháp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luyen-tap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Luyện tập
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-tich_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giai-phap_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giải pháp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luyen-tap_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Luyện tập
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-tich_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giai-phap_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giải pháp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luyen-tap_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Luyện tập
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán 4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-tich_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giai-phap_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giải pháp
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Giải pháp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rua-va-tho" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rùa và Thỏ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tim-mu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tìm \(\mu\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tim-lambda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tìm \(\lambda\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luyen-tap_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Luyện tập
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -608,15 +1032,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -628,8 +1055,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Đại Số
           </label>
@@ -784,15 +1211,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -804,8 +1234,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Cấu trúc dữ liệu
           </label>
@@ -1422,15 +1852,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1442,8 +1875,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             Quy hoạch động
           </label>
@@ -1598,15 +2031,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1618,8 +2054,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Games
           </label>
@@ -1664,15 +2100,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1684,8 +2123,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Hình học
           </label>
@@ -1774,15 +2213,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1794,8 +2236,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             Lý thuyết Đồ Thị
           </label>
@@ -2060,15 +2502,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2080,8 +2525,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             Toán
           </label>
@@ -2192,15 +2637,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2212,8 +2660,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             Tìm Kiếm
           </label>
@@ -2258,15 +2706,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
         
           
-          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2278,8 +2729,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             Kỹ Năng Thi
           </label>
@@ -2368,15 +2819,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
         
           
-          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2388,8 +2842,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_11">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
             <span class="md-nav__icon md-icon"></span>
             Xâu kí tự
           </label>
@@ -2522,15 +2976,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
         
           
-          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2542,8 +2999,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
             <span class="md-nav__icon md-icon"></span>
             Mẹo
           </label>
@@ -2749,15 +3206,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2769,8 +3229,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Computer Science (Khoa học máy tính)
           </label>
@@ -2785,15 +3245,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2805,8 +3268,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Crypto
           </label>
@@ -2865,15 +3328,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2885,8 +3351,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             Cipher
           </label>
@@ -2939,15 +3405,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2959,8 +3428,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Xử lý ảnh
           </label>
@@ -3034,15 +3503,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3054,8 +3526,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Ngôn Ngữ Lập Trình
           </label>
@@ -3143,15 +3615,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3163,8 +3638,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Dịch Thuật
           </label>
@@ -3201,15 +3676,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3221,8 +3699,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             Codeforces
           </label>
@@ -3355,15 +3833,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3375,8 +3856,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             E-Maxx
           </label>
@@ -3443,15 +3924,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3463,8 +3947,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             Nâng Cao
           </label>
@@ -3685,15 +4169,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3705,8 +4192,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
             Máy học (Machine Learning - ML)
           </label>
@@ -3839,15 +4326,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3859,8 +4349,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
             Quora
           </label>
@@ -3905,15 +4395,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
-          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3925,8 +4418,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             Topcoder
           </label>
@@ -4279,15 +4772,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
         
           
-          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4299,8 +4795,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
             USACO
           </label>
@@ -4345,15 +4841,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
         
           
-          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4365,8 +4864,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
             Wcipeg
           </label>
@@ -4548,24 +5047,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -4574,16 +5055,20 @@
                   
 
 
+  
+  
 
-<h1 id="ki-thuat-hai-con-tro">Kĩ thuật hai con trỏ</h1>
+
+  <h1>Kĩ thuật hai con trỏ</h1>
+
 <p><strong>Tác giả:</strong> Phan Đình Khôi - Đại học Bách Khoa Đà Nẵng</p>
 <p><strong>Reviewer:</strong> Nguyễn Khánh</p>
-<h1 id="loi-mo-au">Lời mở đầu</h1>
+<h2 id="loi-mo-au">Lời mở đầu<a class="headerlink" href="#loi-mo-au" title="Permanent link">&para;</a></h2>
 <p>Bài viết này sẽ giúp bạn tìm hiểu thêm về <strong>kỹ thuật hai con trỏ</strong>. Kỹ thuật này được sử dụng khá phổ biến, giúp chương trình tiết kiệm thời gian và không gian xử lý.  </p>
-<h1 id="bai-toan-1">Bài toán 1</h1>
+<h2 id="bai-toan-1">Bài toán 1<a class="headerlink" href="#bai-toan-1" title="Permanent link">&para;</a></h2>
 <p>Cho hai dãy số nguyên đã được <strong>sắp xếp không giảm</strong> <span class="arithmatex">\(a\)</span> và <span class="arithmatex">\(b\)</span> lần lượt có <span class="arithmatex">\(n\)</span> và <span class="arithmatex">\(m\)</span> phần tử. Hãy ghép chúng thành dãy <span class="arithmatex">\(c\)</span> được bố trí theo thứ tự <strong>không giảm</strong>.</p>
 <p>Giới hạn: <span class="arithmatex">\(n, m \leq 10^5\)</span> và <span class="arithmatex">\(0 \leq a_i, b_i \leq 10^{9}\)</span>.</p>
-<h2 id="phan-tich">Phân tích</h2>
+<h2 id="phan-tich">Phân tích<a class="headerlink" href="#phan-tich" title="Permanent link">&para;</a></h2>
 <p>Hãy cùng xem ví dụ sau đây. </p>
 <p>Cho trước hai dãy số <span class="arithmatex">\(a\)</span> và <span class="arithmatex">\(b\)</span> được sắp xếp không giảm:</p>
 <div class="arithmatex">\[a=[1,3,6,8,10]\]</div>
@@ -4609,15 +5094,31 @@
 <div class="arithmatex">\[b=[2,\overset{\downarrow}{6},7,12,14,15]\]</div>
 <div class="arithmatex">\[c=[1,2,{\color{red}3}]\]</div>
 <p>Sau khi đưa <span class="arithmatex">\(a[2]\)</span> vào dãy <span class="arithmatex">\(c\)</span>, <span class="arithmatex">\(a[3]\)</span> trở thành phần tử nhỏ nhất chưa được chọn ở dãy <span class="arithmatex">\(a\)</span>.</p>
-<p>Ta nhận thấy rằng
-* Tại mọi thời điểm, phần tử tiếp theo được đưa vào dãy <span class="arithmatex">\(c\)</span> sẽ là phần tử có giá trị nhỏ nhất trong các phần tử chưa được chọn.
-    * Bằng cách so sánh phần tử nhỏ nhất chưa được chọn ở dãy <span class="arithmatex">\(a\)</span> và phần tử nhỏ nhất chưa được chọn ở dãy <span class="arithmatex">\(b\)</span>, phần tử nhỏ hơn sẽ được chọn vào dãy <span class="arithmatex">\(c\)</span>.<br />
-* Ban đầu, lúc dãy <span class="arithmatex">\(c\)</span> chưa có phần tử nào
-    * <span class="arithmatex">\(a[1]\)</span> là phần tử nhỏ nhất chưa được chọn trong dãy <span class="arithmatex">\(a\)</span>.
-    * <span class="arithmatex">\(b[1]\)</span> là phần tử nhỏ nhất chưa được chọn trong dãy <span class="arithmatex">\(b\)</span>.
-* Khi đưa phần tử <span class="arithmatex">\(a[i]\)</span> vào dãy <span class="arithmatex">\(c\)</span> thì phần tử nhỏ nhất chưa được chọn trong dãy <span class="arithmatex">\(a\)</span> sẽ là <span class="arithmatex">\(a[i+1]\)</span>.
-* Khi đưa phần tử <span class="arithmatex">\(b[j]\)</span> vào dãy <span class="arithmatex">\(c\)</span> thì phần tử nhỏ nhất chưa được chọn trong dãy <span class="arithmatex">\(b\)</span> sẽ là <span class="arithmatex">\(b[j+1]\)</span>.</p>
-<h2 id="giai-phap">Giải pháp</h2>
+<p>Ta nhận thấy rằng</p>
+<ul>
+<li>
+<p>Tại mọi thời điểm, phần tử tiếp theo được đưa vào dãy <span class="arithmatex">\(c\)</span> sẽ là phần tử có giá trị nhỏ nhất trong các phần tử chưa được chọn.</p>
+</li>
+<li>
+<p>Bằng cách so sánh phần tử nhỏ nhất chưa được chọn ở dãy <span class="arithmatex">\(a\)</span> và phần tử nhỏ nhất chưa được chọn ở dãy <span class="arithmatex">\(b\)</span>, phần tử nhỏ hơn sẽ được chọn vào dãy <span class="arithmatex">\(c\)</span>.  </p>
+</li>
+<li>
+<p>Ban đầu, lúc dãy <span class="arithmatex">\(c\)</span> chưa có phần tử nào</p>
+</li>
+<li>
+<p><span class="arithmatex">\(a[1]\)</span> là phần tử nhỏ nhất chưa được chọn trong dãy <span class="arithmatex">\(a\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(b[1]\)</span> là phần tử nhỏ nhất chưa được chọn trong dãy <span class="arithmatex">\(b\)</span>.</p>
+</li>
+<li>
+<p>Khi đưa phần tử <span class="arithmatex">\(a[i]\)</span> vào dãy <span class="arithmatex">\(c\)</span> thì phần tử nhỏ nhất chưa được chọn trong dãy <span class="arithmatex">\(a\)</span> sẽ là <span class="arithmatex">\(a[i+1]\)</span>.</p>
+</li>
+<li>
+<p>Khi đưa phần tử <span class="arithmatex">\(b[j]\)</span> vào dãy <span class="arithmatex">\(c\)</span> thì phần tử nhỏ nhất chưa được chọn trong dãy <span class="arithmatex">\(b\)</span> sẽ là <span class="arithmatex">\(b[j+1]\)</span>.</p>
+</li>
+</ul>
+<h2 id="giai-phap">Giải pháp<a class="headerlink" href="#giai-phap" title="Permanent link">&para;</a></h2>
 <p>Dựa vào những phân tích ta có giải pháp sử dụng <strong>hai con trỏ</strong> như sau:</p>
 <ul>
 <li>Dãy <span class="arithmatex">\(a\)</span> có con trỏ <span class="arithmatex">\(i\)</span>, con trỏ này bắt đầu ở vị trí đầu dãy <span class="arithmatex">\(a\)</span>.<ul>
@@ -4642,66 +5143,64 @@
 <p>Để hiểu rõ hơn, ta hãy cùng xem qua ví dụ sau đây:</p>
 <p><span class="arithmatex">\(a = [1, 3, 6, 8, 10], b = [2, 6, 7, 12, 14,15]\)</span></p>
 <ul>
-<li>
-<p>Đặt <span class="arithmatex">\(i = 1\)</span> và <span class="arithmatex">\(j = 1\)</span>. \
-<span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}i}}{\color{red}1}, 3, 6, 8, 10]\)</span>\
-<span class="arithmatex">\(b = [\underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}2}, 6, 7, 12, 14,15]\)</span>\
-<span class="arithmatex">\(c = []\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]&lt;b[j]\)</span> nên ta đưa <span class="arithmatex">\(a[i]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(i\)</span> lên một. \
-<span class="arithmatex">\(a = [1,\overset{\underset{\downarrow}{\color{red}i}}{\color{red}3}, 6, 8, 10]\)</span>\
-<span class="arithmatex">\(b = [\underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}2}, 6, 7, 12, 14,15]\)</span>\
-<span class="arithmatex">\(c = [1]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(b[j]&lt;a[i]\)</span> nên ta đưa <span class="arithmatex">\(b[j]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(j\)</span> lên một. \
-<span class="arithmatex">\(a = [1, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}3}, 6, 8, 10]\)</span>\
-<span class="arithmatex">\(b = [2, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}6}, 7, 12, 14,15]\)</span>\
-<span class="arithmatex">\(c = [1, 2]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]&lt;b[j]\)</span> nên ta đưa <span class="arithmatex">\(a[i]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(i\)</span> lên một. \
-<span class="arithmatex">\(a = [1, 3, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}6}, 8, 10]\)</span>\
-<span class="arithmatex">\(b = [2, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}6}, 7, 12, 14,15]\)</span>\
-<span class="arithmatex">\(c = [1, 2, 3]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]=b[j]\)</span> nên ta có thể đưa bất kỳ một trong hai phần tử. Ở đây ta đưa phần tử <span class="arithmatex">\(a[i]\)</span> vào <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(i\)</span> lên một.\
-<span class="arithmatex">\(a = [1, 3, 6, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}8}, 10]\)</span>\
-<span class="arithmatex">\(b = [2, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}6}, 7, 12, 14,15]\)</span>\
-<span class="arithmatex">\(c = [1, 2, 3, 6]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(b[j]&lt;a[i]\)</span> nên ta đưa <span class="arithmatex">\(b[j]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(j\)</span> lên một. \
-<span class="arithmatex">\(a = [1, 3, 6, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}8}, 10]\)</span>\
-<span class="arithmatex">\(b = [2, 6, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}7}, 12, 14,15]\)</span>\
-<span class="arithmatex">\(c = [1, 2, 3, 6, 6]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(b[j]&lt;a[i]\)</span> nên ta đưa <span class="arithmatex">\(b[j]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(j\)</span> lên một. \
-<span class="arithmatex">\(a = [1, 3, 6, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}8}, 10]\)</span>\
-<span class="arithmatex">\(b = [2, 6, 7, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 14,15]\)</span>\
-<span class="arithmatex">\(c = [1, 2, 3, 6, 6, 7]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]&lt;b[j]\)</span> nên ta đưa <span class="arithmatex">\(a[i]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(i\)</span> lên một. \
-<span class="arithmatex">\(a = [1, 3, 6, 8, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}10}]\)</span>\
-<span class="arithmatex">\(b = [2, 6, 7, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 14,15]\)</span>\
-<span class="arithmatex">\(c = [1, 2, 3, 6, 6, 7, 8]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]&lt;b[j]\)</span> nên ta đưa <span class="arithmatex">\(a[i]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(i\)</span> lên một. \
-<span class="arithmatex">\(a = [1, 3, 6, 8, 10]\overset{\underset{\downarrow}{\color{red}i}}{ }\)</span>\
-<span class="arithmatex">\(b = [2, 6, 7, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 14,15]\)</span>\
-<span class="arithmatex">\(c = [1, 2, 3, 6, 6, 7, 8, 10]\)</span></p>
-</li>
-<li>
-<p>Vì tất cả các phần tử trong dãy <span class="arithmatex">\(a\)</span> đều đã được đưa vào dãy <span class="arithmatex">\(c\)</span> nên từ đưa lần lượt các phần tử chưa được chọn trong dãy <span class="arithmatex">\(b\)</span> vào trong dãy <span class="arithmatex">\(c\)</span> 
-<span class="arithmatex">\(c = [1, 2, 3, 6, 6, 7, 8, 10, 12, 14,15]\)</span></p>
-</li>
+<li>Đặt <span class="arithmatex">\(i = 1\)</span> và <span class="arithmatex">\(j = 1\)</span>. </li>
 </ul>
-<p><img alt="" src="https://i.imgur.com/ZVXyx2n.gif" /></p>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}i}}{\color{red}1}, 3, 6, 8, 10]\)</span></p>
+<p><span class="arithmatex">\(b = [\underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}2}, 6, 7, 12, 14,15]\)</span></p>
+<p><span class="arithmatex">\(c = []\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]&lt;b[j]\)</span> nên ta đưa <span class="arithmatex">\(a[i]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(i\)</span> lên một. </li>
+</ul>
+<p><span class="arithmatex">\(a = [1,\overset{\underset{\downarrow}{\color{red}i}}{\color{red}3}, 6, 8, 10]\)</span></p>
+<p><span class="arithmatex">\(b = [\underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}2}, 6, 7, 12, 14,15]\)</span></p>
+<p><span class="arithmatex">\(c = [1]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(b[j]&lt;a[i]\)</span> nên ta đưa <span class="arithmatex">\(b[j]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(j\)</span> lên một. </li>
+</ul>
+<p><span class="arithmatex">\(a = [1, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}3}, 6, 8, 10]\)</span></p>
+<p><span class="arithmatex">\(b = [2, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}6}, 7, 12, 14,15]\)</span></p>
+<p><span class="arithmatex">\(c = [1, 2]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]&lt;b[j]\)</span> nên ta đưa <span class="arithmatex">\(a[i]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(i\)</span> lên một. </li>
+</ul>
+<p><span class="arithmatex">\(a = [1, 3, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}6}, 8, 10]\)</span></p>
+<p><span class="arithmatex">\(b = [2, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}6}, 7, 12, 14,15]\)</span></p>
+<p><span class="arithmatex">\(c = [1, 2, 3]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]=b[j]\)</span> nên ta có thể đưa bất kỳ một trong hai phần tử. Ở đây ta đưa phần tử <span class="arithmatex">\(a[i]\)</span> vào <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(i\)</span> lên một.</li>
+</ul>
+<p><span class="arithmatex">\(a = [1, 3, 6, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}8}, 10]\)</span></p>
+<p><span class="arithmatex">\(b = [2, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}6}, 7, 12, 14,15]\)</span></p>
+<p><span class="arithmatex">\(c = [1, 2, 3, 6]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(b[j]&lt;a[i]\)</span> nên ta đưa <span class="arithmatex">\(b[j]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(j\)</span> lên một. </li>
+</ul>
+<p><span class="arithmatex">\(a = [1, 3, 6, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}8}, 10]\)</span></p>
+<p><span class="arithmatex">\(b = [2, 6, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}7}, 12, 14,15]\)</span></p>
+<p><span class="arithmatex">\(c = [1, 2, 3, 6, 6]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(b[j]&lt;a[i]\)</span> nên ta đưa <span class="arithmatex">\(b[j]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(j\)</span> lên một. </li>
+</ul>
+<p><span class="arithmatex">\(a = [1, 3, 6, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}8}, 10]\)</span></p>
+<p><span class="arithmatex">\(b = [2, 6, 7, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 14,15]\)</span></p>
+<p><span class="arithmatex">\(c = [1, 2, 3, 6, 6, 7]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]&lt;b[j]\)</span> nên ta đưa <span class="arithmatex">\(a[i]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(i\)</span> lên một. </li>
+</ul>
+<p><span class="arithmatex">\(a = [1, 3, 6, 8, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}10}]\)</span></p>
+<p><span class="arithmatex">\(b = [2, 6, 7, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 14,15]\)</span></p>
+<p><span class="arithmatex">\(c = [1, 2, 3, 6, 6, 7, 8]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]&lt;b[j]\)</span> nên ta đưa <span class="arithmatex">\(a[i]\)</span> vào mảng <span class="arithmatex">\(c\)</span> và tăng vị trí <span class="arithmatex">\(i\)</span> lên một. </li>
+</ul>
+<p><span class="arithmatex">\(a = [1, 3, 6, 8, 10]\overset{\underset{\downarrow}{\color{red}i}}{ }\)</span></p>
+<p><span class="arithmatex">\(b = [2, 6, 7, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 14,15]\)</span></p>
+<p><span class="arithmatex">\(c = [1, 2, 3, 6, 6, 7, 8, 10]\)</span></p>
+<ul>
+<li>Vì tất cả các phần tử trong dãy <span class="arithmatex">\(a\)</span> đều đã được đưa vào dãy <span class="arithmatex">\(c\)</span> nên từ đưa lần lượt các phần tử chưa được chọn trong dãy <span class="arithmatex">\(b\)</span> vào trong dãy <span class="arithmatex">\(c\)</span> 
+<span class="arithmatex">\(c = [1, 2, 3, 6, 6, 7, 8, 10, 12, 14,15]\)</span></li>
+</ul>
+<p><img alt="img" src="../../../uploads/ZVXyx2n.gif" /></p>
 <p><strong>Cài đặt</strong>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
@@ -4717,21 +5216,27 @@
 <strong>Độ phức tạp</strong></p>
 <p>Vị trí con trỏ <span class="arithmatex">\(i\)</span> luôn tăng và tăng quá không quá <span class="arithmatex">\(n\)</span> lần, vị trí con trỏ <span class="arithmatex">\(j\)</span> cũng luôn tăng và tăng không quá <span class="arithmatex">\(m\)</span> lần. </p>
 <p>Vì thế độ phức tạp của giải pháp là <span class="arithmatex">\(O(n+m)\)</span>.</p>
-<h2 id="luyen-tap">Luyện tập</h2>
-<p><a href="https://oj.vnoi.info/problem/nksgame">VNOJ - NKSGAME</a>\
-<a href="https://codeforces.com/problemset/problem/1251/C">CODEFORCES - 1251C</a>\
-<a href="https://codeforces.com/problemset/problem/1036/D">CODEFORCES - 1036D</a></p>
-<h1 id="bai-toan-2">Bài toán 2</h1>
+<h2 id="luyen-tap">Luyện tập<a class="headerlink" href="#luyen-tap" title="Permanent link">&para;</a></h2>
+<p><a href="https://oj.vnoi.info/problem/nksgame">VNOJ - NKSGAME</a></p>
+<p><a href="https://codeforces.com/problemset/problem/1251/C">CODEFORCES - 1251C</a></p>
+<p><a href="https://codeforces.com/problemset/problem/1036/D">CODEFORCES - 1036D</a></p>
+<h2 id="bai-toan-2">Bài toán 2<a class="headerlink" href="#bai-toan-2" title="Permanent link">&para;</a></h2>
 <p>Cho một mảng số nguyên <span class="arithmatex">\(a\)</span> có <span class="arithmatex">\(n\)</span> phần tử, mảng này đã được <strong>sắp xếp tăng dần</strong>. Hãy tìm hai vị trí <strong>khác nhau</strong> <strong>bất kỳ</strong> sao cho tổng của hai phần tử ở hai vị trí đó có giá trị là <span class="arithmatex">\(x\)</span>.</p>
 <p>Giới hạn: <span class="arithmatex">\(2 \leq n \leq 10^6\)</span> và <span class="arithmatex">\(0 \leq a_i, x \leq 10^9\)</span></p>
-<h2 id="phan-tich_1">Phân tích</h2>
+<h2 id="phan-tich_1">Phân tích<a class="headerlink" href="#phan-tich_1" title="Permanent link">&para;</a></h2>
 <p>Hãy cùng xem ví dụ sau đây. </p>
 <p>Cho trước mảng số <span class="arithmatex">\(a\)</span> được sắp xếp tăng dần và <span class="arithmatex">\(x=16\)</span>:</p>
 <div class="arithmatex">\[a=[2,5,6,8,10,12,15]\]</div>
 <p>Làm cách nào để có thể tìm hai vị trí khác nhau mà tổng hai phần tử ở hai vị trí đó có tổng là <span class="arithmatex">\(x\)</span> ?</p>
-<p>Trước tiên, ta có một chút nhận xét sau:
-* <span class="arithmatex">\(a[1]&lt;a[2]&lt;a[3]&lt;a[4]&lt;a[5]&lt;a[6]&lt;a[7]\)</span> vì dãy <span class="arithmatex">\(a\)</span> tăng dần.
-* <span class="arithmatex">\(a[1]+a[7]=17&gt;X \Rightarrow X&lt;a[1]+a[7]&lt;a[2]+a[7]&lt;a[3]+a[7]&lt;a[4]+a[7]&lt;a[5]+a[7]&lt;a[6]+a[7]\)</span>.</p>
+<p>Trước tiên, ta có một chút nhận xét sau:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(a[1]&lt;a[2]&lt;a[3]&lt;a[4]&lt;a[5]&lt;a[6]&lt;a[7]\)</span> vì dãy <span class="arithmatex">\(a\)</span> tăng dần.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(a[1]+a[7]=17&gt;X \Rightarrow X&lt;a[1]+a[7]&lt;a[2]+a[7]&lt;a[3]+a[7]&lt;a[4]+a[7]&lt;a[5]+a[7]&lt;a[6]+a[7]\)</span>.</p>
+</li>
+</ul>
 <p>Có thể thấy, tổng của <span class="arithmatex">\(a[7]\)</span> với các phần tử khác trong dãy đều lớn hơn <span class="arithmatex">\(X\)</span>. Vì thế ta không quan tâm đến <span class="arithmatex">\(a[7]\)</span> nữa.</p>
 <div class="arithmatex">\[a=[2,5,6,8,10,12,{\color{red}15}]\]</div>
 <ul>
@@ -4745,87 +5250,105 @@
 <p>Có thể thấy, tổng của <span class="arithmatex">\(a[6]\)</span> với các phần tử khác trong các phần tử ta quan tâm đều lớn hơn <span class="arithmatex">\(x\)</span>. Vì thế ta không quan tâm đến <span class="arithmatex">\(a[6]\)</span> nữa.</p>
 <div class="arithmatex">\[a=[{\color{red}2},5,6,8,10,{\color{red}12},{\color{red}15}]\]</div>
 <p>Như vậy, tại một thời điểm bất kỳ, những phần tử chúng ta cần quan tâm đến sẽ là các phần tử trong đoạn <span class="arithmatex">\([i,j]\)</span> nào đó.</p>
-<p>Ta có một số nhận xét sau:
-* Nếu <span class="arithmatex">\(i=j\)</span>, trong mảng <span class="arithmatex">\(A\)</span> không tồn tại hai vị trí khác nhau mà tổng hai phần tử ở đó có giá trị là <span class="arithmatex">\(X\)</span>.
-* Ngược lại:
-    * Nếu <span class="arithmatex">\(a[i]+a[j]=X\)</span>, ta đã tìm được hai vị trí cần tìm (<span class="arithmatex">\(i\)</span> và <span class="arithmatex">\(j\)</span>).
-    * Nếu <span class="arithmatex">\(a[i]+a[j]&lt;X\)</span>, không quan tâm đến <span class="arithmatex">\(a[i]\)</span> nữa và các phần tử chúng ta cần quan tâm đó là các phần tử trong đoạn <span class="arithmatex">\([i+1,j]\)</span>.
-    * Nếu <span class="arithmatex">\(a[i]+a[j]&gt;X\)</span>, không quan tâm đến <span class="arithmatex">\(a[j]\)</span> nữa và các phần tử chúng ta cần quan tâm đó là các phần tử trong đoạn <span class="arithmatex">\([i,j-1]\)</span>.</p>
-<h2 id="giai-phap_1">Giải pháp</h2>
+<p>Ta có một số nhận xét sau:</p>
+<ul>
+<li>
+<p>Nếu <span class="arithmatex">\(i=j\)</span>, trong mảng <span class="arithmatex">\(A\)</span> không tồn tại hai vị trí khác nhau mà tổng hai phần tử ở đó có giá trị là <span class="arithmatex">\(X\)</span>.</p>
+</li>
+<li>
+<p>Ngược lại:</p>
+</li>
+<li>
+<p>Nếu <span class="arithmatex">\(a[i]+a[j]=X\)</span>, ta đã tìm được hai vị trí cần tìm (<span class="arithmatex">\(i\)</span> và <span class="arithmatex">\(j\)</span>).</p>
+</li>
+<li>
+<p>Nếu <span class="arithmatex">\(a[i]+a[j]&lt;X\)</span>, không quan tâm đến <span class="arithmatex">\(a[i]\)</span> nữa và các phần tử chúng ta cần quan tâm đó là các phần tử trong đoạn <span class="arithmatex">\([i+1,j]\)</span>.</p>
+</li>
+<li>
+<p>Nếu <span class="arithmatex">\(a[i]+a[j]&gt;X\)</span>, không quan tâm đến <span class="arithmatex">\(a[j]\)</span> nữa và các phần tử chúng ta cần quan tâm đó là các phần tử trong đoạn <span class="arithmatex">\([i,j-1]\)</span>.</p>
+</li>
+</ul>
+<h2 id="giai-phap_1">Giải pháp<a class="headerlink" href="#giai-phap_1" title="Permanent link">&para;</a></h2>
 <p>Từ những phân tích vừa rồi ta có giải pháp sử dụng hai con trỏ như sau:</p>
 <ul>
-<li>Một con trỏ <span class="arithmatex">\((i)\)</span> được đặt ở đầu mảng <span class="arithmatex">\(A\)</span>, con trỏ còn lại <span class="arithmatex">\((j)\)</span> được đặt ở cuối mảng <span class="arithmatex">\(A\)</span>.</li>
-<li>Nếu tổng của hai phần tử ở hai vị trí con trỏ <ul>
-<li>Nhỏ hơn <span class="arithmatex">\(X\)</span>: tăng vị trí con trỏ <span class="arithmatex">\(i\)</span> lên một đơn vị.</li>
-<li>Lớn hơn <span class="arithmatex">\(X\)</span>: giảm vị trí con trỏ <span class="arithmatex">\(j\)</span> đi một đơn vị.</li>
-</ul>
+<li>
+<p>Một con trỏ <span class="arithmatex">\((i)\)</span> được đặt ở đầu mảng <span class="arithmatex">\(A\)</span>, con trỏ còn lại <span class="arithmatex">\((j)\)</span> được đặt ở cuối mảng <span class="arithmatex">\(A\)</span>.</p>
 </li>
-<li>Tiếp tục di chuyển cho đến khi hai con trỏ gặp nhau.</li>
-<li>Khi con trỏ chưa gặp nhau mà tổng ở hai vị trí con trỏ có giá trị là <span class="arithmatex">\(X\)</span> thì ta đã tìm được hai vị trí cần tìm (<span class="arithmatex">\(i\)</span> và <span class="arithmatex">\(j\)</span>), kết thúc chương trình.</li>
+<li>
+<p>Nếu tổng của hai phần tử ở hai vị trí con trỏ </p>
+</li>
+<li>
+<p>Nhỏ hơn <span class="arithmatex">\(X\)</span>: tăng vị trí con trỏ <span class="arithmatex">\(i\)</span> lên một đơn vị.</p>
+</li>
+<li>
+<p>Lớn hơn <span class="arithmatex">\(X\)</span>: giảm vị trí con trỏ <span class="arithmatex">\(j\)</span> đi một đơn vị.</p>
+</li>
+<li>
+<p>Tiếp tục di chuyển cho đến khi hai con trỏ gặp nhau.</p>
+</li>
+<li>
+<p>Khi con trỏ chưa gặp nhau mà tổng ở hai vị trí con trỏ có giá trị là <span class="arithmatex">\(X\)</span> thì ta đã tìm được hai vị trí cần tìm (<span class="arithmatex">\(i\)</span> và <span class="arithmatex">\(j\)</span>), kết thúc chương trình.</p>
+</li>
 </ul>
 <p>Để hiểu rõ hơn, ta hãy cùng xem qua một số ví dụ sau đây:</p>
 <p><strong>Ví dụ 1:</strong> <span class="arithmatex">\(a = [2, 5, 6, 8, 10, 12, 15]\)</span> và <span class="arithmatex">\(x = 16\)</span>.</p>
 <ul>
-<li>
-<p>Đặt <span class="arithmatex">\(i=1\)</span> và <span class="arithmatex">\(j=N\)</span>. \
-<span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}i}}{\color{red}2}, 5, 6, 8, 10, 12,  \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}15}]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]+a[j]=2+15=17&gt;x\)</span> nên giảm vị trí <span class="arithmatex">\(j\)</span> đi một đơn vị.\
-<span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}i}}{\color{red}2}, 5, 6, 8, 10, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 15]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]+a[j]=2+12=14&lt;x\)</span> nên tăng vị trí <span class="arithmatex">\(i\)</span> lên một đơn vị.\
-<span class="arithmatex">\(a = [2, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}5}, 6, 8, 10, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 15]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]+a[j]=5+12=17&gt;x\)</span> nên giảm vị trí <span class="arithmatex">\(j\)</span> đi một đơn vị.\
-<span class="arithmatex">\(a = [2, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}5}, 6, 8, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}10}, 12, 15]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]+a[j]=5+10&lt;x\)</span> nên tăng vị trí <span class="arithmatex">\(i\)</span> lên một đơn vị.\
-<span class="arithmatex">\(a = [2, 5, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}6}, 8, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}10}, 12, 15]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]+a[j]=6+10=x\)</span> nên hai vị trí cần tìm là hai vị trí <span class="arithmatex">\(i\)</span> và <span class="arithmatex">\(j\)</span>.</p>
-</li>
+<li>Đặt <span class="arithmatex">\(i=1\)</span> và <span class="arithmatex">\(j=N\)</span>. </li>
 </ul>
-<p><img alt="" src="https://i.imgur.com/4kDvgwj.gif" /></p>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}i}}{\color{red}2}, 5, 6, 8, 10, 12,  \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}15}]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]+a[j]=2+15=17&gt;x\)</span> nên giảm vị trí <span class="arithmatex">\(j\)</span> đi một đơn vị.</li>
+</ul>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}i}}{\color{red}2}, 5, 6, 8, 10, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 15]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]+a[j]=2+12=14&lt;x\)</span> nên tăng vị trí <span class="arithmatex">\(i\)</span> lên một đơn vị.</li>
+</ul>
+<p><span class="arithmatex">\(a = [2, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}5}, 6, 8, 10, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 15]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]+a[j]=5+12=17&gt;x\)</span> nên giảm vị trí <span class="arithmatex">\(j\)</span> đi một đơn vị.</li>
+</ul>
+<p><span class="arithmatex">\(a = [2, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}5}, 6, 8, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}10}, 12, 15]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]+a[j]=5+10&lt;x\)</span> nên tăng vị trí <span class="arithmatex">\(i\)</span> lên một đơn vị.</li>
+</ul>
+<p><span class="arithmatex">\(a = [2, 5, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}6}, 8, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}10}, 12, 15]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]+a[j]=6+10=x\)</span> nên hai vị trí cần tìm là hai vị trí <span class="arithmatex">\(i\)</span> và <span class="arithmatex">\(j\)</span>.</li>
+</ul>
+<p><img alt="img" src="../../../uploads/4kDvgwj.gif" /></p>
 <p><strong>Ví dụ 2:</strong> <span class="arithmatex">\(a = [2, 3, 7, 8, 10, 12, 15]\)</span> và <span class="arithmatex">\(x = 16\)</span>.</p>
 <ul>
-<li>
-<p>Đặt <span class="arithmatex">\(i=1\)</span> và <span class="arithmatex">\(j=N\)</span>. \
-<span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}i}}{\color{red}2}, 3, 7, 8, 10, 12,  \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}15}]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]+a[j]=5+12=17&gt;x\)</span> nên giảm vị trí <span class="arithmatex">\(j\)</span> đi một đơn vị. \
-<span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}i}}{\color{red}2}, 3, 7, 8, 10,  \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 15]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]+a[j]=2+12=14&lt;x\)</span> nên tăng vị trí <span class="arithmatex">\(i\)</span> lên một đơn vị. \
-<span class="arithmatex">\(a = [2, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}3}, 7, 8, 10,  \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 15]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]+a[j]=3+12=15&lt;x\)</span> tăng vị trí <span class="arithmatex">\(i\)</span> lên một đơn vị. \
-<span class="arithmatex">\(a = [2, 3, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}7}, 8, 10,  \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 15]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]+a[j]=7+12=19&gt;x\)</span> giảm vị trí <span class="arithmatex">\(j\)</span> đi một đơn vị. \
-<span class="arithmatex">\(a = [2, 3, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}7}, 8, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}10}, 12, 15]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]+a[j]=7+10=17&gt;x\)</span> giảm vị trí <span class="arithmatex">\(j\)</span> đi một đơn vị. \
-<span class="arithmatex">\(a = [2, 3, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}7}, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}8}, 10, 12, 15]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(a[i]+a[j]=7+8=15&lt;x\)</span> tăng vị trí <span class="arithmatex">\(i\)</span> lên một đơn vị. \
-<span class="arithmatex">\(a = [2, 3, 7, \overset{\underset{\downarrow}{\color{red}i}}{ \underset{\overset{\uparrow}{\color{blue}j}}{\color{purple}8}}, 10, 12, 15]\)</span></p>
-</li>
-<li>
-<p>Vì <span class="arithmatex">\(i=j\)</span> nên không tìm được hai vị trí cần tìm.</p>
-</li>
+<li>Đặt <span class="arithmatex">\(i=1\)</span> và <span class="arithmatex">\(j=N\)</span>. </li>
 </ul>
-<p><img alt="" src="https://i.imgur.com/1KUtV6g.gif" /></p>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}i}}{\color{red}2}, 3, 7, 8, 10, 12,  \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}15}]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]+a[j]=5+12=17&gt;x\)</span> nên giảm vị trí <span class="arithmatex">\(j\)</span> đi một đơn vị. </li>
+</ul>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}i}}{\color{red}2}, 3, 7, 8, 10,  \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 15]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]+a[j]=2+12=14&lt;x\)</span> nên tăng vị trí <span class="arithmatex">\(i\)</span> lên một đơn vị. </li>
+</ul>
+<p><span class="arithmatex">\(a = [2, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}3}, 7, 8, 10,  \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 15]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]+a[j]=3+12=15&lt;x\)</span> tăng vị trí <span class="arithmatex">\(i\)</span> lên một đơn vị. </li>
+</ul>
+<p><span class="arithmatex">\(a = [2, 3, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}7}, 8, 10,  \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}12}, 15]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]+a[j]=7+12=19&gt;x\)</span> giảm vị trí <span class="arithmatex">\(j\)</span> đi một đơn vị. </li>
+</ul>
+<p><span class="arithmatex">\(a = [2, 3, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}7}, 8, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}10}, 12, 15]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]+a[j]=7+10=17&gt;x\)</span> giảm vị trí <span class="arithmatex">\(j\)</span> đi một đơn vị. </li>
+</ul>
+<p><span class="arithmatex">\(a = [2, 3, \overset{\underset{\downarrow}{\color{red}i}}{\color{red}7}, \underset{\overset{\uparrow}{\color{blue}j}}{\color{blue}8}, 10, 12, 15]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(a[i]+a[j]=7+8=15&lt;x\)</span> tăng vị trí <span class="arithmatex">\(i\)</span> lên một đơn vị. </li>
+</ul>
+<p><span class="arithmatex">\(a = [2, 3, 7, \overset{\underset{\downarrow}{\color{red}i}}{ \underset{\overset{\uparrow}{\color{blue}j}}{\color{purple}8}}, 10, 12, 15]\)</span></p>
+<ul>
+<li>Vì <span class="arithmatex">\(i=j\)</span> nên không tìm được hai vị trí cần tìm.</li>
+</ul>
+<p><img alt="img" src="../../../uploads/1KUtV6g.gif" /></p>
 <p><strong>Cài đặt</strong>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="p">;</span>
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -4844,54 +5367,118 @@
 <p>Vị trí con trỏ <span class="arithmatex">\(i\)</span> luôn tăng, vị trí con trỏ <span class="arithmatex">\(j\)</span> thì luôn giảm. </p>
 <p>Hơn nữa, sự thay đổi vị trí hai con trỏ này sẽ dừng lại khi tổng hai phần tử ở hai vị trí con trỏ có tổng là <span class="arithmatex">\(X\)</span> hay khi vị trí <span class="arithmatex">\(i\)</span> bằng vị trí <span class="arithmatex">\(j\)</span>. </p>
 <p>Vì thế, việc thay đổi vị trí hai con trỏ sẽ không quá <span class="arithmatex">\(n\)</span> lần, độ phức tạp của giải pháp là <span class="arithmatex">\(O(n)\)</span>.</p>
-<h2 id="luyen-tap_1">Luyện tập</h2>
-<p><a href="https://lqdoj.edu.vn/problem/findpair">LQDOJ - FINDPAIR</a> \
-<a href="https://lqdoj.edu.vn/problem/cntpair02">LQDOJ - CNTPAIR02</a> \
-<a href="https://oj.vnoi.info/problem/ndccard">VNOJ - NDCCARD</a> \
-<a href="https://oj.vnoi.info/problem/twosum">VNOJ - TWOSUM</a></p>
-<h1 id="bai-toan-3">Bài toán 3</h1>
+<h2 id="luyen-tap_1">Luyện tập<a class="headerlink" href="#luyen-tap_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://lqdoj.edu.vn/problem/findpair">LQDOJ - FINDPAIR</a> </p>
+<p><a href="https://lqdoj.edu.vn/problem/cntpair02">LQDOJ - CNTPAIR02</a> </p>
+<p><a href="https://oj.vnoi.info/problem/ndccard">VNOJ - NDCCARD</a> </p>
+<p><a href="https://oj.vnoi.info/problem/twosum">VNOJ - TWOSUM</a></p>
+<h2 id="bai-toan-3">Bài toán 3<a class="headerlink" href="#bai-toan-3" title="Permanent link">&para;</a></h2>
 <p>Cho dãy số <strong>nguyên dương</strong> <span class="arithmatex">\(a\)</span> có <span class="arithmatex">\(n\)</span> phần tử. Hãy tìm độ dài đoạn con dài nhất trong dãy sao cho tổng các phần tử trong đoạn này không quá <span class="arithmatex">\(s\)</span>.</p>
 <p>Dữ liệu đảm bảo các phần tử trong dãy <span class="arithmatex">\(a\)</span> đều có giá trị không quá <span class="arithmatex">\(s\)</span>.</p>
 <p>Giới hạn: <span class="arithmatex">\(1\leq n \leq 10^6\)</span>, <span class="arithmatex">\(1 \leq a_i \leq 10^9\)</span> và <span class="arithmatex">\(s \leq 10^{18}\)</span>.</p>
-<h2 id="phan-tich_2">Phân tích</h2>
-<p>Để dễ dàng phân tích, ta tạm gọi 
-* <span class="arithmatex">\(sum(l,r)\)</span> là tổng các phần tử trong đoạn <span class="arithmatex">\([l,r]\)</span>.
-* Một đoạn con <span class="arithmatex">\([l,r]\)</span> là đoạn con "tốt" nếu <span class="arithmatex">\(sum(l,r) \leq s\)</span></p>
+<h2 id="phan-tich_2">Phân tích<a class="headerlink" href="#phan-tich_2" title="Permanent link">&para;</a></h2>
+<p>Để dễ dàng phân tích, ta tạm gọi </p>
+<ul>
+<li>
+<p><span class="arithmatex">\(sum(l,r)\)</span> là tổng các phần tử trong đoạn <span class="arithmatex">\([l,r]\)</span>.</p>
+</li>
+<li>
+<p>Một đoạn con <span class="arithmatex">\([l,r]\)</span> là đoạn con "tốt" nếu <span class="arithmatex">\(sum(l,r) \leq s\)</span></p>
+</li>
+</ul>
 <p>Qua đây, bài toán của chúng ta sẽ là tìm độ dài đoạn con "tốt" dài nhất.</p>
 <p>Vì dãy <span class="arithmatex">\(a\)</span> là một dãy số nguyên dương cho nên</p>
 <ul>
-<li><span class="arithmatex">\(sum(1,r)&gt;sum(2,r)&gt;...&gt;sum(r-1,r)&gt;sum(r,r)\)</span>.</li>
-<li>Nếu đoạn con <span class="arithmatex">\([l,r]\)</span> là đoạn con "tốt" thì với mọi <span class="arithmatex">\(x\geq l\)</span>, đoạn <span class="arithmatex">\([x,r]\)</span> là đoạn con "tốt".</li>
-<li>Nếu đoạn con <span class="arithmatex">\([l,r]\)</span> không là đoạn con "tốt" thì với mọi <span class="arithmatex">\(x \leq l\)</span>, đoạn <span class="arithmatex">\([x,r]\)</span> không là đoạn con "tốt".</li>
+<li>
+<p><span class="arithmatex">\(sum(1,r)&gt;sum(2,r)&gt;...&gt;sum(r-1,r)&gt;sum(r,r)\)</span>.</p>
+</li>
+<li>
+<p>Nếu đoạn con <span class="arithmatex">\([l,r]\)</span> là đoạn con "tốt" thì với mọi <span class="arithmatex">\(x\geq l\)</span>, đoạn <span class="arithmatex">\([x,r]\)</span> là đoạn con "tốt".</p>
+</li>
+<li>
+<p>Nếu đoạn con <span class="arithmatex">\([l,r]\)</span> không là đoạn con "tốt" thì với mọi <span class="arithmatex">\(x \leq l\)</span>, đoạn <span class="arithmatex">\([x,r]\)</span> không là đoạn con "tốt".</p>
+</li>
 </ul>
-<p>Với <span class="arithmatex">\(r\)</span> là một vị trí bất kỳ, nếu như <span class="arithmatex">\(l\)</span> là vị trí nhỏ nhất sao cho đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn "tốt" thì
-* mọi <span class="arithmatex">\(x \geq l\)</span> thì đoạn con <span class="arithmatex">\([x,r]\)</span> là một đoạn "tốt".
-* mọi <span class="arithmatex">\(x &lt; l\)</span> thì đoạn con <span class="arithmatex">\([x,r]\)</span> không là một đoạn "tốt".
-* đoạn con <span class="arithmatex">\([l,r]\)</span> là một đoạn con "tốt" dài nhất trong các đoạn con "tốt" có vị trí kết thúc tại <span class="arithmatex">\(r\)</span>.</p>
+<p>Với <span class="arithmatex">\(r\)</span> là một vị trí bất kỳ, nếu như <span class="arithmatex">\(l\)</span> là vị trí nhỏ nhất sao cho đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn "tốt" thì</p>
+<ul>
+<li>
+<p>mọi <span class="arithmatex">\(x \geq l\)</span> thì đoạn con <span class="arithmatex">\([x,r]\)</span> là một đoạn "tốt".</p>
+</li>
+<li>
+<p>mọi <span class="arithmatex">\(x &lt; l\)</span> thì đoạn con <span class="arithmatex">\([x,r]\)</span> không là một đoạn "tốt".</p>
+</li>
+<li>
+<p>đoạn con <span class="arithmatex">\([l,r]\)</span> là một đoạn con "tốt" dài nhất trong các đoạn con "tốt" có vị trí kết thúc tại <span class="arithmatex">\(r\)</span>.</p>
+</li>
+</ul>
 <p>Từ đó, với mỗi <span class="arithmatex">\(r\)</span> từ <span class="arithmatex">\(1\)</span> đến <span class="arithmatex">\(n\)</span>, nếu ta xác định được vị trí <span class="arithmatex">\(l\)</span>, ta có thể biết được độ dài của đoạn con "tốt" dài nhất của dãy <span class="arithmatex">\(a\)</span>.</p>
 <p>Hãy cùng nhận xét vị trí của <span class="arithmatex">\(l\)</span> với mỗi <span class="arithmatex">\(r\)</span> từ <span class="arithmatex">\(1\)</span> đến <span class="arithmatex">\(n\)</span> qua ví dụ sau đây:</p>
-<p>Cho trước dãy <span class="arithmatex">\(a = [2, 6, 5, 3, 6, 8, 9]\)</span> và <span class="arithmatex">\(s=20\)</span>
-* <span class="arithmatex">\(r=1 \rightarrow l=1\)</span>
-    * <span class="arithmatex">\(a = [\overset{\underset{\downarrow}{{\color{red}l},{\color{blue}r}}}{\color{green}2}, 6, 5, 3, 6, 8, 9]\)</span>
-    * <span class="arithmatex">\(sum(l,r)=2\)</span>
-* <span class="arithmatex">\(r=2 \rightarrow l=1\)</span>
-    * <span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{green}2}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}6}, 5, 3, 6, 8, 9]\)</span>
-    * <span class="arithmatex">\(sum(l,r)=8\)</span>
-* <span class="arithmatex">\(r=3 \rightarrow l=1\)</span>
-    * <span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{green}2}, {\color{green}6},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}5}, 3, 6, 8, 9]\)</span>
-    * <span class="arithmatex">\(sum(l,r)=13\)</span>
-* <span class="arithmatex">\(r=4 \rightarrow l=1\)</span>
-    * <span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{green}2}, {\color{green}6}, {\color{green}5},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}3}, 6, 8, 9]\)</span>
-    * <span class="arithmatex">\(sum(l,r)=16\)</span>
-* <span class="arithmatex">\(r=5 \rightarrow l=2\)</span>
-    * <span class="arithmatex">\(a = [2, \overset{\underset{\downarrow}{\color{red}l}}{\color{green}6}, {\color{green}5}, {\color{green}3},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}6}, 8, 9]\)</span>
-    * <span class="arithmatex">\(sum(l,r)=20\)</span>
-* <span class="arithmatex">\(r=6 \rightarrow l=4\)</span>
-    * <span class="arithmatex">\(a = [2, 6, 5, \overset{\underset{\downarrow}{\color{red}l}}{\color{green}3}, {\color{green}6},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}8}, 9]\)</span>
-    * <span class="arithmatex">\(sum(l,r)=17\)</span>
-* <span class="arithmatex">\(r=7 \rightarrow l=6\)</span>
-    * <span class="arithmatex">\(a = [2, 6, 5, 3, 6, \overset{\underset{\downarrow}{\color{red}l}}{\color{green}8}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}9}]\)</span>
-    * <span class="arithmatex">\(sum(l,r)=17\)</span></p>
+<p>Cho trước dãy <span class="arithmatex">\(a = [2, 6, 5, 3, 6, 8, 9]\)</span> và <span class="arithmatex">\(s=20\)</span></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(r=1 \rightarrow l=1\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{{\color{red}l},{\color{blue}r}}}{\color{green}2}, 6, 5, 3, 6, 8, 9]\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(sum(l,r)=2\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(r=2 \rightarrow l=1\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{green}2}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}6}, 5, 3, 6, 8, 9]\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(sum(l,r)=8\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(r=3 \rightarrow l=1\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{green}2}, {\color{green}6},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}5}, 3, 6, 8, 9]\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(sum(l,r)=13\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(r=4 \rightarrow l=1\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{green}2}, {\color{green}6}, {\color{green}5},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}3}, 6, 8, 9]\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(sum(l,r)=16\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(r=5 \rightarrow l=2\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [2, \overset{\underset{\downarrow}{\color{red}l}}{\color{green}6}, {\color{green}5}, {\color{green}3},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}6}, 8, 9]\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(sum(l,r)=20\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(r=6 \rightarrow l=4\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [2, 6, 5, \overset{\underset{\downarrow}{\color{red}l}}{\color{green}3}, {\color{green}6},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}8}, 9]\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(sum(l,r)=17\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(r=7 \rightarrow l=6\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [2, 6, 5, 3, 6, \overset{\underset{\downarrow}{\color{red}l}}{\color{green}8}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}9}]\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(sum(l,r)=17\)</span></p>
+</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -4943,16 +5530,34 @@
 <p>Qua ví dụ vừa rồi, ta thấy rằng, vị trí <span class="arithmatex">\(l\)</span> đối với các giá trị <span class="arithmatex">\(r\)</span> từ <span class="arithmatex">\(1\)</span> đến <span class="arithmatex">\(n\)</span> có giá trị không giảm.</p>
 <p>Thật vậy, với mọi <span class="arithmatex">\(x&lt;l\)</span> thì <span class="arithmatex">\(sum(x,r)&gt;s \Rightarrow sum(x,r+1)&gt;s\)</span>, vì thế giá trị <span class="arithmatex">\(l\)</span> đối với <span class="arithmatex">\(r+1\)</span> phải không quá giá trị <span class="arithmatex">\(l\)</span> đối với <span class="arithmatex">\(r\)</span>.</p>
 <p>Hơn nữa vì các phần tử trong dãy <span class="arithmatex">\(a\)</span> đều có giá trị không quá <span class="arithmatex">\(s\)</span> cho nên luôn tồn tại vị trí <span class="arithmatex">\(l \leq r\)</span> sao cho đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn "tốt". </p>
-<h2 id="giai-phap_2">Giải pháp</h2>
-<p>Với những phân tích như trên, ta có giải quyết bài toán với phương pháp hai con trỏ như sau:
-* Hai con trỏ <span class="arithmatex">\(l\)</span> và <span class="arithmatex">\(r\)</span> sẽ đặt ở vị trí <span class="arithmatex">\(1\)</span>.
-    * Hai con trỏ này được thể hiện như hai vị trí <span class="arithmatex">\(l\)</span>, <span class="arithmatex">\(r\)</span> như ở trên phần phân tích. 
-* Di chuyển lần lượt con trỏ <span class="arithmatex">\(r\)</span> từ <span class="arithmatex">\(1\)</span> đến <span class="arithmatex">\(n\)</span>.
-    * Sau mỗi lần di chuyển con trỏ <span class="arithmatex">\(r\)</span>, nếu
-        *  <span class="arithmatex">\(sum(l,r) \leq s\)</span>: giữ nguyên vị trí con trỏ <span class="arithmatex">\(l\)</span>.
-        *  <span class="arithmatex">\(sum(l,r) &gt; s\)</span>: tăng dần vị trí con trỏ <span class="arithmatex">\(l\)</span> cho đến khi <span class="arithmatex">\(sum(l,r) \leq s\)</span>.
-    * Hiện tại với vị trí con trỏ <span class="arithmatex">\(l\)</span> và <span class="arithmatex">\(r\)</span>, ta biết đoạn "tốt" dài nhất với vị trí kết thúc tại <span class="arithmatex">\(r\)</span> là đoạn <span class="arithmatex">\([l,r]\)</span>.
-* Độ dài đoạn con "tốt" dài nhất chính là giá trị độ dài lớn nhất của các đoạn "tốt" dài nhất với vị trí kết thúc tại <span class="arithmatex">\(r\)</span>, với mỗi <span class="arithmatex">\(r\)</span> từ <span class="arithmatex">\(1\)</span> đến <span class="arithmatex">\(n\)</span>.</p>
+<h2 id="giai-phap_2">Giải pháp<a class="headerlink" href="#giai-phap_2" title="Permanent link">&para;</a></h2>
+<p>Với những phân tích như trên, ta có giải quyết bài toán với phương pháp hai con trỏ như sau:</p>
+<ul>
+<li>
+<p>Hai con trỏ <span class="arithmatex">\(l\)</span> và <span class="arithmatex">\(r\)</span> sẽ đặt ở vị trí <span class="arithmatex">\(1\)</span>.</p>
+</li>
+<li>
+<p>Hai con trỏ này được thể hiện như hai vị trí <span class="arithmatex">\(l\)</span>, <span class="arithmatex">\(r\)</span> như ở trên phần phân tích. </p>
+</li>
+<li>
+<p>Di chuyển lần lượt con trỏ <span class="arithmatex">\(r\)</span> từ <span class="arithmatex">\(1\)</span> đến <span class="arithmatex">\(n\)</span>.</p>
+</li>
+<li>
+<p>Sau mỗi lần di chuyển con trỏ <span class="arithmatex">\(r\)</span>, nếu</p>
+</li>
+<li>
+<p><span class="arithmatex">\(sum(l,r) \leq s\)</span>: giữ nguyên vị trí con trỏ <span class="arithmatex">\(l\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(sum(l,r) &gt; s\)</span>: tăng dần vị trí con trỏ <span class="arithmatex">\(l\)</span> cho đến khi <span class="arithmatex">\(sum(l,r) \leq s\)</span>.</p>
+</li>
+<li>
+<p>Hiện tại với vị trí con trỏ <span class="arithmatex">\(l\)</span> và <span class="arithmatex">\(r\)</span>, ta biết đoạn "tốt" dài nhất với vị trí kết thúc tại <span class="arithmatex">\(r\)</span> là đoạn <span class="arithmatex">\([l,r]\)</span>.</p>
+</li>
+<li>
+<p>Độ dài đoạn con "tốt" dài nhất chính là giá trị độ dài lớn nhất của các đoạn "tốt" dài nhất với vị trí kết thúc tại <span class="arithmatex">\(r\)</span>, với mỗi <span class="arithmatex">\(r\)</span> từ <span class="arithmatex">\(1\)</span> đến <span class="arithmatex">\(n\)</span>.</p>
+</li>
+</ul>
 <p>Để hiểu rõ hơn, ta hãy cùng xem qua một số ví dụ sau đây:</p>
 <p><span class="arithmatex">\(a = [2, 6, 5, 3, 6, 8, 9]\)</span> và <span class="arithmatex">\(s=20\)</span></p>
 <ul>
@@ -4961,97 +5566,135 @@
 </li>
 <li>
 <p>Đặt <span class="arithmatex">\(l=1\)</span> và <span class="arithmatex">\(r=1\)</span></p>
-<ul>
-<li><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{{\color{red}l},{\color{blue}r}}}{\color{green}2}, 6, 5, 3, 6, 8, 9]\)</span></li>
-<li>vì <span class="arithmatex">\(a[1] \leq s\)</span> nên đoạn <span class="arithmatex">\([1,1]\)</span> là một đoạn "tốt".</li>
-<li><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></li>
-</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{{\color{red}l},{\color{blue}r}}}{\color{green}2}, 6, 5, 3, 6, 8, 9]\)</span></p>
+</li>
+<li>
+<p>vì <span class="arithmatex">\(a[1] \leq s\)</span> nên đoạn <span class="arithmatex">\([1,1]\)</span> là một đoạn "tốt".</p>
+</li>
+<li>
+<p><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></p>
 </li>
 <li>
 <p>Tăng vị trí <span class="arithmatex">\(r\)</span> lên <span class="arithmatex">\(1\)</span> đơn vị</p>
-<ul>
-<li><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{green}2}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}6}, 5, 3, 6, 8, 9]\)</span></li>
-<li>vì <span class="arithmatex">\(sum(l,r) = 8 \leq s\)</span> nên đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn tốt.</li>
-<li><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></li>
-</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{green}2}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}6}, 5, 3, 6, 8, 9]\)</span></p>
+</li>
+<li>
+<p>vì <span class="arithmatex">\(sum(l,r) = 8 \leq s\)</span> nên đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn tốt.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></p>
 </li>
 <li>
 <p>Tăng vị trí <span class="arithmatex">\(r\)</span> lên <span class="arithmatex">\(1\)</span> đơn vị</p>
-<ul>
-<li><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{green}2}, {\color{green}6},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}5}, 3, 6, 8, 9]\)</span></li>
-<li>vì <span class="arithmatex">\(sum(l,r) = 13 \leq s\)</span> nên đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn tốt.</li>
-<li><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></li>
-</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{green}2}, {\color{green}6},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}5}, 3, 6, 8, 9]\)</span></p>
+</li>
+<li>
+<p>vì <span class="arithmatex">\(sum(l,r) = 13 \leq s\)</span> nên đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn tốt.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></p>
 </li>
 <li>
 <p>Tăng vị trí <span class="arithmatex">\(r\)</span> lên <span class="arithmatex">\(1\)</span> đơn vị</p>
-<ul>
-<li><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{green}2}, {\color{green}6}, {\color{green}5},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}3}, 6, 8, 9]\)</span></li>
-<li>vì <span class="arithmatex">\(sum(l,r) = 16 \leq s\)</span> nên đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn tốt.</li>
-<li><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></li>
-</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{green}2}, {\color{green}6}, {\color{green}5},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}3}, 6, 8, 9]\)</span></p>
+</li>
+<li>
+<p>vì <span class="arithmatex">\(sum(l,r) = 16 \leq s\)</span> nên đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn tốt.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></p>
 </li>
 <li>
 <p>Tăng vị trí <span class="arithmatex">\(r\)</span> lên <span class="arithmatex">\(1\)</span> đơn vị</p>
-<ul>
-<li><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{orange}2}, {\color{orange}6}, {\color{orange}5}, {\color{orange}3}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{orange}6}, 8, 9]\)</span></li>
-<li>vì <span class="arithmatex">\(sum(l,r) = 22 &gt; s\)</span> nên tăng vị trí <span class="arithmatex">\(l\)</span>.</li>
-</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [\overset{\underset{\downarrow}{\color{red}l}}{\color{orange}2}, {\color{orange}6}, {\color{orange}5}, {\color{orange}3}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{orange}6}, 8, 9]\)</span></p>
+</li>
+<li>
+<p>vì <span class="arithmatex">\(sum(l,r) = 22 &gt; s\)</span> nên tăng vị trí <span class="arithmatex">\(l\)</span>.</p>
 </li>
 <li>
 <p>Tăng vị trí <span class="arithmatex">\(l\)</span> lên <span class="arithmatex">\(1\)</span> đơn vị</p>
-<ul>
-<li><span class="arithmatex">\(a = [2, \overset{\underset{\downarrow}{\color{red}l}}{\color{green}6}, {\color{green}5}, {\color{green}3},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}6}, 8, 9]\)</span></li>
-<li>vì <span class="arithmatex">\(sum(l,r) = 20 \leq s\)</span> nên đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn tốt.</li>
-<li><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></li>
-</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [2, \overset{\underset{\downarrow}{\color{red}l}}{\color{green}6}, {\color{green}5}, {\color{green}3},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}6}, 8, 9]\)</span></p>
+</li>
+<li>
+<p>vì <span class="arithmatex">\(sum(l,r) = 20 \leq s\)</span> nên đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn tốt.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></p>
 </li>
 <li>
 <p>Tăng vị trí <span class="arithmatex">\(r\)</span> lên <span class="arithmatex">\(1\)</span> đơn vị</p>
-<ul>
-<li><span class="arithmatex">\(a = [2, \overset{\underset{\downarrow}{\color{red}l}}{\color{orange}6}, {\color{orange}5}, {\color{orange}3}, {\color{orange}6},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{orange}8}, 9]\)</span></li>
-<li>vì <span class="arithmatex">\(sum(l,r) = 28 &gt; s\)</span> nên tăng vị trí <span class="arithmatex">\(l\)</span>.</li>
-</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [2, \overset{\underset{\downarrow}{\color{red}l}}{\color{orange}6}, {\color{orange}5}, {\color{orange}3}, {\color{orange}6},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{orange}8}, 9]\)</span></p>
+</li>
+<li>
+<p>vì <span class="arithmatex">\(sum(l,r) = 28 &gt; s\)</span> nên tăng vị trí <span class="arithmatex">\(l\)</span>.</p>
 </li>
 <li>
 <p>Tăng vị trí <span class="arithmatex">\(l\)</span> lên <span class="arithmatex">\(1\)</span> đơn vị</p>
-<ul>
-<li><span class="arithmatex">\(a = [2, 6, \overset{\underset{\downarrow}{\color{red}l}}{\color{orange}5}, {\color{orange}3}, {\color{orange}6},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{orange}8}, 9]\)</span></li>
-<li>vì <span class="arithmatex">\(sum(l,r) = 22 &gt; s\)</span> nên tăng vị trí <span class="arithmatex">\(l\)</span>.</li>
-</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [2, 6, \overset{\underset{\downarrow}{\color{red}l}}{\color{orange}5}, {\color{orange}3}, {\color{orange}6},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{orange}8}, 9]\)</span></p>
+</li>
+<li>
+<p>vì <span class="arithmatex">\(sum(l,r) = 22 &gt; s\)</span> nên tăng vị trí <span class="arithmatex">\(l\)</span>.</p>
 </li>
 <li>
 <p>Tăng vị trí <span class="arithmatex">\(l\)</span> lên <span class="arithmatex">\(1\)</span> đơn vị</p>
-<ul>
-<li><span class="arithmatex">\(a = [2, 6, 5, \overset{\underset{\downarrow}{\color{red}l}}{\color{green}3}, {\color{green}6},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}8}, 9]\)</span></li>
-<li>vì <span class="arithmatex">\(sum(l,r) = 17 \leq s\)</span> nên đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn tốt.</li>
-<li><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></li>
-</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [2, 6, 5, \overset{\underset{\downarrow}{\color{red}l}}{\color{green}3}, {\color{green}6},  \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}8}, 9]\)</span></p>
+</li>
+<li>
+<p>vì <span class="arithmatex">\(sum(l,r) = 17 \leq s\)</span> nên đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn tốt.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></p>
 </li>
 <li>
 <p>Tăng vị trí <span class="arithmatex">\(r\)</span> lên <span class="arithmatex">\(1\)</span> đơn vị</p>
-<ul>
-<li><span class="arithmatex">\(a = [2, 6, 5, \overset{\underset{\downarrow}{\color{red}l}}{\color{orange}3}, {\color{orange}6}, {\color{orange}8}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{orange}9}]\)</span></li>
-<li>vì <span class="arithmatex">\(sum(l,r) = 26 &gt; s\)</span> nên tăng vị trí <span class="arithmatex">\(l\)</span>.</li>
-</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [2, 6, 5, \overset{\underset{\downarrow}{\color{red}l}}{\color{orange}3}, {\color{orange}6}, {\color{orange}8}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{orange}9}]\)</span></p>
+</li>
+<li>
+<p>vì <span class="arithmatex">\(sum(l,r) = 26 &gt; s\)</span> nên tăng vị trí <span class="arithmatex">\(l\)</span>.</p>
 </li>
 <li>
 <p>Tăng vị trí <span class="arithmatex">\(l\)</span> lên <span class="arithmatex">\(1\)</span> đơn vị</p>
-<ul>
-<li><span class="arithmatex">\(a = [2, 6, 5, 3, \overset{\underset{\downarrow}{\color{red}l}}{\color{orange}6}, {\color{orange}8}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{orange}9}]\)</span></li>
-<li>vì <span class="arithmatex">\(sum(l,r) = 23 &gt; s\)</span> nên tăng vị trí <span class="arithmatex">\(l\)</span>.</li>
-</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [2, 6, 5, 3, \overset{\underset{\downarrow}{\color{red}l}}{\color{orange}6}, {\color{orange}8}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{orange}9}]\)</span></p>
+</li>
+<li>
+<p>vì <span class="arithmatex">\(sum(l,r) = 23 &gt; s\)</span> nên tăng vị trí <span class="arithmatex">\(l\)</span>.</p>
 </li>
 <li>
 <p>Tăng vị trí <span class="arithmatex">\(l\)</span> lên <span class="arithmatex">\(1\)</span> đơn vị</p>
-<ul>
-<li><span class="arithmatex">\(a = [2, 6, 5, 3, 6, \overset{\underset{\downarrow}{\color{red}l}}{\color{green}8}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}9}]\)</span></li>
-<li>vì <span class="arithmatex">\(sum(l,r) = 17 \leq s\)</span> nên đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn tốt.</li>
-<li><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></li>
-</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(a = [2, 6, 5, 3, 6, \overset{\underset{\downarrow}{\color{red}l}}{\color{green}8}, \overset{\underset{\downarrow}{\color{blue}r}}{\color{green}9}]\)</span></p>
+</li>
+<li>
+<p>vì <span class="arithmatex">\(sum(l,r) = 17 \leq s\)</span> nên đoạn <span class="arithmatex">\([l,r]\)</span> là một đoạn tốt.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(ans = max(ans, r - l + 1)\)</span></p>
 </li>
 </ul>
-<p><img alt="" src="https://i.imgur.com/S3HQo51.gif" /></p>
+<p><img alt="img" src="../../../uploads/S3HQo51.gif" /></p>
 <p><strong>Cài đặt</strong></p>
 <p>Để có thể tính được tổng các phần tử từ <span class="arithmatex">\(l\)</span> đến <span class="arithmatex">\(r\)</span> trong khi <span class="arithmatex">\(l\)</span> và <span class="arithmatex">\(r\)</span> đang di động, ta sẽ sử dụng biến <span class="arithmatex">\(sum\)</span> để lưu lại tổng của đoạn <span class="arithmatex">\([l,r]\)</span> hiện tại. </p>
 <p>Sau khi di chuyển <span class="arithmatex">\(r\)</span> sang phải, biến <span class="arithmatex">\(sum\)</span> sẽ cộng thêm giá trị <span class="arithmatex">\(a[r]\)</span>. </p>
@@ -5071,20 +5714,24 @@
 <p>Vị trí con trỏ <span class="arithmatex">\(r\)</span> luôn tăng, vị trí con trỏ <span class="arithmatex">\(l\)</span> luôn tăng và luôn tăng không giá trị <span class="arithmatex">\(r\)</span>. </p>
 <p>Hơn nữa, mỗi vị trí <span class="arithmatex">\(l\)</span> và <span class="arithmatex">\(r\)</span> tăng không quá <span class="arithmatex">\(n\)</span> lần. </p>
 <p>Vì thế độ phức tạp của giải pháp là <span class="arithmatex">\(O(n)\)</span>.</p>
-<h2 id="luyen-tap_2">Luyện tập</h2>
-<p><a href="https://oj.vnoi.info/problem/sopenp">VNOJ - SOPENP</a>\
-<a href="https://oj.vnoi.info/problem/product">VNOJ - PRODUCT</a>\
-<a href="https://oj.vnoi.info/problem/krect">VNOJ - KRECT</a>\
-<a href="https://oj.vnoi.info/problem/vmquabeo">VNOJ - VMQUABEO</a></p>
-<h1 id="bai-toan-4">Bài toán 4</h1>
+<h2 id="luyen-tap_2">Luyện tập<a class="headerlink" href="#luyen-tap_2" title="Permanent link">&para;</a></h2>
+<p><a href="https://oj.vnoi.info/problem/sopenp">VNOJ - SOPENP</a></p>
+<p><a href="https://oj.vnoi.info/problem/product">VNOJ - PRODUCT</a></p>
+<p><a href="https://oj.vnoi.info/problem/krect">VNOJ - KRECT</a></p>
+<p><a href="https://oj.vnoi.info/problem/vmquabeo">VNOJ - VMQUABEO</a></p>
+<h2 id="bai-toan-4">Bài toán 4<a class="headerlink" href="#bai-toan-4" title="Permanent link">&para;</a></h2>
 <p>Bạn được cho một dãy số nguyên như sau:</p>
 <ul>
-<li><span class="arithmatex">\(x_0=1\)</span></li>
-<li><span class="arithmatex">\(x_{i+1} = (a \cdot x_i + x_i \ div \ b) \  mod \ c\)</span>.</li>
+<li>
+<p><span class="arithmatex">\(x_0=1\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(x_{i+1} = (a \cdot x_i + x_i \ div \ b) \  mod \ c\)</span>.</p>
+</li>
 </ul>
 <p>Tìm <span class="arithmatex">\(n\)</span> nhỏ nhất sao cho tồn tại <span class="arithmatex">\(m &lt; n\)</span> và <span class="arithmatex">\(x_m = x_n\)</span>. Dữ liệu đảm bảo <span class="arithmatex">\(n\)</span> không quá <span class="arithmatex">\(2 \cdot 10^7\)</span>.</p>
 <p>Giới hạn: <span class="arithmatex">\(1 \leq a \leq 10^4\)</span> và <span class="arithmatex">\(1 \leq b,c \leq 10^{14}\)</span>.</p>
-<h2 id="phan-tich_3">Phân tích</h2>
+<h2 id="phan-tich_3">Phân tích<a class="headerlink" href="#phan-tich_3" title="Permanent link">&para;</a></h2>
 <p>Để dễ dàng phân tích ta định nghĩa hàm <span class="arithmatex">\(f\)</span> như sau:</p>
 <div class="arithmatex">\[f(x) = (a \cdot x + x \ div \ b) \  mod \ c\]</div>
 <p>Dãy số của chúng ta sẽ có dạng</p>
@@ -5097,49 +5744,109 @@
 <p>Khi đó, dãy sẽ có chu kỳ lặp lại các phần tử từ <span class="arithmatex">\(x_m\)</span> đến <span class="arithmatex">\(x_{n-1}\)</span></p>
 <div class="arithmatex">\[{\color{blue}\underbrace{\color{black}x_0,x_1,...,x_{m-1}}_{}},{\color{red}\underbrace{\color{black}x_m,x_{m+1},...,x_{n-1}}_{}}, {\color{red}\underbrace{\color{black}x_m,x_{m+1},...,x_{n-1}}_{}}, {\color{red}\underbrace{\color{black}x_m,x_{m+1},...,x_{n-1}}_{}},...\]</div>
 <p>Dãy số có thể biễu diễn như hình sau đây:</p>
-<p><img alt="" src="https://i.imgur.com/0lHu5lA.png" /></p>
+<p><img alt="img" src="../../../uploads/0lHu5lA.png" /></p>
 <p>Bài toán có thể giải quyết nếu chúng ta phần tử bắt đầu chu kỳ (<span class="arithmatex">\(x_{\mu}\)</span>) và độ dài của chu kỳ <span class="arithmatex">\(\lambda\)</span>.</p>
 <p>Cụ thể, xem ví dụ sau đây:</p>
 <div class="arithmatex">\[a = 8, b = 2, c = 31\]</div>
 <p>Ta có dãy số </p>
 <div class="arithmatex">\[{\color{blue}\underbrace{\color{black}1, 8, 6, 20, 15}_{}},{\color{red}\underbrace{\color{black}3, 25, 26, 4}_{}}, {\color{red}\underbrace{\color{black}3, 25, 26, 4}_{}}, {\color{red}\underbrace{\color{black}3, 25, 26, 4}_{}},...\]</div>
 <p>Giá trị <span class="arithmatex">\(n\)</span> cần tìm của bài toán là <span class="arithmatex">\(n = 9\)</span>.</p>
-<p>Ta có thể tính được giá trị này bằng cách xác định
-* phần tử bắt đầu chu kỳ <span class="arithmatex">\(x_{\mu}\)</span>.
-* độ dài chu kỳ <span class="arithmatex">\(\lambda\)</span>.</p>
+<p>Ta có thể tính được giá trị này bằng cách xác định</p>
+<ul>
+<li>
+<p>phần tử bắt đầu chu kỳ <span class="arithmatex">\(x_{\mu}\)</span>.</p>
+</li>
+<li>
+<p>độ dài chu kỳ <span class="arithmatex">\(\lambda\)</span>.</p>
+</li>
+</ul>
 <p>Ở đây, phần tử bắt đầu chu kỳ là <span class="arithmatex">\(x_5\)</span> và độ dài chu kỳ là <span class="arithmatex">\(4\)</span>.</p>
 <p>Giá trị <span class="arithmatex">\(n = \mu + \lambda = 5 + 4 = 9\)</span>.</p>
-<h2 id="giai-phap_3">Giải pháp</h2>
+<h2 id="giai-phap_3">Giải pháp<a class="headerlink" href="#giai-phap_3" title="Permanent link">&para;</a></h2>
 <p>Để xác định giá trị <span class="arithmatex">\(\mu\)</span> và <span class="arithmatex">\(\lambda\)</span>, ta sử dụng thuật toán <a href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_tortoise_and_hare">Floyd's tortoise and hare</a></p>
-<h3 id="rua-va-tho">Rùa và Thỏ</h3>
+<h3 id="rua-va-tho">Rùa và Thỏ<a class="headerlink" href="#rua-va-tho" title="Permanent link">&para;</a></h3>
 <p>Khởi tạo hai con trỏ, <span class="arithmatex">\(toroise\)</span> (rùa) và <span class="arithmatex">\(hare\)</span> (thỏ).</p>
-<p>Tại mỗi thời điểm, ta tịnh tiến hai con trỏ này như sau:
-* Tortoise (rùa): tịnh tiến một "bước"
-    * Nếu hiện tại con trỏ <span class="arithmatex">\(tortoise\)</span> đang là <span class="arithmatex">\(x\)</span>, nó sẽ được tịnh tiến đến <span class="arithmatex">\(f(x)\)</span>.
-    * <span class="arithmatex">\(x_0 \rightarrow x_1 \rightarrow x_2 \rightarrow x_3 \rightarrow x_4 \rightarrow ...\)</span>
-    * Vì dãy số của chúng ta có chu kỳ nên ta có công thức tính giá trị của con trỏ <span class="arithmatex">\(tortoise\)</span> sau <span class="arithmatex">\(t\)</span> lần tịnh tiến:
-        * <span class="arithmatex">\(t &lt; \mu\)</span>: <span class="arithmatex">\(x_t\)</span>
-        * <span class="arithmatex">\(t \geq \mu\)</span>: <span class="arithmatex">\(x_{\mu+(t-\mu) \ mod \ \lambda}\)</span>
-* Hare (thỏ): tịnh tiến hai "bước"
-    * Nếu hiện tại con trỏ <span class="arithmatex">\(hare\)</span> đang là <span class="arithmatex">\(x\)</span>, nó sẽ được tịnh tiến đến <span class="arithmatex">\(f(f(x))\)</span>.
-    * <span class="arithmatex">\(x_0 \rightarrow x_2 \rightarrow x_4 \rightarrow x_6 \rightarrow x_8 \rightarrow ...\)</span>
-    * Vì dãy số của chúng ta có chu kỳ nên ta có công thức tính giá trị của con trỏ <span class="arithmatex">\(hare\)</span> sau <span class="arithmatex">\(t\)</span> lần tịnh tiến:
-        * <span class="arithmatex">\(2t &lt; \mu\)</span>: <span class="arithmatex">\(x_{2t}\)</span>
-        * <span class="arithmatex">\(2t \geq \mu\)</span>: <span class="arithmatex">\(x_{\mu+(2t-\mu) \ mod \ \lambda}\)</span></p>
-<p>Ngoài lúc ban đầu, hai con trỏ <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> sẽ luôn gặp nhau tại thời điểm nào đó. Thật vậy:
-* <span class="arithmatex">\(2t &lt; \mu\)</span>: 
-    * Sau <span class="arithmatex">\(t\)</span> lần tịnh tiến, <span class="arithmatex">\(tortoise\)</span> = <span class="arithmatex">\(x_t\)</span> và <span class="arithmatex">\(hare\)</span> = <span class="arithmatex">\(x_{2t}\)</span>. 
-    * Tuy nhiên, <span class="arithmatex">\(\mu + \lambda\)</span> mới bắt đầu lại chu kỳ cho nên các phần tử từ <span class="arithmatex">\(x_0\)</span> đến <span class="arithmatex">\(x_{\mu + \lambda - 1}\)</span> phải đôi một khác nhau. 
-    * Vì thế <span class="arithmatex">\(x_t \neq x_{2t}\)</span>, <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> chưa gặp nhau lúc này.
-* <span class="arithmatex">\(2t \geq \mu\)</span> và <span class="arithmatex">\(t &lt; \mu\)</span>
-    * Sau <span class="arithmatex">\(t\)</span> lần tịnh tiến, <span class="arithmatex">\(tortoise\)</span> = <span class="arithmatex">\(x_t\)</span> và <span class="arithmatex">\(hare\)</span> = <span class="arithmatex">\(x_{\mu+(2t-\mu) \ mod \ \lambda}\)</span>.
-    * Tuy nhiên, <span class="arithmatex">\(\mu + \lambda\)</span> mới bắt đầu lại chu kỳ cho nên các phần tử từ <span class="arithmatex">\(x_0\)</span> đến <span class="arithmatex">\(x_{\mu + \lambda - 1}\)</span> phải đôi một khác nhau. 
-    * Vì thế <span class="arithmatex">\(x_t \neq x_{\mu+(2t-\mu) \ mod \ \lambda}\)</span>, <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> chưa gặp nhau lúc này.
-* <span class="arithmatex">\(t \geq \mu\)</span>
-    * Sau <span class="arithmatex">\(t\)</span> lần tịnh tiến, <span class="arithmatex">\(tortoise\)</span> = <span class="arithmatex">\(x_{\mu+(t-\mu) \ mod \ \lambda}\)</span> và <span class="arithmatex">\(hare\)</span> = <span class="arithmatex">\(x_{\mu+(2t-\mu) \ mod \ \lambda}\)</span>.
-    * Giả sử <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> gặp nhau thì <span class="arithmatex">\(\mu+(t-\mu) \ mod \ \lambda = {\mu+(2t-\mu) \ mod \ \lambda} \Leftrightarrow t \ mod \ \lambda = 0\)</span>.
-    * Vậy, <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> sẽ gặp nhau sau <span class="arithmatex">\(t\)</span> lần tịnh tiến, trong đó <span class="arithmatex">\(t\)</span> là số nguyên có giá trị lớn hơn hoặc bằng <span class="arithmatex">\(\mu\)</span> và chia hết cho <span class="arithmatex">\(\lambda\)</span>.
-    * Trừ lúc khởi tạo, hai con trỏ <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> sẽ gặp nhau khi giá trị của cả hai con trỏ là <span class="arithmatex">\(x_{\mu+(\lambda -\mu \ mod \ \lambda) \ mod \ \lambda}\)</span>.</p>
+<p>Tại mỗi thời điểm, ta tịnh tiến hai con trỏ này như sau:</p>
+<ul>
+<li>
+<p>Tortoise (rùa): tịnh tiến một "bước"</p>
+</li>
+<li>
+<p>Nếu hiện tại con trỏ <span class="arithmatex">\(tortoise\)</span> đang là <span class="arithmatex">\(x\)</span>, nó sẽ được tịnh tiến đến <span class="arithmatex">\(f(x)\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(x_0 \rightarrow x_1 \rightarrow x_2 \rightarrow x_3 \rightarrow x_4 \rightarrow ...\)</span></p>
+</li>
+<li>
+<p>Vì dãy số của chúng ta có chu kỳ nên ta có công thức tính giá trị của con trỏ <span class="arithmatex">\(tortoise\)</span> sau <span class="arithmatex">\(t\)</span> lần tịnh tiến:</p>
+</li>
+<li>
+<p><span class="arithmatex">\(t &lt; \mu\)</span>: <span class="arithmatex">\(x_t\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(t \geq \mu\)</span>: <span class="arithmatex">\(x_{\mu+(t-\mu) \ mod \ \lambda}\)</span></p>
+</li>
+<li>
+<p>Hare (thỏ): tịnh tiến hai "bước"</p>
+</li>
+<li>
+<p>Nếu hiện tại con trỏ <span class="arithmatex">\(hare\)</span> đang là <span class="arithmatex">\(x\)</span>, nó sẽ được tịnh tiến đến <span class="arithmatex">\(f(f(x))\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(x_0 \rightarrow x_2 \rightarrow x_4 \rightarrow x_6 \rightarrow x_8 \rightarrow ...\)</span></p>
+</li>
+<li>
+<p>Vì dãy số của chúng ta có chu kỳ nên ta có công thức tính giá trị của con trỏ <span class="arithmatex">\(hare\)</span> sau <span class="arithmatex">\(t\)</span> lần tịnh tiến:</p>
+</li>
+<li>
+<p><span class="arithmatex">\(2t &lt; \mu\)</span>: <span class="arithmatex">\(x_{2t}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(2t \geq \mu\)</span>: <span class="arithmatex">\(x_{\mu+(2t-\mu) \ mod \ \lambda}\)</span></p>
+</li>
+</ul>
+<p>Ngoài lúc ban đầu, hai con trỏ <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> sẽ luôn gặp nhau tại thời điểm nào đó. Thật vậy:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(2t &lt; \mu\)</span>: </p>
+</li>
+<li>
+<p>Sau <span class="arithmatex">\(t\)</span> lần tịnh tiến, <span class="arithmatex">\(tortoise\)</span> = <span class="arithmatex">\(x_t\)</span> và <span class="arithmatex">\(hare\)</span> = <span class="arithmatex">\(x_{2t}\)</span>. </p>
+</li>
+<li>
+<p>Tuy nhiên, <span class="arithmatex">\(\mu + \lambda\)</span> mới bắt đầu lại chu kỳ cho nên các phần tử từ <span class="arithmatex">\(x_0\)</span> đến <span class="arithmatex">\(x_{\mu + \lambda - 1}\)</span> phải đôi một khác nhau. </p>
+</li>
+<li>
+<p>Vì thế <span class="arithmatex">\(x_t \neq x_{2t}\)</span>, <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> chưa gặp nhau lúc này.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(2t \geq \mu\)</span> và <span class="arithmatex">\(t &lt; \mu\)</span></p>
+</li>
+<li>
+<p>Sau <span class="arithmatex">\(t\)</span> lần tịnh tiến, <span class="arithmatex">\(tortoise\)</span> = <span class="arithmatex">\(x_t\)</span> và <span class="arithmatex">\(hare\)</span> = <span class="arithmatex">\(x_{\mu+(2t-\mu) \ mod \ \lambda}\)</span>.</p>
+</li>
+<li>
+<p>Tuy nhiên, <span class="arithmatex">\(\mu + \lambda\)</span> mới bắt đầu lại chu kỳ cho nên các phần tử từ <span class="arithmatex">\(x_0\)</span> đến <span class="arithmatex">\(x_{\mu + \lambda - 1}\)</span> phải đôi một khác nhau. </p>
+</li>
+<li>
+<p>Vì thế <span class="arithmatex">\(x_t \neq x_{\mu+(2t-\mu) \ mod \ \lambda}\)</span>, <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> chưa gặp nhau lúc này.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(t \geq \mu\)</span></p>
+</li>
+<li>
+<p>Sau <span class="arithmatex">\(t\)</span> lần tịnh tiến, <span class="arithmatex">\(tortoise\)</span> = <span class="arithmatex">\(x_{\mu+(t-\mu) \ mod \ \lambda}\)</span> và <span class="arithmatex">\(hare\)</span> = <span class="arithmatex">\(x_{\mu+(2t-\mu) \ mod \ \lambda}\)</span>.</p>
+</li>
+<li>
+<p>Giả sử <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> gặp nhau thì <span class="arithmatex">\(\mu+(t-\mu) \ mod \ \lambda = {\mu+(2t-\mu) \ mod \ \lambda} \Leftrightarrow t \ mod \ \lambda = 0\)</span>.</p>
+</li>
+<li>
+<p>Vậy, <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> sẽ gặp nhau sau <span class="arithmatex">\(t\)</span> lần tịnh tiến, trong đó <span class="arithmatex">\(t\)</span> là số nguyên có giá trị lớn hơn hoặc bằng <span class="arithmatex">\(\mu\)</span> và chia hết cho <span class="arithmatex">\(\lambda\)</span>.</p>
+</li>
+<li>
+<p>Trừ lúc khởi tạo, hai con trỏ <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> sẽ gặp nhau khi giá trị của cả hai con trỏ là <span class="arithmatex">\(x_{\mu+(\lambda -\mu \ mod \ \lambda) \ mod \ \lambda}\)</span>.</p>
+</li>
+</ul>
 <p>Cách cài đặt để <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> gặp nhau:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">tortoise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">hare</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -5149,17 +5856,23 @@
 <span class="w">      </span><span class="k">break</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="tim-mu">Tìm <span class="arithmatex">\(\mu\)</span></h3>
+<h3 id="tim-mu">Tìm <span class="arithmatex">\(\mu\)</span><a class="headerlink" href="#tim-mu" title="Permanent link">&para;</a></h3>
 <p>Khởi tạo một con trỏ mới <span class="arithmatex">\(p=x_0\)</span>, con trỏ này được tịnh tiến giống như con trỏ <span class="arithmatex">\(tortoise\)</span>.</p>
 <p>Tịnh tiến cùng lúc hai con trỏ <span class="arithmatex">\(p\)</span> và <span class="arithmatex">\(tortoise\)</span> và dừng lại cho đến khi chúng gặp nhau.</p>
 <p>Số lần tịnh tiến ở đây chính là <span class="arithmatex">\(\mu\)</span>.</p>
 <p><strong>Chứng minh:</strong></p>
 <ul>
-<li>Trong những lần tịnh tiến từ <span class="arithmatex">\(0\)</span> đến <span class="arithmatex">\(\mu - 1\)</span>, con trỏ <span class="arithmatex">\(p\)</span> nhận giá trị từ <span class="arithmatex">\(x_0\)</span> đến <span class="arithmatex">\(x_{\mu -1}\)</span> (các giá trị không có trong chu kỳ) . Còn con trỏ <span class="arithmatex">\(tortoise\)</span>, vì đã nằm ở chu kỳ, nên giá trị của <span class="arithmatex">\(tortoise\)</span> sẽ nhận giá trị của các phần tử có trong chu kỳ. Vì thế <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(p\)</span> chưa gặp nhau.</li>
-<li>Hai con trỏ <span class="arithmatex">\(p\)</span> và <span class="arithmatex">\(tortoise\)</span> gặp nhau tại lần tịnh tiến thứ <span class="arithmatex">\(\mu\)</span>:<ul>
-<li>Con trỏ <span class="arithmatex">\(p\)</span> có giá trị <span class="arithmatex">\(x_{\mu}\)</span>.</li>
-<li>Lúc chưa tịnh tiến <span class="arithmatex">\(p\)</span>, con trỏ <span class="arithmatex">\(tortoise\)</span> có giá trị <span class="arithmatex">\(x_{\mu+(t-\mu) \ mod \ \lambda}\)</span> (đã nêu ở mục Rùa và Thỏ). Vì đã ở trong chu kỳ cho nên, sau khi tịnh tiến <span class="arithmatex">\(\mu\)</span> lần con trỏ <span class="arithmatex">\(tortoise\)</span> sẽ có giá trị là <span class="arithmatex">\(x_{\mu+(t) \ mod \ \lambda}\)</span>. Mà <span class="arithmatex">\(t\)</span> là số nguyên dương chia hết cho <span class="arithmatex">\(\lambda\)</span>, cho nên con trỏ <span class="arithmatex">\(tortoise\)</span> có giá trị là <span class="arithmatex">\(x_{\mu}\)</span>.</li>
-</ul>
+<li>
+<p>Trong những lần tịnh tiến từ <span class="arithmatex">\(0\)</span> đến <span class="arithmatex">\(\mu - 1\)</span>, con trỏ <span class="arithmatex">\(p\)</span> nhận giá trị từ <span class="arithmatex">\(x_0\)</span> đến <span class="arithmatex">\(x_{\mu -1}\)</span> (các giá trị không có trong chu kỳ) . Còn con trỏ <span class="arithmatex">\(tortoise\)</span>, vì đã nằm ở chu kỳ, nên giá trị của <span class="arithmatex">\(tortoise\)</span> sẽ nhận giá trị của các phần tử có trong chu kỳ. Vì thế <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(p\)</span> chưa gặp nhau.</p>
+</li>
+<li>
+<p>Hai con trỏ <span class="arithmatex">\(p\)</span> và <span class="arithmatex">\(tortoise\)</span> gặp nhau tại lần tịnh tiến thứ <span class="arithmatex">\(\mu\)</span>:</p>
+</li>
+<li>
+<p>Con trỏ <span class="arithmatex">\(p\)</span> có giá trị <span class="arithmatex">\(x_{\mu}\)</span>.</p>
+</li>
+<li>
+<p>Lúc chưa tịnh tiến <span class="arithmatex">\(p\)</span>, con trỏ <span class="arithmatex">\(tortoise\)</span> có giá trị <span class="arithmatex">\(x_{\mu+(t-\mu) \ mod \ \lambda}\)</span> (đã nêu ở mục Rùa và Thỏ). Vì đã ở trong chu kỳ cho nên, sau khi tịnh tiến <span class="arithmatex">\(\mu\)</span> lần con trỏ <span class="arithmatex">\(tortoise\)</span> sẽ có giá trị là <span class="arithmatex">\(x_{\mu+(t) \ mod \ \lambda}\)</span>. Mà <span class="arithmatex">\(t\)</span> là số nguyên dương chia hết cho <span class="arithmatex">\(\lambda\)</span>, cho nên con trỏ <span class="arithmatex">\(tortoise\)</span> có giá trị là <span class="arithmatex">\(x_{\mu}\)</span>.</p>
 </li>
 </ul>
 <p>Cách cài đặt tìm <span class="arithmatex">\(\mu\)</span>:</p>
@@ -5170,7 +5883,7 @@
 <span class="w">    </span><span class="n">mu</span><span class="o">++</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="tim-lambda">Tìm <span class="arithmatex">\(\lambda\)</span></h3>
+<h3 id="tim-lambda">Tìm <span class="arithmatex">\(\lambda\)</span><a class="headerlink" href="#tim-lambda" title="Permanent link">&para;</a></h3>
 <p>Bây giờ cả hai con trỏ <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(p\)</span> đang có giá trị là <span class="arithmatex">\(x_{\mu}\)</span>.</p>
 <p>Chúng ta giữ nguyên giá trị <span class="arithmatex">\(tortoise\)</span>, và tịnh tiến <span class="arithmatex">\(p\)</span> cho đến khi <span class="arithmatex">\(p\)</span> có giá trị <span class="arithmatex">\(x_{\mu}\)</span> lại.</p>
 <p>Vì <span class="arithmatex">\(p\)</span> đã ở trong chu kỳ cho nên, sau khi tinh tiến <span class="arithmatex">\(\lambda\)</span> lần, <span class="arithmatex">\(p\)</span> sẽ lại có giá trị là <span class="arithmatex">\(x_{\mu}\)</span>.</p>
@@ -5187,22 +5900,28 @@
 <p>Ta có dãy số </p>
 <div class="arithmatex">\[{\color{blue}\underbrace{\color{black}1, 2, 5, 12}_{}},{\color{red}\underbrace{\color{black}30, 11, 27, 3, 7, 17, 10, 25}_{}}, {\color{red}\underbrace{\color{black}30, 11, 27, 3, 7, 17, 10, 25}_{}}, {\color{red}\underbrace{\color{black}30, 11, 27, 3, 7, 17, 10, 25}_{}},...\]</div>
 <p>Giá trị <span class="arithmatex">\(n\)</span> cần tìm của bài toán là <span class="arithmatex">\(n = 12\)</span>.</p>
-<p>Ta có thể tính được giá trị này bằng cách xác định
-* phần tử bắt đầu chu kỳ <span class="arithmatex">\(x_{\mu}\)</span>.
-* độ dài chu kỳ <span class="arithmatex">\(\lambda\)</span>.</p>
+<p>Ta có thể tính được giá trị này bằng cách xác định</p>
+<ul>
+<li>
+<p>phần tử bắt đầu chu kỳ <span class="arithmatex">\(x_{\mu}\)</span>.</p>
+</li>
+<li>
+<p>độ dài chu kỳ <span class="arithmatex">\(\lambda\)</span>.</p>
+</li>
+</ul>
 <p>Ở đây, phần tử bắt đầu chu kỳ là <span class="arithmatex">\(x_4\)</span> và độ dài chu kỳ là <span class="arithmatex">\(8\)</span>.</p>
 <p>Giá trị <span class="arithmatex">\(n = \mu + \lambda = 4 + 8 = 12\)</span>.</p>
-<p><img alt="" src="https://i.imgur.com/JwbJOWD.gif" /></p>
+<p><img alt="img" src="../../../uploads/JwbJOWD.gif" /></p>
 <p><strong>Độ phức tạp</strong></p>
 <p>Khi khởi tạo hai con trỏ <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> ở <span class="arithmatex">\(x_0\)</span>, hai con trỏ sẽ gặp lại nhau lần đầu tiên sau <span class="arithmatex">\(t\)</span> bước.</p>
 <p>Cụ thể <span class="arithmatex">\(t\)</span> là số nguyên nhỏ nhất sao cho <span class="arithmatex">\(t\)</span> có giá trị lớn hơn hoặc bằng <span class="arithmatex">\(\mu\)</span> và chia chết cho <span class="arithmatex">\(\lambda\)</span>.</p>
 <p>Vì thế việc xác định được vị trí <span class="arithmatex">\(tortoise\)</span> và <span class="arithmatex">\(hare\)</span> gặp nhau sẽ mất không quá <span class="arithmatex">\(\mu + \lambda\)</span> bước. Hơn nữa, việc xác định <span class="arithmatex">\(\mu\)</span> mất <span class="arithmatex">\(\mu\)</span> bước, xác định <span class="arithmatex">\(\lambda\)</span> mất <span class="arithmatex">\(\lambda\)</span> bước.</p>
 <p>Kết luận: độ phức tạp của bài toán là <span class="arithmatex">\(O(\mu + \lambda)\)</span>. (trong đó <span class="arithmatex">\(\mu + \lambda \leq 2 \cdot 10^7\)</span>)</p>
-<h2 id="luyen-tap_3">Luyện tập</h2>
-<p><a href="https://lqdoj.edu.vn/problem/torhar">LODOJ - TORHAR</a>\
-<a href="https://codeforces.com/gym/100503/problem/D">CODEFORCES - Sequence analysis</a>\
-<a href="https://codeforces.com/gym/102501/problem/H">CODEFORCES - Pseudo-Random Number Generator</a>\
-<a href="https://codeforces.com/contest/1137/problem/D">CODEFORCES - Cooperative Game</a></p>
+<h2 id="luyen-tap_3">Luyện tập<a class="headerlink" href="#luyen-tap_3" title="Permanent link">&para;</a></h2>
+<p><a href="https://lqdoj.edu.vn/problem/torhar">LODOJ - TORHAR</a></p>
+<p><a href="https://codeforces.com/gym/100503/problem/D">CODEFORCES - Sequence analysis</a></p>
+<p><a href="https://codeforces.com/gym/102501/problem/H">CODEFORCES - Pseudo-Random Number Generator</a></p>
+<p><a href="https://codeforces.com/contest/1137/problem/D">CODEFORCES - Cooperative Game</a></p>
 
 
 
@@ -5220,6 +5939,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -5227,14 +5948,61 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Tai-Lieu-Thuat-Toan/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Một số Tài liệu hay về Thuật Toán">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Một số Tài liệu hay về Thuật Toán
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../algebra/binary_exponentation/" class="md-footer__link md-footer__link--next" aria-label="Next: Lũy thừa nhị phân">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lũy thừa nhị phân
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/KienPC1234/fptoj_wiki" target="_blank" rel="noopener" title="GitHub: KienPC1234/fptoj_wiki" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -5249,7 +6017,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "toc.integrate", "toc.sticky", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "header.autohide"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>

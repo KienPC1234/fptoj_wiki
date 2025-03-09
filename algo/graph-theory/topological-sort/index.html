@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="FPTOJ được xây dựng với mục đích chia sẻ kiến thức Tin học đến với tất cả mọi người">
+      
       
       
         <link rel="canonical" href="https://wiki.fptoj.com/algo/graph-theory/topological-sort/">
@@ -17,7 +19,7 @@
         <link rel="next" href="../../math/game-theory/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../uploads/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sap-xep-to-po-topological-sort" class="md-skip">
+        <a href="#mo-au" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +92,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="FPTOJ WIKI" class="md-header__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -172,6 +174,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -187,15 +191,148 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+      </div>
+    
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Trang chủ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../basic/backtracking/" class="md-tabs__link">
+          
+  
+  Thuật Toán
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cs/crypto/Cipher-Tools/" class="md-tabs__link">
+          
+  
+  Computer Science (Khoa học máy tính)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../languages/cpp/pointers/" class="md-tabs__link">
+          
+  
+  Ngôn Ngữ Lập Trình
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../translate/functional-programming-part-1/" class="md-tabs__link">
+          
+  
+  Dịch Thuật
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -209,8 +346,12 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="FPTOJ WIKI" class="md-nav__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -220,10 +361,61 @@
     FPTOJ WIKI
   </label>
   
+    <div class="md-nav__source">
+      <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
     
       
       
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Trang chủ
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Trang chủ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -233,7 +425,7 @@
         
   
   <span class="md-ellipsis">
-    Trang chủ
+    Home
     
   </span>
   
@@ -242,9 +434,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -263,9 +456,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -284,6 +478,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -296,15 +498,21 @@
     
     
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -316,8 +524,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Thuật Toán
           </label>
@@ -332,15 +540,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -352,8 +563,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Cơ Bản
           </label>
@@ -596,15 +807,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -616,8 +830,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Đại Số
           </label>
@@ -772,15 +986,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -792,8 +1009,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Cấu trúc dữ liệu
           </label>
@@ -1410,15 +1627,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1430,8 +1650,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             Quy hoạch động
           </label>
@@ -1586,15 +1806,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1606,8 +1829,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Games
           </label>
@@ -1652,15 +1875,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1672,8 +1898,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Hình học
           </label>
@@ -1764,15 +1990,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1784,8 +2013,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             Lý thuyết Đồ Thị
           </label>
@@ -2024,8 +2253,18 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sắp xếp Tô-pô (Topological Sort)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2037,6 +2276,254 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mo-au" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mở đầu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-sap-xep-to-po" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán sắp xếp Tô-pô
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cam-hung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cảm hứng
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ieu-kien-ton-tai-thu-tu-to-po" class="md-nav__link">
+    <span class="md-ellipsis">
+      Điều kiện tồn tại thứ tự Tô-pô
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-1-sap-xep-topo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán 1 - Sắp xếp TOPO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-bai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đề bài
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thuat-toan-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thuật toán 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thuật toán 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cai-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anh-gia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thuat-toan-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thuật toán 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thuật toán 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cai-at_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anh-gia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-2-uong-i-dai-nhat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán 2 - Đường đi dài nhất
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-bai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đề bài
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thuat-toan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thuật toán
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thuật toán">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cai-at_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anh-gia_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-3-fox-and-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán 3 - Fox And Names
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-bai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đề bài
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thuat-toan_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thuật toán
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thuật toán">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cai-at_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anh-gia_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-tap-ap-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài tập áp dụng
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2060,15 +2547,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2080,8 +2570,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             Toán
           </label>
@@ -2192,15 +2682,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2212,8 +2705,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             Tìm Kiếm
           </label>
@@ -2258,15 +2751,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
         
           
-          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2278,8 +2774,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             Kỹ Năng Thi
           </label>
@@ -2368,15 +2864,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
         
           
-          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2388,8 +2887,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_11">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
             <span class="md-nav__icon md-icon"></span>
             Xâu kí tự
           </label>
@@ -2522,15 +3021,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
         
           
-          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2542,8 +3044,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
             <span class="md-nav__icon md-icon"></span>
             Mẹo
           </label>
@@ -2749,15 +3251,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2769,8 +3274,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Computer Science (Khoa học máy tính)
           </label>
@@ -2785,15 +3290,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2805,8 +3313,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Crypto
           </label>
@@ -2865,15 +3373,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2885,8 +3396,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             Cipher
           </label>
@@ -2939,15 +3450,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2959,8 +3473,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Xử lý ảnh
           </label>
@@ -3034,15 +3548,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3054,8 +3571,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Ngôn Ngữ Lập Trình
           </label>
@@ -3143,15 +3660,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3163,8 +3683,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Dịch Thuật
           </label>
@@ -3201,15 +3721,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3221,8 +3744,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             Codeforces
           </label>
@@ -3355,15 +3878,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3375,8 +3901,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             E-Maxx
           </label>
@@ -3443,15 +3969,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3463,8 +3992,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             Nâng Cao
           </label>
@@ -3685,15 +4214,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3705,8 +4237,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
             Máy học (Machine Learning - ML)
           </label>
@@ -3839,15 +4371,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3859,8 +4394,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
             Quora
           </label>
@@ -3905,15 +4440,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
-          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3925,8 +4463,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             Topcoder
           </label>
@@ -4279,15 +4817,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
         
           
-          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4299,8 +4840,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
             USACO
           </label>
@@ -4345,15 +4886,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
         
           
-          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4365,8 +4909,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
             Wcipeg
           </label>
@@ -4548,24 +5092,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -4574,25 +5100,29 @@
                   
 
 
+  
+  
 
-<h1 id="sap-xep-to-po-topological-sort">Sắp xếp Tô-pô (Topological Sort)</h1>
+
+  <h1>Sắp xếp Tô-pô (Topological Sort)</h1>
+
 <p><strong>Nguồn:</strong> <a href="http://wcipeg.com/wiki/Topological_sort">wcipeg</a></p>
 <p><strong>Biên soạn:</strong>
 - Nguyễn Châu Khanh - VNU University of Engineering and Technology (VNU-UET)
 - Bùi Minh Hoạt - VNU University of Engineering and Technology (VNU-UET)</p>
 <p><strong>Reviewer:</strong>
 - Hoàng Xuân Nhật</p>
-<h1 id="mo-au">Mở đầu</h1>
+<h2 id="mo-au">Mở đầu<a class="headerlink" href="#mo-au" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Bài viết này sẽ giúp bạn tìm hiểu về <strong>bài toán sắp xếp Tô-pô</strong> <em>(Topological Sort)</em>. Sắp xếp Tô-pô là một trong những bài toán có tính ứng dụng cao trong Tin học lẫn Toán học và cả trong đời sống. </li>
 </ul>
-<h1 id="bai-toan-sap-xep-to-po">Bài toán sắp xếp Tô-pô</h1>
+<h2 id="bai-toan-sap-xep-to-po">Bài toán sắp xếp Tô-pô<a class="headerlink" href="#bai-toan-sap-xep-to-po" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Thứ tự Tô-pô</strong> của một đồ thị có hướng là một thứ tự sắp xếp của các đỉnh sao cho với mọi cung từ đỉnh <span class="arithmatex">\(u\)</span> đến đỉnh <span class="arithmatex">\(v\)</span> trong đồ thị, <span class="arithmatex">\(u\)</span> luôn nằm trước <span class="arithmatex">\(v\)</span>.</li>
 <li>Bài toán xác định <strong>thứ tự Tô-pô</strong> gọi là <strong>Bài toán sắp xếp Tô-pô</strong>.</li>
 </ul>
 <p><img alt="/uploads/topological_sort_img1.png" src="/uploads/topological_sort_img1.png" /></p>
-<h1 id="cam-hung">Cảm hứng</h1>
+<h2 id="cam-hung">Cảm hứng<a class="headerlink" href="#cam-hung" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Sắp xếp Tô-pô được áp dụng nhiều nhất đối với các bài toán biểu diễn mối quan hệ <strong>phụ thuộc</strong> giữa các đối tượng. </li>
 <li>Ví dụ như nó có thể được áp dụng trong việc lập ra lịch trình công việc. Một tập hợp các công việc phụ thuộc lẫn nhau có thể được sắp xếp theo một thứ tự nhất định để chúng được thực hiện.</li>
@@ -4604,7 +5134,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="ieu-kien-ton-tai-thu-tu-to-po">Điều kiện tồn tại thứ tự Tô-pô</h1>
+<h2 id="ieu-kien-ton-tai-thu-tu-to-po">Điều kiện tồn tại thứ tự Tô-pô<a class="headerlink" href="#ieu-kien-ton-tai-thu-tu-to-po" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Dễ nhận thấy rằng, một đồ thị <strong>tồn tại thứ tự Tô-pô</strong> thì đồ thị đó phải là đồ thị có hướng và không có chu trình <em>(Directed Acyclic Graph - DAG)</em>. Vì nếu đồ thị có chứa một chu trình, <span class="arithmatex">\(v_1 v_2 ... v_n v_1\)</span> thì <span class="arithmatex">\(v_2\)</span> phải đứng sau <span class="arithmatex">\(v_1\)</span> theo thứ tự Tô-pô, <span class="arithmatex">\(v_3\)</span> phải đứng sau <span class="arithmatex">\(v_2\)</span>, v.v...; nhưng sau đó <span class="arithmatex">\(v_1\)</span> phải đứng sau <span class="arithmatex">\(v_1\)</span>, dẫn đến kết luận vô lý khi <span class="arithmatex">\(v_1\)</span> phải đứng sau chính nó trong danh sách.</li>
 <li>Vậy câu hỏi đặt ra là liệu điều kiện này có đủ hay không? Có đúng là một đồ thị có thể được sắp xếp theo thứ tự Tô-pô khi và chỉ khi đồ thị đó là một <span class="arithmatex">\(DAG\)</span> ? Câu trả lời là <strong><em>đúng</em></strong>.</li>
@@ -4628,9 +5158,9 @@
 </ul>
 </li>
 </ul>
-<h1 id="bai-toan-1-sap-xep-topo">Bài toán 1 - Sắp xếp TOPO</h1>
+<h2 id="bai-toan-1-sap-xep-topo">Bài toán 1 - Sắp xếp TOPO<a class="headerlink" href="#bai-toan-1-sap-xep-topo" title="Permanent link">&para;</a></h2>
 <p><a href="http://csloj.ddns.net/problem/541">TOPOSORT – Sắp xếp TOPO</a></p>
-<h2 id="e-bai">Đề bài</h2>
+<h2 id="e-bai">Đề bài<a class="headerlink" href="#e-bai" title="Permanent link">&para;</a></h2>
 <p>Cho đồ thị có hướng không chu trình <em>(Directed Acyclic Graph - DAG)</em> <span class="arithmatex">\(G(V, E)\)</span>. Hãy đánh số lại các đỉnh của <span class="arithmatex">\(G\)</span> sao cho chỉ có cung nối từ đỉnh có chỉ số nhỏ đến đỉnh có chỉ số lớn hơn.</p>
 <p><strong>Input</strong></p>
 <ul>
@@ -4661,7 +5191,7 @@
 </code></pre></div></p>
 <p><strong>Note</strong>
 <img alt="/uploads/topological_sort_img3.png" src="/uploads/topological_sort_img3.png" /></p>
-<h2 id="thuat-toan-1">Thuật toán 1</h2>
+<h2 id="thuat-toan-1">Thuật toán 1<a class="headerlink" href="#thuat-toan-1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Từ phần <strong>chứng minh</strong> của định lý trên <em>(trong mục <strong>Điều kiện tồn tại thứ tự Tô-pô</strong>)</em>, ta có thuật toán để tìm ra một thứ tự Tô-pô như sau:<ol>
 <li>Bắt đầu với một danh sách Tô-pô trống.</li>
@@ -4681,7 +5211,7 @@
 </li>
 <li>Sau khi xác định được thứ tự Tô-pô của đồ thị, ta sẽ đánh số lại các đỉnh của đồ thị theo thứ tự.</li>
 </ul>
-<h3 id="cai-at"><strong>Cài đặt</strong></h3>
+<h3 id="cai-at"><strong>Cài đặt</strong><a class="headerlink" href="#cai-at" title="Permanent link">&para;</a></h3>
 <p><strong>Cấu trúc dữ liệu:</strong>
 - Hằng số <code>maxN = 110</code> .
 - Mảng <code>ans[]</code> - Mảng đánh số lại các đỉnh.
@@ -4689,7 +5219,7 @@
 - Vector <code>g[]</code> - Danh sách cạnh kề của mỗi đỉnh.
 - Vector <code>topo</code> - Danh sách thứ tự Tô-pô.
 - Queue <code>listSource</code> - Danh sách các đỉnh không có cung vào.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -4741,7 +5271,7 @@
 <ul>
 <li>Sau khi xác định được thứ tự Tô-pô của đồ thị là <code>topo = {1; 6; 7; 2; 4; 5; 3}</code>. Ta đánh số lại các đỉnh. Khi đó ta sẽ có mảng <code>ans = {1; 4; 7; 5; 6; 2; 3}</code>.</li>
 </ul>
-<h3 id="anh-gia"><strong>Đánh giá</strong></h3>
+<h3 id="anh-gia"><strong>Đánh giá</strong><a class="headerlink" href="#anh-gia" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Để thực hiện thuật toán này một cách hiệu quả, ta cần phải có khả năng duyệt qua các đỉnh kề của một đỉnh một cách hiệu quả. Điều này được thực hiện tốt nhất bằng cách sử dụng danh sách kề (vector <code>g[]</code>). </li>
 <li>Ngoài ra, <code>listSource</code> nên là một ngăn xếp <em>(stack)</em> hoặc một hàng đợi <em>(queue)</em> để việc thêm và loại bỏ các phần tử có thể được thực hiện trong thời gian không đổi. </li>
@@ -4751,7 +5281,7 @@
 <p><strong>Độ phức tạp</strong>
 - Ở vòng lặp <em>while</em> để duyệt các đỉnh trong <code>listSource</code>, ta mất độ phức tạp <span class="arithmatex">\(O(n)\)</span> vì mỗi đỉnh chỉ được thêm vào nhiều nhất <span class="arithmatex">\(1\)</span> lần <em>(ở ban đầu hoặc ngay sau khi cạnh vào cuối cùng của nó bị loại bỏ)</em>. Và ta sẽ mất thêm độ phức tạp <span class="arithmatex">\(O(m)\)</span> để duyệt các cạnh vì mỗi cạnh chỉ được kiểm tra nhiều nhất <span class="arithmatex">\(1\)</span> lần trong vòng lặp while <em>(khi đỉnh nối với nó được lấy ra)</em>. 
 - Nhìn chung, độ phức tạp của thuật toán này là <span class="arithmatex">\(O(n+m)\)</span>.</p>
-<h2 id="thuat-toan-2">Thuật toán 2</h2>
+<h2 id="thuat-toan-2">Thuật toán 2<a class="headerlink" href="#thuat-toan-2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Có một thuật toán khác cho sắp xếp Tô-pô dựa trên <strong>tìm kiếm theo chiều sâu</strong> <em>(Depth-First Search - DFS)</em>.</li>
 <li>Đối với <strong>thuật toán 2</strong>, quá trình tìm kiếm theo chiều sâu sẽ trả ra <strong>danh sách nghịch đảo thứ tự Tô-pô</strong>. Đơn giản hơn, nó chính là danh sách Tô-pô bị đảo ngược lại.</li>
@@ -4783,14 +5313,14 @@
 </li>
 <li>Sau khi xác định được thứ tự Tô-pô của đồ thị, ta sẽ đánh số lại các đỉnh của đồ thị theo thứ tự.</li>
 </ul>
-<h3 id="cai-at_1"><strong>Cài đặt</strong></h3>
+<h3 id="cai-at_1"><strong>Cài đặt</strong><a class="headerlink" href="#cai-at_1" title="Permanent link">&para;</a></h3>
 <p><strong>Cấu trúc dữ liệu:</strong>
 - Hằng số <code>maxN = 110</code> .
 - Mảng <code>ans[]</code> - Mảng đánh số lại các đỉnh.
 - Mảng <code>visit[]</code> - Mảng lưu trạng thái của mỗi đỉnh.
 - Vector <code>g[]</code> - Danh sách cạnh kề của mỗi đỉnh.
 - Stack <code>topo</code> - Danh sách thứ tự Tô-pô.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -4841,7 +5371,7 @@
 <ul>
 <li>Sau khi xác định được thứ tự Tô-pô của đồ thị là <code>topo = {7; 6; 1; 4; 5; 2; 3}</code>. Ta đánh số lại các đỉnh. Khi đó ta sẽ có mảng <code>ans = {3; 6; 7; 4; 5; 2; 1}</code>.</li>
 </ul>
-<h3 id="anh-gia_1"><strong>Đánh giá</strong></h3>
+<h3 id="anh-gia_1"><strong>Đánh giá</strong><a class="headerlink" href="#anh-gia_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Thuật toán 2</strong> đơn giản và dễ cài đặt so với hơn <strong>thuật toán 1</strong>.</li>
 <li>Ta sử dụng ngăn xếp <em>(stack)</em> để có thể dễ dàng <strong>đảo ngược</strong> lại thứ tự hoàn tất duyệt của mỗi đỉnh. Nói cách khác là ta đảo ngược lại <strong>danh sách nghịch đảo thứ tự Tô-pô</strong> để có được thứ tự Tô-pô.</li>
@@ -4851,9 +5381,9 @@
 <p><strong>Độ phức tạp</strong>
 - Ở hàm <span class="arithmatex">\(DFS\)</span>, ta mất độ phức tạp <span class="arithmatex">\(O(n)\)</span> vì mỗi đỉnh chỉ được duyệt nhiều nhất <span class="arithmatex">\(1\)</span> lần và ta sẽ mất thêm độ phức tạp <span class="arithmatex">\(O(m)\)</span> để duyệt tất cả các cạnh của đồ thị.
 - Nhìn chung, độ phức tạp của thuật toán này là <span class="arithmatex">\(O(n + m)\)</span>.</p>
-<h1 id="bai-toan-2-uong-i-dai-nhat">Bài toán 2 - Đường đi dài nhất</h1>
+<h2 id="bai-toan-2-uong-i-dai-nhat">Bài toán 2 - Đường đi dài nhất<a class="headerlink" href="#bai-toan-2-uong-i-dai-nhat" title="Permanent link">&para;</a></h2>
 <p><a href="https://lqdoj.edu.vn/problem/longestpath">Longestpath - Đường đi dài nhất</a></p>
-<h2 id="e-bai_1">Đề bài</h2>
+<h2 id="e-bai_1">Đề bài<a class="headerlink" href="#e-bai_1" title="Permanent link">&para;</a></h2>
 <p>Cho đồ thị có hướng gồm <span class="arithmatex">\(N\)</span> đỉnh và <span class="arithmatex">\(M\)</span> cạnh. Các đỉnh được đánh số <span class="arithmatex">\(1,2,...,N\)</span> và với mỗi <span class="arithmatex">\(i\)</span> <span class="arithmatex">\((1 \le i \le M)\)</span>, cạnh có hướng thứ <span class="arithmatex">\(i\)</span> sẽ đi từ đỉnh <span class="arithmatex">\(x_i\)</span> đến đỉnh <span class="arithmatex">\(y_i\)</span>. <span class="arithmatex">\(G\)</span> không chứa bất kì chu trình có hướng nào !</p>
 <p>Tìm độ dài lớn nhất của đường đi có hướng trong <span class="arithmatex">\(G\)</span>. Ở đây, độ dài của đường đi có hướng chính là số cạnh trong nó.</p>
 <p><strong>Input</strong></p>
@@ -4880,7 +5410,7 @@
 </code></pre></div></p>
 <p><strong>Note</strong>
 - Con đường có độ dài lớn nhất là : <span class="arithmatex">\(1 \rightarrow 2 \rightarrow 3\)</span>.</p>
-<h2 id="thuat-toan">Thuật toán</h2>
+<h2 id="thuat-toan">Thuật toán<a class="headerlink" href="#thuat-toan" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Sắp xếp Tô-pô có rất nhiều ứng dụng quan trọng, đặc biệt là áp dụng quy hoạch động trên mảng thứ tự Tô-pô.</li>
 <li>Gọi <span class="arithmatex">\(dp[i]\)</span> là độ dài đường đi dài nhất bắt đầu từ đỉnh có chỉ số <span class="arithmatex">\(i\)</span>. Ta có công thức quy hoạch động trên danh sách Tô-pô như sau:<ul>
@@ -4890,14 +5420,14 @@
 <li>Theo định nghĩa của thứ tự Tô-pô, chỉ tồn tại các cung từ chỉ số nhỏ đến chỉ số lớn hơn. Nên khi ta tính toán đến <span class="arithmatex">\(dp[topo[i]]\)</span> thì chắc chắn <span class="arithmatex">\(dp[topo[j]]\)</span> đều đã được tính trước đó.</li>
 <li>Kết quả độ dài đường đi dài nhất của đồ thị là <span class="arithmatex">\(max(dp[i])\)</span>.</li>
 </ul>
-<h3 id="cai-at_2">Cài đặt</h3>
+<h3 id="cai-at_2">Cài đặt<a class="headerlink" href="#cai-at_2" title="Permanent link">&para;</a></h3>
 <p><strong>Cấu trúc dữ liệu:</strong>
 - Hằng số <code>maxN = 100007</code> .
 - Mảng <code>dp[]</code> - Mảng quy hoạch động.
 - Mảng <code>visit[]</code> - Mảng lưu trạng thái của mỗi đỉnh.
 - Vector <code>g[]</code> - Danh sách cạnh kề của mỗi đỉnh.
 - Vector <code>revTopo</code> - Danh sách nghịch đảo thứ tự Tô-pô.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -4934,7 +5464,7 @@
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="anh-gia_2">Đánh giá</h3>
+<h3 id="anh-gia_2">Đánh giá<a class="headerlink" href="#anh-gia_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Khi sắp xếp Tô-pô bằng <span class="arithmatex">\(DFS\)</span>, thuật toán sẽ trả ra <strong>danh sách nghịch đảo thứ tự Tô-pô</strong> <em>(định nghĩa đã được viết ở mục <strong>Bài toán 1</strong> phần <strong>Thuật toán 2</strong>)</em>. Mà ở công thức quy hoạch động, ta cần duyệt ngược lại danh sách, nên ta sẽ giữ nguyên thứ tự <strong>nghịch đảo</strong> đó và xử lí luôn trên nó.</li>
 <li>Do đó, thay vì sử dụng ngăn xếp <em>(stack)</em> để đảo ngược lại danh sách. Ta sử dụng mảng động <em>(vector)</em> <code>revTopo</code> để lưu trữ lại thứ tự nghịch đảo Tô-pô đó.</li>
@@ -4943,9 +5473,9 @@
 </ul>
 <p><strong>Độ phức tạp</strong>
 - Độ phức tạp của thuật toán là <span class="arithmatex">\(O(n + m)\)</span>.</p>
-<h1 id="bai-toan-3-fox-and-names">Bài toán 3 - Fox And Names</h1>
+<h2 id="bai-toan-3-fox-and-names">Bài toán 3 - Fox And Names<a class="headerlink" href="#bai-toan-3-fox-and-names" title="Permanent link">&para;</a></h2>
 <p><a href="https://codeforces.com/problemset/problem/510/C">Fox And Names - 510C Codeforces</a></p>
-<h2 id="e-bai_2">Đề bài</h2>
+<h2 id="e-bai_2">Đề bài<a class="headerlink" href="#e-bai_2" title="Permanent link">&para;</a></h2>
 <p>Fox Ciel sẽ xuất bản một bài báo trên FOCS <em>(Foxes Operated Computer Systems - Fox)</em>. Cô ấy nghe thấy một tin đồn: danh sách tên các tác giả trên bài báo luôn được sắp xếp theo <strong>thứ tự từ điển</strong>.</p>
 <p>Sau khi kiểm tra, cô phát hiện ra rằng đôi khi điều đó không đúng. Trên một số bài báo, tên của các tác giả không được sắp xếp theo tiêu chuẩn thông thường của <strong>thứ tự từ điển</strong>. Nhưng sau khi sửa đổi một số thứ tự của các chữ cái trong bảng chữ cái <em>Latin</em> thì thứ tự tên của các tác giả được sắp xếp đúng theo <strong>thứ tự từ điển</strong> mới.</p>
 <p>Cô ấy muốn biết liệu có tồn tại thứ tự các chữ cái trong bảng chữ cái <em>Latin</em> sao cho các tên trên bài báo mà cô ấy định xuất bản được sắp xếp theo <strong>thứ tự từ điển</strong> hay không. Nếu có, bạn hãy giúp cô ấy tìm ra một thứ tự thỏa mãn bất kỳ.</p>
@@ -4990,7 +5520,7 @@ tankengineer
 <strong>Output 2</strong>
 <div class="highlight"><pre><span></span><code>Impossible
 </code></pre></div></p>
-<h2 id="thuat-toan_1">Thuật toán</h2>
+<h2 id="thuat-toan_1">Thuật toán<a class="headerlink" href="#thuat-toan_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Giả sử, ta có hai xâu kí tự <span class="arithmatex">\(s\)</span> và <span class="arithmatex">\(t\)</span>. Theo <strong>định nghĩa của thứ tự từ điển</strong>, hãy xem xét xem nếu <span class="arithmatex">\(s &lt; t\)</span> thì nó cho ta biết những dữ kiện gì.<ul>
 <li>Ví dụ: <span class="arithmatex">\(s="abcxyz"\)</span> và <span class="arithmatex">\(t="abcuv"\)</span>. Để <span class="arithmatex">\(s &lt; t\)</span> thì <span class="arithmatex">\('x'\)</span> phải có thứ tự nhỏ hơn <span class="arithmatex">\('u'\)</span> trong <em>bảng chữ cái</em>.</li>
@@ -5002,13 +5532,13 @@ tankengineer
 <li>Nếu đồ thị <strong>không phải</strong> là <span class="arithmatex">\(DAG\)</span> thì <strong>không tồn tại</strong> thứ tự chữ cái nào thỏa mãn.</li>
 <li><strong>Lưu ý trường hợp</strong>: Nếu <span class="arithmatex">\(s\)</span> đứng trước <span class="arithmatex">\(t\)</span> trong danh sách tên và <span class="arithmatex">\(t\)</span> là <strong>tiền tố</strong> của <span class="arithmatex">\(s\)</span> thì <span class="arithmatex">\(s\)</span> luôn luôn có thứ tự từ điển lớn hơn <span class="arithmatex">\(t\)</span> nên sẽ <strong>không tồn tại</strong> thứ tự chữ cái nào thỏa mãn.</li>
 </ul>
-<h3 id="cai-at_3">Cài đặt</h3>
+<h3 id="cai-at_3">Cài đặt<a class="headerlink" href="#cai-at_3" title="Permanent link">&para;</a></h3>
 <p><strong>Cấu trúc dữ liệu:</strong>
 - Hằng số <code>maxN = 110</code> .
 - Mảng <code>visit[]</code> - Mảng lưu trạng thái của mỗi đỉnh.
 - Vector <code>g[]</code> - Danh sách cạnh kề của mỗi đỉnh.
 - Stack <code>topo</code> - Danh sách thứ tự Tô-pô.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -5065,7 +5595,7 @@ tankengineer
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="anh-gia_3">Đánh giá</h3>
+<h3 id="anh-gia_3">Đánh giá<a class="headerlink" href="#anh-gia_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Để <strong>tối ưu độ phức tạp</strong>, với mỗi chuỗi kí tự ta không cần phải <em>so sánh</em> nó với tất cả các chuỗi còn lại. Mà ta chỉ cần <em>so sánh</em> <span class="arithmatex">\(2\)</span> chuỗi kí tự liên tiếp. Vì nó sẽ luôn đúng theo <strong>tính chất bắc cầu</strong>: Nếu <span class="arithmatex">\(s &lt; x\)</span> và <span class="arithmatex">\(x &lt; t\)</span> thì <span class="arithmatex">\(s &lt; t\)</span>.</li>
 </ul>
@@ -5073,7 +5603,7 @@ tankengineer
 - Ở vòng <em>for</em> đầu tiên để xây dựng các cạnh của đồ thị, ta mất độ phức tạp <span class="arithmatex">\(O(n * \|name\|)\)</span>.
 - Ở vòng <em>for</em> thứ hai để xác định thứ tự Tô-pô, ta mất độ phức tạp <span class="arithmatex">\(O(26 + m)\)</span>. Với <span class="arithmatex">\(m\)</span> là số cạnh của đồ thị. Trong <strong>trường hợp xấu nhất</strong>, với mỗi cặp kí tự liên tiếp đều tạo ra <span class="arithmatex">\(1\)</span> cạnh thì số lượng cạnh lớn nhất có thể tạo ra là <span class="arithmatex">\(n-1\)</span> cạnh.
 - Nhìn chung, độ phức tạp của thuật toán này là <span class="arithmatex">\(O(n * \|name\|)\)</span>.</p>
-<h1 id="bai-tap-ap-dung">Bài tập áp dụng</h1>
+<h2 id="bai-tap-ap-dung">Bài tập áp dụng<a class="headerlink" href="#bai-tap-ap-dung" title="Permanent link">&para;</a></h2>
 <p><a href="https://vnoi.info/problems/list/?tag=117&amp;page=1">Danh sách bài tập Topo sort - VNOI</a></p>
 <p><a href="https://oj.vnoi.info/problem/nkleague">NKLEAGUE - Giải bóng đá</a></p>
 <p><a href="https://oj.vnoi.info/problem/kcollect">KCOLLECT - Thu hoạch</a></p>
@@ -5102,6 +5632,8 @@ tankengineer
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -5109,14 +5641,61 @@ tankengineer
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../shortest-path/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Các thuật toán về tìm đường đi ngắn nhất">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Các thuật toán về tìm đường đi ngắn nhất
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../math/game-theory/" class="md-footer__link md-footer__link--next" aria-label="Next: Lý thuyết trò chơi">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lý thuyết trò chơi
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/KienPC1234/fptoj_wiki" target="_blank" rel="noopener" title="GitHub: KienPC1234/fptoj_wiki" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -5131,7 +5710,7 @@ tankengineer
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "toc.integrate", "toc.sticky", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "header.autohide"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>

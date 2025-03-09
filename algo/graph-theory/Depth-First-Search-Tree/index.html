@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="FPTOJ được xây dựng với mục đích chia sẻ kiến thức Tin học đến với tất cả mọi người">
+      
       
       
         <link rel="canonical" href="https://wiki.fptoj.com/algo/graph-theory/Depth-First-Search-Tree/">
@@ -17,7 +19,7 @@
         <link rel="next" href="../euler-cycle/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../uploads/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cay-dfs-depth-first-search-tree-va-ung-dung" class="md-skip">
+        <a href="#mo-au" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +92,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="FPTOJ WIKI" class="md-header__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -172,6 +174,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -187,15 +191,148 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+      </div>
+    
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Trang chủ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../basic/backtracking/" class="md-tabs__link">
+          
+  
+  Thuật Toán
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cs/crypto/Cipher-Tools/" class="md-tabs__link">
+          
+  
+  Computer Science (Khoa học máy tính)
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../languages/cpp/pointers/" class="md-tabs__link">
+          
+  
+  Ngôn Ngữ Lập Trình
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../translate/functional-programming-part-1/" class="md-tabs__link">
+          
+  
+  Dịch Thuật
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -209,8 +346,12 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="FPTOJ WIKI" class="md-nav__button md-logo" aria-label="FPTOJ WIKI" data-md-component="logo">
       
@@ -220,10 +361,61 @@
     FPTOJ WIKI
   </label>
   
+    <div class="md-nav__source">
+      <a href="https://github.com/KienPC1234/fptoj_wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    KienPC1234/fptoj_wiki
+  </div>
+</a>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
     
       
       
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Trang chủ
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Trang chủ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -233,7 +425,7 @@
         
   
   <span class="md-ellipsis">
-    Trang chủ
+    Home
     
   </span>
   
@@ -242,9 +434,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -263,9 +456,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -284,6 +478,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -296,15 +498,21 @@
     
     
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -316,8 +524,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Thuật Toán
           </label>
@@ -332,15 +540,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -352,8 +563,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Cơ Bản
           </label>
@@ -596,15 +807,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -616,8 +830,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Đại Số
           </label>
@@ -772,15 +986,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -792,8 +1009,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Cấu trúc dữ liệu
           </label>
@@ -1410,15 +1627,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1430,8 +1650,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             Quy hoạch động
           </label>
@@ -1586,15 +1806,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1606,8 +1829,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Games
           </label>
@@ -1652,15 +1875,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
-          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1672,8 +1898,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Hình học
           </label>
@@ -1764,15 +1990,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1784,8 +2013,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             Lý thuyết Đồ Thị
           </label>
@@ -1848,8 +2077,18 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cây DFS (Depth-First Search Tree) và ứng dụng
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1861,6 +2100,446 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mo-au" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mở đầu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cay-duyet-chieu-sau-dfs-cay-dfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cây duyệt chiều sâu DFS (cây DFS)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ung-dung-cay-dfs-trong-bai-toan-tim-khop-cau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ứng dụng cây DFS trong bài toán tìm khớp, cầu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inh-nghia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định nghĩa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bài toán 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e-bai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đề bài
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phan-tich" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phân tích">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tim-canh-cau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tìm cạnh cầu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tim-inh-khop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tìm đỉnh khớp
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cai-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anh-gia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bài toán 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e-bai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đề bài
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phan-tich_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phân tích">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#truy-van-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Truy vấn 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truy-van-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Truy vấn 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cai-at_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anh-gia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán 3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bài toán 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e-bai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đề bài
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phan-tich_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cai-at_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anh-gia_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ung-dung-cay-dfs-trong-bai-toan-liet-ke-thanh-phan-lien-thong-manh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ứng dụng cây DFS trong bài toán liệt kê thành phần liên thông mạnh
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inh-nghia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Định nghĩa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mot-so-inh-ly-quan-trong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Một số định lý quan trọng
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán 4
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bài toán 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e-bai_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đề bài
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thuat-toan-tarjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thuật toán Tarjan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thuật toán Tarjan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mo-ta-thuat-toan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mô tả thuật toán
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#y-tuong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ý tưởng
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cai-at_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anh-gia_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-toan-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài toán 5
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bài toán 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e-bai_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đề bài
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phan-tich_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cai-at_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cài đặt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anh-gia_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đánh giá
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-tap-van-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bài tập vận dụng
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bài tập vận dụng">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#khop-cau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Khớp cầu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thanh-phan-lien-thong-manh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thành phần liên thông mạnh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2060,15 +2739,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2080,8 +2762,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             Toán
           </label>
@@ -2192,15 +2874,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
-          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2212,8 +2897,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             Tìm Kiếm
           </label>
@@ -2258,15 +2943,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
         
           
-          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2278,8 +2966,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             Kỹ Năng Thi
           </label>
@@ -2368,15 +3056,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
         
           
-          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2388,8 +3079,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_11">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
             <span class="md-nav__icon md-icon"></span>
             Xâu kí tự
           </label>
@@ -2522,15 +3213,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
         
           
-          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2542,8 +3236,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
             <span class="md-nav__icon md-icon"></span>
             Mẹo
           </label>
@@ -2749,15 +3443,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2769,8 +3466,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Computer Science (Khoa học máy tính)
           </label>
@@ -2785,15 +3482,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2805,8 +3505,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Crypto
           </label>
@@ -2865,15 +3565,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2885,8 +3588,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             Cipher
           </label>
@@ -2939,15 +3642,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2959,8 +3665,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Xử lý ảnh
           </label>
@@ -3034,15 +3740,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3054,8 +3763,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Ngôn Ngữ Lập Trình
           </label>
@@ -3143,15 +3852,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3163,8 +3875,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Dịch Thuật
           </label>
@@ -3201,15 +3913,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3221,8 +3936,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             Codeforces
           </label>
@@ -3355,15 +4070,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3375,8 +4093,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             E-Maxx
           </label>
@@ -3443,15 +4161,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3463,8 +4184,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             Nâng Cao
           </label>
@@ -3685,15 +4406,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3705,8 +4429,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
             Máy học (Machine Learning - ML)
           </label>
@@ -3839,15 +4563,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3859,8 +4586,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
             Quora
           </label>
@@ -3905,15 +4632,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
         
           
-          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3925,8 +4655,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
             Topcoder
           </label>
@@ -4279,15 +5009,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
         
           
-          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4299,8 +5032,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
             USACO
           </label>
@@ -4345,15 +5078,18 @@
     
     
     
+      
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
         
           
-          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -4365,8 +5101,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
             Wcipeg
           </label>
@@ -4548,24 +5284,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -4574,19 +5292,23 @@
                   
 
 
+  
+  
 
-<h1 id="cay-dfs-depth-first-search-tree-va-ung-dung">Cây DFS (Depth-First Search Tree) và ứng dụng</h1>
+
+  <h1>Cây DFS (Depth-First Search Tree) và ứng dụng</h1>
+
 <p><strong>Tác giả:</strong>
 - <strong>Nguyễn Châu Khanh</strong> - THPT Chuyên Hùng Vương - Phú Thọ
 - <strong>Bùi Minh Hoạt</strong> - THPT Chuyên Hùng Vương - Phú Thọ
 - <strong>Trần Thế Hưng</strong> - THPT Chuyên Biên Hòa - Hà Nam</p>
 <p><strong>Reviewer:</strong>
 - <strong>Đỗ Đình Đắc</strong> - Đại học Bách Khoa Hà Nội </p>
-<h1 id="mo-au">Mở đầu</h1>
+<h2 id="mo-au">Mở đầu<a class="headerlink" href="#mo-au" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Bài viết này sẽ giúp bạn tìm hiểu về cây <span class="arithmatex">\(DFS\)</span> <em>(Depth First Search Tree – DFS Tree)</em>. Cây <span class="arithmatex">\(DFS\)</span> là một ứng dụng quan trọng có được từ kỹ thuật duyệt đồ thị ưu tiên chiều sâu, giúp giải các bài toán tìm khớp cầu và thành phần liên thông mạnh.</li>
 </ul>
-<h1 id="cay-duyet-chieu-sau-dfs-cay-dfs">Cây duyệt chiều sâu DFS (cây DFS)</h1>
+<h2 id="cay-duyet-chieu-sau-dfs-cay-dfs">Cây duyệt chiều sâu DFS (cây DFS)<a class="headerlink" href="#cay-duyet-chieu-sau-dfs-cay-dfs" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Trong quá trình <span class="arithmatex">\(DFS\)</span>, với mỗi đỉnh <span class="arithmatex">\(u\)</span> ta có đỉnh <span class="arithmatex">\(par[u]\)</span> là số hiệu của đỉnh mà từ đỉnh đó thủ tục <span class="arithmatex">\(DFS\)</span> gọi đệ quy đến <span class="arithmatex">\(u\)</span>. Xây dựng đồ thị con với các cạnh là <span class="arithmatex">\((par[u], u)\)</span> ta có được một cây. Cây này được gọi là <strong>cây <em>DFS</em></strong>.</li>
 <li>Các cạnh thuộc cây <span class="arithmatex">\(DFS\)</span> được gọi là các “cạnh nét liền”. </li>
@@ -4671,8 +5393,8 @@
 <p><a href="/uploads/Depth-First-Search-Tree_gif1.gif">/uploads/Depth-First-Search-Tree_gif1.gif</a></p>
 </li>
 </ul>
-<h1 id="ung-dung-cay-dfs-trong-bai-toan-tim-khop-cau">Ứng dụng cây DFS trong bài toán tìm khớp, cầu</h1>
-<h2 id="inh-nghia">Định nghĩa</h2>
+<h2 id="ung-dung-cay-dfs-trong-bai-toan-tim-khop-cau">Ứng dụng cây DFS trong bài toán tìm khớp, cầu<a class="headerlink" href="#ung-dung-cay-dfs-trong-bai-toan-tim-khop-cau" title="Permanent link">&para;</a></h2>
+<h2 id="inh-nghia">Định nghĩa<a class="headerlink" href="#inh-nghia" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Trong đồ thị vô hướng, một đỉnh được gọi là đỉnh khớp nếu như loại bỏ đỉnh này và các cạnh liên thuộc với nó ra khỏi đồ thị thì số thành phần liên thông của đồ thị tăng lên.</li>
 <li>
@@ -4680,9 +5402,9 @@
 <p><img alt="/uploads/Depth-First-Search-Tree_img4.png" src="/uploads/Depth-First-Search-Tree_img4.png" /></p>
 </li>
 </ul>
-<h2 id="bai-toan-1">Bài toán 1</h2>
+<h2 id="bai-toan-1">Bài toán 1<a class="headerlink" href="#bai-toan-1" title="Permanent link">&para;</a></h2>
 <p><a href="https://oj.vnoi.info/problem/graph_">GRAPH_ - Tìm khớp và cầu (Cơ bản)</a></p>
-<h3 id="e-bai"><strong>Đề bài</strong></h3>
+<h3 id="e-bai"><strong>Đề bài</strong><a class="headerlink" href="#e-bai" title="Permanent link">&para;</a></h3>
 <p>Xét đơn đồ thị vô hướng <span class="arithmatex">\(G=(V, E)\)</span> có <span class="arithmatex">\(N\)</span> <span class="arithmatex">\((1 \le N \le 10000)\)</span> đỉnh và <span class="arithmatex">\(M\)</span> <span class="arithmatex">\((1 \le M \le 50000)\)</span> cạnh. Người ta định nghĩa một đỉnh gọi là khớp nếu như xoá đỉnh đó sẽ làm tăng số thành phần liên thông của đồ thị. Tương tự như vậy, một cạnh được gọi là cầu nếu xoá cạnh đó sẽ làm tăng số thành phần liên thông của đồ thị.</p>
 <p>Vấn đề đặt ra là cần phải đếm tất cả các khớp và cầu của đồ thị <span class="arithmatex">\(G\)</span>.</p>
 <p><strong>Input</strong></p>
@@ -4719,8 +5441,8 @@
 <li>Các đỉnh màu xanh lá là đỉnh khớp.</li>
 </ul>
 <p><img alt="/uploads/Depth-First-Search-Tree_img5.png" src="/uploads/Depth-First-Search-Tree_img5.png" /></p>
-<h3 id="phan-tich"><strong>Phân tích</strong></h3>
-<h4 id="tim-canh-cau"><strong>Tìm cạnh cầu</strong></h4>
+<h3 id="phan-tich"><strong>Phân tích</strong><a class="headerlink" href="#phan-tich" title="Permanent link">&para;</a></h3>
+<h4 id="tim-canh-cau"><strong>Tìm cạnh cầu</strong><a class="headerlink" href="#tim-canh-cau" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Dễ thấy rằng cạnh cầu của đồ thị không thể là cạnh nét đứt vì việc bỏ đi cạnh nét đứt sẽ không ảnh hưởng đến tính liên thông giữa các đỉnh của đồ thị. Do vậy cạnh cầu chỉ có thể là cạnh nét liền.</li>
 <li>
@@ -4742,7 +5464,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="tim-inh-khop"><strong>Tìm đỉnh khớp</strong></h4>
+<h4 id="tim-inh-khop"><strong>Tìm đỉnh khớp</strong><a class="headerlink" href="#tim-inh-khop" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p>Ta sẽ xét riêng từng thành phần liên thông của đồ thị. Xét vùng liên thông <span class="arithmatex">\(G\)</span> như sau: </p>
@@ -4781,7 +5503,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="cai-at"><strong>Cài đặt</strong></h3>
+<h3 id="cai-at"><strong>Cài đặt</strong><a class="headerlink" href="#cai-at" title="Permanent link">&para;</a></h3>
 <p><strong>Cấu trúc dữ liệu:</strong>
 - Hằng số <code>maxN = 10010</code> 
 - Biến <code>timeDfs</code> - Thứ tự <span class="arithmatex">\(DFS\)</span>
@@ -4789,7 +5511,7 @@
 - Mảng <code>low[], num[]</code>
 - Mảng <code>joint[]</code> - Đánh dấu đỉnh khớp
 - Vector <code>g[]</code> - Danh sách cạnh kề của mỗi đỉnh </p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -4837,13 +5559,13 @@
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cntJoint</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">bridge</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span>
 </code></pre></div>
-<h3 id="anh-gia"><strong>Đánh giá</strong></h3>
+<h3 id="anh-gia"><strong>Đánh giá</strong><a class="headerlink" href="#anh-gia" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Độ phức tạp của bài toán là <span class="arithmatex">\(O(N + M)\)</span>.</li>
 </ul>
-<h2 id="bai-toan-2">Bài toán 2</h2>
+<h2 id="bai-toan-2">Bài toán 2<a class="headerlink" href="#bai-toan-2" title="Permanent link">&para;</a></h2>
 <p><a href="https://oj.vnoi.info/problem/nkpolice">NKPOLICE - Police</a></p>
-<h3 id="e-bai_1"><strong>Đề bài</strong></h3>
+<h3 id="e-bai_1"><strong>Đề bài</strong><a class="headerlink" href="#e-bai_1" title="Permanent link">&para;</a></h3>
 <p>Để truy bắt tội phạm, cảnh sát xây dựng một hệ thống máy tính mới. Bản đồ khu vực bao gồm <span class="arithmatex">\(N\)</span> thành phố và <span class="arithmatex">\(M\)</span> đường nối <span class="arithmatex">\(2\)</span> chiều. Các thành phố được đánh số từ <span class="arithmatex">\(1\)</span> đến <span class="arithmatex">\(N\)</span>.</p>
 <p>Cảnh sát muốn bắt các tội phạm di chuyển từ thành phố này đến thành phố khác. Các điều tra viên, theo dõi bản đồ, phải xác định vị trí thiết lập trạm gác. Hệ thống máy tính mới phải trả lời được <span class="arithmatex">\(2\)</span> loại truy vấn sau:</p>
 <ul>
@@ -4894,11 +5616,11 @@ yes
 </code></pre></div></p>
 <p><strong>Note</strong></p>
 <p><img alt="/uploads/Depth-First-Search-Tree_img10.png" src="/uploads/Depth-First-Search-Tree_img10.png" /></p>
-<h3 id="phan-tich_1"><strong>Phân tích</strong></h3>
+<h3 id="phan-tich_1"><strong>Phân tích</strong><a class="headerlink" href="#phan-tich_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Để tồn tại ít nhất một cách di chuyển từ thành phố <span class="arithmatex">\(A\)</span> đến thành phố <span class="arithmatex">\(B\)</span> thì cả <span class="arithmatex">\(2\)</span> thành phố <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span> phải cùng thuộc một thành phần liên thông.</li>
 </ul>
-<h4 id="truy-van-1"><strong>Truy vấn 1</strong></h4>
+<h4 id="truy-van-1"><strong>Truy vấn 1</strong><a class="headerlink" href="#truy-van-1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Dễ thấy rằng, nếu đường nối giữa <span class="arithmatex">\(2\)</span> thành phố <span class="arithmatex">\(G1,\)</span> <span class="arithmatex">\(G2\)</span> không phải là cạnh cầu thì việc loại bỏ nó đi sẽ không ảnh hưởng đến tính liên thông giữa thành phố <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span>.</li>
 <li>Ngược lại, nếu đường nối giữa <span class="arithmatex">\(2\)</span> thành phố <span class="arithmatex">\(G1,\)</span> <span class="arithmatex">\(G2\)</span> là cạnh cầu thì ta phải kiểm tra xem <span class="arithmatex">\(2\)</span> thành phố <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span> có thuộc cùng một thành phần liên thông sau khi loại bỏ cạnh <span class="arithmatex">\((G1,G2)\)</span> hay không?</li>
@@ -4920,7 +5642,7 @@ yes
 </li>
 <li><strong>Nhắc lại:</strong> Nếu <span class="arithmatex">\(num[u] \le num[v] \le tail[u]\)</span> thì đỉnh <span class="arithmatex">\(v\)</span> nằm trong cây con gốc <span class="arithmatex">\(u\)</span> của cây <span class="arithmatex">\(DFS\)</span>.</li>
 </ul>
-<h4 id="truy-van-2"><strong>Truy vấn 2</strong></h4>
+<h4 id="truy-van-2"><strong>Truy vấn 2</strong><a class="headerlink" href="#truy-van-2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Dễ thấy rằng, nếu thành phố <span class="arithmatex">\(C\)</span> không phải là đỉnh khớp thì việc loại bỏ nó đi sẽ không ảnh hưởng đến tính liên thông giữa thành phố <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span>.</li>
 <li>Ngược lại, nếu thành phố <span class="arithmatex">\(C\)</span> là đỉnh khớp thì ta phải kiểm tra xem <span class="arithmatex">\(2\)</span> thành phố <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span> có thuộc cùng một thành phần liên thông sau khi loại bỏ đỉnh <span class="arithmatex">\(C\)</span> và các cạnh liên thuộc với nó đi hay không?</li>
@@ -4953,7 +5675,7 @@ yes
 <li>Ngược lại, nếu không thỏa mãn tất cả các điều kiện trên thì <span class="arithmatex">\(A\)</span> và <span class="arithmatex">\(B\)</span> không thuộc cùng một thành phần liên thông sau khi loại bỏ đỉnh <span class="arithmatex">\(C\)</span> và các cạnh liên thuộc với đỉnh <span class="arithmatex">\(C\)</span> đi. </li>
 <li>Lúc này, độ phức tạp để xử lí các truy vấn sẽ là <span class="arithmatex">\(O(Q \cdot logN)\)</span>.</li>
 </ul>
-<h3 id="cai-at_1"><strong>Cài đặt</strong></h3>
+<h3 id="cai-at_1"><strong>Cài đặt</strong><a class="headerlink" href="#cai-at_1" title="Permanent link">&para;</a></h3>
 <p><strong>Cấu trúc dữ liệu:</strong>
 - Hằng số <code>maxN = 100010</code> 
 - Biến <code>timeDfs</code> - Thứ tự <span class="arithmatex">\(DFS\)</span>
@@ -4962,7 +5684,7 @@ yes
 - Mảng <code>p[][]</code> - Mảng ứng dụng <span class="arithmatex">\(Sparse Table\)</span> với <span class="arithmatex">\(p[i][j]\)</span> là tổ tiên thứ <span class="arithmatex">\(2^j\)</span> của <span class="arithmatex">\(i\)</span> trong cây <span class="arithmatex">\(DFS\)</span>
 - Mảng <code>joint[]</code> - Đánh dấu đỉnh khớp
 - Vector <code>g[]</code> - Danh sách cạnh kề của mỗi đỉnh </p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -5075,13 +5797,13 @@ yes
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="anh-gia_1"><strong>Đánh giá</strong></h3>
+<h3 id="anh-gia_1"><strong>Đánh giá</strong><a class="headerlink" href="#anh-gia_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Độ phức tạp của bài toán là <span class="arithmatex">\(O(N + M + Q \cdot logN)\)</span></li>
 </ul>
-<h2 id="bai-toan-3">Bài toán 3</h2>
+<h2 id="bai-toan-3">Bài toán 3<a class="headerlink" href="#bai-toan-3" title="Permanent link">&para;</a></h2>
 <p><a href="https://oj.vnoi.info/problem/kbuild">KBUILD - Sửa cầu</a></p>
-<h3 id="e-bai_2"><strong>Đề bài</strong></h3>
+<h3 id="e-bai_2"><strong>Đề bài</strong><a class="headerlink" href="#e-bai_2" title="Permanent link">&para;</a></h3>
 <p>Cho <span class="arithmatex">\(N\)</span> hòn đảo và <span class="arithmatex">\(N - 1\)</span> cây cầu, mỗi cây cầu nối hai hòn đảo lại với nhau. Đảm bảo rằng từ một đảo bất kì luôn có thể đến được hết mọi đảo còn lại. Pirate đưa ra một lịch trình như sau: vào mỗi ngày sẽ đi kiểm tra mọi cây cầu trên đường đi từ đảo <span class="arithmatex">\(a\)</span> đến đảo <span class="arithmatex">\(b\)</span>. Hỏi sau khi Pirate thực hiện xong lịch trình đó, thì còn có bao nhiêu cây cầu chưa được kiểm tra?</p>
 <p><strong>Input</strong>
 - Dòng thứ nhất: số nguyên <span class="arithmatex">\(N\)</span> - số lượng hòn đảo.
@@ -5107,20 +5829,20 @@ yes
 </code></pre></div>
 <p><strong>Note</strong>
 - Ngày thứ nhất, Pirate kiểm tra các cây cầu <span class="arithmatex">\((2, 3), (2, 4)\)</span> và <span class="arithmatex">\((4, 6)\)</span>. Ngày thứ hai, anh kiểm tra các cây cầu <span class="arithmatex">\((5, 4)\)</span> và <span class="arithmatex">\((4, 6)\)</span>. Cây cầu duy nhất chưa được kiểm tra là <span class="arithmatex">\((1, 2)\)</span>.</p>
-<h3 id="phan-tich_2"><strong>Phân tích</strong></h3>
+<h3 id="phan-tich_2"><strong>Phân tích</strong><a class="headerlink" href="#phan-tich_2" title="Permanent link">&para;</a></h3>
 <p>Vì đồ thị ban đầu liên thông và có <span class="arithmatex">\(N - 1\)</span> cạnh nên đây là đồ thị dạng <a href="https://vi.wikipedia.org/wiki/C%C3%A2y_(l%C3%BD_thuy%E1%BA%BFt_%C4%91%E1%BB%93_th%E1%BB%8B)">cây</a>.</p>
 <p>Để đánh dấu các cạnh thuộc đường đi từ đỉnh <span class="arithmatex">\(u\)</span> đến đỉnh <span class="arithmatex">\(v\)</span> trên cây, thì ta có thể thêm một cạnh <span class="arithmatex">\((u,v)\)</span> vào đồ thị. Khi đó, các cạnh thuộc đường đi từ <span class="arithmatex">\(u \rightarrow v\)</span> trên cây sẽ nằm trong <span class="arithmatex">\(1\)</span> chu trình. Từ đó, bài toán sẽ quy về thành bài toán đếm số lượng cạnh cầu của đồ thị.
 - <strong>Ví dụ minh họa:</strong> Để dánh dấu đường đi từ đỉnh <span class="arithmatex">\(3 \rightarrow 6\)</span> và đường đi từ đỉnh <span class="arithmatex">\(5 \rightarrow 6\)</span>, ta thêm cạnh <span class="arithmatex">\((3, 6)\)</span>, <span class="arithmatex">\((5, 6)\)</span> vào đồ thị. Khi đó, đồ thị có một cạnh cầu là cạnh <span class="arithmatex">\((1, 2)\)</span>.</p>
 <pre><code>![/uploads/Depth-First-Search-Tree_img13.png](/uploads/Depth-First-Search-Tree_img13.png)
 </code></pre>
-<h3 id="cai-at_2"><strong>Cài đặt</strong></h3>
+<h3 id="cai-at_2"><strong>Cài đặt</strong><a class="headerlink" href="#cai-at_2" title="Permanent link">&para;</a></h3>
 <p><strong>Cấu trúc dữ liệu:</strong>
 - Hằng số <code>maxN = 200010</code> 
 - Biến <code>timeDfs</code> - Thứ tự <span class="arithmatex">\(DFS\)</span>
 - Biến <code>bridge</code> - Số lượng cạnh cầu
 - Mảng <code>low[], num[]</code>
 - Vector <code>g[]</code> - Danh sách cạnh kề của mỗi đỉnh </p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -5163,19 +5885,19 @@ yes
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">bridge</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="anh-gia_2"><strong>Đánh giá</strong></h3>
+<h3 id="anh-gia_2"><strong>Đánh giá</strong><a class="headerlink" href="#anh-gia_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Độ phức tạp của bài toán là <span class="arithmatex">\(O(N + (N - 1 + M))\)</span>.</li>
 </ul>
-<h1 id="ung-dung-cay-dfs-trong-bai-toan-liet-ke-thanh-phan-lien-thong-manh">Ứng dụng cây DFS trong bài toán liệt kê thành phần liên thông mạnh</h1>
-<h2 id="inh-nghia_1">Định nghĩa</h2>
+<h2 id="ung-dung-cay-dfs-trong-bai-toan-liet-ke-thanh-phan-lien-thong-manh">Ứng dụng cây DFS trong bài toán liệt kê thành phần liên thông mạnh<a class="headerlink" href="#ung-dung-cay-dfs-trong-bai-toan-liet-ke-thanh-phan-lien-thong-manh" title="Permanent link">&para;</a></h2>
+<h2 id="inh-nghia_1">Định nghĩa<a class="headerlink" href="#inh-nghia_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Một đồ thị có hướng là liên thông mạnh nếu như từ một đỉnh bất kì luôn tồn tại ít nhất một đường đi đến bất kì đỉnh nào khác. </li>
 <li>Một thành phần liên thông mạnh của một đồ thị có hướng là một đồ thị con tối đại liên thông mạnh. Nếu mỗi thành phần liên thông mạnh được co lại thành một đỉnh, thì đồ thị sẽ trở thành một đồ thị có hướng không có chu trình.</li>
 <li>Thuật toán <span class="arithmatex">\(Kosaraju\)</span>, thuật toán <span class="arithmatex">\(Tarjan\)</span>, và thuật toán <span class="arithmatex">\(Gabow\)</span> đều có thể tìm các thành phần liên thông mạnh của một đồ thị cho trước trong thời gian tuyến tính. Tuy nhiên, các thuật toán của <span class="arithmatex">\(Tarjan\)</span>  thường được sử dụng nhiều hơn do chúng chỉ cần thực hiện tìm kiếm theo chiều sâu một lần trong khi thuật toán của <span class="arithmatex">\(Kosaraju\)</span> cần hai lần.</li>
 </ul>
 <p><img alt="/uploads/Depth-First-Search-Tree_img14.png" src="/uploads/Depth-First-Search-Tree_img14.png" /></p>
-<h2 id="mot-so-inh-ly-quan-trong">Một số định lý quan trọng</h2>
+<h2 id="mot-so-inh-ly-quan-trong">Một số định lý quan trọng<a class="headerlink" href="#mot-so-inh-ly-quan-trong" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><strong>Định lý 1:</strong> Nếu <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span> là hai đỉnh thuộc thành phần liên thông mạnh <span class="arithmatex">\(C\)</span> thì với mọi đường đi từ <span class="arithmatex">\(a\)</span> tới <span class="arithmatex">\(b\)</span> cũng như từ <span class="arithmatex">\(b\)</span> tới <span class="arithmatex">\(a\)</span>. Tất cả đỉnh trung gian trên đường đi đó đều phải thuộc <span class="arithmatex">\(C\)</span>.
@@ -5198,9 +5920,9 @@ yes
 <p>Theo định lý <span class="arithmatex">\(2\)</span>, ta đã có thành phân liên thông mạnh chứa <span class="arithmatex">\(a\)</span> nằm trong nhánh <span class="arithmatex">\(DFS\)</span> gốc <span class="arithmatex">\(a\)</span>, theo chứng minh trên ta lại có: Mọi đỉnh trong nhánh <span class="arithmatex">\(DFS\)</span> gốc <span class="arithmatex">\(a\)</span> nằm trong thành phân liên thông mạnh chứa <span class="arithmatex">\(a\)</span>. Kết hợp lại được: Nhánh <span class="arithmatex">\(DFS\)</span> gốc <span class="arithmatex">\(a\)</span> chính là thành phần liên thông mạnh chứa <span class="arithmatex">\(a\)</span>.</p>
 </li>
 </ul>
-<h2 id="bai-toan-4">Bài toán 4</h2>
+<h2 id="bai-toan-4">Bài toán 4<a class="headerlink" href="#bai-toan-4" title="Permanent link">&para;</a></h2>
 <p><a href="https://oj.vnoi.info/problem/tjalg">TJALG - Tìm TPLT mạnh</a></p>
-<h3 id="e-bai_3"><strong>Đề bài</strong></h3>
+<h3 id="e-bai_3"><strong>Đề bài</strong><a class="headerlink" href="#e-bai_3" title="Permanent link">&para;</a></h3>
 <p>Cho đồ thị <span class="arithmatex">\(G(V, E)\)</span> có hướng <span class="arithmatex">\(N\)</span> <span class="arithmatex">\((1 \le N \le 10^4)\)</span> đỉnh, <span class="arithmatex">\(M\)</span> <span class="arithmatex">\((1 \le M \le 10^5)\)</span> cung. Hãy đếm số thành phần liên thông mạnh của <span class="arithmatex">\(G\)</span>.</p>
 <p><strong>Input</strong>
 - Dòng đầu tiên là <span class="arithmatex">\(N, M\)</span>.
@@ -5225,16 +5947,16 @@ yes
 <p><strong>Output</strong>
 <div class="highlight"><pre><span></span><code>1
 </code></pre></div></p>
-<h3 id="thuat-toan-tarjan"><strong>Thuật toán Tarjan</strong></h3>
+<h3 id="thuat-toan-tarjan"><strong>Thuật toán Tarjan</strong><a class="headerlink" href="#thuat-toan-tarjan" title="Permanent link">&para;</a></h3>
 <p><img alt="/uploads/Depth-First-Search-Tree_img15.png" src="/uploads/Depth-First-Search-Tree_img15.png" /></p>
 <p><strong>Thuật toán Tarjan được xây dựng dựa trên các dữ kiện sau:</strong>
 - Tìm kiếm <span class="arithmatex">\(DFS\)</span> tạo ra cây/ rừng <span class="arithmatex">\(DFS\)</span>
 - Các thành phần liên thông mạnh tạo thành các cây con của cây <span class="arithmatex">\(DFS\)</span>.
 - Nếu ta có thể tìm được đỉnh gốc của các cây con như vậy, ta có thể in/ lưu trữ tất cả các nút trong cây con đó (bao gồm cả đỉnh gốc) và đó sẽ là một thành phần liên thông mạnh <span class="arithmatex">\((Strongly\)</span> <span class="arithmatex">\(Connected\)</span> <span class="arithmatex">\(Components\)</span> - <span class="arithmatex">\(SCC).\)</span>
 - Không có cung ngược từ <span class="arithmatex">\(SCC\)</span> này sang <span class="arithmatex">\(SCC\)</span> khác (Có thể có các cung chéo, nhưng các cung chéo sẽ không được sử dụng trong khi xử lý đồ thị).</p>
-<h4 id="mo-ta-thuat-toan"><strong>Mô tả thuật toán</strong></h4>
+<h4 id="mo-ta-thuat-toan"><strong>Mô tả thuật toán</strong><a class="headerlink" href="#mo-ta-thuat-toan" title="Permanent link">&para;</a></h4>
 <p><a href="/uploads/Depth-First-Search-Tree_gif2.gif">/uploads/Depth-First-Search-Tree_gif2.gif</a></p>
-<h4 id="y-tuong"><strong>Ý tưởng</strong></h4>
+<h4 id="y-tuong"><strong>Ý tưởng</strong><a class="headerlink" href="#y-tuong" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Nhận xét:</strong> Xét cây con gốc <span class="arithmatex">\(u\)</span> trong cây <span class="arithmatex">\(DFS\)</span>. Gọi tập hợp các đỉnh thuộc cây con gốc <span class="arithmatex">\(u\)</span> là <span class="arithmatex">\(A\)</span>, tập hợp các đỉnh không thuộc cây con gốc <span class="arithmatex">\(u\)</span> là <span class="arithmatex">\(B\)</span>. Nếu tồn tại <span class="arithmatex">\(1\)</span> đỉnh <span class="arithmatex">\(x\)</span> thuộc <span class="arithmatex">\(A\)</span> tới được <span class="arithmatex">\(1\)</span> đỉnh <span class="arithmatex">\(y\)</span> thuộc <span class="arithmatex">\(B\)</span> thì <span class="arithmatex">\(y\)</span> phải có thứ tự thăm sớm hơn <span class="arithmatex">\(u\)</span>. Vì nếu <span class="arithmatex">\(y\)</span> được thăm sau <span class="arithmatex">\(u\)</span> ta có thể duyệt từ <span class="arithmatex">\(u\)</span> qua <span class="arithmatex">\(x\)</span> tới <span class="arithmatex">\(y\)</span> khi đó <span class="arithmatex">\(y\)</span> sẽ trở thành con của <span class="arithmatex">\(u\)</span>.</li>
 <li>Đầu tiên ta thực hiện <span class="arithmatex">\(DFS\)</span> kết hợp tính mảng <span class="arithmatex">\(low[], num[]\)</span> như đã trình bày ở trên. Song song với việc này, khi duyệt tới đỉnh <span class="arithmatex">\(u\)</span> ta sẽ thực hiện đẩy <span class="arithmatex">\(u\)</span> vào <span class="arithmatex">\(stack\)</span>.</li>
@@ -5243,7 +5965,7 @@ yes
 <li>Mặt khác, giả sử ta có đỉnh <span class="arithmatex">\(x\)</span> thuộc cây con gốc <span class="arithmatex">\(u\)</span> và <span class="arithmatex">\(x\)</span> thuộc một thành phần liên thông mạnh không chứa <span class="arithmatex">\(u\)</span> có đỉnh có thứ tự thăm sớm nhất là <span class="arithmatex">\(y\)</span>, dễ thấy <span class="arithmatex">\(y\)</span> phải là con của <span class="arithmatex">\(u\)</span> nên thời điểm duyệt xong của <span class="arithmatex">\(y\)</span> sớm hơn <span class="arithmatex">\(u\)</span> chứng tỏ <span class="arithmatex">\(y\)</span> và thành phần liên thông mạnh chứa nó sẽ bị loại bỏ trước đó không còn trong <span class="arithmatex">\(stack\)</span> nữa (nếu <span class="arithmatex">\(y\)</span> không phải con <span class="arithmatex">\(u\)</span> thì vô lí vì ta đang xét mọi đỉnh trong cây con gốc <span class="arithmatex">\(u\)</span> chưa được xác định nằm trong thành phần liên thông mạnh nào hiện tại không tới được các đỉnh không nằm trong cây con gốc <span class="arithmatex">\(u\)</span>). </li>
 <li>Ta sẽ đánh dấu tất cả các đỉnh thuộc thành phần liên thông mạnh này bằng <span class="arithmatex">\(1\)</span> mảng để sau này không xét lại đỉnh đấy nữa. Đồng thời, ta loại bỏ cách đỉnh này ra khỏi <span class="arithmatex">\(stack\)</span> để không làm ảnh hưởng tới các đỉnh khác vẫn còn nằm trong đồ thị.</li>
 </ul>
-<h3 id="cai-at_3"><strong>Cài đặt</strong></h3>
+<h3 id="cai-at_3"><strong>Cài đặt</strong><a class="headerlink" href="#cai-at_3" title="Permanent link">&para;</a></h3>
 <p><strong>Cấu trúc dữ liệu:</strong>
 - Hằng số <code>maxN = 100010</code> 
 - Biến <code>timeDfs</code> - Thứ tự <span class="arithmatex">\(DFS\)</span>
@@ -5252,7 +5974,7 @@ yes
 - Mảng <code>deleted[]</code> - Đánh dấu các đỉnh đã bị xóa
 - Vector <code>g[]</code> - Danh sách cạnh kề của mỗi đỉnh 
 - Ngăn xếp <code>st</code> - Lưu lại các đỉnh trong thành phần liên thông mạnh</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -5301,13 +6023,13 @@ yes
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">scc</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="anh-gia_3"><strong>Đánh giá</strong></h3>
+<h3 id="anh-gia_3"><strong>Đánh giá</strong><a class="headerlink" href="#anh-gia_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Độ phức tạp của thuật toán <span class="arithmatex">\(Tarjan\)</span> là <span class="arithmatex">\(O(N + M)\)</span></li>
 </ul>
-<h2 id="bai-toan-5">Bài toán 5</h2>
+<h2 id="bai-toan-5">Bài toán 5<a class="headerlink" href="#bai-toan-5" title="Permanent link">&para;</a></h2>
 <p><a href="https://oj.vnoi.info/problem/kcollect">KCOLLECT - Thu hoạch</a></p>
-<h3 id="e-bai_4"><strong>Đề bài</strong></h3>
+<h3 id="e-bai_4"><strong>Đề bài</strong><a class="headerlink" href="#e-bai_4" title="Permanent link">&para;</a></h3>
 <p>Khu vườn của Pirate có hình chữ nhật, và được chia thành <span class="arithmatex">\(M \cdot N\)</span> ô vuông bằng nhau. Trong mỗi ô vuông có một cây thuộc một loại quả khác nhau, đánh số từ <span class="arithmatex">\(0\)</span> đến <span class="arithmatex">\(9\)</span>. Những con số này thể hiện giá trị kinh tế của các loại cây.
 Tuy nhiên, nhìn mặt con Robot trái cây này có vẻ ngu ngu nên trong lần đầu tiên thử việc, Pirate muốn test AI của nó. Cụ thể là Robot phải tuân theo các quy định sau:
 1. Tại mỗi ô, Robot chỉ có thể đi sang hướng đông hoặc hướng nam sang ô kề cạnh.
@@ -5342,7 +6064,7 @@ Tuy nhiên, nhìn mặt con Robot trái cây này có vẻ ngu ngu nên trong l�
 <p><strong>Note</strong>
 - Robot sẽ đi theo hành trình như sau <span class="arithmatex">\((1, 1) \rightarrow (1, 2) \rightarrow (1, 3) \rightarrow (2, 3) \rightarrow (2, 2) \rightarrow (2, 1)\)</span> 
 (ô <span class="arithmatex">\((i, j)\)</span> là ô ở dòng <span class="arithmatex">\(i\)</span> và cột <span class="arithmatex">\(j\)</span>). Tổng lợi nhuận sẽ là <span class="arithmatex">\(2 + 6 + 4 + 3 = 15\)</span>.</p>
-<h3 id="phan-tich_3"><strong>Phân tích</strong></h3>
+<h3 id="phan-tich_3"><strong>Phân tích</strong><a class="headerlink" href="#phan-tich_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Tại sao ta không thể Quy hoạch động ngay được?</strong>
     Theo đề bài, ở tại mỗi ô Robot có thể đi sang hướng đông (đi sang phải) hoặc hướng nam (đi xuống dưới) sang ô kề cạnh. Tuy nhiên ở những ô đặc biệt thì Robot có thể đi thêm hướng tây (đi sang trái) hoặc hướng bắc (đi lên trên). Và một ô có thể được Robot đi qua nhiều lần. Chính vì lí do này thế nên cách đi của Robot sẽ tạo thành chu trình. Khi đường đi tạo thành chu trình thì khi ta QHĐ sẽ bị vô hạn.</li>
@@ -5351,7 +6073,7 @@ Tuy nhiên, nhìn mặt con Robot trái cây này có vẻ ngu ngu nên trong l�
 <li><strong>Mấu chốt của bài toán này là:</strong> Tìm ra được các thành phần liên thông mạnh, co từng thành phần liên thông mạnh thành <span class="arithmatex">\(1\)</span> đỉnh. Lúc này đồ thị mới sẽ là <strong>đồ thị DAG (Directed Acyclic Graph)</strong>. Đây là đồ thị <strong>"một đi không trở lại"</strong>, vậy nên ta dễ dàng <strong>QHĐ trên đồ thị DAG</strong>.</li>
 <li><strong>Công thức QHĐ trên đồ thị DAG:</strong> <span class="arithmatex">\(f[u] = max(f[v]) + C[u]\)</span> với mọi <span class="arithmatex">\(u\)</span> có cung trực tiếp đi tới <span class="arithmatex">\(v\)</span>; trong đó <span class="arithmatex">\(C[u]\)</span> là tổng giá trị kinh tế của đỉnh <span class="arithmatex">\(u\)</span> , <span class="arithmatex">\(f[u]\)</span> là tổng giá trị kinh tế lớn nhất khi ta xuất phát tại <span class="arithmatex">\(u\)</span> và kết thúc tại <span class="arithmatex">\(1\)</span> đỉnh bất kì vì ta có thể đi từ <span class="arithmatex">\(u\)</span> sang <span class="arithmatex">\(v\)</span> rồi đi theo đường đi tối ưu xuất phát tại <span class="arithmatex">\(v\)</span> (<span class="arithmatex">\(u,v\)</span> ở đây là các đỉnh trên đồ thị <span class="arithmatex">\(DAG\)</span> được tạo ra). </li>
 </ul>
-<h3 id="cai-at_4"><strong>Cài đặt</strong></h3>
+<h3 id="cai-at_4"><strong>Cài đặt</strong><a class="headerlink" href="#cai-at_4" title="Permanent link">&para;</a></h3>
 <p><strong>Cấu trúc dữ liệu:</strong>
 - Để có thể dễ dàng cài đặt thì ta sẽ sử dụng kĩ thuật <strong>"Biến mảng 2 chiều thành mảng 1 chiều"</strong> nhằm mục đích lưu giá trị ô <span class="arithmatex">\((i, j)\)</span> vào ô <span class="arithmatex">\((i - 1) \cdot N + j\)</span>.
 - Hằng số <code>maxN = 100010</code> 
@@ -5367,7 +6089,7 @@ Tuy nhiên, nhìn mặt con Robot trái cây này có vẻ ngu ngu nên trong l�
 - Mảng <code>f[]</code> - Mảng quy hoạch động
 - Vector <code>g[]</code> - Lưu đồ thị ban đầu.
 - Vector <code>h[]</code> - Lưu đồ thị mới (<strong>đồ thị <em>DAG</em></strong>).</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">## include &lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 
@@ -5499,18 +6221,18 @@ Tuy nhiên, nhìn mặt con Robot trái cây này có vẻ ngu ngu nên trong l�
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solve</span><span class="p">(</span><span class="n">root</span><span class="p">[</span><span class="n">getId</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)]);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="anh-gia_4"><strong>Đánh giá</strong></h3>
+<h3 id="anh-gia_4"><strong>Đánh giá</strong><a class="headerlink" href="#anh-gia_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Độ phức tạp của bài toán là <span class="arithmatex">\(O(N \cdot M)\)</span></li>
 </ul>
-<h1 id="bai-tap-van-dung">Bài tập vận dụng</h1>
-<h3 id="khop-cau">Khớp cầu</h3>
+<h2 id="bai-tap-van-dung">Bài tập vận dụng<a class="headerlink" href="#bai-tap-van-dung" title="Permanent link">&para;</a></h2>
+<h3 id="khop-cau">Khớp cầu<a class="headerlink" href="#khop-cau" title="Permanent link">&para;</a></h3>
 <p><a href="https://oj.vnoi.info/problem/weather">WEATHER - Điều kiện thời tiết</a></p>
 <p><a href="https://oj.vnoi.info/problem/critical/">CRITICAL - Thành phố trọng yếu</a></p>
 <p><a href="https://www.spoj.com/PTIT/problems/BCACM11E/">BCACM11E - Phương án bắn pháo</a></p>
 <p><a href="https://oj.vnoi.info/problem/safenet2">SAFENET2 - Mạng máy tính an toàn </a></p>
 <p><a href="https://oj.vnoi.info/problem/reform">REFORM - VOI 2015 Day 1 - Kế hoạch cải tổ</a></p>
-<h3 id="thanh-phan-lien-thong-manh">Thành phần liên thông mạnh</h3>
+<h3 id="thanh-phan-lien-thong-manh">Thành phần liên thông mạnh<a class="headerlink" href="#thanh-phan-lien-thong-manh" title="Permanent link">&para;</a></h3>
 <p><a href="https://codeforces.com/contest/894/problem/E">Ralph and Mushrooms</a></p>
 <p><a href="https://codeforces.com/contest/427/problem/C">Checkposts</a></p>
 <p><a href="https://oj.vnoi.info/problem/message">MESSAGE - Truyền tin</a></p>
@@ -5532,6 +6254,8 @@ Tuy nhiên, nhìn mặt con Robot trái cây này có vẻ ngu ngu nên trong l�
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -5539,14 +6263,61 @@ Tuy nhiên, nhìn mặt con Robot trái cây này có vẻ ngu ngu nên trong l�
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../centroid-decomposition/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Thuật toán phân tách trọng tâm - Centroid decomposition">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Thuật toán phân tách trọng tâm - Centroid decomposition
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../euler-cycle/" class="md-footer__link md-footer__link--next" aria-label="Next: Đường đi - Chu trình Euler">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Đường đi - Chu trình Euler
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/KienPC1234/fptoj_wiki" target="_blank" rel="noopener" title="GitHub: KienPC1234/fptoj_wiki" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -5561,7 +6332,7 @@ Tuy nhiên, nhìn mặt con Robot trái cây này có vẻ ngu ngu nên trong l�
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "toc.integrate", "toc.sticky", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "header.autohide"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
