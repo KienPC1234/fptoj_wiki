@@ -61,7 +61,7 @@ Chúng ta có thể thấy rằng chuỗi dài nhất có thể sẽ được kh
 - `.` (khớp với bất kỳ ký tự nào)
 - `^` (khớp với xâu rỗng ở đầu dòng)
 - `$` (khớp với xâu rỗng ở cuối dòng)
-- Ký tự `\` được theo sau bởi một trong các ký tự `^.[$()\| \times +?{\` (khớp với các ký tự đặc biệt tương ứng)
+- Ký tự `\` được theo sau bởi một trong các ký tự `^.[$()\|\*+?{\` (khớp với các ký tự đặc biệt tương ứng)
 - Một ký tự (khớp với ký tự đó).
 - Ký tự `\` được theo sau bởi một chữ số $d$ khác 0. Nguyên tử này sẽ khớp với chuỗi ký tự giống với chuỗi ký tự được khớp bởi biểu thức con trong ngoặc tròn thứ $d$ (đánh số ngoặc tròn bằng vị trí của mở ngoặc từ trái qua phải). Ví dụ: `([bc])\1` sẽ khớp với `bb` hoặc `cc` và không khớp với `bc`.   
 
@@ -104,9 +104,9 @@ Tìm thấy "<b>best</b>" bắt đầu ở vị trí 38 và kết thúc ở vị
 
 Giải thích:
 
-- `([a-zA-Z][a-zA-Z0-9] \times )` sẽ khớp với bất kỳ từ nào bắt đầu bởi một chữ cái và tiếp tục bởi một số lượng chữ cái hoặc chữ số bất kỳ.  
-- `(()| [^>] \times )` sẽ khớp với xâu rỗng hoặc bất kỳ xâu nào không chứa '>'.  
-- `\1` khớp với xâu nào mà `([a-zA-Z][a-zA-Z0-9] \times )` đã khớp trước đó.  
+- `([a-zA-Z][a-zA-Z0-9] \* )` sẽ khớp với bất kỳ từ nào bắt đầu bởi một chữ cái và tiếp tục bởi một số lượng chữ cái hoặc chữ số bất kỳ.  
+- `(()| [^>] \* )` sẽ khớp với xâu rỗng hoặc bất kỳ xâu nào không chứa '>'.  
+- `\1` khớp với xâu nào mà `([a-zA-Z][a-zA-Z0-9] \* )` đã khớp trước đó.  
 
 Mô tả trên là mô tả sơ qua về regex cơ bản. Một regex được viết bởi các luật trên sẽ chạy được ở Java (>= 1.4) và C++ (POSIX EXTENDED). Để tìm hiểu sâu hơn về các mở rộng được cung cấp bởi các ngôn ngữ khác mời các bạn xem phần tham khảo.
 
