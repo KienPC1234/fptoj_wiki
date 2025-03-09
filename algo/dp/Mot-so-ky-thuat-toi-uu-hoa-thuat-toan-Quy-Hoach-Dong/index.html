@@ -5640,7 +5640,7 @@ Output
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Chú ý là ta sử dụng mảng <span class="arithmatex">\(sum[]\)</span> tiền xử lí <span class="arithmatex">\(O(L)\)</span> để có thể truy vấn tổng một đoạn (dùng ở hàm <span class="arithmatex">\(cost()\)</span>) trong <span class="arithmatex">\(O(1)\)</span>. Như vậy độ phức tạp của thuật toán này là <span class="arithmatex">\(O(G \*L \* L)\)</span>.</p>
+<p>Chú ý là ta sử dụng mảng <span class="arithmatex">\(sum[]\)</span> tiền xử lí <span class="arithmatex">\(O(L)\)</span> để có thể truy vấn tổng một đoạn (dùng ở hàm <span class="arithmatex">\(cost()\)</span>) trong <span class="arithmatex">\(O(1)\)</span>. Như vậy độ phức tạp của thuật toán này là <span class="arithmatex">\(O(G  \times L  \times  L)\)</span>.</p>
 <p><strong>Thuật toán tối ưu hơn</strong></p>
 <p>Gọi <span class="arithmatex">\(P(g, i)\)</span> là k nhỏ nhất để cực tiểu hóa <span class="arithmatex">\(F(g, i)\)</span>, nói cách khác, <span class="arithmatex">\(P(g, i)\)</span> là k nhỏ nhất mà <span class="arithmatex">\(F(g, i) = F(g-1, k) + Cost(k+1, i)\)</span>.</p>
 <p>Tính chất quan trọng để có thể tối ưu thuật toán trên là dựa vào tính đơn điệu của <span class="arithmatex">\(P(g, i)\)</span>, cụ thể:</p>
@@ -5696,7 +5696,7 @@ Output
 <span class="p">}</span>
 </code></pre></div>
 <p>Chú ý rằng ta không thể đảm bảo rằng <span class="arithmatex">\(P(g,mid)\)</span> chia đôi đoạn <span class="arithmatex">\([optL, optR]\)</span>, thực tế một vài hàm <span class="arithmatex">\(solve()\)</span> sẽ chạy chậm hơn nhiều hàm <span class="arithmatex">\(solve()\)</span> khác.</p>
-<p>Tuy nhiên ta có thể chứng minh được, xét về tổng thế thuật toán này chạy đủ nhanh. Mỗi lần ta chia đôi đoạn <span class="arithmatex">\([L, R]\)</span>, nên ta sẽ đảm bảo có tối đa <span class="arithmatex">\(O(log(L))\)</span> tầng đệ quy, như vậy với mỗi hàng <span class="arithmatex">\(g\)</span>, ta chỉ mất <span class="arithmatex">\(O(L \* logL)\)</span> để tính. Toàn bộ thuật toán có độ phức tạp là <span class="arithmatex">\(O(G \* L \* logL)\)</span>.</p>
+<p>Tuy nhiên ta có thể chứng minh được, xét về tổng thế thuật toán này chạy đủ nhanh. Mỗi lần ta chia đôi đoạn <span class="arithmatex">\([L, R]\)</span>, nên ta sẽ đảm bảo có tối đa <span class="arithmatex">\(O(log(L))\)</span> tầng đệ quy, như vậy với mỗi hàng <span class="arithmatex">\(g\)</span>, ta chỉ mất <span class="arithmatex">\(O(L  \times  logL)\)</span> để tính. Toàn bộ thuật toán có độ phức tạp là <span class="arithmatex">\(O(G  \times  L  \times  logL)\)</span>.</p>
 <p><img alt="/uploads/dp_optimization_img2.png" src="/uploads/dp_optimization_img2.png" /></p>
 <h3 id="ieu-kien-e-chia-e-tri-ung">Điều kiện để Chia để trị đúng<a class="headerlink" href="#ieu-kien-e-chia-e-tri-ung" title="Permanent link">&para;</a></h3>
 <h4 id="ieu-kien-theo-best">Điều kiện theo best<a class="headerlink" href="#ieu-kien-theo-best" title="Permanent link">&para;</a></h4>

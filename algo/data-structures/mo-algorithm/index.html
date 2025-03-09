@@ -4959,7 +4959,7 @@
 <span class="w">      </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
 </code></pre></div>
-<p>Dễ thấy, thuật toán duyệt này có độ phức tạp <span class="arithmatex">\(O(N \* Q)\)</span>. Có 2 lý do chính khiến thuật toán này chạy chậm:</p>
+<p>Dễ thấy, thuật toán duyệt này có độ phức tạp <span class="arithmatex">\(O(N  \times  Q)\)</span>. Có 2 lý do chính khiến thuật toán này chạy chậm:</p>
 <ol>
 <li>Khởi tạo mảng count mỗi lần mất <span class="arithmatex">\(O(N)\)</span>.</li>
 <li>Với mỗi truy vấn, phải tính lại mảng count từ đầu.</li>
@@ -4974,7 +4974,7 @@
 <p>Để cập nhật số lần xuất hiện lớn nhất thì có thể dùng thêm set.</p>
 <p>Như vậy, độ phức tạp của ta là tổng <span class="arithmatex">\(\|l_i - l_{i-1}\| + \|r_i - r_{i-1}\|\)</span>, nhân thêm <span class="arithmatex">\(\mathcal{O}(logN)\)</span> để đếm và tìm phần tử lớn nhất của mảng đếm.</p>
 <h2 id="thuat-toan-mo">Thuật toán Mo<a class="headerlink" href="#thuat-toan-mo" title="Permanent link">&para;</a></h2>
-<p>Thuật toán Mo là một cách sắp xếp lại các truy vấn, sao cho tổng <span class="arithmatex">\(\|l_i - l_{i-1}\| + \|r_i - r_{i-1}\|\)</span> không quá <span class="arithmatex">\(O(N \* \sqrt{N} + Q \* \sqrt{N})\)</span>.</p>
+<p>Thuật toán Mo là một cách sắp xếp lại các truy vấn, sao cho tổng <span class="arithmatex">\(\|l_i - l_{i-1}\| + \|r_i - r_{i-1}\|\)</span> không quá <span class="arithmatex">\(O(N  \times  \sqrt{N} + Q  \times  \sqrt{N})\)</span>.</p>
 <p>Thứ tự các truy vấn được định nghĩa qua hàm so sánh dưới đây.</p>
 <div class="highlight"><pre><span></span><code><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
 <span class="kt">bool</span><span class="w"> </span><span class="nf">cmp</span><span class="p">(</span><span class="n">Query</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">Query</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="c1">// so sánh 2 truy vấn</span>
@@ -4992,22 +4992,22 @@
 <li>Ngược lại (đầu trái của truy vấn nằm ở cùng 1 block), ta sắp xếp theo đầu phải.</li>
 </ul>
 <p><strong>Chứng minh</strong>:</p>
-<p>Mo's algorithm có độ phức tạp là <span class="arithmatex">\(O(N \* \sqrt{N} + Q \* \sqrt{N})\)</span>. Để hiểu tại sao độ phức tạp của thuật toán đạt được như vậy, chúng ta hãy cùng xem việc di chuyển các đoạn <span class="arithmatex">\([l_1,r_1]\)</span> thành <span class="arithmatex">\([l_2,r_2]\)</span>:</p>
+<p>Mo's algorithm có độ phức tạp là <span class="arithmatex">\(O(N  \times  \sqrt{N} + Q  \times  \sqrt{N})\)</span>. Để hiểu tại sao độ phức tạp của thuật toán đạt được như vậy, chúng ta hãy cùng xem việc di chuyển các đoạn <span class="arithmatex">\([l_1,r_1]\)</span> thành <span class="arithmatex">\([l_2,r_2]\)</span>:</p>
 <ul>
 <li>Di chuyển <span class="arithmatex">\(l_1 \rightarrow l_2\)</span>:<ul>
-<li>Nếu <span class="arithmatex">\(l_1\)</span> và <span class="arithmatex">\(l_2\)</span> cùng block: Với mỗi thao tác, độ phức tạp không quá <span class="arithmatex">\(\sqrt{N}\)</span>. Do đó, độ phức tạp trong trường hợp này của cả <span class="arithmatex">\(Q\)</span> thao tác là <span class="arithmatex">\(O(Q \* \sqrt{N})\)</span>.</li>
-<li>Nếu <span class="arithmatex">\(l_1\)</span> và <span class="arithmatex">\(l_2\)</span> khác block: Vì ta ưu tiên sort theo block chứa <span class="arithmatex">\(l\)</span>, nên trường hợp này xảy ra không quá <span class="arithmatex">\(\sqrt{N}\)</span> lần. Ở trường hợp này, ta mất độ phức tạp tối đa là <span class="arithmatex">\(O(N)\)</span>, nên với tất cả các thao tác, độ phức tạp là <span class="arithmatex">\(O(N \* \sqrt{N})\)</span>.</li>
+<li>Nếu <span class="arithmatex">\(l_1\)</span> và <span class="arithmatex">\(l_2\)</span> cùng block: Với mỗi thao tác, độ phức tạp không quá <span class="arithmatex">\(\sqrt{N}\)</span>. Do đó, độ phức tạp trong trường hợp này của cả <span class="arithmatex">\(Q\)</span> thao tác là <span class="arithmatex">\(O(Q  \times  \sqrt{N})\)</span>.</li>
+<li>Nếu <span class="arithmatex">\(l_1\)</span> và <span class="arithmatex">\(l_2\)</span> khác block: Vì ta ưu tiên sort theo block chứa <span class="arithmatex">\(l\)</span>, nên trường hợp này xảy ra không quá <span class="arithmatex">\(\sqrt{N}\)</span> lần. Ở trường hợp này, ta mất độ phức tạp tối đa là <span class="arithmatex">\(O(N)\)</span>, nên với tất cả các thao tác, độ phức tạp là <span class="arithmatex">\(O(N  \times  \sqrt{N})\)</span>.</li>
 </ul>
 </li>
 <li>Di chuyển <span class="arithmatex">\(r_1 \rightarrow r_2\)</span>:<ul>
-<li>Nếu <span class="arithmatex">\(l_1\)</span> và <span class="arithmatex">\(l_2\)</span> cùng block: Vì trong cùng một block <span class="arithmatex">\(r\)</span> được sắp xếp tăng dần, nên với mỗi block của <span class="arithmatex">\(l\)</span>, ta chỉ mất độ phức tạp tổng là <span class="arithmatex">\(O(N)\)</span>. Do có <span class="arithmatex">\(\sqrt{N}\)</span> block khác nhau của <span class="arithmatex">\(l\)</span>, nên tổng độ phức tạp trong trường hợp này là <span class="arithmatex">\(O(N \* \sqrt{N})\)</span>.</li>
-<li>Nếu <span class="arithmatex">\(l_1\)</span> và <span class="arithmatex">\(l_2\)</span> khác block: Như trên đã phân tích, ta chỉ có <span class="arithmatex">\(\sqrt{N}\)</span> lần đổi block, mỗi lần đổi block ta mất độ phức tạp <span class="arithmatex">\(O(N)\)</span> để di chuyển <span class="arithmatex">\(r\)</span>. Do đó tổng độ phức tạp của trường hợp này là <span class="arithmatex">\(O(N \* \sqrt{N})\)</span>.</li>
+<li>Nếu <span class="arithmatex">\(l_1\)</span> và <span class="arithmatex">\(l_2\)</span> cùng block: Vì trong cùng một block <span class="arithmatex">\(r\)</span> được sắp xếp tăng dần, nên với mỗi block của <span class="arithmatex">\(l\)</span>, ta chỉ mất độ phức tạp tổng là <span class="arithmatex">\(O(N)\)</span>. Do có <span class="arithmatex">\(\sqrt{N}\)</span> block khác nhau của <span class="arithmatex">\(l\)</span>, nên tổng độ phức tạp trong trường hợp này là <span class="arithmatex">\(O(N  \times  \sqrt{N})\)</span>.</li>
+<li>Nếu <span class="arithmatex">\(l_1\)</span> và <span class="arithmatex">\(l_2\)</span> khác block: Như trên đã phân tích, ta chỉ có <span class="arithmatex">\(\sqrt{N}\)</span> lần đổi block, mỗi lần đổi block ta mất độ phức tạp <span class="arithmatex">\(O(N)\)</span> để di chuyển <span class="arithmatex">\(r\)</span>. Do đó tổng độ phức tạp của trường hợp này là <span class="arithmatex">\(O(N  \times  \sqrt{N})\)</span>.</li>
 </ul>
 </li>
 </ul>
-<p>Vậy, độ phức tạp là <span class="arithmatex">\(O(N \* \sqrt{N} + Q \* \sqrt{N})\)</span>.</p>
+<p>Vậy, độ phức tạp là <span class="arithmatex">\(O(N  \times  \sqrt{N} + Q  \times  \sqrt{N})\)</span>.</p>
 <h2 id="ap-dung">Áp dụng<a class="headerlink" href="#ap-dung" title="Permanent link">&para;</a></h2>
-<p>Sử dụng Mo's Algorithm, bạn đã có thể thu được một thuật toán hoàn chỉnh cho bài này với độ phức tạp <span class="arithmatex">\(O(N \* \sqrt{N} + Q \* \sqrt{N})\)</span>:</p>
+<p>Sử dụng Mo's Algorithm, bạn đã có thể thu được một thuật toán hoàn chỉnh cho bài này với độ phức tạp <span class="arithmatex">\(O(N  \times  \sqrt{N} + Q  \times  \sqrt{N})\)</span>:</p>
 <ul>
 <li>Sort tất cả các truy vấn theo Mo's Algorithm.</li>
 <li>Gọi <span class="arithmatex">\(S(N)\)</span> là một mảng gồm <span class="arithmatex">\(N\)</span> set (có thể cài bằng hash table (bảng băm)). <span class="arithmatex">\(S(i)\)</span> chứa tất cả các số xuất hiện đúng <span class="arithmatex">\(i\)</span> lần.</li>
@@ -5031,7 +5031,7 @@
 </ul>
 </li>
 </ul>
-<p>Vì tổng các thao tác thêm và xóa khi áp dụng Mo's Algorithm không quá <span class="arithmatex">\(O(N \* \sqrt{N} + Q \* \sqrt{N})\)</span>, ta thu được một thuật toán với độ phức tạp này.</p>
+<p>Vì tổng các thao tác thêm và xóa khi áp dụng Mo's Algorithm không quá <span class="arithmatex">\(O(N  \times  \sqrt{N} + Q  \times  \sqrt{N})\)</span>, ta thu được một thuật toán với độ phức tạp này.</p>
 <h2 id="mo-rong">Mở rộng<a class="headerlink" href="#mo-rong" title="Permanent link">&para;</a></h2>
 <p>Với mục đích làm bài toán khó hơn, ta xét trường hợp mà CTDL của ta chỉ cho phép thực hiện đúng 2 thao tác:</p>
 <ul>

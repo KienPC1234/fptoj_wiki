@@ -4998,7 +4998,7 @@
 <li>IT + Persistent --&gt; Persistent IT</li>
 <li>BIT + Persistent --&gt; Persistent BIT</li>
 </ul>
-<p>Tại sao lại là <strong>một cách hiệu quả</strong>? Bởi vì ta hoàn toàn có thể có một Persistent Data Structures bằng cách trâu bò: khi cập nhật, ta tạo một bản sao hoàn toàn mới của CTDL, thay đổi một số dữ liệu trên nó và lưu lại. Như vậy ta luôn có được một thuật toán với độ phức tạp <span class="arithmatex">\(O(Q \* N \* T)\)</span> và bộ nhớ <span class="arithmatex">\(O(Q \* N)\)</span>, với <span class="arithmatex">\(Q\)</span> là số thao tác cần thực hiện, và <span class="arithmatex">\(N\)</span> là độ lớn của CTDL, và <span class="arithmatex">\(T\)</span> là thời gian để thực hiện thao tác trên CTDL.</p>
+<p>Tại sao lại là <strong>một cách hiệu quả</strong>? Bởi vì ta hoàn toàn có thể có một Persistent Data Structures bằng cách trâu bò: khi cập nhật, ta tạo một bản sao hoàn toàn mới của CTDL, thay đổi một số dữ liệu trên nó và lưu lại. Như vậy ta luôn có được một thuật toán với độ phức tạp <span class="arithmatex">\(O(Q  \times  N  \times  T)\)</span> và bộ nhớ <span class="arithmatex">\(O(Q  \times  N)\)</span>, với <span class="arithmatex">\(Q\)</span> là số thao tác cần thực hiện, và <span class="arithmatex">\(N\)</span> là độ lớn của CTDL, và <span class="arithmatex">\(T\)</span> là thời gian để thực hiện thao tác trên CTDL.</p>
 <p>Trong các phần dưới đây, mình sẽ trình bày về 2 kĩ thuật thông thường của Persistent Data Structures.</p>
 <h2 id="2-persistent-it">2. Persistent IT<a class="headerlink" href="#2-persistent-it" title="Permanent link">&para;</a></h2>
 <h2 id="tu-tuong">Tư tưởng<a class="headerlink" href="#tu-tuong" title="Permanent link">&para;</a></h2>
@@ -5090,7 +5090,7 @@ Tư tưởng này còn được gọi là <strong>Path Copy</strong> trong các 
 </ul>
 <h2 id="phan-tich">Phân tích<a class="headerlink" href="#phan-tich" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Cách cài đặt Persistent Data Structures trong mục này rất hiệu quả. Nó hoàn toàn không làm tăng thêm độ phức tạp (persistent IT có độ phức tạp mỗi thao tác là <span class="arithmatex">\(O(logN)\)</span>), và bộ nhớ cần thêm là tối ưu: <span class="arithmatex">\(O(Q \* logN)\)</span>.</li>
+<li>Cách cài đặt Persistent Data Structures trong mục này rất hiệu quả. Nó hoàn toàn không làm tăng thêm độ phức tạp (persistent IT có độ phức tạp mỗi thao tác là <span class="arithmatex">\(O(logN)\)</span>), và bộ nhớ cần thêm là tối ưu: <span class="arithmatex">\(O(Q  \times  logN)\)</span>.</li>
 <li>Tuy nhiên, cách cài đặt này không dễ áp dụng với những CTDL khác. Chẳng hạn sẽ rất khó để cài đúng BIT với phương pháp này. Ở mục tiếp theo, mình sẽ trình bày một phương pháp cài đặt khác có thể dùng cho BIT, tuy nhiên có độ phức tạp lớn hơn.</li>
 </ul>
 <h2 id="3-persistent-bit">3. Persistent BIT<a class="headerlink" href="#3-persistent-bit" title="Permanent link">&para;</a></h2>

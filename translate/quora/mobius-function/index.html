@@ -4942,7 +4942,7 @@
 <h2 id="cac-inh-nghia">Các định nghĩa<a class="headerlink" href="#cac-inh-nghia" title="Permanent link">&para;</a></h2>
 <p>Trước khi bắt đầu, các bạn hãy ghi nhớ một số định nghĩa sau đây để việc tiếp thu những kiến thức ở dưới được dễ dàng hơn.</p>
 <p>Một hàm <span class="arithmatex">\(f(n): N \rightarrow C\)</span> được coi là <strong>hàm nhân tính</strong> (<a href="https://crypto.stanford.edu/pbc/notes/numbertheory/mult.html">Multiplicative Function</a>)  nếu với mọi cặp số nguyên tố cùng nhau <span class="arithmatex">\(n, m \in N\)</span> ta có <span class="arithmatex">\(f(mn)=f(m)f(n)\)</span></p>
-<p>Một số <span class="arithmatex">\(n\)</span> phân tích ra thừa số nguyên tố sẽ có dạng <span class="arithmatex">\(n={p_1}^{a_1}\*{p_2}^{a_2}\*{p_3}^{a_3}\*...\*{p_r}^{a_r}\)</span>, với <span class="arithmatex">\(p_i\)</span> là ước nguyên tố của <span class="arithmatex">\(n\)</span>.</p>
+<p>Một số <span class="arithmatex">\(n\)</span> phân tích ra thừa số nguyên tố sẽ có dạng <span class="arithmatex">\(n={p_1}^{a_1} \times {p_2}^{a_2} \times {p_3}^{a_3} \times ... \times {p_r}^{a_r}\)</span>, với <span class="arithmatex">\(p_i\)</span> là ước nguyên tố của <span class="arithmatex">\(n\)</span>.</p>
 <p>Ký hiệu <span class="arithmatex">\(a\|b\)</span> có nghĩa là <span class="arithmatex">\(a\)</span> là ước của <span class="arithmatex">\(b\)</span>, hay <span class="arithmatex">\(b\)</span> chia hết cho <span class="arithmatex">\(a\)</span></p>
 <p><strong>Hàm định danh Dirichlet</strong> <span class="arithmatex">\(e(n)\)</span> (Dirichlet identity function):</p>
 <ul>
@@ -4964,7 +4964,7 @@
 <p><span class="arithmatex">\(\mu(n)=0\)</span> nếu tồn tại <span class="arithmatex">\(a_i&gt;1\)</span></p>
 </li>
 <li>
-<p><span class="arithmatex">\(\mu(n)=(-1)^r\)</span> nếu <span class="arithmatex">\(n={p_1}\*{p_2}\*{p_3}\*...\*{p_r}\)</span>, hay <span class="arithmatex">\(a_i = 1\)</span> với mọi <span class="arithmatex">\(i\)</span></p>
+<p><span class="arithmatex">\(\mu(n)=(-1)^r\)</span> nếu <span class="arithmatex">\(n={p_1} \times {p_2} \times {p_3} \times ... \times {p_r}\)</span>, hay <span class="arithmatex">\(a_i = 1\)</span> với mọi <span class="arithmatex">\(i\)</span></p>
 </li>
 <li>
 <p>Có thể chứng minh được rằng <span class="arithmatex">\(\mu(n)=\sum_{d\|n,d &lt; n}\mu(d)\)</span> với <span class="arithmatex">\(n&gt;1\)</span> và tính được <span class="arithmatex">\(\mu(n)\)</span> bằng cách sử dụng <a href="http://codeforces.com/blog/entry/8989">Sàng</a>:
@@ -4985,40 +4985,40 @@ for (int i = 1; i &lt;= N; i++)
 </code></pre></div></p>
 <h2 id="cong-thuc-nghich-ao-mobius-mobius-inversion-formula">Công thức nghịch đảo Mobius (Möbius inversion formula)<a class="headerlink" href="#cong-thuc-nghich-ao-mobius-mobius-inversion-formula" title="Permanent link">&para;</a></h2>
 <p>Ta định nghĩa Dirichlet Convolution là một phép toán với 2 hàm <span class="arithmatex">\(f(n)\)</span> và <span class="arithmatex">\(g(n)\)</span>:</p>
-<p><span class="arithmatex">\(f \circ g(n)=\sum_{d_1\*d_2=n}{f(d_1)\*g(d_2)}\)</span></p>
+<p><span class="arithmatex">\(f \circ g(n)=\sum_{d_1 \times d_2=n}{f(d_1) \times g(d_2)}\)</span></p>
 <p>hay</p>
-<p><span class="arithmatex">\(f \circ g(n)=\sum_{d\|n}{f(d)\*g(n/d)}\)</span></p>
+<p><span class="arithmatex">\(f \circ g(n)=\sum_{d\|n}{f(d) \times g(n/d)}\)</span></p>
 <p>Có thễ dễ dàng chứng minh phép toán này có tính giao hoán và kết hợp:</p>
 <p><span class="arithmatex">\(f\circ g(n)=g\circ f(n)\)</span></p>
 <p><span class="arithmatex">\((f\circ g)\circ h(n)=f\circ(g\circ h)(n)\)</span></p>
 <p>Ta có nhận xét rằng:</p>
-<p><span class="arithmatex">\(S_f(n)=\sum_{d\|n}{f(d)}=\sum_{d\|n}{f(d)\*I(n/d)}=f\circ I(n)\)</span></p>
+<p><span class="arithmatex">\(S_f(n)=\sum_{d\|n}{f(d)}=\sum_{d\|n}{f(d) \times I(n/d)}=f\circ I(n)\)</span></p>
 <p><span class="arithmatex">\(S_{\phi}(n)=\sum_{d\|n}{\phi(d)}=id(n)\)</span></p>
 <p><span class="arithmatex">\(S_{\mu}(n)=\sum_{d\|n}{\mu(d)}=I\circ \mu (n)=\mu \circ I(n)= e(n)\)</span></p>
-<p><span class="arithmatex">\(f \circ e(n)=\sum_{d\|n}{f(n/d)\*e(d)}=f(n)\)</span></p>
+<p><span class="arithmatex">\(f \circ e(n)=\sum_{d\|n}{f(n/d) \times e(d)}=f(n)\)</span></p>
 <p>Từ đó suy ra:</p>
 <p><span class="arithmatex">\(S_f \circ \mu(n)=(f \circ I)\circ \mu (n)=f\circ (I\circ\mu)(n)=f\circ e(n)=f(n)\)</span></p>
 <p>hay</p>
-<p><span class="arithmatex">\(f(n)=\sum_{d\|n}{S_f(d)\*\mu (n/d)}\)</span> - đây gọi là <a href="https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula">Công thức nghịch đảo Mobius</a></p>
+<p><span class="arithmatex">\(f(n)=\sum_{d\|n}{S_f(d) \times \mu (n/d)}\)</span> - đây gọi là <a href="https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula">Công thức nghịch đảo Mobius</a></p>
 <h2 id="ung-dung">Ứng dụng<a class="headerlink" href="#ung-dung" title="Permanent link">&para;</a></h2>
 <h2 id="gcdex">GCDEX<a class="headerlink" href="#gcdex" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.spoj.com/problems/GCDEX/">Đề bài</a></p>
 <p>Tính <span class="arithmatex">\(G=\sum_{i=1}^{n} \sum_{j=i+1}^{n}gcd(i,j)\)</span> (1).</p>
-<p>Dễ thấy cách tiếp cận đơn giản nhất cho bài toán này là duyệt tất cả các cặp <span class="arithmatex">\((i,j)\)</span>. Độ phức tạp của thuật toán này là <span class="arithmatex">\(O(k\*n^2)\)</span>, với <span class="arithmatex">\(k\)</span> là số phép toán tối đa khi tính <span class="arithmatex">\(gcd\)</span>. Chúng ta sẽ đi tìm một lời giải tối ưu hơn sử dụng những kiến thức ở trên.</p>
+<p>Dễ thấy cách tiếp cận đơn giản nhất cho bài toán này là duyệt tất cả các cặp <span class="arithmatex">\((i,j)\)</span>. Độ phức tạp của thuật toán này là <span class="arithmatex">\(O(k \times n^2)\)</span>, với <span class="arithmatex">\(k\)</span> là số phép toán tối đa khi tính <span class="arithmatex">\(gcd\)</span>. Chúng ta sẽ đi tìm một lời giải tối ưu hơn sử dụng những kiến thức ở trên.</p>
 <ol>
 <li>
 <p>Nhận xét rằng <span class="arithmatex">\(1 \leq gcd(i,j) \leq n\)</span> với mọi <span class="arithmatex">\(1 \leq i &lt; j \leq n\)</span>.</p>
 <p>Như vậy, biểu thức trên có thể viết lại thành</p>
-<p><span class="arithmatex">\(G=\sum_{g=1}^{n}g\*cnt[g]\)</span> (2). Với <span class="arithmatex">\(cnt[g]\)</span> là số lượng cặp <span class="arithmatex">\((i,j)\)</span> có <span class="arithmatex">\(gcd\)</span> bằng <span class="arithmatex">\(g\)</span>.</p>
+<p><span class="arithmatex">\(G=\sum_{g=1}^{n}g \times cnt[g]\)</span> (2). Với <span class="arithmatex">\(cnt[g]\)</span> là số lượng cặp <span class="arithmatex">\((i,j)\)</span> có <span class="arithmatex">\(gcd\)</span> bằng <span class="arithmatex">\(g\)</span>.</p>
 <p>Công việc tính <span class="arithmatex">\(cnt[g]\)</span> thật sự không hề đơn giản. Ta để ý rằng <span class="arithmatex">\(gcd(i,j)=g \Leftrightarrow gcd(i/g,j/g)=1\)</span>, hay nói cách khác, <span class="arithmatex">\(i/g\)</span> và <span class="arithmatex">\(j/g\)</span> phải là 2 số nguyên tố cùng nhau.</p>
 </li>
 <li>
 <p>Ta viết lại (2) thành</p>
-<p><span class="arithmatex">\(G=\sum_{g=1}^{n}h(g)\*cnt[g]\)</span> với <span class="arithmatex">\(h(g)=g\)</span></p>
+<p><span class="arithmatex">\(G=\sum_{g=1}^{n}h(g) \times cnt[g]\)</span> với <span class="arithmatex">\(h(g)=g\)</span></p>
 </li>
 <li>
 <p>Giờ chúng ta sẽ tìm cách phân tích <span class="arithmatex">\(h(n)\)</span> thành hàm tổng của hàm <span class="arithmatex">\(f(n)\)</span> nào đó, tức là <span class="arithmatex">\(h(n)=S_f(n)=\sum_{d\|n}f(d)\)</span>.</p>
-<p>Ứng dụng công thức nghịch đảo Mobius, bạn có thể tìm được <span class="arithmatex">\(f(n)=\sum_{d\|n}{h(d)\*\mu (n/d)}\)</span>. Một kết quả rất đẹp trong bài toán này là <span class="arithmatex">\(f(n)=\phi(n)\)</span>, việc chứng minh mình xin nhường bạn đọc.</p>
+<p>Ứng dụng công thức nghịch đảo Mobius, bạn có thể tìm được <span class="arithmatex">\(f(n)=\sum_{d\|n}{h(d) \times \mu (n/d)}\)</span>. Một kết quả rất đẹp trong bài toán này là <span class="arithmatex">\(f(n)=\phi(n)\)</span>, việc chứng minh mình xin nhường bạn đọc.</p>
 <p>Khi đã biết được <span class="arithmatex">\(h(n)\)</span> và <span class="arithmatex">\(\mu(n)\)</span>, ta có thể tính <span class="arithmatex">\(f(n)\)</span> bằng sàng như sau:</p>
 <p><code>cpp
 for (int i = 1; i &lt;= N; i++)
@@ -5028,13 +5028,13 @@ for (int j = i; j &lt;= N; j += i)
 </li>
 <li>
 <p>Viết lại (2) một lần nữa ta được:</p>
-<p><span class="arithmatex">\(G=\sum_{g=1}^{n}(\sum_{d\|g}f(d))\*cnt[g]\)</span> (3)</p>
-<p><span class="arithmatex">\(\Leftrightarrow G=\sum_{d=1}^{n}f(d)\*(\sum_{g:d\|g}cnt[g])\)</span> (4)</p>
+<p><span class="arithmatex">\(G=\sum_{g=1}^{n}(\sum_{d\|g}f(d)) \times cnt[g]\)</span> (3)</p>
+<p><span class="arithmatex">\(\Leftrightarrow G=\sum_{d=1}^{n}f(d) \times (\sum_{g:d\|g}cnt[g])\)</span> (4)</p>
 </li>
 <li>
-<p>Đặt <span class="arithmatex">\(cnt2[d]=\sum_{g:d\|g}cnt[g]\)</span>. Hàm này có ý nghĩa là số lượng cặp <span class="arithmatex">\((i,j)\)</span> có <span class="arithmatex">\(gcd\)</span> là bội của <span class="arithmatex">\(d\)</span>. Đến đây mọi việc đã đơn giản hơn rất nhiều. Các bạn chỉ cần tìm số lượng cặp <span class="arithmatex">\((i,j)\)</span> mà <span class="arithmatex">\(i\)</span> và <span class="arithmatex">\(j\)</span> đều là bội của <span class="arithmatex">\(d\)</span>. Có <span class="arithmatex">\(n/d\)</span> bội của <span class="arithmatex">\(d\)</span>, nên sẽ có <span class="arithmatex">\(n/d\*(n/d-1)/2\)</span> cặp.</p>
-<p>Vậy (4) trở thành <span class="arithmatex">\(G=\sum_{d=1}^{n}f(d)\*n/d\*(n/d-1)/2\)</span>.</p>
-<p>Dễ dàng chứng minh là chỉ có <span class="arithmatex">\(\sqrt n\)</span> giá trị <span class="arithmatex">\(n/d\)</span> nên ta có thể duyệt từng giá trị của <span class="arithmatex">\(n/d\)</span> và cộng <span class="arithmatex">\(n/d\*(n/d-1)/2\*\sum_{k:n/k=n/d}f(k)\)</span> vào kết quả. Bằng tổng tiền tố các bạn có thể truy vấn được <span class="arithmatex">\(\sum_{k:n/k=n/d}f(k)\)</span> trong <span class="arithmatex">\(O(1)\)</span> và <span class="arithmatex">\(G\)</span> trong <span class="arithmatex">\(O(\sqrt n)\)</span>:</p>
+<p>Đặt <span class="arithmatex">\(cnt2[d]=\sum_{g:d\|g}cnt[g]\)</span>. Hàm này có ý nghĩa là số lượng cặp <span class="arithmatex">\((i,j)\)</span> có <span class="arithmatex">\(gcd\)</span> là bội của <span class="arithmatex">\(d\)</span>. Đến đây mọi việc đã đơn giản hơn rất nhiều. Các bạn chỉ cần tìm số lượng cặp <span class="arithmatex">\((i,j)\)</span> mà <span class="arithmatex">\(i\)</span> và <span class="arithmatex">\(j\)</span> đều là bội của <span class="arithmatex">\(d\)</span>. Có <span class="arithmatex">\(n/d\)</span> bội của <span class="arithmatex">\(d\)</span>, nên sẽ có <span class="arithmatex">\(n/d \times (n/d-1)/2\)</span> cặp.</p>
+<p>Vậy (4) trở thành <span class="arithmatex">\(G=\sum_{d=1}^{n}f(d) \times n/d \times (n/d-1)/2\)</span>.</p>
+<p>Dễ dàng chứng minh là chỉ có <span class="arithmatex">\(\sqrt n\)</span> giá trị <span class="arithmatex">\(n/d\)</span> nên ta có thể duyệt từng giá trị của <span class="arithmatex">\(n/d\)</span> và cộng <span class="arithmatex">\(n/d \times (n/d-1)/2 \times \sum_{k:n/k=n/d}f(k)\)</span> vào kết quả. Bằng tổng tiền tố các bạn có thể truy vấn được <span class="arithmatex">\(\sum_{k:n/k=n/d}f(k)\)</span> trong <span class="arithmatex">\(O(1)\)</span> và <span class="arithmatex">\(G\)</span> trong <span class="arithmatex">\(O(\sqrt n)\)</span>:</p>
 <p><code>cpp
 for (int i = 1,j; i &lt;= n; i = j + 1) {
 j = n / (n/i); //vị trí j xa i nhất mà n/i=n/j
@@ -5042,7 +5042,7 @@ res += n/i*(n/i - 1)/2 * (Sf[j] - Sf[i-1]);//Sf[i]=f[1]+f[2]+f[3]+...+f[i]
 }</code></p>
 </li>
 </ol>
-<p>Như vậy thuật toán trên có độ phức tạp <span class="arithmatex">\(O(NlogN+\sqrt N \*T)\)</span> với <span class="arithmatex">\(T\)</span> là số test.</p>
+<p>Như vậy thuật toán trên có độ phức tạp <span class="arithmatex">\(O(NlogN+\sqrt N  \times T)\)</span> với <span class="arithmatex">\(T\)</span> là số test.</p>
 <h2 id="bai-toan-tong-quat">Bài toán tổng quát<a class="headerlink" href="#bai-toan-tong-quat" title="Permanent link">&para;</a></h2>
 <p>Bài toán tổng quát hơn của bài toán trên là tính <span class="arithmatex">\(G=\sum_{i=1}^{n} \sum_{j=i+1}^{n}h(gcd(i,j))\)</span> với <span class="arithmatex">\(h\)</span> (nên) là một hàm nhân tính. Ví dụ muốn tính <span class="arithmatex">\(G=\sum_{i=1}^{n} \sum_{j=i+1}^{n}gcd^3(i,j)\)</span> thì <span class="arithmatex">\(h(n)=n^3\)</span>.</p>
 <p>Các bước tính toán gần như giống với bài toán trên.</p>

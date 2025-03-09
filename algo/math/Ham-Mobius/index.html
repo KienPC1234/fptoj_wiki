@@ -4914,7 +4914,7 @@
 <p><span class="arithmatex">\(\mu(n)=0\)</span> nếu tồn tại <span class="arithmatex">\(a_i&gt;1\)</span></p>
 </li>
 <li>
-<p><span class="arithmatex">\(\mu(n)=(-1)^r\)</span> nếu <span class="arithmatex">\(n={p_1}\*{p_2}\*{p_3}\*...\*{p_r}\)</span>, hay <span class="arithmatex">\(a_i = 1\)</span> với mọi <span class="arithmatex">\(i\)</span></p>
+<p><span class="arithmatex">\(\mu(n)=(-1)^r\)</span> nếu <span class="arithmatex">\(n={p_1} \times {p_2} \times {p_3} \times ... \times {p_r}\)</span>, hay <span class="arithmatex">\(a_i = 1\)</span> với mọi <span class="arithmatex">\(i\)</span></p>
 </li>
 <li>
 <p>Có thể chứng minh được rằng <span class="arithmatex">\(\mu(n)=\sum_{d\|n,d &lt; n}\mu(d)\)</span> với <span class="arithmatex">\(n&gt;1\)</span> và tính được <span class="arithmatex">\(\mu(n)\)</span> bằng cách sử dụng Sàng:</p>
@@ -4951,7 +4951,7 @@
 <p>Gọi <span class="arithmatex">\(cnt(k)\)</span> là số lượng số trong tập <span class="arithmatex">\(S\)</span> mà là bội của <span class="arithmatex">\(k\)</span>.</p>
 <p>Đặt <span class="arithmatex">\(f(k)\)</span> là số cặp x, y mà cả x và y đều chia hết cho <span class="arithmatex">\(k\)</span>, thì <span class="arithmatex">\(f(k) = cnt(k) * (cnt(k) - 1) / 2\)</span>.</p>
 <p>Theo phân tích ở trên,</p>
-<p><span class="arithmatex">\(res = f(1) - f(2) - f(3) - f(5) - ... + f(2\*3) + f(2\*5) + f(2\*7) + ... - f(2\*3\*5) - f(2\*3\*7) - ...\)</span></p>
+<p><span class="arithmatex">\(res = f(1) - f(2) - f(3) - f(5) - ... + f(2 \times 3) + f(2 \times 5) + f(2 \times 7) + ... - f(2 \times 3 \times 5) - f(2 \times 3 \times 7) - ...\)</span></p>
 <p><span class="arithmatex">\(res = sum(f(i) * mu(i))\)</span></p>
 <p>Khi ta thêm hoặc xoá 1 số <span class="arithmatex">\(x\)</span> khỏi tập S:</p>
 <ul>

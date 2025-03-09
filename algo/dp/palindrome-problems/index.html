@@ -5067,7 +5067,7 @@
 <span class="w">          </span><span class="k">end</span><span class="o">;</span>
 <span class="k">end</span><span class="o">;</span>
 </code></pre></div>
-<p>Cách làm này có độ phức tạp: <span class="arithmatex">\(max \* (N-max)\)</span>. Vì vậy nó chạy nhanh hơn cách QHĐ trên, thời gian chậm nhất khi tất cả các ký tự giống nhau (khi đó, <span class="arithmatex">\(max = N/2\)</span>): cũng chỉ mất <span class="arithmatex">\(N^2/4\)</span> và nhanh gấp 4 lần cách dùng QHĐ. Nhờ vậy, chúng ta biết là: không phải lúc nào QHĐ cũng chấp nhận được về mặt thời gian và không phải lúc nào duyệt lúc nào cũng chậm.</p>
+<p>Cách làm này có độ phức tạp: <span class="arithmatex">\(max  \times  (N-max)\)</span>. Vì vậy nó chạy nhanh hơn cách QHĐ trên, thời gian chậm nhất khi tất cả các ký tự giống nhau (khi đó, <span class="arithmatex">\(max = N/2\)</span>): cũng chỉ mất <span class="arithmatex">\(N^2/4\)</span> và nhanh gấp 4 lần cách dùng QHĐ. Nhờ vậy, chúng ta biết là: không phải lúc nào QHĐ cũng chấp nhận được về mặt thời gian và không phải lúc nào duyệt lúc nào cũng chậm.</p>
 <p>Bài này còn có một cách NlogN nữa là dùng <a href="algo/data-structures/suffix-array">Suffix Aray</a>, thậm chí có cách <span class="arithmatex">\(O(N)\)</span> là sử dụng Suffix Tree và <a href="algo/data-structures/lca">thuật toán tìm LCA</a>. Đương nhiên cách cài đặt không hề dễ dàng, tôi sẽ thảo luận với các bạn vào một dịp khác.</p>
 <h2 id="bai-3-chia-mot-xau-thanh-it-nhat-cac-palindrome">Bài 3: Chia một xâu thành ít nhất các Palindrome<a class="headerlink" href="#bai-3-chia-mot-xau-thanh-it-nhat-cac-palindrome" title="Permanent link">&para;</a></h2>
 <p><strong>Bài toán</strong>: Cho 1 xâu độ dài không quá 1000. Chia nó thành ít nhất các Palindrome.</p>

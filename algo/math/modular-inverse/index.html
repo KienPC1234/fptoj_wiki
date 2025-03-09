@@ -4925,7 +4925,7 @@
 <h2 id="inh-nghia">Định nghĩa:<a class="headerlink" href="#inh-nghia" title="Permanent link">&para;</a></h2>
 <p>Xét số nguyên dương <span class="arithmatex">\(m\)</span>. Xét các số nguyên trên modulo <span class="arithmatex">\(m\)</span> (từ 0 đến <span class="arithmatex">\(m-1\)</span>).</p>
 <p>Với một số nguyên <span class="arithmatex">\(a\)</span>, ta gọi nghịch đảo modulo <span class="arithmatex">\(m\)</span> (modular multiplicative inverse) của <span class="arithmatex">\(a\)</span> là <span class="arithmatex">\(a^{-1}\)</span> là số nguyên thoả mãn:</p>
-<p><span class="arithmatex">\(a \* a^{-1} \equiv 1 \; \pmod{m}\)</span></p>
+<p><span class="arithmatex">\(a  \times  a^{-1} \equiv 1 \; \pmod{m}\)</span></p>
 <p>Ta cần chú ý rằng không phải lúc nào <span class="arithmatex">\(a^{-1}\)</span> cũng tồn tại. Ví dụ, với <span class="arithmatex">\(m = 4, a = 2\)</span>, ta không thể tìm được <span class="arithmatex">\(a^{-1}\)</span> thoả mãn đẳng thức trên.</p>
 <p>Có thể chứng minh rằng <span class="arithmatex">\(a^{-1}\)</span> luôn luôn tồn tại nếu <span class="arithmatex">\(gcd(a, m) = 1\)</span>.</p>
 <p>Trong bài viết này, mình sẽ trình bày 2 cách khác nhau để tìm nghịch đảo modulo, dựa trên các kiến thức đã được trình bày ở các bài viết trên VNOI:</p>
@@ -4936,9 +4936,9 @@
 </ul>
 <h2 id="extended-euclid">Extended Euclid<a class="headerlink" href="#extended-euclid" title="Permanent link">&para;</a></h2>
 <p>Như đã trình bày trong bài viết <a href="translate/he/So-hoc-Phan-1-Modulo-gcd">Số học 1</a>, nếu <span class="arithmatex">\(gcd(a, m) = 1\)</span>, ta luôn luôn tìm được 2 số nguyên x và y thoả mãn:</p>
-<p><span class="arithmatex">\(a \*x + m \* y = 1\)</span>.</p>
-<p>Vì ta đang làm việc trên modulo <span class="arithmatex">\(m\)</span>, ta có thể bỏ <span class="arithmatex">\(m \* y\)</span> và viết lại đẳng thức trên như sau:</p>
-<p><span class="arithmatex">\(a \* x \equiv 1 \pmod{m}\)</span>.</p>
+<p><span class="arithmatex">\(a  \times x + m  \times  y = 1\)</span>.</p>
+<p>Vì ta đang làm việc trên modulo <span class="arithmatex">\(m\)</span>, ta có thể bỏ <span class="arithmatex">\(m  \times  y\)</span> và viết lại đẳng thức trên như sau:</p>
+<p><span class="arithmatex">\(a  \times  x \equiv 1 \pmod{m}\)</span>.</p>
 <p>Do đó, <span class="arithmatex">\(x\)</span> chính là <span class="arithmatex">\(a^{-1}\)</span>.</p>
 <p>Cài đặt:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
@@ -4968,10 +4968,10 @@
 <span class="w">    </span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">[</span><span class="n">m</span><span class="o">%</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
 </code></pre></div>
 <p><strong>Chứng minh:</strong></p>
-<p><span class="arithmatex">\(m \% i = m - floor(m/i) \* i\)</span></p>
-<p><span class="arithmatex">\(m \% i \equiv -floor(m/i) \* i \pmod{m}\)</span></p>
+<p><span class="arithmatex">\(m \% i = m - floor(m/i)  \times  i\)</span></p>
+<p><span class="arithmatex">\(m \% i \equiv -floor(m/i)  \times  i \pmod{m}\)</span></p>
 <p>Nhân cả 2 vế với nghịch đảo modulo của <span class="arithmatex">\(i\)</span> và nghịch đảo modulo của <span class="arithmatex">\(m \% i\)</span>:</p>
-<p><span class="arithmatex">\(r[i] \equiv -floor(m/i) \* r[m \% i] \pmod{m}\)</span></p>
+<p><span class="arithmatex">\(r[i] \equiv -floor(m/i)  \times  r[m \% i] \pmod{m}\)</span></p>
 <h2 id="cac-bai-luyen-tap">Các bài luyện tập<a class="headerlink" href="#cac-bai-luyen-tap" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=3055">UVa 11904 - One Unit Machine</a></li>

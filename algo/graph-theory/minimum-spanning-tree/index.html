@@ -5351,9 +5351,9 @@ Vương Hoàng Long - Đại học Quốc Gia Singapore </p>
 * <span class="arithmatex">\(\|A\|\)</span> : số lượng phần tử có trong tập hợp <span class="arithmatex">\(A\)</span>
 * <span class="arithmatex">\(A - B\)</span> : tập hợp các phần tử thuộc <span class="arithmatex">\(A\)</span> mà không thuộc <span class="arithmatex">\(B\)</span></p>
 <p>Giờ cùng đi vào chi tiết chứng minh nhé (づ◔ ͜ʖ◔)づ
-- Gọi <span class="arithmatex">\(T\)</span> là cây khung đầu ra của thuật toán Kruskal và <span class="arithmatex">\(T^\*\)</span> là một cây khung nhỏ nhất, ta sẽ chứng minh tổng trọng số trên <span class="arithmatex">\(T\)</span> và <span class="arithmatex">\(T^\*\)</span> bằng nhau : <span class="arithmatex">\(c(T)\)</span> = <span class="arithmatex">\(c(T^\*)\)</span>
-- Nếu <span class="arithmatex">\(c(T)\)</span> = <span class="arithmatex">\(c(T^\*)\)</span> ⇒ hiển nhiên đúng
-- Nếu <span class="arithmatex">\(c(T)\)</span> ≠ <span class="arithmatex">\(c(T^\*)\)</span> gọi <span class="arithmatex">\((u, v)\)</span> là cạnh <span class="arithmatex">\(\in\)</span> <span class="arithmatex">\(T\)</span> mà <span class="arithmatex">\(\notin\)</span> <span class="arithmatex">\(T^\*\)</span> hay thuộc <span class="arithmatex">\(T - T^\*\)</span>. Gọi <span class="arithmatex">\(S\)</span> là thành phần liên thông chứa u tại thời điểm <span class="arithmatex">\((u, v)\)</span> được thêm vào <span class="arithmatex">\(T\)</span>.
+- Gọi <span class="arithmatex">\(T\)</span> là cây khung đầu ra của thuật toán Kruskal và $T^ \times $ là một cây khung nhỏ nhất, ta sẽ chứng minh tổng trọng số trên <span class="arithmatex">\(T\)</span> và $T^ \times $ bằng nhau : <span class="arithmatex">\(c(T)\)</span> = <span class="arithmatex">\(c(T^ \times )\)</span>
+- Nếu <span class="arithmatex">\(c(T)\)</span> = <span class="arithmatex">\(c(T^ \times )\)</span> ⇒ hiển nhiên đúng
+- Nếu <span class="arithmatex">\(c(T)\)</span> ≠ <span class="arithmatex">\(c(T^ \times )\)</span> gọi <span class="arithmatex">\((u, v)\)</span> là cạnh <span class="arithmatex">\(\in\)</span> <span class="arithmatex">\(T\)</span> mà <span class="arithmatex">\(\notin\)</span> $T^ \times $ hay thuộc $T - T^ \times $. Gọi <span class="arithmatex">\(S\)</span> là thành phần liên thông chứa u tại thời điểm <span class="arithmatex">\((u, v)\)</span> được thêm vào <span class="arithmatex">\(T\)</span>.
     <strong>Nhận xét:</strong> 
     Dễ thấy nếu xóa cạnh <span class="arithmatex">\((u, v)\)</span> trên <span class="arithmatex">\(T\)</span> thì sẽ tách thành 2 <strong>thành phần liên thông</strong> <span class="arithmatex">\(S\)</span> và <span class="arithmatex">\(G - S\)</span>. 
     Đây là một <strong>lát cắt</strong>, ta có thể thêm bất cứ cạnh nào nối giữa 2 <strong>thành phần liên thông</strong> này để tạo thành một cây mới ⇒ <span class="arithmatex">\((u, v)\)</span> <span class="arithmatex">\(\in\)</span> lát cắt <span class="arithmatex">\((S, G - S)\)</span>.
@@ -5361,11 +5361,11 @@ Vương Hoàng Long - Đại học Quốc Gia Singapore </p>
 <pre><code>Ta sẽ chứng minh $(u, v)$ thuộc **lát cắt nhỏ nhất** $(S, G - S)$
 - Nếu tồn tại đường đi trọng số $e$ từ $S$ đến $G - S$ có trọng số nhỏ hơn $(u, v)$, thuật toán kruskal sẽ chọn $e$ thay vì $(u, v)$ ⇒ vô lý.
 ⇒ *Ta khẳng định $(u, v)$ có **trọng số nhỏ nhất** trong các cạnh từ $S$ đến $(G - S)$.* **(1)**
-- Mặt khác, bởi vì $T^\*$ là 1 cây khung nhỏ nhất nên  có một đường từ $S$ tới $G - S$, gọi cạnh thuộc đường này là $(x, y)$. Xét cây khung :
-${T^\*}' = T^\* \cup (u, v) - (x, y)$ ⇒ $c({T^\*}') = c(T^\*) + c(u, v) - c(x, y)$
-- Do theo **(1)** có:  $c(u, v) ≤ c(x, y)$ nên $c({T^\*}') ≤ c(T^\*)$ mà $T^\*$ là cây khung nhỏ nhất ⇒ $c({T^\*}')$ = $c(T^\*)$ và ${T^\*}'$ cũng là **cây khung nhỏ nhất** ⇒ $|T - {T^\*}'|$ = $|T - T^\*| - 1$
-***Ý nghĩa :** Như vậy ta đã biến đổi được **cây khung nhỏ nhất** ${T^\*}$ thành cây khung ${T^\*}'$ cũng là **cây khung nhỏ nhất** mà làm giảm số cạnh khác nhau của $T$ và ${T^\*}$ đi 1 cạnh*
-- Lặp lại cách chứng minh với mỗi cạnh thuộc $T - {T^\*}'$, ta sẽ biến đổi được ${T^\*}'$ thành ${T}$, hay nói cách khác đã đã biến đổi cây khung nhỏ nhất ban đầu về cây khung đầu ra của Kruskal : $c(T) = c(T^\*)$.
+- Mặt khác, bởi vì $T^ \times $ là 1 cây khung nhỏ nhất nên  có một đường từ $S$ tới $G - S$, gọi cạnh thuộc đường này là $(x, y)$. Xét cây khung :
+${T^ \times }' = T^ \times  \cup (u, v) - (x, y)$ ⇒ $c({T^ \times }') = c(T^ \times ) + c(u, v) - c(x, y)$
+- Do theo **(1)** có:  $c(u, v) ≤ c(x, y)$ nên $c({T^ \times }') ≤ c(T^ \times )$ mà $T^ \times $ là cây khung nhỏ nhất ⇒ $c({T^ \times }')$ = $c(T^ \times )$ và ${T^ \times }'$ cũng là **cây khung nhỏ nhất** ⇒ $|T - {T^ \times }'|$ = $|T - T^ \times | - 1$
+***Ý nghĩa :** Như vậy ta đã biến đổi được **cây khung nhỏ nhất** ${T^ \times }$ thành cây khung ${T^ \times }'$ cũng là **cây khung nhỏ nhất** mà làm giảm số cạnh khác nhau của $T$ và ${T^ \times }$ đi 1 cạnh*
+- Lặp lại cách chứng minh với mỗi cạnh thuộc $T - {T^ \times }'$, ta sẽ biến đổi được ${T^ \times }'$ thành ${T}$, hay nói cách khác đã đã biến đổi cây khung nhỏ nhất ban đầu về cây khung đầu ra của Kruskal : $c(T) = c(T^ \times )$.
 </code></pre>
 <p><strong>Đánh giá độ phức tạp thuật toán:</strong> 
 Gọi <span class="arithmatex">\(n\)</span> là số đỉnh, <span class="arithmatex">\(m\)</span> là số cạnh của đồ thị</p>

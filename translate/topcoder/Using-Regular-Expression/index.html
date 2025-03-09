@@ -5077,9 +5077,9 @@ Tìm thấy &quot;&lt;b&gt;best&lt;/b&gt;&quot; bắt đầu ở vị trí 38 v�
 </code></pre></div>
 <p>Giải thích:</p>
 <ul>
-<li><code>([a-zA-Z][a-zA-Z0-9]\*)</code> sẽ khớp với bất kỳ từ nào bắt đầu bởi một chữ cái và tiếp tục bởi một số lượng chữ cái hoặc chữ số bất kỳ.  </li>
-<li><code>(()| [^&gt;]\*)</code> sẽ khớp với xâu rỗng hoặc bất kỳ xâu nào không chứa '&gt;'.  </li>
-<li><code>\1</code> khớp với xâu nào mà <code>([a-zA-Z][a-zA-Z0-9]\*)</code> đã khớp trước đó.  </li>
+<li><code>([a-zA-Z][a-zA-Z0-9] \* )</code> sẽ khớp với bất kỳ từ nào bắt đầu bởi một chữ cái và tiếp tục bởi một số lượng chữ cái hoặc chữ số bất kỳ.  </li>
+<li><code>(()| [^&gt;] \* )</code> sẽ khớp với xâu rỗng hoặc bất kỳ xâu nào không chứa '&gt;'.  </li>
+<li><code>\1</code> khớp với xâu nào mà <code>([a-zA-Z][a-zA-Z0-9] \* )</code> đã khớp trước đó.  </li>
 </ul>
 <p>Mô tả trên là mô tả sơ qua về regex cơ bản. Một regex được viết bởi các luật trên sẽ chạy được ở Java (&gt;= 1.4) và C++ (POSIX EXTENDED). Để tìm hiểu sâu hơn về các mở rộng được cung cấp bởi các ngôn ngữ khác mời các bạn xem phần tham khảo.</p>
 <h2 id="su-dung-regex">Sử dụng regex<a class="headerlink" href="#su-dung-regex" title="Permanent link">&para;</a></h2>

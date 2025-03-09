@@ -5122,9 +5122,9 @@
 <li>Biến cố <span class="arithmatex">\(E_2\)</span> xảy ra với xác suất là <span class="arithmatex">\(P(E_2)\)</span>, và chúng ta có thể tiếp tục quá trình này tương tự như vậy.</li>
 </ul>
 <p>Vì xác suất được định nghĩa là một số thực nằm trong khoảng từ 0 đến 1, ta tổng hợp được xác suất để tất cả các biến cố xảy ra bằng công thức dưới đây:</p>
-<p>$P(all) = P(E_1) * P(E_2) * ... * P(En) $</p>
+<p>$P(all) = P(E_1)  \times  P(E_2)  \times  ...  \times  P(En) $</p>
 <p>Cách tốt nhất để trả lời câu hỏi thứ hai là tìm xác suất để không có biến cố nào diễn ra và lấy phần bù.</p>
-<p>$P(any) = 1 - P(E_1') * P(E_2') * ... * P(E_n') $</p>
+<p>$P(any) = 1 - P(E_1')  \times  P(E_2')  \times  ...  \times  P(E_n') $</p>
 <p>Những công thức trên được ứng dụng rất nhiều, cần nắm chắc để đi đền phần tiếp theo.</p>
 <h2 id="birthdayodds"><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=1848&amp;rd=4675">BirthdayOdds</a><a class="headerlink" href="#birthdayodds" title="Permanent link">&para;</a></h2>
 <p>Một ví dụ điển hình để mô tả nội dung xác suất được bàn luận ở phần trên là  <strong>Nghịch lí về ngày sinh</strong> (<a href="https://en.wikipedia.org/wiki/Birthday_problem"><strong>Birthday Paradox</strong></a>): Nếu có ít nhất 23 người trong một căn phòng, xác suất để 2 người bất kì trong số họ có cùng ngày sinh là lớn hơn 0.5. Thoạt nhìn, kết quả này có vẻ trái ngược với trực giác thông thường nhưng nó hoàn toàn có thể được chứng minh bằng toán học.</p>
@@ -5180,12 +5180,12 @@
 <li>Đặt <span class="arithmatex">\(E(X1)\)</span> là expected value của giá trị xúc sắc 1</li>
 <li>Đặt <span class="arithmatex">\(E(X2)\)</span> là expected value của giá trị xúc sắc 2</li>
 </ul>
-<p><span class="arithmatex">\(E(X1) = E(X2) = (1/6) \* 1 + (1/6) \* 2 + ... + (1/6) \* 6 = 3.5\)</span>.</p>
+<p><span class="arithmatex">\(E(X1) = E(X2) = (1/6)  \times  1 + (1/6)  \times  2 + ... + (1/6)  \times  6 = 3.5\)</span>.</p>
 <p>Linearity of Expectation cho ta công thức sau:</p>
 <p><span class="arithmatex">\(E(X1 + X2) = E(X1) + E(X2) = 7\)</span>.</p>
 <p>Phát biểu chính xác:</p>
 <p>Nếu <span class="arithmatex">\(X1\)</span>, <span class="arithmatex">\(X2\)</span>, ..., <span class="arithmatex">\(Xk\)</span> là các random variable có cùng không gian mẫu:</p>
-<p><span class="arithmatex">\(E(X1 \* a1 + X2 \* a2 + ... + Xk \* ak) = a1 \* E(X1) + a2 \* E(X2) + ... + ak \* E(Xk)\)</span>.</p>
+<p><span class="arithmatex">\(E(X1  \times  a1 + X2  \times  a2 + ... + Xk  \times  ak) = a1  \times  E(X1) + a2  \times  E(X2) + ... + ak  \times  E(Xk)\)</span>.</p>
 <p>Chú ý rằng các biến không cần độc lập.</p>
 <h2 id="tinh-xac-suat-tung-buoc-mot">Tính xác suất từng bước một<a class="headerlink" href="#tinh-xac-suat-tung-buoc-mot" title="Permanent link">&para;</a></h2>
 <p>Trong phần dưới đây, chúng ta sẽ tiếp tục thảo luận một vài bài tập trên Topcoder mà trong đó: <strong>Xác suất của một biến cố bị ảnh hưởng bởi biến cố khác</strong>.</p>
@@ -5272,7 +5272,7 @@ Chất lượng con giống của cá thể con được đánh giá dựa vào 
 <li>13 : 0.1875</li>
 <li>9   : 0.25</li>
 </ul>
-<p>Vậy giá trị kì vọng của chất lượng con giống sẽ là <span class="arithmatex">\(17 \* 0.5625 + 13 \* 0.1875 + 9 \* 0.25 = 14.25\)</span>)</p>
+<p>Vậy giá trị kì vọng của chất lượng con giống sẽ là <span class="arithmatex">\(17  \times  0.5625 + 13  \times  0.1875 + 9  \times  0.25 = 14.25\)</span>)</p>
 <h3 id="phan-tich">Phân tích<a class="headerlink" href="#phan-tich" title="Permanent link">&para;</a></h3>
 <p>Dựa vào mô tả đề bài, có hai trường hợp có thể xảy ra: một gen không phụ thuộc vào gen khác, hoặc gen này có phụ thuộc.</p>
 <p>Trường hợp thứ nhất, gọi <span class="arithmatex">\(p\)</span> là xác suất mà gen này là gen trội. Có 4 trường hợp:</p>

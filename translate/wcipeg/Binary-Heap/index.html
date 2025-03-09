@@ -5109,12 +5109,12 @@
 </li>
 <li>Khi thực hiện <span class="arithmatex">\(N\)</span> bước thêm nút ta có thể thấy độ phức tạp là <span class="arithmatex">\(O(log{1} + log{2} + ... + log{N}) = O(NlogN)\)</span>.</li>
 <li>Ở cách xây dựng thứ 2 ta thấy nếu một nút ở độ xâu <span class="arithmatex">\(k\)</span> nó sẽ mất không quá <span class="arithmatex">\(h - k\)</span> lần so sánh với nút con (nhắc lại <span class="arithmatex">\(h\)</span> là độ sâu của cây và số nút của cây <span class="arithmatex">\(N &lt; 2^{h+1}\)</span>) và một nửa số nút trên cây là lá và sẽ không phải so sánh với nút con nào cả, ta suy ra được:<ul>
-<li>Ở độ sâu <span class="arithmatex">\(k = h-1\)</span> có <span class="arithmatex">\(2^{h-1}\)</span> nút số phép so sánh là <span class="arithmatex">\(1 \* 2^{h-1} = 1/4 \* N\)</span></li>
-<li>Ở độ sâu <span class="arithmatex">\(k = h-2\)</span> có <span class="arithmatex">\(2^{h-2}\)</span> nút số phép so sánh là <span class="arithmatex">\(2 \* 2^{h-2} = 2/8 \* N\)</span></li>
-<li>Ở độ sâu <span class="arithmatex">\(k = h-3\)</span> có <span class="arithmatex">\(2^{h-3}\)</span> nút số phép so sánh là <span class="arithmatex">\(3 \* 2^{h-3} = 3/16 \* N\)</span>
+<li>Ở độ sâu <span class="arithmatex">\(k = h-1\)</span> có <span class="arithmatex">\(2^{h-1}\)</span> nút số phép so sánh là <span class="arithmatex">\(1  \times  2^{h-1} = 1/4  \times  N\)</span></li>
+<li>Ở độ sâu <span class="arithmatex">\(k = h-2\)</span> có <span class="arithmatex">\(2^{h-2}\)</span> nút số phép so sánh là <span class="arithmatex">\(2  \times  2^{h-2} = 2/8  \times  N\)</span></li>
+<li>Ở độ sâu <span class="arithmatex">\(k = h-3\)</span> có <span class="arithmatex">\(2^{h-3}\)</span> nút số phép so sánh là <span class="arithmatex">\(3  \times  2^{h-3} = 3/16  \times  N\)</span>
     ...</li>
-<li>Ở độ sâu <span class="arithmatex">\(k = 0\)</span> (gốc) có <span class="arithmatex">\(1\)</span> nút số phép so sánh là <span class="arithmatex">\(h \* 1 = h/N \* N\)</span></li>
-<li>Tổng hợp lại ta có: <span class="arithmatex">\(1/4 \* N + 2/8 \* N + 3/16 \* N + ... + h/N \* N = N\)</span> phép so sánh</li>
+<li>Ở độ sâu <span class="arithmatex">\(k = 0\)</span> (gốc) có <span class="arithmatex">\(1\)</span> nút số phép so sánh là <span class="arithmatex">\(h  \times  1 = h/N  \times  N\)</span></li>
+<li>Tổng hợp lại ta có: <span class="arithmatex">\(1/4  \times  N + 2/8  \times  N + 3/16  \times  N + ... + h/N  \times  N = N\)</span> phép so sánh</li>
 </ul>
 </li>
 </ul>

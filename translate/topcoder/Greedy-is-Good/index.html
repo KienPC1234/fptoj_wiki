@@ -5132,7 +5132,7 @@ Return A
 <p>Việc đầu tiên mà ta cần làm là xây dựng một ma trận cho biết <em>số lần lặp</em> (<strong>ma trận tần số</strong>) của từng cặp 2 ký tự. Đây là một công việc khá nhẹ nhàng khi mà ta chỉ cần ghép từng cặp ký tự ở hai chuỗi tạo rồi đếm số lần xuất hiện của chúng (<code>AA</code>, <code>AC</code>, <code>AG</code>, <code>AT</code>, <code>CA</code>, <code>CC</code>, <code>CG</code>, <code>CT</code>, <code>GA</code>, <code>GC</code>, <code>GG</code>, <code>GT</code>, <code>TA</code>, <code>TC</code>, <code>TG</code>, <code>TT</code>). Từng cặp ký tự sẽ được xem như một phần tử trong ma trận và giá trị của nó chính là số lần xuất hiện của nó.</p>
 <p>Ví dụ, hãy xét bộ <code>{"ACTAGAGAC", "AAAAAAAAA", "TAGTCATAC", "GCAGCATTC"}</code> được sử dụng ở ví dụ thứ 2.</p>
 <p><img alt="Ví dụ" src="http://community.topcoder.com/i/education/greedyAlg3.gif" /></p>
-<p>Ở góc phải - dưới của hình minh họa trên, ta có thể thấy kết quả của ma trận tần số đối với bộ đã cho. Tạm gọi nó là <span class="arithmatex">\(F\)</span>. Giờ việc mà ta cần làm là tìm ra một ma trận <span class="arithmatex">\(S\)</span> sao cho tổng của các tích: <span class="arithmatex">\(F[i, j] \* S[i, j]\)</span> với <span class="arithmatex">\((1 \le i, j \le 4)\)</span> là lớn nhất.</p>
+<p>Ở góc phải - dưới của hình minh họa trên, ta có thể thấy kết quả của ma trận tần số đối với bộ đã cho. Tạm gọi nó là <span class="arithmatex">\(F\)</span>. Giờ việc mà ta cần làm là tìm ra một ma trận <span class="arithmatex">\(S\)</span> sao cho tổng của các tích: <span class="arithmatex">\(F[i, j]  \times  S[i, j]\)</span> với <span class="arithmatex">\((1 \le i, j \le 4)\)</span> là lớn nhất.</p>
 <p>Giờ ta xét từng điều kiện cho ma trận cần tìm:</p>
 <p><strong>1) Tổng của 16 phần tử bằng <span class="arithmatex">\(0\)</span>:</strong></p>
 <p>Rõ ràng, nếu ta không giới hạn tổng của các phần tử, thì ta có thể đạt được tổng bằng vô cùng, nếu gán tất cả các phần tử của <span class="arithmatex">\(S\)</span> là vô cùng. Nhưng bởi vì tống của chúng phải bằng <span class="arithmatex">\(0\)</span>, thế nên khi ta tăng giá trị 1 phần tử lên thì ta sẽ phải giảm đi giá trị của 1 phần tử khác. Thử thách ở điều kiện này chính là phải tìm ra một sự phân bố tối ưu.</p>
@@ -5178,10 +5178,10 @@ Return A
 <li>Vì ta xét hết tất cả các trường hợp của nhóm 1, nên ta chỉ cần chứng minh cách chọn các phần tử của nhóm 2 là tối ưu.</li>
 <li>Vì tổng các phần tử của nhóm 2 cố định, nên nếu ta tăng 1 phần tử, thì phải giảm 1 phần tử khác.</li>
 <li>Gọi <span class="arithmatex">\(f_1\)</span> và <span class="arithmatex">\(f_2\)</span> là số lần xuất hiện của 2 số bất kỳ của nhóm 2. Ta có:</li>
-<li><span class="arithmatex">\(f_1 \* s_1 + f_2 \* s_2 = X\)</span>.</li>
+<li><span class="arithmatex">\(f_1  \times  s_1 + f_2  \times  s_2 = X\)</span>.</li>
 <li>Không làm mất tính tổng quát, giả sử <span class="arithmatex">\(f_1 \ge f_2\)</span>. Do cách tham, ta có <span class="arithmatex">\(s_1 \ge s_2\)</span>. Ta cũng có <span class="arithmatex">\(s_1\)</span> là lớn nhất có thể, nên ta không thể tăng <span class="arithmatex">\(s_1\)</span>.</li>
 <li>Giả sử cách làm của ta không tối ưu, nghĩa là ta có một cách chọn 1 số <span class="arithmatex">\(a\)</span> sao cho:</li>
-<li><span class="arithmatex">\(f_1 \* (s_1 - a) + f_2 \* (s_2 + a) = Y\)</span> với <span class="arithmatex">\(a\)</span> là số dương.</li>
+<li><span class="arithmatex">\(f_1  \times  (s_1 - a) + f_2  \times  (s_2 + a) = Y\)</span> với <span class="arithmatex">\(a\)</span> là số dương.</li>
 <li>Ta có <span class="arithmatex">\(Y-X = a * (f2-f1)\)</span>. Bởi vì <span class="arithmatex">\(f1 \ge f2\)</span> nên <span class="arithmatex">\(Y-X\)</span> luôn âm.</li>
 </ul>
 <p>Do vậy, cách làm của ta là tối ưu.</p>
@@ -5206,7 +5206,7 @@ For S[1] = 1 to 10
 Endfor
 Return Best
 </code></pre></div>
-<p>Đối với mảng lưu điểm đã cho (trong trường hợp của chúng ta là mảng <span class="arithmatex">\(S\)</span>), ta sẽ tính kết quả cuối cùng bằng việc chỉ tính tổng của tích <span class="arithmatex">\(F[I] \* S[I] (1 \le I \le 10)\)</span>.</p>
+<p>Đối với mảng lưu điểm đã cho (trong trường hợp của chúng ta là mảng <span class="arithmatex">\(S\)</span>), ta sẽ tính kết quả cuối cùng bằng việc chỉ tính tổng của tích <span class="arithmatex">\(F[I]  \times  S[I] (1 \le I \le 10)\)</span>.</p>
 <h2 id="goldmine"><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=1957&amp;rd=4650"><strong>GoldMine</strong></a><a class="headerlink" href="#goldmine" title="Permanent link">&para;</a></h2>
 <p><strong>Bài toán</strong></p>
 <p>Có <span class="arithmatex">\(N\)</span> mỏ vàng, mỗi mỏ vàng chứa được tối đa <span class="arithmatex">\(6\)</span> công nhân. Bằng cách phân bổ các công nhân, công ty sẽ thu được (hoặc mất đi) số tiền như sau:</p>
