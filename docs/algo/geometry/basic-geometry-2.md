@@ -179,7 +179,7 @@ Các bước để tìm đường trung trực của đoạn $XY$:
 - **Bước 2:** tìm trung điểm $M$ của đoạn $XY$ bằng cách lấy trung bình cộng của $2$ hoành độ và trung bình cộng của $2$ tung độ.
 - **Bước 3:** viết phương trình đường thẳng của đường thẳng vuông góc với đường thẳng $XY$ có dạng là $-Bx + Ay = D$.
 
-![img](../../uploads/jYRUgh8.png =700x500)
+![img](../../uploads/jYRUgh8.png)
 
 Nhấn vào [**đây**][pendicular] để tương tác với hình trên Desmos.
 
