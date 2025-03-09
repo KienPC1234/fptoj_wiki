@@ -452,7 +452,7 @@ Thuật toán này dựa trên sự tự triệt tiêu của các đỉnh xuất
 
 
 <p align="center">
-  <img src="https://i.imgur.com/j2uWJHk.gif" width="150%" height="150%"/>
+  <img src="../../../uploads/j2uWJHk.gif" width="150%" height="150%"/>
 </p>
 
 

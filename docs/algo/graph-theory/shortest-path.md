@@ -16,7 +16,7 @@ Bài viết này sẽ giới thiệu ba thuật toán cơ bản của dạng bà
 * Thuật toán Dijkstra.
 * Thuật toán Floyd-Warshall (còn gọi là thuật toán Floyd).
 
-Cần lưu ý rằng, [có một thuật toán thông dụng khác](https://vnoi.info/wiki/algo/basic/two-pointers.md#gi%E1%BA%A3i-ph%C3%A1p-3) cũng có tên thường gọi là thuật toán Floyd, dùng để tìm chu trình trong đồ thị có hướng. Bài viết này sẽ chỉ đề cập đến thuật toán tìm đường đi ngắn nhất.
+Cần lưu ý rằng, [có một thuật toán thông dụng khác](../../basic/two-pointers#gi%E1%BA%A3i-ph%C3%A1p-3) cũng có tên thường gọi là thuật toán Floyd, dùng để tìm chu trình trong đồ thị có hướng. Bài viết này sẽ chỉ đề cập đến thuật toán tìm đường đi ngắn nhất.
 
 
 
@@ -62,7 +62,7 @@ Impossible
 
 * Chu trình âm là một chu trình trong đó tổng trọng số các cạnh là số âm. Ví dụ trong hình dưới, ta có một chu trình âm $0 \rightarrow 1 \rightarrow 2$ có tổng trọng số là $7-9+1 = -1$
 
-![](https://i.ibb.co/jbkzpCB/dijsktra.png) 
+![img](../../uploads/dijsktra.png) 
 
 * Nếu trên đường đi từ $u$ đến $v$ chứa chu trình âm thì độ dài đường đi ngắn nhất từ $u$ đến $v$ sẽ là $-\infty$. Vì vậy nên sự xuất hiện của chu trình âm trong đồ thị sẽ khiến một số cặp đỉnh không tồn tại đường đi ngắn nhất (chỉ tồn tại đường đi có độ dài âm vô cực).
     * Ví dụ: Ở đồ thị trên, đường đi ngắn nhất từ $4$ đến $5$ sẽ có cách đi là vô hạn lần qua chu trình âm đã nhắc đến, sau đó mới đi đến $5$. Như vậy không có đường đi ngắn nhất.
@@ -74,7 +74,7 @@ Thuật toán Bellman-Ford sẽ lặp nhiều lần. Ở mỗi vòng lặp, ta s
 
 - Ví dụ đồ thị sau:
 
-![](https://i.imgur.com/YMKQtKM.png)
+![img](../../uploads/YMKQtKM.png)
 
 - Giả sử ta tìm được đường đi từ $1\rightarrow 3$ có độ dài là $4$, và đường đi từ $1 \rightarrow 2$ có độ dài là $2$. Như vậy ta có thể sử dụng cạnh $(2, 3)$ để nối dài đường đi $1 \rightarrow 2$ thành $1 \rightarrow 2 \rightarrow 3$ có độ dài bằng $3$, tốt hơn đường đi trực tiếp $1 \rightarrow 3$ ta đã tìm được.
 
@@ -176,17 +176,18 @@ for(int T = 0; T < n; T++){
 ### Tìm chu trình âm
 
 Một số bài toán có thể yêu cầu ta tìm một chu trình âm bất kì trong đồ thị. Ta có thể chỉnh sửa thuật toán Bellman-Ford lại như sau:
-- Thay vì chạy $N$ vòng lặp Bellman-Ford như trường hợp trên, ta chỉ cần chạy một vòng lặp. Như vậy là đủ để phát hiện ít nhất một đỉnh có đường đi bằng $-\infty$ (nếu có).
-- Tiến hành truy vết: Bắt đầu từ đỉnh $u$ bất kì có đường đi bằng $-\infty$, ta sẽ truy vết theo mảng $trace$:
-    - Trước hết gán $u = trace[u]$ đủ $N$ lần.
-        - Mục đích của bước này là để $u$ chắc chắn thuộc chu trình âm. Ban đầu có thể đỉnh $u$ có đường đi bằng $-\infty$ nhưng chưa chắc thuộc chu trình âm. Ví dụ trường hợp sau:
-        
-        [![](https://i.imgur.com/PblptAC.png)
-]()
 
-        Ở đây, từ $0$ đến $1$ có độ dài đường đi ngắn nhất bằng $-\infty$, tuy nhiên đỉnh $1$ lại không thuộc chu trình âm nào.
-        
-    - Sau đó, $u$ sẽ thuộc một chu trình âm. Ta chỉ cần truy vết đỉnh $u$ theo mảng $trace$ cho đến khi gặp lại chính nó, sẽ được một chu trình.
+- Thay vì chạy $N$ vòng lặp Bellman-Ford như trường hợp trên, ta chỉ cần chạy một vòng lặp. Như vậy là đủ để phát hiện ít nhất một đỉnh có đường đi bằng $-\infty$ (nếu có).
+- Tiến hành truy vết: Bắt đầu từ đỉnh $u$ bất kì có đường đi bằng $-\infty$, ta sẽ truy vết theo mảng `trace`:
+  - Trước hết gán `u = trace[u]` đủ $N$ lần.
+    - Mục đích của bước này là để `u` chắc chắn thuộc chu trình âm. Ban đầu có thể đỉnh `u` có đường đi bằng $-\infty$ nhưng chưa chắc thuộc chu trình âm. Ví dụ trường hợp sau:
+  
+      ![Chu trình âm](../../uploads/PblptAC.png)
+
+      Ở đây, từ `0` đến `1` có độ dài đường đi ngắn nhất bằng $-\infty$, tuy nhiên đỉnh `1` lại không thuộc chu trình âm nào.
+  
+  - Sau đó, `u` sẽ thuộc một chu trình âm. Ta chỉ cần truy vết đỉnh `u` theo mảng `trace` cho đến khi gặp lại chính nó, sẽ được một chu trình.
+  
 - Chu trình vừa truy vết chính là một chu trình âm của đồ thị. Lưu ý ta vẫn phải đảo ngược kết quả truy vết, vì ta đang truy vết ngược so với đồ thị gốc.
 
 
@@ -257,7 +258,7 @@ Cho một đồ thị có hướng với $N$ đỉnh (được đánh số từ 
 
 Hình ảnh của Test ví dụ. Ở đồ thị này, đỉnh nguồn là đỉnh $0$, đường đi ngắn nhất từ $0$ đến các đỉnh $0$ đến $5$ là $[0, 1, 7, 4, 4, 10]$. Riêng đỉnh $6$ không có đường đi đến. 
 
-![](https://i.imgur.com/UhI67bO.png)
+![img](../../uploads/UhI67bO.png)
 
 ## Ý tưởng của thuật toán.
 
@@ -274,7 +275,7 @@ Ta sẽ minh họa thuật toán bằng một đồ thị như hình. Định ng
 
 **Đỉnh được tô đen (đỉnh 0) sẽ là đỉnh nguồn.**
 
-![](https://i.imgur.com/FPDbyq9.png)
+![img](../../uploads/FPDbyq9.png)
 
 Ban đầu, $D = [0, \infty, \infty, \infty]$, $P = [false, false, false, false]$
 

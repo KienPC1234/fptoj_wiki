@@ -104,7 +104,7 @@ Hay viết $C_{ij} = \begin{bmatrix} a_{i1} & a_{i2} & ... & a_{in} \end{bmatrix
 
     Mô tả quá trình nhân ma trận:
 
-![](https://i.imgur.com/k2XpJwF.gif)
+![](../../uploads/k2XpJwF.gif)
 
 ### Tính chất của phép nhân ma trận
 

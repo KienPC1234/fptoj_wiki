@@ -1,5 +1,6 @@
 site_name: FPTOJ WIKI
 site_url: https://wiki.fptoj.com
+site_description: 'FPTOJ được xây dựng với mục đích chia sẻ kiến thức Tin học đến với tất cả mọi người'
 theme:
   name: material
   features:
@@ -17,6 +18,9 @@ theme:
     - header.autohide         
 
   logo: uploads/icon.svg
+  favicon: uploads/favicon.ico
+  icon:
+    repo: fontawesome/brands/github
   palette:
     - scheme: default  
       primary: blue
@@ -31,6 +35,9 @@ theme:
         icon: material/weather-night
         name: Chuyển sang chế độ sáng
 
+repo_url: https://github.com/KienPC1234/fptoj_wiki
+repo_name: KienPC1234/fptoj_wiki
+edit_uri: edit/master/docs
 
 nav:
   - Trang chủ: 
@@ -205,6 +212,7 @@ nav:
       - Cây (Tree): translate/wcipeg/tree.md
 
 
+
 markdown_extensions:
   - admonition
   - toc:
@@ -218,12 +226,16 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
-
 extra:
-  generator: false               
+  generator: false  
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/KienPC1234/fptoj_wiki
+      name: "GitHub: KienPC1234/fptoj_wiki"
+      custom_html: |
+        <img src="https://img.shields.io/github/stars/KienPC1234/fptoj_wiki?style=social">
+        <img src="https://img.shields.io/github/forks/KienPC1234/fptoj_wiki?style=social">
+
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

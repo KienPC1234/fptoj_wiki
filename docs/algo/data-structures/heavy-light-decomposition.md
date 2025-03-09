@@ -51,7 +51,7 @@ Cho một cây (một đồ thị có $n$ đỉnh và $n-1$ cạnh và giữa ha
 Vậy chính xác thì HLD sẽ làm gì để giúp chúng ta giải được phiên bản "trên cây" của bài toán trên? Liệu chúng ta có thể biến cây cho trước thành một mảng để giải bài toán trên đó? Câu trả lời là không. Tuy nhiên chúng ta có thể chia cây thành một số phần, và giải bài toán trên từng phần đó.
 Cụ thể như sau, giả sử có cây sau đây
 
-![](https://hackmd.io/_uploads/SyW0NnFB3.png)
+![img](../../uploads/SyW0NnFB3.png)
 
 Không mất tính tổng quát, có thể coi đỉnh $1$ là gốc của cây. Với mỗi đỉnh không phải lá trên cây, chúng ta sẽ đánh dấu những cạnh nối đỉnh đó với con có kích thước cây con lớn nhất của của nó.
 
@@ -59,7 +59,7 @@ Ví dụ, xét đỉnh $15$ có ba đỉnh con lần lượt là đỉnh $17$, $
 
 Vì vậy, chúng ta sẽ đánh dấu cạnh nối giữa đỉnh $15$ và đỉnh $17$ (tô màu đỏ). Làm tương tự với các đỉnh còn lại, chúng ta được cây như hình vẽ dưới đây.
 
-![](https://hackmd.io/_uploads/H1I6U3YH2.png)
+![img](../../uploads/H1I6U3YH2.png)
 
 Chúng ta sẽ gọi những cạnh màu đỏ là những **"cạnh nặng" (heavy edges)** vì chúng nối một đỉnh với đỉnh con **"nặng nhất"**. Những cạnh còn lại sẽ được gọi là những **"cạnh nhẹ" (light edges)**
 

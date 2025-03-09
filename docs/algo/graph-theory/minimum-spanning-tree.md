@@ -24,12 +24,12 @@ Theo lý thuyết đồ thị, chúng ta đều biết rằng 1 đồ thị đư
 
 - Một ví dụ về cây khung trong đồ thị vô hướng không trọng số:
 <!--
-![Đồ thị G có 3 cây khung](https://i.imgur.com/2vA7dPt.png)
+![Đồ thị G có 3 cây khung](../../uploads/2vA7dPt.png)
 -->
-![](https://i.imgur.com/QqWCZO0.png)
+![img](../../uploads/QqWCZO0.png)
 
 - Một ví dụ về cây khung **nhỏ nhất** trong đồ thị vô hướng có trọng số:
-![](https://i.imgur.com/egYfsfI.jpg)
+![img](../../uploads/egYfsfI.jpg)
 
 
 Trong khuôn khổ bài viết, chúng ta sẽ làm việc với **đồ thị vô hướng có trọng số**.
@@ -96,13 +96,13 @@ Giả sử ta cần tìm cây khung nhỏ nhất của đồ thị $G$. Thuật 
 Khi thuật toán kết thúc, rừng chỉ gồm đúng một cây và đó là một cây khung nhỏ nhất của đồ thị $G$
 
 Ví dụ các bước giải bài toán tìm cây khung nhỏ nhất với thuật toán Kruskal :
-![](https://i.imgur.com/ZvvusBq.gif)
+![img](../../uploads/ZvvusBq.gif)
 <!--
-![](https://i.imgur.com/J6J8NhG.gif)
-![](https://i.imgur.com/5T4aefO.png)
-![](https://i.imgur.com/0TUNAZD.png)
-![](https://i.imgur.com/qmLu49x.png)
-![](https://i.imgur.com/gAZe9Uq.png)
+![img](../../uploads/J6J8NhG.gif)
+![img](../../uploads/5T4aefO.png)
+![img](../../uploads/0TUNAZD.png)
+![img](../../uploads/qmLu49x.png)
+![img](../../uploads/gAZe9Uq.png)
 -->
 
 Để thực hiện thao tác kiểm tra cạnh và hợp nhất 2 cây một cách nhanh chóng, ta sử dụng cấu trúc **[Disjoint Set](https://vnoi.info/wiki/algo/data-structures/disjoint-set.md)**, dưới đây là đoạn code dùng để cài đặt thuật toán:
@@ -246,7 +246,7 @@ Mặc dù không bắt buộc, các bạn có thể đọc chứng minh tính đ
 Khi hoàn thành xong $n$ bước trên, ta thu được cây khung nhỏ nhất của đồ thị gồm $n$ đỉnh và $n - 1$ cạnh.
 
 Ví dụ các bước giải bài toán tìm cây khung nhỏ nhất với thuật toán Prim:
-![](https://i.imgur.com/E8xqn14.gif)
+![img](../../uploads/E8xqn14.gif)
 
 Đoạn code sử dụng để cài đặt thuật toán Prim:
 ```cpp

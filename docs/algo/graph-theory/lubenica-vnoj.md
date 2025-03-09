@@ -13,7 +13,7 @@ Có thể tính `up[u][i]` (i > 0) thông qua công thức QHĐ sau:
 Vậy nên `up[u][i].maxc = max(up[u][i-1].maxc. up[p][i-1].maxc)` có nghĩa là ***trọng số lớn nhất*** khi nhảy từ ``u`` lên cha thứ $2^i$ đi qua các cạnh bằng ***trọng số lớn nhất*** khi nhảy từ `u` lên cha thứ $2^{i - 1}$ là `p` và nhảy từ `p` lên cha thứ $2^{i - 1}$
 
 Ví dụ : Với u = 10, i = 2 ta thực hiện cập nhật mảng up như hình vẽ dưới đây:
-![](https://i.imgur.com/JUvY6GC.png)
+![](../../uploads/JUvY6GC.png)
 
 
 - `up[u][i - 1].maxc` ở đây là trọng số lớn nhất của các cạnh 5 - 8 và 8 - 10, do đó có giá trị bằng 9
