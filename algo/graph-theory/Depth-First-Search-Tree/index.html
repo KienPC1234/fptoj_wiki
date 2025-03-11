@@ -5390,7 +5390,7 @@
 </li>
 <li>
 <p><strong>Mô tả quá trình :</strong></p>
-<p><a href="/uploads/Depth-First-Search-Tree_gif1.gif">/uploads/Depth-First-Search-Tree_gif1.gif</a></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_gif1.gif" src="/uploads/Depth-First-Search-Tree_gif1.gif" /></p>
 </li>
 </ul>
 <h2 id="ung-dung-cay-dfs-trong-bai-toan-tim-khop-cau">Ứng dụng cây DFS trong bài toán tìm khớp, cầu<a class="headerlink" href="#ung-dung-cay-dfs-trong-bai-toan-tim-khop-cau" title="Permanent link">&para;</a></h2>
@@ -5955,7 +5955,7 @@ yes
 - Nếu ta có thể tìm được đỉnh gốc của các cây con như vậy, ta có thể in/ lưu trữ tất cả các nút trong cây con đó (bao gồm cả đỉnh gốc) và đó sẽ là một thành phần liên thông mạnh <span class="arithmatex">\((Strongly\)</span> <span class="arithmatex">\(Connected\)</span> <span class="arithmatex">\(Components\)</span> - <span class="arithmatex">\(SCC).\)</span>
 - Không có cung ngược từ <span class="arithmatex">\(SCC\)</span> này sang <span class="arithmatex">\(SCC\)</span> khác (Có thể có các cung chéo, nhưng các cung chéo sẽ không được sử dụng trong khi xử lý đồ thị).</p>
 <h4 id="mo-ta-thuat-toan"><strong>Mô tả thuật toán</strong><a class="headerlink" href="#mo-ta-thuat-toan" title="Permanent link">&para;</a></h4>
-<p><a href="/uploads/Depth-First-Search-Tree_gif2.gif">/uploads/Depth-First-Search-Tree_gif2.gif</a></p>
+<p><img alt="/uploads/Depth-First-Search-Tree_gif2.gif" src="/uploads/Depth-First-Search-Tree_gif2.gif" /></p>
 <h4 id="y-tuong"><strong>Ý tưởng</strong><a class="headerlink" href="#y-tuong" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Nhận xét:</strong> Xét cây con gốc <span class="arithmatex">\(u\)</span> trong cây <span class="arithmatex">\(DFS\)</span>. Gọi tập hợp các đỉnh thuộc cây con gốc <span class="arithmatex">\(u\)</span> là <span class="arithmatex">\(A\)</span>, tập hợp các đỉnh không thuộc cây con gốc <span class="arithmatex">\(u\)</span> là <span class="arithmatex">\(B\)</span>. Nếu tồn tại <span class="arithmatex">\(1\)</span> đỉnh <span class="arithmatex">\(x\)</span> thuộc <span class="arithmatex">\(A\)</span> tới được <span class="arithmatex">\(1\)</span> đỉnh <span class="arithmatex">\(y\)</span> thuộc <span class="arithmatex">\(B\)</span> thì <span class="arithmatex">\(y\)</span> phải có thứ tự thăm sớm hơn <span class="arithmatex">\(u\)</span>. Vì nếu <span class="arithmatex">\(y\)</span> được thăm sau <span class="arithmatex">\(u\)</span> ta có thể duyệt từ <span class="arithmatex">\(u\)</span> qua <span class="arithmatex">\(x\)</span> tới <span class="arithmatex">\(y\)</span> khi đó <span class="arithmatex">\(y\)</span> sẽ trở thành con của <span class="arithmatex">\(u\)</span>.</li>

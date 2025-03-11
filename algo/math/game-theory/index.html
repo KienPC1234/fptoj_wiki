@@ -5326,7 +5326,7 @@ bool isInP(State u) {
 <p>Hãy nhìn trò chơi dưới góc độ đồ thị. Đồ thị này có <span class="arithmatex">\(p + 1\)</span> đỉnh có nhãn lần lượt là các số nguyên từ <span class="arithmatex">\(0\)</span> đến <span class="arithmatex">\(p\)</span>. Mỗi đỉnh đồ thị tương ứng với một trạng thái trò chơi, trong đó nhãn của nó cho biết có bao nhiêu sỏi còn lại trong đống hiện tại. Hình dưới là ví dụ trò chơi với một đống sỏi có số sỏi <span class="arithmatex">\(p = 5\)</span>.
 <img alt="/uploads/game_theory_custom-nim.png" src="/uploads/game_theory_custom-nim.png" /></p>
 <p>Rõ ràng đỉnh <span class="arithmatex">\(0\)</span> là đỉnh kết thúc, do đó nó là đỉnh thuộc <span class="arithmatex">\(P\)</span>. Các đỉnh tiếp theo có thể xác định là thuộc <span class="arithmatex">\(P\)</span> hay <span class="arithmatex">\(N\)</span> như hình dưới
-<a href="/uploads/game_theory_custom_nim_PN.gif">/uploads/game_theory_custom_nim_PN.gif</a></p>
+<img alt="/uploads/game_theory_custom_nim_PN.gif" src="/uploads/game_theory_custom_nim_PN.gif" /></p>
 <p>Tuy nhiên, cách làm ở trên chỉ cho ta trạng thái định tính của từng trạng thái, để phục vụ cho việc ghép các trò chơi lại, ta cần một hàm định lượng. Hàm mà chúng ta sẽ dùng có tên là hàm Sprague-Grundy, với một trạng thái <span class="arithmatex">\(x \in S\)</span> thì giá trị Sprague-Grundy được định nghĩa như sau:
 $$
 g(x) = \text{mex}({g(y): (x,y) \in Q})
@@ -5350,7 +5350,7 @@ Với <span class="arithmatex">\(g, g_1, \ldots, g_n\)</span> lần lượt là 
 <p>Như vậy, ta thấy rằng thực ra cách giải trò chơi Nim cũng chỉ là một trường hợp riêng của cách giải với giá trị Sprague-Grundy này, trong đó giá trị Nim của trò chơi Nim chỉ có một đống <span class="arithmatex">\(n\)</span> viên sỏi tương đương với giá trị Sprague-Grundy <span class="arithmatex">\(\text{mex}(\{0,1,\ldots,n-1\}) = n\)</span></p>
 <blockquote>
 <p>Ví dụ với trò chơi Nim chỉ có một đống <span class="arithmatex">\(3\)</span> viên sỏi
-<a href="/uploads/game_theory_nim_SP.gif">/uploads/game_theory_nim_SP.gif</a></p>
+<img alt="/uploads/game_theory_nim_SP.gif" src="/uploads/game_theory_nim_SP.gif" /></p>
 </blockquote>
 <p>và định lý Bouton tương đương định lý 2.</p>
 <h3 id="inh-ly-sprague-grundy_1">Định lý Sprague-Grundy<a class="headerlink" href="#inh-ly-sprague-grundy_1" title="Permanent link">&para;</a></h3>
